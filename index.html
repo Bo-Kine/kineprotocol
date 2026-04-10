@@ -8,36 +8,17 @@
 <meta name="apple-mobile-web-app-title" content="KineProtocol">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#0a0a0b">
-<meta name="description" content="Evidence-based revalidatieprotocollen voor kinesitherapeuten">
-
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icons/icon-152x152.png">
-<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192x192.png">
-
 <title>KineProtocol</title>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist+Mono:wght@300;400;500;600&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#0a0a0b;--surface:#111113;--surface2:#18181b;--surface3:#1f1f23;
-  --border:#27272a;--border2:#3f3f46;
-  --text:#fafafa;--muted:#71717a;--muted2:#52525b;
-  --acl:#22d3ee;--tka:#a78bfa;--pfps:#f97316;--new:#4ade80;
-  --safe-top: env(safe-area-inset-top);
-  --safe-bottom: env(safe-area-inset-bottom);
-}
+:root{--bg:#0a0a0b;--surface:#111113;--surface2:#18181b;--surface3:#1f1f23;--border:#27272a;--border2:#3f3f46;--text:#fafafa;--muted:#71717a;--muted2:#52525b;--acl:#22d3ee;--tka:#a78bfa;--pfps:#f97316;--lh:#34d399;--rc:#f43f5e;--new:#4ade80;--safe-top:env(safe-area-inset-top);--safe-bottom:env(safe-area-inset-bottom);}
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
 html,body{height:100%;overflow:hidden;overscroll-behavior:none;}
 body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-size:14px;display:flex;flex-direction:column;}
-
-/* ── TOP BAR ── */
-.topbar{
-  height:calc(56px + var(--safe-top));
-  padding-top:var(--safe-top);
-  background:var(--surface);border-bottom:1px solid var(--border);
-  display:flex;align-items:center;padding-left:16px;padding-right:16px;gap:12px;
-  flex-shrink:0;z-index:100;
-}
-.logo{display:flex;align-items:center;gap:10px;cursor:pointer;text-decoration:none;}
+.topbar{height:calc(56px + var(--safe-top));padding-top:var(--safe-top);background:var(--surface);border-bottom:1px solid var(--border);display:flex;align-items:center;padding-left:16px;padding-right:16px;gap:12px;flex-shrink:0;z-index:100;}
+.logo{display:flex;align-items:center;gap:10px;cursor:pointer;}
 .logo-icon{width:30px;height:30px;background:linear-gradient(135deg,#22d3ee,#a78bfa);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
 .logo-text{font-family:'Instrument Serif',serif;font-size:17px;color:var(--text);letter-spacing:-.02em;}
 .topbar-right{margin-left:auto;display:flex;align-items:center;gap:8px;}
@@ -47,11 +28,9 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
 .search-box input::placeholder{color:var(--muted);}
 .install-btn{display:none;align-items:center;gap:6px;background:linear-gradient(135deg,#22d3ee22,#a78bfa22);border:1px solid #a78bfa44;color:var(--text);padding:6px 12px;border-radius:7px;font-size:12px;cursor:pointer;font-family:'Geist',sans-serif;white-space:nowrap;}
 .install-btn.visible{display:flex;}
-
-/* ── LAYOUT ── */
+.offline-badge{display:none;align-items:center;background:rgba(234,179,8,.1);border:1px solid rgba(234,179,8,.25);color:#ca8a04;padding:3px 10px;border-radius:6px;font-size:11px;font-family:'Geist Mono',monospace;}
+.offline-badge.show{display:flex;}
 .layout{display:flex;flex:1;overflow:hidden;}
-
-/* ── SIDEBAR (desktop) ── */
 .sidebar{width:240px;background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;flex-shrink:0;overflow-y:auto;}
 .sidebar-section{padding:16px 12px 6px;font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);}
 .nav-item{display:flex;align-items:center;gap:10px;padding:9px 12px;margin:1px 8px;border-radius:7px;cursor:pointer;transition:background .12s;color:var(--text);}
@@ -62,35 +41,29 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
 .nav-sub{font-size:11px;color:var(--muted);font-family:'Geist Mono',monospace;}
 .nav-badge{font-size:10px;padding:2px 7px;border-radius:10px;font-family:'Geist Mono',monospace;}
 .sidebar-divider{height:1px;background:var(--border);margin:6px 14px;}
-
-/* ── MAIN ── */
 .main{flex:1;overflow-y:auto;display:flex;flex-direction:column;-webkit-overflow-scrolling:touch;}
-
-/* ── HOME ── */
-.home{padding:32px 28px;max-width:860px;}
+.home{padding:32px 28px;max-width:960px;}
 .home-greeting{font-family:'Instrument Serif',serif;font-size:clamp(26px,5vw,38px);font-weight:400;line-height:1.15;margin-bottom:6px;letter-spacing:-.02em;}
-.home-greeting em{font-style:italic;background:linear-gradient(90deg,#22d3ee,#a78bfa,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.home-sub{color:var(--muted);font-size:13px;margin-bottom:28px;line-height:1.5;}
+.home-greeting em{font-style:italic;background:linear-gradient(90deg,#22d3ee,#a78bfa,#f97316,#34d399,#f43f5e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.home-sub{color:var(--muted);font-size:13px;margin-bottom:28px;}
 .stats-row{display:flex;gap:10px;margin-bottom:28px;flex-wrap:wrap;}
-.stat{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px 16px;flex:1;min-width:90px;}
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px 16px;flex:1;min-width:85px;}
 .stat-num{font-family:'Instrument Serif',serif;font-size:26px;font-weight:400;line-height:1;}
 .stat-label{font-size:10px;color:var(--muted);margin-top:2px;font-family:'Geist Mono',monospace;}
-.protocol-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-bottom:28px;}
-.protocol-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px;cursor:pointer;transition:all .15s;position:relative;overflow:hidden;}
+.protocol-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:12px;margin-bottom:28px;}
+.protocol-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px;cursor:pointer;transition:all .15s;position:relative;overflow:hidden;}
 .protocol-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--card-color);}
 .protocol-card:hover{border-color:var(--border2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.3);}
-.card-icon{font-size:24px;margin-bottom:10px;}
-.card-title{font-family:'Instrument Serif',serif;font-size:16px;font-weight:400;margin-bottom:4px;}
-.card-desc{font-size:11.5px;color:var(--muted);line-height:1.5;margin-bottom:12px;}
-.card-meta{display:flex;gap:6px;flex-wrap:wrap;}
-.card-tag{font-size:10px;padding:2px 7px;border-radius:8px;font-family:'Geist Mono',monospace;border:1px solid var(--border);color:var(--muted);}
+.card-icon{font-size:22px;margin-bottom:8px;}
+.card-title{font-family:'Instrument Serif',serif;font-size:15px;font-weight:400;margin-bottom:3px;}
+.card-desc{font-size:11px;color:var(--muted);line-height:1.5;margin-bottom:10px;}
+.card-meta{display:flex;gap:5px;flex-wrap:wrap;}
+.card-tag{font-size:10px;padding:2px 6px;border-radius:6px;font-family:'Geist Mono',monospace;border:1px solid var(--border);color:var(--muted);}
 .card-tag.col{border-color:var(--card-color);color:var(--card-color);}
-.card-arrow{position:absolute;top:16px;right:16px;color:var(--muted2);font-size:14px;transition:all .15s;}
+.card-arrow{position:absolute;top:14px;right:14px;color:var(--muted2);font-size:13px;transition:all .15s;}
 .protocol-card:hover .card-arrow{transform:translate(2px,-2px);color:var(--text);}
-.add-card{background:transparent;border:1px dashed var(--border2);border-radius:10px;padding:18px;cursor:pointer;transition:all .15s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-height:140px;color:var(--muted2);}
+.add-card{background:transparent;border:1px dashed var(--border2);border-radius:10px;padding:16px;cursor:pointer;transition:all .15s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-height:130px;color:var(--muted2);}
 .add-card:hover{border-color:var(--new);color:var(--new);background:rgba(74,222,128,.03);}
-
-/* ── PROTOCOL VIEWER ── */
 .viewer{flex:1;display:flex;flex-direction:column;overflow:hidden;}
 .viewer-header{padding:18px 24px 0;border-bottom:1px solid var(--border);flex-shrink:0;}
 .viewer-breadcrumb{font-size:11px;color:var(--muted);margin-bottom:10px;display:flex;align-items:center;gap:5px;font-family:'Geist Mono',monospace;}
@@ -100,14 +73,12 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
 .viewer-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:5px;}
 .viewer-title{font-family:'Instrument Serif',serif;font-size:clamp(20px,4vw,26px);font-weight:400;letter-spacing:-.02em;line-height:1.2;}
 .viewer-subtitle{font-size:12px;color:var(--muted);margin-top:3px;}
-.viewer-tabs{display:flex;gap:0;margin-top:16px;overflow-x:auto;scrollbar-width:none;}
+.viewer-tabs{display:flex;margin-top:16px;overflow-x:auto;scrollbar-width:none;}
 .viewer-tabs::-webkit-scrollbar{display:none;}
 .vtab{padding:9px 14px;cursor:pointer;font-size:11.5px;font-weight:500;color:var(--muted);border-bottom:2px solid transparent;white-space:nowrap;transition:color .12s,border-color .12s;font-family:'Geist Mono',monospace;}
 .vtab:hover{color:var(--text);}
 .vtab.active{color:var(--text);border-bottom-color:var(--proto-color,#fff);}
 .viewer-body{flex:1;overflow-y:auto;padding:20px 24px;-webkit-overflow-scrolling:touch;}
-
-/* ── CONTENT ── */
 .ev-box{background:var(--surface);border:1px solid var(--border);border-left:3px solid #3b82f6;border-radius:4px;padding:12px 16px;margin-bottom:18px;}
 .ev-label{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#3b82f6;margin-bottom:6px;font-family:'Geist Mono',monospace;font-weight:600;}
 .ev-text{font-size:12px;color:var(--muted);line-height:1.6;}
@@ -116,7 +87,7 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
 .goals-label{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);margin-bottom:8px;font-family:'Geist Mono',monospace;font-weight:600;}
 .glist{list-style:none;display:flex;flex-direction:column;gap:5px;}
 .glist li{display:flex;align-items:flex-start;gap:9px;font-size:12.5px;}
-.glist li::before{content:'→';color:var(--proto-color,#fff);flex-shrink:0;margin-top:1px;font-family:'Geist Mono',monospace;}
+.glist li::before{content:'&#8594;';color:var(--proto-color,#fff);flex-shrink:0;margin-top:1px;font-family:'Geist Mono',monospace;}
 .slabel{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted2);margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid var(--border);font-family:'Geist Mono',monospace;font-weight:600;}
 .ex-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;margin-bottom:20px;}
 .ex-card{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:13px;transition:border-color .12s;}
@@ -147,651 +118,99 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
 .ref-label{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#3b82f6;margin-bottom:7px;font-family:'Geist Mono',monospace;font-weight:600;}
 .ref-text{font-size:11.5px;color:var(--muted);line-height:1.7;}
 .ref-text strong{color:var(--text);}
-
-/* ── BOTTOM NAV (mobile) ── */
-.bottom-nav{
-  display:none;
-  background:var(--surface);
-  border-top:1px solid var(--border);
-  padding-bottom:var(--safe-bottom);
-  flex-shrink:0;
-  z-index:100;
-}
-.bottom-nav-inner{display:flex;align-items:stretch;}
-.bnav-item{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 4px;gap:3px;cursor:pointer;transition:color .12s;color:var(--muted);border:none;background:none;}
+.bottom-nav{display:none;background:var(--surface);border-top:1px solid var(--border);padding-bottom:var(--safe-bottom);flex-shrink:0;z-index:100;}
+.bottom-nav-inner{display:flex;overflow-x:auto;scrollbar-width:none;}
+.bottom-nav-inner::-webkit-scrollbar{display:none;}
+.bnav-item{flex:1;min-width:50px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:7px 2px;gap:2px;cursor:pointer;color:var(--muted);border:none;background:none;transition:color .12s;}
 .bnav-item.active{color:var(--text);}
-.bnav-dot{width:6px;height:6px;border-radius:50%;background:currentColor;opacity:0;transition:opacity .12s;}
+.bnav-dot{width:4px;height:4px;border-radius:50%;background:currentColor;opacity:0;transition:opacity .12s;}
 .bnav-item.active .bnav-dot{opacity:1;}
-.bnav-icon{font-size:20px;line-height:1;}
-.bnav-label{font-size:10px;font-family:'Geist Mono',monospace;}
-
-/* ── SEARCH ── */
-#screen-search{display:none;padding:20px;max-width:860px;flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;}
-.no-results{color:var(--muted);font-size:13px;padding:40px 0;text-align:center;}
-
-/* ── INSTALL BANNER ── */
+.bnav-icon{font-size:17px;line-height:1;}
+.bnav-label{font-size:9px;font-family:'Geist Mono',monospace;white-space:nowrap;}
 .install-banner{display:none;background:linear-gradient(135deg,#22d3ee11,#a78bfa11);border:1px solid #a78bfa33;border-radius:8px;padding:14px 16px;margin:16px;gap:12px;align-items:center;}
 .install-banner.show{display:flex;}
-.install-banner-text{flex:1;font-size:12.5px;color:var(--muted);line-height:1.5;}
+.install-banner-text{flex:1;font-size:12.5px;color:var(--muted);}
 .install-banner-text strong{color:var(--text);}
-.install-banner-btn{background:linear-gradient(135deg,#22d3ee,#a78bfa);color:#0a0a0b;border:none;padding:8px 16px;border-radius:7px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;font-family:'Geist',sans-serif;}
-.install-banner-close{color:var(--muted2);background:none;border:none;font-size:18px;cursor:pointer;padding:0 4px;line-height:1;}
-
-/* ── OFFLINE BADGE ── */
-.offline-badge{display:none;align-items:center;gap:5px;background:rgba(234,179,8,.1);border:1px solid rgba(234,179,8,.25);color:#ca8a04;padding:3px 10px;border-radius:6px;font-size:11px;font-family:'Geist Mono',monospace;}
-.offline-badge.show{display:flex;}
-
-/* ── RESPONSIVE ── */
-@media(max-width:640px){
-  .sidebar{display:none;}
-  .bottom-nav{display:block;}
-  .home{padding:20px 16px;}
-  .viewer-header{padding:14px 16px 0;}
-  .viewer-body{padding:16px;}
-  .search-box{width:160px;}
-  .protocol-grid{grid-template-columns:1fr 1fr;}
-}
-@media(max-width:400px){
-  .protocol-grid{grid-template-columns:1fr;}
-  .search-box{width:130px;}
-}
-
+.install-banner-btn{background:linear-gradient(135deg,#22d3ee,#a78bfa);color:#0a0a0b;border:none;padding:8px 16px;border-radius:7px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Geist',sans-serif;}
+.install-banner-close{color:var(--muted2);background:none;border:none;font-size:18px;cursor:pointer;padding:0 4px;}
+.no-results{color:var(--muted);font-size:13px;padding:40px 0;text-align:center;}
+@media(max-width:700px){.sidebar{display:none;}.bottom-nav{display:block;}.home{padding:20px 16px;}.viewer-header{padding:14px 16px 0;}.viewer-body{padding:16px;}.search-box{width:140px;}.protocol-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:380px){.protocol-grid{grid-template-columns:1fr;}.search-box{width:110px;}}
 ::-webkit-scrollbar{width:4px;height:4px;}
 ::-webkit-scrollbar-track{background:transparent;}
 ::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px;}
 </style>
 </head>
 <body>
-
-<!-- TOP BAR -->
 <div class="topbar">
-  <div class="logo" onclick="showHome()">
-    <div class="logo-icon">🦴</div>
-    <div class="logo-text">KineProtocol</div>
-  </div>
+  <div class="logo" onclick="showHome()"><div class="logo-icon">🦴</div><div class="logo-text">KineProtocol</div></div>
   <div class="topbar-right">
     <div class="offline-badge" id="offlineBadge">⚡ Offline</div>
-    <div class="search-box">
-      <span style="color:var(--muted);font-size:13px;">🔍</span>
-      <input type="text" id="searchInput" placeholder="Zoeken..." oninput="handleSearch(this.value)" autocomplete="off">
-    </div>
-    <button class="install-btn" id="installBtn" onclick="installApp()">
-      <span>⬇</span> Installeer app
-    </button>
+    <div class="search-box"><span style="color:var(--muted);font-size:13px;">🔍</span><input type="text" id="searchInput" placeholder="Zoeken..." oninput="handleSearch(this.value)" autocomplete="off"></div>
+    <button class="install-btn" id="installBtn" onclick="installApp()">⬇ Installeer</button>
   </div>
 </div>
-
-<!-- LAYOUT -->
 <div class="layout">
-
-  <!-- SIDEBAR (desktop) -->
   <div class="sidebar">
     <div class="sidebar-section">Protocollen</div>
-    <div class="nav-item active" id="nav-home" onclick="showHome()">
-      <span style="font-size:15px;">🏠</span>
-      <span class="nav-title">Overzicht</span>
-    </div>
+    <div class="nav-item active" id="nav-home" onclick="showHome()"><span style="font-size:15px;">🏠</span><span class="nav-title">Overzicht</span></div>
     <div class="sidebar-divider"></div>
-    <div class="nav-item" id="nav-acl" onclick="showProto('acl')">
-      <div class="nav-dot" style="background:var(--acl)"></div>
-      <div style="flex:1"><div class="nav-title">ACL Reconstructie</div><div class="nav-sub">5 fasen · 9–12 mnd</div></div>
-      <span class="nav-badge" style="background:rgba(34,211,238,.1);color:var(--acl)">VKB</span>
-    </div>
-    <div class="nav-item" id="nav-tka" onclick="showProto('tka')">
-      <div class="nav-dot" style="background:var(--tka)"></div>
-      <div style="flex:1"><div class="nav-title">Totale Knieprothese</div><div class="nav-sub">5 fasen · 3–6 mnd</div></div>
-      <span class="nav-badge" style="background:rgba(167,139,250,.1);color:var(--tka)">TKA</span>
-    </div>
-    <div class="nav-item" id="nav-pfps" onclick="showProto('pfps')">
-      <div class="nav-dot" style="background:var(--pfps)"></div>
-      <div style="flex:1"><div class="nav-title">Patellofemoraal Pijn</div><div class="nav-sub">4 fasen · 6–14 wkn</div></div>
-      <span class="nav-badge" style="background:rgba(249,115,22,.1);color:var(--pfps)">PFPS</span>
-    </div>
+    <div class="nav-item" id="nav-acl" onclick="showProto('acl')"><div class="nav-dot" style="background:var(--acl)"></div><div style="flex:1"><div class="nav-title">ACL Reconstructie</div><div class="nav-sub">5 fasen · 9–12 mnd</div></div><span class="nav-badge" style="background:rgba(34,211,238,.1);color:var(--acl)">VKB</span></div>
+    <div class="nav-item" id="nav-tka" onclick="showProto('tka')"><div class="nav-dot" style="background:var(--tka)"></div><div style="flex:1"><div class="nav-title">Totale Knieprothese</div><div class="nav-sub">5 fasen · 3–6 mnd</div></div><span class="nav-badge" style="background:rgba(167,139,250,.1);color:var(--tka)">TKA</span></div>
+    <div class="nav-item" id="nav-pfps" onclick="showProto('pfps')"><div class="nav-dot" style="background:var(--pfps)"></div><div style="flex:1"><div class="nav-title">Patellofemoraal Pijn</div><div class="nav-sub">4 fasen · 6–14 wkn</div></div><span class="nav-badge" style="background:rgba(249,115,22,.1);color:var(--pfps)">PFPS</span></div>
+    <div class="nav-item" id="nav-lh" onclick="showProto('lh')"><div class="nav-dot" style="background:var(--lh)"></div><div style="flex:1"><div class="nav-title">Lumbale Hernia</div><div class="nav-sub">5 fasen · 6–16 wkn</div></div><span class="nav-badge" style="background:rgba(52,211,153,.1);color:var(--lh)">LHN</span></div>
+    <div class="nav-item" id="nav-rc" onclick="showProto('rc')"><div class="nav-dot" style="background:var(--rc)"></div><div style="flex:1"><div class="nav-title">Rotatorenmanchet</div><div class="nav-sub">5 fasen · 4–12 mnd</div></div><span class="nav-badge" style="background:rgba(244,63,94,.1);color:var(--rc)">RC</span></div>
     <div class="sidebar-divider"></div>
     <div class="sidebar-section">Binnenkort</div>
-    <div class="nav-item" style="opacity:.35;cursor:default;pointer-events:none;">
-      <div class="nav-dot" style="background:#52525b"></div>
-      <div style="flex:1"><div class="nav-title">Achillespees</div><div class="nav-sub">In aanmaak</div></div>
-    </div>
-    <div class="nav-item" style="opacity:.35;cursor:default;pointer-events:none;">
-      <div class="nav-dot" style="background:#52525b"></div>
-      <div style="flex:1"><div class="nav-title">Rotatorenmanchet</div><div class="nav-sub">In aanmaak</div></div>
-    </div>
-    <div class="nav-item" style="opacity:.35;cursor:default;pointer-events:none;">
-      <div class="nav-dot" style="background:#52525b"></div>
-      <div style="flex:1"><div class="nav-title">Lumbale hernia</div><div class="nav-sub">In aanmaak</div></div>
-    </div>
+    <div class="nav-item" style="opacity:.35;cursor:default;pointer-events:none;"><div class="nav-dot" style="background:#52525b"></div><div style="flex:1"><div class="nav-title">Achillespees</div><div class="nav-sub">In aanmaak</div></div></div>
+    <div class="nav-item" style="opacity:.35;cursor:default;pointer-events:none;"><div class="nav-dot" style="background:#52525b"></div><div style="flex:1"><div class="nav-title">Schouderinstabiliteit</div><div class="nav-sub">In aanmaak</div></div></div>
   </div>
-
-  <!-- MAIN -->
   <div class="main" id="main">
-
-    <!-- HOME -->
     <div id="screen-home" class="home">
-      <div class="install-banner" id="installBanner">
-        <div class="install-banner-text"><strong>Installeer KineProtocol</strong> op je toestel voor snelle toegang en offline gebruik.</div>
-        <button class="install-banner-btn" onclick="installApp()">Installeer</button>
-        <button class="install-banner-close" onclick="dismissBanner()">×</button>
-      </div>
+      <div class="install-banner" id="installBanner"><div class="install-banner-text"><strong>Installeer KineProtocol</strong> voor offline gebruik.</div><button class="install-banner-btn" onclick="installApp()">Installeer</button><button class="install-banner-close" onclick="document.getElementById('installBanner').classList.remove('show')">x</button></div>
       <div class="home-greeting">Goeiedag,<br><em>klinische kennis</em> binnen handbereik.</div>
       <div class="home-sub">Evidence-based revalidatieprotocollen — snel opzoekbaar, klinisch toepasbaar.</div>
       <div class="stats-row">
-        <div class="stat"><div class="stat-num" style="color:var(--acl)">3</div><div class="stat-label">Protocollen</div></div>
-        <div class="stat"><div class="stat-num" style="color:var(--tka)">14</div><div class="stat-label">Fasen</div></div>
-        <div class="stat"><div class="stat-num" style="color:var(--pfps)">60+</div><div class="stat-label">Oefeningen</div></div>
-        <div class="stat"><div class="stat-num" style="color:var(--new)">25+</div><div class="stat-label">Referenties</div></div>
+        <div class="stat"><div class="stat-num" style="color:var(--acl)">5</div><div class="stat-label">Protocollen</div></div>
+        <div class="stat"><div class="stat-num" style="color:var(--tka)">24</div><div class="stat-label">Fasen</div></div>
+        <div class="stat"><div class="stat-num" style="color:var(--pfps)">100+</div><div class="stat-label">Oefeningen</div></div>
+        <div class="stat"><div class="stat-num" style="color:var(--rc)">40+</div><div class="stat-label">Referenties</div></div>
       </div>
       <div class="slabel">Beschikbare protocollen</div>
       <div class="protocol-grid">
-        <div class="protocol-card" style="--card-color:var(--acl)" onclick="showProto('acl')">
-          <div class="card-arrow">↗</div>
-          <div class="card-icon">🦵</div>
-          <div class="card-title">ACL Reconstructie</div>
-          <div class="card-desc">Postoperatief VKB-protocol. Criterium-gebaseerd met 5 fasen.</div>
-          <div class="card-meta"><span class="card-tag col">9–12 mnd</span><span class="card-tag col">5 fasen</span></div>
-        </div>
-        <div class="protocol-card" style="--card-color:var(--tka)" onclick="showProto('tka')">
-          <div class="card-arrow">↗</div>
-          <div class="card-icon">🦿</div>
-          <div class="card-title">Totale Knieprothese</div>
-          <div class="card-desc">TKA revalidatie + ERAS + sporthervatting.</div>
-          <div class="card-meta"><span class="card-tag col">3–6 mnd</span><span class="card-tag col">5 fasen</span></div>
-        </div>
-        <div class="protocol-card" style="--card-color:var(--pfps)" onclick="showProto('pfps')">
-          <div class="card-arrow">↗</div>
-          <div class="card-icon">🎯</div>
-          <div class="card-title">Patellofemoraal Pijn</div>
-          <div class="card-desc">Multifactorieel protocol met heupfocus en gait retraining.</div>
-          <div class="card-meta"><span class="card-tag col">6–14 wkn</span><span class="card-tag col">4 fasen</span></div>
-        </div>
-        <div class="add-card">
-          <div style="font-size:22px;">+</div>
-          <div style="font-size:12px;">Nieuw protocol</div>
-          <div style="font-size:11px;color:var(--muted2);">Vraag Claude</div>
-        </div>
+        <div class="protocol-card" style="--card-color:var(--acl)" onclick="showProto('acl')"><div class="card-arrow">&#8599;</div><div class="card-icon">&#129463;</div><div class="card-title">ACL Reconstructie</div><div class="card-desc">Postoperatief VKB-protocol. Criterium-gebaseerd, 5 fasen.</div><div class="card-meta"><span class="card-tag col">9–12 mnd</span><span class="card-tag col">5 fasen</span></div></div>
+        <div class="protocol-card" style="--card-color:var(--tka)" onclick="showProto('tka')"><div class="card-arrow">&#8599;</div><div class="card-icon">&#129471;</div><div class="card-title">Totale Knieprothese</div><div class="card-desc">TKA revalidatie + ERAS + sporthervatting.</div><div class="card-meta"><span class="card-tag col">3–6 mnd</span><span class="card-tag col">5 fasen</span></div></div>
+        <div class="protocol-card" style="--card-color:var(--pfps)" onclick="showProto('pfps')"><div class="card-arrow">&#8599;</div><div class="card-icon">&#127919;</div><div class="card-title">Patellofemoraal Pijn</div><div class="card-desc">Multifactorieel: heupfocus + gait retraining.</div><div class="card-meta"><span class="card-tag col">6–14 wkn</span><span class="card-tag col">4 fasen</span></div></div>
+        <div class="protocol-card" style="--card-color:var(--lh)" onclick="showProto('lh')"><div class="card-arrow">&#8599;</div><div class="card-icon">&#129504;</div><div class="card-title">Lumbale Hernia</div><div class="card-desc">McKenzie, neurodynamica, return to work.</div><div class="card-meta"><span class="card-tag col">6–16 wkn</span><span class="card-tag col">5 fasen</span></div></div>
+        <div class="protocol-card" style="--card-color:var(--rc)" onclick="showProto('rc')"><div class="card-arrow">&#8599;</div><div class="card-icon">&#128170;</div><div class="card-title">Rotatorenmanchet</div><div class="card-desc">Conservatief + post-OK. Scapulaire controle, RTS.</div><div class="card-meta"><span class="card-tag col">4–12 mnd</span><span class="card-tag col">5 fasen</span></div></div>
+        <div class="add-card"><div style="font-size:20px;">+</div><div style="font-size:12px;">Nieuw protocol</div><div style="font-size:10px;color:var(--muted2);">Vraag Claude</div></div>
       </div>
     </div>
-
-    <!-- PROTOCOL VIEWER -->
     <div id="screen-proto" class="viewer" style="display:none;">
       <div class="viewer-header">
-        <div class="viewer-breadcrumb">
-          <span onclick="showHome()">Overzicht</span>
-          <span style="color:var(--muted2)">›</span>
-          <span id="proto-breadcrumb" style="color:var(--text)"></span>
-        </div>
-        <div class="viewer-title-row">
-          <div class="viewer-dot" id="proto-dot"></div>
-          <div>
-            <div class="viewer-title" id="proto-title"></div>
-            <div class="viewer-subtitle" id="proto-subtitle"></div>
-          </div>
-        </div>
+        <div class="viewer-breadcrumb"><span onclick="showHome()">Overzicht</span><span style="color:var(--muted2)">›</span><span id="proto-breadcrumb" style="color:var(--text)"></span></div>
+        <div class="viewer-title-row"><div class="viewer-dot" id="proto-dot"></div><div><div class="viewer-title" id="proto-title"></div><div class="viewer-subtitle" id="proto-subtitle"></div></div></div>
         <div class="viewer-tabs" id="proto-tabs"></div>
       </div>
       <div class="viewer-body" id="proto-body"></div>
     </div>
-
-    <!-- SEARCH -->
     <div id="screen-search" style="display:none;padding:20px;overflow-y:auto;flex:1;-webkit-overflow-scrolling:touch;">
       <div class="slabel" style="margin-bottom:14px">Zoekresultaten</div>
       <div id="search-results"></div>
     </div>
-
   </div>
 </div>
-
-<!-- BOTTOM NAV (mobile) -->
 <div class="bottom-nav">
   <div class="bottom-nav-inner">
-    <button class="bnav-item active" id="bnav-home" onclick="showHome()">
-      <div class="bnav-icon">🏠</div>
-      <div class="bnav-label">Home</div>
-      <div class="bnav-dot"></div>
-    </button>
-    <button class="bnav-item" id="bnav-acl" onclick="showProto('acl')">
-      <div class="bnav-icon">🦵</div>
-      <div class="bnav-label">ACL</div>
-      <div class="bnav-dot" style="background:var(--acl)"></div>
-    </button>
-    <button class="bnav-item" id="bnav-tka" onclick="showProto('tka')">
-      <div class="bnav-icon">🦿</div>
-      <div class="bnav-label">TKA</div>
-      <div class="bnav-dot" style="background:var(--tka)"></div>
-    </button>
-    <button class="bnav-item" id="bnav-pfps" onclick="showProto('pfps')">
-      <div class="bnav-icon">🎯</div>
-      <div class="bnav-label">PFPS</div>
-      <div class="bnav-dot" style="background:var(--pfps)"></div>
-    </button>
-    <button class="bnav-item" id="bnav-search" onclick="focusSearch()">
-      <div class="bnav-icon">🔍</div>
-      <div class="bnav-label">Zoeken</div>
-      <div class="bnav-dot"></div>
-    </button>
+    <button class="bnav-item active" id="bnav-home" onclick="showHome()"><div class="bnav-icon">&#127968;</div><div class="bnav-label">Home</div><div class="bnav-dot"></div></button>
+    <button class="bnav-item" id="bnav-acl" onclick="showProto('acl')"><div class="bnav-icon">&#129463;</div><div class="bnav-label">ACL</div><div class="bnav-dot" style="background:var(--acl)"></div></button>
+    <button class="bnav-item" id="bnav-tka" onclick="showProto('tka')"><div class="bnav-icon">&#129471;</div><div class="bnav-label">TKA</div><div class="bnav-dot" style="background:var(--tka)"></div></button>
+    <button class="bnav-item" id="bnav-pfps" onclick="showProto('pfps')"><div class="bnav-icon">&#127919;</div><div class="bnav-label">PFPS</div><div class="bnav-dot" style="background:var(--pfps)"></div></button>
+    <button class="bnav-item" id="bnav-lh" onclick="showProto('lh')"><div class="bnav-icon">&#129504;</div><div class="bnav-label">LHN</div><div class="bnav-dot" style="background:var(--lh)"></div></button>
+    <button class="bnav-item" id="bnav-rc" onclick="showProto('rc')"><div class="bnav-icon">&#128170;</div><div class="bnav-label">RC</div><div class="bnav-dot" style="background:var(--rc)"></div></button>
+    <button class="bnav-item" id="bnav-search" onclick="document.getElementById('searchInput').focus()"><div class="bnav-icon">&#128269;</div><div class="bnav-label">Zoeken</div><div class="bnav-dot"></div></button>
   </div>
 </div>
-
-<script>
-// ═══════════════════════════════
-//  DATA
-// ═══════════════════════════════
-const protocols = {
-  acl:{
-    id:'acl',title:'ACL Reconstructie',
-    subtitle:'Postoperatief revalidatieprotocol voor VKB-reconstructie (BPTB / STG / QT)',
-    color:'#22d3ee',icon:'🦵',duration:'9–12 maanden',
-    phases:[
-      {id:'f1',label:'Fase 1',title:'Vroeg Postoperatief',weeks:'Week 0–2',
-       evidence:'Vroege volle ROM en gewichtsdragen zijn geassocieerd met betere uitkomsten. <strong>Quadriceps inhibitie</strong> door artrogene spierinhibitie (AMI) is de grootste limiterende factor. Vroege neuromotorische activatie is prioritair (Rice et al., 2019).',
-       goals:['Inflammatie en pijncontrole (VAS ≤ 3/10 in rust)','Volledige extensie ROM (0°) — prioriteit boven flexie','Flexie ROM ≥ 90° aan einde fase 1','Lopen zonder krukken (indien goedgekeurd)','Eerste quadricepssamentrekking via NMES of biofeedback','Geen effusie (graad 1 max)'],
-       exercises:[
-         {name:'Passieve knie-extensie (handdoekrol)',params:[['Sets','3–5'],['Duur','10–15 min'],['Freq','3–4×/dag']],note:'Rol onder hiel, zwaartekracht creëert passieve extensie. Dagelijks meten.'},
-         {name:'Quadriceps setting (isometrisch)',params:[['Reps','10–15'],['Hold','5–10 sec'],['Sets','3'],['Freq','4–6×/dag']],note:'Knie in ~10° flexie. Eventueel NMES (2500 Hz, 50 Hz burst) bij sterke inhibitie.'},
-         {name:'Straight Leg Raise (SLR)',params:[['Reps','15–20'],['Sets','3'],['Freq','2–3×/dag']],note:'Enkel in dorsaalflexie, knie gestrekt. Wacht tot extensielag < 10°.'},
-         {name:'Actief-geassisteerde knieflexie',params:[['Reps','10–15'],['Sets','2–3'],['Freq','2–3×/dag']],note:'Gezonde been helpt. Target: 90° einde week 1, 120° einde week 2.'},
-         {name:'Enkel-pompen',params:[['Reps','20–25'],['Freq','elk uur']],note:'DVT-preventie en lymfedrainage.'},
-         {name:'Gluteale isometrie (zijlig)',params:[['Reps','10–12'],['Hold','5 sec'],['Sets','3']],note:'Abductie + extensie heup isometrisch.'},
-       ],
-       criteria_go:['Extensie 0° of < 5° deficit','Flexie ≥ 90°','Lopen zonder hinken','Effusie graad ≤ 1','VAS ≤ 3/10','Zichtbare quadricepscontractie'],
-       criteria_stop:['Toename effusie na oefening','Koorts of warmte rond gewricht','Extensielag > 10° zonder verbetering'],
-       redflags:['DVT: kuitpijn, warmte, roodheid → directe doorverwijzing','Plotse pop-gevoel → vermoedelijke graftruptuur → chirurg','Koorts >38.5°C + zwelling → infectie uitsluiten']},
-      {id:'f2',label:'Fase 2',title:'Spierherstel & ROM',weeks:'Week 2–6',
-       evidence:'Graftligamentisatie nog niet voltooid. <strong>CKC-oefeningen</strong> veiliger dan OKC. Quad LSI betere indicator dan tijd (van Melick et al., 2016). <strong>Isometrische quadriceps aan 60°</strong> veilig (Heijne & Werner, 2021).',
-       goals:['Volledige symmetrische ROM (0–135°+)','Normaal looppatroon zonder hulpmiddel','Quadriceps LSI ≥ 60%','Fietsen op stationaire fiets','Basale proprioceptie op stabiele ondergrond','Geen effusie na activiteit'],
-       exercises:[
-         {name:'Stationaire fiets',params:[['Duur','10–20 min'],['Weerstand','laag'],['Freq','dagelijks']],note:'Start hoog zadel, verlaag progressief. ROM-herstel + cardiovasculair.'},
-         {name:'Mini-squat (0–45°)',params:[['Reps','12–15'],['Sets','3'],['Tempo','3-1-3']],note:'Bilateraal. Controleer valgus. Progressief dieper.'},
-         {name:'Beenpers bilateraal',params:[['Reps','10–12'],['Sets','3–4'],['Belasting','60–75% 1RM']],note:'CKC, laag shear op graft. Progressie naar unilateraal.'},
-         {name:'Isometrische knie-extensie (60°)',params:[['Reps','5–8'],['Hold','5 sec'],['Sets','3']],note:'Veilig op graft bij 60° (Heijne & Werner 2021). LSI-meting mogelijk.'},
-         {name:'Step-up anterieur (10 cm)',params:[['Reps','10–15'],['Sets','3'],['Tempo','2-1-2']],note:'Functioneel CKC. Controleer knietracking.'},
-         {name:'Enkel-been balans (stabiel)',params:[['Duur','30–60 sec'],['Sets','3'],['Ogen','open → gesloten']],note:'Progressie: schuimmat → perturbed surface.'},
-       ],
-       criteria_go:['ROM 0–130°','Normaal lopen','Quad LSI ≥ 60%','SLS 30° zonder valgus','Geen effusie na 30 min'],
-       criteria_stop:['LSI < 60% na 6 wkn → NMES/BFR','ROM-stagnatie → manuele therapie','Persisterende effusie'],
-       redflags:[]},
-      {id:'f3',label:'Fase 3',title:'Functioneel Herstel',weeks:'Week 6–12',
-       evidence:'<strong>OKC knie-extensie</strong> veilig vanaf week 4–6 in 90–40° (Fukuda et al., 2013). <strong>BFR training</strong> bij quadricepshypotrofie (Hughes et al., 2019). LSI ≥ 80% voor jogging.',
-       goals:['Quad LSI ≥ 80%','Hamstring LSI ≥ 80%','SLS technisch correct (valgus-vrij)','Lateral step-down zonder compensatie','ACL-RSI ≥ 56/100'],
-       exercises:[
-         {name:'Unilateraal been-press',params:[['Reps','8–10'],['Sets','4'],['Belasting','70–85% 1RM']],note:'Prioriteitsoefening voor LSI. Documenteer per been.'},
-         {name:'OKC Knie-extensie (90–40°)',params:[['Reps','10–12'],['Sets','3–4']],note:'Beperkt ROM. Uitbreiden naar volledig na week 10–12.'},
-         {name:'RDL unilateraal',params:[['Reps','8–10'],['Sets','3']],note:'Bij STG-graft uitstellen tot week 10–12.'},
-         {name:'BFR Quadriceps',params:[['Reps','30-15-15-15'],['Druk','60–80% LOP']],note:'Bij LSI-stagnatie < 70%. Hughes et al. 2019.'},
-         {name:'Lateral step-down (20 cm)',params:[['Reps','10–15'],['Sets','3']],note:'Meetinstrument én oefening. Observeer valgus en Trendelenburg.'},
-         {name:'Proprioceptie instabiel vlak',params:[['Duur','45 sec'],['Sets','3–5']],note:'BOSU → ogen gesloten → dubbeltaak.'},
-       ],
-       criteria_go:['Quad LSI ≥ 80%','Hamstring LSI ≥ 80%','Geen effusie na functionele testen','SLS zonder valgus','≥ 12 weken postop','Chirurgale goedkeuring'],
-       criteria_stop:['LSI < 70% → BFR toevoegen','ACL-RSI < 40 → psychologische begeleiding'],
-       redflags:[]},
-      {id:'f4',label:'Fase 4',title:'Looptraining & Plyometrie',weeks:'Week 12–20',
-       evidence:'<strong>Plyometrie in 4 stadia</strong> (Buckthorpe & Roi, 2017). <strong>LSI ≥ 90%</strong> voor return to training (Grindem et al., 2016). RSI beste plyometrische RTS-indicator.',
-       goals:['Continu joggen 20–30 min','Sprintvoorbereiding','Plyometrisch stadium 1–3 voltooid','LSI plyometrie ≥ 85–90%','Quad LSI ≥ 90%'],
-       exercises:[
-         {name:'Jog-walk protocol (week 12–13)',params:[['Duur','20 min'],['Verhouding','1 min jog / 1 min walk']],note:'Snelheid ~7–8 km/u. Stop bij pijn > 3/10.'},
-         {name:'Continu joggen (week 14–16)',params:[['Opbouw','10 → 20 → 30 min'],['Freq','3×/week']],note:'10%-regel. Bochten na 2 weken rechte lijn.'},
-         {name:'Stadium 1: Bipodale opvang',params:[['Vb','box drop bilateral'],['Reps','8–10'],['Sets','3']],note:'Box 20–30 cm. Zachte landing. Week 12–13.'},
-         {name:'Stadium 2: Unilaterale opvang',params:[['Vb','single leg box drop'],['Reps','6–8/been']],note:'Enkel-been landing controle. Week 14–16.'},
-         {name:'Stadium 3: Laterale sprongen',params:[['Vb','skater jumps'],['Reps','8–10']],note:'Laterale energieoverdracht. Week 16–18.'},
-         {name:'Stadium 4: SSC reactiviteit',params:[['Vb','depth jump'],['RSI','meten']],note:'Stretch-Shortening Cycle. RSI = hoogte/contacttijd. Week 18–20.'},
-       ],
-       criteria_go:['Continu joggen 30 min','LSI RSI ≥ 85%','Quad LSI ≥ 90%'],
-       criteria_stop:['Pijn bij jogging > VAS 3 → fase 3 consolideren'],
-       redflags:[]},
-      {id:'f5',label:'Fase 5',title:'Return to Sport',weeks:'Mnd 5–12',
-       evidence:'RTS vóór 9 maanden verhoogt herletselrisico met factor 4–6 (Grindem et al., 2016). Minimum <strong>9–12 maanden</strong> sterk aanbevolen. ACL-RSI ≥ 65 onafhankelijke predictor (Webster & Feller, 2018).',
-       goals:['Hop-testbatterij LSI ≥ 90%','Isokinetisch Quad + Ham LSI ≥ 90%','ACL-RSI ≥ 65/100','IKDC ≥ 85/100','Y-Balance asymmetrie < 4 cm','Minimum 9 maanden postoperatief'],
-       exercises:[
-         {name:'Single Leg Hop for Distance',params:[['LSI','≥ 90%'],['Pogingen','3/been']],note:'Goudstandaard RTS-test.'},
-         {name:'Triple Hop for Distance',params:[['LSI','≥ 90%']],note:'3 opeenvolgende éénbenige sprongen.'},
-         {name:'6m Timed Hop',params:[['LSI','≥ 90%']],note:'Snelheid éénbeen over 6m.'},
-         {name:'FIFA 11+ (preventie)',params:[['Duur','20 min'],['Freq','elk trainingsmoment']],note:'Bewezen 50% reductie herletsel (Silvers-Granelli et al., 2015).'},
-         {name:'Nordic Hamstring (onderhoud)',params:[['Reps','6–8'],['Freq','1–2×/week']],note:'Levenslang onderhoud hamstringkracht.'},
-       ],
-       criteria_go:['Hop-testbatterij LSI ≥ 90%','ACL-RSI ≥ 65','IKDC ≥ 85','Y-Balance < 4 cm asymmetrie','≥ 9 maanden'],
-       criteria_stop:['ACL-RSI < 50 → psycholoog'],
-       redflags:['Nieuwe instabiliteitsepisode → stop sport, evalueer ACL-integriteit','Contralateraal risico 3–6× verhoogd → bilateraal preventief programma']}
-    ],
-    refs:'van Melick et al. (2016) — Evidence-based ACL rehabilitation guidelines. BJSM. | Grindem et al. (2016) — Decision rules reduce reinjury risk by 84%. BJSM. | Buckthorpe et al. (2019) — Optimal Hamstring Function after ACL. Sports Med. | Hughes et al. (2019) — BFR training after ACL. J Strength Cond Res.'
-  },
-  tka:{
-    id:'tka',title:'Totale Knieprothese',
-    subtitle:'TKA revalidatie inclusief prehabilitatie, ERAS-protocol en sporthervatting',
-    color:'#a78bfa',icon:'🦿',duration:'3–6 maanden',
-    phases:[
-      {id:'f1',label:'Preop + Dag 0–3',title:'Preoperatief & Acute Zorg',weeks:'Preop + Dag 0–3',
-       evidence:'<strong>Prehabilitatie</strong> verbetert vroeg postoperatieve uitkomsten (Jakobsen et al., 2014). <strong>ERAS</strong>: mobilisatie dag 0 is veilig (Kehlet & Thienpont, 2013). Multimodale pijnstilling faciliteert vroeger mobiliseren.',
-       goals:['Quadricepskracht maximaliseren preoperatief','ROM optimaliseren: extensie 0°, flexie ≥ 110°','Patiënt educatie: oefeningen en verloop','Functionele baseline: TUG, 6MWT, KOOS, Oxford','Krukken/rollator oefenen vóór operatie','Dag 0: DVT-preventie, eerste stappen'],
-       exercises:[
-         {name:'Quadriceps setting (prehab)',params:[['Reps','15–20'],['Hold','5–10 sec'],['Freq','3×/dag']],note:'Patiënt moet uitvoering kennen vóór operatie.'},
-         {name:'Bilateraal mini-squat (prehab)',params:[['Reps','12–15'],['Sets','3']],note:'Functionele krachtoefening preoperatief.'},
-         {name:'Enkel-pompen (dag 0)',params:[['Reps','20–30'],['Freq','elk uur']],note:'DVT-preventie. Starten in recovery room.'},
-         {name:'Eerste stappen (dag 0)',params:[['Timing','2–6u postop'],['Hulp','rollator + kinesist']],note:'ERAS: dag 0 mobilisatie. Volle belasting bij gecementeerde prothese.'},
-         {name:'Passieve extensie (dag 1)',params:[['Duur','15–20 min'],['Freq','3–4×/dag']],note:'PRIORITEIT. Extensiedeficit = meest invaliderende complicatie.'},
-       ],
-       criteria_go:['Hemodynamisch stabiel','DVT-preventie opgestart','Eerste stappen gezet','Quad-setting mogelijk'],
-       criteria_stop:['Hemodynamische instabiliteit → uitstellen mobilisatie','Koorts + zwelling → infectie uitsluiten'],
-       redflags:['DVT: kuitpijn, warmte → doppler echo','Peroneus parese → directe melding chirurg','Wondlekkage > 48u → infectierisico']},
-      {id:'f2',label:'Week 1–2',title:'Vroeg Postoperatief',weeks:'Week 1–2',
-       evidence:'Ziekenhuisduur gedaald naar <strong>2–3 dagen</strong> bij ERAS. <strong>Cryotherapie</strong> reduceert pijn (Adie et al., 2012). Vroege flexie ≥ 90° betere 1-jaarsuitkomst. <strong>CPM niet aanbevolen</strong> (Cochrane 2014).',
-       goals:['Extensie 0° (geen lag)','Flexie ≥ 90° einde week 2','Lopen met rollator of 2 krukken','Trappen op/af met hulpmiddel','VAS ≤ 4/10','Wondheling zonder complicaties'],
-       exercises:[
-         {name:'Actief-geassisteerde knieflexie',params:[['Reps','10–15'],['Sets','3'],['Freq','3×/dag']],note:'Target: 5° meer per dag. Meten met goniometer per sessie.'},
-         {name:'Passieve knie-extensie',params:[['Duur','15–20 min'],['Freq','4×/dag']],note:'PRIORITEIT. Extensiedeficit > 10° na week 2 = slechte langetermijnuitkomst.'},
-         {name:'Quad setting + SLR',params:[['Reps','15'],['Hold','5 sec'],['Freq','4×/dag']],note:'NMES toevoegen bij sterke inhibitie.'},
-         {name:'Patella mobilisatie',params:[['Reps','10–15'],['Freq','dagelijks']],note:'Start dag 7–10. Craniocaudaal + mediolateraal.'},
-         {name:'Traptraining',params:[['Techniek','"good up, bad down"']],note:'Op: goed → geop → kruk. Af: kruk → geop → goed.'},
-         {name:'Cryotherapie post-sessie',params:[['Duur','15–20 min'],['Timing','na elke sessie']],note:'IJszak met doek. Niet op wond.'},
-       ],
-       criteria_go:['Extensie 0°','Flexie ≥ 90°','Lopen met 1 kruk of zonder','Trapvaardigheid OK','VAS ≤ 4/10'],
-       criteria_stop:['Flexie < 80° na 2 wkn → MUA-overleg','Extensielag > 10° → spalktrage nacht'],
-       redflags:['MUA-indicatie bij flexie < 90° na week 6–8','Optimale MUA-timing: vóór week 12']},
-      {id:'f3',label:'Week 2–6',title:'Subacuut Herstel',weeks:'Week 2–6',
-       evidence:'Ambulante kinesitherapie 3×/week superieur (Artz et al., 2015). <strong>Aquatherapie</strong> veilig vanaf week 3–4 (Rahmann et al., 2009). Quad- en hamstringtekort 20–30% normaal na 6 weken.',
-       goals:['Flexie ≥ 110°','Lopen zonder hulpmiddel','Trappen normaal patroon','Zelfstandige ADL','Fietsen 20 min','Quad isometrisch ≥ 60% contralateraal'],
-       exercises:[
-         {name:'Stationaire fiets',params:[['Duur','15–25 min'],['Weerstand','laag → matig'],['Freq','dagelijks']],note:'Verlaag zadel progressief. Vereist ≥ 105° voor volledige omwenteling.'},
-         {name:'Mini-squat (0–60°)',params:[['Reps','12–15'],['Sets','3']],note:'Progressief dieper. Controleer alignment.'},
-         {name:'Beenpers → unilateraal',params:[['Reps','10–12'],['Sets','3'],['Belasting','50–70% 1RM']],note:'CKC. Introducer unilateraal zodra controle adequaat.'},
-         {name:'Knie-extensie OKC',params:[['Reps','10–12'],['Sets','3']],note:'Geen graftbeperking bij TKA. Volledig ROM toegestaan.'},
-         {name:'Aquatherapie',params:[['Start','week 3–4'],['Duur','30–45 min'],['Freq','2×/week']],note:'Hydrostatische druk vermindert oedeem. Rahmann 2009.'},
-         {name:'Enkel-been balans',params:[['Duur','20–40 sec'],['Sets','3']],note:'TKA = significant proprioceptieverlies. Expliciete proprioceptieve training nodig.'},
-       ],
-       criteria_go:['ROM 0–110°','TUG < 12 sec','5× STS zonder armen','Lopen ≥ 15 min','Trappen voet-voor-voet'],
-       criteria_stop:['ROM < 100° na 6 wkn → chirurg (MUA)','Neurogene pijn → PainDETECT'],
-       redflags:[]},
-      {id:'f4',label:'Week 6–12',title:'Functioneel Herstel',weeks:'Week 6–12',
-       evidence:'<strong>Progressieve weerstandstraining</strong> (70–80% 1RM) veilig + effectief (Artz et al., 2015). <strong>6MWT</strong> meest sensitieve uitkomstmaat. Loopsnelheid normaliseert op 6–12 mnd.',
-       goals:['Flexie ≥ 120°','Trappen zonder leuning','6MWT ≥ 300m','Quad LSI ≥ 70–75%','Lopen 30–45 min','Fietsen + zwemmen mogelijk'],
-       exercises:[
-         {name:'Progressieve weerstandstraining',params:[['Reps','8–12'],['Sets','3–4'],['Belasting','70–80% 1RM'],['Freq','3×/week']],note:'Leg press, knie-extensie, squat, RDL. Wekelijks verhogen.'},
-         {name:'Squat (0–90°) unilateraal',params:[['Reps','10–12'],['Sets','3']],note:'Knie boven 2e teen. Progressie: Goblet squat met gewicht.'},
-         {name:'Fietsen buiten',params:[['Duur','20–45 min'],['Intensiteit','RPE 12–14'],['Freq','3–5×/week']],note:'Toegestaan zodra ROM > 105°.'},
-         {name:'Nordic walking',params:[['Duur','20–40 min'],['Freq','3–4×/week']],note:'Reduceert kniebelasting met ~25%.'},
-         {name:'Lateral step-down',params:[['Reps','10–15'],['Sets','3'],['Tempo','4 sec']],note:'Excentrische quad. Evalueer Trendelenburg.'},
-         {name:'Balans instabiel vlak',params:[['Vlak','BOSU / schuimmat'],['Duur','30–45 sec']],note:'Sensorimotorische training tot 12+ mnd post-TKA.'},
-       ],
-       criteria_go:['ROM ≥ 120°','6MWT ≥ 300m','Quad LSI ≥ 70%','Trappen zonder leuning','TUG < 10 sec'],
-       criteria_stop:['Restpijn > VAS 4 na 12 wkn → nociceptief vs neuropathisch screenen','Effusie → chirurg'],
-       redflags:[]},
-      {id:'f5',label:'Mnd 3–6+',title:'Activiteit & Langetermijn',weeks:'Maand 3–6+',
-       evidence:'Krachttekort tot <strong>2 jaar</strong> zonder training (Mizner et al., 2011). Chronische pijn bij <strong>15–20%</strong>. TKA-patiënten minder actief dan leeftijdsgenoten — actieve counseling essentieel.',
-       goals:['Wandelen ≥ 45–60 min onbeperkt','Quad LSI ≥ 80–85%','6MWT ≥ 400m (leeftijdsnorm)','KOOS ≥ 60–70/100','Deelname aanbevolen sporten','Zelfstandig onderhoudsprogramma'],
-       exercises:[
-         {name:'Dagelijks wandelen',params:[['Duur','30–60 min'],['Freq','dagelijks']],note:'Beste langetermijn-activiteit. Wandelstok op moeilijk terrein.'},
-         {name:'Fietsen (indoor/outdoor)',params:[['Duur','30–60 min'],['Freq','3–5×/week']],note:'Aanbevolen levenslange sport. E-bike uitstekend voor ouderen.'},
-         {name:'Zwemmen (crawl/rugslag)',params:[['Freq','2–3×/week']],note:'GEEN schoolslag — knie-valgusbelasting.'},
-         {name:'Krachtoefeningen (onderhoud)',params:[['Sets','2–3'],['Freq','2×/week']],note:'Minimaal 2× per week onderhouden. Sarcopenie-preventie.'},
-       ],
-       criteria_go:['KOOS ≥ 70/100','6MWT ≥ leeftijdsnorm','VAS ≤ 2/10 dagelijks','Zelfstandig onderhoudsprogramma'],
-       criteria_stop:['Chronische pijn > 3 mnd → pijnkliniek','ROM-stagnatie → chirurg (revisie)','KOOS < 50 mnd 6 → intensivering'],
-       redflags:['Prothese-instabiliteit, klikken, give-way → orthopedisch chirurg','Depressie → psychologische begeleiding']}
-    ],
-    refs:'Artz et al. (2015) — Effectiveness of physiotherapy after TKR. BMC Musculoskeletal Disorders. | Jakobsen et al. (2014) — Preoperative quad strength predicts TKA outcome. J Bone Joint Surg. | Kehlet & Thienpont (2013) — Fast-track knee arthroplasty. Bone Joint J. | Mizner et al. (2011) — Quadriceps strength after TKA. J Orthop Sports Phys Ther.'
-  },
-  pfps:{
-    id:'pfps',title:'Patellofemoraal Pijnsyndroom',
-    subtitle:'Multifactorieel protocol met subclassificatie, heupfocus en gait retraining',
-    color:'#f97316',icon:'🎯',duration:'6–14 weken',
-    phases:[
-      {id:'f0',label:'Diagnostiek',title:'Diagnostiek & Subclassificatie',weeks:'Vóór behandelstart',
-       evidence:'PFPS is een <strong>klinische diagnose</strong> (Witvrouw et al., 2014). Geen beeldvorming vereist in eerste lijn. Diagnose bij anterieure kniepijn bij ≥ 2 activiteiten: lang zitten, trappen, hurken, springen, lopen.',
-       goals:['Klinische diagnose bevestigen (Clarke, patellar grind, SLS)','Differentiaaldiagnose uitsluiten','Subtype bepalen: heup / quad / biomechanisch / loper','Rode vlaggen screenen','Baseline afnemen: Kujala + VISA-P'],
-       exercises:[
-         {name:"Clarke's test",params:[['Sens','matig'],['Spec','laag']],note:'Patella distaal drukken, quad contracteren. Nooit als enige test.'},
-         {name:'Single Leg Squat (provocatie)',params:[['ROM','30–60° flexie'],['Observeer','valgus, bekken, romp']],note:'Goudstandaard. Correleert sterk met heupabductorzwakte.'},
-         {name:'Heupabductorkracht (dynamo)',params:[['Positie','zijlig, 0° heupflexie']],note:'Consistente bevinding bij PFPS (Rathleff et al., 2014). Essentieel voor behandelplanning.'},
-         {name:'Patellatilt test',params:[['Normaal','laterale rand ≥ horizontaal']],note:'Laterale retinaculumtensie. Informeert taping/orthotics keuze.'},
-       ],
-       criteria_go:['Diagnose PFPS bevestigd','Subtype bepaald','Rode vlaggen uitgesloten','Baseline scores afgenomen'],
-       criteria_stop:['Nachtpijn → RX verplicht (tumor uitsluiten)','Ochtendstijfheid > 45 min → SpA (reumatoloog)','Leeftijd > 50j → gonartrose uitsluiten eerst'],
-       redflags:['Nachtpijn + rustpijn: tumoraal uitsluiten — RX verplicht','Koorts + warmte + zwelling: septische artritis → spoedverwijzing','Traumatische onset met instabiliteit: patellaluxatie → echo/MRI']},
-      {id:'f1',label:'Fase 1',title:'Pijnmanagement & Belastingsbeheer',weeks:'Week 1–3',
-       evidence:'<strong>Patellataping</strong> geeft onmiddellijke pijnreductie (Barton et al., 2017). <strong>Voetorthesen</strong> effectief bij pronatie (Collins et al., 2008). <strong>Load management</strong> centraal — volledige rust is contraproductief.',
-       goals:['VAS ≤ 3/10 bij dagelijkse activiteiten','Patiënt begrijpt PFPS-mechanisme en 2-uursregel','Provocerende activiteiten aanpassen (niet stoppen)','Eerste activering heup en quad','Taping/orthotics getest op pijneffect'],
-       exercises:[
-         {name:'McConnell taping',params:[['Test','≥ 50% VAS-reductie bij SLS']],note:'Rigide tape mediaal. Altijd testen vóór gebruik. Combineer met oefentherapie.'},
-         {name:'Isometrische quad (60–70°)',params:[['Reps','5'],['Hold','45 sec'],['Sets','4'],['Freq','dagelijks']],note:'Reduceert corticale pijninhibitie beter dan isotonisch (Rio et al., 2015).'},
-         {name:'Zijlig heupabductie (geen weerstand)',params:[['Reps','15–20'],['Sets','3'],['Freq','2×/dag']],note:'Eerste activering gluteus medius zonder kniebelasting.'},
-         {name:'Clamshell',params:[['Reps','15–20'],['Sets','3'],['Freq','2×/dag']],note:'Gluteus medius + piriformis. Progressie: weerstandsband in fase 2.'},
-         {name:'Stationaire fiets (lage weerstand)',params:[['Duur','15–20 min']],note:'Veilige cardiovasculaire training. Hoog zadel = minder pijn.'},
-         {name:'Patiënteducatie (PNE)',params:[['Duur','15–20 min']],note:'Overbelastingsmodel, 2-uursregel, verwachtingen 6–12 weken.'},
-       ],
-       criteria_go:['VAS ≤ 3/10 dagelijks','Trappen zonder significante pijn','Begrip belastingsprincipes'],
-       criteria_stop:['Pijn toeneemt → dosering halveren','Geen verbetering na 3 wkn → subclassificatie herbekijken'],
-       redflags:[]},
-      {id:'f2',label:'Fase 2',title:'Krachtopbouw — Heup + Quad + Core',weeks:'Week 3–8',
-       evidence:'<strong>Heup + quad gecombineerd</strong> superieur aan quad alleen (Lack et al., 2015 — meta-analyse n=690). <strong>Progressieve overload noodzakelijk</strong> — sub-maximale training = suboptimaal (Rathleff et al., 2015 — RCT).',
-       goals:['Heupabductorkracht LSI ≥ 85%','Quad LSI ≥ 75%','SLS 30° zonder valgus','VAS ≤ 2/10 bij oefeningen','Core: plank 60 sec','Kujala ≥ 70/100'],
-       exercises:[
-         {name:'Zijlig heupabductie met band',params:[['Reps','12–15'],['Sets','3'],['Band','medium → zwaar'],['Tempo','2-1-3']],note:'Hoeksteen heuptraining PFPS. Excentrische fase verlengen.'},
-         {name:'Lateral band walk',params:[['Stappen','12–15 ×2'],['Sets','3'],['Knieflexie','20–30°']],note:'Gluteus medius functioneel. Bekken stabiel.'},
-         {name:'Hip thrust (bilateraal → unilateraal)',params:[['Reps','10–12'],['Sets','3–4'],['Belasting','60–75% 1RM']],note:'Gluteus maximus. Minimale kniebelasting.'},
-         {name:'Terminale knie-extensie (TKE)',params:[['Reps','15–20'],['Sets','3'],['ROM','30° → volledig']],note:'VMO-selectieve activering. Hoge VMO:VL ratio (Peng et al., 2014).'},
-         {name:'Wall squat isometrisch',params:[['Hoek','60–70°'],['Hold','30–45 sec'],['Sets','4']],note:'Stop bij > VAS 4.'},
-         {name:'Split squat (lunge)',params:[['Reps','10–12/been'],['Sets','3']],note:'Minder PF-compressie dan diepe squat.'},
-         {name:'Single leg RDL',params:[['Reps','8–10'],['Sets','3']],note:'Heupextensoren + hamstrings + balans. Hoge functionele transfer.'},
-         {name:'Side plank + dead bug',params:[['Hold','30–60 sec'],['Sets','3']],note:'Lumbopelvische stabiliteit. Side plank = hoge gluteus medius activiteit.'},
-       ],
-       criteria_go:['SLS 30° zonder valgus','Heup LSI ≥ 85%','VAS ≤ 2/10','5× STS < 12 sec','Kujala ≥ 70/100'],
-       criteria_stop:['Pijn stijgt → dosering -20–30%','Valgus persisteert → video-feedback + meer heup','Geen krachtwinst → intensiteit verhogen (Rathleff principe)'],
-       redflags:[]},
-      {id:'f3',label:'Fase 3',title:'Functioneel & Gait Retraining',weeks:'Week 6–12',
-       evidence:'<strong>Gait retraining</strong> reduceert PF-compressie met 20–30% (Willy et al., 2012). <strong>Stapfrequentie +10%</strong> eenvoudigste bewezen interventie voor lopers (Neal et al., 2016). RTS pas bij LSI hop ≥ 90%.',
-       goals:['Jogging 20–30 min VAS ≤ 2/10','Plyometrisch stadium 1 + 2 voltooid','Loopanalyse uitgevoerd','Quad LSI ≥ 85%','Sportspecifieke bewegingen zonder pijn'],
-       exercises:[
-         {name:'Stapfrequentie verhogen (+10%)',params:[['Tool','metronoom-app'],['Target','+5–10% van baseline']],note:'170 → 185 stap/min typisch. 2–4 weken metronoom. Evidence: Neal 2016.'},
-         {name:'Heup-dominante loopstijl',params:[['Cue','"push from the hip"'],['Feedback','loopband + spiegel']],note:'Meer heupextensie = minder knieflexie = minder PF-compressie.'},
-         {name:'Loopprogressie (10%-regel)',params:[['Start','2–3 km'],['Opbouw','10%/week max']],note:'2-uursregel na elke run bewaken.'},
-         {name:'Stadium 1: Bipolale sprongen',params:[['Vb','jump squats, broad jump'],['Reps','8–10'],['Sets','3']],note:'Zachte bilaterale landing. Knietracking. Week 6–8.'},
-         {name:'Stadium 2: Unipolale progressie',params:[['Vb','single leg hop'],['Reps','6–8/been'],['Sets','3']],note:'LSI meten. Week 8–10.'},
-         {name:'Bulgarian split squat (zwaar)',params:[['Reps','8–10/been'],['Sets','3']],note:'Beste onderhoudsoefening quad + heupextensoren.'},
-       ],
-       criteria_go:['Jogging 30 min VAS ≤ 2/10','SLS 45° zonder valgus','Single leg hop LSI ≥ 90%','Kujala ≥ 80/100','Zelfvertrouwen ≥ 7/10'],
-       criteria_stop:['Pijn > VAS 3 bij sport → fase 2 consolideren','Valgus bij landing → meer heupkracht'],
-       redflags:['Recidief na RTS → loopvolume-monitoring activeren','Kinesiofobie hoog → graduele blootstelling + psychologische begeleiding']}
-    ],
-    refs:'Lack et al. (2015) — Hip-targeted physiotherapy superior for PFPS. BJSM meta-analyse. | Rathleff et al. (2015) — High-load strength training in PFPS. Scand J Med Sci Sports. | Neal et al. (2019) — Hip strengthening reduces PF pain in runners. JOSPT. | Barton et al. (2017) — Patellar taping for PFPS. BJSM. | Willy et al. (2012) — Gait retraining reduces PF load. J Orthop Sports Phys Ther.'
-  }
-};
-
-// ═══════════════════════════════
-//  STATE
-// ═══════════════════════════════
-let currentProto = null;
-let deferredPrompt = null;
-
-// ═══════════════════════════════
-//  INSTALL (PWA)
-// ═══════════════════════════════
-window.addEventListener('beforeinstallprompt', e => {
-  e.preventDefault();
-  deferredPrompt = e;
-  document.getElementById('installBtn').classList.add('visible');
-  document.getElementById('installBanner').classList.add('show');
-});
-
-window.addEventListener('appinstalled', () => {
-  document.getElementById('installBtn').classList.remove('visible');
-  document.getElementById('installBanner').classList.remove('show');
-  deferredPrompt = null;
-});
-
-function installApp() {
-  if (deferredPrompt) {
-    deferredPrompt.prompt();
-    deferredPrompt.userChoice.then(r => {
-      if (r.outcome === 'accepted') {
-        document.getElementById('installBtn').classList.remove('visible');
-        document.getElementById('installBanner').classList.remove('show');
-      }
-      deferredPrompt = null;
-    });
-  }
-}
-
-function dismissBanner() {
-  document.getElementById('installBanner').classList.remove('show');
-}
-
-// ═══════════════════════════════
-//  OFFLINE
-// ═══════════════════════════════
-function updateOnlineStatus() {
-  const badge = document.getElementById('offlineBadge');
-  if (!navigator.onLine) badge.classList.add('show');
-  else badge.classList.remove('show');
-}
-window.addEventListener('online', updateOnlineStatus);
-window.addEventListener('offline', updateOnlineStatus);
-updateOnlineStatus();
-
-// ═══════════════════════════════
-//  NAVIGATION
-// ═══════════════════════════════
-function setNav(id) {
-  document.querySelectorAll('.nav-item[id^="nav-"]').forEach(n => n.classList.remove('active'));
-  document.querySelectorAll('.bnav-item[id^="bnav-"]').forEach(n => n.classList.remove('active'));
-  const s = document.getElementById('nav-' + id);
-  const b = document.getElementById('bnav-' + id);
-  if (s) s.classList.add('active');
-  if (b) b.classList.add('active');
-}
-
-function showHome() {
-  document.getElementById('screen-home').style.display = '';
-  document.getElementById('screen-proto').style.display = 'none';
-  document.getElementById('screen-search').style.display = 'none';
-  document.getElementById('searchInput').value = '';
-  setNav('home');
-  currentProto = null;
-}
-
-function showProto(id) {
-  const p = protocols[id];
-  if (!p) return;
-  currentProto = p;
-
-  document.getElementById('screen-home').style.display = 'none';
-  document.getElementById('screen-search').style.display = 'none';
-  document.getElementById('screen-proto').style.display = 'flex';
-
-  document.getElementById('proto-breadcrumb').textContent = p.title;
-  document.getElementById('proto-title').textContent = p.title;
-  document.getElementById('proto-subtitle').textContent = p.subtitle;
-  document.getElementById('proto-dot').style.background = p.color;
-  document.documentElement.style.setProperty('--proto-color', p.color);
-
-  const tabs = document.getElementById('proto-tabs');
-  tabs.innerHTML = p.phases.map((ph, i) =>
-    `<div class="vtab ${i===0?'active':''}" onclick="showPhase(${i})">${ph.label}</div>`
-  ).join('') + `<div class="vtab" onclick="showRefs('${id}')">Referenties</div>`;
-
-  renderPhase(0);
-  setNav(id);
-}
-
-function showPhase(i) {
-  document.querySelectorAll('.vtab').forEach((t, j) => t.classList.toggle('active', j === i));
-  renderPhase(i);
-  document.getElementById('proto-body').scrollTop = 0;
-}
-
-function showRefs(id) {
-  const p = protocols[id];
-  const lastIdx = p.phases.length;
-  document.querySelectorAll('.vtab').forEach((t, j) => t.classList.toggle('active', j === lastIdx));
-  document.getElementById('proto-body').innerHTML = `
-    <div class="ref-box">
-      <div class="ref-label">📚 Sleutelreferenties</div>
-      <div class="ref-text">${p.refs.split('|').map(r=>`<div style="margin-bottom:10px">${r.trim()}</div>`).join('')}</div>
-    </div>`;
-}
-
-function renderPhase(i) {
-  const ph = currentProto.phases[i];
-  let html = '';
-  html += `<div class="ev-box"><div class="ev-label">📚 Evidence-basis</div><div class="ev-text">${ph.evidence}</div></div>`;
-  html += `<div class="goals-box"><div class="goals-label">Doelstellingen — ${ph.title}</div><ul class="glist">${ph.goals.map(g=>`<li>${g}</li>`).join('')}</ul></div>`;
-  if (ph.exercises?.length) {
-    html += `<div class="slabel">Oefenprogramma</div><div class="ex-grid">`;
-    ph.exercises.forEach(ex => {
-      html += `<div class="ex-card"><div class="ex-name">${ex.name}</div>`;
-      if (ex.params?.length) html += `<div class="ex-params">${ex.params.map(([k,v])=>`<div class="ep">${k}: <span>${v}</span></div>`).join('')}</div>`;
-      if (ex.note) html += `<div class="ex-note">${ex.note}</div>`;
-      html += `</div>`;
-    });
-    html += `</div>`;
-  }
-  if (ph.criteria_go?.length || ph.criteria_stop?.length) {
-    html += `<div class="slabel">Doorstroomcriteria</div><div class="criteria-grid">`;
-    if (ph.criteria_go?.length) html += `<div class="cbox go"><div class="ctitle go">Vereist ✓</div><ul class="clist go">${ph.criteria_go.map(c=>`<li>${c}</li>`).join('')}</ul></div>`;
-    if (ph.criteria_stop?.length) html += `<div class="cbox stop"><div class="ctitle stop">Vertraag ⚠</div><ul class="clist stop">${ph.criteria_stop.map(c=>`<li>${c}</li>`).join('')}</ul></div>`;
-    html += `</div>`;
-  }
-  if (ph.redflags?.length) {
-    html += `<div class="rf-box"><div class="rf-label">🚨 Rode vlaggen</div><ul class="rf-list">${ph.redflags.map(r=>`<li>${r}</li>`).join('')}</ul></div>`;
-  }
-  document.getElementById('proto-body').innerHTML = html;
-}
-
-// ═══════════════════════════════
-//  SEARCH
-// ═══════════════════════════════
-function focusSearch() {
-  document.getElementById('searchInput').focus();
-  setNav('search');
-}
-
-function handleSearch(q) {
-  if (!q.trim()) {
-    document.getElementById('screen-search').style.display = 'none';
-    if (currentProto) document.getElementById('screen-proto').style.display = 'flex';
-    else document.getElementById('screen-home').style.display = '';
-    return;
-  }
-  document.getElementById('screen-home').style.display = 'none';
-  document.getElementById('screen-proto').style.display = 'none';
-  document.getElementById('screen-search').style.display = '';
-  const ql = q.toLowerCase();
-  let res = [];
-  Object.values(protocols).forEach(p => {
-    p.phases.forEach((ph, pi) => {
-      ph.exercises.forEach(ex => {
-        if ([ex.name, ex.note||''].join(' ').toLowerCase().includes(ql))
-          res.push({p, ph, pi, match:ex.name, type:'Oefening', detail:ex.note||''});
-      });
-      ph.goals.forEach(g => {
-        if (g.toLowerCase().includes(ql))
-          res.push({p, ph, pi, match:g, type:'Doel', detail:''});
-      });
-    });
-  });
-  const el = document.getElementById('search-results');
-  if (!res.length) { el.innerHTML=`<div class="no-results">Geen resultaten voor "<strong style="color:var(--text)">${q}</strong>"</div>`; return; }
-  el.innerHTML = res.map(r=>`
-    <div onclick="showProto('${r.p.id}');showPhase(${r.pi});" style="background:var(--surface);border:1px solid var(--border);border-radius:7px;padding:12px 14px;margin-bottom:8px;cursor:pointer;transition:border-color .12s;" onmouseover="this.style.borderColor='var(--border2)'" onmouseout="this.style.borderColor='var(--border)'">
-      <div style="display:flex;align-items:center;gap:7px;margin-bottom:5px;">
-        <div style="width:7px;height:7px;border-radius:50%;background:${r.p.color};flex-shrink:0"></div>
-        <span style="font-size:12px;font-weight:600">${r.p.title}</span>
-        <span style="font-size:10px;color:var(--muted);font-family:'Geist Mono',monospace;background:var(--surface2);padding:1px 6px;border-radius:3px">${r.ph.label}</span>
-        <span style="font-size:10px;color:var(--muted2);font-family:'Geist Mono',monospace">${r.type}</span>
-      </div>
-      <div style="font-size:13px">${r.match}</div>
-      ${r.detail?`<div style="font-size:11px;color:var(--muted);margin-top:3px">${r.detail.substring(0,110)}${r.detail.length>110?'…':''}</div>`:''}
-    </div>`).join('');
-}
-
-// ═══════════════════════════════
-//  SERVICE WORKER
-// ═══════════════════════════════
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js')
-      .then(reg => console.log('SW registered:', reg.scope))
-      .catch(err => console.warn('SW failed:', err));
-  });
-}
-</script>
+<script src="app.js"></script>
 </body>
 </html>

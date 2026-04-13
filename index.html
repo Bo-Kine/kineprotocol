@@ -157,6 +157,75 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
 .yt-wrap{position:relative;padding-bottom:56.25%;height:0;}
 .yt-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
 .yt-note{padding:10px 16px;font-size:11px;color:var(--muted);border-top:1px solid var(--border);}
+
+/* ── RED FLAGS BUTTON ── */
+.rf-trigger{display:flex;align-items:center;gap:6px;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);color:#ef4444;padding:5px 12px;border-radius:6px;font-size:11.5px;font-weight:600;cursor:pointer;font-family:'Geist',sans-serif;white-space:nowrap;transition:background .12s,border-color .12s;flex-shrink:0;}
+.rf-trigger:hover{background:rgba(239,68,68,.15);border-color:rgba(239,68,68,.4);}
+.rf-trigger .rf-count{background:#ef4444;color:#fff;border-radius:10px;padding:1px 6px;font-size:10px;font-family:'Geist Mono',monospace;}
+
+/* ── FICHE BUTTON ── */
+.fiche-btn{display:flex;align-items:center;gap:6px;background:var(--surface2);border:1px solid var(--border);color:var(--muted);padding:6px 12px;border-radius:6px;font-size:11.5px;font-weight:500;cursor:pointer;font-family:'Geist',sans-serif;transition:all .12s;}
+.fiche-btn:hover{border-color:var(--border2);color:var(--text);}
+
+/* ── PROTO ACTION BAR ── */
+.proto-actions{display:flex;align-items:center;gap:8px;margin-top:10px;padding-bottom:12px;flex-wrap:wrap;}
+
+/* ── SHARED MODAL BASE ── */
+.kmodal{display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.8);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:16px;}
+.kmodal.open{display:flex;}
+.kmodal-inner{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;width:100%;max-width:560px;max-height:85vh;display:flex;flex-direction:column;box-shadow:0 24px 64px rgba(0,0,0,.6);}
+.kmodal-bar{display:flex;align-items:center;padding:14px 18px;border-bottom:1px solid var(--border);gap:10px;flex-shrink:0;}
+.kmodal-title{font-size:14px;font-weight:600;flex:1;color:var(--text);}
+.kmodal-close{background:var(--surface2);border:1px solid var(--border);color:var(--muted);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Geist',sans-serif;}
+.kmodal-close:hover{color:var(--text);border-color:var(--border2);}
+.kmodal-body{overflow-y:auto;padding:18px;-webkit-overflow-scrolling:touch;}
+.kmodal-footer{padding:12px 18px;border-top:1px solid var(--border);display:flex;gap:8px;flex-shrink:0;flex-wrap:wrap;}
+.kmodal-action{flex:1;padding:9px 16px;border-radius:7px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Geist',sans-serif;border:none;transition:opacity .12s;white-space:nowrap;min-width:120px;text-align:center;}
+.kmodal-action:hover{opacity:.85;}
+.kmodal-action.primary{background:var(--proto-color,#fff);color:#0a0a0b;}
+.kmodal-action.secondary{background:var(--surface2);color:var(--text);border:1px solid var(--border);}
+
+/* ── RED FLAGS MODAL CONTENT ── */
+.rf-phase-block{margin-bottom:16px;}
+.rf-phase-label{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);font-family:'Geist Mono',monospace;margin-bottom:7px;font-weight:600;}
+.rf-item{display:flex;align-items:flex-start;gap:9px;padding:8px 12px;background:rgba(239,68,68,.05);border:1px solid rgba(239,68,68,.14);border-radius:5px;margin-bottom:5px;}
+.rf-item-icon{color:#ef4444;font-weight:700;flex-shrink:0;font-size:13px;}
+.rf-item-text{font-size:12px;color:var(--text);line-height:1.5;}
+.rf-item.urgent{background:rgba(239,68,68,.12);border-color:rgba(239,68,68,.3);}
+.rf-item.urgent .rf-item-text{font-weight:600;}
+.rf-empty{color:var(--muted);font-size:12px;text-align:center;padding:20px 0;}
+
+/* ── FICHE MODAL CONTENT ── */
+.fiche-header{margin-bottom:16px;}
+.fiche-meta-row{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap;}
+.fiche-meta-input{flex:1;min-width:140px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:7px 11px;color:var(--text);font-family:'Geist',sans-serif;font-size:12px;outline:none;}
+.fiche-meta-input:focus{border-color:var(--border2);}
+.fiche-meta-input::placeholder{color:var(--muted);}
+.fiche-section-title{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);font-family:'Geist Mono',monospace;margin-bottom:8px;margin-top:14px;padding-bottom:5px;border-bottom:1px solid var(--border);font-weight:600;}
+.fiche-ex-row{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);}
+.fiche-ex-row:last-child{border-bottom:none;}
+.fiche-ex-name{font-size:12.5px;font-weight:600;flex:1;color:var(--text);}
+.fiche-ex-params{font-size:11px;color:var(--muted);font-family:'Geist Mono',monospace;line-height:1.6;}
+.fiche-goal-item{font-size:12px;color:var(--muted);padding:3px 0;display:flex;gap:7px;}
+.fiche-goal-item::before{content:'→';color:var(--proto-color,#fff);flex-shrink:0;font-family:'Geist Mono',monospace;}
+.fiche-notes-area{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:10px 12px;color:var(--text);font-family:'Geist',sans-serif;font-size:12px;min-height:70px;outline:none;resize:vertical;margin-top:8px;}
+.fiche-notes-area::placeholder{color:var(--muted);}
+
+/* ── PRINT STYLES ── */
+@media print {
+  body > *:not(#print-fiche){display:none!important;}
+  #print-fiche{display:block!important;font-family:'Geist',sans-serif;padding:20px;color:#000;}
+  #print-fiche h1{font-size:20px;margin-bottom:4px;}
+  #print-fiche .pf-meta{font-size:12px;color:#555;margin-bottom:16px;}
+  #print-fiche h2{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:#555;border-bottom:1px solid #ddd;padding-bottom:4px;margin:14px 0 8px;}
+  #print-fiche .pf-ex{display:flex;gap:12px;padding:6px 0;border-bottom:1px solid #f0f0f0;}
+  #print-fiche .pf-ex-name{font-weight:600;font-size:12px;flex:1;}
+  #print-fiche .pf-ex-params{font-size:11px;color:#555;font-family:monospace;}
+  #print-fiche .pf-goal{font-size:11px;color:#333;padding:2px 0;}
+  #print-fiche .pf-notes{font-size:11px;border:1px solid #ccc;padding:8px;border-radius:4px;min-height:60px;margin-top:8px;white-space:pre-wrap;}
+  #print-fiche .pf-footer{margin-top:20px;font-size:10px;color:#888;border-top:1px solid #ddd;padding-top:8px;}
+}
+#print-fiche{display:none;}
 </style>
 </head>
 <body>
@@ -208,7 +277,11 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
       <div class="viewer-header">
         <div class="viewer-breadcrumb"><span onclick="showHome()">Overzicht</span><span style="color:var(--muted2)">›</span><span id="proto-breadcrumb" style="color:var(--text)"></span></div>
         <div class="viewer-title-row"><div class="viewer-dot" id="proto-dot"></div><div><div class="viewer-title" id="proto-title"></div><div class="viewer-subtitle" id="proto-subtitle"></div></div></div>
-        <div class="viewer-tabs" id="proto-tabs"></div>
+        <div class="proto-actions">
+        <button class="rf-trigger" id="rf-trigger-btn" onclick="openRF()">🚨 Rode vlaggen <span class="rf-count" id="rf-count">0</span></button>
+        <button class="fiche-btn" id="fiche-trigger-btn" onclick="openFiche()">📋 Patiëntenfiche</button>
+      </div>
+      <div class="viewer-tabs" id="proto-tabs"></div>
       </div>
       <div class="viewer-body" id="proto-body"></div>
     </div>
@@ -244,6 +317,38 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
     <div class="yt-note">⚠ Vereist internetverbinding · Sluit het venster om de video te stoppen</div>
   </div>
 </div>
+
+
+<!-- Red Flags Modal -->
+<div class="kmodal" id="rf-modal" onclick="if(event.target===this)closeRF()">
+  <div class="kmodal-inner">
+    <div class="kmodal-bar" style="background:rgba(239,68,68,.06);border-bottom-color:rgba(239,68,68,.2);">
+      <span style="font-size:16px;">🚨</span>
+      <div class="kmodal-title" id="rf-modal-title" style="color:#ef4444;">Rode vlaggen</div>
+      <button class="kmodal-close" onclick="closeRF()">✕</button>
+    </div>
+    <div class="kmodal-body" id="rf-modal-body"></div>
+  </div>
+</div>
+
+<!-- Patient Fiche Modal -->
+<div class="kmodal" id="fiche-modal" onclick="if(event.target===this)closeFiche()">
+  <div class="kmodal-inner" style="max-width:600px;">
+    <div class="kmodal-bar">
+      <span style="font-size:16px;">📋</span>
+      <div class="kmodal-title" id="fiche-modal-title">Patiëntenfiche</div>
+      <button class="kmodal-close" onclick="closeFiche()">✕</button>
+    </div>
+    <div class="kmodal-body" id="fiche-modal-body"></div>
+    <div class="kmodal-footer">
+      <button class="kmodal-action secondary" onclick="copyFiche()">📋 Kopieer tekst</button>
+      <button class="kmodal-action primary" onclick="printFiche()">🖨 Afdrukken</button>
+    </div>
+  </div>
+</div>
+
+<!-- Hidden print container -->
+<div id="print-fiche"></div>
 
 <script src="app.js"></script>
 </body>

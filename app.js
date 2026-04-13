@@ -9,9 +9,9 @@ const protocols = {
        goals:['Inflammatie en pijncontrole (VAS ≤ 3/10 in rust)','Volledige extensie ROM (0°) — prioriteit boven flexie','Flexie ROM ≥ 90° aan einde fase 1','Lopen zonder krukken (indien goedgekeurd)','Eerste quadricepssamentrekking via NMES of biofeedback','Geen effusie (graad 1 max)'],
        exercises:[
          {name:'Passieve knie-extensie (handdoekrol)',params:[['Sets','3–5'],['Duur','10–15 min'],['Freq','3–4×/dag']],note:'Rol onder hiel, zwaartekracht creëert passieve extensie. Dagelijks meten.',cat:'mobiliteit'},
-         {name:'Quadriceps setting (isometrisch)',params:[['Reps','10–15'],['Hold','5–10 sec'],['Sets','3'],['Freq','4–6×/dag']],note:'Knie in ~10° flexie. Eventueel NMES bij sterke inhibitie.',cat:'kracht',yt:'rnMnkQcPMzM'},
-         {name:'Straight Leg Raise (SLR)',params:[['Reps','15–20'],['Sets','3'],['Freq','2–3×/dag']],note:'Enkel in dorsaalflexie, knie gestrekt. Wacht tot extensielag < 10°.',cat:'kracht',yt:'LJX9tdgFzeo'},
-         {name:'Actief-geassisteerde knieflexie',params:[['Reps','10–15'],['Sets','2–3'],['Freq','2–3×/dag']],note:'Gezonde been helpt. Target: 90° einde week 1, 120° einde week 2.',cat:'mobiliteit',yt:'kHPuIh0wqwM'},
+         {name:'Quadriceps setting (isometrisch)',params:[['Reps','10–15'],['Hold','5–10 sec'],['Sets','3'],['Freq','4–6×/dag']],note:'Knie in ~10° flexie. Eventueel NMES bij sterke inhibitie.',cat:'kracht'},
+         {name:'Straight Leg Raise (SLR)',params:[['Reps','15–20'],['Sets','3'],['Freq','2–3×/dag']],note:'Enkel in dorsaalflexie, knie gestrekt. Wacht tot extensielag < 10°.',cat:'kracht'},
+         {name:'Actief-geassisteerde knieflexie',params:[['Reps','10–15'],['Sets','2–3'],['Freq','2–3×/dag']],note:'Gezonde been helpt. Target: 90° einde week 1, 120° einde week 2.',cat:'mobiliteit'},
          {name:'Enkel-pompen',params:[['Reps','20–25'],['Freq','elk uur']],note:'DVT-preventie en lymfedrainage.'},
          {name:'Gluteale isometrie (zijlig)',params:[['Reps','10–12'],['Hold','5 sec'],['Sets','3']],note:'Abductie + extensie heup isometrisch.',cat:'kracht'}],
        criteria_go:['Extensie 0° of < 5° deficit','Flexie ≥ 90°','Lopen zonder hinken','Effusie graad ≤ 1','VAS ≤ 3/10','Zichtbare quadricepscontractie'],
@@ -22,11 +22,11 @@ const protocols = {
        goals:['Volledige ROM (0–135°+)','Normaal looppatroon','Quad LSI ≥ 60%','Fietsen op stationaire fiets','Basale proprioceptie','Geen effusie na activiteit'],
        exercises:[
          {name:'Stationaire fiets',params:[['Duur','10–20 min'],['Weerstand','laag'],['Freq','dagelijks']],note:'Start hoog zadel, verlaag progressief.',cat:'cardio'},
-         {name:'Mini-squat (0–45°)',params:[['Reps','12–15'],['Sets','3'],['Tempo','3-1-3']],note:'Bilateraal. Controleer valgus. Progressief dieper.',cat:'kracht',yt:'U6Oow0sNXt4'},
+         {name:'Mini-squat (0–45°)',params:[['Reps','12–15'],['Sets','3'],['Tempo','3-1-3']],note:'Bilateraal. Controleer valgus. Progressief dieper.',cat:'kracht'},
          {name:'Beenpers bilateraal',params:[['Reps','10–12'],['Sets','3–4'],['Belasting','60–75% 1RM']],note:'CKC, laag shear op graft.',cat:'kracht'},
          {name:'Isometrische knie-extensie (60°)',params:[['Reps','5–8'],['Hold','5 sec'],['Sets','3']],note:'Veilig op graft bij 60° (Heijne & Werner 2021).'},
          {name:'Step-up anterieur (10 cm)',params:[['Reps','10–15'],['Sets','3']],note:'Functioneel CKC. Controleer knietracking.',cat:'kracht'},
-         {name:'Enkel-been balans',params:[['Duur','30–60 sec'],['Sets','3'],['Ogen','open → gesloten']],note:'Progressie: schuimmat → perturbed surface.',cat:'stabiliteit',yt:'TFKgUhrR9j4'}],
+         {name:'Enkel-been balans',params:[['Duur','30–60 sec'],['Sets','3'],['Ogen','open → gesloten']],note:'Progressie: schuimmat → perturbed surface.',cat:'stabiliteit'}],
        criteria_go:['ROM 0–130°','Normaal lopen','Quad LSI ≥ 60%','SLS 30° zonder valgus','Geen effusie na 30 min'],
        criteria_stop:['LSI < 60% na 6 wkn → NMES/BFR','ROM-stagnatie → manuele therapie'],redflags:[]},
       {label:'Fase 3',title:'Functioneel Herstel',weeks:'Week 6–12',
@@ -57,7 +57,7 @@ const protocols = {
        exercises:[
          {name:'Single Leg Hop + Triple Hop + 6m Timed',params:[['LSI','≥ 90%']],note:'Volledige hop-testbatterij vóór RTS.',cat:'test'},
          {name:'FIFA 11+ (preventie)',params:[['Duur','20 min'],['Freq','elk trainingsmoment']],note:'50% reductie herletsel (Silvers-Granelli 2015).'},
-         {name:'Nordic Hamstring (onderhoud)',params:[['Reps','6–8'],['Freq','1–2×/week']],note:'Levenslang onderhoud.',cat:'kracht',yt:'K_v-BqvmE5Q'}],
+         {name:'Nordic Hamstring (onderhoud)',params:[['Reps','6–8'],['Freq','1–2×/week']],note:'Levenslang onderhoud.',cat:'kracht'}],
        criteria_go:['Hop LSI ≥ 90%','ACL-RSI ≥ 65','IKDC ≥ 85','≥ 9 maanden'],
        criteria_stop:['ACL-RSI < 50 → psycholoog'],
        redflags:['Nieuwe instabiliteitsepisode → stop sport, evalueer ACL','Contralateraal risico 3–6× verhoogd → bilateraal preventief programma']}
@@ -70,7 +70,7 @@ const protocols = {
        evidence:'<strong>Prehabilitatie</strong> verbetert vroeg postoperatieve uitkomsten (Jakobsen et al., 2014). <strong>ERAS</strong>: mobilisatie dag 0 veilig (Kehlet & Thienpont, 2013).',
        goals:['Quadricepskracht maximaliseren','ROM: extensie 0°, flexie ≥ 110°','Patiënt educatie + functionele baseline (TUG, 6MWT, KOOS)','Dag 0: DVT-preventie, eerste stappen'],
        exercises:[
-         {name:'Quadriceps setting (prehab)',params:[['Reps','15–20'],['Hold','5–10 sec'],['Freq','3×/dag']],note:'Patiënt moet uitvoering kennen vóór operatie.',cat:'kracht',yt:'rnMnkQcPMzM'},
+         {name:'Quadriceps setting (prehab)',params:[['Reps','15–20'],['Hold','5–10 sec'],['Freq','3×/dag']],note:'Patiënt moet uitvoering kennen vóór operatie.',cat:'kracht'},
          {name:'Enkel-pompen (dag 0)',params:[['Reps','20–30'],['Freq','elk uur']],note:'DVT-preventie. Starten in recovery room.'},
          {name:'Eerste stappen (dag 0)',params:[['Timing','2–6u postop'],['Hulp','rollator + kinesist']],note:'ERAS: dag 0 mobilisatie.'},
          {name:'Passieve extensie (dag 1)',params:[['Duur','15–20 min'],['Freq','3–4×/dag']],note:'PRIORITEIT. Extensiedeficit is meest invaliderende complicatie.'}],
@@ -81,7 +81,7 @@ const protocols = {
        evidence:'Ziekenhuisduur gedaald naar <strong>2–3 dagen</strong> bij ERAS. <strong>Cryotherapie</strong> reduceert pijn (Adie et al., 2012). <strong>CPM niet aanbevolen</strong> (Cochrane 2014).',
        goals:['Extensie 0°','Flexie ≥ 90° einde week 2','Lopen met rollator','Trappen met hulpmiddel','VAS ≤ 4/10'],
        exercises:[
-         {name:'Actief-geassisteerde knieflexie',params:[['Reps','10–15'],['Sets','3'],['Freq','3×/dag']],note:'Target: 5° meer per dag.',cat:'mobiliteit',yt:'kHPuIh0wqwM'},
+         {name:'Actief-geassisteerde knieflexie',params:[['Reps','10–15'],['Sets','3'],['Freq','3×/dag']],note:'Target: 5° meer per dag.',cat:'mobiliteit'},
          {name:'Passieve knie-extensie',params:[['Duur','15–20 min'],['Freq','4×/dag']],note:'PRIORITEIT.',cat:'mobiliteit'},
          {name:'Patella mobilisatie',params:[['Reps','10–15'],['Freq','dagelijks']],note:'Start dag 7–10 na wondsluiting.',cat:'mobiliteit'},
          {name:'Cryotherapie post-sessie',params:[['Duur','15–20 min'],['Timing','na elke sessie']],note:'IJszak met doek, niet op wond.'}],
@@ -95,7 +95,7 @@ const protocols = {
          {name:'Stationaire fiets',params:[['Duur','15–25 min'],['Freq','dagelijks']],note:'Verlaag zadel progressief. Vereist ≥ 105° flexie.',cat:'cardio'},
          {name:'Mini-squat (0–60°)',params:[['Reps','12–15'],['Sets','3']],note:'Progressief dieper.',cat:'kracht'},
          {name:'Aquatherapie',params:[['Start','week 3–4'],['Duur','30–45 min'],['Freq','2×/week']],note:'Hydrostatische druk vermindert oedeem.',cat:'cardio'},
-         {name:'Enkel-been balans',params:[['Duur','20–40 sec'],['Sets','3']],note:'Expliciete proprioceptieve training nodig post-TKA.',cat:'stabiliteit',yt:'TFKgUhrR9j4'}],
+         {name:'Enkel-been balans',params:[['Duur','20–40 sec'],['Sets','3']],note:'Expliciete proprioceptieve training nodig post-TKA.',cat:'stabiliteit'}],
        criteria_go:['ROM 0–110°','TUG < 12 sec','5× STS zonder armen','Trappen voet-voor-voet'],
        criteria_stop:['ROM < 100° na 6 wkn → chirurg'],redflags:[]},
       {label:'Week 6–12',title:'Functioneel Herstel',weeks:'Week 6–12',
@@ -139,7 +139,7 @@ const protocols = {
        evidence:'<strong>Patellataping</strong> onmiddellijke pijnreductie (Barton et al., 2017). <strong>Voetorthesen</strong> bij pronatie (Collins et al., 2008). Load management centraal.',
        goals:['VAS ≤ 3/10','2-uursregel begrijpen','Activiteiten aanpassen','Eerste heup + quad activering'],
        exercises:[
-         {name:'McConnell taping',params:[['Test','≥ 50% VAS-reductie']],note:'Test altijd pijneffect.',cat:'manueel',yt:'YXdQXuYjyls'},
+         {name:'McConnell taping',params:[['Test','≥ 50% VAS-reductie']],note:'Test altijd pijneffect.',cat:'manueel'},
          {name:'Isometrische quad (60–70°)',params:[['Reps','5'],['Hold','45 sec'],['Sets','4']],note:'Reduceert corticale pijninhibitie (Rio et al., 2015).'},
          {name:'Zijlig heupabductie + clamshell',params:[['Reps','15–20'],['Sets','3'],['Freq','2×/dag']],note:'Eerste activering gluteus medius.',cat:'kracht'},
          {name:'Patiënteducatie (PNE)',params:[['Duur','15–20 min']],note:'Overbelastingsmodel, 2-uursregel, 6–12 weken herstel.'}],
@@ -149,9 +149,9 @@ const protocols = {
        evidence:'<strong>Heup + quad gecombineerd</strong> superieur (Lack et al., 2015 — meta-analyse n=690). Progressieve overload noodzakelijk (Rathleff et al., 2015).',
        goals:['Heup LSI ≥ 85%','Quad LSI ≥ 75%','SLS 30° zonder valgus','VAS ≤ 2/10','Kujala ≥ 70/100'],
        exercises:[
-         {name:'Lateral band walk + hip thrust',params:[['Sets','3–4'],['Belasting','progressief']],note:'Hoeksteen heuptraining PFPS.',cat:'kracht',yt:'SjwxrsVNG1w'},
+         {name:'Lateral band walk + hip thrust',params:[['Sets','3–4'],['Belasting','progressief']],note:'Hoeksteen heuptraining PFPS.',cat:'kracht'},
          {name:'Terminale knie-extensie (TKE)',params:[['Reps','15–20'],['Sets','3']],note:'VMO-selectieve activering (Peng et al., 2014).',cat:'kracht'},
-         {name:'Wall squat isometrisch',params:[['Hoek','60–70°'],['Hold','30–45 sec'],['Sets','4']],note:'Stop bij > VAS 4.',cat:'stabiliteit',yt:'U6Oow0sNXt4'},
+         {name:'Wall squat isometrisch',params:[['Hoek','60–70°'],['Hold','30–45 sec'],['Sets','4']],note:'Stop bij > VAS 4.',cat:'stabiliteit'},
          {name:'Split squat + single leg RDL',params:[['Reps','8–12/been'],['Sets','3']],note:'Hoge functionele transfer.',cat:'kracht'},
          {name:'Side plank + dead bug',params:[['Hold','30–60 sec'],['Sets','3']],note:'Lumbopelvische stabiliteit.',cat:'stabiliteit'}],
        criteria_go:['SLS 30° zonder valgus','Heup LSI ≥ 85%','VAS ≤ 2/10','Kujala ≥ 70/100'],
@@ -176,7 +176,7 @@ const protocols = {
        evidence:'<strong>90% herstelt conservatief</strong> binnen 6–12 weken (Weber, 1983). <strong>MRI geen eerste-lijnsindicatie</strong> tenzij rode vlaggen (NICE 2021). <strong>SLR + slump</strong> meest sensitieve klinische testen (Deville et al., 2000).',
        goals:['Klinische diagnose + niveau bepalen (L4–L5 vs L5–S1)','Rode vlaggen screenen','Neurologisch onderzoek: reflexen, kracht, sensibiliteit','Behandelpad: conservatief vs chirurgisch','Baseline: ODI, NRS, neurologisch'],
        exercises:[
-         {name:'Straight Leg Raise (SLR)',params:[['Positief','< 70°'],['Specificiteit','hoog']],note:'Goudstandaard voor L4–L5 en L5–S1. Bragard verhoogt specificiteit.',cat:'kracht',yt:'LJX9tdgFzeo'},
+         {name:'Straight Leg Raise (SLR)',params:[['Positief','< 70°'],['Specificiteit','hoog']],note:'Goudstandaard voor L4–L5 en L5–S1. Bragard verhoogt specificiteit.',cat:'kracht'},
          {name:'Slump test',params:[['Sens','0.84'],['Spec','0.83']],note:'Sensitiever dan SLR. Reproductie uitstralende pijn = positief.',cat:'test'},
          {name:'Neurologisch onderzoek',params:[['Test','reflexen, kracht, sensibiliteit']],note:'L4: kniepees + TA. L5: EHL + webspace. S1: achillespees + peroneus.',cat:'test'},
          {name:'Femoral nerve stretch (L3–L4)',params:[['Positie','buiklig, knie flecteren']],note:'Pijn voorzijde bovenbeen = positief bij hoge hernia.',cat:'test'}],
@@ -187,7 +187,7 @@ const protocols = {
        evidence:'<strong>Bedrust is schadelijk</strong> (Malmivaara et al., 1995). <strong>McKenzie</strong> effectief bij centralisatie (Donelson et al., 1997). <strong>Neurodynamische mobilisatie</strong> vermindert pijn bij radiculopathie (Nee et al., 2012).',
        goals:['NRS ≤ 5/10 bij activiteit','Centralisatie uitstralende pijn','Lopen 15–20 min','Ergonomische educatie'],
        exercises:[
-         {name:'McKenzie extensie in lig',params:[['Reps','10'],['Sets','3–5'],['Freq','elk uur'],['Indicatie','centralisatie']],note:'NIET bij peripheralisatie. Bekken op mat, bovenlichaam omhoog duwen.',cat:'mobiliteit',yt:'Ez9IIFY6LaE'},
+         {name:'McKenzie extensie in lig',params:[['Reps','10'],['Sets','3–5'],['Freq','elk uur'],['Indicatie','centralisatie']],note:'NIET bij peripheralisatie. Bekken op mat, bovenlichaam omhoog duwen.',cat:'mobiliteit'},
          {name:'McKenzie flexie (knees to chest)',params:[['Reps','10'],['Sets','3'],['Indicatie','geen centralisatie']],note:'Bij flexie-responder of extensie-peripheralisatie.',cat:'mobiliteit'},
          {name:'Neurodynamische slider (n. ischiadicus)',params:[['Reps','10–15'],['Sets','3'],['Freq','2–3×/dag']],note:'Heup 90°, afwisselen knie strekken + dorsaalflexie / knie buigen + plantairflexie.',cat:'neuro'},
          {name:'Lopen (vlak, laag tempo)',params:[['Duur','10–20 min'],['Freq','dagelijks']],note:'Actief blijven = sleutelboodschap. Max VAS 5 tijdens lopen.',cat:'cardio'},
@@ -199,10 +199,10 @@ const protocols = {
        evidence:'<strong>Motor control training</strong> (multifidus + TA) superieur bij LBP (Hides et al., 2001). <strong>Neurodynamische tensioner</strong> zodra slider pijnvrij (Nee et al., 2012).',
        goals:['NRS ≤ 3/10 dagelijks','Actief gebruik TA (palpatie)','SLR ≥ 60° zonder uitstraling','Lopen 30 min'],
        exercises:[
-         {name:'Transversus abdominis (draw-in)',params:[['Reps','10'],['Hold','10 sec'],['Sets','3'],['Freq','3×/dag']],note:'"Trek navel 10% in" zonder ademinhouden. Palpatie 2 cm mediaal SIAS.',cat:'stabiliteit',yt:'Z9ClwVY3-B4'},
+         {name:'Transversus abdominis (draw-in)',params:[['Reps','10'],['Hold','10 sec'],['Sets','3'],['Freq','3×/dag']],note:'"Trek navel 10% in" zonder ademinhouden. Palpatie 2 cm mediaal SIAS.',cat:'stabiliteit'},
          {name:'Multifidus isometrisch (prone)',params:[['Reps','10'],['Hold','10 sec'],['Sets','3']],note:'"Maak de spier dik zonder te bewegen." Multifidus atrofieert ipsilateraal bij HNP.',cat:'kracht'},
-         {name:'Dead bug (basis)',params:[['Reps','8–10/zijde'],['Sets','3']],note:'Ruglig, 90-90. Neutrale lumbale lordose — NIET afplatten.',cat:'stabiliteit',yt:'YqJCvGMsyeE'},
-         {name:'Bird dog',params:[['Reps','8–10/zijde'],['Hold','5–8 sec'],['Sets','3']],note:'Viervoet, neutrale rug. Hoge multifidus + gluteus activatie.',cat:'stabiliteit',yt:'wiFNA3sqjCA'},
+         {name:'Dead bug (basis)',params:[['Reps','8–10/zijde'],['Sets','3']],note:'Ruglig, 90-90. Neutrale lumbale lordose — NIET afplatten.',cat:'stabiliteit'},
+         {name:'Bird dog',params:[['Reps','8–10/zijde'],['Hold','5–8 sec'],['Sets','3']],note:'Viervoet, neutrale rug. Hoge multifidus + gluteus activatie.',cat:'stabiliteit'},
          {name:'Neurodynamische tensioner',params:[['Reps','8–10'],['Sets','3'],['Indicatie','SLR > 40° pijnvrij']],note:'Knie strekken + dorsaalflexie aanhouden. Meer neuraal effect dan slider.',cat:'neuro'}],
        criteria_go:['NRS ≤ 3/10','SLR ≥ 60°','TA + multifidus actief','Lopen 30 min'],
        criteria_stop:['Peripheralisatie bij oefeningen → terugstap'],redflags:[]},
@@ -210,7 +210,7 @@ const protocols = {
        evidence:'<strong>Progressieve krachttraining</strong> veilig en superieur aan core-only (Berglund et al., 2015). <strong>Aerobe training</strong> heeft direct pijnmodulerend effect.',
        goals:['NRS ≤ 2/10 bij alle ADL','Deadlift met lichaamsgewicht correct','Squat 90° pijnvrij','Functionele werktaken simuleren'],
        exercises:[
-         {name:'Romanian Deadlift (RDL)',params:[['Reps','10–12'],['Sets','3'],['Belasting','60–75% 1RM'],['Tempo','3-1-3']],note:'Scharnier in heup, neutrale rug. Graduele opbouw is veilig (Berglund 2015).',cat:'kracht',yt:'JCXUYuzwNrM'},
+         {name:'Romanian Deadlift (RDL)',params:[['Reps','10–12'],['Sets','3'],['Belasting','60–75% 1RM'],['Tempo','3-1-3']],note:'Scharnier in heup, neutrale rug. Graduele opbouw is veilig (Berglund 2015).',cat:'kracht'},
          {name:'Goblet squat / bilateraal squat',params:[['Reps','10–12'],['Sets','3'],['ROM','0–90°']],note:'Neutrale lordose behouden.',cat:'kracht'},
          {name:'Pallof press (anti-rotatie)',params:[['Reps','10–12/zijde'],['Sets','3']],note:'Hoge transversus- en oblique-activiteit.',cat:'kracht'},
          {name:"Farmer's carry",params:[['Afstand','20–40m'],['Sets','3']],note:'Functioneel tillen + dragen. Directe transfer naar werk.'},
@@ -251,12 +251,12 @@ const protocols = {
        evidence:'<strong>Isometrische oefeningen</strong> verminderen pijn acuut (Rio et al., 2015) en zijn veilig voor weefselprotectie post-OK. <strong>Pendel-oefeningen</strong> (Codman) gebruiken zwaartekracht voor passieve distractie. Post-OK: <strong>sling 4–6 weken</strong> bij volledige ruptuurherstel.',
        goals:['NRS ≤ 4/10 in rust','Passieve ROM: elevatie ≥ 120°, ER ≥ 30°','Post-OK: sling-protocol respecteren','Scapulaire houding en bewustzijn activeren','Cervicale en thoracale mobiliteit normaal'],
        exercises:[
-         {name:'Pendel-oefeningen (Codman)',params:[['Duur','3–5 min'],['Richtingen','VL, AP, cirkels'],['Freq','3–4×/dag']],note:'Voorovergebogen, arm los hangen. Geen actieve schouderspier — inertie beweegt de arm. Reduceert capsulaire druk. Veilig post-OK.',cat:'mobiliteit',yt:'K5hxQnOWCHU'},
-         {name:'Passieve ROM — elevatie (tafelschuif)',params:[['ROM','0–120° progressief'],['Sets','3x10'],['Freq','2×/dag']],note:'Gezonde hand schuift aangedane arm over tafel. Geen actieve elevatie post-OK eerste 4 weken.',cat:'mobiliteit',yt:'kHPuIh0wqwM'},
+         {name:'Pendel-oefeningen (Codman)',params:[['Duur','3–5 min'],['Richtingen','VL, AP, cirkels'],['Freq','3–4×/dag']],note:'Voorovergebogen, arm los hangen. Geen actieve schouderspier — inertie beweegt de arm. Reduceert capsulaire druk. Veilig post-OK.',cat:'mobiliteit'},
+         {name:'Passieve ROM — elevatie (tafelschuif)',params:[['ROM','0–120° progressief'],['Sets','3x10'],['Freq','2×/dag']],note:'Gezonde hand schuift aangedane arm over tafel. Geen actieve elevatie post-OK eerste 4 weken.',cat:'mobiliteit'},
          {name:'Passieve ER (stok)',params:[['ROM','naar tolerantie'],['Sets','3x10'],['Freq','2×/dag']],note:'Stok in beide handen, gezonde arm duwt aangedane in ER. Post-OK: beperkt tot chirurgale instructie.',cat:'mobiliteit'},
-         {name:'Isometrische abductie (muur)',params:[['Hold','5–10 sec'],['Reps','10'],['Sets','3'],['Intensiteit','50–60% MVC']],note:'Arm 15° van lichaam, duw zijwaarts tegen muur. Pijnremmend effect.',cat:'kracht',yt:'D9HFMbmOe2Y'},
-         {name:'Isometrische ER + IR (neutraal)',params:[['Hold','5–10 sec'],['Reps','10'],['Sets','3']],note:'Elleboog 90°, arm langs zij. Basis RM-activering zonder beweging.',cat:'kracht',yt:'bJj0yF_1Tq8'},
-         {name:'Scapulaire retractie isometrisch',params:[['Hold','5 sec'],['Reps','10–15'],['Sets','3'],['Freq','3×/dag']],note:'"Kneep een potlood tussen schouderbladeren." Scapulaire stabilisatie fundament.',cat:'stabiliteit',yt:'UaB81R3pMrY'},
+         {name:'Isometrische abductie (muur)',params:[['Hold','5–10 sec'],['Reps','10'],['Sets','3'],['Intensiteit','50–60% MVC']],note:'Arm 15° van lichaam, duw zijwaarts tegen muur. Pijnremmend effect.',cat:'kracht'},
+         {name:'Isometrische ER + IR (neutraal)',params:[['Hold','5–10 sec'],['Reps','10'],['Sets','3']],note:'Elleboog 90°, arm langs zij. Basis RM-activering zonder beweging.',cat:'kracht'},
+         {name:'Scapulaire retractie isometrisch',params:[['Hold','5 sec'],['Reps','10–15'],['Sets','3'],['Freq','3×/dag']],note:'"Kneep een potlood tussen schouderbladeren." Scapulaire stabilisatie fundament.',cat:'stabiliteit'},
          {name:'Thoracale extensie mobilisatie',params:[['Vb','thoracale extensie op rol'],['Freq','dagelijks']],note:'Thoracale hyperkyfose beperkt scapulaire upward rotation — essentieel voor schouder ROM.',cat:'mobiliteit'}],
        criteria_go:['NRS ≤ 4/10 in rust','Passieve elevatie ≥ 120°','Passieve ER ≥ 30°','Post-OK: sling-protocol afgerond','Isometrische oefeningen pijnvrij'],
        criteria_stop:['Post-OK: geen actieve beweging voor week 4–6 bij volledige ruptuurherstel','Toenemende pijn na sessie → dosering halveren'],
@@ -267,11 +267,11 @@ const protocols = {
        goals:['Actieve elevatie ≥ 150° zonder schouderheffing','Actieve ER ≥ 45°','Scapulaire upward rotation normaal (30–40° bij 180°)','Serratus anterior zichtbaar actief','Full passive ROM bereikt'],
        exercises:[
          {name:'Actieve elevatie (cablepulley of zijlig)',params:[['ROM','0–150° progressief'],['Sets','3x10'],['Freq','2×/dag']],note:'Zijlig: zwaartekracht geneutraliseerd. Controleer: geen schouderheffing (upper trap dominantie).',cat:'mobiliteit'},
-         {name:'Serratus anterior — wall slide',params:[['Reps','10–15'],['Sets','3'],['Positie','beide handen op muur, scapula protractie']],note:'"Duw de muur weg" met scapula. Laagste upper trap:serratus ratio van alle oefeningen.',cat:'stabiliteit',yt:'MRpRQ7JLX88'},
-         {name:'Prone Y-T-W-L',params:[['Reps','10–12 elk'],['Sets','3'],['Gewicht','geen → licht (1–2 kg)']],note:'Buiklig. Y=135°, T=90°, W=ER met 90° abductie, L=ER met 90° elleboogflexie. Hoge scapulaire activiteit.',cat:'stabiliteit',yt:'VqXBqmDkJCk'},
-         {name:'Wand push-up (gesloten keten)',params:[['Reps','10–15'],['Sets','3'],['Progressie','verder van muur → vloer']],note:'Hoge serratus anterior activiteit. Veilig post-OK zodra actieve beweging toegestaan.',cat:'stabiliteit',yt:'N_xpYoLJjIE'},
-         {name:'IR-band oefening (elleboog 90°)',params:[['Reps','15–20'],['Sets','3'],['Band','licht → matig']],note:'Subscapularis activering. Bewuste scapulaire retractie tijdens uitvoering.',cat:'kracht',yt:'b85PYb8bqP8'},
-         {name:'ER-band oefening (elleboog 90°)',params:[['Reps','15–20'],['Sets','3'],['Band','licht → matig']],note:'Infraspinatus + teres minor. Handdoek tussen elleboog en romp voor consistente positie.',cat:'kracht',yt:'I-MKXSB-3Xo'}],
+         {name:'Serratus anterior — wall slide',params:[['Reps','10–15'],['Sets','3'],['Positie','beide handen op muur, scapula protractie']],note:'"Duw de muur weg" met scapula. Laagste upper trap:serratus ratio van alle oefeningen.',cat:'stabiliteit'},
+         {name:'Prone Y-T-W-L',params:[['Reps','10–12 elk'],['Sets','3'],['Gewicht','geen → licht (1–2 kg)']],note:'Buiklig. Y=135°, T=90°, W=ER met 90° abductie, L=ER met 90° elleboogflexie. Hoge scapulaire activiteit.',cat:'stabiliteit'},
+         {name:'Wand push-up (gesloten keten)',params:[['Reps','10–15'],['Sets','3'],['Progressie','verder van muur → vloer']],note:'Hoge serratus anterior activiteit. Veilig post-OK zodra actieve beweging toegestaan.',cat:'stabiliteit'},
+         {name:'IR-band oefening (elleboog 90°)',params:[['Reps','15–20'],['Sets','3'],['Band','licht → matig']],note:'Subscapularis activering. Bewuste scapulaire retractie tijdens uitvoering.',cat:'kracht'},
+         {name:'ER-band oefening (elleboog 90°)',params:[['Reps','15–20'],['Sets','3'],['Band','licht → matig']],note:'Infraspinatus + teres minor. Handdoek tussen elleboog en romp voor consistente positie.',cat:'kracht'}],
        criteria_go:['Actieve elevatie ≥ 150° zonder compensatie','ER ≥ 45° actief','Scapulaire upward rotation normaal','Full passive ROM','RM-kracht LSI ≥ 60%'],
        criteria_stop:['Schouderheffing bij elevatie > 90° → upper trap dominantie aanpakken','Post-OK: agressieve stretching vermijden tot week 8'],
        redflags:[]},
@@ -280,11 +280,11 @@ const protocols = {
        evidence:'<strong>Eccentrische training</strong> voor RC-tendinopathie reduceert pijn (Bernhardsson et al., 2011). <strong>High-load training</strong> (70–80% 1RM) superieur voor structurele peesadaptatie (Beyer et al., 2015). <strong>ER/IR ratio ≥ 0.66</strong> aanbevolen (Cools et al., 2007).',
        goals:['RM-kracht LSI ≥ 80%','ER/IR ratio ≥ 0.66','Volledige actieve ROM','Overhead activiteiten pijnvrij','DASH < 20'],
        exercises:[
-         {name:'Side-lying ER (eccentrisch accent)',params:[['Reps','8–12'],['Sets','3–4'],['Tempo','2-0-4']],note:'Infraspinatus + teres minor. 4 sec eccentrisch zakken. Hoge peeskrachtadaptatie.',cat:'kracht',yt:'ZfnEjgVUvwk'},
-         {name:'Full can (scapular plane abductie)',params:[['Reps','10–12'],['Sets','3'],['ROM','0–120°'],['Belasting','60–75% 1RM']],note:'30° voor frontale vlak, duim omhoog. Lagere subacromiale compressie dan empty can.',cat:'kracht',yt:'T4G5NrSLCmw'},
-         {name:'Prone ER (90° abductie)',params:[['Reps','10–12'],['Sets','3'],['Gewicht','licht → matig']],note:'Buiklig, schouder 90° abductie, elleboog 90°. Hoge infraspinatus + mid-trap + rhomboid activiteit.',cat:'kracht',yt:'WKyHxkHOcAM'},
+         {name:'Side-lying ER (eccentrisch accent)',params:[['Reps','8–12'],['Sets','3–4'],['Tempo','2-0-4']],note:'Infraspinatus + teres minor. 4 sec eccentrisch zakken. Hoge peeskrachtadaptatie.',cat:'kracht'},
+         {name:'Full can (scapular plane abductie)',params:[['Reps','10–12'],['Sets','3'],['ROM','0–120°'],['Belasting','60–75% 1RM']],note:'30° voor frontale vlak, duim omhoog. Lagere subacromiale compressie dan empty can.',cat:'kracht'},
+         {name:'Prone ER (90° abductie)',params:[['Reps','10–12'],['Sets','3'],['Gewicht','licht → matig']],note:'Buiklig, schouder 90° abductie, elleboog 90°. Hoge infraspinatus + mid-trap + rhomboid activiteit.',cat:'kracht'},
          {name:'Zijwaartse abductie (scapular plane)',params:[['Reps','10–12'],['Sets','3'],['ROM','0–90°']],note:'Supraspinatus prioriteit. Stop bij 90° om subacromiale compressie te vermijden.',cat:'kracht'},
-         {name:'Push-up plus',params:[['Reps','10–15'],['Sets','3'],['Progressie','knieën → tenen → instabiel']],note:'Eindfase push-up: extra protractie. Hoogste serratus anterior activiteit.',cat:'stabiliteit',yt:'OE_RFQOQfhg'},
+         {name:'Push-up plus',params:[['Reps','10–15'],['Sets','3'],['Progressie','knieën → tenen → instabiel']],note:'Eindfase push-up: extra protractie. Hoogste serratus anterior activiteit.',cat:'stabiliteit'},
          {name:'Diagonale PNF-patronen (D1 + D2)',params:[['Reps','10–12'],['Sets','3'],['Band','matig → zwaar']],note:'D2: flexie-abductie-ER (gooi-patroon). Functionele integratie van alle RC-componenten.',cat:'neuro'},
          {name:'Overhead press (licht)',params:[['Reps','10–12'],['Sets','3'],['ROM','90° → volledig']],note:'Pas introduceren zodra RM-kracht en scapulaire controle adequaat. Dumbbells in scapulair vlak.',cat:'kracht'}],
        criteria_go:['RM-kracht LSI ≥ 80%','ER/IR ratio ≥ 0.66','Volledige actieve ROM','DASH < 20','Overhead pijnvrij'],
@@ -364,7 +364,6 @@ function closeYT() {
   document.getElementById('yt-frame').src = '';
   document.body.style.overflow = '';
 }
-document.addEventListener('keydown', e => { if(e.key === 'Escape') closeYT(); });
 
 // ── NAVIGATION ──
 function setNav(id) {
@@ -402,6 +401,10 @@ function showProto(id) {
   ).join('') + `<div class="vtab" onclick="showRefs('${id}')">Referenties</div>`;
   renderPhase(0);
   setNav(id);
+  // Rode vlaggen teller
+  const totalFlags = p.phases.reduce((sum,ph) => sum + (ph.redflags ? ph.redflags.length : 0), 0);
+  const rfCount = document.getElementById('rf-count');
+  if(rfCount) rfCount.textContent = totalFlags;
 }
 
 function showPhase(i) {
@@ -458,6 +461,230 @@ function renderPhase(i) {
   }
   document.getElementById('proto-body').innerHTML = html;
 }
+
+// ── RODE VLAGGEN MODAL ──
+function openRF() {
+  if(!currentProto) return;
+  const p = currentProto;
+  const allFlags = [];
+  p.phases.forEach(ph => {
+    if(ph.redflags && ph.redflags.length) {
+      ph.redflags.forEach(f => allFlags.push({fase: ph.label + ' — ' + ph.title, flag: f}));
+    }
+  });
+  document.getElementById('rf-modal-title').textContent = '🚨 Rode vlaggen — ' + p.title;
+  if(!allFlags.length) {
+    document.getElementById('rf-modal-body').innerHTML = '<div style="color:var(--muted);font-size:13px;padding:20px 0;text-align:center;">Geen rode vlaggen geregistreerd.</div>';
+  } else {
+    let html = '';
+    let lastFase = '';
+    allFlags.forEach(({fase, flag}) => {
+      if(fase !== lastFase) {
+        html += `<div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);font-family:'Geist Mono',monospace;margin:${lastFase?'16px':0} 0 6px">${fase}</div>`;
+        lastFase = fase;
+      }
+      html += `<div style="display:flex;gap:10px;align-items:flex-start;padding:8px 12px;background:rgba(239,68,68,.05);border:1px solid rgba(239,68,68,.15);border-radius:5px;margin-bottom:6px;">
+        <span style="color:#ef4444;font-weight:700;flex-shrink:0;font-size:14px;">!</span>
+        <span style="font-size:12.5px;color:var(--text);line-height:1.5">${flag}</span>
+      </div>`;
+    });
+    document.getElementById('rf-modal-body').innerHTML = html;
+  }
+  document.getElementById('rf-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeRF() {
+  document.getElementById('rf-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// ── PATIËNTENFICHE ──
+let ficheScope = 'fase'; // 'fase' or 'all'
+let fichePhaseIndex = 0;
+
+function openFiche() {
+  if(!currentProto) return;
+  // Get current phase index from active tab
+  const tabs = document.querySelectorAll('.vtab');
+  let activeIdx = 0;
+  tabs.forEach((t,i) => { if(t.classList.contains('active')) activeIdx = i; });
+  fichePhaseIndex = activeIdx < currentProto.phases.length ? activeIdx : 0;
+  ficheScope = 'fase';
+  renderFicheModal();
+  document.getElementById('fiche-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeFiche() {
+  document.getElementById('fiche-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function setFicheScope(scope) {
+  ficheScope = scope;
+  renderFicheModal();
+}
+
+function renderFicheModal() {
+  const p = currentProto;
+  const phases = ficheScope === 'all' ? p.phases : [p.phases[fichePhaseIndex]];
+  const scopeLabel = ficheScope === 'all'
+    ? 'Volledig protocol'
+    : p.phases[fichePhaseIndex].label + ' — ' + p.phases[fichePhaseIndex].title;
+
+  document.getElementById('fiche-modal-title').textContent = '📋 ' + p.title;
+
+  // Scope switcher + phase picker
+  let html = `<div style="display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap;">`;
+  html += `<button onclick="setFicheScope('fase')" style="flex:1;padding:7px 10px;border-radius:6px;font-size:11.5px;font-family:'Geist',sans-serif;cursor:pointer;font-weight:600;border:1px solid ${ficheScope==='fase'?'var(--proto-color)':'var(--border)'};background:${ficheScope==='fase'?'rgba(var(--proto-color-rgb),.1)':'var(--surface2)'};color:${ficheScope==='fase'?'var(--proto-color)':'var(--muted)'};">Huidige fase</button>`;
+  html += `<button onclick="setFicheScope('all')" style="flex:1;padding:7px 10px;border-radius:6px;font-size:11.5px;font-family:'Geist',sans-serif;cursor:pointer;font-weight:600;border:1px solid ${ficheScope==='all'?'var(--proto-color)':'var(--border)'};background:${ficheScope==='all'?'rgba(var(--proto-color-rgb),.1)':'var(--surface2)'};color:${ficheScope==='all'?'var(--proto-color)':'var(--muted)'};">Volledig protocol</button>`;
+  html += `</div>`;
+
+  // Phase selector (only for single fase)
+  if(ficheScope === 'fase') {
+    html += `<div style="display:flex;gap:4px;margin-bottom:14px;overflow-x:auto;scrollbar-width:none;">`;
+    p.phases.forEach((ph, i) => {
+      html += `<button onclick="fichePhaseIndex=${i};renderFicheModal()" style="flex-shrink:0;padding:4px 10px;border-radius:5px;font-size:10.5px;font-family:'Geist Mono',monospace;cursor:pointer;border:1px solid ${i===fichePhaseIndex?'var(--proto-color)':'var(--border)'};background:${i===fichePhaseIndex?'var(--surface3)':'var(--surface2)'};color:${i===fichePhaseIndex?'var(--text)':'var(--muted)'};">${ph.label}</button>`;
+    });
+    html += `</div>`;
+  }
+
+  // Fiche content
+  phases.forEach(ph => {
+    html += `<div style="margin-bottom:18px;">`;
+    // Fase header
+    html += `<div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid var(--proto-color);border-radius:4px;padding:10px 14px;margin-bottom:10px;">
+      <div style="font-size:12px;font-weight:700;color:var(--text)">${ph.label} — ${ph.title}</div>
+      <div style="font-size:10.5px;color:var(--muted);font-family:'Geist Mono',monospace;margin-top:2px">${ph.weeks}</div>
+    </div>`;
+
+    // Doelstellingen
+    if(ph.goals && ph.goals.length) {
+      html += `<div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);font-family:'Geist Mono',monospace;margin-bottom:6px;">Doelstellingen</div>`;
+      html += `<ul style="list-style:none;margin-bottom:12px;">`;
+      ph.goals.forEach(g => {
+        html += `<li class="fiche-goal-item">${g}</li>`;
+      });
+      html += `</ul>`;
+    }
+
+    // Oefeningen
+    if(ph.exercises && ph.exercises.length) {
+      html += `<div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);font-family:'Geist Mono',monospace;margin-bottom:6px;">Oefeningen</div>`;
+      ph.exercises.forEach(ex => {
+        html += `<div class="fiche-ex-row">`;
+        html += `<div style="display:flex;align-items:flex-start;justify-content:space-between;gap:8px;">`;
+        html += `<div class="fiche-ex-name">${ex.name}</div>`;
+        if(ex.cat && CAT[ex.cat]) {
+          const c = CAT[ex.cat];
+          html += `<span style="font-size:9px;padding:1px 6px;border-radius:6px;font-family:'Geist Mono',monospace;border:1px solid ${c.color}44;color:${c.color};background:${c.color}15;white-space:nowrap;flex-shrink:0">${c.icon}</span>`;
+        }
+        html += `</div>`;
+        if(ex.params && ex.params.length) {
+          html += `<div class="fiche-ex-params">${ex.params.map(([k,v])=>`${k}: ${v}`).join(' · ')}</div>`;
+        }
+        if(ex.note) {
+          html += `<div style="font-size:11px;color:var(--muted);margin-top:3px;line-height:1.5">${ex.note}</div>`;
+        }
+        html += `</div>`;
+      });
+    }
+    html += `</div>`;
+  });
+
+  // Notities veld
+  html += `<div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);font-family:'Geist Mono',monospace;margin-bottom:6px;">Notities voor patiënt</div>`;
+  html += `<textarea class="fiche-notes-area" id="fiche-notes" placeholder="Voeg persoonlijke notities toe voor deze patiënt..."></textarea>`;
+
+  document.getElementById('fiche-modal-body').innerHTML = html;
+}
+
+function printFiche() {
+  if(!currentProto) return;
+  const p = currentProto;
+  const phases = ficheScope === 'all' ? p.phases : [p.phases[fichePhaseIndex]];
+  const notes = document.getElementById('fiche-notes')?.value || '';
+  const datum = new Date().toLocaleDateString('nl-BE', {day:'2-digit',month:'2-digit',year:'numeric'});
+
+  let html = `<h1>${p.title}</h1>`;
+  html += `<div class="pf-meta">Patiëntenfiche · ${ficheScope==='all'?'Volledig protocol':phases[0].label+' — '+phases[0].title} · ${datum}</div>`;
+
+  phases.forEach(ph => {
+    html += `<h2>${ph.label} — ${ph.title} <span style="font-weight:400;font-size:11px;color:#888">${ph.weeks}</span></h2>`;
+    if(ph.goals && ph.goals.length) {
+      html += `<div style="font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#888;margin-bottom:4px">Doelstellingen</div>`;
+      ph.goals.forEach(g => html += `<div class="pf-goal">→ ${g}</div>`);
+    }
+    if(ph.exercises && ph.exercises.length) {
+      html += `<div style="font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#888;margin:10px 0 4px">Oefeningen</div>`;
+      ph.exercises.forEach(ex => {
+        const params = ex.params ? ex.params.map(([k,v])=>`${k}: ${v}`).join(' · ') : '';
+        html += `<div class="pf-ex">
+          <div class="pf-ex-name">${ex.name}</div>
+          <div class="pf-ex-params">${params}</div>
+        </div>`;
+        if(ex.note) html += `<div style="font-size:10px;color:#666;padding:2px 0 4px 8px;font-style:italic">${ex.note}</div>`;
+      });
+    }
+  });
+
+  if(notes) {
+    html += `<h2>Notities</h2><div class="pf-notes">${notes}</div>`;
+  }
+  html += `<div class="pf-footer">KineProtocol · Evidence-based revalidatie · Gegenereerd op ${datum}</div>`;
+
+  document.getElementById('print-fiche').innerHTML = html;
+  window.print();
+}
+
+function copyFiche() {
+  if(!currentProto) return;
+  const p = currentProto;
+  const phases = ficheScope === 'all' ? p.phases : [p.phases[fichePhaseIndex]];
+  const notes = document.getElementById('fiche-notes')?.value || '';
+  const datum = new Date().toLocaleDateString('nl-BE', {day:'2-digit',month:'2-digit',year:'numeric'});
+
+  let text = `${p.title} — Patiëntenfiche (${datum})\n`;
+  text += `${'='.repeat(50)}\n\n`;
+
+  phases.forEach(ph => {
+    text += `${ph.label} — ${ph.title} (${ph.weeks})\n`;
+    text += `${'-'.repeat(40)}\n`;
+    if(ph.goals && ph.goals.length) {
+      text += `\nDoelstellingen:\n`;
+      ph.goals.forEach(g => text += `  → ${g}\n`);
+    }
+    if(ph.exercises && ph.exercises.length) {
+      text += `\nOefeningen:\n`;
+      ph.exercises.forEach(ex => {
+        const params = ex.params ? ex.params.map(([k,v])=>`${k}: ${v}`).join(' · ') : '';
+        text += `  • ${ex.name}${params ? ' — ' + params : ''}\n`;
+        if(ex.note) text += `    ${ex.note}\n`;
+      });
+    }
+    text += '\n';
+  });
+
+  if(notes) text += `Notities:\n${notes}\n\n`;
+  text += `KineProtocol · ${datum}`;
+
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.querySelector('.kmodal-action.secondary');
+    if(btn) { btn.textContent = '✓ Gekopieerd!'; setTimeout(() => btn.textContent = '📋 Kopieer tekst', 2000); }
+  }).catch(() => {
+    // Fallback
+    const ta = document.createElement('textarea');
+    ta.value = text; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); document.body.removeChild(ta);
+    const btn = document.querySelector('.kmodal-action.secondary');
+    if(btn) { btn.textContent = '✓ Gekopieerd!'; setTimeout(() => btn.textContent = '📋 Kopieer tekst', 2000); }
+  });
+}
+
+// ── ESC closes all modals ──
+document.addEventListener('keydown', e => {
+  if(e.key === 'Escape') { closeYT(); closeRF(); closeFiche(); }
+});
 
 // ── SEARCH ──
 function handleSearch(q) {

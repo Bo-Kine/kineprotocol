@@ -528,7 +528,7 @@ const protocols = {
        exercises:[
          {name:'Band pull-apart',params:[['Reps','15–20'],['Sets','3'],['Band','licht → matig'],['Freq','3×/week']],note:'Armen gestrekt voor, band op schouderhoogte. Trek band uit elkaar tot armen wijd. Schouders omlaag en achter. Hoge lower trap + posterior deltoid + rhomboid activatie. De beste thuisoefening voor bureauhouding.',cat:'kracht'},
          {name:'Face pull (kabelstation of band)',params:[['Reps','12–15'],['Sets','3'],['Ellebogen','hoog']],note:'Handen naar gezicht trekken met ellebogen hoog. Externe rotatie in eindpositie. Correleert sterk met verminderde nekpijn bij bureauwerkers (Andersen 2008). Alternatief: band aan deur op gezichtshoogte.',cat:'kracht'},
-         {name:'Romanian Deadlift (heup scharnier)',params:[['Reps','10–12'],['Sets','3'],['Belasting','licht begin']],note:'Heup scharnier aanle ren: neutraal rug, gewicht zakken langs benen. Herstelt heup-dominante beweegstrategie. Vermindert lumbale compensatie. Start met stok om bewegingspatroon aan te leren.',cat:'kracht'},
+         {name:'Romanian Deadlift (heup scharnier)',params:[['Reps','10–12'],['Sets','3'],['Belasting','licht begin']],note:'Heup scharnier aanleren: neutraal rug, gewicht zakken langs benen. Herstelt heup-dominante beweegstrategie. Vermindert lumbale compensatie. Start met stok om bewegingspatroon aan te leren.',cat:'kracht'},
          {name:'Plank (progressief)',params:[['Duur','20 sec → 60 sec → 90 sec'],['Sets','3'],['Progressie','knieën → tenen → instabiel']],note:'Neutrale wervelkolom (niet doorzakken of te hoog). Target: 60 sec correct voor onderhoud. Progressie: één arm/been optillen. Kernstabilisatie voor lumbale klachten.',cat:'stabiliteit'},
          {name:'Side plank',params:[['Duur','20–40 sec/zijde'],['Sets','3']],note:'Anti-lateraalflexie stabilisatie. Correleert met verminderde laterale neklachten. Progressie: heup omhoog/omlaag pulseren.',cat:'stabiliteit'},
          {name:'Nekrotatie met weerstand (band)',params:[['Reps','10–12/zijde'],['Sets','3'],['Band','licht']],note:'Zittend, band om hoofd via voorhoofd (of hand). Roteer tegen weerstand. Functionele nekrotatorkracht. Bilateraal gelijke kracht = doel.',cat:'kracht'},
@@ -556,18 +556,114 @@ const protocols = {
 
 // ── CATEGORIES ──
 const CAT = {
-  kracht:   {icon:'💪', label:'Kracht',     color:'#f97316'},
-  mobiliteit:{icon:'🔄', label:'Mobiliteit', color:'#22d3ee'},
-  stabiliteit:{icon:'⚖️', label:'Stabiliteit',color:'#a78bfa'},
-  neuro:    {icon:'🧠', label:'Neuro',       color:'#34d399'},
-  cardio:   {icon:'🏃', label:'Cardio',      color:'#4ade80'},
-  manueel:  {icon:'🤲', label:'Manueel',     color:'#f43f5e'},
-  test:     {icon:'📏', label:'Test',         color:'#facc15'},
+  kracht:     {icon:'💪', label:'Kracht',      color:'#f97316'},
+  mobiliteit: {icon:'🔄', label:'Mobiliteit',  color:'#22d3ee'},
+  stabiliteit:{icon:'⚖', label:'Stabiliteit', color:'#a78bfa'},
+  neuro:      {icon:'🧠', label:'Neuro',        color:'#34d399'},
+  cardio:     {icon:'🏃', label:'Cardio',       color:'#4ade80'},
+  manueel:    {icon:'🤲', label:'Manueel',      color:'#f43f5e'},
+  test:       {icon:'📏', label:'Test',          color:'#facc15'},
+};
+
+// ── UITKOMSTMATEN PER PROTOCOL ──
+const SCORES = {
+  acl: [
+    {name:'IKDC', full:'International Knee Documentation Committee', max:100, unit:'punten',
+     ranges:[{label:'Normaal',min:85,max:100,color:'#22c55e'},{label:'Bijna normaal',min:65,max:84,color:'#f59e0b'},{label:'Abnormaal',min:0,max:64,color:'#ef4444'}],
+     rts:'≥ 85 voor RTS', mcid:11.5},
+    {name:'ACL-RSI', full:'ACL Return to Sport after Injury Scale', max:100, unit:'punten',
+     ranges:[{label:'RTS-klaar',min:65,max:100,color:'#22c55e'},{label:'Matig',min:40,max:64,color:'#f59e0b'},{label:'Psychologisch niet klaar',min:0,max:39,color:'#ef4444'}],
+     rts:'≥ 65 voor RTS', mcid:null},
+    {name:'Quad LSI', full:'Limb Symmetry Index Quadriceps', max:100, unit:'%',
+     ranges:[{label:'RTS-klaar',min:90,max:100,color:'#22c55e'},{label:'Jogging OK',min:80,max:89,color:'#f59e0b'},{label:'Onvoldoende',min:0,max:79,color:'#ef4444'}],
+     rts:'≥ 90% voor RTS', mcid:null},
+  ],
+  tka: [
+    {name:'KOOS', full:'Knee injury and Osteoarthritis Outcome Score', max:100, unit:'punten',
+     ranges:[{label:'Goed',min:70,max:100,color:'#22c55e'},{label:'Matig',min:40,max:69,color:'#f59e0b'},{label:'Slecht',min:0,max:39,color:'#ef4444'}],
+     rts:'≥ 70 voor functioneel herstel', mcid:10},
+    {name:'6MWT', full:'6-Minute Walk Test', max:600, unit:'meter',
+     ranges:[{label:'Goed',min:400,max:600,color:'#22c55e'},{label:'Matig',min:300,max:399,color:'#f59e0b'},{label:'Slecht',min:0,max:299,color:'#ef4444'}],
+     rts:'≥ 400m = goed herstel', mcid:20},
+  ],
+  pfps: [
+    {name:'Kujala', full:'Kujala Anterior Knee Pain Scale', max:100, unit:'punten',
+     ranges:[{label:'Minimale klachten',min:80,max:100,color:'#22c55e'},{label:'Matige klachten',min:60,max:79,color:'#f59e0b'},{label:'Ernstige klachten',min:0,max:59,color:'#ef4444'}],
+     rts:'≥ 80 voor sport', mcid:10},
+  ],
+  lh: [
+    {name:'ODI', full:'Oswestry Disability Index', max:100, unit:'% beperking',
+     ranges:[{label:'Minimaal (0–20%)',min:0,max:20,color:'#22c55e'},{label:'Matig (21–40%)',min:21,max:40,color:'#f59e0b'},{label:'Ernstig (>40%)',min:41,max:100,color:'#ef4444'}],
+     rts:'< 20% voor RTW', mcid:10, invert:true},
+  ],
+  rc: [
+    {name:'DASH', full:'Disabilities of Arm, Shoulder and Hand', max:100, unit:'punten',
+     ranges:[{label:'Minimale beperking',min:0,max:20,color:'#22c55e'},{label:'Matige beperking',min:21,max:40,color:'#f59e0b'},{label:'Ernstige beperking',min:41,max:100,color:'#ef4444'}],
+     rts:'< 20 voor RTS', mcid:10.2, invert:true},
+    {name:'WORC', full:'Western Ontario Rotator Cuff Index', max:100, unit:'punten',
+     ranges:[{label:'Goed',min:80,max:100,color:'#22c55e'},{label:'Matig',min:60,max:79,color:'#f59e0b'},{label:'Slecht',min:0,max:59,color:'#ef4444'}],
+     rts:'≥ 80 voor RTS', mcid:12},
+    {name:'ER/IR Ratio', full:'Externe / Interne Rotatie Krachtratio', max:100, unit:'ratio × 100',
+     ranges:[{label:'Normaal (≥ 66%)',min:66,max:100,color:'#22c55e'},{label:'Matig (55–65%)',min:55,max:65,color:'#f59e0b'},{label:'Risico (< 55%)',min:0,max:54,color:'#ef4444'}],
+     rts:'≥ 0.66 (66%)', mcid:null},
+  ],
+  pt: [
+    {name:'VISA-P', full:'Victorian Institute of Sport Assessment – Patella', max:100, unit:'punten',
+     ranges:[{label:'RTS-klaar',min:90,max:100,color:'#22c55e'},{label:'Sport beperkt',min:65,max:89,color:'#f59e0b'},{label:'Ernstige klachten',min:0,max:64,color:'#ef4444'}],
+     rts:'≥ 90 voor volledig sporten', mcid:13},
+  ],
+  at: [
+    {name:'VISA-A', full:'Victorian Institute of Sport Assessment – Achilles', max:100, unit:'punten',
+     ranges:[{label:'RTS-klaar',min:90,max:100,color:'#22c55e'},{label:'Sport beperkt',min:65,max:89,color:'#f59e0b'},{label:'Ernstige klachten',min:0,max:64,color:'#ef4444'}],
+     rts:'≥ 90 voor volledig sporten', mcid:10},
+  ],
+  bureau: [
+    {name:'NDI', full:'Neck Disability Index', max:50, unit:'punten',
+     ranges:[{label:'Geen beperking (0–4)',min:0,max:4,color:'#22c55e'},{label:'Matig (15–24)',min:5,max:24,color:'#f59e0b'},{label:'Ernstig (≥ 25)',min:25,max:50,color:'#ef4444'}],
+     rts:'< 10 voor ontslag', mcid:7, invert:true},
+  ],
 };
 
 // ── STATE ──
 let currentProto = null;
 let deferredPrompt = null;
+let editingPatientId = null;
+
+// ── PATIENTS (localStorage) ──
+function loadPatients() {
+  try { return JSON.parse(localStorage.getItem('kp_patients') || '[]'); } catch(e) { return []; }
+}
+function savePatients(pts) {
+  try { localStorage.setItem('kp_patients', JSON.stringify(pts)); } catch(e) {}
+  updatePatientBadge();
+}
+function updatePatientBadge() {
+  const pts = loadPatients();
+  const count = pts.length;
+  const badge = document.getElementById('pat-count-badge');
+  const stat = document.getElementById('stat-patients');
+  if(badge) { badge.textContent = count; badge.style.display = count > 0 ? '' : 'none'; }
+  if(stat) stat.textContent = count;
+}
+function genId() { return Date.now().toString(36) + Math.random().toString(36).slice(2,6); }
+function getInitials(name) {
+  return name.split(' ').filter(Boolean).map(w=>w[0].toUpperCase()).slice(0,2).join('');
+}
+function getProtoColor(pid) {
+  const colors = {acl:'#22d3ee',tka:'#a78bfa',pfps:'#f97316',lh:'#34d399',rc:'#f43f5e',pt:'#fb923c',at:'#e879f9',bureau:'#60a5fa'};
+  return colors[pid] || '#71717a';
+}
+function formatDate(iso) {
+  if(!iso) return '';
+  try { return new Date(iso).toLocaleDateString('nl-BE',{day:'2-digit',month:'2-digit',year:'numeric'}); } catch(e) { return iso; }
+}
+function calcAge(dob) {
+  if(!dob) return null;
+  const today = new Date(), birth = new Date(dob);
+  let age = today.getFullYear() - birth.getFullYear();
+  if(today.getMonth() < birth.getMonth() || (today.getMonth()===birth.getMonth() && today.getDate()<birth.getDate())) age--;
+  return age;
+}
 
 // ── PWA INSTALL ──
 window.addEventListener('beforeinstallprompt', e => {
@@ -581,7 +677,7 @@ window.addEventListener('appinstalled', () => {
   deferredPrompt = null;
 });
 function installApp() {
-  if (!deferredPrompt) return;
+  if(!deferredPrompt) return;
   deferredPrompt.prompt();
   deferredPrompt.userChoice.then(() => { deferredPrompt = null; });
 }
@@ -602,100 +698,155 @@ function closeYT() {
 }
 
 // ── NAVIGATION ──
+function hideAllScreens() {
+  ['screen-home','screen-proto','screen-patients','screen-patient-detail','screen-search'].forEach(id => {
+    const el = document.getElementById(id);
+    if(el) el.style.display = 'none';
+  });
+}
 function setNav(id) {
   document.querySelectorAll('[id^="nav-"],[id^="bnav-"]').forEach(n => n.classList.remove('active'));
-  const s = document.getElementById('nav-'+id);
-  const b = document.getElementById('bnav-'+id);
+  const s = document.getElementById('nav-'+id), b = document.getElementById('bnav-'+id);
   if(s) s.classList.add('active');
   if(b) b.classList.add('active');
 }
-
 function showHome() {
+  hideAllScreens();
   document.getElementById('screen-home').style.display = '';
-  document.getElementById('screen-proto').style.display = 'none';
-  document.getElementById('screen-search').style.display = 'none';
   document.getElementById('searchInput').value = '';
-  setNav('home');
-  currentProto = null;
+  setNav('home'); currentProto = null;
 }
-
 function showProto(id) {
-  const p = protocols[id];
-  if(!p) return;
+  const p = protocols[id]; if(!p) return;
   currentProto = p;
-  document.getElementById('screen-home').style.display = 'none';
-  document.getElementById('screen-search').style.display = 'none';
+  hideAllScreens();
   document.getElementById('screen-proto').style.display = 'flex';
   document.getElementById('proto-breadcrumb').textContent = p.title;
   document.getElementById('proto-title').textContent = p.title;
   document.getElementById('proto-subtitle').textContent = p.subtitle;
   document.getElementById('proto-dot').style.background = p.color;
   document.documentElement.style.setProperty('--proto-color', p.color);
+  // Tabs: fasen + Scores + Referenties
   const tabs = document.getElementById('proto-tabs');
-  tabs.innerHTML = p.phases.map((ph,i) =>
-    `<div class="vtab ${i===0?'active':''}" onclick="showPhase(${i})">${ph.label}</div>`
-  ).join('') + `<div class="vtab" onclick="showRefs('${id}')">Referenties</div>`;
+  const hasScores = SCORES[id] && SCORES[id].length > 0;
+  const tabsHtml = p.phases.map((ph,i) => {
+    const cls = i===0 ? 'vtab active' : 'vtab';
+    return '<div class="' + cls + '" onclick="showPhase(' + i + ')">' + ph.label + '</div>';
+  }).join('');
+  const scoresTab = hasScores ? '<div class="vtab" onclick="showScores(\'' + id + '\')"> Scores</div>' : '';
+  const refsTab = '<div class="vtab" onclick="showRefs(\'' + id + '\')">Referenties</div>';
+  tabs.innerHTML = tabsHtml + scoresTab + refsTab;
   renderPhase(0);
+  renderTimeline(0);
   setNav(id);
-  // Rode vlaggen teller
-  const totalFlags = p.phases.reduce((sum,ph) => sum + (ph.redflags ? ph.redflags.length : 0), 0);
+  const totalFlags = p.phases.reduce((s,ph) => s + (ph.redflags ? ph.redflags.length : 0), 0);
   const rfCount = document.getElementById('rf-count');
   if(rfCount) rfCount.textContent = totalFlags;
 }
-
 function showPhase(i) {
   document.querySelectorAll('.vtab').forEach((t,j) => t.classList.toggle('active', j===i));
   renderPhase(i);
+  renderTimeline(i);
   document.getElementById('proto-body').scrollTop = 0;
 }
-
 function showRefs(id) {
   const p = protocols[id];
-  document.querySelectorAll('.vtab').forEach((t,j) => t.classList.toggle('active', j===p.phases.length));
+  const tabCount = p.phases.length + (SCORES[id]?.length ? 1 : 0);
+  document.querySelectorAll('.vtab').forEach((t,j) => t.classList.toggle('active', j===tabCount));
   document.getElementById('proto-body').innerHTML = `<div class="ref-box"><div class="ref-label">Sleutelreferenties</div><div class="ref-text">${p.refs.split('|').map(r=>`<div style="margin-bottom:10px">${r.trim()}</div>`).join('')}</div></div>`;
 }
 
-function renderPhase(i) {
-  const ph = currentProto.phases[i];
+// ── FASE TIJDLIJN ──
+function renderTimeline(activeIdx) {
+  const p = currentProto; if(!p) return;
+  const tl = document.getElementById('phase-timeline'); if(!tl) return;
+  // Check if a patient is linked to this protocol
+  const pts = loadPatients();
+  const linked = pts.find(pt => pt.protoId === p.id);
+  const patPhase = linked ? (linked.phaseIndex || 0) : null;
   let html = '';
-  html += `<div class="ev-box"><div class="ev-label">Evidence-basis</div><div class="ev-text">${ph.evidence}</div></div>`;
-  html += `<div class="goals-box"><div class="goals-label">Doelstellingen — ${ph.title}</div><ul class="glist">${ph.goals.map(g=>`<li>${g}</li>`).join('')}</ul></div>`;
-  if(ph.exercises && ph.exercises.length) {
-    html += `<div class="slabel">Oefenprogramma</div><div class="ex-grid">`;
-    ph.exercises.forEach(ex => {
-      const cat = ex.cat ? CAT[ex.cat] : null;
-      html += `<div class="ex-card">`;
-      // Header row: name + category badge
-      html += `<div class="ex-header">`;
-      html += `<div class="ex-name">${ex.name}</div>`;
-      if(cat) html += `<span class="ex-cat" style="background:${cat.color}22;color:${cat.color};border-color:${cat.color}44">${cat.icon} ${cat.label}</span>`;
-      html += `</div>`;
-      if(ex.params && ex.params.length) {
-        html += `<div class="ex-params">${ex.params.map(([k,v])=>`<div class="ep">${k}: <span>${v}</span></div>`).join('')}</div>`;
-      }
-      if(ex.note) html += `<div class="ex-note">${ex.note}</div>`;
-      // YouTube button
-      if(ex.yt) {
-        html += `<button class="yt-btn" onclick="openYT('${ex.yt}','${ex.name.replace(/'/g,"\\'")}')">▶ Bekijk video</button>`;
-      }
-      html += `</div>`;
+  p.phases.forEach((ph, i) => {
+    const isActive = i === activeIdx;
+    const isDone = patPhase !== null && i < patPhase;
+    const isPatCurrent = patPhase !== null && i === patPhase;
+    let cls = 'pt-dot';
+    if(isActive) cls += ' active';
+    if(isDone) cls += ' done';
+    if(isPatCurrent && !isActive) cls += ' patient-current';
+    const lineClass = isDone ? 'pt-line done' : 'pt-line';
+    const label = ph.label.replace('Fase ','F').replace('Preop + Dag 0–3','Pre').replace('Diagnostiek','D0');
+    html += `<div class="pt-step">
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <div class="${cls}" onclick="showPhase(${i})" title="${ph.label}: ${ph.title}">${i+1}</div>
+        <div class="pt-label">${label}</div>
+      </div>
+      ${i < p.phases.length-1 ? `<div class="${lineClass}"></div>` : ''}
+    </div>`;
+  });
+  if(linked) {
+    html += `<div style="margin-left:12px;font-size:10px;color:#4ade80;font-family:'Geist Mono',monospace;white-space:nowrap;align-self:flex-start;margin-top:2px">👤 ${linked.name.split(' ')[0]}</div>`;
+  }
+  tl.innerHTML = html;
+}
+
+// ── SCORES TAB ──
+function showScores(id) {
+  const p = protocols[id];
+  const tabCount = p.phases.length;
+  document.querySelectorAll('.vtab').forEach((t,j) => t.classList.toggle('active', j===tabCount));
+  const scores = SCORES[id] || [];
+  let html = `<div class="slabel">Uitkomstmaten — ${p.title}</div>`;
+  html += `<div class="scores-grid">`;
+  scores.forEach((sc, si) => {
+    html += `<div class="score-card">
+      <div class="score-name">${sc.name}</div>
+      <div class="score-full">${sc.full}</div>
+      <div class="score-ranges">`;
+    sc.ranges.forEach(r => {
+      html += `<div class="score-range">
+        <div class="score-range-dot" style="background:${r.color}"></div>
+        <div class="score-range-label">${r.label}</div>
+        <div class="score-range-val">${r.min}–${r.max} ${sc.unit}</div>
+      </div>`;
     });
     html += `</div>`;
-  }
-  if((ph.criteria_go && ph.criteria_go.length) || (ph.criteria_stop && ph.criteria_stop.length)) {
-    html += `<div class="slabel">Doorstroomcriteria</div><div class="criteria-grid">`;
-    if(ph.criteria_go && ph.criteria_go.length) {
-      html += `<div class="cbox go"><div class="ctitle go">Vereist ✓</div><ul class="clist go">${ph.criteria_go.map(c=>`<li>${c}</li>`).join('')}</ul></div>`;
-    }
-    if(ph.criteria_stop && ph.criteria_stop.length) {
-      html += `<div class="cbox stop"><div class="ctitle stop">Vertraag ⚠</div><ul class="clist stop">${ph.criteria_stop.map(c=>`<li>${c}</li>`).join('')}</ul></div>`;
-    }
-    html += `</div>`;
-  }
-  if(ph.redflags && ph.redflags.length) {
-    html += `<div class="rf-box"><div class="rf-label">Rode vlaggen</div><ul class="rf-list">${ph.redflags.map(r=>`<li>${r}</li>`).join('')}</ul></div>`;
-  }
+    if(sc.rts) html += `<div style="font-size:10.5px;color:var(--muted);margin-bottom:10px;padding:5px 8px;background:var(--surface2);border-radius:4px;font-family:'Geist Mono',monospace">RTS: ${sc.rts}</div>`;
+    if(sc.mcid) html += `<div style="font-size:10px;color:var(--muted2);margin-bottom:10px;font-family:'Geist Mono',monospace">MCID: ${sc.mcid} ${sc.unit}</div>`;
+    html += `<div class="score-input-row">
+      <input class="score-input" id="score-input-${si}" type="number" min="0" max="${sc.max}" placeholder="Score (0–${sc.max})">
+      <button class="score-btn" onclick="calcScore('${id}',${si})">Interpreteer</button>
+    </div>
+    <div class="score-result" id="score-result-${si}"></div>
+    </div>`;
+  });
+  html += `</div>`;
   document.getElementById('proto-body').innerHTML = html;
+  document.getElementById('proto-body').scrollTop = 0;
+}
+function calcScore(protoId, si) {
+  const sc = SCORES[protoId][si];
+  const val = parseFloat(document.getElementById(`score-input-${si}`).value);
+  const res = document.getElementById(`score-result-${si}`);
+  if(isNaN(val) || val < 0 || val > sc.max) {
+    res.className = 'score-result show warn';
+    res.textContent = `Voer een geldige score in (0–${sc.max})`;
+    return;
+  }
+  let matched = null;
+  if(sc.invert) {
+    matched = sc.ranges.find(r => val >= r.min && val <= r.max);
+  } else {
+    matched = sc.ranges.slice().reverse().find(r => val >= r.min && val <= r.max);
+    if(!matched) matched = sc.ranges[sc.ranges.length-1];
+  }
+  if(!matched) matched = sc.ranges[0];
+  const colorMap = {'#22c55e':'good','#f59e0b':'warn','#ef4444':'bad'};
+  const cls = colorMap[matched.color] || 'warn';
+  res.className = `score-result show ${cls}`;
+  res.textContent = `${val} ${sc.unit} → ${matched.label}`;
+  if(sc.mcid) {
+    res.textContent += ` · MCID: ${sc.mcid}`;
+  }
 }
 
 // ── RODE VLAGGEN MODAL ──
@@ -704,24 +855,23 @@ function openRF() {
   const p = currentProto;
   const allFlags = [];
   p.phases.forEach(ph => {
-    if(ph.redflags && ph.redflags.length) {
+    if(ph.redflags && ph.redflags.length)
       ph.redflags.forEach(f => allFlags.push({fase: ph.label + ' — ' + ph.title, flag: f}));
-    }
   });
   document.getElementById('rf-modal-title').textContent = '🚨 Rode vlaggen — ' + p.title;
   if(!allFlags.length) {
     document.getElementById('rf-modal-body').innerHTML = '<div style="color:var(--muted);font-size:13px;padding:20px 0;text-align:center;">Geen rode vlaggen geregistreerd.</div>';
   } else {
-    let html = '';
-    let lastFase = '';
+    let html = ''; let lastFase = '';
     allFlags.forEach(({fase, flag}) => {
       if(fase !== lastFase) {
         html += `<div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);font-family:'Geist Mono',monospace;margin:${lastFase?'16px':0} 0 6px">${fase}</div>`;
         lastFase = fase;
       }
-      html += `<div style="display:flex;gap:10px;align-items:flex-start;padding:8px 12px;background:rgba(239,68,68,.05);border:1px solid rgba(239,68,68,.15);border-radius:5px;margin-bottom:6px;">
-        <span style="color:#ef4444;font-weight:700;flex-shrink:0;font-size:14px;">!</span>
-        <span style="font-size:12.5px;color:var(--text);line-height:1.5">${flag}</span>
+      const urgent = flag.includes('SPOED') || flag.includes('spoed') || flag.includes('CAUDA');
+      html += `<div style="display:flex;gap:10px;align-items:flex-start;padding:8px 12px;background:rgba(239,68,68,${urgent?.1:.05});border:1px solid rgba(239,68,68,${urgent?.25:.15});border-radius:5px;margin-bottom:6px;">
+        <span style="color:#ef4444;font-weight:700;flex-shrink:0;font-size:${urgent?16:13}px;">${urgent?'🚨':'!'}</span>
+        <span style="font-size:12.5px;color:var(--text);line-height:1.5;${urgent?'font-weight:600':''}">${flag}</span>
       </div>`;
     });
     document.getElementById('rf-modal-body').innerHTML = html;
@@ -729,18 +879,13 @@ function openRF() {
   document.getElementById('rf-modal').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
-function closeRF() {
-  document.getElementById('rf-modal').classList.remove('open');
-  document.body.style.overflow = '';
-}
+function closeRF() { document.getElementById('rf-modal').classList.remove('open'); document.body.style.overflow = ''; }
 
 // ── PATIËNTENFICHE ──
-let ficheScope = 'fase'; // 'fase' or 'all'
+let ficheScope = 'fase';
 let fichePhaseIndex = 0;
-
 function openFiche() {
   if(!currentProto) return;
-  // Get current phase index from active tab
   const tabs = document.querySelectorAll('.vtab');
   let activeIdx = 0;
   tabs.forEach((t,i) => { if(t.classList.contains('active')) activeIdx = i; });
@@ -750,177 +895,459 @@ function openFiche() {
   document.getElementById('fiche-modal').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
-function closeFiche() {
-  document.getElementById('fiche-modal').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-function setFicheScope(scope) {
-  ficheScope = scope;
-  renderFicheModal();
-}
-
+function closeFiche() { document.getElementById('fiche-modal').classList.remove('open'); document.body.style.overflow = ''; }
+function setFicheScope(scope) { ficheScope = scope; renderFicheModal(); }
 function renderFicheModal() {
   const p = currentProto;
   const phases = ficheScope === 'all' ? p.phases : [p.phases[fichePhaseIndex]];
-  const scopeLabel = ficheScope === 'all'
-    ? 'Volledig protocol'
-    : p.phases[fichePhaseIndex].label + ' — ' + p.phases[fichePhaseIndex].title;
-
   document.getElementById('fiche-modal-title').textContent = '📋 ' + p.title;
-
-  // Scope switcher + phase picker
   let html = `<div style="display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap;">`;
-  html += `<button onclick="setFicheScope('fase')" style="flex:1;padding:7px 10px;border-radius:6px;font-size:11.5px;font-family:'Geist',sans-serif;cursor:pointer;font-weight:600;border:1px solid ${ficheScope==='fase'?'var(--proto-color)':'var(--border)'};background:${ficheScope==='fase'?'rgba(var(--proto-color-rgb),.1)':'var(--surface2)'};color:${ficheScope==='fase'?'var(--proto-color)':'var(--muted)'};">Huidige fase</button>`;
-  html += `<button onclick="setFicheScope('all')" style="flex:1;padding:7px 10px;border-radius:6px;font-size:11.5px;font-family:'Geist',sans-serif;cursor:pointer;font-weight:600;border:1px solid ${ficheScope==='all'?'var(--proto-color)':'var(--border)'};background:${ficheScope==='all'?'rgba(var(--proto-color-rgb),.1)':'var(--surface2)'};color:${ficheScope==='all'?'var(--proto-color)':'var(--muted)'};">Volledig protocol</button>`;
+  html += `<button onclick="setFicheScope('fase')" style="flex:1;padding:7px 10px;border-radius:6px;font-size:11.5px;font-family:'Geist',sans-serif;cursor:pointer;font-weight:600;border:1px solid ${ficheScope==='fase'?'var(--proto-color)':'var(--border)'};background:${ficheScope==='fase'?'var(--surface3)':'var(--surface2)'};color:${ficheScope==='fase'?'var(--proto-color)':'var(--muted)'};">Huidige fase</button>`;
+  html += `<button onclick="setFicheScope('all')" style="flex:1;padding:7px 10px;border-radius:6px;font-size:11.5px;font-family:'Geist',sans-serif;cursor:pointer;font-weight:600;border:1px solid ${ficheScope==='all'?'var(--proto-color)':'var(--border)'};background:${ficheScope==='all'?'var(--surface3)':'var(--surface2)'};color:${ficheScope==='all'?'var(--proto-color)':'var(--muted)'};">Volledig protocol</button>`;
   html += `</div>`;
-
-  // Phase selector (only for single fase)
   if(ficheScope === 'fase') {
     html += `<div style="display:flex;gap:4px;margin-bottom:14px;overflow-x:auto;scrollbar-width:none;">`;
-    p.phases.forEach((ph, i) => {
+    p.phases.forEach((ph,i) => {
       html += `<button onclick="fichePhaseIndex=${i};renderFicheModal()" style="flex-shrink:0;padding:4px 10px;border-radius:5px;font-size:10.5px;font-family:'Geist Mono',monospace;cursor:pointer;border:1px solid ${i===fichePhaseIndex?'var(--proto-color)':'var(--border)'};background:${i===fichePhaseIndex?'var(--surface3)':'var(--surface2)'};color:${i===fichePhaseIndex?'var(--text)':'var(--muted)'};">${ph.label}</button>`;
     });
     html += `</div>`;
   }
-
-  // Fiche content
   phases.forEach(ph => {
     html += `<div style="margin-bottom:18px;">`;
-    // Fase header
-    html += `<div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid var(--proto-color);border-radius:4px;padding:10px 14px;margin-bottom:10px;">
-      <div style="font-size:12px;font-weight:700;color:var(--text)">${ph.label} — ${ph.title}</div>
-      <div style="font-size:10.5px;color:var(--muted);font-family:'Geist Mono',monospace;margin-top:2px">${ph.weeks}</div>
-    </div>`;
-
-    // Doelstellingen
-    if(ph.goals && ph.goals.length) {
-      html += `<div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);font-family:'Geist Mono',monospace;margin-bottom:6px;">Doelstellingen</div>`;
-      html += `<ul style="list-style:none;margin-bottom:12px;">`;
-      ph.goals.forEach(g => {
-        html += `<li class="fiche-goal-item">${g}</li>`;
-      });
+    html += `<div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid var(--proto-color);border-radius:4px;padding:10px 14px;margin-bottom:10px;"><div style="font-size:12px;font-weight:700;">${ph.label} — ${ph.title}</div><div style="font-size:10.5px;color:var(--muted);font-family:'Geist Mono',monospace;margin-top:2px">${ph.weeks}</div></div>`;
+    if(ph.goals?.length) {
+      html += `<div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);font-family:'Geist Mono',monospace;margin-bottom:6px;">Doelstellingen</div><ul style="list-style:none;margin-bottom:12px;">`;
+      ph.goals.forEach(g => html += `<li class="fiche-goal-item">${g}</li>`);
       html += `</ul>`;
     }
-
-    // Oefeningen
-    if(ph.exercises && ph.exercises.length) {
+    if(ph.exercises?.length) {
       html += `<div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);font-family:'Geist Mono',monospace;margin-bottom:6px;">Oefeningen</div>`;
       ph.exercises.forEach(ex => {
-        html += `<div class="fiche-ex-row">`;
-        html += `<div style="display:flex;align-items:flex-start;justify-content:space-between;gap:8px;">`;
-        html += `<div class="fiche-ex-name">${ex.name}</div>`;
-        if(ex.cat && CAT[ex.cat]) {
-          const c = CAT[ex.cat];
-          html += `<span style="font-size:9px;padding:1px 6px;border-radius:6px;font-family:'Geist Mono',monospace;border:1px solid ${c.color}44;color:${c.color};background:${c.color}15;white-space:nowrap;flex-shrink:0">${c.icon}</span>`;
-        }
-        html += `</div>`;
-        if(ex.params && ex.params.length) {
-          html += `<div class="fiche-ex-params">${ex.params.map(([k,v])=>`${k}: ${v}`).join(' · ')}</div>`;
-        }
-        if(ex.note) {
-          html += `<div style="font-size:11px;color:var(--muted);margin-top:3px;line-height:1.5">${ex.note}</div>`;
-        }
-        html += `</div>`;
+        html += `<div class="fiche-ex-row"><div style="flex:1"><div class="fiche-ex-name">${ex.name}</div>`;
+        if(ex.params?.length) html += `<div class="fiche-ex-params">${ex.params.map(([k,v])=>`${k}: ${v}`).join(' · ')}</div>`;
+        if(ex.note) html += `<div style="font-size:11px;color:var(--muted);margin-top:3px;line-height:1.5">${ex.note}</div>`;
+        html += `</div></div>`;
       });
     }
     html += `</div>`;
   });
-
-  // Notities veld
   html += `<div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);font-family:'Geist Mono',monospace;margin-bottom:6px;">Notities voor patiënt</div>`;
-  html += `<textarea class="fiche-notes-area" id="fiche-notes" placeholder="Voeg persoonlijke notities toe voor deze patiënt..."></textarea>`;
-
+  html += `<textarea class="fiche-notes-area" id="fiche-notes" placeholder="Voeg persoonlijke notities toe..."></textarea>`;
   document.getElementById('fiche-modal-body').innerHTML = html;
 }
-
 function printFiche() {
   if(!currentProto) return;
   const p = currentProto;
   const phases = ficheScope === 'all' ? p.phases : [p.phases[fichePhaseIndex]];
   const notes = document.getElementById('fiche-notes')?.value || '';
-  const datum = new Date().toLocaleDateString('nl-BE', {day:'2-digit',month:'2-digit',year:'numeric'});
-
-  let html = `<h1>${p.title}</h1>`;
-  html += `<div class="pf-meta">Patiëntenfiche · ${ficheScope==='all'?'Volledig protocol':phases[0].label+' — '+phases[0].title} · ${datum}</div>`;
-
+  const datum = new Date().toLocaleDateString('nl-BE',{day:'2-digit',month:'2-digit',year:'numeric'});
+  let html = `<h1>${p.title}</h1><div class="pf-meta">Patiëntenfiche · ${ficheScope==='all'?'Volledig protocol':phases[0].label} · ${datum}</div>`;
   phases.forEach(ph => {
     html += `<h2>${ph.label} — ${ph.title} <span style="font-weight:400;font-size:11px;color:#888">${ph.weeks}</span></h2>`;
-    if(ph.goals && ph.goals.length) {
-      html += `<div style="font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#888;margin-bottom:4px">Doelstellingen</div>`;
-      ph.goals.forEach(g => html += `<div class="pf-goal">→ ${g}</div>`);
-    }
-    if(ph.exercises && ph.exercises.length) {
+    if(ph.goals?.length) { html += `<div style="font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#888;margin-bottom:4px">Doelstellingen</div>`; ph.goals.forEach(g => html += `<div class="pf-goal">→ ${g}</div>`); }
+    if(ph.exercises?.length) {
       html += `<div style="font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#888;margin:10px 0 4px">Oefeningen</div>`;
       ph.exercises.forEach(ex => {
-        const params = ex.params ? ex.params.map(([k,v])=>`${k}: ${v}`).join(' · ') : '';
-        html += `<div class="pf-ex">
-          <div class="pf-ex-name">${ex.name}</div>
-          <div class="pf-ex-params">${params}</div>
-        </div>`;
+        html += `<div class="pf-ex"><div class="pf-ex-name">${ex.name}</div><div class="pf-ex-params">${ex.params?ex.params.map(([k,v])=>`${k}: ${v}`).join(' · '):''}</div></div>`;
         if(ex.note) html += `<div style="font-size:10px;color:#666;padding:2px 0 4px 8px;font-style:italic">${ex.note}</div>`;
       });
     }
   });
-
-  if(notes) {
-    html += `<h2>Notities</h2><div class="pf-notes">${notes}</div>`;
-  }
-  html += `<div class="pf-footer">KineProtocol · Evidence-based revalidatie · Gegenereerd op ${datum}</div>`;
-
+  if(notes) html += `<h2>Notities</h2><div class="pf-notes">${notes}</div>`;
+  html += `<div class="pf-footer">KineProtocol · Evidence-based revalidatie · ${datum}</div>`;
   document.getElementById('print-fiche').innerHTML = html;
   window.print();
 }
-
 function copyFiche() {
   if(!currentProto) return;
   const p = currentProto;
   const phases = ficheScope === 'all' ? p.phases : [p.phases[fichePhaseIndex]];
-  const notes = document.getElementById('fiche-notes')?.value || '';
-  const datum = new Date().toLocaleDateString('nl-BE', {day:'2-digit',month:'2-digit',year:'numeric'});
-
-  let text = `${p.title} — Patiëntenfiche (${datum})\n`;
-  text += `${'='.repeat(50)}\n\n`;
-
-  phases.forEach(ph => {
-    text += `${ph.label} — ${ph.title} (${ph.weeks})\n`;
-    text += `${'-'.repeat(40)}\n`;
+  const notes = document.getElementById('fiche-notes') ? document.getElementById('fiche-notes').value : '';
+  const datum = new Date().toLocaleDateString('nl-BE',{day:'2-digit',month:'2-digit',year:'numeric'});
+  let text = p.title + ' — Patientenfiche (' + datum + ')\n' + '='.repeat(50) + '\n\n';
+  phases.forEach(function(ph) {
+    text += ph.label + ' — ' + ph.title + ' (' + ph.weeks + ')\n' + '-'.repeat(40) + '\n';
     if(ph.goals && ph.goals.length) {
-      text += `\nDoelstellingen:\n`;
-      ph.goals.forEach(g => text += `  → ${g}\n`);
+      text += '\nDoelstellingen:\n';
+      ph.goals.forEach(function(g) { text += '  → ' + g + '\n'; });
     }
     if(ph.exercises && ph.exercises.length) {
-      text += `\nOefeningen:\n`;
-      ph.exercises.forEach(ex => {
-        const params = ex.params ? ex.params.map(([k,v])=>`${k}: ${v}`).join(' · ') : '';
-        text += `  • ${ex.name}${params ? ' — ' + params : ''}\n`;
-        if(ex.note) text += `    ${ex.note}\n`;
+      text += '\nOefeningen:\n';
+      ph.exercises.forEach(function(ex) {
+        var params = ex.params ? ' — ' + ex.params.map(function(kv){return kv[0]+': '+kv[1];}).join(' · ') : '';
+        text += '  • ' + ex.name + params + '\n';
+        if(ex.note) text += '    ' + ex.note + '\n';
       });
     }
     text += '\n';
   });
-
-  if(notes) text += `Notities:\n${notes}\n\n`;
-  text += `KineProtocol · ${datum}`;
-
-  navigator.clipboard.writeText(text).then(() => {
-    const btn = document.querySelector('.kmodal-action.secondary');
-    if(btn) { btn.textContent = '✓ Gekopieerd!'; setTimeout(() => btn.textContent = '📋 Kopieer tekst', 2000); }
-  }).catch(() => {
-    // Fallback
-    const ta = document.createElement('textarea');
-    ta.value = text; ta.style.position='fixed'; ta.style.opacity='0';
-    document.body.appendChild(ta); ta.select();
-    document.execCommand('copy'); document.body.removeChild(ta);
-    const btn = document.querySelector('.kmodal-action.secondary');
-    if(btn) { btn.textContent = '✓ Gekopieerd!'; setTimeout(() => btn.textContent = '📋 Kopieer tekst', 2000); }
+  if(notes) text += 'Notities:\n' + notes + '\n\n';
+  text += 'KineProtocol · ' + datum;
+  navigator.clipboard.writeText(text).then(function() {
+    var btn = document.querySelector('.kmodal-action.secondary');
+    if(btn) { btn.textContent = '✓ Gekopieerd!'; setTimeout(function(){ btn.textContent = '📋 Kopieer tekst'; }, 2000); }
+  }).catch(function() {
+    var ta = document.createElement('textarea'); ta.value = text; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+    var btn = document.querySelector('.kmodal-action.secondary');
+    if(btn) { btn.textContent = '✓ Gekopieerd!'; setTimeout(function(){ btn.textContent = '📋 Kopieer tekst'; }, 2000); }
   });
+}
+
+// ── PATIËNTEN SCHERM ──
+function showPatients() {
+  hideAllScreens();
+  document.getElementById('screen-patients').style.display = '';
+  setNav('patients');
+  renderPatientList();
+}
+function renderPatientList() {
+  const pts = loadPatients();
+  const container = document.getElementById('pat-list-container');
+  if(!pts.length) {
+    container.innerHTML = `<div class="pat-empty"><div class="pat-empty-icon">👥</div><div class="pat-empty-text">Nog geen patiënten</div><div class="pat-empty-sub">Voeg een patiënt toe om hun traject bij te houden.</div></div>`;
+    return;
+  }
+  container.innerHTML = `<div class="pat-list">${pts.map(pt => {
+    const p = protocols[pt.protoId];
+    if(!p) return '';
+    const color = getProtoColor(pt.protoId);
+    const phaseIdx = pt.phaseIndex || 0;
+    const ph = p.phases[phaseIdx];
+    const progress = Math.round(((phaseIdx) / p.phases.length) * 100);
+    const age = pt.dob ? calcAge(pt.dob) : null;
+    const lastNote = pt.sessions && pt.sessions.length ? pt.sessions[pt.sessions.length-1].note : '';
+    return `<div class="pat-card" onclick="showPatientDetail('${pt.id}')">
+      <div class="pat-card-top">
+        <div class="pat-avatar" style="background:${color}22;color:${color}">${getInitials(pt.name)}</div>
+        <div style="flex:1">
+          <div class="pat-name">${pt.name}</div>
+          <div class="pat-meta">${age ? age + 'j · ' : ''}Start: ${formatDate(pt.startDate) || '—'}</div>
+        </div>
+        <div class="pat-proto-badge" style="background:${color}18;color:${color}">${pt.protoId.toUpperCase()}</div>
+      </div>
+      <div class="pat-progress">
+        <div class="pat-phase-label">${ph ? ph.label + ' — ' + ph.title : '—'}</div>
+        <div class="pat-progress-label">${phaseIdx+1}/${p.phases.length}</div>
+      </div>
+      <div class="pat-progress" style="margin-top:5px;">
+        <div class="pat-progress-bar"><div class="pat-progress-fill" style="width:${progress}%;background:${color}"></div></div>
+        <div class="pat-progress-label">${progress}%</div>
+      </div>
+      ${lastNote ? `<div class="pat-notes-preview">📝 ${lastNote}</div>` : ''}
+    </div>`;
+  }).join('')}</div>`;
+}
+
+// ── PATIËNT DETAIL ──
+function showPatientDetail(patId) {
+  const pts = loadPatients();
+  const pt = pts.find(p => p.id === patId);
+  if(!pt) return;
+  const p = protocols[pt.protoId];
+  if(!p) return;
+  hideAllScreens();
+  document.getElementById('screen-patient-detail').style.display = '';
+  renderPatientDetail(pt, p);
+}
+function renderPatientDetail(pt, p) {
+  const color = getProtoColor(pt.protoId);
+  const age = pt.dob ? calcAge(pt.dob) : null;
+  const phaseIdx = pt.phaseIndex || 0;
+  const ph = p.phases[phaseIdx];
+  const sessions = pt.sessions || [];
+
+  let html = `<div class="pat-detail-header">
+    <div class="pat-detail-avatar" style="background:${color}22;color:${color}">${getInitials(pt.name)}</div>
+    <div style="flex:1">
+      <div class="pat-detail-name">${pt.name}</div>
+      <div class="pat-detail-meta">${age ? age + ' jaar · ' : ''}${pt.dob ? formatDate(pt.dob) + ' · ' : ''}Start: ${formatDate(pt.startDate) || '—'}</div>
+    </div>
+    <div class="pat-detail-actions">
+      <button onclick="showProto('${pt.protoId}')" style="background:${color}18;border:1px solid ${color}33;color:${color};padding:7px 12px;border-radius:6px;font-size:11.5px;cursor:pointer;font-family:'Geist',sans-serif;font-weight:600;">${p.title.split(' ').slice(0,2).join(' ')} →</button>
+      <button onclick="openPatNew('${pt.id}')" style="background:var(--surface2);border:1px solid var(--border);color:var(--muted);padding:7px 12px;border-radius:6px;font-size:11.5px;cursor:pointer;font-family:'Geist',sans-serif;">✏️</button>
+      <button onclick="deletePatient('${pt.id}')" style="background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);color:#ef4444;padding:7px 12px;border-radius:6px;font-size:11.5px;cursor:pointer;font-family:'Geist',sans-serif;">🗑</button>
+    </div>
+  </div>
+  <div style="margin-bottom:6px;cursor:pointer;font-size:11px;color:var(--muted)" onclick="showPatients()">← Terug naar patiënten</div>`;
+
+  // Fase tijdlijn (groot)
+  html += `<div class="slabel" style="margin-top:16px">Voortgang protocol</div>`;
+  html += `<div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;">`;
+  p.phases.forEach((phase, i) => {
+    const isCurrent = i === phaseIdx;
+    const isDone = i < phaseIdx;
+    html += `<div onclick="setPatientPhase('${pt.id}',${i})" style="display:flex;align-items:center;gap:7px;padding:8px 12px;border-radius:7px;border:1px solid ${isCurrent?color:isDone?color+'55':'var(--border)'};background:${isCurrent?color+'18':isDone?color+'08':'var(--surface2)'};cursor:pointer;transition:all .12s;">
+      <div style="width:10px;height:10px;border-radius:50%;background:${isCurrent?color:isDone?color:'var(--border2)'};flex-shrink:0;${isDone?'opacity:.6':''}"></div>
+      <div>
+        <div style="font-size:12px;font-weight:${isCurrent?700:500};color:${isCurrent?'var(--text)':'var(--muted)'}">${phase.label}</div>
+        <div style="font-size:10px;color:var(--muted2);font-family:'Geist Mono',monospace">${phase.weeks}</div>
+      </div>
+      ${isCurrent ? `<div style="margin-left:4px;font-size:9px;background:${color};color:#000;padding:1px 6px;border-radius:8px;font-weight:700;font-family:'Geist Mono',monospace">NU</div>` : ''}
+      ${isDone ? `<div style="margin-left:4px;font-size:12px;opacity:.6">✓</div>` : ''}
+    </div>`;
+  });
+  html += `</div>`;
+
+  // Sessie log
+  html += `<div class="slabel">Sessienotities</div>`;
+  if(sessions.length) {
+    html += `<div class="session-list">`;
+    sessions.slice().reverse().forEach((s, ri) => {
+      const idx = sessions.length - 1 - ri;
+      html += `<div class="session-item">
+        <div class="session-date">${formatDate(s.date)} · ${p.phases[s.phaseIdx]?.label || ''}</div>
+        <div class="session-note">${s.note}</div>
+        <div class="session-actions"><button class="session-del" onclick="deleteSession('${pt.id}',${idx})">Verwijder</button></div>
+      </div>`;
+    });
+    html += `</div>`;
+  } else {
+    html += `<div style="color:var(--muted);font-size:12px;padding:12px 0;">Nog geen sessies geregistreerd.</div>`;
+  }
+
+  html += `<textarea class="add-session-area" id="new-session-text" placeholder="Sessienotitie toevoegen... (bijv. fase 2 gestart, LSI quad 74%, klachten afgenomen)"></textarea>
+  <button class="add-session-btn" onclick="addSession('${pt.id}')">+ Notitie opslaan</button>`;
+
+  // Export
+  html += `<div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border);display:flex;gap:8px;flex-wrap:wrap;">
+    <button onclick="exportPatient('${pt.id}')" style="background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:8px 14px;border-radius:6px;font-size:12px;cursor:pointer;font-family:'Geist',sans-serif;">📄 Exporteer traject</button>
+    <button onclick="printPatient('${pt.id}')" style="background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:8px 14px;border-radius:6px;font-size:12px;cursor:pointer;font-family:'Geist',sans-serif;">🖨 Afdrukken</button>
+  </div>`;
+
+  document.getElementById('pat-detail-body').innerHTML = html;
+}
+function setPatientPhase(patId, phaseIdx) {
+  const pts = loadPatients();
+  const pt = pts.find(p => p.id === patId);
+  if(!pt) return;
+  pt.phaseIndex = phaseIdx;
+  savePatients(pts);
+  const p = protocols[pt.protoId];
+  renderPatientDetail(pt, p);
+}
+function addSession(patId) {
+  const note = document.getElementById('new-session-text')?.value?.trim();
+  if(!note) return;
+  const pts = loadPatients();
+  const pt = pts.find(p => p.id === patId);
+  if(!pt) return;
+  if(!pt.sessions) pt.sessions = [];
+  pt.sessions.push({date: new Date().toISOString().slice(0,10), note, phaseIdx: pt.phaseIndex || 0});
+  savePatients(pts);
+  const p = protocols[pt.protoId];
+  renderPatientDetail(pt, p);
+}
+function deleteSession(patId, idx) {
+  const pts = loadPatients();
+  const pt = pts.find(p => p.id === patId);
+  if(!pt || !pt.sessions) return;
+  pt.sessions.splice(idx, 1);
+  savePatients(pts);
+  renderPatientDetail(pt, protocols[pt.protoId]);
+}
+function deletePatient(patId) {
+  if(!confirm('Patiënt verwijderen? Dit kan niet ongedaan worden.')) return;
+  const pts = loadPatients().filter(p => p.id !== patId);
+  savePatients(pts);
+  showPatients();
+}
+
+// ── NIEUWE / BEWERK PATIËNT MODAL ──
+function openPatNew(editId) {
+  editingPatientId = editId || null;
+  const title = editId ? 'Patiënt bewerken' : 'Nieuwe patiënt';
+  document.getElementById('pat-new-title').textContent = title;
+  // Fill protocol selector
+  const sel = document.getElementById('pat-form-proto');
+  sel.innerHTML = Object.values(protocols).map(p => `<option value="${p.id}">${p.title}</option>`).join('');
+  sel.onchange = updatePhaseOptions;
+  // Fill phase selector
+  updatePhaseOptions();
+  // Set today as default dates
+  const today = new Date().toISOString().slice(0,10);
+  if(!editId) {
+    document.getElementById('pat-form-name').value = '';
+    document.getElementById('pat-form-dob').value = '';
+    document.getElementById('pat-form-start').value = today;
+    document.getElementById('pat-form-phase').value = '0';
+    document.getElementById('pat-form-note').value = '';
+  } else {
+    const pts = loadPatients();
+    const pt = pts.find(p => p.id === editId);
+    if(pt) {
+      document.getElementById('pat-form-name').value = pt.name;
+      document.getElementById('pat-form-dob').value = pt.dob || '';
+      document.getElementById('pat-form-start').value = pt.startDate || today;
+      document.getElementById('pat-form-proto').value = pt.protoId;
+      updatePhaseOptions();
+      document.getElementById('pat-form-phase').value = pt.phaseIndex || 0;
+      document.getElementById('pat-form-note').value = '';
+    }
+  }
+  document.getElementById('pat-new-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => document.getElementById('pat-form-name').focus(), 100);
+}
+function closePatNew() { document.getElementById('pat-new-modal').classList.remove('open'); document.body.style.overflow = ''; }
+function updatePhaseOptions() {
+  const pid = document.getElementById('pat-form-proto').value;
+  const p = protocols[pid];
+  const sel = document.getElementById('pat-form-phase');
+  if(p) sel.innerHTML = p.phases.map((ph,i) => `<option value="${i}">${ph.label} — ${ph.title}</option>`).join('');
+}
+function savePatient() {
+  const name = document.getElementById('pat-form-name').value.trim();
+  if(!name) { document.getElementById('pat-form-name').focus(); return; }
+  const protoId = document.getElementById('pat-form-proto').value;
+  const dob = document.getElementById('pat-form-dob').value;
+  const startDate = document.getElementById('pat-form-start').value;
+  const phaseIndex = parseInt(document.getElementById('pat-form-phase').value) || 0;
+  const note = document.getElementById('pat-form-note').value.trim();
+  const pts = loadPatients();
+  if(editingPatientId) {
+    const pt = pts.find(p => p.id === editingPatientId);
+    if(pt) { pt.name = name; pt.dob = dob; pt.startDate = startDate; pt.protoId = protoId; pt.phaseIndex = phaseIndex; }
+  } else {
+    const newPt = {id: genId(), name, dob, startDate, protoId, phaseIndex, sessions: []};
+    if(note) newPt.sessions.push({date: startDate || new Date().toISOString().slice(0,10), note, phaseIdx: phaseIndex});
+    pts.push(newPt);
+  }
+  savePatients(pts);
+  closePatNew();
+  if(editingPatientId) {
+    const pt = pts.find(p => p.id === editingPatientId);
+    if(pt) showPatientDetail(pt.id);
+  } else {
+    showPatients();
+  }
+}
+
+// ── KOPPEL PATIËNT AAN PROTOCOL ──
+function openPatLink() {
+  if(!currentProto) return;
+  const pts = loadPatients().filter(p => p.protoId === currentProto.id);
+  const body = document.getElementById('pat-link-body');
+  if(!pts.length) {
+    body.innerHTML = `<div style="color:var(--muted);font-size:13px;padding:12px 0;">Geen patiënten gekoppeld aan dit protocol.<br><br><button onclick="closePatLink();openPatNew()" style="background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.3);color:#4ade80;padding:8px 14px;border-radius:6px;font-size:12px;cursor:pointer;font-family:'Geist',sans-serif;font-weight:600;">+ Nieuwe patiënt aanmaken</button></div>`;
+  } else {
+    body.innerHTML = `<div style="color:var(--muted);font-size:12px;margin-bottom:12px;">Patiënten met ${currentProto.title} protocol:</div>` +
+    pts.map(pt => {
+      const color = getProtoColor(pt.protoId);
+      const ph = protocols[pt.protoId]?.phases[pt.phaseIndex||0];
+      return `<div onclick="closePatLink();showPatientDetail('${pt.id}')" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:7px;border:1px solid var(--border);margin-bottom:8px;cursor:pointer;transition:border-color .12s;" onmouseover="this.style.borderColor='var(--border2)'" onmouseout="this.style.borderColor='var(--border)'">
+        <div style="width:34px;height:34px;border-radius:50%;background:${color}22;color:${color};display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700">${getInitials(pt.name)}</div>
+        <div style="flex:1"><div style="font-size:13px;font-weight:600">${pt.name}</div><div style="font-size:10.5px;color:var(--muted);font-family:'Geist Mono',monospace">${ph?ph.label+' · ':''} Start: ${formatDate(pt.startDate)||'—'}</div></div>
+        <div style="font-size:11px;color:var(--muted)">→</div>
+      </div>`;
+    }).join('') +
+    `<button onclick="closePatLink();openPatNew()" style="width:100%;margin-top:6px;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.2);color:#4ade80;padding:8px;border-radius:6px;font-size:12px;cursor:pointer;font-family:'Geist',sans-serif;font-weight:500;">+ Nieuwe patiënt toevoegen</button>`;
+  }
+  document.getElementById('pat-link-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closePatLink() { document.getElementById('pat-link-modal').classList.remove('open'); document.body.style.overflow = ''; }
+
+// ── EXPORT PATIËNT ──
+function exportPatient(patId) {
+  const pts = loadPatients();
+  const pt = pts.find(p => p.id === patId);
+  if(!pt) return;
+  const p = protocols[pt.protoId];
+  const ph = p.phases[pt.phaseIndex||0];
+  const age = pt.dob ? calcAge(pt.dob) : null;
+  const datum = new Date().toLocaleDateString('nl-BE',{day:'2-digit',month:'2-digit',year:'numeric'});
+  let text = `KINEPROTOCOL — PATIËNTENTRAJECT
+${'='.repeat(50)}
+`;
+  text += `Patiënt:     ${pt.name}
+`;
+  if(age) text += `Leeftijd:    ${age} jaar (${formatDate(pt.dob)})
+`;
+  text += `Protocol:    ${p.title}
+`;
+  text += `Startdatum:  ${formatDate(pt.startDate) || '—'}
+`;
+  text += `Huidige fase: ${ph ? ph.label + ' — ' + ph.title : '—'}
+`;
+  text += `Gegenereerd: ${datum}
+
+`;
+  if(pt.sessions?.length) {
+    text += `SESSIENOTITIES
+${'-'.repeat(40)}
+`;
+    pt.sessions.forEach(s => {
+      const sPh = p.phases[s.phaseIdx];
+      text += `${formatDate(s.date)} · ${sPh ? sPh.label : ''}
+${s.note}
+
+`;
+    });
+  }
+  text += `KineProtocol · ${datum}`;
+  navigator.clipboard.writeText(text).then(() => alert('Gekopieerd naar klembord!')).catch(() => {
+    const ta = document.createElement('textarea'); ta.value = text; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+    alert('Gekopieerd naar klembord!');
+  });
+}
+function printPatient(patId) {
+  const pts = loadPatients();
+  const pt = pts.find(p => p.id === patId);
+  if(!pt) return;
+  const p = protocols[pt.protoId];
+  const ph = p.phases[pt.phaseIndex||0];
+  const age = pt.dob ? calcAge(pt.dob) : null;
+  const datum = new Date().toLocaleDateString('nl-BE',{day:'2-digit',month:'2-digit',year:'numeric'});
+  let html = `<h1>Patiëntentraject — ${pt.name}</h1>`;
+  html += `<div class="pf-meta">Protocol: ${p.title} · Fase: ${ph?ph.label:'—'} · Start: ${formatDate(pt.startDate)||'—'} · ${age?age+' jaar · ':''}${datum}</div>`;
+  if(pt.sessions?.length) {
+    html += `<h2>Sessienotities</h2>`;
+    pt.sessions.forEach(s => {
+      const sPh = p.phases[s.phaseIdx];
+      html += `<div class="pf-ex"><div class="pf-ex-name">${formatDate(s.date)} · ${sPh?sPh.label:''}</div></div><div style="font-size:11px;color:#333;padding:2px 0 8px 8px">${s.note}</div>`;
+    });
+  }
+  html += `<div class="pf-footer">KineProtocol · ${datum}</div>`;
+  document.getElementById('print-fiche').innerHTML = html;
+  window.print();
 }
 
 // ── ESC closes all modals ──
 document.addEventListener('keydown', e => {
-  if(e.key === 'Escape') { closeYT(); closeRF(); closeFiche(); }
+  if(e.key === 'Escape') { closeYT(); closeRF(); closeFiche(); closePatNew(); closePatLink(); }
 });
+
+// ── RENDER PHASE ──
+function renderPhase(i) {
+  const ph = currentProto.phases[i];
+  let html = '';
+  html += `<div class="ev-box"><div class="ev-label">Evidence-basis</div><div class="ev-text">${ph.evidence}</div></div>`;
+  html += `<div class="goals-box"><div class="goals-label">Doelstellingen — ${ph.title}</div><ul class="glist">${ph.goals.map(g=>`<li>${g}</li>`).join('')}</ul></div>`;
+  if(ph.exercises?.length) {
+    html += `<div class="slabel">Oefenprogramma</div><div class="ex-grid">`;
+    ph.exercises.forEach(ex => {
+      const cat = ex.cat ? CAT[ex.cat] : null;
+      html += `<div class="ex-card"><div class="ex-header"><div class="ex-name">${ex.name}</div>`;
+      if(cat) html += `<span class="ex-cat" style="background:${cat.color}22;color:${cat.color};border-color:${cat.color}44">${cat.icon} ${cat.label}</span>`;
+      html += `</div>`;
+      if(ex.params?.length) html += `<div class="ex-params">${ex.params.map(([k,v])=>`<div class="ep">${k}: <span>${v}</span></div>`).join('')}</div>`;
+      if(ex.note) html += `<div class="ex-note">${ex.note}</div>`;
+      if(ex.yt) html += `<button class="yt-btn" onclick="openYT('${ex.yt}','${ex.name.replace(/'/g,"'")}')">▶ Bekijk video</button>`;
+      html += `</div>`;
+    });
+    html += `</div>`;
+  }
+  if(ph.criteria_go?.length || ph.criteria_stop?.length) {
+    html += `<div class="slabel">Doorstroomcriteria</div><div class="criteria-grid">`;
+    if(ph.criteria_go?.length) html += `<div class="cbox go"><div class="ctitle go">Vereist ✓</div><ul class="clist go">${ph.criteria_go.map(c=>`<li>${c}</li>`).join('')}</ul></div>`;
+    if(ph.criteria_stop?.length) html += `<div class="cbox stop"><div class="ctitle stop">Vertraag ⚠</div><ul class="clist stop">${ph.criteria_stop.map(c=>`<li>${c}</li>`).join('')}</ul></div>`;
+    html += `</div>`;
+  }
+  if(ph.redflags?.length) html += `<div class="rf-box"><div class="rf-label">Rode vlaggen</div><ul class="rf-list">${ph.redflags.map(r=>`<li>${r}</li>`).join('')}</ul></div>`;
+  document.getElementById('proto-body').innerHTML = html;
+}
 
 // ── SEARCH ──
 function handleSearch(q) {
@@ -930,47 +1357,39 @@ function handleSearch(q) {
     else document.getElementById('screen-home').style.display = '';
     return;
   }
-  document.getElementById('screen-home').style.display = 'none';
-  document.getElementById('screen-proto').style.display = 'none';
+  hideAllScreens();
   document.getElementById('screen-search').style.display = '';
-  const ql = q.toLowerCase();
-  let res = [];
+  const ql = q.toLowerCase(); let res = [];
   Object.values(protocols).forEach(p => {
     p.phases.forEach((ph, pi) => {
       ph.exercises.forEach(ex => {
         if([ex.name, ex.note||''].join(' ').toLowerCase().includes(ql))
-          res.push({p, ph, pi, match: ex.name, type: 'Oefening', detail: ex.note||'', yt: ex.yt||null});
+          res.push({p, ph, pi, match: ex.name, type: 'Oefening', detail: ex.note||''});
       });
       ph.goals.forEach(g => {
-        if(g.toLowerCase().includes(ql))
-          res.push({p, ph, pi, match: g, type: 'Doel', detail: '', yt: null});
+        if(g.toLowerCase().includes(ql)) res.push({p, ph, pi, match: g, type: 'Doel', detail: ''});
       });
     });
   });
   const el = document.getElementById('search-results');
-  if(!res.length) {
-    el.innerHTML = `<div class="no-results">Geen resultaten voor "<strong style="color:var(--text)">${q}</strong>"</div>`;
-    return;
-  }
+  if(!res.length) { el.innerHTML = `<div class="no-results">Geen resultaten voor "<strong style="color:var(--text)">${q}</strong>"</div>`; return; }
   el.innerHTML = res.map(r => `
-    <div style="background:var(--surface);border:1px solid var(--border);border-radius:7px;padding:12px 14px;margin-bottom:8px;">
-      <div onclick="showProto('${r.p.id}');showPhase(${r.pi});" style="cursor:pointer;">
-        <div style="display:flex;align-items:center;gap:7px;margin-bottom:5px;">
-          <div style="width:7px;height:7px;border-radius:50%;background:${r.p.color};flex-shrink:0"></div>
-          <span style="font-size:12px;font-weight:600">${r.p.title}</span>
-          <span style="font-size:10px;color:var(--muted);font-family:'Geist Mono',monospace;background:var(--surface2);padding:1px 6px;border-radius:3px">${r.ph.label}</span>
-          <span style="font-size:10px;color:var(--muted2);font-family:'Geist Mono',monospace">${r.type}</span>
-        </div>
-        <div style="font-size:13px">${r.match}</div>
-        ${r.detail ? `<div style="font-size:11px;color:var(--muted);margin-top:3px">${r.detail.substring(0,110)}${r.detail.length>110?'...':''}</div>` : ''}
+    <div onclick="showProto('${r.p.id}');showPhase(${r.pi});" style="background:var(--surface);border:1px solid var(--border);border-radius:7px;padding:12px 14px;margin-bottom:8px;cursor:pointer;" onmouseover="this.style.borderColor='var(--border2)'" onmouseout="this.style.borderColor='var(--border)'">
+      <div style="display:flex;align-items:center;gap:7px;margin-bottom:5px;">
+        <div style="width:7px;height:7px;border-radius:50%;background:${r.p.color};flex-shrink:0"></div>
+        <span style="font-size:12px;font-weight:600">${r.p.title}</span>
+        <span style="font-size:10px;color:var(--muted);font-family:'Geist Mono',monospace;background:var(--surface2);padding:1px 6px;border-radius:3px">${r.ph.label}</span>
+        <span style="font-size:10px;color:var(--muted2);font-family:'Geist Mono',monospace">${r.type}</span>
       </div>
-      ${r.yt ? `<button class="yt-btn" style="margin-top:8px" onclick="openYT('${r.yt}','${r.match.replace(/'/g,"\\'")}')">▶ Bekijk video</button>` : ''}
+      <div style="font-size:13px">${r.match}</div>
+      ${r.detail ? `<div style="font-size:11px;color:var(--muted);margin-top:3px">${r.detail.substring(0,110)}${r.detail.length>110?'...':''}</div>` : ''}
     </div>`).join('');
 }
 
 // ── SERVICE WORKER ──
 if('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js').catch(() => {});
-  });
+  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(()=>{}));
 }
+
+// ── INIT ──
+updatePatientBadge();

@@ -30,6 +30,7 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
 .install-btn.visible{display:flex;}
 .offline-badge{display:none;align-items:center;background:rgba(234,179,8,.1);border:1px solid rgba(234,179,8,.25);color:#ca8a04;padding:3px 10px;border-radius:6px;font-size:11px;font-family:'Geist Mono',monospace;}
 .offline-badge.show{display:flex;}
+/* Layout */
 .layout{display:flex;flex:1;overflow:hidden;}
 .sidebar{width:240px;background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;flex-shrink:0;overflow-y:auto;}
 .sidebar-section{padding:16px 12px 6px;font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);}
@@ -42,6 +43,7 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
 .nav-badge{font-size:10px;padding:2px 7px;border-radius:10px;font-family:'Geist Mono',monospace;}
 .sidebar-divider{height:1px;background:var(--border);margin:6px 14px;}
 .main{flex:1;overflow-y:auto;display:flex;flex-direction:column;-webkit-overflow-scrolling:touch;}
+/* Home */
 .home{padding:32px 28px;max-width:960px;}
 .home-greeting{font-family:'Instrument Serif',serif;font-size:clamp(26px,5vw,38px);font-weight:400;line-height:1.15;margin-bottom:6px;letter-spacing:-.02em;}
 .home-greeting em{font-style:italic;background:linear-gradient(90deg,#22d3ee,#a78bfa,#f97316,#34d399,#f43f5e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
@@ -64,6 +66,7 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
 .protocol-card:hover .card-arrow{transform:translate(2px,-2px);color:var(--text);}
 .add-card{background:transparent;border:1px dashed var(--border2);border-radius:10px;padding:16px;cursor:pointer;transition:all .15s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-height:130px;color:var(--muted2);}
 .add-card:hover{border-color:var(--new);color:var(--new);background:rgba(74,222,128,.03);}
+/* Viewer */
 .viewer{flex:1;display:flex;flex-direction:column;overflow:hidden;}
 .viewer-header{padding:18px 24px 0;border-bottom:1px solid var(--border);flex-shrink:0;}
 .viewer-breadcrumb{font-size:11px;color:var(--muted);margin-bottom:10px;display:flex;align-items:center;gap:5px;font-family:'Geist Mono',monospace;}
@@ -73,12 +76,35 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
 .viewer-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:5px;}
 .viewer-title{font-family:'Instrument Serif',serif;font-size:clamp(20px,4vw,26px);font-weight:400;letter-spacing:-.02em;line-height:1.2;}
 .viewer-subtitle{font-size:12px;color:var(--muted);margin-top:3px;}
-.viewer-tabs{display:flex;margin-top:16px;overflow-x:auto;scrollbar-width:none;}
+/* Fase tijdlijn */
+.phase-timeline{display:flex;align-items:center;gap:0;margin:12px 0 4px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px;}
+.phase-timeline::-webkit-scrollbar{display:none;}
+.pt-step{display:flex;align-items:center;flex-shrink:0;}
+.pt-dot{width:28px;height:28px;border-radius:50%;border:2px solid var(--border2);background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:10px;font-family:'Geist Mono',monospace;color:var(--muted);cursor:pointer;transition:all .15s;flex-shrink:0;}
+.pt-dot:hover{border-color:var(--proto-color,#fff);color:var(--text);}
+.pt-dot.active{border-color:var(--proto-color,#fff);background:var(--proto-color,#fff);color:#0a0a0b;font-weight:700;}
+.pt-dot.done{border-color:var(--proto-color,#fff);background:transparent;color:var(--proto-color,#fff);}
+.pt-dot.patient-current{box-shadow:0 0 0 3px var(--proto-color,#fff)44;border-color:var(--proto-color,#fff);}
+.pt-line{width:20px;height:2px;background:var(--border);flex-shrink:0;transition:background .15s;}
+.pt-line.done{background:var(--proto-color,#fff);opacity:.4;}
+.pt-label{font-size:9px;font-family:'Geist Mono',monospace;color:var(--muted);text-align:center;margin-top:3px;white-space:nowrap;}
+/* Proto actions */
+.proto-actions{display:flex;align-items:center;gap:8px;margin-top:10px;padding-bottom:12px;flex-wrap:wrap;}
+.rf-trigger{display:flex;align-items:center;gap:6px;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);color:#ef4444;padding:5px 12px;border-radius:6px;font-size:11.5px;font-weight:600;cursor:pointer;font-family:'Geist',sans-serif;white-space:nowrap;transition:background .12s;}
+.rf-trigger:hover{background:rgba(239,68,68,.15);}
+.rf-trigger .rf-count{background:#ef4444;color:#fff;border-radius:10px;padding:1px 6px;font-size:10px;font-family:'Geist Mono',monospace;}
+.fiche-btn{display:flex;align-items:center;gap:6px;background:var(--surface2);border:1px solid var(--border);color:var(--muted);padding:6px 12px;border-radius:6px;font-size:11.5px;font-weight:500;cursor:pointer;font-family:'Geist',sans-serif;transition:all .12s;}
+.fiche-btn:hover{border-color:var(--border2);color:var(--text);}
+.pat-link-btn{display:flex;align-items:center;gap:6px;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.2);color:#4ade80;padding:5px 12px;border-radius:6px;font-size:11.5px;font-weight:500;cursor:pointer;font-family:'Geist',sans-serif;transition:all .12s;white-space:nowrap;}
+.pat-link-btn:hover{background:rgba(74,222,128,.15);}
+/* Viewer tabs */
+.viewer-tabs{display:flex;margin-top:12px;overflow-x:auto;scrollbar-width:none;}
 .viewer-tabs::-webkit-scrollbar{display:none;}
 .vtab{padding:9px 14px;cursor:pointer;font-size:11.5px;font-weight:500;color:var(--muted);border-bottom:2px solid transparent;white-space:nowrap;transition:color .12s,border-color .12s;font-family:'Geist Mono',monospace;}
 .vtab:hover{color:var(--text);}
 .vtab.active{color:var(--text);border-bottom-color:var(--proto-color,#fff);}
 .viewer-body{flex:1;overflow-y:auto;padding:20px 24px;-webkit-overflow-scrolling:touch;}
+/* Exercise cards */
 .ev-box{background:var(--surface);border:1px solid var(--border);border-left:3px solid #3b82f6;border-radius:4px;padding:12px 16px;margin-bottom:18px;}
 .ev-label{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#3b82f6;margin-bottom:6px;font-family:'Geist Mono',monospace;font-weight:600;}
 .ev-text{font-size:12px;color:var(--muted);line-height:1.6;}
@@ -92,7 +118,9 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
 .ex-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;margin-bottom:20px;}
 .ex-card{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:13px;transition:border-color .12s;}
 .ex-card:hover{border-color:var(--border2);}
-.ex-name{font-size:12.5px;font-weight:600;margin-bottom:7px;color:var(--text);}
+.ex-header{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:7px;}
+.ex-name{font-size:12.5px;font-weight:600;color:var(--text);}
+.ex-cat{font-size:9.5px;padding:2px 7px;border-radius:8px;font-family:'Geist Mono',monospace;border:1px solid;white-space:nowrap;flex-shrink:0;margin-top:1px;}
 .ex-params{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:6px;}
 .ep{background:var(--surface2);border:1px solid var(--border);padding:2px 7px;border-radius:3px;font-size:10.5px;color:var(--muted);font-family:'Geist Mono',monospace;}
 .ep span{color:var(--text);font-weight:500;}
@@ -118,6 +146,26 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
 .ref-label{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#3b82f6;margin-bottom:7px;font-family:'Geist Mono',monospace;font-weight:600;}
 .ref-text{font-size:11.5px;color:var(--muted);line-height:1.7;}
 .ref-text strong{color:var(--text);}
+/* Uitkomstmaten tab */
+.scores-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-bottom:20px;}
+.score-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px 16px;}
+.score-name{font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px;}
+.score-full{font-size:10.5px;color:var(--muted);margin-bottom:10px;}
+.score-ranges{display:flex;flex-direction:column;gap:4px;margin-bottom:12px;}
+.score-range{display:flex;align-items:center;gap:8px;font-size:11px;}
+.score-range-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.score-range-label{color:var(--muted);}
+.score-range-val{color:var(--text);font-family:'Geist Mono',monospace;font-weight:500;margin-left:auto;}
+.score-input-row{display:flex;gap:6px;align-items:center;}
+.score-input{flex:1;background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:6px 10px;color:var(--text);font-family:'Geist Mono',monospace;font-size:12px;outline:none;}
+.score-input:focus{border-color:var(--border2);}
+.score-btn{background:var(--surface3);border:1px solid var(--border);color:var(--text);padding:6px 10px;border-radius:5px;font-size:11px;cursor:pointer;font-family:'Geist',sans-serif;white-space:nowrap;}
+.score-result{margin-top:8px;padding:6px 10px;border-radius:5px;font-size:11.5px;font-weight:600;display:none;}
+.score-result.show{display:block;}
+.score-result.good{background:rgba(34,197,94,.1);color:#22c55e;border:1px solid rgba(34,197,94,.2);}
+.score-result.warn{background:rgba(245,158,11,.1);color:#f59e0b;border:1px solid rgba(245,158,11,.2);}
+.score-result.bad{background:rgba(239,68,68,.1);color:#ef4444;border:1px solid rgba(239,68,68,.2);}
+/* Bottom nav */
 .bottom-nav{display:none;background:var(--surface);border-top:1px solid var(--border);padding-bottom:var(--safe-bottom);flex-shrink:0;z-index:100;}
 .bottom-nav-inner{display:flex;overflow-x:auto;scrollbar-width:none;}
 .bottom-nav-inner::-webkit-scrollbar{display:none;}
@@ -127,6 +175,7 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
 .bnav-item.active .bnav-dot{opacity:1;}
 .bnav-icon{font-size:17px;line-height:1;}
 .bnav-label{font-size:9px;font-family:'Geist Mono',monospace;white-space:nowrap;}
+/* Install banner */
 .install-banner{display:none;background:linear-gradient(135deg,#22d3ee11,#a78bfa11);border:1px solid #a78bfa33;border-radius:8px;padding:14px 16px;margin:16px;gap:12px;align-items:center;}
 .install-banner.show{display:flex;}
 .install-banner-text{flex:1;font-size:12.5px;color:var(--muted);}
@@ -134,43 +183,7 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
 .install-banner-btn{background:linear-gradient(135deg,#22d3ee,#a78bfa);color:#0a0a0b;border:none;padding:8px 16px;border-radius:7px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Geist',sans-serif;}
 .install-banner-close{color:var(--muted2);background:none;border:none;font-size:18px;cursor:pointer;padding:0 4px;}
 .no-results{color:var(--muted);font-size:13px;padding:40px 0;text-align:center;}
-@media(max-width:700px){.sidebar{display:none;}.bottom-nav{display:block;}.home{padding:20px 16px;}.viewer-header{padding:14px 16px 0;}.viewer-body{padding:16px;}.search-box{width:140px;}.protocol-grid{grid-template-columns:1fr 1fr;}}
-@media(max-width:380px){.protocol-grid{grid-template-columns:1fr;}.search-box{width:110px;}}
-::-webkit-scrollbar{width:4px;height:4px;}
-::-webkit-scrollbar-track{background:transparent;}
-::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px;}
-
-/* ── EXERCISE HEADER ── */
-.ex-header{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:7px;}
-.ex-cat{font-size:9.5px;padding:2px 7px;border-radius:8px;font-family:'Geist Mono',monospace;border:1px solid;white-space:nowrap;flex-shrink:0;margin-top:1px;}
-/* ── YOUTUBE BUTTON ── */
-.yt-btn{display:flex;align-items:center;gap:6px;width:100%;margin-top:8px;background:rgba(255,0,0,.08);border:1px solid rgba(255,0,0,.2);color:#ff4444;padding:7px 12px;border-radius:5px;font-size:11.5px;font-weight:600;cursor:pointer;font-family:'Geist',sans-serif;transition:background .12s,border-color .12s;}
-.yt-btn:hover{background:rgba(255,0,0,.14);border-color:rgba(255,0,0,.35);}
-/* ── YOUTUBE MODAL ── */
-.yt-modal{display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.85);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:16px;}
-.yt-modal.open{display:flex;}
-.yt-inner{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;width:100%;max-width:720px;box-shadow:0 24px 64px rgba(0,0,0,.6);}
-.yt-bar{display:flex;align-items:center;padding:12px 16px;border-bottom:1px solid var(--border);gap:10px;}
-.yt-bar-title{font-size:13px;font-weight:600;flex:1;color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-.yt-close{background:var(--surface2);border:1px solid var(--border);color:var(--muted);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Geist',sans-serif;}
-.yt-close:hover{color:var(--text);border-color:var(--border2);}
-.yt-wrap{position:relative;padding-bottom:56.25%;height:0;}
-.yt-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
-.yt-note{padding:10px 16px;font-size:11px;color:var(--muted);border-top:1px solid var(--border);}
-
-/* ── RED FLAGS BUTTON ── */
-.rf-trigger{display:flex;align-items:center;gap:6px;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);color:#ef4444;padding:5px 12px;border-radius:6px;font-size:11.5px;font-weight:600;cursor:pointer;font-family:'Geist',sans-serif;white-space:nowrap;transition:background .12s,border-color .12s;flex-shrink:0;}
-.rf-trigger:hover{background:rgba(239,68,68,.15);border-color:rgba(239,68,68,.4);}
-.rf-trigger .rf-count{background:#ef4444;color:#fff;border-radius:10px;padding:1px 6px;font-size:10px;font-family:'Geist Mono',monospace;}
-
-/* ── FICHE BUTTON ── */
-.fiche-btn{display:flex;align-items:center;gap:6px;background:var(--surface2);border:1px solid var(--border);color:var(--muted);padding:6px 12px;border-radius:6px;font-size:11.5px;font-weight:500;cursor:pointer;font-family:'Geist',sans-serif;transition:all .12s;}
-.fiche-btn:hover{border-color:var(--border2);color:var(--text);}
-
-/* ── PROTO ACTION BAR ── */
-.proto-actions{display:flex;align-items:center;gap:8px;margin-top:10px;padding-bottom:12px;flex-wrap:wrap;}
-
-/* ── SHARED MODAL BASE ── */
+/* Shared modal base */
 .kmodal{display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.8);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:16px;}
 .kmodal.open{display:flex;}
 .kmodal-inner{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;width:100%;max-width:560px;max-height:85vh;display:flex;flex-direction:column;box-shadow:0 24px 64px rgba(0,0,0,.6);}
@@ -184,24 +197,8 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
 .kmodal-action:hover{opacity:.85;}
 .kmodal-action.primary{background:var(--proto-color,#fff);color:#0a0a0b;}
 .kmodal-action.secondary{background:var(--surface2);color:var(--text);border:1px solid var(--border);}
-
-/* ── RED FLAGS MODAL CONTENT ── */
-.rf-phase-block{margin-bottom:16px;}
-.rf-phase-label{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);font-family:'Geist Mono',monospace;margin-bottom:7px;font-weight:600;}
-.rf-item{display:flex;align-items:flex-start;gap:9px;padding:8px 12px;background:rgba(239,68,68,.05);border:1px solid rgba(239,68,68,.14);border-radius:5px;margin-bottom:5px;}
-.rf-item-icon{color:#ef4444;font-weight:700;flex-shrink:0;font-size:13px;}
-.rf-item-text{font-size:12px;color:var(--text);line-height:1.5;}
-.rf-item.urgent{background:rgba(239,68,68,.12);border-color:rgba(239,68,68,.3);}
-.rf-item.urgent .rf-item-text{font-weight:600;}
-.rf-empty{color:var(--muted);font-size:12px;text-align:center;padding:20px 0;}
-
-/* ── FICHE MODAL CONTENT ── */
-.fiche-header{margin-bottom:16px;}
-.fiche-meta-row{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap;}
-.fiche-meta-input{flex:1;min-width:140px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:7px 11px;color:var(--text);font-family:'Geist',sans-serif;font-size:12px;outline:none;}
-.fiche-meta-input:focus{border-color:var(--border2);}
-.fiche-meta-input::placeholder{color:var(--muted);}
-.fiche-section-title{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);font-family:'Geist Mono',monospace;margin-bottom:8px;margin-top:14px;padding-bottom:5px;border-bottom:1px solid var(--border);font-weight:600;}
+.kmodal-action.danger{background:rgba(239,68,68,.15);color:#ef4444;border:1px solid rgba(239,68,68,.3);}
+/* Fiche styles */
 .fiche-ex-row{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);}
 .fiche-ex-row:last-child{border-bottom:none;}
 .fiche-ex-name{font-size:12.5px;font-weight:600;flex:1;color:var(--text);}
@@ -210,10 +207,90 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
 .fiche-goal-item::before{content:'→';color:var(--proto-color,#fff);flex-shrink:0;font-family:'Geist Mono',monospace;}
 .fiche-notes-area{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:10px 12px;color:var(--text);font-family:'Geist',sans-serif;font-size:12px;min-height:70px;outline:none;resize:vertical;margin-top:8px;}
 .fiche-notes-area::placeholder{color:var(--muted);}
-
-/* ── PRINT STYLES ── */
-@media print {
-  body > *:not(#print-fiche){display:none!important;}
+/* YT modal */
+.yt-modal{display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.85);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:16px;}
+.yt-modal.open{display:flex;}
+.yt-inner{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;width:100%;max-width:720px;box-shadow:0 24px 64px rgba(0,0,0,.6);}
+.yt-bar{display:flex;align-items:center;padding:12px 16px;border-bottom:1px solid var(--border);gap:10px;}
+.yt-bar-title{font-size:13px;font-weight:600;flex:1;color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.yt-close{background:var(--surface2);border:1px solid var(--border);color:var(--muted);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;font-family:'Geist',sans-serif;}
+.yt-wrap{position:relative;padding-bottom:56.25%;height:0;}
+.yt-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+.yt-note{padding:10px 16px;font-size:11px;color:var(--muted);border-top:1px solid var(--border);}
+.yt-btn{display:flex;align-items:center;gap:6px;width:100%;margin-top:8px;background:rgba(255,0,0,.08);border:1px solid rgba(255,0,0,.2);color:#ff4444;padding:7px 12px;border-radius:5px;font-size:11.5px;font-weight:600;cursor:pointer;font-family:'Geist',sans-serif;}
+/* ── PATIËNTENTRAJECT ── */
+.pat-screen{padding:24px 28px;max-width:900px;-webkit-overflow-scrolling:touch;}
+.pat-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:10px;}
+.pat-header-title{font-family:'Instrument Serif',serif;font-size:24px;font-weight:400;}
+.pat-add-btn{display:flex;align-items:center;gap:6px;background:linear-gradient(135deg,#4ade8022,#22d3ee22);border:1px solid #4ade8044;color:#4ade80;padding:8px 16px;border-radius:7px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Geist',sans-serif;}
+.pat-list{display:flex;flex-direction:column;gap:10px;}
+.pat-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px;cursor:pointer;transition:all .15s;position:relative;}
+.pat-card:hover{border-color:var(--border2);}
+.pat-card-top{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+.pat-avatar{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;flex-shrink:0;font-family:'Geist',sans-serif;}
+.pat-name{font-size:14px;font-weight:600;}
+.pat-meta{font-size:11px;color:var(--muted);font-family:'Geist Mono',monospace;margin-top:1px;}
+.pat-proto-badge{margin-left:auto;font-size:10px;padding:3px 8px;border-radius:6px;font-family:'Geist Mono',monospace;font-weight:600;}
+.pat-progress{display:flex;align-items:center;gap:8px;}
+.pat-progress-bar{flex:1;height:4px;background:var(--surface3);border-radius:2px;overflow:hidden;}
+.pat-progress-fill{height:100%;border-radius:2px;transition:width .3s;}
+.pat-progress-label{font-size:10px;color:var(--muted);font-family:'Geist Mono',monospace;white-space:nowrap;}
+.pat-phase-label{font-size:11px;color:var(--text);font-weight:500;}
+.pat-notes-preview{font-size:11px;color:var(--muted2);margin-top:6px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.pat-empty{text-align:center;padding:60px 20px;color:var(--muted);}
+.pat-empty-icon{font-size:40px;margin-bottom:12px;}
+.pat-empty-text{font-size:14px;margin-bottom:6px;color:var(--text);}
+.pat-empty-sub{font-size:12px;}
+/* Patiënt detail */
+.pat-detail{padding:24px 28px;max-width:860px;}
+.pat-detail-header{display:flex;align-items:center;gap:14px;margin-bottom:20px;}
+.pat-detail-avatar{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;font-family:'Geist',sans-serif;}
+.pat-detail-name{font-family:'Instrument Serif',serif;font-size:22px;font-weight:400;}
+.pat-detail-meta{font-size:12px;color:var(--muted);font-family:'Geist Mono',monospace;margin-top:2px;}
+.pat-detail-actions{margin-left:auto;display:flex;gap:8px;}
+/* Session log */
+.session-list{display:flex;flex-direction:column;gap:8px;margin-top:12px;}
+.session-item{background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:12px 14px;}
+.session-date{font-size:10.5px;color:var(--muted);font-family:'Geist Mono',monospace;margin-bottom:4px;}
+.session-note{font-size:12.5px;color:var(--text);line-height:1.5;}
+.session-actions{display:flex;gap:6px;margin-top:8px;}
+.session-del{background:none;border:none;color:var(--muted2);font-size:11px;cursor:pointer;padding:2px 6px;border-radius:4px;font-family:'Geist',sans-serif;}
+.session-del:hover{color:#ef4444;}
+.add-session-area{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:10px 12px;color:var(--text);font-family:'Geist',sans-serif;font-size:12px;min-height:60px;outline:none;resize:vertical;margin-top:8px;}
+.add-session-area::placeholder{color:var(--muted);}
+.add-session-btn{margin-top:6px;background:var(--surface3);border:1px solid var(--border2);color:var(--text);padding:7px 14px;border-radius:6px;font-size:12px;font-weight:500;cursor:pointer;font-family:'Geist',sans-serif;}
+/* Phase selector in patient detail */
+.phase-selector{display:flex;flex-direction:column;gap:6px;margin:12px 0;}
+.phase-sel-item{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:6px;border:1px solid var(--border);cursor:pointer;transition:all .12s;}
+.phase-sel-item:hover{border-color:var(--border2);}
+.phase-sel-item.selected{border-color:var(--proto-color,#fff);background:var(--surface2);}
+.phase-sel-dot{width:10px;height:10px;border-radius:50%;border:2px solid var(--border2);flex-shrink:0;transition:all .12s;}
+.phase-sel-item.selected .phase-sel-dot{background:var(--proto-color,#fff);border-color:var(--proto-color,#fff);}
+.phase-sel-label{font-size:12.5px;font-weight:500;}
+.phase-sel-sub{font-size:10.5px;color:var(--muted);margin-left:auto;font-family:'Geist Mono',monospace;}
+/* Form inputs */
+.form-row{display:flex;flex-direction:column;gap:4px;margin-bottom:12px;}
+.form-label{font-size:10.5px;color:var(--muted);font-family:'Geist Mono',monospace;text-transform:uppercase;letter-spacing:.08em;}
+.form-input{background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:8px 12px;color:var(--text);font-family:'Geist',sans-serif;font-size:13px;outline:none;width:100%;}
+.form-input:focus{border-color:var(--border2);}
+.form-select{background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:8px 12px;color:var(--text);font-family:'Geist',sans-serif;font-size:13px;outline:none;width:100%;cursor:pointer;}
+/* Responsive */
+@media(max-width:700px){
+  .sidebar{display:none;}
+  .bottom-nav{display:block;}
+  .home,.pat-screen,.pat-detail{padding:20px 16px;}
+  .viewer-header{padding:14px 16px 0;}
+  .viewer-body{padding:16px;}
+  .search-box{width:140px;}
+  .protocol-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:380px){.protocol-grid{grid-template-columns:1fr;}.search-box{width:110px;}}
+::-webkit-scrollbar{width:4px;height:4px;}
+::-webkit-scrollbar-track{background:transparent;}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px;}
+/* Print */
+@media print{
+  body>*:not(#print-fiche){display:none!important;}
   #print-fiche{display:block!important;font-family:'Geist',sans-serif;padding:20px;color:#000;}
   #print-fiche h1{font-size:20px;margin-bottom:4px;}
   #print-fiche .pf-meta{font-size:12px;color:#555;margin-bottom:16px;}
@@ -246,25 +323,28 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
     <div class="nav-item" id="nav-tka" onclick="showProto('tka')"><div class="nav-dot" style="background:var(--tka)"></div><div style="flex:1"><div class="nav-title">Totale Knieprothese</div><div class="nav-sub">5 fasen · 3–6 mnd</div></div><span class="nav-badge" style="background:rgba(167,139,250,.1);color:var(--tka)">TKA</span></div>
     <div class="nav-item" id="nav-pfps" onclick="showProto('pfps')"><div class="nav-dot" style="background:var(--pfps)"></div><div style="flex:1"><div class="nav-title">Patellofemoraal Pijn</div><div class="nav-sub">4 fasen · 6–14 wkn</div></div><span class="nav-badge" style="background:rgba(249,115,22,.1);color:var(--pfps)">PFPS</span></div>
     <div class="nav-item" id="nav-lh" onclick="showProto('lh')"><div class="nav-dot" style="background:var(--lh)"></div><div style="flex:1"><div class="nav-title">Lumbale Hernia</div><div class="nav-sub">5 fasen · 6–16 wkn</div></div><span class="nav-badge" style="background:rgba(52,211,153,.1);color:var(--lh)">LHN</span></div>
-    <div class="nav-item" id="nav-rc" onclick="showProto('rc')"><div class="nav-dot" style="background:var(--rc)"></div><div style="flex:1"><div class="nav-title">Rotatorenmanchet</div><div class="nav-sub">5 fasen · 4–12 mnd</div></div><span class="nav-badge" style="background:rgba(244,63,94,.1);color:var(--rc)">RC</span></div>
+    <div class="nav-item" id="nav-rc" onclick="showProto('rc')"><div class="nav-dot" style="background:var(--rc)"></div><div style="flex:1"><div class="nav-title">Rotatorenmanchet</div><div class="nav-sub">6 fasen · 4–12 mnd</div></div><span class="nav-badge" style="background:rgba(244,63,94,.1);color:var(--rc)">RC</span></div>
     <div class="nav-item" id="nav-pt" onclick="showProto('pt')"><div class="nav-dot" style="background:#fb923c"></div><div style="flex:1"><div class="nav-title">Patellapees Tendinopathie</div><div class="nav-sub">5 fasen · 4–20+ wkn</div></div><span class="nav-badge" style="background:rgba(251,146,60,.1);color:#fb923c">PT</span></div>
     <div class="nav-item" id="nav-at" onclick="showProto('at')"><div class="nav-dot" style="background:#e879f9"></div><div style="flex:1"><div class="nav-title">Achillespees Tendinopathie</div><div class="nav-sub">5 fasen · 6–24+ wkn</div></div><span class="nav-badge" style="background:rgba(232,121,249,.1);color:#e879f9">AT</span></div>
     <div class="nav-item" id="nav-bureau" onclick="showProto('bureau')"><div class="nav-dot" style="background:#60a5fa"></div><div style="flex:1"><div class="nav-title">Bureauhouding & Nekklachten</div><div class="nav-sub">4 fasen · 6–12+ wkn</div></div><span class="nav-badge" style="background:rgba(96,165,250,.1);color:#60a5fa">BNK</span></div>
     <div class="sidebar-divider"></div>
+    <div class="sidebar-section">Patiënten</div>
+    <div class="nav-item" id="nav-patients" onclick="showPatients()"><span style="font-size:15px;">👥</span><span class="nav-title">Mijn patiënten</span><span id="pat-count-badge" style="display:none;font-size:10px;padding:1px 7px;border-radius:10px;background:rgba(74,222,128,.15);color:#4ade80;font-family:'Geist Mono',monospace;">0</span></div>
+    <div class="sidebar-divider"></div>
     <div class="sidebar-section">Binnenkort</div>
-
     <div class="nav-item" style="opacity:.35;cursor:default;pointer-events:none;"><div class="nav-dot" style="background:#52525b"></div><div style="flex:1"><div class="nav-title">Schouderinstabiliteit</div><div class="nav-sub">In aanmaak</div></div></div>
   </div>
   <div class="main" id="main">
+    <!-- HOME -->
     <div id="screen-home" class="home">
       <div class="install-banner" id="installBanner"><div class="install-banner-text"><strong>Installeer KineProtocol</strong> voor offline gebruik.</div><button class="install-banner-btn" onclick="installApp()">Installeer</button><button class="install-banner-close" onclick="document.getElementById('installBanner').classList.remove('show')">x</button></div>
       <div class="home-greeting">Goeiedag,<br><em>klinische kennis</em> binnen handbereik.</div>
       <div class="home-sub">Evidence-based revalidatieprotocollen — snel opzoekbaar, klinisch toepasbaar.</div>
       <div class="stats-row">
         <div class="stat"><div class="stat-num" style="color:var(--acl)">8</div><div class="stat-label">Protocollen</div></div>
-        <div class="stat"><div class="stat-num" style="color:var(--tka)">37</div><div class="stat-label">Fasen</div></div>
-        <div class="stat"><div class="stat-num" style="color:var(--pfps)">100+</div><div class="stat-label">Oefeningen</div></div>
-        <div class="stat"><div class="stat-num" style="color:var(--rc)">40+</div><div class="stat-label">Referenties</div></div>
+        <div class="stat"><div class="stat-num" style="color:var(--tka)">42</div><div class="stat-label">Fasen</div></div>
+        <div class="stat"><div class="stat-num" style="color:var(--pfps)">209</div><div class="stat-label">Oefeningen</div></div>
+        <div class="stat"><div class="stat-num" style="color:var(--rc)" id="stat-patients">0</div><div class="stat-label">Patiënten</div></div>
       </div>
       <div class="slabel">Beschikbare protocollen</div>
       <div class="protocol-grid">
@@ -272,31 +352,51 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
         <div class="protocol-card" style="--card-color:var(--tka)" onclick="showProto('tka')"><div class="card-arrow">&#8599;</div><div class="card-icon">&#129471;</div><div class="card-title">Totale Knieprothese</div><div class="card-desc">TKA revalidatie + ERAS + sporthervatting.</div><div class="card-meta"><span class="card-tag col">3–6 mnd</span><span class="card-tag col">5 fasen</span></div></div>
         <div class="protocol-card" style="--card-color:var(--pfps)" onclick="showProto('pfps')"><div class="card-arrow">&#8599;</div><div class="card-icon">&#127919;</div><div class="card-title">Patellofemoraal Pijn</div><div class="card-desc">Multifactorieel: heupfocus + gait retraining.</div><div class="card-meta"><span class="card-tag col">6–14 wkn</span><span class="card-tag col">4 fasen</span></div></div>
         <div class="protocol-card" style="--card-color:var(--lh)" onclick="showProto('lh')"><div class="card-arrow">&#8599;</div><div class="card-icon">&#129504;</div><div class="card-title">Lumbale Hernia</div><div class="card-desc">McKenzie, neurodynamica, return to work.</div><div class="card-meta"><span class="card-tag col">6–16 wkn</span><span class="card-tag col">5 fasen</span></div></div>
-        <div class="protocol-card" style="--card-color:var(--rc)" onclick="showProto('rc')"><div class="card-arrow">&#8599;</div><div class="card-icon">&#128170;</div><div class="card-title">Rotatorenmanchet</div><div class="card-desc">Conservatief + post-OK. Scapulaire controle, RTS.</div><div class="card-meta"><span class="card-tag col">4–12 mnd</span><span class="card-tag col">5 fasen</span></div></div>
-        <div class="protocol-card" style="--card-color:#fb923c" onclick="showProto('pt')"><div class="card-arrow">&#8599;</div><div class="card-icon">🦵</div><div class="card-title">Patellapees Tendinopathie</div><div class="card-desc">Jumper's knee. HSR, isometrie, plyometrie, RTS.</div><div class="card-meta"><span class="card-tag col">4–20+ wkn</span><span class="card-tag col">5 fasen</span></div></div>
+        <div class="protocol-card" style="--card-color:var(--rc)" onclick="showProto('rc')"><div class="card-arrow">&#8599;</div><div class="card-icon">&#128170;</div><div class="card-title">Rotatorenmanchet</div><div class="card-desc">Conservatief + post-OK. Scapulaire controle, RTS.</div><div class="card-meta"><span class="card-tag col">4–12 mnd</span><span class="card-tag col">6 fasen</span></div></div>
+        <div class="protocol-card" style="--card-color:#fb923c" onclick="showProto('pt')"><div class="card-arrow">&#8599;</div><div class="card-icon">🦵</div><div class="card-title">Patellapees Tendinopathie</div><div class="card-desc">Jumper knee. HSR, isometrie, plyometrie, RTS.</div><div class="card-meta"><span class="card-tag col">4–20+ wkn</span><span class="card-tag col">5 fasen</span></div></div>
         <div class="protocol-card" style="--card-color:#e879f9" onclick="showProto('at')"><div class="card-arrow">&#8599;</div><div class="card-icon">🦶</div><div class="card-title">Achillespees Tendinopathie</div><div class="card-desc">Midportion vs insertioneel. Alfredson, HSR, loophervatting.</div><div class="card-meta"><span class="card-tag col">6–24+ wkn</span><span class="card-tag col">5 fasen</span></div></div>
-        <div class="protocol-card" style="--card-color:#60a5fa" onclick="showProto('bureau')"><div class="card-arrow">&#8599;</div><div class="card-icon">💻</div><div class="card-title">Bureauhouding & Nekklachten</div><div class="card-desc">Trapezius syndroom, cervicogene HFK, lumbago. Ergonomie + oefenschema.</div><div class="card-meta"><span class="card-tag col">6–12+ wkn</span><span class="card-tag col">4 fasen</span></div></div>
+        <div class="protocol-card" style="--card-color:#60a5fa" onclick="showProto('bureau')"><div class="card-arrow">&#8599;</div><div class="card-icon">💻</div><div class="card-title">Bureauhouding & Nekklachten</div><div class="card-desc">Trapezius syndroom, cervicogene HFK, lumbago.</div><div class="card-meta"><span class="card-tag col">6–12+ wkn</span><span class="card-tag col">4 fasen</span></div></div>
         <div class="add-card"><div style="font-size:20px;">+</div><div style="font-size:12px;">Nieuw protocol</div><div style="font-size:10px;color:var(--muted2);">Vraag Claude</div></div>
       </div>
     </div>
+    <!-- PROTOCOL VIEWER -->
     <div id="screen-proto" class="viewer" style="display:none;">
       <div class="viewer-header">
         <div class="viewer-breadcrumb"><span onclick="showHome()">Overzicht</span><span style="color:var(--muted2)">›</span><span id="proto-breadcrumb" style="color:var(--text)"></span></div>
         <div class="viewer-title-row"><div class="viewer-dot" id="proto-dot"></div><div><div class="viewer-title" id="proto-title"></div><div class="viewer-subtitle" id="proto-subtitle"></div></div></div>
+        <!-- Fase tijdlijn -->
+        <div id="phase-timeline" class="phase-timeline"></div>
         <div class="proto-actions">
-        <button class="rf-trigger" id="rf-trigger-btn" onclick="openRF()">🚨 Rode vlaggen <span class="rf-count" id="rf-count">0</span></button>
-        <button class="fiche-btn" id="fiche-trigger-btn" onclick="openFiche()">📋 Patiëntenfiche</button>
-      </div>
-      <div class="viewer-tabs" id="proto-tabs"></div>
+          <button class="rf-trigger" id="rf-trigger-btn" onclick="openRF()">🚨 Rode vlaggen <span class="rf-count" id="rf-count">0</span></button>
+          <button class="fiche-btn" onclick="openFiche()">📋 Patiëntenfiche</button>
+          <button class="pat-link-btn" onclick="openPatLink()">👤 Koppel patiënt</button>
+        </div>
+        <div class="viewer-tabs" id="proto-tabs"></div>
       </div>
       <div class="viewer-body" id="proto-body"></div>
     </div>
+    <!-- PATIENTS LIST -->
+    <div id="screen-patients" style="display:none;overflow-y:auto;flex:1;-webkit-overflow-scrolling:touch;">
+      <div class="pat-screen">
+        <div class="pat-header">
+          <div class="pat-header-title">Mijn patiënten</div>
+          <button class="pat-add-btn" onclick="openPatNew()">+ Nieuwe patiënt</button>
+        </div>
+        <div id="pat-list-container"></div>
+      </div>
+    </div>
+    <!-- PATIENT DETAIL -->
+    <div id="screen-patient-detail" style="display:none;overflow-y:auto;flex:1;-webkit-overflow-scrolling:touch;">
+      <div class="pat-detail" id="pat-detail-body"></div>
+    </div>
+    <!-- SEARCH -->
     <div id="screen-search" style="display:none;padding:20px;overflow-y:auto;flex:1;-webkit-overflow-scrolling:touch;">
       <div class="slabel" style="margin-bottom:14px">Zoekresultaten</div>
       <div id="search-results"></div>
     </div>
   </div>
 </div>
+<!-- Bottom nav -->
 <div class="bottom-nav">
   <div class="bottom-nav-inner">
     <button class="bnav-item active" id="bnav-home" onclick="showHome()"><div class="bnav-icon">&#127968;</div><div class="bnav-label">Home</div><div class="bnav-dot"></div></button>
@@ -308,26 +408,18 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
     <button class="bnav-item" id="bnav-pt" onclick="showProto('pt')"><div class="bnav-icon">🦵</div><div class="bnav-label">PT</div><div class="bnav-dot" style="background:#fb923c"></div></button>
     <button class="bnav-item" id="bnav-at" onclick="showProto('at')"><div class="bnav-icon">🦶</div><div class="bnav-label">AT</div><div class="bnav-dot" style="background:#e879f9"></div></button>
     <button class="bnav-item" id="bnav-bureau" onclick="showProto('bureau')"><div class="bnav-icon">💻</div><div class="bnav-label">BNK</div><div class="bnav-dot" style="background:#60a5fa"></div></button>
+    <button class="bnav-item" id="bnav-patients" onclick="showPatients()"><div class="bnav-icon">👥</div><div class="bnav-label">Patiënten</div><div class="bnav-dot" style="background:#4ade80"></div></button>
     <button class="bnav-item" id="bnav-search" onclick="document.getElementById('searchInput').focus()"><div class="bnav-icon">&#128269;</div><div class="bnav-label">Zoeken</div><div class="bnav-dot"></div></button>
   </div>
 </div>
-
 <!-- YouTube Modal -->
 <div class="yt-modal" id="yt-modal" onclick="if(event.target===this)closeYT()">
   <div class="yt-inner">
-    <div class="yt-bar">
-      <span style="font-size:14px;">▶</span>
-      <div class="yt-bar-title" id="yt-title"></div>
-      <button class="yt-close" onclick="closeYT()">✕</button>
-    </div>
-    <div class="yt-wrap">
-      <iframe id="yt-frame" src="" allowfullscreen allow="autoplay"></iframe>
-    </div>
-    <div class="yt-note">⚠ Vereist internetverbinding · Sluit het venster om de video te stoppen</div>
+    <div class="yt-bar"><span style="font-size:14px;">▶</span><div class="yt-bar-title" id="yt-title"></div><button class="yt-close" onclick="closeYT()">✕</button></div>
+    <div class="yt-wrap"><iframe id="yt-frame" src="" allowfullscreen allow="autoplay"></iframe></div>
+    <div class="yt-note">⚠ Vereist internetverbinding</div>
   </div>
 </div>
-
-
 <!-- Red Flags Modal -->
 <div class="kmodal" id="rf-modal" onclick="if(event.target===this)closeRF()">
   <div class="kmodal-inner">
@@ -339,15 +431,10 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
     <div class="kmodal-body" id="rf-modal-body"></div>
   </div>
 </div>
-
-<!-- Patient Fiche Modal -->
+<!-- Fiche Modal -->
 <div class="kmodal" id="fiche-modal" onclick="if(event.target===this)closeFiche()">
   <div class="kmodal-inner" style="max-width:600px;">
-    <div class="kmodal-bar">
-      <span style="font-size:16px;">📋</span>
-      <div class="kmodal-title" id="fiche-modal-title">Patiëntenfiche</div>
-      <button class="kmodal-close" onclick="closeFiche()">✕</button>
-    </div>
+    <div class="kmodal-bar"><span style="font-size:16px;">📋</span><div class="kmodal-title" id="fiche-modal-title">Patiëntenfiche</div><button class="kmodal-close" onclick="closeFiche()">✕</button></div>
     <div class="kmodal-body" id="fiche-modal-body"></div>
     <div class="kmodal-footer">
       <button class="kmodal-action secondary" onclick="copyFiche()">📋 Kopieer tekst</button>
@@ -355,10 +442,32 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
     </div>
   </div>
 </div>
-
-<!-- Hidden print container -->
+<!-- Nieuwe patiënt Modal -->
+<div class="kmodal" id="pat-new-modal" onclick="if(event.target===this)closePatNew()">
+  <div class="kmodal-inner" style="max-width:480px;">
+    <div class="kmodal-bar"><span style="font-size:16px;">👤</span><div class="kmodal-title" id="pat-new-title">Nieuwe patiënt</div><button class="kmodal-close" onclick="closePatNew()">✕</button></div>
+    <div class="kmodal-body">
+      <div class="form-row"><div class="form-label">Naam *</div><input class="form-input" id="pat-form-name" placeholder="Voor- en achternaam" autocomplete="off"/></div>
+      <div class="form-row"><div class="form-label">Geboortedatum</div><input class="form-input" id="pat-form-dob" type="date"/></div>
+      <div class="form-row"><div class="form-label">Protocol *</div><select class="form-select" id="pat-form-proto"></select></div>
+      <div class="form-row"><div class="form-label">Startdatum</div><input class="form-input" id="pat-form-start" type="date"/></div>
+      <div class="form-row"><div class="form-label">Huidige fase</div><select class="form-select" id="pat-form-phase"><option value="0">Fase 1</option></select></div>
+      <div class="form-row"><div class="form-label">Notitie (optioneel)</div><textarea class="add-session-area" id="pat-form-note" placeholder="Bijv. postoperatief dag 3, operatie links..." style="min-height:50px;margin-top:0"></textarea></div>
+    </div>
+    <div class="kmodal-footer">
+      <button class="kmodal-action secondary" onclick="closePatNew()">Annuleer</button>
+      <button class="kmodal-action primary" id="pat-form-save-btn" onclick="savePatient()">Opslaan</button>
+    </div>
+  </div>
+</div>
+<!-- Koppel patiënt Modal -->
+<div class="kmodal" id="pat-link-modal" onclick="if(event.target===this)closePatLink()">
+  <div class="kmodal-inner" style="max-width:420px;">
+    <div class="kmodal-bar"><span style="font-size:16px;">🔗</span><div class="kmodal-title">Koppel aan patiënt</div><button class="kmodal-close" onclick="closePatLink()">✕</button></div>
+    <div class="kmodal-body" id="pat-link-body"></div>
+  </div>
+</div>
 <div id="print-fiche"></div>
-
 <script src="app.js"></script>
 </body>
 </html>

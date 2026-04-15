@@ -12,7 +12,7 @@ const protocols = {
          {name:'Quadriceps setting (isometrisch)',params:[['Reps','10–15'],['Hold','5–10 sec'],['Sets','3'],['Freq','4–6×/dag']],note:'Knie in ~10° flexie. Eventueel NMES bij sterke inhibitie.',cat:'kracht'},
          {name:'Straight Leg Raise (SLR)',params:[['Reps','15–20'],['Sets','3'],['Freq','2–3×/dag']],note:'Enkel in dorsaalflexie, knie gestrekt. Wacht tot extensielag < 10°.',cat:'kracht'},
          {name:'Actief-geassisteerde knieflexie',params:[['Reps','10–15'],['Sets','2–3'],['Freq','2–3×/dag']],note:'Gezonde been helpt. Target: 90° einde week 1, 120° einde week 2.',cat:'mobiliteit'},
-         {name:'Enkel-pompen',params:[['Reps','20–25'],['Freq','elk uur']],note:'DVT-preventie en lymfedrainage.'},
+         {name:'Enkel-pompen',params:[['Reps','20–25'],['Freq','elk uur']],note:'DVT-preventie en lymfedrainage.',cat:'mobiliteit'},
          {name:'Gluteale isometrie (zijlig)',params:[['Reps','10–12'],['Hold','5 sec'],['Sets','3']],note:'Abductie + extensie heup isometrisch.',cat:'kracht'}],
        criteria_go:['Extensie 0° of < 5° deficit','Flexie ≥ 90°','Lopen zonder hinken','Effusie graad ≤ 1','VAS ≤ 3/10','Zichtbare quadricepscontractie'],
        criteria_stop:['Toename effusie na oefening','Extensielag > 10° zonder verbetering','Koorts of warmte rond gewricht'],
@@ -24,7 +24,7 @@ const protocols = {
          {name:'Stationaire fiets',params:[['Duur','10–20 min'],['Weerstand','laag'],['Freq','dagelijks']],note:'Start hoog zadel, verlaag progressief.',cat:'cardio'},
          {name:'Mini-squat (0–45°)',params:[['Reps','12–15'],['Sets','3'],['Tempo','3-1-3']],note:'Bilateraal. Controleer valgus. Progressief dieper.',cat:'kracht'},
          {name:'Beenpers bilateraal',params:[['Reps','10–12'],['Sets','3–4'],['Belasting','60–75% 1RM']],note:'CKC, laag shear op graft.',cat:'kracht'},
-         {name:'Isometrische knie-extensie (60°)',params:[['Reps','5–8'],['Hold','5 sec'],['Sets','3']],note:'Veilig op graft bij 60° (Heijne & Werner 2021).'},
+         {name:'Isometrische knie-extensie (60°)',params:[['Reps','5–8'],['Hold','5 sec'],['Sets','3']],note:'Veilig op graft bij 60° (Heijne & Werner 2021).',cat:'kracht'},
          {name:'Step-up anterieur (10 cm)',params:[['Reps','10–15'],['Sets','3']],note:'Functioneel CKC. Controleer knietracking.',cat:'kracht'},
          {name:'Enkel-been balans',params:[['Duur','30–60 sec'],['Sets','3'],['Ogen','open → gesloten']],note:'Progressie: schuimmat → perturbed surface.',cat:'stabiliteit'}],
        criteria_go:['ROM 0–130°','Normaal lopen','Quad LSI ≥ 60%','SLS 30° zonder valgus','Geen effusie na 30 min'],
@@ -47,8 +47,8 @@ const protocols = {
        exercises:[
          {name:'Jog-walk protocol',params:[['Duur','20 min'],['Verhouding','1 min jog / 1 min walk']],note:'Week 12–13. Snelheid ~7–8 km/u.',cat:'cardio'},
          {name:'Continu joggen',params:[['Opbouw','10 → 20 → 30 min'],['Freq','3×/week']],note:'10%-regel. Bochten na 2 weken rechte lijn.',cat:'cardio'},
-         {name:'Bipodale + unipodale opvang',params:[['Reps','8–10 → 6–8/been'],['Sets','3']],note:'Week 12–16. Zachte landing, geen valgus.'},
-         {name:'Laterale sprongen + SSC',params:[['Vb','skater jumps, depth jump'],['RSI','meten']],note:'Week 16–20. RSI = hoogte/contacttijd.'}],
+         {name:'Bipodale + unipodale opvang',params:[['Reps','8–10 → 6–8/been'],['Sets','3']],note:'Week 12–16. Zachte landing, geen valgus.',cat:'neuro'},
+         {name:'Laterale sprongen + SSC',params:[['Vb','skater jumps, depth jump'],['RSI','meten']],note:'Week 16–20. RSI = hoogte/contacttijd.',cat:'neuro'}],
        criteria_go:['Continu joggen 30 min','LSI RSI ≥ 85%','Quad LSI ≥ 90%'],
        criteria_stop:['Pijn bij jogging > VAS 3 → fase 3 consolideren'],redflags:[]},
       {label:'Fase 5',title:'Return to Sport',weeks:'Mnd 5–12',
@@ -56,7 +56,7 @@ const protocols = {
        goals:['Hop-testbatterij LSI ≥ 90%','Quad + Ham LSI ≥ 90%','ACL-RSI ≥ 65/100','IKDC ≥ 85/100','Minimum 9 maanden postoperatief'],
        exercises:[
          {name:'Single Leg Hop + Triple Hop + 6m Timed',params:[['LSI','≥ 90%']],note:'Volledige hop-testbatterij vóór RTS.',cat:'test'},
-         {name:'FIFA 11+ (preventie)',params:[['Duur','20 min'],['Freq','elk trainingsmoment']],note:'50% reductie herletsel (Silvers-Granelli 2015).'},
+         {name:'FIFA 11+ (preventie)',params:[['Duur','20 min'],['Freq','elk trainingsmoment']],note:'50% reductie herletsel (Silvers-Granelli 2015).',cat:'neuro'},
          {name:'Nordic Hamstring (onderhoud)',params:[['Reps','6–8'],['Freq','1–2×/week']],note:'Levenslang onderhoud.',cat:'kracht'}],
        criteria_go:['Hop LSI ≥ 90%','ACL-RSI ≥ 65','IKDC ≥ 85','≥ 9 maanden'],
        criteria_stop:['ACL-RSI < 50 → psycholoog'],
@@ -71,9 +71,9 @@ const protocols = {
        goals:['Quadricepskracht maximaliseren','ROM: extensie 0°, flexie ≥ 110°','Patiënt educatie + functionele baseline (TUG, 6MWT, KOOS)','Dag 0: DVT-preventie, eerste stappen'],
        exercises:[
          {name:'Quadriceps setting (prehab)',params:[['Reps','15–20'],['Hold','5–10 sec'],['Freq','3×/dag']],note:'Patiënt moet uitvoering kennen vóór operatie.',cat:'kracht'},
-         {name:'Enkel-pompen (dag 0)',params:[['Reps','20–30'],['Freq','elk uur']],note:'DVT-preventie. Starten in recovery room.'},
-         {name:'Eerste stappen (dag 0)',params:[['Timing','2–6u postop'],['Hulp','rollator + kinesist']],note:'ERAS: dag 0 mobilisatie.'},
-         {name:'Passieve extensie (dag 1)',params:[['Duur','15–20 min'],['Freq','3–4×/dag']],note:'PRIORITEIT. Extensiedeficit is meest invaliderende complicatie.'}],
+         {name:'Enkel-pompen (dag 0)',params:[['Reps','20–30'],['Freq','elk uur']],note:'DVT-preventie. Starten in recovery room.',cat:'mobiliteit'},
+         {name:'Eerste stappen (dag 0)',params:[['Timing','2–6u postop'],['Hulp','rollator + kinesist']],note:'ERAS: dag 0 mobilisatie.',cat:'mobiliteit'},
+         {name:'Passieve extensie (dag 1)',params:[['Duur','15–20 min'],['Freq','3–4×/dag']],note:'PRIORITEIT. Extensiedeficit is meest invaliderende complicatie.',cat:'mobiliteit'}],
        criteria_go:['Hemodynamisch stabiel','DVT-preventie opgestart','Eerste stappen gezet'],
        criteria_stop:['Hemodynamische instabiliteit → uitstellen'],
        redflags:['DVT: kuitpijn, warmte → doppler echo','Peroneus parese → directe melding chirurg']},
@@ -84,7 +84,7 @@ const protocols = {
          {name:'Actief-geassisteerde knieflexie',params:[['Reps','10–15'],['Sets','3'],['Freq','3×/dag']],note:'Target: 5° meer per dag.',cat:'mobiliteit'},
          {name:'Passieve knie-extensie',params:[['Duur','15–20 min'],['Freq','4×/dag']],note:'PRIORITEIT.',cat:'mobiliteit'},
          {name:'Patella mobilisatie',params:[['Reps','10–15'],['Freq','dagelijks']],note:'Start dag 7–10 na wondsluiting.',cat:'mobiliteit'},
-         {name:'Cryotherapie post-sessie',params:[['Duur','15–20 min'],['Timing','na elke sessie']],note:'IJszak met doek, niet op wond.'}],
+         {name:'Cryotherapie post-sessie',params:[['Duur','15–20 min'],['Timing','na elke sessie']],note:'IJszak met doek, niet op wond.',cat:'manueel'}],
        criteria_go:['Extensie 0°','Flexie ≥ 90°','Lopen OK','Trapvaardigheid OK'],
        criteria_stop:['Flexie < 80° na 2 wkn → MUA-overleg'],
        redflags:['MUA-indicatie bij flexie < 90° na week 6–8','Optimale timing: voor week 12']},
@@ -114,8 +114,8 @@ const protocols = {
        exercises:[
          {name:'Dagelijks wandelen',params:[['Duur','30–60 min'],['Freq','dagelijks']],note:'Beste langetermijn-activiteit.',cat:'cardio'},
          {name:'Fietsen',params:[['Duur','30–60 min'],['Freq','3–5×/week']],note:'Aanbevolen levenslange sport.',cat:'cardio'},
-         {name:'Zwemmen (crawl/rugslag)',params:[['Freq','2–3×/week']],note:'GEEN schoolslag.'},
-         {name:'Krachtoefeningen onderhoud',params:[['Freq','2×/week']],note:'Sarcopenie-preventie.'}],
+         {name:'Zwemmen (crawl/rugslag)',params:[['Freq','2–3×/week']],note:'GEEN schoolslag.',cat:'cardio'},
+         {name:'Krachtoefeningen onderhoud',params:[['Freq','2×/week']],note:'Sarcopenie-preventie.',cat:'kracht'}],
        criteria_go:['KOOS ≥ 70/100','6MWT ≥ leeftijdsnorm','VAS ≤ 2/10'],
        criteria_stop:['Chronische pijn > 3 mnd → pijnkliniek'],
        redflags:['Prothese-instabiliteit, klikken → orthopedisch chirurg']}
@@ -140,9 +140,9 @@ const protocols = {
        goals:['VAS ≤ 3/10','2-uursregel begrijpen','Activiteiten aanpassen','Eerste heup + quad activering'],
        exercises:[
          {name:'McConnell taping',params:[['Test','≥ 50% VAS-reductie']],note:'Test altijd pijneffect.',cat:'manueel'},
-         {name:'Isometrische quad (60–70°)',params:[['Reps','5'],['Hold','45 sec'],['Sets','4']],note:'Reduceert corticale pijninhibitie (Rio et al., 2015).'},
+         {name:'Isometrische quad (60–70°)',params:[['Reps','5'],['Hold','45 sec'],['Sets','4']],note:'Reduceert corticale pijninhibitie (Rio et al., 2015).',cat:'kracht'},
          {name:'Zijlig heupabductie + clamshell',params:[['Reps','15–20'],['Sets','3'],['Freq','2×/dag']],note:'Eerste activering gluteus medius.',cat:'kracht'},
-         {name:'Patiënteducatie (PNE)',params:[['Duur','15–20 min']],note:'Overbelastingsmodel, 2-uursregel, 6–12 weken herstel.'}],
+         {name:'Patiënteducatie (PNE)',params:[['Duur','15–20 min']],note:'Overbelastingsmodel, 2-uursregel, 6–12 weken herstel.',cat:'manueel'}],
        criteria_go:['VAS ≤ 3/10','Begrip belastingsprincipes'],
        criteria_stop:['Pijn neemt toe → dosering halveren'],redflags:[]},
       {label:'Fase 2',title:'Krachtopbouw Heup + Quad',weeks:'Week 3–8',
@@ -161,9 +161,9 @@ const protocols = {
        goals:['Jogging 30 min VAS ≤ 2/10','Plyometrisch stadium 1+2 voltooid','Quad LSI ≥ 85%','Kujala ≥ 80/100'],
        exercises:[
          {name:'Stapfrequentie verhogen (+10%)',params:[['Tool','metronoom-app'],['Target','+5–10%']],note:'170 → 185 stap/min typisch.',cat:'neuro'},
-         {name:'Heup-dominante loopstijl',params:[['Cue','"push from the hip"']],note:'Meer heupextensie = minder PF-compressie.'},
-         {name:'Loopprogressie (10%-regel)',params:[['Start','2–3 km'],['Opbouw','10%/week']],note:'2-uursregel na elke run.'},
-         {name:'Bipolale → unipolale sprongen',params:[['Reps','8–10 → 6–8/been'],['Sets','3']],note:'Knietracking bij landing.'}],
+         {name:'Heup-dominante loopstijl',params:[['Cue','"push from the hip"']],note:'Meer heupextensie = minder PF-compressie.',cat:'neuro'},
+         {name:'Loopprogressie (10%-regel)',params:[['Start','2–3 km'],['Opbouw','10%/week']],note:'2-uursregel na elke run.',cat:'cardio'},
+         {name:'Bipolale → unipolale sprongen',params:[['Reps','8–10 → 6–8/been'],['Sets','3']],note:'Knietracking bij landing.',cat:'neuro'}],
        criteria_go:['Jogging 30 min VAS ≤ 2/10','SLS 45° zonder valgus','Hop LSI ≥ 90%','Kujala ≥ 80/100'],
        criteria_stop:['Pijn > VAS 3 bij sport → fase 2 consolideren'],
        redflags:['Recidief na RTS → loopvolume-monitoring activeren']}
@@ -223,7 +223,7 @@ const protocols = {
        exercises:[
          {name:'Work hardening (werkgerichte training)',params:[['Vb','tillen 10–20 kg, duwen, buigen'],['Opbouw','10%/week']],note:'Simuleer werktaken. Ergonomisch advies op werkplek.',cat:'stabiliteit'},
          {name:'Tiltraining (NIOSH-richtlijn)',params:[['Techniek','heupscharnieren + neutraal']],note:'Graduele blootstelling aan gevreesde belasting.',cat:'kracht'},
-         {name:'Onderhoudsprogramma (2×/week)',params:[['Vb','deadlift, squat, bird dog, lopen'],['Duur','30–45 min']],note:'Minimaal maar consistent. 2×/week volstaat.'},
+         {name:'Onderhoudsprogramma (2×/week)',params:[['Vb','deadlift, squat, bird dog, lopen'],['Duur','30–45 min']],note:'Minimaal maar consistent. 2×/week volstaat.',cat:'kracht'},
          {name:'McKenzie zelfbehandeling (bij recidief)',params:[['Timing','bij eerste tekenen'],['Freq','elk uur x 10']],note:'Patiënt kent directional preference. Direct handelen.',cat:'mobiliteit'}],
        criteria_go:['ODI < 20%','FABQ werk < 25','Werkactiviteiten 8u tolereren'],
        criteria_stop:['ODI > 40% na 16 wkn → multidisciplinaire revalidatie'],
@@ -298,7 +298,7 @@ const protocols = {
          {name:'Interval Throwing Program (overhead-sporters)',params:[['Start','fase 1: 45 voet'],['Progressie','afstand + intensiteit'],['Freq','om de dag']],note:'ASMI-protocol: 45 → 60 → 90 → 120 voet. Elke fase 2× pijnvrij voor progressie.',cat:'neuro'},
          {name:'Plyometrische bal-oefeningen (med ball)',params:[['Vb','chest pass, overhead throw'],['Reps','10–15'],['Sets','3'],['Gewicht','1–3 kg']],note:'Reactieve kracht schouder-girdle. Progressie: afstand + gewicht + snelheid.',cat:'neuro'},
          {name:'Perturbatie training (onstabiele ondergrond)',params:[['Vb','push-up op BOSU, Swiss ball'],['Sets','3'],['Duur','30–45 sec']],note:'Neuromusculaire co-contractie RC. Nuttig voor contactsporten.',cat:'stabiliteit'},
-         {name:'Onderhoudsprogramma (post-RTS)',params:[['Freq','2×/week'],['Vb','ER-band, prone Y, push-up plus']],note:'Levenslang onderhoud — RC-tendinopathie recidief frequent bij stop training.'}],
+         {name:'Onderhoudsprogramma (post-RTS)',params:[['Freq','2×/week'],['Vb','ER-band, prone Y, push-up plus']],note:'Levenslang onderhoud — RC-tendinopathie recidief frequent bij stop training.',cat:'kracht'}],
        criteria_go:['RM-kracht LSI ≥ 90%','Interval throwing program volledig','WORC/WOSI ≥ 80%','Pijn NRS ≤ 1/10 bij sportactiviteit'],
        criteria_stop:['Pijn bij sport > NRS 3 → fase 3 consolideren','Post-OK grote ruptuur: overhead sport uitstellen tot ≥ 9 maanden'],
        redflags:['Re-ruptuur post-OK: plots krachtverlies bij overhead → echo/MRI → chirurg','Chronische subacromiale pijn ondanks optimale kine → corticosteroïdinjectie of chirurgie herbekijken']},
@@ -307,8 +307,8 @@ const protocols = {
        evidence:'<strong>RC-tendinopathie recidief</strong> bij 20–40% zonder onderhoudstraining. <strong>Ergonomische interventies</strong> reduceren werkgerelateerde RC-pathologie (van Rijn et al., 2010). <strong>Slaappositie</strong> op aangedane zijde verhoogt supraspinatus ischemie.',
        goals:['Zelfstandig onderhoudsprogramma 2×/week','Ergonomie werkplek geoptimaliseerd','Slaaphoudingsadvies geïntegreerd','Vroege tekenen van recidief herkennen'],
        exercises:[
-         {name:'Onderhoudsprogramma RC (2×/week)',params:[['Vb','ER-band, side-lying ER, prone Y-T-W'],['Duur','20–30 min']],note:'Minimale effectieve dosis. Stoppen = recidief. Integreer in sporttraining.'},
-         {name:'Scapulaire controle (onderhoud)',params:[['Vb','wall slide, push-up plus'],['Freq','2×/week']],note:'Serratus anterior + lower trap. Meest vergeten onderdeel langetermijn-preventie.'},
+         {name:'Onderhoudsprogramma RC (2×/week)',params:[['Vb','ER-band, side-lying ER, prone Y-T-W'],['Duur','20–30 min']],note:'Minimale effectieve dosis. Stoppen = recidief. Integreer in sporttraining.',cat:'kracht'},
+         {name:'Scapulaire controle (onderhoud)',params:[['Vb','wall slide, push-up plus'],['Freq','2×/week']],note:'Serratus anterior + lower trap. Meest vergeten onderdeel langetermijn-preventie.',cat:'stabiliteit'},
          {name:'Ergonomische werkhouding',params:[['Vb','schermhoogte, muis-positie, tilhouding']],note:'Armen niet boven schouderhoogte. Beeldscherm op ooghoogte. Max tilgewicht: 23 kg enkelvoudig.',cat:'manueel'},
          {name:'Slaaphouding advies',params:[['Advies','niet op aangedane zijde slapen']],note:'Op aangedane zijde = supraspinatus compressie + ischemie 6–8 uur/nacht. Ruglig met kussen onder arm is beste positie.',cat:'manueel'}],
        criteria_go:['Zelfstandig onderhoudsprogramma aangeleerd','Ergonomie geoptimaliseerd','Recidief-actieplan gekend'],
@@ -784,7 +784,7 @@ function renderTimeline(activeIdx) {
     </div>`;
   });
   if(linked) {
-    html += `<div style="margin-left:12px;font-size:10px;color:#4ade80;font-family:'Geist Mono',monospace;white-space:nowrap;align-self:flex-start;margin-top:2px">👤 ${linked.name.split(' ')[0]}</div>`;
+    html += `<div style="margin-left:12px;font-size:10px;color:#4ade80;font-family:Geist Mono,monospace;white-space:nowrap;align-self:flex-start;margin-top:2px">👤 ${linked.name.split(' ')[0]}</div>`;
   }
   tl.innerHTML = html;
 }
@@ -810,8 +810,8 @@ function showScores(id) {
       </div>`;
     });
     html += `</div>`;
-    if(sc.rts) html += `<div style="font-size:10.5px;color:var(--muted);margin-bottom:10px;padding:5px 8px;background:var(--surface2);border-radius:4px;font-family:'Geist Mono',monospace">RTS: ${sc.rts}</div>`;
-    if(sc.mcid) html += `<div style="font-size:10px;color:var(--muted2);margin-bottom:10px;font-family:'Geist Mono',monospace">MCID: ${sc.mcid} ${sc.unit}</div>`;
+    if(sc.rts) html += `<div style="font-size:10.5px;color:var(--muted);margin-bottom:10px;padding:5px 8px;background:var(--surface2);border-radius:4px;font-family:Geist Mono,monospace">RTS: ${sc.rts}</div>`;
+    if(sc.mcid) html += `<div style="font-size:10px;color:var(--muted2);margin-bottom:10px;font-family:Geist Mono,monospace">MCID: ${sc.mcid} ${sc.unit}</div>`;
     html += `<div class="score-input-row">
       <input class="score-input" id="score-input-${si}" type="number" min="0" max="${sc.max}" placeholder="Score (0–${sc.max})">
       <button class="score-btn" onclick="calcScore('${id}',${si})">Interpreteer</button>
@@ -865,7 +865,7 @@ function openRF() {
     let html = ''; let lastFase = '';
     allFlags.forEach(({fase, flag}) => {
       if(fase !== lastFase) {
-        html += `<div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);font-family:'Geist Mono',monospace;margin:${lastFase?'16px':0} 0 6px">${fase}</div>`;
+        html += `<div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);font-family:Geist Mono,monospace;margin:${lastFase?'16px':0} 0 6px">${fase}</div>`;
         lastFase = fase;
       }
       const urgent = flag.includes('SPOED') || flag.includes('spoed') || flag.includes('CAUDA');
@@ -902,26 +902,26 @@ function renderFicheModal() {
   const phases = ficheScope === 'all' ? p.phases : [p.phases[fichePhaseIndex]];
   document.getElementById('fiche-modal-title').textContent = '📋 ' + p.title;
   let html = `<div style="display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap;">`;
-  html += `<button onclick="setFicheScope('fase')" style="flex:1;padding:7px 10px;border-radius:6px;font-size:11.5px;font-family:'Geist',sans-serif;cursor:pointer;font-weight:600;border:1px solid ${ficheScope==='fase'?'var(--proto-color)':'var(--border)'};background:${ficheScope==='fase'?'var(--surface3)':'var(--surface2)'};color:${ficheScope==='fase'?'var(--proto-color)':'var(--muted)'};">Huidige fase</button>`;
-  html += `<button onclick="setFicheScope('all')" style="flex:1;padding:7px 10px;border-radius:6px;font-size:11.5px;font-family:'Geist',sans-serif;cursor:pointer;font-weight:600;border:1px solid ${ficheScope==='all'?'var(--proto-color)':'var(--border)'};background:${ficheScope==='all'?'var(--surface3)':'var(--surface2)'};color:${ficheScope==='all'?'var(--proto-color)':'var(--muted)'};">Volledig protocol</button>`;
+  html += `<button onclick="setFicheScope('fase')" style="flex:1;padding:7px 10px;border-radius:6px;font-size:11.5px;font-family:Geist,sans-serif;cursor:pointer;font-weight:600;border:1px solid ${ficheScope==='fase'?'var(--proto-color)':'var(--border)'};background:${ficheScope==='fase'?'var(--surface3)':'var(--surface2)'};color:${ficheScope==='fase'?'var(--proto-color)':'var(--muted)'};">Huidige fase</button>`;
+  html += `<button onclick="setFicheScope('all')" style="flex:1;padding:7px 10px;border-radius:6px;font-size:11.5px;font-family:Geist,sans-serif;cursor:pointer;font-weight:600;border:1px solid ${ficheScope==='all'?'var(--proto-color)':'var(--border)'};background:${ficheScope==='all'?'var(--surface3)':'var(--surface2)'};color:${ficheScope==='all'?'var(--proto-color)':'var(--muted)'};">Volledig protocol</button>`;
   html += `</div>`;
   if(ficheScope === 'fase') {
     html += `<div style="display:flex;gap:4px;margin-bottom:14px;overflow-x:auto;scrollbar-width:none;">`;
     p.phases.forEach((ph,i) => {
-      html += `<button onclick="fichePhaseIndex=${i};renderFicheModal()" style="flex-shrink:0;padding:4px 10px;border-radius:5px;font-size:10.5px;font-family:'Geist Mono',monospace;cursor:pointer;border:1px solid ${i===fichePhaseIndex?'var(--proto-color)':'var(--border)'};background:${i===fichePhaseIndex?'var(--surface3)':'var(--surface2)'};color:${i===fichePhaseIndex?'var(--text)':'var(--muted)'};">${ph.label}</button>`;
+      html += `<button onclick="fichePhaseIndex=${i};renderFicheModal()" style="flex-shrink:0;padding:4px 10px;border-radius:5px;font-size:10.5px;font-family:Geist Mono,monospace;cursor:pointer;border:1px solid ${i===fichePhaseIndex?'var(--proto-color)':'var(--border)'};background:${i===fichePhaseIndex?'var(--surface3)':'var(--surface2)'};color:${i===fichePhaseIndex?'var(--text)':'var(--muted)'};">${ph.label}</button>`;
     });
     html += `</div>`;
   }
   phases.forEach(ph => {
     html += `<div style="margin-bottom:18px;">`;
-    html += `<div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid var(--proto-color);border-radius:4px;padding:10px 14px;margin-bottom:10px;"><div style="font-size:12px;font-weight:700;">${ph.label} — ${ph.title}</div><div style="font-size:10.5px;color:var(--muted);font-family:'Geist Mono',monospace;margin-top:2px">${ph.weeks}</div></div>`;
+    html += `<div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid var(--proto-color);border-radius:4px;padding:10px 14px;margin-bottom:10px;"><div style="font-size:12px;font-weight:700;">${ph.label} — ${ph.title}</div><div style="font-size:10.5px;color:var(--muted);font-family:Geist Mono,monospace;margin-top:2px">${ph.weeks}</div></div>`;
     if(ph.goals?.length) {
-      html += `<div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);font-family:'Geist Mono',monospace;margin-bottom:6px;">Doelstellingen</div><ul style="list-style:none;margin-bottom:12px;">`;
+      html += `<div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);font-family:Geist Mono,monospace;margin-bottom:6px;">Doelstellingen</div><ul style="list-style:none;margin-bottom:12px;">`;
       ph.goals.forEach(g => html += `<li class="fiche-goal-item">${g}</li>`);
       html += `</ul>`;
     }
     if(ph.exercises?.length) {
-      html += `<div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);font-family:'Geist Mono',monospace;margin-bottom:6px;">Oefeningen</div>`;
+      html += `<div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);font-family:Geist Mono,monospace;margin-bottom:6px;">Oefeningen</div>`;
       ph.exercises.forEach(ex => {
         html += `<div class="fiche-ex-row"><div style="flex:1"><div class="fiche-ex-name">${ex.name}</div>`;
         if(ex.params?.length) html += `<div class="fiche-ex-params">${ex.params.map(([k,v])=>`${k}: ${v}`).join(' · ')}</div>`;
@@ -931,7 +931,7 @@ function renderFicheModal() {
     }
     html += `</div>`;
   });
-  html += `<div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);font-family:'Geist Mono',monospace;margin-bottom:6px;">Notities voor patiënt</div>`;
+  html += `<div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);font-family:Geist Mono,monospace;margin-bottom:6px;">Notities voor patiënt</div>`;
   html += `<textarea class="fiche-notes-area" id="fiche-notes" placeholder="Voeg persoonlijke notities toe..."></textarea>`;
   document.getElementById('fiche-modal-body').innerHTML = html;
 }
@@ -1039,6 +1039,160 @@ function renderPatientList() {
   }).join('')}</div>`;
 }
 
+
+// ── SCORE TRACKING PER PATIENT ──
+function getPatientScores(patId) {
+  try { return JSON.parse(localStorage.getItem('kp_scores_' + patId) || '{}'); } catch(e) { return {}; }
+}
+function savePatientScore(patId, scoreName, value, date) {
+  const scores = getPatientScores(patId);
+  if(!scores[scoreName]) scores[scoreName] = [];
+  scores[scoreName].push({date: date || new Date().toISOString().slice(0,10), value: parseFloat(value)});
+  // Sort by date
+  scores[scoreName].sort((a,b) => a.date.localeCompare(b.date));
+  try { localStorage.setItem('kp_scores_' + patId, JSON.stringify(scores)); } catch(e) {}
+}
+function deletePatientScore(patId, scoreName, idx) {
+  const scores = getPatientScores(patId);
+  if(scores[scoreName]) {
+    scores[scoreName].splice(idx, 1);
+    if(scores[scoreName].length === 0) delete scores[scoreName];
+  }
+  try { localStorage.setItem('kp_scores_' + patId, JSON.stringify(scores)); } catch(e) {}
+  // Re-render detail
+  const pts = loadPatients();
+  const pt = pts.find(p => p.id === patId);
+  if(pt) renderPatientDetail(pt, protocols[pt.protoId]);
+}
+function addPatientScore(patId) {
+  const scName = document.getElementById('score-track-name-' + patId);
+  const scVal = document.getElementById('score-track-val-' + patId);
+  const scDate = document.getElementById('score-track-date-' + patId);
+  if(!scName || !scVal) return;
+  const val = parseFloat(scVal.value);
+  if(isNaN(val)) { scVal.focus(); return; }
+  savePatientScore(patId, scName.value, val, scDate ? scDate.value : null);
+  scVal.value = '';
+  const pts = loadPatients();
+  const pt = pts.find(p => p.id === patId);
+  if(pt) renderPatientDetail(pt, protocols[pt.protoId]);
+}
+function renderScoreSection(pt, p) {
+  const scores = SCORES[p.id] || [];
+  if(!scores.length) return '';
+  const patScores = getPatientScores(pt.id);
+  const color = getProtoColor(p.id);
+
+  let html = '<div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border);">';
+  html += '<div class="slabel">Uitkomstmaten bijhouden</div>';
+
+  scores.forEach(sc => {
+    const history = patScores[sc.name] || [];
+    html += '<div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin-bottom:12px;">';
+    html += '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">';
+    html += '<div><div style="font-size:13px;font-weight:600;">' + sc.name + '</div>';
+    html += '<div style="font-size:10.5px;color:var(--muted);font-family:Geist Mono,monospace">' + sc.full + ' · max ' + sc.max + ' · RTS: ' + sc.rts + '</div></div>';
+    // Latest value badge
+    if(history.length > 0) {
+      const latest = history[history.length-1];
+      const range = sc.ranges.slice().find(r => sc.invert ? latest.value <= r.max && latest.value >= r.min : latest.value >= r.min && latest.value <= r.max)
+        || (sc.invert ? sc.ranges[0] : sc.ranges[sc.ranges.length-1]);
+      html += '<div style="background:' + (range ? range.color + '22' : 'var(--surface2)') + ';border:1px solid ' + (range ? range.color + '44' : 'var(--border)') + ';color:' + (range ? range.color : 'var(--muted)') + ';padding:4px 12px;border-radius:20px;font-size:13px;font-weight:700;font-family:Geist Mono,monospace">' + latest.value + ' ' + sc.unit + '</div>';
+    }
+    html += '</div>';
+
+    // Mini chart if 2+ measurements
+    if(history.length >= 2) {
+      html += renderMiniChart(history, sc, color);
+    }
+
+    // History table
+    if(history.length > 0) {
+      html += '<div style="margin-bottom:10px;">';
+      html += history.map((h, idx) => {
+        const range = sc.ranges.slice().find(r => sc.invert ? h.value <= r.max && h.value >= r.min : h.value >= r.min && h.value <= r.max)
+          || (sc.invert ? sc.ranges[0] : sc.ranges[sc.ranges.length-1]);
+        const dotColor = range ? range.color : '#71717a';
+        return '<div style="display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid var(--border);">' +
+          '<div style="width:7px;height:7px;border-radius:50%;background:' + dotColor + ';flex-shrink:0"></div>' +
+          '<div style="font-size:11px;color:var(--muted);font-family:Geist Mono,monospace;width:80px;flex-shrink:0">' + formatDate(h.date) + '</div>' +
+          '<div style="font-size:12.5px;font-weight:600;color:' + dotColor + '">' + h.value + ' ' + sc.unit + '</div>' +
+          '<div style="font-size:11px;color:var(--muted);margin-left:4px">' + (range ? range.label : '') + '</div>' +
+          '<button onclick="(function(b){deletePatientScore(b.dataset.p,b.dataset.s,parseInt(b.dataset.i))})(this)" data-p="' + pt.id + '" data-s="' + sc.name + '" data-i="' + idx + '" style="margin-left:auto;background:none;border:none;color:var(--muted2);font-size:11px;cursor:pointer;padding:2px 6px;border-radius:4px;">✕</button>' +
+          '</div>';
+      }).join('');
+      html += '</div>';
+    } else {
+      html += '<div style="font-size:11.5px;color:var(--muted2);padding:6px 0 10px;font-style:italic">Nog geen metingen geregistreerd.</div>';
+    }
+
+    // Add measurement form
+    html += '<div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">' +
+      '<input id="score-track-val-' + pt.id + '-' + sc.name + '" type="number" min="0" max="' + sc.max + '" placeholder="Score (0–' + sc.max + ')" style="flex:1;min-width:100px;background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:6px 10px;color:var(--text);font-family:Geist Mono,monospace;font-size:12px;outline:none;">' +
+      '<input id="score-track-date-' + pt.id + '-' + sc.name + '" type="date" value="' + new Date().toISOString().slice(0,10) + '" style="background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:6px 10px;color:var(--text);font-family:Geist,sans-serif;font-size:12px;outline:none;">' +
+      '<button onclick="(function(b){addPatientScoreByName(b.dataset.p,b.dataset.s)})(this)" data-p="' + pt.id + '" data-s="' + sc.name + '" style="background:' + color + '22;border:1px solid ' + color + '44;color:' + color + ';padding:6px 12px;border-radius:5px;font-size:12px;font-weight:600;cursor:pointer;font-family:Geist,sans-serif;white-space:nowrap;">+ Toevoegen</button>' +
+      '</div>';
+    html += '</div>';
+  });
+
+  html += '</div>';
+  return html;
+}
+function addPatientScoreByName(patId, scoreName) {
+  const valEl = document.getElementById('score-track-val-' + patId + '-' + scoreName);
+  const dateEl = document.getElementById('score-track-date-' + patId + '-' + scoreName);
+  if(!valEl) return;
+  const val = parseFloat(valEl.value);
+  if(isNaN(val)) { valEl.focus(); return; }
+  savePatientScore(patId, scoreName, val, dateEl ? dateEl.value : null);
+  valEl.value = '';
+  const pts = loadPatients();
+  const pt = pts.find(p => p.id === patId);
+  if(pt) renderPatientDetail(pt, protocols[pt.protoId]);
+}
+function renderMiniChart(history, sc, color) {
+  const W = 280, H = 60, PAD = 8;
+  const vals = history.map(h => h.value);
+  const minV = Math.min(...vals, 0);
+  const maxV = Math.max(...vals, sc.max);
+  const range = maxV - minV || 1;
+  const xStep = (W - PAD*2) / (history.length - 1 || 1);
+
+  // Points
+  const points = history.map((h, i) => ({
+    x: PAD + i * xStep,
+    y: H - PAD - ((h.value - minV) / range) * (H - PAD*2)
+  }));
+
+  // Polyline
+  const polyline = points.map(p => p.x + ',' + p.y).join(' ');
+
+  // RTS threshold line (first range boundary)
+  const rtsVal = sc.invert ? sc.ranges[0].max : sc.ranges[0].min;
+  const rtsY = H - PAD - ((rtsVal - minV) / range) * (H - PAD*2);
+
+  let svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" style="width:100%;height:60px;margin-bottom:8px;display:block;">';
+  svg += '<rect width="' + W + '" height="' + H + '" fill="var(--surface2)" rx="4"/>';
+  // RTS line
+  if(rtsY >= PAD && rtsY <= H-PAD) {
+    svg += '<line x1="' + PAD + '" y1="' + rtsY + '" x2="' + (W-PAD) + '" y2="' + rtsY + '" stroke="#22c55e" stroke-width="1" stroke-dasharray="3,2" opacity="0.5"/>';
+    svg += '<text x="' + (W-PAD-2) + '" y="' + (rtsY-2) + '" font-size="7" fill="#22c55e" text-anchor="end" opacity="0.7">RTS</text>';
+  }
+  // Area fill
+  if(points.length > 1) {
+    const areaPath = 'M ' + points[0].x + ' ' + (H-PAD) + ' L ' + points.map(p => p.x + ' ' + p.y).join(' L ') + ' L ' + points[points.length-1].x + ' ' + (H-PAD) + ' Z';
+    svg += '<path d="' + areaPath + '" fill="' + color + '" opacity="0.12"/>';
+    svg += '<polyline points="' + polyline + '" fill="none" stroke="' + color + '" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>';
+  }
+  // Dots
+  points.forEach((p, i) => {
+    svg += '<circle cx="' + p.x + '" cy="' + p.y + '" r="3" fill="' + color + '"/>';
+    svg += '<text x="' + p.x + '" y="' + (H-1) + '" font-size="7" fill="var(--muted2)" text-anchor="middle" font-family="monospace">' + formatDate(history[i].date).slice(0,5) + '</text>';
+  });
+  svg += '</svg>';
+  return svg;
+}
+
 // ── PATIËNT DETAIL ──
 function showPatientDetail(patId) {
   const pts = loadPatients();
@@ -1064,9 +1218,9 @@ function renderPatientDetail(pt, p) {
       <div class="pat-detail-meta">${age ? age + ' jaar · ' : ''}${pt.dob ? formatDate(pt.dob) + ' · ' : ''}Start: ${formatDate(pt.startDate) || '—'}</div>
     </div>
     <div class="pat-detail-actions">
-      <button onclick="showProto('${pt.protoId}')" style="background:${color}18;border:1px solid ${color}33;color:${color};padding:7px 12px;border-radius:6px;font-size:11.5px;cursor:pointer;font-family:'Geist',sans-serif;font-weight:600;">${p.title.split(' ').slice(0,2).join(' ')} →</button>
-      <button onclick="openPatNew('${pt.id}')" style="background:var(--surface2);border:1px solid var(--border);color:var(--muted);padding:7px 12px;border-radius:6px;font-size:11.5px;cursor:pointer;font-family:'Geist',sans-serif;">✏️</button>
-      <button onclick="deletePatient('${pt.id}')" style="background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);color:#ef4444;padding:7px 12px;border-radius:6px;font-size:11.5px;cursor:pointer;font-family:'Geist',sans-serif;">🗑</button>
+      <button onclick="showProto('${pt.protoId}')" style="background:${color}18;border:1px solid ${color}33;color:${color};padding:7px 12px;border-radius:6px;font-size:11.5px;cursor:pointer;font-family:Geist,sans-serif;font-weight:600;">${p.title.split(' ').slice(0,2).join(' ')} →</button>
+      <button onclick="openPatNew('${pt.id}')" style="background:var(--surface2);border:1px solid var(--border);color:var(--muted);padding:7px 12px;border-radius:6px;font-size:11.5px;cursor:pointer;font-family:Geist,sans-serif;">✏️</button>
+      <button onclick="deletePatient('${pt.id}')" style="background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);color:#ef4444;padding:7px 12px;border-radius:6px;font-size:11.5px;cursor:pointer;font-family:Geist,sans-serif;">🗑</button>
     </div>
   </div>
   <div style="margin-bottom:6px;cursor:pointer;font-size:11px;color:var(--muted)" onclick="showPatients()">← Terug naar patiënten</div>`;
@@ -1081,9 +1235,9 @@ function renderPatientDetail(pt, p) {
       <div style="width:10px;height:10px;border-radius:50%;background:${isCurrent?color:isDone?color:'var(--border2)'};flex-shrink:0;${isDone?'opacity:.6':''}"></div>
       <div>
         <div style="font-size:12px;font-weight:${isCurrent?700:500};color:${isCurrent?'var(--text)':'var(--muted)'}">${phase.label}</div>
-        <div style="font-size:10px;color:var(--muted2);font-family:'Geist Mono',monospace">${phase.weeks}</div>
+        <div style="font-size:10px;color:var(--muted2);font-family:Geist Mono,monospace">${phase.weeks}</div>
       </div>
-      ${isCurrent ? `<div style="margin-left:4px;font-size:9px;background:${color};color:#000;padding:1px 6px;border-radius:8px;font-weight:700;font-family:'Geist Mono',monospace">NU</div>` : ''}
+      ${isCurrent ? `<div style="margin-left:4px;font-size:9px;background:${color};color:#000;padding:1px 6px;border-radius:8px;font-weight:700;font-family:Geist Mono,monospace">NU</div>` : ''}
       ${isDone ? `<div style="margin-left:4px;font-size:12px;opacity:.6">✓</div>` : ''}
     </div>`;
   });
@@ -1109,10 +1263,13 @@ function renderPatientDetail(pt, p) {
   html += `<textarea class="add-session-area" id="new-session-text" placeholder="Sessienotitie toevoegen... (bijv. fase 2 gestart, LSI quad 74%, klachten afgenomen)"></textarea>
   <button class="add-session-btn" onclick="addSession('${pt.id}')">+ Notitie opslaan</button>`;
 
+  // Scores section
+  html += renderScoreSection(pt, p);
+
   // Export
   html += `<div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border);display:flex;gap:8px;flex-wrap:wrap;">
-    <button onclick="exportPatient('${pt.id}')" style="background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:8px 14px;border-radius:6px;font-size:12px;cursor:pointer;font-family:'Geist',sans-serif;">📄 Exporteer traject</button>
-    <button onclick="printPatient('${pt.id}')" style="background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:8px 14px;border-radius:6px;font-size:12px;cursor:pointer;font-family:'Geist',sans-serif;">🖨 Afdrukken</button>
+    <button onclick="exportPatient('${pt.id}')" style="background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:8px 14px;border-radius:6px;font-size:12px;cursor:pointer;font-family:Geist,sans-serif;">📄 Exporteer traject</button>
+    <button onclick="printPatient('${pt.id}')" style="background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:8px 14px;border-radius:6px;font-size:12px;cursor:pointer;font-family:Geist,sans-serif;">🖨 Afdrukken</button>
   </div>`;
 
   document.getElementById('pat-detail-body').innerHTML = html;
@@ -1150,6 +1307,7 @@ function deletePatient(patId) {
   if(!confirm('Patiënt verwijderen? Dit kan niet ongedaan worden.')) return;
   const pts = loadPatients().filter(p => p.id !== patId);
   savePatients(pts);
+  try { localStorage.removeItem('kp_scores_' + patId); } catch(e) {}
   showPatients();
 }
 
@@ -1229,7 +1387,7 @@ function openPatLink() {
   const pts = loadPatients().filter(p => p.protoId === currentProto.id);
   const body = document.getElementById('pat-link-body');
   if(!pts.length) {
-    body.innerHTML = `<div style="color:var(--muted);font-size:13px;padding:12px 0;">Geen patiënten gekoppeld aan dit protocol.<br><br><button onclick="closePatLink();openPatNew()" style="background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.3);color:#4ade80;padding:8px 14px;border-radius:6px;font-size:12px;cursor:pointer;font-family:'Geist',sans-serif;font-weight:600;">+ Nieuwe patiënt aanmaken</button></div>`;
+    body.innerHTML = `<div style="color:var(--muted);font-size:13px;padding:12px 0;">Geen patiënten gekoppeld aan dit protocol.<br><br><button onclick="closePatLink();openPatNew()" style="background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.3);color:#4ade80;padding:8px 14px;border-radius:6px;font-size:12px;cursor:pointer;font-family:Geist,sans-serif;font-weight:600;">+ Nieuwe patiënt aanmaken</button></div>`;
   } else {
     body.innerHTML = `<div style="color:var(--muted);font-size:12px;margin-bottom:12px;">Patiënten met ${currentProto.title} protocol:</div>` +
     pts.map(pt => {
@@ -1237,11 +1395,11 @@ function openPatLink() {
       const ph = protocols[pt.protoId]?.phases[pt.phaseIndex||0];
       return `<div onclick="closePatLink();showPatientDetail('${pt.id}')" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:7px;border:1px solid var(--border);margin-bottom:8px;cursor:pointer;transition:border-color .12s;" onmouseover="this.style.borderColor='var(--border2)'" onmouseout="this.style.borderColor='var(--border)'">
         <div style="width:34px;height:34px;border-radius:50%;background:${color}22;color:${color};display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700">${getInitials(pt.name)}</div>
-        <div style="flex:1"><div style="font-size:13px;font-weight:600">${pt.name}</div><div style="font-size:10.5px;color:var(--muted);font-family:'Geist Mono',monospace">${ph?ph.label+' · ':''} Start: ${formatDate(pt.startDate)||'—'}</div></div>
+        <div style="flex:1"><div style="font-size:13px;font-weight:600">${pt.name}</div><div style="font-size:10.5px;color:var(--muted);font-family:Geist Mono,monospace">${ph?ph.label+' · ':''} Start: ${formatDate(pt.startDate)||'—'}</div></div>
         <div style="font-size:11px;color:var(--muted)">→</div>
       </div>`;
     }).join('') +
-    `<button onclick="closePatLink();openPatNew()" style="width:100%;margin-top:6px;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.2);color:#4ade80;padding:8px;border-radius:6px;font-size:12px;cursor:pointer;font-family:'Geist',sans-serif;font-weight:500;">+ Nieuwe patiënt toevoegen</button>`;
+    `<button onclick="closePatLink();openPatNew()" style="width:100%;margin-top:6px;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.2);color:#4ade80;padding:8px;border-radius:6px;font-size:12px;cursor:pointer;font-family:Geist,sans-serif;font-weight:500;">+ Nieuwe patiënt toevoegen</button>`;
   }
   document.getElementById('pat-link-modal').classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -1378,8 +1536,8 @@ function handleSearch(q) {
       <div style="display:flex;align-items:center;gap:7px;margin-bottom:5px;">
         <div style="width:7px;height:7px;border-radius:50%;background:${r.p.color};flex-shrink:0"></div>
         <span style="font-size:12px;font-weight:600">${r.p.title}</span>
-        <span style="font-size:10px;color:var(--muted);font-family:'Geist Mono',monospace;background:var(--surface2);padding:1px 6px;border-radius:3px">${r.ph.label}</span>
-        <span style="font-size:10px;color:var(--muted2);font-family:'Geist Mono',monospace">${r.type}</span>
+        <span style="font-size:10px;color:var(--muted);font-family:Geist Mono,monospace;background:var(--surface2);padding:1px 6px;border-radius:3px">${r.ph.label}</span>
+        <span style="font-size:10px;color:var(--muted2);font-family:Geist Mono,monospace">${r.type}</span>
       </div>
       <div style="font-size:13px">${r.match}</div>
       ${r.detail ? `<div style="font-size:11px;color:var(--muted);margin-top:3px">${r.detail.substring(0,110)}${r.detail.length>110?'...':''}</div>` : ''}

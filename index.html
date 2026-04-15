@@ -13,7 +13,7 @@
 <title>KineProtocol</title>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist+Mono:wght@300;400;500;600&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0a0a0b;--surface:#111113;--surface2:#18181b;--surface3:#1f1f23;--border:#27272a;--border2:#3f3f46;--text:#fafafa;--muted:#71717a;--muted2:#52525b;--acl:#22d3ee;--tka:#a78bfa;--pfps:#f97316;--lh:#34d399;--rc:#f43f5e;--pt:#fb923c;--at:#e879f9;--bureau:#60a5fa;--new:#4ade80;--safe-top:env(safe-area-inset-top);--safe-bottom:env(safe-area-inset-bottom);}
+:root{--bg:#0a0a0b;--surface:#111113;--surface2:#18181b;--surface3:#1f1f23;--border:#27272a;--border2:#3f3f46;--text:#fafafa;--muted:#71717a;--muted2:#52525b;--acl:#22d3ee;--tka:#a78bfa;--pfps:#f97316;--lh:#34d399;--rc:#f43f5e;--pt:#fb923c;--at:#e879f9;--bureau:#60a5fa;--enkel:#f59e0b;--new:#4ade80;--safe-top:env(safe-area-inset-top);--safe-bottom:env(safe-area-inset-bottom);}
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
 html,body{height:100%;overflow:hidden;overscroll-behavior:none;}
 body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-size:14px;display:flex;flex-direction:column;}
@@ -330,6 +330,7 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
     <div class="sidebar-divider"></div>
     <div class="sidebar-section">Patiënten</div>
     <div class="nav-item" id="nav-patients" onclick="showPatients()"><span style="font-size:15px;">👥</span><span class="nav-title">Mijn patiënten</span><span id="pat-count-badge" style="display:none;font-size:10px;padding:1px 7px;border-radius:10px;background:rgba(74,222,128,.15);color:#4ade80;font-family:'Geist Mono',monospace;">0</span></div>
+    <div class="nav-item" id="nav-enkel" onclick="showProto('enkel')"><div class="nav-dot" style="background:#f59e0b"></div><div style="flex:1"><div class="nav-title">Enkeldistorsie</div><div class="nav-sub">5 fasen · 1–12 wkn</div></div><span class="nav-badge" style="background:rgba(245,158,11,.1);color:#f59e0b">LAS</span></div>
     <div class="sidebar-divider"></div>
     <div class="sidebar-section">Binnenkort</div>
     <div class="nav-item" style="opacity:.35;cursor:default;pointer-events:none;"><div class="nav-dot" style="background:#52525b"></div><div style="flex:1"><div class="nav-title">Schouderinstabiliteit</div><div class="nav-sub">In aanmaak</div></div></div>
@@ -341,9 +342,9 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
       <div class="home-greeting">Goeiedag,<br><em>klinische kennis</em> binnen handbereik.</div>
       <div class="home-sub">Evidence-based revalidatieprotocollen — snel opzoekbaar, klinisch toepasbaar.</div>
       <div class="stats-row">
-        <div class="stat"><div class="stat-num" style="color:var(--acl)">8</div><div class="stat-label">Protocollen</div></div>
-        <div class="stat"><div class="stat-num" style="color:var(--tka)">42</div><div class="stat-label">Fasen</div></div>
-        <div class="stat"><div class="stat-num" style="color:var(--pfps)">209</div><div class="stat-label">Oefeningen</div></div>
+        <div class="stat"><div class="stat-num" style="color:var(--acl)">9</div><div class="stat-label">Protocollen</div></div>
+        <div class="stat"><div class="stat-num" style="color:var(--tka)">47</div><div class="stat-label">Fasen</div></div>
+        <div class="stat"><div class="stat-num" style="color:var(--pfps)">255</div><div class="stat-label">Oefeningen</div></div>
         <div class="stat"><div class="stat-num" style="color:var(--rc)" id="stat-patients">0</div><div class="stat-label">Patiënten</div></div>
       </div>
       <div class="slabel">Beschikbare protocollen</div>
@@ -356,6 +357,7 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
         <div class="protocol-card" style="--card-color:#fb923c" onclick="showProto('pt')"><div class="card-arrow">&#8599;</div><div class="card-icon">🦵</div><div class="card-title">Patellapees Tendinopathie</div><div class="card-desc">Jumper knee. HSR, isometrie, plyometrie, RTS.</div><div class="card-meta"><span class="card-tag col">4–20+ wkn</span><span class="card-tag col">5 fasen</span></div></div>
         <div class="protocol-card" style="--card-color:#e879f9" onclick="showProto('at')"><div class="card-arrow">&#8599;</div><div class="card-icon">🦶</div><div class="card-title">Achillespees Tendinopathie</div><div class="card-desc">Midportion vs insertioneel. Alfredson, HSR, loophervatting.</div><div class="card-meta"><span class="card-tag col">6–24+ wkn</span><span class="card-tag col">5 fasen</span></div></div>
         <div class="protocol-card" style="--card-color:#60a5fa" onclick="showProto('bureau')"><div class="card-arrow">&#8599;</div><div class="card-icon">💻</div><div class="card-title">Bureauhouding & Nekklachten</div><div class="card-desc">Trapezius syndroom, cervicogene HFK, lumbago.</div><div class="card-meta"><span class="card-tag col">6–12+ wkn</span><span class="card-tag col">4 fasen</span></div></div>
+        <div class="protocol-card" style="--card-color:#f59e0b" onclick="showProto('enkel')"><div class="card-arrow">&#8599;</div><div class="card-icon">🦶</div><div class="card-title">Enkeldistorsie</div><div class="card-desc">Graad I–III. PEACE &amp; LOVE, proprioceptie, RTS-criteria.</div><div class="card-meta"><span class="card-tag col">1–12 wkn</span><span class="card-tag col">5 fasen</span></div></div>
         <div class="add-card"><div style="font-size:20px;">+</div><div style="font-size:12px;">Nieuw protocol</div><div style="font-size:10px;color:var(--muted2);">Vraag Claude</div></div>
       </div>
     </div>
@@ -408,6 +410,7 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
     <button class="bnav-item" id="bnav-pt" onclick="showProto('pt')"><div class="bnav-icon">🦵</div><div class="bnav-label">PT</div><div class="bnav-dot" style="background:#fb923c"></div></button>
     <button class="bnav-item" id="bnav-at" onclick="showProto('at')"><div class="bnav-icon">🦶</div><div class="bnav-label">AT</div><div class="bnav-dot" style="background:#e879f9"></div></button>
     <button class="bnav-item" id="bnav-bureau" onclick="showProto('bureau')"><div class="bnav-icon">💻</div><div class="bnav-label">BNK</div><div class="bnav-dot" style="background:#60a5fa"></div></button>
+    <button class="bnav-item" id="bnav-enkel" onclick="showProto('enkel')"><div class="bnav-icon">🦵</div><div class="bnav-label">LAS</div><div class="bnav-dot" style="background:#f59e0b"></div></button>
     <button class="bnav-item" id="bnav-patients" onclick="showPatients()"><div class="bnav-icon">👥</div><div class="bnav-label">Patiënten</div><div class="bnav-dot" style="background:#4ade80"></div></button>
     <button class="bnav-item" id="bnav-search" onclick="document.getElementById('searchInput').focus()"><div class="bnav-icon">&#128269;</div><div class="bnav-label">Zoeken</div><div class="bnav-dot"></div></button>
   </div>

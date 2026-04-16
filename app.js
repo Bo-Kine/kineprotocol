@@ -720,13 +720,106 @@ let currentProto = null;
 let deferredPrompt = null;
 let editingPatientId = null;
 
-// ── PATIENTS (localStorage) ──
+// ── SUPABASE CONFIG ──
+const SUPA_URL = 'https://vcxlozcpxjebwbdosfbt.supabase.co';
+const SUPA_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZjeGxvemNweGplYndiZG9zZmJ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYzMzYzNzAsImV4cCI6MjA5MTkxMjM3MH0.Ld1LPj08wgAnOobpvGlUHCQlnRhPY4N33epFsfFC2MI';
+const SUPA_HEADERS = {'Content-Type':'application/json','apikey':SUPA_KEY,'Authorization':'Bearer '+SUPA_KEY};
+
+// ── SYNC STATE ──
+let syncStatus = 'idle'; // 'idle' | 'syncing' | 'ok' | 'error'
+let syncTimeout = null;
+
+function setSyncStatus(status, msg) {
+  syncStatus = status;
+  const el = document.getElementById('sync-indicator');
+  if(!el) return;
+  const icons = {idle:'', syncing:'⟳', ok:'✓', error:'⚠'};
+  const colors = {idle:'var(--muted2)', syncing:'#f59e0b', ok:'#22c55e', error:'#ef4444'};
+  el.textContent = icons[status] + (msg ? ' ' + msg : '');
+  el.style.color = colors[status];
+  el.style.display = status === 'idle' ? 'none' : '';
+  if(status === 'ok') {
+    clearTimeout(syncTimeout);
+    syncTimeout = setTimeout(() => setSyncStatus('idle'), 3000);
+  }
+}
+
+// ── PATIENTS (Supabase + localStorage fallback) ──
 function loadPatients() {
   try { return JSON.parse(localStorage.getItem('kp_patients') || '[]'); } catch(e) { return []; }
 }
+
 function savePatients(pts) {
   try { localStorage.setItem('kp_patients', JSON.stringify(pts)); } catch(e) {}
   updatePatientBadge();
+  syncToSupabase(pts);
+}
+
+async function syncToSupabase(pts) {
+  setSyncStatus('syncing', 'Opslaan...');
+  try {
+    // Upsert all patients as a single row with id='all'
+    const res = await fetch(SUPA_URL + '/rest/v1/patients?id=eq.all', {
+      method: 'DELETE', headers: SUPA_HEADERS
+    });
+    await fetch(SUPA_URL + '/rest/v1/patients', {
+      method: 'POST',
+      headers: {...SUPA_HEADERS, 'Prefer': 'return=minimal'},
+      body: JSON.stringify({id: 'all', data: pts})
+    });
+    // Sync scores
+    const scoreKeys = Object.keys(localStorage).filter(k => k.startsWith('kp_scores_'));
+    const scoresObj = {};
+    scoreKeys.forEach(k => {
+      try { scoresObj[k] = JSON.parse(localStorage.getItem(k)); } catch(e) {}
+    });
+    await fetch(SUPA_URL + '/rest/v1/patients?id=eq.scores', {
+      method: 'DELETE', headers: SUPA_HEADERS
+    });
+    await fetch(SUPA_URL + '/rest/v1/patients', {
+      method: 'POST',
+      headers: {...SUPA_HEADERS, 'Prefer': 'return=minimal'},
+      body: JSON.stringify({id: 'scores', data: scoresObj})
+    });
+    setSyncStatus('ok', 'Opgeslagen');
+  } catch(e) {
+    setSyncStatus('error', 'Sync mislukt');
+    console.error('Supabase sync error:', e);
+  }
+}
+
+async function loadFromSupabase() {
+  setSyncStatus('syncing', 'Laden...');
+  try {
+    const res = await fetch(SUPA_URL + '/rest/v1/patients?id=eq.all&select=data', {headers: SUPA_HEADERS});
+    if(!res.ok) throw new Error('HTTP ' + res.status);
+    const rows = await res.json();
+    if(rows && rows.length > 0 && rows[0].data) {
+      localStorage.setItem('kp_patients', JSON.stringify(rows[0].data));
+    }
+    // Load scores
+    const sRes = await fetch(SUPA_URL + '/rest/v1/patients?id=eq.scores&select=data', {headers: SUPA_HEADERS});
+    if(sRes.ok) {
+      const sRows = await sRes.json();
+      if(sRows && sRows.length > 0 && sRows[0].data) {
+        Object.entries(sRows[0].data).forEach(([k,v]) => {
+          try { localStorage.setItem(k, JSON.stringify(v)); } catch(e) {}
+        });
+      }
+    }
+    setSyncStatus('ok', 'Gesynchroniseerd');
+    updatePatientBadge();
+    // If on patients screen, refresh
+    const ps = document.getElementById('screen-patients');
+    if(ps && ps.style.display !== 'none') renderPatientList();
+    const pd = document.getElementById('screen-patient-detail');
+    if(pd && pd.style.display !== 'none') {
+      // re-render current patient detail if open
+    }
+  } catch(e) {
+    setSyncStatus('error', 'Geen verbinding');
+    console.error('Supabase load error:', e);
+  }
 }
 function updatePatientBadge() {
   const pts = loadPatients();
@@ -1399,6 +1492,8 @@ function deletePatient(patId) {
   const pts = loadPatients().filter(p => p.id !== patId);
   savePatients(pts);
   try { localStorage.removeItem('kp_scores_' + patId); } catch(e) {}
+  // Sync deletion to Supabase
+  syncToSupabase(loadPatients());
   showPatients();
 }
 
@@ -1642,3 +1737,5 @@ if('serviceWorker' in navigator) {
 
 // ── INIT ──
 updatePatientBadge();
+// Load from Supabase on start
+loadFromSupabase();

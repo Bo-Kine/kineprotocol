@@ -310,6 +310,7 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
   <div class="logo" onclick="showHome()"><div class="logo-icon">🦴</div><div class="logo-text">KineProtocol</div></div>
   <div class="topbar-right">
     <div class="offline-badge" id="offlineBadge">⚡ Offline</div>
+    <div id="sync-indicator" style="display:none;font-size:11px;font-family:'Geist Mono',monospace;padding:3px 8px;border-radius:6px;background:var(--surface2);border:1px solid var(--border);transition:all .2s;"></div>
     <div class="search-box"><span style="color:var(--muted);font-size:13px;">🔍</span><input type="text" id="searchInput" placeholder="Zoeken..." oninput="handleSearch(this.value)" autocomplete="off"></div>
     <button class="install-btn" id="installBtn" onclick="installApp()">⬇ Installeer</button>
   </div>

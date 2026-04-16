@@ -918,14 +918,19 @@ function showProto(id) {
     return '<div class="' + cls + '" onclick="showPhase(' + i + ')">' + ph.label + '</div>';
   }).join('');
   const scoresTab = hasScores ? '<div class="vtab" onclick="showScores(\'' + id + '\')"> Scores</div>' : '';
+  const protoForms = Object.entries(FORMS).filter(([k,f]) => f.protocol === id);
+  const formsTab = protoForms.length ? '<div class="vtab" onclick="showFormsTab(\'' + id + '\')">📝 Formulieren</div>' : '';
   const refsTab = '<div class="vtab" onclick="showRefs(\'' + id + '\')">Referenties</div>';
-  tabs.innerHTML = tabsHtml + scoresTab + refsTab;
+  tabs.innerHTML = tabsHtml + scoresTab + (typeof formsTab !== 'undefined' ? formsTab : '') + refsTab;
   renderPhase(0);
   renderTimeline(0);
   setNav(id);
   const totalFlags = p.phases.reduce((s,ph) => s + (ph.redflags ? ph.redflags.length : 0), 0);
   const rfCount = document.getElementById('rf-count');
   if(rfCount) rfCount.textContent = totalFlags;
+  // Show beslisboom button if available
+  const bbBtn = document.getElementById('beslisboom-btn');
+  if(bbBtn) bbBtn.style.display = BESLISBOOM[id] ? 'flex' : 'none';
 }
 function showPhase(i) {
   document.querySelectorAll('.vtab').forEach((t,j) => t.classList.toggle('active', j===i));
@@ -974,6 +979,28 @@ function renderTimeline(activeIdx) {
 }
 
 // ── SCORES TAB ──
+function showFormsTab(protoId) {
+  const p = protocols[protoId];
+  const tabCount = p.phases.length + (SCORES[protoId]?.length ? 1 : 0);
+  document.querySelectorAll('.vtab').forEach((t,j) => t.classList.toggle('active', j===tabCount));
+  const protoForms = Object.entries(FORMS).filter(([k,f]) => f.protocol === protoId);
+  const color = p.color;
+  let html = '<div class="slabel">Testformulieren — ' + p.title + '</div>';
+  html += '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-bottom:20px;">';
+  protoForms.forEach(([formId, form]) => {
+    html += '<div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px 16px;cursor:pointer;" onclick="openForm(\''+formId+'\',null)" onmouseover="this.style.borderColor=\'var(--border2)\'" onmouseout="this.style.borderColor=\'var(--border)\'">';
+    html += '<div style="font-size:14px;font-weight:600;margin-bottom:4px;">' + form.name + '</div>';
+    html += '<div style="font-size:11px;color:var(--muted);margin-bottom:10px;line-height:1.4">' + form.full + '</div>';
+    html += '<div style="font-size:10.5px;color:var(--muted2);font-family:Geist Mono,monospace;margin-bottom:10px">Max: ' + form.max + ' · RTS: ' + form.rts + '</div>';
+    html += '<div style="background:' + color + '22;color:' + color + ';border:1px solid ' + color + '44;padding:6px 12px;border-radius:5px;font-size:11.5px;font-weight:600;text-align:center;">📝 Formulier invullen</div>';
+    html += '</div>';
+  });
+  html += '</div>';
+  html += '<div style="font-size:12px;color:var(--muted);padding:10px 14px;background:var(--surface2);border-radius:6px;border:1px solid var(--border)">💡 Koppel een patiënt via de "👤 Koppel patiënt" knop om een ingevuld formulier automatisch aan hun dossier te koppelen.</div>';
+  document.getElementById('proto-body').innerHTML = html;
+  document.getElementById('proto-body').scrollTop = 0;
+}
+
 function showScores(id) {
   const p = protocols[id];
   const tabCount = p.phases.length;
@@ -1450,6 +1477,17 @@ function renderPatientDetail(pt, p) {
   // Scores section
   html += renderScoreSection(pt, p);
 
+  // Testformulieren sectie
+  var ptProtoForms = Object.entries(FORMS).filter(function(e){return e[1].protocol===p.id;});
+  if(ptProtoForms.length > 0) {
+    html += '<div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border);">';
+    html += '<div class="slabel">Testformulieren</div><div style="display:flex;gap:8px;flex-wrap:wrap;">';
+    ptProtoForms.forEach(function(entry) {
+      var fId=entry[0],frm=entry[1];
+      html += '<button onclick="openForm(\''+fId+'\',\''+pt.id+'\''+')" style="background:rgba(167,139,250,.08);border:1px solid rgba(167,139,250,.2);color:#a78bfa;padding:8px 14px;border-radius:6px;font-size:12px;cursor:pointer;font-family:Geist,sans-serif;font-weight:500;">\u{1F4DD} '+frm.name+'</button>';
+    });
+    html += '</div></div>';
+  }
   // Export
   html += `<div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border);display:flex;gap:8px;flex-wrap:wrap;">
     <button onclick="exportPatient('${pt.id}')" style="background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:8px 14px;border-radius:6px;font-size:12px;cursor:pointer;font-family:Geist,sans-serif;">📄 Exporteer traject</button>
@@ -1658,9 +1696,690 @@ function printPatient(patId) {
   window.print();
 }
 
+
+// ── KLINISCHE BESLISBOMEN ──
+const BESLISBOOM = {
+  acl: {
+    title: 'ACL Reconstructie — Klinische beslisboom',
+    stappen: [
+      {
+        id: 'chirurgie',
+        vraag: 'Is chirurgische reconstructie geïndiceerd?',
+        info: 'Indicatie op basis van leeftijd, activiteitsniveau, instabiliteit en timing.',
+        opties: [
+          {label: 'Ja → Reconstructie', next: 'graft', color: '#22d3ee'},
+          {label: 'Nee → Conservatief', next: 'conservatief', color: '#71717a'},
+        ]
+      },
+      {
+        id: 'graft',
+        vraag: 'Keuze transplantaat?',
+        info: 'BPTB = sterkste fixatie, geschikt voor intensieve sport. STG = minder donormorbiditeit. QT = groeiende populariteit, hoge kracht.',
+        opties: [
+          {label: 'BPTB (bot-pees-bot)', advies: 'Voorkeur: topsport, hoog pivotrisico. Knieleraarspijn als nadeel.', color: '#22d3ee'},
+          {label: 'STG (semitendinosus/gracilis)', advies: 'Voorkeur: meeste patiënten. Minder donormorbiditeit.', color: '#a78bfa'},
+          {label: 'QT (quadricepspees)', advies: 'Revisie of voorkeur chirurg. Grote diameter, goede kracht.', color: '#34d399'},
+        ]
+      },
+      {
+        id: 'conservatief',
+        vraag: 'Conservatief beleid — geschikt?',
+        info: 'Coper-profiel: geen instabiliteit, hoog spiercompensatiepotentieel, lage sporteis.',
+        opties: [
+          {label: 'Coper-profiel aanwezig', advies: 'Start neuromusculair programma. Evalueer na 3 maanden. LSI > 90% + geen instabiliteit = succesvol conservatief beleid.', color: '#34d399'},
+          {label: 'Non-coper / recidief instabiliteit', advies: 'Heroverweeg reconstructie. Langdurige instabiliteit → meniscus-/kraakbeenschade.', color: '#ef4444'},
+        ]
+      }
+    ]
+  },
+  rc: {
+    title: 'Rotatorenmanchet — Klinische beslisboom',
+    stappen: [
+      {
+        id: 'type',
+        vraag: 'Type rotatorenmanchet pathologie?',
+        info: 'Onderscheid tendinopathie vs scheuring stuurt het beleid volledig.',
+        opties: [
+          {label: 'Tendinopathie (geen scheuring)', next: 'conservatief_rc', color: '#f43f5e'},
+          {label: 'Partiële scheuring', next: 'partieel', color: '#f59e0b'},
+          {label: 'Volledige scheuring', next: 'volledig', color: '#ef4444'},
+        ]
+      },
+      {
+        id: 'conservatief_rc',
+        vraag: 'Conservatief beleid RC tendinopathie',
+        info: 'Eerste keuze bij tendinopathie. 3 maanden gestructureerde kinesitherapie.',
+        opties: [
+          {label: 'Respons op therapie na 6–8 wkn', advies: 'Continueer protocol. Fase 2–3 opbouwen. Verwacht herstel 3–6 maanden.', color: '#22c55e'},
+          {label: 'Non-respons na 8–12 wkn', advies: 'Overweeg corticosteroïdinjectie als bridge + MRI herhalen. Chirurgisch consult indien < 50j.', color: '#f59e0b'},
+        ]
+      },
+      {
+        id: 'partieel',
+        vraag: 'Partiële scheuring — grootte?',
+        info: 'Kukkonen RCT 2015: conservatief = chirurgisch bij < 50% dikte bij patiënten > 55j.',
+        opties: [
+          {label: '< 50% dikte + leeftijd > 55j', advies: 'Conservatief eerst. 3 maanden kinesitherapie. Kukkonen 2015: gelijkwaardige uitkomst.', color: '#22c55e'},
+          {label: '> 50% dikte OF leeftijd < 50j + sport', advies: 'Chirurgisch overleg. Debridement vs hechting afhankelijk van locatie en kwaliteit.', color: '#f59e0b'},
+        ]
+      },
+      {
+        id: 'volledig',
+        vraag: 'Volledige scheuring — kenmerken?',
+        info: 'Grootte, retractie, vettige degeneratie (Goutallier) en leeftijd bepalen chirurgische haalbaarheid.',
+        opties: [
+          {label: 'Klein (< 1cm) + acuut + jong', advies: 'Chirurgische hechting geïndiceerd. Uitstekende resultaten bij tijdige interventie.', color: '#22d3ee'},
+          {label: 'Matig (1–3cm) + chronisch', advies: 'Conservatief 3 maanden + MRI Goutallier < 2. Chirurgie bij therapiefalen of progressie.', color: '#f59e0b'},
+          {label: 'Massief (> 3cm) + Goutallier ≥ 3', advies: 'Irreparabel. Geen reconstructie. Gerichte kinesitherapie (deltoid, periscapulair). Eventueel reverse prothese bij > 70j.', color: '#ef4444'},
+        ]
+      }
+    ]
+  },
+  lh: {
+    title: 'Lumbale Hernia — Klinische beslisboom',
+    stappen: [
+      {
+        id: 'rode_vlag',
+        vraag: 'Rode vlaggen aanwezig?',
+        info: 'Cauda equina, progressieve motorische uitval en infectie vereisen spoedactie.',
+        opties: [
+          {label: 'Ja → spoedverwijzing', advies: 'Cauda equina (blaas/darmstoornissen + zadeldoofheid) → SPOED neurochirurgie. Motorische uitval progressief → urgente verwijzing.', color: '#ef4444'},
+          {label: 'Nee → verder beoordelen', next: 'type_lh', color: '#22c55e'},
+        ]
+      },
+      {
+        id: 'type_lh',
+        vraag: 'Type presentatie?',
+        info: 'Radiculopathie = pijn + neurologische uitval in dermatoom. Lumbago = lokale rugpijn zonder uitstraling.',
+        opties: [
+          {label: 'Radiculopathie (uitstraling + tintelingen)', next: 'radiculopathie', color: '#34d399'},
+          {label: 'Lumbago zonder radiculaire component', advies: 'Conservatief beleid. McKenzie evaluatie + motor control. 90% herstel < 12 weken.', color: '#71717a'},
+        ]
+      },
+      {
+        id: 'radiculopathie',
+        vraag: 'Duur radiculopathie?',
+        info: 'Spontaan herstel bij 75% binnen 12 weken. Chirurgie versnelt herstel maar uitkomst na 1–2 jaar gelijkwaardig (Weber 1983, Peul 2007).',
+        opties: [
+          {label: '< 6 weken', advies: 'Conservatief. Neurodynamica + motor control. 75% spontaan herstel. Actief blijven, geen bedrust.', color: '#22c55e'},
+          {label: '6–12 weken zonder verbetering', advies: 'MRI indicatie. Overweeg epidurale infiltratie als bridge. Chirurgisch consult bij NRS > 6 of ADL-beperking.', color: '#f59e0b'},
+          {label: '> 12 weken of progressieve uitval', advies: 'Chirurgisch overleg geïndiceerd. Microdiscectomie: sneller herstel, gelijkwaardige 2-jaarsuitkomst vs conservatief.', color: '#ef4444'},
+        ]
+      }
+    ]
+  },
+  at: {
+    title: 'Achillespees Tendinopathie — Klinische beslisboom',
+    stappen: [
+      {
+        id: 'subtype',
+        vraag: 'Subtype bepalen (cruciaal voor behandelkeuze)',
+        info: 'Midportion vs insertioneel verschilt fundamenteel in behandeling. Verkeerde aanpak verergert insertioneel letsel.',
+        opties: [
+          {label: 'Midportion (2–6 cm boven insertie)', next: 'midportion', color: '#e879f9'},
+          {label: 'Insertioneel (op calcaneus)', next: 'insertioneel', color: '#f59e0b'},
+          {label: 'Onzeker → arc sign + Royal London test', advies: 'Arc sign positief = midportion. Pijn vermindert bij dorsaalflexie = midportion. Pijn OP insertie bij palpatie = insertioneel.', color: '#71717a'},
+        ]
+      },
+      {
+        id: 'midportion',
+        vraag: 'Midportion — behandelrespons?',
+        info: 'Alfredson excentrisch protocol: 12 weken, 2×/dag. HSR minstens gelijkwaardig met betere compliance (Beyer 2015).',
+        opties: [
+          {label: 'Respons op HSR/excentrisch na 8–12 wkn', advies: 'Continueer. Verwacht herstel 12–16 weken. VISA-A monitoring.', color: '#22c55e'},
+          {label: 'Non-respons na 12 weken', advies: 'Overweeg ESWT (shockwave) — matige evidence. PRP: tegenstrijdig bewijs. Chirurgisch consult bij > 6 maanden.', color: '#f59e0b'},
+        ]
+      },
+      {
+        id: 'insertioneel',
+        vraag: 'Insertioneel — Haglund deformiteit aanwezig?',
+        info: 'Haglund = benige uitstulping calcaneus. Compressie-component domineert. Excentrisch training CONTRAPRODUCTIEF.',
+        opties: [
+          {label: 'Zonder Haglund', advies: 'HSR op vlakke ondergrond (GEEN hak zakken). Hielverhoging 5–10mm. Isometrie voor pijncontrole. Geen stretching.', color: '#22c55e'},
+          {label: 'Met Haglund deformiteit', advies: 'Conservatief 6 maanden eerst. Hielverhoging + isometrie + HSR op vlak. Non-respons → chirurgie: Haglund resectie + pees-debridement.', color: '#f59e0b'},
+        ]
+      }
+    ]
+  },
+  enkel: {
+    title: 'Enkeldistorsie — Klinische beslisboom',
+    stappen: [
+      {
+        id: 'fractuur',
+        vraag: 'Ottawa Ankle Rules — Fractuur uitsluiten',
+        info: 'Sens 96–99%. Verplichte eerste stap vóór start revalidatie.',
+        opties: [
+          {label: 'Ottawa positief → RX', advies: 'RX verplicht. Fractuur → gips/orthopedie. RX normaal → start revalidatie.',  color: '#ef4444'},
+          {label: 'Ottawa negatief', next: 'syndesmose', color: '#22c55e'},
+        ]
+      },
+      {
+        id: 'syndesmose',
+        vraag: 'Syndesmose letsel screenen?',
+        info: 'High ankle sprain: Squeeze test + External Rotation stress test. Langere revalidatie (6–12 wkn).',
+        opties: [
+          {label: 'Squeeze/ER positief → syndesmose', advies: 'RX tibia/fibula. Orthopedie consult. Stabilisatie 6 weken. Revalidatie 8–12 weken.', color: '#ef4444'},
+          {label: 'Negatief → laterale distorsie', next: 'graad', color: '#22c55e'},
+        ]
+      },
+      {
+        id: 'graad',
+        vraag: 'Graad classifieren (ADT + TTT na 4–7 dagen)',
+        info: 'ADT > 3mm asymmetrie = ATFL. TTT > 10° = CFL. Acuut beperkt door pijn — herhaal na 4–7 dagen.',
+        opties: [
+          {label: 'Graad I — ATFL rek, geen laxiteit', advies: 'PEACE dag 1–3. Volledig belast dag 1–2. Tapelast. RTS: 1–3 weken.', color: '#22c55e'},
+          {label: 'Graad II — partiële ATFL + evt CFL', advies: 'PEACE dag 1–5. Semi-rigide brace 2–3 weken. Revalidatie 3–6 weken. Brace bij sport 6 maanden.', color: '#f59e0b'},
+          {label: 'Graad III — volledige ruptuur', next: 'graad3', color: '#ef4444'},
+        ]
+      },
+      {
+        id: 'graad3',
+        vraag: 'Graad III — conservatief of chirurgisch?',
+        info: 'Kerkhoffs 2007: conservatief functioneel = chirurgie op 2 jaar. Chirurgie enkel bij specifieke indicatie.',
+        opties: [
+          {label: 'Recreatieve sporter / meeste patiënten', advies: 'Conservatief functioneel. Aircast 4–6 weken. Revalidatie 8–12 weken. Brace bij sport 12 maanden.', color: '#22c55e'},
+          {label: 'Jonge topsporter + hoog instabiliteitsrisico', advies: 'Chirurgisch overleg Brostrom-Gould. Geïndiceerd bij hoog-risico pivot-sport + onvoldoende ligamentkwaliteit.', color: '#f59e0b'},
+        ]
+      }
+    ]
+  },
+  pt: {
+    title: 'Patellapees Tendinopathie — Klinische beslisboom',
+    stappen: [
+      {
+        id: 'stadium',
+        vraag: 'Stadium bepalen (Cook & Purdam continuum)',
+        info: 'Reactief = overbelasting acuut. Dysrepair = chronisch niet-degeneratief. Degeneratief = irreversibele verandering.',
+        opties: [
+          {label: 'Reactief (acuut, NRS ≥ 6, SLDS zeer positief)', advies: 'Belasting DIRECT reduceren. Isometrie 4×45 sec. Geen excentrisch of plyometrie. Rust 3–5 dagen van provocerende activiteiten.', color: '#ef4444'},
+          {label: 'Dysrepair (subacuut, wisselend)', next: 'respons', color: '#f59e0b'},
+          {label: 'Degeneratief (chronisch > 3 mnd)', next: 'degeneratief', color: '#71717a'},
+        ]
+      },
+      {
+        id: 'respons',
+        vraag: 'Respons op HSR-programma na 6–8 weken?',
+        info: 'VISA-P als objectieve maat. MCID = 13 punten. Beyer 2015: HSR superieur voor compliance.',
+        opties: [
+          {label: 'VISA-P + 13 punten of meer', advies: 'Goed verloop. Continueer HSR. Progressie naar plyometrie fase 3.', color: '#22c55e'},
+          {label: 'Geen verbetering na 8 weken', advies: 'Intensiteit verhogen. Controleer belastingsbeheer (24u-regel). Overweeg ESWT. Injectie NIET aanbevolen.', color: '#f59e0b'},
+        ]
+      },
+      {
+        id: 'degeneratief',
+        vraag: 'Degeneratief stadium — opties',
+        info: 'Verminderde herstelpotentieel. Doel = symptoommanagement + functioneel behoud. Chirurgie zelden geïndiceerd.',
+        opties: [
+          {label: 'ADL-functioneel, geen topsport', advies: 'Isometrie + lage HSR als onderhoud. Belastingsbeheer prioriteit. Realistische verwachtingen stellen.', color: '#71717a'},
+          {label: 'Invaliderend + topsport + > 12 mnd therapie', advies: 'Orthopedisch consult. ESWT eerst. Chirurgie (debridement) als laatste optie — beperkt evidence.', color: '#f59e0b'},
+        ]
+      }
+    ]
+  }
+};
+
+// ── TESTFORMULIEREN ──
+const FORMS = {
+  'visa_p': {
+    name: 'VISA-P',
+    full: 'Victorian Institute of Sport Assessment — Patella',
+    protocol: 'pt',
+    max: 100,
+    rts: '≥ 90 voor volledig sporten',
+    intro: 'Geef aan hoe je je de afgelopen week hebt gevoeld. Geef een score van 0–10 of 0–100 per vraag zoals aangegeven.',
+    vragen: [
+      {id:'v1', tekst:'Hoeveel pijn heb je in je knie bij het zitten op een stoel gedurende 10 minuten?', type:'slider', min:0, max:10, links:'Ernstige pijn', rechts:'Geen pijn', gewicht:10},
+      {id:'v2', tekst:'Hoeveel pijn heb je bij traplopen?', type:'slider', min:0, max:10, links:'Ernstige pijn', rechts:'Geen pijn', gewicht:10},
+      {id:'v3', tekst:'Hoeveel pijn of moeilijkheden heb je bij volledig door de knieën gaan in de squatpositie?', type:'slider', min:0, max:10, links:'Niet mogelijk', rechts:'Geen pijn/moeite', gewicht:10},
+      {id:'v4', tekst:'Heb je pijn tijdens het tennissen of sporten die vergelijkbare belasting vereist?', type:'slider', min:0, max:10, links:'Kan niet uitvoeren', rechts:'Geen pijn', gewicht:10},
+      {id:'v5', tekst:'Heb je pijn bij het bukken of knielen?', type:'slider', min:0, max:10, links:'Kan niet', rechts:'Geen pijn', gewicht:10},
+      {id:'v6', tekst:'Heb je pijn na 10 minuten sporten?', type:'slider', min:0, max:10, links:'Ernstige pijn', rechts:'Geen pijn', gewicht:10},
+      {id:'v7', tekst:'Heb je pijn na 30 minuten of langer sporten?', type:'slider', min:0, max:10, links:'Ernstige pijn', rechts:'Geen pijn', gewicht:10},
+      {id:'v8', tekst:'Hoe lang kun je sporten? (kies één optie)', type:'keuze', opties:[
+        {label:'Geen sport mogelijk', score:0},
+        {label:'Alleen lichte activiteiten', score:4},
+        {label:'Sport met aanpassingen', score:14},
+        {label:'Sport op lager niveau dan vóór letsel', score:19},
+        {label:'Volledig op eigen niveau', score:30},
+      ], gewicht:1},
+    ]
+  },
+  'visa_a': {
+    name: 'VISA-A',
+    full: 'Victorian Institute of Sport Assessment — Achilles',
+    protocol: 'at',
+    max: 100,
+    rts: '≥ 90 voor volledig sporten',
+    intro: 'Beantwoord elke vraag over de afgelopen week. De pijnvragen scoren 0–10.',
+    vragen: [
+      {id:'v1', tekst:'Heb je pijn in de ochtend bij de eerste stappen?', type:'slider', min:0, max:10, links:'Ernstige pijn', rechts:'Geen pijn', gewicht:10},
+      {id:'v2', tekst:'Heb je pijn na 30 minuten stilzitten of rusten gedurende de dag?', type:'slider', min:0, max:10, links:'Ernstige pijn', rechts:'Geen pijn', gewicht:10},
+      {id:'v3', tekst:'Heb je pijn bij stretchoefeningen van de kuit?', type:'slider', min:0, max:10, links:'Ernstige pijn', rechts:'Geen pijn', gewicht:10},
+      {id:'v4', tekst:'Heb je pijn bij het gaan op de tenen op één been?', type:'slider', min:0, max:10, links:'Kan niet', rechts:'Geen pijn', gewicht:10},
+      {id:'v5', tekst:'Hoeveel pijnvrije enkelvoudige heel raises kun je doen op één been?', type:'slider', min:0, max:10, links:'Geen', rechts:'Meer dan 10', gewicht:10},
+      {id:'v6', tekst:'Hoeveel pijn heb je bij maximale hardloopactiviteit?', type:'slider', min:0, max:10, links:'Kan niet hardlopen', rechts:'Geen pijn', gewicht:10},
+      {id:'v7', tekst:'Doe je momenteel sport?', type:'keuze', opties:[
+        {label:'Geen sport', score:0},
+        {label:'Aangepast training', score:4},
+        {label:'Volledig trainen, niet wedstrijden', score:7},
+        {label:'Wedstrijden, niet op hetzelfde niveau', score:14},
+        {label:'Volledig op eigen niveau', score:30},
+      ], gewicht:1},
+      {id:'v8', tekst:'Hoelang kun je sporten zonder pijn?', type:'keuze', opties:[
+        {label:'Niet', score:0},
+        {label:'1–10 min', score:7},
+        {label:'11–20 min', score:14},
+        {label:'21–30 min', score:18},
+        {label:'Meer dan 30 min', score:21},
+      ], gewicht:1},
+    ]
+  },
+  'ikdc': {
+    name: 'IKDC',
+    full: 'International Knee Documentation Committee — Subjective Knee Form',
+    protocol: 'acl',
+    max: 100,
+    rts: '≥ 85 voor RTS',
+    intro: 'De volgende vragen gaan over uw symptomen en het functioneren van uw knie. Kies per vraag het best passende antwoord.',
+    vragen: [
+      {id:'v1', tekst:'Wat is het hoogste activiteitsniveau dat u kunt uitvoeren zonder significante kniepijn?', type:'keuze', opties:[
+        {label:'Zeer zware activiteiten (springen, pivoten — voetbal, basketbal)', score:10},
+        {label:'Zware activiteiten (zwaar lichamelijk werk, skiën, tennis)', score:7},
+        {label:'Matige activiteiten (matig lichamelijk werk, joggen)', score:4},
+        {label:'Lichte activiteiten (lopen, huishouden)', score:1},
+        {label:'Niet mogelijk vanwege kniepijn', score:0},
+      ]},
+      {id:'v2', tekst:'Hoe erg is uw kniepijn momenteel?', type:'slider', min:0, max:10, links:'Ergste pijn', rechts:'Geen pijn', gewicht:10},
+      {id:'v3', tekst:'Hoeveel stijfheid of zwelling heeft u in uw knie?', type:'keuze', opties:[
+        {label:'Geen', score:10},
+        {label:'Licht', score:7},
+        {label:'Matig', score:4},
+        {label:'Ernstig', score:1},
+        {label:'Extreem', score:0},
+      ]},
+      {id:'v4', tekst:'Wat is het hoogste activiteitsniveau zonder significante zwelling?', type:'keuze', opties:[
+        {label:'Zeer zware activiteiten', score:10},
+        {label:'Zware activiteiten', score:7},
+        {label:'Matige activiteiten', score:4},
+        {label:'Lichte activiteiten', score:1},
+        {label:'Niet mogelijk', score:0},
+      ]},
+      {id:'v5', tekst:'Heeft u de afgelopen 4 weken een slot- of klikgevoel in uw knie gehad?', type:'keuze', opties:[
+        {label:'Nee', score:10},
+        {label:'Ja', score:0},
+      ]},
+      {id:'v6', tekst:'Wat is het hoogste activiteitsniveau zonder doorzakken van de knie?', type:'keuze', opties:[
+        {label:'Zeer zware activiteiten', score:10},
+        {label:'Zware activiteiten', score:7},
+        {label:'Matige activiteiten', score:4},
+        {label:'Lichte activiteiten', score:1},
+        {label:'Niet mogelijk', score:0},
+      ]},
+      {id:'v7', tekst:'Hoe ver kunt u lopen maximaal?', type:'keuze', opties:[
+        {label:'Onbeperkt', score:10},
+        {label:'Meer dan 16 blokken', score:7},
+        {label:'4–16 blokken', score:4},
+        {label:'Minder dan 4 blokken', score:1},
+        {label:'Niet mogelijk', score:0},
+      ]},
+      {id:'v8', tekst:'Hoe goed kunt u traplopen?', type:'keuze', opties:[
+        {label:'Geen moeite', score:10},
+        {label:'Lichte moeite', score:7},
+        {label:'Matige moeite', score:4},
+        {label:'Grote moeite', score:1},
+        {label:'Niet mogelijk', score:0},
+      ]},
+      {id:'v9', tekst:'Hoe goed kunt u hurken/door de knieën gaan?', type:'keuze', opties:[
+        {label:'Geen moeite', score:10},
+        {label:'Lichte moeite', score:7},
+        {label:'Matige moeite', score:4},
+        {label:'Grote moeite', score:1},
+        {label:'Niet mogelijk', score:0},
+      ]},
+      {id:'v10', tekst:'Wat is uw huidige activiteitsniveau? (kies alles wat u doet)', type:'keuze', opties:[
+        {label:'Werk / dagelijks leven niet beperkt', score:10},
+        {label:'Recreatieve sport / lichte activiteit', score:7},
+        {label:'Competitiesport op laag niveau', score:4},
+        {label:'Competitiesport op hoog niveau (pivot)', score:10},
+        {label:'Geen sport meer mogelijk', score:0},
+      ]},
+    ]
+  },
+  'ndi': {
+    name: 'NDI',
+    full: 'Neck Disability Index',
+    protocol: 'bureau',
+    max: 50,
+    rts: '< 10 voor ontslag',
+    intro: 'Deze vragenlijst is ontworpen om te meten hoeveel nekpijn uw dagelijks leven beïnvloedt. Kies per sectie de uitspraak die het best op u van toepassing is vandaag.',
+    invert: true,
+    vragen: [
+      {id:'v1', tekst:'Sectie 1 — Intensiteit van de pijn', type:'keuze', opties:[
+        {label:'Ik heb op dit moment geen pijn', score:0},
+        {label:'De pijn is op dit moment heel licht', score:1},
+        {label:'De pijn is op dit moment matig', score:2},
+        {label:'De pijn is op dit moment redelijk ernstig', score:3},
+        {label:'De pijn is op dit moment erg ernstig', score:4},
+        {label:'De pijn is op dit moment zo erg als je je maar kunt voorstellen', score:5},
+      ]},
+      {id:'v2', tekst:'Sectie 2 — Persoonlijke verzorging (wassen, aankleden)', type:'keuze', opties:[
+        {label:'Ik kan voor mezelf zorgen zonder dat dit extra pijn veroorzaakt', score:0},
+        {label:'Ik kan voor mezelf zorgen maar dit veroorzaakt extra pijn', score:1},
+        {label:'Het is pijnlijk voor mezelf te zorgen en ik ben traag en voorzichtig', score:2},
+        {label:'Ik heb enige hulp nodig maar kan de meeste dingen zelf', score:3},
+        {label:'Ik heb elke dag hulp nodig bij de meeste zorgen voor mezelf', score:4},
+        {label:'Ik kleed me niet aan, was me moeilijk en blijf in bed', score:5},
+      ]},
+      {id:'v3', tekst:'Sectie 3 — Tillen', type:'keuze', opties:[
+        {label:'Ik kan zware dingen tillen zonder extra pijn', score:0},
+        {label:'Ik kan zware dingen tillen maar dit veroorzaakt extra pijn', score:1},
+        {label:'Pijn verhindert me zware dingen op te tillen maar het lukt als ze goed geplaatst zijn', score:2},
+        {label:'Pijn verhindert me zware dingen op te tillen maar lichte tot gemiddelde dingen gaan', score:3},
+        {label:'Ik kan enkel heel lichte dingen tillen', score:4},
+        {label:'Ik kan niets tillen of dragen', score:5},
+      ]},
+      {id:'v4', tekst:'Sectie 4 — Lezen', type:'keuze', opties:[
+        {label:'Ik kan zoveel lezen als ik wil zonder nekpijn', score:0},
+        {label:'Ik kan zoveel lezen als ik wil maar heb een lichte nekpijn', score:1},
+        {label:'Ik kan zoveel lezen als ik wil maar heb matige nekpijn', score:2},
+        {label:'Vanwege matige nekpijn kan ik niet zoveel lezen als ik wil', score:3},
+        {label:'Vanwege ernstige nekpijn kan ik nauwelijks lezen', score:4},
+        {label:'Ik kan helemaal niet lezen', score:5},
+      ]},
+      {id:'v5', tekst:'Sectie 5 — Hoofdpijn', type:'keuze', opties:[
+        {label:'Ik heb helemaal geen hoofdpijn', score:0},
+        {label:'Ik heb lichte hoofdpijn die niet zo vaak voorkomt', score:1},
+        {label:'Ik heb matige hoofdpijn die niet zo vaak voorkomt', score:2},
+        {label:'Ik heb matige hoofdpijn die regelmatig voorkomt', score:3},
+        {label:'Ik heb ernstige hoofdpijn die regelmatig voorkomt', score:4},
+        {label:'Ik heb bijna altijd hoofdpijn', score:5},
+      ]},
+      {id:'v6', tekst:'Sectie 6 — Concentratie', type:'keuze', opties:[
+        {label:'Ik kan mij volledig concentreren als ik wil, zonder moeite', score:0},
+        {label:'Ik kan mij volledig concentreren als ik wil, maar met een beetje moeite', score:1},
+        {label:'Ik ondervind een redelijke mate van moeite bij concentratie als ik wil', score:2},
+        {label:'Ik ondervind veel moeite bij concentratie als ik wil', score:3},
+        {label:'Ik ondervind heel veel moeite bij concentratie als ik wil', score:4},
+        {label:'Ik kan mij helemaal niet concentreren', score:5},
+      ]},
+      {id:'v7', tekst:'Sectie 7 — Werk', type:'keuze', opties:[
+        {label:'Ik kan zoveel werken als ik wil', score:0},
+        {label:'Ik kan alleen mijn gewone werk doen maar niets meer', score:1},
+        {label:'Ik kan de meeste van mijn gewone taken uitvoeren maar niets meer', score:2},
+        {label:'Ik kan mijn gewone werk niet doen', score:3},
+        {label:'Ik kan nauwelijks werken', score:4},
+        {label:'Ik kan helemaal niet werken', score:5},
+      ]},
+      {id:'v8', tekst:'Sectie 8 — Autorijden', type:'keuze', opties:[
+        {label:'Ik kan autorijden zonder nekpijn', score:0},
+        {label:'Ik kan zoveel autorijden als ik wil maar met lichte nekpijn', score:1},
+        {label:'Ik kan zoveel autorijden als ik wil maar met matige nekpijn', score:2},
+        {label:'Ik kan niet zoveel autorijden als ik wil vanwege matige nekpijn', score:3},
+        {label:'Ik kan nauwelijks autorijden vanwege ernstige nekpijn', score:4},
+        {label:'Ik kan helemaal niet autorijden', score:5},
+      ]},
+      {id:'v9', tekst:'Sectie 9 — Slapen', type:'keuze', opties:[
+        {label:'Ik heb geen slaapproblemen', score:0},
+        {label:'Mijn slaap is een beetje verstoord (minder dan 1u slaapverlies)', score:1},
+        {label:'Mijn slaap is licht verstoord (1–2u slaapverlies)', score:2},
+        {label:'Mijn slaap is matig verstoord (2–3u slaapverlies)', score:3},
+        {label:'Mijn slaap is sterk verstoord (3–5u slaapverlies)', score:4},
+        {label:'Mijn slaap is volledig verstoord (5–7u slaapverlies)', score:5},
+      ]},
+      {id:'v10', tekst:'Sectie 10 — Ontspanning', type:'keuze', opties:[
+        {label:'Ik kan mijn hobby\'s en ontspanning beoefenen zonder nekpijn', score:0},
+        {label:'Ik kan mijn hobby\'s en ontspanning beoefenen maar met wat nekpijn', score:1},
+        {label:'Ik kan de meeste van mijn hobby\'s beoefenen maar niet allemaal vanwege nekpijn', score:2},
+        {label:'Ik kan slechts een paar van mijn hobby\'s beoefenen vanwege nekpijn', score:3},
+        {label:'Ik kan nauwelijks enige hobby of ontspanning beoefenen vanwege nekpijn', score:4},
+        {label:'Ik kan geen hobby of ontspanning beoefenen', score:5},
+      ]},
+    ]
+  },
+  'faam': {
+    name: 'FAAM',
+    full: 'Foot and Ankle Ability Measure',
+    protocol: 'enkel',
+    max: 100,
+    rts: '≥ 90% sport-subscore',
+    intro: 'Kruis aan in hoeverre u de volgende activiteiten kunt uitvoeren vanwege uw voet en enkel. Beoordeel elke activiteit op hoe moeilijk u die vindt.',
+    vragen: [
+      {id:'v1', tekst:'Staan', type:'keuze', opties:[{label:'Geen moeite',score:4},{label:'Kleine moeite',score:3},{label:'Matige moeite',score:2},{label:'Grote moeite',score:1},{label:'Niet mogelijk',score:0}]},
+      {id:'v2', tekst:'Lopen op vlakke ondergrond', type:'keuze', opties:[{label:'Geen moeite',score:4},{label:'Kleine moeite',score:3},{label:'Matige moeite',score:2},{label:'Grote moeite',score:1},{label:'Niet mogelijk',score:0}]},
+      {id:'v3', tekst:'Lopen op oneffen terrein', type:'keuze', opties:[{label:'Geen moeite',score:4},{label:'Kleine moeite',score:3},{label:'Matige moeite',score:2},{label:'Grote moeite',score:1},{label:'Niet mogelijk',score:0}]},
+      {id:'v4', tekst:'Traplopen naar boven', type:'keuze', opties:[{label:'Geen moeite',score:4},{label:'Kleine moeite',score:3},{label:'Matige moeite',score:2},{label:'Grote moeite',score:1},{label:'Niet mogelijk',score:0}]},
+      {id:'v5', tekst:'Traplopen naar beneden', type:'keuze', opties:[{label:'Geen moeite',score:4},{label:'Kleine moeite',score:3},{label:'Matige moeite',score:2},{label:'Grote moeite',score:1},{label:'Niet mogelijk',score:0}]},
+      {id:'v6', tekst:'Lopen op ongelijke ondergrond', type:'keuze', opties:[{label:'Geen moeite',score:4},{label:'Kleine moeite',score:3},{label:'Matige moeite',score:2},{label:'Grote moeite',score:1},{label:'Niet mogelijk',score:0}]},
+      {id:'v7', tekst:'In en uit de auto stappen', type:'keuze', opties:[{label:'Geen moeite',score:4},{label:'Kleine moeite',score:3},{label:'Matige moeite',score:2},{label:'Grote moeite',score:1},{label:'Niet mogelijk',score:0}]},
+      {id:'v8', tekst:'Schoenen en sokken aandoen', type:'keuze', opties:[{label:'Geen moeite',score:4},{label:'Kleine moeite',score:3},{label:'Matige moeite',score:2},{label:'Grote moeite',score:1},{label:'Niet mogelijk',score:0}]},
+      {id:'v9', tekst:'Hurken', type:'keuze', opties:[{label:'Geen moeite',score:4},{label:'Kleine moeite',score:3},{label:'Matige moeite',score:2},{label:'Grote moeite',score:1},{label:'Niet mogelijk',score:0}]},
+      {id:'v10', tekst:'Op de tenen gaan staan', type:'keuze', opties:[{label:'Geen moeite',score:4},{label:'Kleine moeite',score:3},{label:'Matige moeite',score:2},{label:'Grote moeite',score:1},{label:'Niet mogelijk',score:0}]},
+      {id:'v11', tekst:'Rechtop staan', type:'keuze', opties:[{label:'Geen moeite',score:4},{label:'Kleine moeite',score:3},{label:'Matige moeite',score:2},{label:'Grote moeite',score:1},{label:'Niet mogelijk',score:0}]},
+      {id:'v12', tekst:'Lopen gedurende 5 minuten', type:'keuze', opties:[{label:'Geen moeite',score:4},{label:'Kleine moeite',score:3},{label:'Matige moeite',score:2},{label:'Grote moeite',score:1},{label:'Niet mogelijk',score:0}]},
+      {id:'v13', tekst:'Lopen gedurende 10 minuten', type:'keuze', opties:[{label:'Geen moeite',score:4},{label:'Kleine moeite',score:3},{label:'Matige moeite',score:2},{label:'Grote moeite',score:1},{label:'Niet mogelijk',score:0}]},
+      {id:'v14', tekst:'Lopen gedurende 15 minuten of meer', type:'keuze', opties:[{label:'Geen moeite',score:4},{label:'Kleine moeite',score:3},{label:'Matige moeite',score:2},{label:'Grote moeite',score:1},{label:'Niet mogelijk',score:0}]},
+      {id:'v_sport', tekst:'SPORT — Hardlopen', type:'keuze', sport:true, opties:[{label:'Geen moeite',score:4},{label:'Kleine moeite',score:3},{label:'Matige moeite',score:2},{label:'Grote moeite',score:1},{label:'Niet mogelijk',score:0},{label:'Niet van toepassing',score:null}]},
+      {id:'v_sport2', tekst:'SPORT — Springen', type:'keuze', sport:true, opties:[{label:'Geen moeite',score:4},{label:'Kleine moeite',score:3},{label:'Matige moeite',score:2},{label:'Grote moeite',score:1},{label:'Niet mogelijk',score:0},{label:'Niet van toepassing',score:null}]},
+      {id:'v_sport3', tekst:'SPORT — Richtingsveranderingen', type:'keuze', sport:true, opties:[{label:'Geen moeite',score:4},{label:'Kleine moeite',score:3},{label:'Matige moeite',score:2},{label:'Grote moeite',score:1},{label:'Niet mogelijk',score:0},{label:'Niet van toepassing',score:null}]},
+    ]
+  }
+};
+
+// ── STATE FORMULIEREN ──
+let activeForm = null;
+let activeFormPatId = null;
+let formAnswers = {};
+let beslisboomStack = [];
+
+// ── BESLISBOOM FUNCTIES ──
+function openBeslisboom(protoId) {
+  const boom = BESLISBOOM[protoId];
+  if(!boom) return;
+  beslisboomStack = [];
+  document.getElementById('bb-modal-title').textContent = boom.title;
+  renderBeslisboomStap(protoId, boom.stappen[0].id);
+  document.getElementById('bb-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeBeslisboom() {
+  document.getElementById('bb-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function renderBeslisboomStap(protoId, stapId) {
+  const boom = BESLISBOOM[protoId];
+  const stap = boom.stappen.find(s => s.id === stapId);
+  if(!stap) return;
+  beslisboomStack.push(stapId);
+  const p = protocols[protoId];
+  const color = p ? p.color : '#fff';
+  let html = '';
+  // Breadcrumb
+  if(beslisboomStack.length > 1) {
+    html += '<button onclick="beslisboomTerug(\'' + protoId + '\')" style="background:var(--surface2);border:1px solid var(--border);color:var(--muted);padding:5px 10px;border-radius:6px;font-size:11px;cursor:pointer;font-family:Geist,sans-serif;margin-bottom:12px;">← Terug</button>';
+  }
+  // Vraag
+  html += '<div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid ' + color + ';border-radius:6px;padding:14px 16px;margin-bottom:14px;">';
+  html += '<div style="font-size:14px;font-weight:600;margin-bottom:6px;">' + stap.vraag + '</div>';
+  if(stap.info) html += '<div style="font-size:12px;color:var(--muted);line-height:1.5">' + stap.info + '</div>';
+  html += '</div>';
+  // Opties
+  stap.opties.forEach(opt => {
+    if(opt.advies) {
+      // Terminal node
+      html += '<div onclick="renderBeslisboomAdvies(\'' + protoId + '\',this)" data-advies="' + opt.advies.replace(/"/g,'&quot;') + '" data-color="' + opt.color + '" style="cursor:pointer;padding:12px 14px;border-radius:7px;border:2px solid ' + opt.color + '33;background:' + opt.color + '11;margin-bottom:8px;transition:all .15s;" onmouseover="this.style.background=\'' + opt.color + '22\'" onmouseout="this.style.background=\'' + opt.color + '11\'">';
+      html += '<div style="display:flex;align-items:center;gap:8px;"><div style="width:10px;height:10px;border-radius:50%;background:' + opt.color + ';flex-shrink:0"></div><div style="font-size:13px;font-weight:500">' + opt.label + '</div></div></div>';
+    } else if(opt.next) {
+      html += '<div onclick="renderBeslisboomStap(\'' + protoId + '\',\'' + opt.next + '\')" style="cursor:pointer;padding:12px 14px;border-radius:7px;border:2px solid ' + opt.color + '33;background:' + opt.color + '11;margin-bottom:8px;transition:all .15s;" onmouseover="this.style.background=\'' + opt.color + '22\'" onmouseout="this.style.background=\'' + opt.color + '11\'">';
+      html += '<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;"><div style="display:flex;align-items:center;gap:8px;"><div style="width:10px;height:10px;border-radius:50%;background:' + opt.color + ';flex-shrink:0"></div><div style="font-size:13px;font-weight:500">' + opt.label + '</div></div><span style="color:var(--muted);font-size:12px;">→</span></div></div>';
+    }
+  });
+  document.getElementById('bb-modal-body').innerHTML = html;
+}
+function renderBeslisboomAdvies(protoId, el) {
+  const advies = el.dataset.advies;
+  const color = el.dataset.color;
+  const p = protocols[protoId];
+  let html = '<button onclick="beslisboomTerug(\'' + protoId + '\')" style="background:var(--surface2);border:1px solid var(--border);color:var(--muted);padding:5px 10px;border-radius:6px;font-size:11px;cursor:pointer;font-family:Geist,sans-serif;margin-bottom:12px;">← Terug</button>';
+  html += '<div style="background:' + color + '15;border:2px solid ' + color + '44;border-radius:8px;padding:16px 18px;">';
+  html += '<div style="font-size:12px;font-weight:700;color:' + color + ';text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;font-family:Geist Mono,monospace">Klinisch advies</div>';
+  html += '<div style="font-size:13px;color:var(--text);line-height:1.6">' + advies + '</div>';
+  html += '</div>';
+  html += '<button onclick="closeBeslisboom()" style="width:100%;margin-top:12px;background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:9px;border-radius:6px;font-size:12px;cursor:pointer;font-family:Geist,sans-serif;">Sluiten</button>';
+  document.getElementById('bb-modal-body').innerHTML = html;
+}
+function beslisboomTerug(protoId) {
+  beslisboomStack.pop(); // remove current
+  const prev = beslisboomStack.pop(); // get prev (will be re-added by render)
+  if(prev) renderBeslisboomStap(protoId, prev);
+  else {
+    const boom = BESLISBOOM[protoId];
+    beslisboomStack = [];
+    renderBeslisboomStap(protoId, boom.stappen[0].id);
+  }
+}
+
+// ── TESTFORMULIEREN FUNCTIES ──
+function openForm(formId, patId) {
+  const form = FORMS[formId];
+  if(!form) return;
+  activeForm = formId;
+  activeFormPatId = patId || null;
+  formAnswers = {};
+  const pts = loadPatients();
+  const pt = patId ? pts.find(p => p.id === patId) : null;
+  const datum = new Date().toLocaleDateString('nl-BE',{day:'2-digit',month:'2-digit',year:'numeric'});
+  document.getElementById('form-modal-title').textContent = form.name + (pt ? ' — ' + pt.name : '');
+  renderFormBody(form, pt, datum);
+  document.getElementById('form-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeForm() {
+  document.getElementById('form-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function renderFormBody(form, pt, datum) {
+  const color = pt ? getProtoColor(pt.protoId) : '#a78bfa';
+  let html = '';
+  // Header
+  html += '<div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:10px 14px;margin-bottom:16px;">';
+  html += '<div style="font-size:13px;font-weight:600">' + form.full + '</div>';
+  html += '<div style="font-size:11px;color:var(--muted);font-family:Geist Mono,monospace;margin-top:2px">Max: ' + form.max + ' punten · RTS: ' + form.rts + '</div>';
+  if(pt) html += '<div style="font-size:11px;color:var(--muted);margin-top:2px">Patiënt: <strong style="color:var(--text)">' + pt.name + '</strong> · ' + datum + '</div>';
+  html += '</div>';
+  html += '<div style="font-size:12px;color:var(--muted);margin-bottom:14px;line-height:1.5">' + form.intro + '</div>';
+  // Questions
+  let sportSection = false;
+  form.vragen.forEach((v, vi) => {
+    if(v.sport && !sportSection) {
+      sportSection = true;
+      html += '<div style="font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted2);font-family:Geist Mono,monospace;margin:14px 0 8px;padding-bottom:4px;border-bottom:1px solid var(--border)">Sportspecifieke activiteiten</div>';
+    }
+    html += '<div style="margin-bottom:14px;" id="q-' + v.id + '">';
+    html += '<div style="font-size:12.5px;font-weight:600;margin-bottom:7px;color:var(--text)">' + (vi+1) + '. ' + v.tekst + '</div>';
+    if(v.type === 'keuze') {
+      html += '<div style="display:flex;flex-direction:column;gap:4px;">';
+      v.opties.forEach((opt, oi) => {
+        const inputId = 'inp-' + v.id + '-' + oi;
+        html += '<label style="display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:5px;border:1px solid var(--border);cursor:pointer;transition:all .1s;" onmouseover="this.style.borderColor=\'var(--border2)\'" onmouseout="this.style.borderColor=\'var(--border)\'">';
+        html += '<input type="radio" name="' + v.id + '" id="' + inputId + '" value="' + oi + '" onchange="setFormAnswer(\'' + v.id + '\',' + oi + ',' + JSON.stringify(opt.score) + ')" style="flex-shrink:0">';
+        html += '<span style="font-size:12px">' + opt.label + '</span>';
+        html += '</label>';
+      });
+      html += '</div>';
+    } else if(v.type === 'slider') {
+      html += '<div style="padding:0 4px;">';
+      html += '<input type="range" min="' + v.min + '" max="' + v.max + '" value="' + Math.round(v.max/2) + '" style="width:100%;accent-color:' + color + '" oninput="updateSlider(\'' + v.id + '\',this.value,' + v.gewicht + ',\'' + color + '\')" id="slider-' + v.id + '">';
+      html += '<div style="display:flex;justify-content:space-between;margin-top:3px;">';
+      html += '<span style="font-size:10px;color:var(--muted)">' + v.links + '</span>';
+      html += '<span id="slider-val-' + v.id + '" style="font-size:12px;font-weight:700;color:' + color + '">' + Math.round(v.max/2) + '</span>';
+      html += '<span style="font-size:10px;color:var(--muted)">' + v.rechts + '</span>';
+      html += '</div></div>';
+      // Initialize answer
+      formAnswers[v.id] = {score: Math.round(v.max/2), rawScore: Math.round(v.max/2)};
+    }
+    html += '</div>';
+  });
+  // Score preview
+  html += '<div id="form-score-preview" style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:10px 14px;margin-top:8px;text-align:center;font-family:Geist Mono,monospace;font-size:13px;color:var(--muted)">Score: vul alle vragen in</div>';
+  document.getElementById('form-modal-body').innerHTML = html;
+}
+function setFormAnswer(qId, optIdx, score) {
+  formAnswers[qId] = {optIdx, score};
+  // Highlight selected
+  const label = document.querySelector('input[name="' + qId + '"]:checked')?.parentElement;
+  document.querySelectorAll('input[name="' + qId + '"]').forEach(inp => {
+    if(inp.parentElement) inp.parentElement.style.background = 'transparent';
+  });
+  if(label) label.style.background = 'var(--surface3)';
+  updateFormScore();
+}
+function updateSlider(qId, val, gewicht, color) {
+  document.getElementById('slider-val-' + qId).textContent = val;
+  formAnswers[qId] = {score: parseFloat(val), rawScore: parseFloat(val)};
+  updateFormScore();
+}
+function updateFormScore() {
+  const form = FORMS[activeForm];
+  if(!form) return;
+  const allAnswered = form.vragen.every(v => {
+    if(v.type === 'keuze' && v.opties.some(o => o.score === null)) return formAnswers[v.id] !== undefined; // optional
+    return formAnswers[v.id] !== undefined;
+  });
+  const total = Object.values(formAnswers).reduce((s, a) => s + (a.score !== null ? (a.score || 0) : 0), 0);
+  const maxPossible = form.max;
+  const pct = Math.min(100, Math.round((total / maxPossible) * 100));
+  const rtsVal = form.invert ? parseInt(form.rts) : parseInt(form.rts);
+  const isGood = form.invert ? total <= rtsVal : total >= rtsVal;
+  const scoreEl = document.getElementById('form-score-preview');
+  if(scoreEl) {
+    scoreEl.style.color = allAnswered ? (isGood ? '#22c55e' : '#f59e0b') : 'var(--muted)';
+    scoreEl.style.borderColor = allAnswered ? (isGood ? '#22c55e44' : '#f59e0b44') : 'var(--border)';
+    scoreEl.textContent = 'Huidige score: ' + total + ' / ' + maxPossible + (allAnswered ? (isGood ? ' ✓ ' + form.rts : ' — nog niet: ' + form.rts) : ' (niet volledig ingevuld)');
+  }
+}
+function calcFormScore() {
+  const form = FORMS[activeForm];
+  if(!form) return {total:0, max:form?.max||100};
+  const total = Object.values(formAnswers).reduce((s, a) => s + (a.score !== null ? (a.score || 0) : 0), 0);
+  return {total, max: form.max};
+}
+function saveAndPrintForm() {
+  const form = FORMS[activeForm];
+  if(!form) return;
+  const {total, max} = calcFormScore();
+  const datum = new Date().toLocaleDateString('nl-BE',{day:'2-digit',month:'2-digit',year:'numeric'});
+  const pts = loadPatients();
+  const pt = activeFormPatId ? pts.find(p => p.id === activeFormPatId) : null;
+  // Save score to patient
+  if(pt) {
+    savePatientScore(pt.id, form.name, total, new Date().toISOString().slice(0,10));
+  }
+  // Build print HTML
+  let html = '<h1>' + form.name + ' — ' + form.full + '</h1>';
+  html += '<div class="pf-meta">' + (pt ? 'Patiënt: ' + pt.name + ' · ' : '') + datum + ' · Score: ' + total + '/' + max + '</div>';
+  form.vragen.forEach((v, vi) => {
+    const ans = formAnswers[v.id];
+    let antwoord = '—';
+    if(ans !== undefined) {
+      if(v.type === 'keuze') antwoord = v.opties[ans.optIdx]?.label || '—';
+      else if(v.type === 'slider') antwoord = ans.score + '/' + v.max;
+    }
+    html += '<div class="pf-ex"><div class="pf-ex-name">' + (vi+1) + '. ' + v.tekst + '</div><div class="pf-ex-params">' + antwoord + '</div></div>';
+  });
+  const rtsVal = parseInt(form.rts);
+  const isGood = form.invert ? total <= rtsVal : total >= rtsVal;
+  html += '<div style="margin-top:12px;padding:8px 12px;border-radius:4px;background:' + (isGood?'#dcfce7':'#fef3c7') + ';border:1px solid ' + (isGood?'#86efac':'#fcd34d') + ';">';
+  html += '<strong>Totaalscore: ' + total + '/' + max + '</strong> — ' + (isGood ? '✓ Drempel behaald (' + form.rts + ')' : '⚠ Drempel nog niet behaald (' + form.rts + ')') + '</div>';
+  html += '<div class="pf-footer">KineProtocol · ' + datum + '</div>';
+  document.getElementById('print-fiche').innerHTML = html;
+  closeForm();
+  setTimeout(() => window.print(), 100);
+}
+
+
 // ── ESC closes all modals ──
 document.addEventListener('keydown', e => {
-  if(e.key === 'Escape') { closeYT(); closeRF(); closeFiche(); closePatNew(); closePatLink(); }
+  if(e.key === 'Escape') { closeYT(); closeRF(); closeFiche(); closePatNew(); closePatLink(); closeBeslisboom(); closeForm(); }
 });
 
 // ── RENDER PHASE ──

@@ -288,6 +288,11 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
 ::-webkit-scrollbar{width:4px;height:4px;}
 ::-webkit-scrollbar-track{background:transparent;}
 ::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px;}
+/* Form styles */
+.form-slider-wrap{padding:0 4px;}
+.form-option-label{display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:5px;border:1px solid var(--border);cursor:pointer;font-size:12px;margin-bottom:4px;transition:background .1s;}
+.form-option-label:hover{border-color:var(--border2);}
+.form-option-label.selected{background:var(--surface3);}
 /* Print */
 @media print{
   body>*:not(#print-fiche){display:none!important;}
@@ -472,6 +477,35 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
   </div>
 </div>
 <div id="print-fiche"></div>
+
+<!-- Beslisboom Modal -->
+<div class="kmodal" id="bb-modal" onclick="if(event.target===this)closeBeslisboom()">
+  <div class="kmodal-inner" style="max-width:520px;">
+    <div class="kmodal-bar" style="background:rgba(167,139,250,.06);border-bottom-color:rgba(167,139,250,.2);">
+      <span style="font-size:16px;">🌿</span>
+      <div class="kmodal-title" id="bb-modal-title" style="color:#a78bfa;">Klinische beslisboom</div>
+      <button class="kmodal-close" onclick="closeBeslisboom()">✕</button>
+    </div>
+    <div class="kmodal-body" id="bb-modal-body"></div>
+  </div>
+</div>
+
+<!-- Testformulier Modal -->
+<div class="kmodal" id="form-modal" onclick="if(event.target===this)closeForm()">
+  <div class="kmodal-inner" style="max-width:600px;">
+    <div class="kmodal-bar">
+      <span style="font-size:16px;">📝</span>
+      <div class="kmodal-title" id="form-modal-title">Testformulier</div>
+      <button class="kmodal-close" onclick="closeForm()">✕</button>
+    </div>
+    <div class="kmodal-body" id="form-modal-body"></div>
+    <div class="kmodal-footer">
+      <button class="kmodal-action secondary" onclick="closeForm()">Annuleer</button>
+      <button class="kmodal-action primary" onclick="saveAndPrintForm()">💾 Opslaan & Afdrukken</button>
+    </div>
+  </div>
+</div>
+
 <script src="app.js"></script>
 </body>
 </html>

@@ -103,7 +103,7 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
 .vtab{padding:9px 14px;cursor:pointer;font-size:11.5px;font-weight:500;color:var(--muted);border-bottom:2px solid transparent;white-space:nowrap;transition:color .12s,border-color .12s;font-family:'Geist Mono',monospace;}
 .vtab:hover{color:var(--text);}
 .vtab.active{color:var(--text);border-bottom-color:var(--proto-color,#fff);}
-.viewer-body{flex:1;overflow-y:auto;padding:20px 24px;-webkit-overflow-scrolling:touch;}
+.viewer-body{flex:1;overflow-y:auto;padding:20px 24px;-webkit-overflow-scrolling:touch;position:relative;overflow-x:hidden;}
 /* Exercise cards */
 .ev-box{background:var(--surface);border:1px solid var(--border);border-left:3px solid #3b82f6;border-radius:4px;padding:12px 16px;margin-bottom:18px;}
 .ev-label{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#3b82f6;margin-bottom:6px;font-family:'Geist Mono',monospace;font-weight:600;}
@@ -288,6 +288,20 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
 ::-webkit-scrollbar{width:4px;height:4px;}
 ::-webkit-scrollbar-track{background:transparent;}
 ::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px;}
+
+/* ── SWIPE ANIMATIES ── */
+@keyframes slideOutLeft{from{transform:translateX(0);opacity:1}to{transform:translateX(-40px);opacity:0}}
+@keyframes slideOutRight{from{transform:translateX(0);opacity:1}to{transform:translateX(40px);opacity:0}}
+@keyframes slideInRight{from{transform:translateX(40px);opacity:0}to{transform:translateX(0);opacity:1}}
+@keyframes slideInLeft{from{transform:translateX(-40px);opacity:0}to{transform:translateX(0);opacity:1}}
+.slide-out-left{animation:slideOutLeft .18s ease forwards;}
+.slide-out-right{animation:slideOutRight .18s ease forwards;}
+.slide-in-right{animation:slideInRight .22s ease forwards;}
+.slide-in-left{animation:slideInLeft .22s ease forwards;}
+
+/* Swipe hint indicator */
+.swipe-hint{display:none;position:absolute;bottom:16px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.5);color:rgba(255,255,255,.7);padding:5px 12px;border-radius:20px;font-size:11px;font-family:'Geist Mono',monospace;pointer-events:none;white-space:nowrap;}
+@media(max-width:700px){.swipe-hint{display:block;}}
 /* Form styles */
 .form-slider-wrap{padding:0 4px;}
 .form-option-label{display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:5px;border:1px solid var(--border);cursor:pointer;font-size:12px;margin-bottom:4px;transition:background .1s;}

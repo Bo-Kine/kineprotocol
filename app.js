@@ -2580,8 +2580,80 @@ if('serviceWorker' in navigator) {
   window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(()=>{}));
 }
 
+// ── SWIPE NAVIGATIE ──
+let swipeStartX = 0;
+let swipeStartY = 0;
+let swipeStartTime = 0;
+let isSwiping = false;
+let currentPhaseIndex = 0;
+
+function initSwipe() {
+  const body = document.getElementById('proto-body');
+  if(!body) return;
+
+  body.addEventListener('touchstart', e => {
+    swipeStartX = e.touches[0].clientX;
+    swipeStartY = e.touches[0].clientY;
+    swipeStartTime = Date.now();
+    isSwiping = true;
+  }, {passive: true});
+
+  body.addEventListener('touchmove', e => {
+    if(!isSwiping) return;
+    const dx = e.touches[0].clientX - swipeStartX;
+    const dy = e.touches[0].clientY - swipeStartY;
+    // Als verticaal scrollen domineert, annuleer swipe
+    if(Math.abs(dy) > Math.abs(dx) * 1.5) isSwiping = false;
+  }, {passive: true});
+
+  body.addEventListener('touchend', e => {
+    if(!isSwiping || !currentProto) { isSwiping = false; return; }
+    const dx = e.changedTouches[0].clientX - swipeStartX;
+    const dy = e.changedTouches[0].clientY - swipeStartY;
+    const dt = Date.now() - swipeStartTime;
+    // Vereisten: min 60px horizontaal, max 120px verticaal, max 400ms
+    if(Math.abs(dx) < 60 || Math.abs(dy) > 120 || dt > 400) { isSwiping = false; return; }
+    const totalTabs = currentProto.phases.length;
+    if(dx < 0) {
+      // Swipe links = volgende fase
+      if(currentPhaseIndex < totalTabs - 1) {
+        showPhaseSwipe(currentPhaseIndex + 1, 'left');
+      }
+    } else {
+      // Swipe rechts = vorige fase
+      if(currentPhaseIndex > 0) {
+        showPhaseSwipe(currentPhaseIndex - 1, 'right');
+      }
+    }
+    isSwiping = false;
+  }, {passive: true});
+}
+
+function showPhaseSwipe(i, direction) {
+  const body = document.getElementById('proto-body');
+  if(!body) { showPhase(i); return; }
+  // Slide animatie
+  const outClass = direction === 'left' ? 'slide-out-left' : 'slide-out-right';
+  const inClass  = direction === 'left' ? 'slide-in-right' : 'slide-in-left';
+  body.classList.add(outClass);
+  setTimeout(() => {
+    body.classList.remove(outClass);
+    showPhase(i);
+    body.classList.add(inClass);
+    setTimeout(() => body.classList.remove(inClass), 250);
+  }, 180);
+}
+
+// Track huidige fase index voor swipe
+const _origShowPhase = showPhase;
+window.showPhase = function(i) {
+  currentPhaseIndex = i;
+  _origShowPhase(i);
+};
+
 // ── INIT ──
 async function initApp() {
+  initSwipe();
   // Try to restore session
   const stored = JSON.parse(localStorage.getItem('kp_session') || 'null');
   if(stored && stored.refresh_token) {

@@ -75,6 +75,9 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
 .viewer-title-row{display:flex;align-items:flex-start;gap:12px;}
 .viewer-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:5px;}
 .viewer-title{font-family:'Instrument Serif',serif;font-size:clamp(20px,4vw,26px);font-weight:400;letter-spacing:-.02em;line-height:1.2;}
+.viewer-title-row{display:flex;align-items:flex-start;gap:12px;}
+#proto-image{padding:4px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;}
+@media(max-width:700px){#proto-image img{max-height:60px!important;max-width:80px!important;}}
 .viewer-subtitle{font-size:12px;color:var(--muted);margin-top:3px;}
 /* Fase tijdlijn */
 .phase-timeline{display:flex;align-items:center;gap:0;margin:12px 0 4px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px;}
@@ -428,7 +431,7 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
     <div id="screen-proto" class="viewer" style="display:none;">
       <div class="viewer-header">
         <div class="viewer-breadcrumb"><span onclick="showHome()">Overzicht</span><span style="color:var(--muted2)">›</span><span id="proto-breadcrumb" style="color:var(--text)"></span></div>
-        <div class="viewer-title-row"><div class="viewer-dot" id="proto-dot"></div><div><div class="viewer-title" id="proto-title"></div><div class="viewer-subtitle" id="proto-subtitle"></div></div></div>
+        <div class="viewer-title-row"><div class="viewer-dot" id="proto-dot"></div><div style="flex:1"><div class="viewer-title" id="proto-title"></div><div class="viewer-subtitle" id="proto-subtitle"></div></div><div id="proto-image" style="display:none;flex-shrink:0;margin-left:auto;"></div></div>
         <!-- Fase tijdlijn -->
         <div id="phase-timeline" class="phase-timeline"></div>
         <div class="proto-actions">

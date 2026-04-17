@@ -2,7 +2,7 @@
 
 const protocols = {
 
-  acl:{id:'acl',title:'ACL Reconstructie',subtitle:'Postoperatief revalidatieprotocol voor VKB-reconstructie (BPTB / STG / QT)',color:'#22d3ee',
+  acl:{id:'acl',title:'ACL Reconstructie',subtitle:'Postoperatief revalidatieprotocol voor VKB-reconstructie (BPTB / STG / QT)',color:'#22d3ee',img:{url:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Knee_diagram.svg/320px-Knee_diagram.svg.png',caption:'Anatomie kniegewricht — anterieur kruisband (VKB)'},
     phases:[
       {label:'Fase 1',title:'Vroeg Postoperatief',weeks:'Week 0–2',
        evidence:'Vroege volle ROM en gewichtsdragen zijn geassocieerd met betere uitkomsten. <strong>Quadriceps inhibitie</strong> door artrogene spierinhibitie (AMI) is de grootste limiterende factor. Vroege neuromotorische activatie is prioritair (Rice et al., 2019).',
@@ -64,7 +64,7 @@ const protocols = {
     ],
     refs:'van Melick et al. (2016) — Evidence-based ACL rehabilitation. BJSM. | Grindem et al. (2016) — Decision rules reduce reinjury risk 84%. BJSM. | Hughes et al. (2019) — BFR training after ACL. J Strength Cond Res.'},
 
-  tka:{id:'tka',title:'Totale Knieprothese',subtitle:'TKA revalidatie inclusief prehabilitatie, ERAS-protocol en sporthervatting',color:'#a78bfa',
+  tka:{id:'tka',title:'Totale Knieprothese',subtitle:'TKA revalidatie inclusief prehabilitatie, ERAS-protocol en sporthervatting',color:'#a78bfa',img:{url:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Anatomy_of_the_Human_Knee.png/320px-Anatomy_of_the_Human_Knee.png',caption:'Kniegewricht anatomie — totale knieprothese'},
     phases:[
       {label:'Preop + Dag 0–3',title:'Preoperatief & Acute Zorg',weeks:'Preop + Dag 0–3',
        evidence:'<strong>Prehabilitatie</strong> verbetert vroeg postoperatieve uitkomsten (Jakobsen et al., 2014). <strong>ERAS</strong>: mobilisatie dag 0 veilig (Kehlet & Thienpont, 2013).',
@@ -122,7 +122,7 @@ const protocols = {
     ],
     refs:'Artz et al. (2015) — Physiotherapy after TKR. BMC Musculoskeletal Disorders. | Jakobsen et al. (2014) — Preoperative quad strength predicts TKA outcome. J Bone Joint Surg. | Kehlet & Thienpont (2013) — Fast-track knee arthroplasty. Bone Joint J.'},
 
-  pfps:{id:'pfps',title:'Patellofemoraal Pijnsyndroom',subtitle:'Multifactorieel protocol met subclassificatie, heupfocus en gait retraining',color:'#f97316',
+  pfps:{id:'pfps',title:'Patellofemoraal Pijnsyndroom',subtitle:'Multifactorieel protocol met subclassificatie, heupfocus en gait retraining',color:'#f97316',img:{url:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Patella_and_patellar_ligament.jpg/280px-Patella_and_patellar_ligament.jpg',caption:'Patella en patellofemoraal gewricht'},
     phases:[
       {label:'Diagnostiek',title:'Diagnostiek & Subclassificatie',weeks:'Vóór behandelstart',
        evidence:'PFPS is een <strong>klinische diagnose</strong> (Witvrouw et al., 2014). Geen beeldvorming vereist in eerste lijn.',
@@ -170,7 +170,7 @@ const protocols = {
     ],
     refs:'Lack et al. (2015) — Hip-targeted physiotherapy superior for PFPS. BJSM. | Rathleff et al. (2015) — High-load training in PFPS. Scand J Med Sci Sports. | Barton et al. (2017) — Patellar taping. BJSM. | Willy et al. (2012) — Gait retraining. J Orthop Sports Phys Ther.'},
 
-  lh:{id:'lh',title:'Lumbale Hernia',subtitle:'Conservatief en postoperatief revalidatieprotocol voor lumbale discushernia met radiculopathie',color:'#34d399',
+  lh:{id:'lh',title:'Lumbale Hernia',subtitle:'Conservatief en postoperatief revalidatieprotocol voor lumbale discushernia met radiculopathie',color:'#34d399',img:{url:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Vertebral_column_lateral2.png/180px-Vertebral_column_lateral2.png',caption:'Lumbale wervelkolom — discushernia L4-L5-S1'},
     phases:[
       {label:'Fase 0',title:'Diagnostiek & Triage',weeks:'Week 0',
        evidence:'<strong>90% herstelt conservatief</strong> binnen 6–12 weken (Weber, 1983). <strong>MRI geen eerste-lijnsindicatie</strong> tenzij rode vlaggen (NICE 2021). <strong>SLR + slump</strong> meest sensitieve klinische testen (Deville et al., 2000).',
@@ -231,7 +231,7 @@ const protocols = {
     ],
     refs:'Malmivaara et al. (1995) — Bed rest vs activity for LBP. NEJM. | Hides et al. (2001) — Motor control training for LBP. Spine. | Nee et al. (2012) — Neural tissue management. Man Ther. | Berglund et al. (2015) — Heavy resistance training for LBP. Spine. | Steffens et al. (2016) — Prevention of LBP. JAMA Intern Med.'},
 
-  rc:{id:'rc',title:'Rotatorenmanchet',subtitle:'Conservatief en postoperatief protocol voor rotatorenmanchet letsel (partieel / volledig / post-OK)',color:'#f43f5e',
+  rc:{id:'rc',title:'Rotatorenmanchet',subtitle:'Conservatief en postoperatief protocol voor rotatorenmanchet letsel (partieel / volledig / post-OK)',color:'#f43f5e',img:{url:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Shoulder_joint.svg/300px-Shoulder_joint.svg.png',caption:'Schoudergewricht — rotatorenmanchet'},img:{url:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Shoulder_joint.svg/300px-Shoulder_joint.svg.png',caption:'Schoudergewricht — rotatorenmanchet'},
     phases:[
       {label:'Fase 0',title:'Diagnostiek & Classificatie',weeks:'Vóór behandelstart',
        evidence:'<strong>Klinisch onderzoek</strong> heeft matige sensitiviteit/specificiteit — combinatiepatronen zijn betrouwbaarder (Hegedus et al., 2012). <strong>Echografie</strong> is eerste beeldvorming (even accuraat als MRI voor volledige rupturen). <strong>Conservatief beleid</strong> voor partiële scheuren en kleine volledige scheuren (< 1 cm): vergelijkbare uitkomsten met chirurgie op 2 jaar (Kukkonen et al., 2015 — RCT).',
@@ -317,7 +317,7 @@ const protocols = {
     ],
     refs:'Hegedus et al. (2012) — Physical examination tests for shoulder pathology. BJSM meta-analyse. | Kukkonen et al. (2015) — Conservative vs surgical for RC tears. J Bone Joint Surg RCT. | Kibler et al. (2013) — The role of the scapula in athletic shoulder function. AJSM. | Cools et al. (2007) — Rehabilitation of scapular muscle balance. AJSM. | Rio et al. (2015) — Isometric contractions for pain in tendinopathy. BJSM. | Beyer et al. (2015) — Heavy slow resistance vs eccentric training. Am J Sports Med. | Van der Meijden et al. (2012) — Rehabilitation after arthroscopic RC repair. J Shoulder Elbow Surg.'},
 
-  pt:{id:'pt',title:'Patellapees Tendinopathie',subtitle:'Conservatief revalidatieprotocol voor patellaire tendinopathie (jumper&#x27;s knee)',color:'#fb923c',
+  pt:{id:'pt',title:'Patellapees Tendinopathie',subtitle:'Conservatief revalidatieprotocol voor patellaire tendinopathie (jumper&#x27;s knee)',color:'#fb923c',img:{url:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Knee_and_patellar_ligament.jpg/280px-Knee_and_patellar_ligament.jpg',caption:'Patellapees — apex patella insertie'},
     phases:[
       {label:'Fase 0',title:'Diagnostiek & Classificatie',weeks:'Vóór behandelstart',
        evidence:'<strong>Patellapees tendinopathie</strong> is een klinische diagnose gebaseerd op gelokaliseerde anterieure kniepijn bij belasting (Cook & Purdam, 2009). De <strong>VISA-P score</strong> is de goudstandaard uitkomstmaat (Robinson et al., 2001 — validatie). <strong>Echografie</strong> toont hypo-echogene zones en peesdikte, maar correleert slecht met symptomen — asymptomatische afwijkingen zijn frequent (Cook et al., 2004). <strong>Victorian Institute of Sport Assessment Patella (VISA-P)</strong>: maximale score 100, sport < 80, RTS pas bij ≥ 90. <strong>Provocatietesten</strong>: single leg decline squat (SLDS) is meest sensitieve klinische test (Zwerver et al., 2011). <strong>Differentiaaldiagnose</strong>: PFPS, Osgood-Schlatter (adolescenten), Hoffa vetlichaam inklemming, partiële peesverscheuring.',
@@ -398,7 +398,7 @@ const protocols = {
        redflags:['Acute ruptuur symptomen → spoed orthopedie','VISA-P progressief dalend ondanks optimale aanpak → heroverwegen diagnose of chirurgisch consult']}
     ],
     refs:'Rio et al. (2015) — Isometric exercise reduces pain immediately in tendinopathy. BJSM RCT. | Beyer et al. (2015) — Heavy slow resistance vs eccentric training for patellar tendinopathy. Am J Sports Med RCT. | Kongsgaard et al. (2010) — HSR training superior to eccentric and corticosteroid. Scand J Med Sci Sports RCT. | Cook & Purdam (2009) — Tendinopathy continuum model. BJSM. | Malliaras et al. (2015) — Patellar tendinopathy management. J Orthop Sports Phys Ther. | Visnes & Bahr (2007) — Eccentric training prevention of patellar tendinopathy. Am J Sports Med. | van der Worp et al. (2011) — Risk factors for patellar tendinopathy. Br J Sports Med.'},
-  at:{id:'at',title:'Achillespees Tendinopathie',subtitle:'Conservatief revalidatieprotocol voor midportion en insertionele achillespees tendinopathie',color:'#e879f9',
+  at:{id:'at',title:'Achillespees Tendinopathie',subtitle:'Conservatief revalidatieprotocol voor midportion en insertionele achillespees tendinopathie',color:'#e879f9',img:{url:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Achilles_tendon.png/200px-Achilles_tendon.png',caption:'Achillespees — midportion en insertie calcaneus'},
     phases:[
       {label:'Fase 0',title:'Diagnostiek & Classificatie',weeks:'Vóór behandelstart',
        evidence:'<strong>Achillespees tendinopathie</strong> is een klinische diagnose — beeldvorming is geen vereiste in eerste lijn (Alfredson & Cook, 2007). <strong>Twee subtypes</strong> met fundamenteel verschillend beleid: (1) <strong>Midportion</strong> (2–6 cm boven insertie) — meest frequent, beste prognose conservatief; (2) <strong>Insertioneel</strong> (aan calcaneus) — compressie-component, excentrische training is hier contraproductief (Jonsson et al., 2008). <strong>VISA-A score</strong> is de gevalideerde uitkomstmaat (Robinson et al., 2001): max 100, sport < 80, RTS bij ≥ 90. <strong>Arc sign</strong> en <strong>Royal London Hospital test</strong> zijn sensitieve klinische testen voor midportion (sensitiviteit 0.73–0.78). <strong>Differentiaaldiagnose</strong>: partiële ruptuur, Haglund deformiteit (insertioneel), posterieure impingement, FHL tendinopathie.',
@@ -479,7 +479,7 @@ const protocols = {
        redflags:['Acute ruptuur symptomen → spoed','VISA-A progressief dalend ondanks optimale aanpak → orthopedisch overleg','Nieuw fluorochinolonen-gebruik → informeer arts over tendinopathie-voorgeschiedenis']}
     ],
     refs:'Alfredson et al. (1998) — Heavy-load eccentric calf muscle training for chronic Achilles tendinosis. Am J Sports Med RCT. | Beyer et al. (2015) — HSR vs eccentric training for Achilles tendinopathy. Am J Sports Med RCT. | Rio et al. (2017) — Isometric exercise for tendinopathy pain relief. Br J Sports Med. | Silbernagel et al. (2007) — Continued sports activity using a pain-monitoring model. Am J Sports Med. | Jonsson et al. (2008) — New regimen for eccentric calf muscle training in insertional Achilles tendinopathy. Br J Sports Med. | Cook & Purdam (2009) — Tendinopathy continuum model. Br J Sports Med. | Silbernagel et al. (2020) — Consensus on RTS after Achilles tendon rupture. Br J Sports Med.'},
-  bureau:{id:'bureau',title:'Bureauhouding & Nekklachten',subtitle:'Revalidatie en preventie van werkgerelateerde nek-, schouder- en rugklachten (trapezius syndroom, cervicogene hoofdpijn, thoracale kyfose, acute lumbago)',color:'#60a5fa',
+  bureau:{id:'bureau',title:'Bureauhouding & Nekklachten',subtitle:'Revalidatie en preventie van werkgerelateerde nek-, schouder- en rugklachten (trapezius syndroom, cervicogene hoofdpijn, thoracale kyfose, acute lumbago)',color:'#60a5fa',img:{url:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Cervical_vertebrae_lateral2.png/200px-Cervical_vertebrae_lateral2.png',caption:'Cervicale wervelkolom — forward head posture'},
     phases:[
       {label:'Fase 0',title:'Diagnostiek & Subclassificatie',weeks:'Eerste contact',
        evidence:'<strong>Werkgerelateerde nekklachten</strong> zijn de tweede meest voorkomende musculoskeletale aandoening na lagerugpijn (WHO, 2021). <strong>Vier subgroepen</strong> vereisen een specifieke aanpak: (1) Trapezius myofasciaal syndroom, (2) Cervicogene hoofdpijn, (3) Thoracale hyperkyfose met scapulaire dyskinese, (4) Acute lumbago bij bureauwerker. <strong>Flexion-Relaxation Phenomenon (FRP)</strong>: bij gezonde nek relaxeert de erector spinae bij volledige flexie — bij chronische klachten ontbreekt dit. <strong>Deep Neck Flexor (DNF) zwakte</strong> is aanwezig bij 96% van chronische nekpijnpatiënten (Jull et al., 2008). <strong>Psychosociale factoren</strong> (werkstress, jobontevredenheid) zijn sterkere predictoren van chroniciteit dan biomechanische factoren (Linton, 2001).',
@@ -552,7 +552,7 @@ const protocols = {
        redflags:['Nieuwe neurologische symptomen (tinteling, krachtsverlies arm) → MRI cervicaal','Progressieve nekpijn + gewichtsverlies + nachtzweten → oncologische screening']}
     ],
     refs:'Jull et al. (2009) — Therapeutic exercise for cervicogenic headache. Spine RCT. | Andersen et al. (2008) — Neck/shoulder exercises for office workers. JAMA RCT. | Cleland et al. (2007) — Thoracic manipulation for neck pain. J Orthop Sports Phys Ther. | French et al. (2006) — Superficial heat for LBP. Cochrane. | Hoe et al. (2012) — Ergonomics interventions for upper limb work disorders. Cochrane. | Verhagen et al. (2013) — Conservative interventions for neck pain in office workers. Cochrane. | Linton (2001) — Psychosocial risk factors for neck and back pain. Spine.'},
-  enkel:{id:'enkel',title:'Enkeldistorsie',subtitle:'Laterale enkeldistorsie — graad I, II en III (ATFL/CFL/PTFL) + chronische instabiliteit',color:'#f59e0b',
+  enkel:{id:'enkel',title:'Enkeldistorsie',subtitle:'Laterale enkeldistorsie — graad I, II en III (ATFL/CFL/PTFL) + chronische instabiliteit',color:'#f59e0b',img:{url:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Ankle_en.svg/320px-Ankle_en.svg.png',caption:'Laterale enkelbanden — ATFL, CFL, PTFL'},
     phases:[
       {label:'Fase 0',title:'Diagnostiek & Graadclassificatie',weeks:'Dag 0–3 na letsel',
        evidence:'<strong>Laterale enkeldistorsie</strong> is de meest voorkomende sportblessure — 85% van alle enkeldistorsies, met ATFL-betrokkenheid in 70–85% van de gevallen (Doherty et al., 2014). <strong>Graadclassificatie</strong> stuurt het beleid volledig: Graad I (rek ATFL, geen laxiteit), Graad II (partiële ruptuur ATFL + evt CFL, lichte laxiteit), Graad III (volledige ruptuur ATFL + CFL, evt PTFL, duidelijke laxiteit). <strong>Ottawa Ankle Rules</strong>: botfractuur uitsluiten vóór start revalidatie — sensitiviteit 96–99% (Bachmann et al., 2003 BMJ). <strong>Anterior Drawer Test (ADT)</strong>: > 3 mm asymmetrie = ATFL-ruptuur, sensitiviteit 0.71, specificiteit 0.33 acuut (pijn/zwelling beperkt accuraatheid — herhaal na 4–7 dagen). <strong>Talar Tilt Test (TTT)</strong>: > 10° = CFL-betrokkenheid. <strong>PEACE protocol</strong> (Dubois & Esculier, BJSM 2019) vervangt RICE/PRICE voor acute fase: Protection, Elevation, Avoid anti-inflammatories, Compression, Education. <strong>Syndesmose letsel</strong> (high ankle sprain) aparte entiteit: Squeeze test + External Rotation Stress test positief — langere revalidatie (6–12 wkn).',
@@ -638,7 +638,7 @@ const protocols = {
        redflags:['Persisterende pijn + zwelling 3+ maanden na distorsie → osteochondraal defect (OCD) → MRI','CAI + pijnklachten zonder verbetering 6+ maanden → artroscopie overwegen','Progressieve artrose bij recidiverende distorsies → orthopedie']}
     ],
     refs:'Dubois B, Esculier JF (2019/2020) — Soft-tissue injuries simply need PEACE and LOVE. Br J Sports Med 54:72-73. | APTA Clinical Practice Guidelines (2021) — Ankle Stability and Movement Coordination Impairments: Lateral Ankle Ligament Sprains Revision. J Orthop Sports Phys Ther 51(4):CPG1-80. | Flore Z et al. (2024) — Rehabilitation Algorithm After Lateral Ankle Sprains in Professional Football. Int J Sports Phys Ther 19(7):910-922. | Hupperets MDW et al. (2009) — Effect of unsupervised home based proprioceptive training on recurrences of ankle sprain. BMJ 339:b2684 (RCT n=522). | Vuurberg G et al. (2018) — Diagnosis, treatment and prevention of ankle sprains: update of an evidence-based clinical guideline. Br J Sports Med 52(15):956. | Gribble PA et al. (2016) — Evidence review for the 2016 International Ankle Consortium consensus statement on prevalence and consequences of lateral ankle sprains. Br J Sports Med 50:1496. | Bachmann LM et al. (2003) — Accuracy of Ottawa ankle rules to exclude fractures. BMJ 326:417. | Tassignon B et al. (2019) — Criteria-based return to sport decision-making following lateral ankle sprain. Sports Med 49(4):601-619. | Dizon JMR, Reyes JJB (2010) — A systematic review on the effectiveness of external ankle supports in the prevention of inversion ankle sprains. J Sci Med Sport 13:309-317.'},
-  over:{id:'over',title:'Overpronatie Syndroom',subtitle:'Flexibele platvoet en overpronatie — intrinsieke training, tibialis posterior, gaitretraining en orthesen',color:'#10b981',
+  over:{id:'over',title:'Overpronatie Syndroom',subtitle:'Flexibele platvoet en overpronatie — intrinsieke training, tibialis posterior, gaitretraining en orthesen',color:'#10b981',img:{url:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Foot_bones_-_inferior_surface.jpg/280px-Foot_bones_-_inferior_surface.jpg',caption:'Mediale voetboog — overpronatie en navicular drop'},
     phases:[
       {label:'Fase 0',title:'Diagnostiek & Subclassificatie',weeks:'Eerste contact',
        evidence:'<strong>Overpronatie</strong> is geen diagnose op zich maar een biomechanisch fenomeen met een spectrum van presentaties. Onderscheid is essentieel: <strong>Flexibele platvoet</strong> (meest voorkomend — mediale boog herstelt bij teenstand) vs <strong>rigide platvoet</strong> (boog herstelt niet → beeldvorming + podoloog/orthopedie). <strong>Foot Posture Index-6 (FPI-6)</strong>: goudstandaard klinische maat — score ≥ +6 = geproneerd, ≥ +10 = hyperpronatie. <strong>Navicular Drop Test (NDT)</strong>: ≥ 10 mm zakking = significante pronatie (Brody 1982). <strong>Gerelateerde klachten</strong>: mediale kniepijn, PFPS, plantaire fasciitis, tibialis posterior tendinopathie, shin splints, lage rugpijn. <strong>Posterieure tibialis insufficiëntie (PTTD)</strong>: progressieve platvoet bij volwassene — aparte entiteit met chirurgisch spectrum. <strong>Gait retraining</strong> superieur aan orthesen alleen voor langetermijn (Mousavi et al., PLoS ONE 2024 — systematische review). <strong>Meest effectieve interventie</strong>: tibialis posterior versterking + iliopsoas stretch + intrinsieke voettraining gecombineerd (network meta-analyse 11 RCTs, 2024).',
@@ -1104,6 +1104,22 @@ function showProto(id) {
   document.getElementById('proto-subtitle').textContent = p.subtitle;
   document.getElementById('proto-dot').style.background = p.color;
   document.documentElement.style.setProperty('--proto-color', p.color);
+  // Protocol image
+  const imgEl = document.getElementById('proto-image');
+  if(imgEl) {
+    if(p.img) {
+      imgEl.style.display = '';
+      const imgHtml = '<div style="text-align:center">' +
+        '<img src="' + p.img.url + '" alt="' + p.img.caption + '" ' +
+        'style="max-height:100px;max-width:130px;object-fit:contain;border-radius:6px;display:block;" ' +
+        'onerror="document.getElementById(\'proto-image\').style.display=\'none\'">' +
+        '<div style="font-size:9px;color:var(--muted2);font-family:Geist Mono,monospace;margin-top:3px;max-width:130px;line-height:1.3">' + p.img.caption + '</div>' +
+        '</div>';
+      imgEl.innerHTML = imgHtml;
+    } else {
+      imgEl.style.display = 'none';
+    }
+  }
   // Tabs: fasen + Scores + Referenties
   const tabs = document.getElementById('proto-tabs');
   const hasScores = SCORES[id] && SCORES[id].length > 0;

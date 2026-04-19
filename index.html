@@ -391,6 +391,10 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
     <div class="nav-item" id="nav-over" onclick="showProto('over')"><div class="nav-dot" style="background:#10b981"></div><div style="flex:1"><div class="nav-title">Overpronatie Syndroom</div><div class="nav-sub">4 fasen · 8–18+ wkn</div></div><span class="nav-badge" style="background:rgba(16,185,129,.1);color:#10b981">OVP</span></div>
     <div class="nav-item" id="nav-enkel" onclick="showProto('enkel')"><div class="nav-dot" style="background:#f59e0b"></div><div style="flex:1"><div class="nav-title">Enkeldistorsie</div><div class="nav-sub">5 fasen · 1–12 wkn</div></div><span class="nav-badge" style="background:rgba(245,158,11,.1);color:#f59e0b">LAS</span></div>
     <div class="sidebar-divider"></div>
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-section">Evaluatieformulieren</div>
+    <div class="nav-item" id="nav-eval-forms" onclick="showEvalFormsScreen()"><span style="font-size:15px;">🩺</span><span class="nav-title">Klinisch onderzoek</span><span style="font-size:10px;padding:2px 7px;border-radius:10px;background:rgba(248,113,113,.15);color:#f87171;font-family:'Geist Mono',monospace;">5 regio</span></div>
+    <div class="sidebar-divider"></div>
     <div class="sidebar-section">Patiënten</div>
     <div class="nav-item" id="nav-patients" onclick="showPatients()"><span style="font-size:15px;">👥</span><span class="nav-title">Mijn patiënten</span><span id="pat-count-badge" style="display:none;font-size:10px;padding:1px 7px;border-radius:10px;background:rgba(74,222,128,.15);color:#4ade80;font-family:'Geist Mono',monospace;">0</span></div>
     <div class="sidebar-divider"></div>
@@ -455,6 +459,16 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
       <div class="pat-detail" id="pat-detail-body"></div>
     </div>
     <!-- SEARCH -->
+    <!-- EVALUATIEFORMULIEREN SCHERM -->
+    <div id="screen-eval-forms" style="display:none;overflow-y:auto;flex:1;-webkit-overflow-scrolling:touch;">
+      <div style="padding:24px 28px;max-width:860px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:10px;">
+          <div style="font-family:'Instrument Serif',serif;font-size:24px;font-weight:400;">Klinische Evaluatieformulieren</div>
+          <div style="font-size:11px;color:var(--muted);font-family:'Geist Mono',monospace;">5 regio&#039;s · Digitaal + Afdrukken</div>
+        </div>
+        <div id="eval-forms-list"></div>
+      </div>
+    </div>
     <div id="screen-search" style="display:none;padding:20px;overflow-y:auto;flex:1;-webkit-overflow-scrolling:touch;">
       <div class="slabel" style="margin-bottom:14px">Zoekresultaten</div>
       <div id="search-results"></div>
@@ -475,6 +489,7 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
     <button class="bnav-item" id="bnav-bureau" onclick="showProto('bureau')"><div class="bnav-icon">💻</div><div class="bnav-label">BNK</div><div class="bnav-dot" style="background:#60a5fa"></div></button>
     <button class="bnav-item" id="bnav-over" onclick="showProto('over')"><div class="bnav-icon">🦶</div><div class="bnav-label">OVP</div><div class="bnav-dot" style="background:#10b981"></div></button>
     <button class="bnav-item" id="bnav-enkel" onclick="showProto('enkel')"><div class="bnav-icon">🦵</div><div class="bnav-label">LAS</div><div class="bnav-dot" style="background:#f59e0b"></div></button>
+    <button class="bnav-item" id="bnav-eval-forms" onclick="showEvalFormsScreen()"><div class="bnav-icon">🩺</div><div class="bnav-label">Eval</div><div class="bnav-dot" style="background:#f87171"></div></button>
     <button class="bnav-item" id="bnav-patients" onclick="showPatients()"><div class="bnav-icon">👥</div><div class="bnav-label">Patiënten</div><div class="bnav-dot" style="background:#4ade80"></div></button>
     <button class="bnav-item" id="bnav-search" onclick="document.getElementById('searchInput').focus()"><div class="bnav-icon">&#128269;</div><div class="bnav-label">Zoeken</div><div class="bnav-dot"></div></button>
   </div>
@@ -527,6 +542,22 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
     </div>
   </div>
 </div>
+<!-- Evaluatieformulier Modal -->
+<div class="kmodal" id="eval-modal" onclick="if(event.target===this)closeEvalForm()">
+  <div class="kmodal-inner" style="max-width:680px;max-height:90vh;">
+    <div class="kmodal-bar">
+      <span style="font-size:16px;">🩺</span>
+      <div class="kmodal-title" id="eval-modal-title">Klinisch Evaluatieformulier</div>
+      <button class="kmodal-close" onclick="closeEvalForm()">✕</button>
+    </div>
+    <div class="kmodal-body" id="eval-modal-body"></div>
+    <div class="kmodal-footer">
+      <button class="kmodal-action secondary" onclick="closeEvalForm()">Annuleer</button>
+      <button class="kmodal-action primary" onclick="printEvalForm()">🖨 Afdrukken / PDF</button>
+    </div>
+  </div>
+</div>
+
 <!-- Koppel patiënt Modal -->
 <div class="kmodal" id="pat-link-modal" onclick="if(event.target===this)closePatLink()">
   <div class="kmodal-inner" style="max-width:420px;">

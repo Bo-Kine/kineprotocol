@@ -1028,7 +1028,7 @@ function getInitials(name) {
   return name.split(' ').filter(Boolean).map(w=>w[0].toUpperCase()).slice(0,2).join('');
 }
 function getProtoColor(pid) {
-  const colors = {acl:'#22d3ee',tka:'#a78bfa',pfps:'#f97316',lh:'#34d399',rc:'#f43f5e',pt:'#fb923c',at:'#e879f9',bureau:'#60a5fa'};
+  const colors = {acl:'#22d3ee',tka:'#a78bfa',pfps:'#f97316',lh:'#34d399',rc:'#f43f5e',pt:'#fb923c',at:'#e879f9',bureau:'#60a5fa',enkel:'#f59e0b',over:'#10b981'};
   return colors[pid] || '#71717a';
 }
 function formatDate(iso) {
@@ -1077,7 +1077,7 @@ function closeYT() {
 
 // ── NAVIGATION ──
 function hideAllScreens() {
-  ['screen-home','screen-proto','screen-patients','screen-patient-detail','screen-search'].forEach(id => {
+  ['screen-home','screen-proto','screen-patients','screen-patient-detail','screen-eval-forms','screen-search'].forEach(id => {
     const el = document.getElementById(id);
     if(el) el.style.display = 'none';
   });
@@ -2360,6 +2360,597 @@ const FORMS = {
   }
 };
 
+
+// ── KLINISCHE EVALUATIEFORMULIEREN ──
+const EVAL_FORMS = {
+
+  nek: {
+    id: 'nek',
+    titel: 'Klinisch Onderzoek — Nek & Hoofdpijn',
+    regio: 'Cervicaal / Hoofd',
+    color: '#60a5fa',
+    secties: [
+      {
+        id: 's_inspectie',
+        titel: 'Inspectie',
+        velden: [
+          {id:'ins_houding', label:'Cervicale houding', type:'keuze3', opties:['Normaal','Forward head posture','Laterale deviatie','Hyperlordose','Kyfose']},
+          {id:'ins_schouder', label:'Schoudersymmetrie', type:'keuze3', opties:['Symmetrisch','Links hoger','Rechts hoger','Protractie links','Protractie rechts']},
+          {id:'ins_zwelling', label:'Zichtbare zwelling / atrofie', type:'tekst', placeholder:'Lokaliseer indien aanwezig...'},
+          {id:'ins_litteken', label:'Littekens / huidafwijkingen', type:'tekst', placeholder:'Beschrijf indien aanwezig...'},
+        ]
+      },
+      {
+        id: 's_palpatie',
+        titel: 'Palpatie',
+        velden: [
+          {id:'pal_trap_l', label:'Trapezius links — drukpijn', type:'pn'},
+          {id:'pal_trap_r', label:'Trapezius rechts — drukpijn', type:'pn'},
+          {id:'pal_scm_l', label:'SCM links — drukpijn', type:'pn'},
+          {id:'pal_scm_r', label:'SCM rechts — drukpijn', type:'pn'},
+          {id:'pal_lev_l', label:'Levator scapulae links', type:'pn'},
+          {id:'pal_lev_r', label:'Levator scapulae rechts', type:'pn'},
+          {id:'pal_facet', label:'Facetgewrichten (C2–C7)', type:'tekst', placeholder:'Niveau en zijde van drukpijn...'},
+          {id:'pal_oc', label:'Occiput / suboccipitale spieren', type:'pn'},
+          {id:'pal_warmte', label:'Lokale warmte', type:'pn'},
+          {id:'pal_spasme', label:'Spierdefense / spasme', type:'tekst', placeholder:'Lokaliseer...'},
+        ]
+      },
+      {
+        id: 's_rom',
+        titel: 'Actieve ROM (graden)',
+        velden: [
+          {id:'rom_flex', label:'Flexie', type:'rom', norm:'0–50°'},
+          {id:'rom_ext', label:'Extensie', type:'rom', norm:'0–60°'},
+          {id:'rom_lat_l', label:'Lateraalflexie links', type:'rom', norm:'0–45°'},
+          {id:'rom_lat_r', label:'Lateraalflexie rechts', type:'rom', norm:'0–45°'},
+          {id:'rom_rot_l', label:'Rotatie links', type:'rom', norm:'0–70°'},
+          {id:'rom_rot_r', label:'Rotatie rechts', type:'rom', norm:'0–70°'},
+          {id:'rom_pijn', label:'Pijnlijk traject / eindgevoel', type:'tekst', placeholder:'Beschrijf pijnboog, eindgevoel, kapsel/leguard...'},
+        ]
+      },
+      {
+        id: 's_passief',
+        titel: 'Passieve ROM & Segmentale Mobiliteit',
+        velden: [
+          {id:'pas_ov_flex', label:'Overpressie flexie', type:'pn'},
+          {id:'pas_ov_ext', label:'Overpressie extensie', type:'pn'},
+          {id:'pas_ov_rot_l', label:'Overpressie rotatie links', type:'pn'},
+          {id:'pas_ov_rot_r', label:'Overpressie rotatie rechts', type:'pn'},
+          {id:'pas_segm', label:'Segmentale mobiliteitstest', type:'tekst', placeholder:'Hypomobiel/hypermobiel niveau...'},
+          {id:'pas_pp', label:'Passief PA-gliding (C2–C7)', type:'tekst', placeholder:'Pijnlijk niveau, weerstand...'},
+        ]
+      },
+      {
+        id: 's_weerstand',
+        titel: 'Weerstandstesten (MRC 0–5)',
+        velden: [
+          {id:'w_flex', label:'Flexie (DNF)', type:'mrc'},
+          {id:'w_ext', label:'Extensie', type:'mrc'},
+          {id:'w_lat_l', label:'Lateraalflexie links', type:'mrc'},
+          {id:'w_lat_r', label:'Lateraalflexie rechts', type:'mrc'},
+          {id:'w_rot_l', label:'Rotatie links', type:'mrc'},
+          {id:'w_rot_r', label:'Rotatie rechts', type:'mrc'},
+          {id:'w_ccft', label:'CCFT (Cranio-cervicale flexietest)', type:'tekst', placeholder:'mmHg niveau / compensatie aanwezig...'},
+        ]
+      },
+      {
+        id: 's_ortho',
+        titel: 'Specifieke Orthopedische Testen',
+        velden: [
+          {id:'t_spurling', label:'Spurling test (radiculopathie)', type:'pn_bevinding', info:'Compressie + lateraalflexie + extensie ipsilateraal'},
+          {id:'t_dist', label:'Cervicale distractietest', type:'pn_bevinding', info:'Tractie cervicaal — vermindering uitstraling = positief'},
+          {id:'t_valsalva', label:'Valsalva manoeuvre', type:'pn_bevinding', info:'Positief bij drukverhoging = intrathecale pathologie'},
+          {id:'t_adson', label:'Adson test (TOS)', type:'pn_bevinding', info:'Pols palperen, rotatie + extensie hoofd, inspiratie'},
+          {id:'t_wright', label:'Wright test (TOS)', type:'pn_bevinding', info:'Abductie + exorotatie arm, pols palperen'},
+          {id:'t_lhermitte', label:'Lhermitte teken (myelopathie)', type:'pn_bevinding', info:'Elektrisch gevoel bij flexie cervicaal'},
+          {id:'t_hoffmann', label:'Hoffmann reflex', type:'pn_bevinding', info:'Nagel middenvinger aanslaan — reflexieve duim-wijsvinger flexie'},
+          {id:'t_flacc', label:'Flexion-rotation test (CGH)', type:'pn_bevinding', info:'Passieve rotatie in volledige flexie — < 32° = positief CGH'},
+          {id:'t_upper_flex', label:'Upper limb tension test ULTT1 (medianus)', type:'pn_bevinding', info:'Schouderabductie, elleboogextensie, polsextensie, cervicale lateraalflexie'},
+          {id:'t_ultt2', label:'ULTT2 (radialis)', type:'pn_bevinding', info:'Schouderdepressie, elleboogextensie, pronatie, polsflexie'},
+          {id:'t_ultt3', label:'ULTT3 (ulnaris)', type:'pn_bevinding', info:'Elleboogflexie, polsextensie, schouderabductie'},
+        ]
+      },
+      {
+        id: 's_neuro',
+        titel: 'Neurologisch Onderzoek',
+        velden: [
+          {id:'n_c5_sens', label:'Sensibiliteit C5 (laterale bovenarm)', type:'pn'},
+          {id:'n_c6_sens', label:'Sensibiliteit C6 (duim/wijsvinger)', type:'pn'},
+          {id:'n_c7_sens', label:'Sensibiliteit C7 (middenvinger)', type:'pn'},
+          {id:'n_c8_sens', label:'Sensibiliteit C8 (ringvinger/pink)', type:'pn'},
+          {id:'n_th1_sens', label:'Sensibiliteit Th1 (mediale bovenarm)', type:'pn'},
+          {id:'n_biceps', label:'Bicepsreflex (C5–C6)', type:'reflex'},
+          {id:'n_brachrad', label:'Brachioradialisreflex (C6)', type:'reflex'},
+          {id:'n_triceps', label:'Tricepsreflex (C7)', type:'reflex'},
+          {id:'n_c5_kracht', label:'Kracht C5 — deltoid / elleboogflexie', type:'mrc'},
+          {id:'n_c6_kracht', label:'Kracht C6 — polsextensie', type:'mrc'},
+          {id:'n_c7_kracht', label:'Kracht C7 — elleboogextensie / polsflexie', type:'mrc'},
+          {id:'n_c8_kracht', label:'Kracht C8 — vingerflexie', type:'mrc'},
+          {id:'n_th1_kracht', label:'Kracht Th1 — vingerabductie', type:'mrc'},
+        ]
+      },
+      {
+        id: 's_conclusie',
+        titel: 'Conclusie & Behandelplan',
+        velden: [
+          {id:'c_diagnose', label:'Werkhypothese / diagnose', type:'tekst_groot', placeholder:'Klinische diagnose op basis van onderzoek...'},
+          {id:'c_niveau', label:'Betrokken niveau(s)', type:'tekst', placeholder:'bijv. C5-C6 links, facetgewricht C3-C4...'},
+          {id:'c_bijkomend', label:'Bijkomende bevindingen', type:'tekst', placeholder:'bijv. TrP trapezius, scapulaire dyskinese...'},
+          {id:'c_behandeling', label:'Behandelplan', type:'tekst_groot', placeholder:'Manuele therapie, oefentherapie, educatie...'},
+          {id:'c_herevaluatie', label:'Herevaluatie gepland', type:'tekst', placeholder:'Datum / criteria...'},
+          {id:'c_doorverwijzing', label:'Doorverwijzing', type:'tekst', placeholder:'Neuroloog / orthopedie / huisarts / geen...'},
+        ]
+      }
+    ]
+  },
+
+  lage_rug: {
+    id: 'lage_rug',
+    titel: 'Klinisch Onderzoek — Lage Rug & Bekken',
+    regio: 'Lumbaal / Sacraal / Bekken',
+    color: '#34d399',
+    secties: [
+      {
+        id: 's_inspectie',
+        titel: 'Inspectie',
+        velden: [
+          {id:'ins_lordose', label:'Lumbale lordose', type:'keuze3', opties:['Normaal','Hyperlordose','Afgevlakt','Kyfose']},
+          {id:'ins_skoliose', label:'Scoliose / deviatie', type:'keuze3', opties:['Geen','Links convex','Rechts convex','Functioneel (verdwijnt bij buiging)']},
+          {id:'ins_bekken', label:'Bekkenstand', type:'keuze3', opties:['Symmetrisch','Links hoger','Rechts hoger','Anterieure kanteling','Posterieure kanteling']},
+          {id:'ins_spier', label:'Spieratrofie / asymmetrie', type:'tekst', placeholder:'Lokaliseer indien aanwezig...'},
+          {id:'ins_stap', label:'Looppatroon observatie', type:'tekst', placeholder:'Antalgisch, Trendelenburg, beenlengteverschil...'},
+        ]
+      },
+      {
+        id: 's_palpatie',
+        titel: 'Palpatie',
+        velden: [
+          {id:'pal_proc_sp', label:'Processus spinosi L1–S1', type:'tekst', placeholder:'Drukpijn op niveau(s)...'},
+          {id:'pal_para_l', label:'Paravertebrale musculatuur links', type:'pn'},
+          {id:'pal_para_r', label:'Paravertebrale musculatuur rechts', type:'pn'},
+          {id:'pal_ql_l', label:'M. quadratus lumborum links', type:'pn'},
+          {id:'pal_ql_r', label:'M. quadratus lumborum rechts', type:'pn'},
+          {id:'pal_sij', label:'SI-gewricht (PSIS drukpijn)', type:'tekst', placeholder:'Links / rechts / bilateraal...'},
+          {id:'pal_ischias', label:'N. ischiadicus (piriformis regio)', type:'pn'},
+          {id:'pal_warmte', label:'Lokale warmte lumbaal', type:'pn'},
+        ]
+      },
+      {
+        id: 's_rom',
+        titel: 'Actieve ROM (graden / vingergrond afstand)',
+        velden: [
+          {id:'rom_flex', label:'Flexie (vingergrond-afstand)', type:'tekst', placeholder:'cm / graden...'},
+          {id:'rom_ext', label:'Extensie', type:'rom', norm:'0–25°'},
+          {id:'rom_lat_l', label:'Lateraalflexie links', type:'rom', norm:'0–25°'},
+          {id:'rom_lat_r', label:'Lateraalflexie rechts', type:'rom', norm:'0–25°'},
+          {id:'rom_rot_l', label:'Rotatie links (zittend)', type:'rom', norm:'0–30°'},
+          {id:'rom_rot_r', label:'Rotatie rechts (zittend)', type:'rom', norm:'0–30°'},
+          {id:'rom_schobers', label:'Schobers test', type:'tekst', placeholder:'Norm: > 5cm toename bij flexie...'},
+          {id:'rom_pijn', label:'Pijnlijk traject / richting voorkeur', type:'tekst', placeholder:'Extensievoorkeur / flexievoorkeur (McKenzie)...'},
+        ]
+      },
+      {
+        id: 's_weerstand',
+        titel: 'Weerstandstesten (MRC 0–5)',
+        velden: [
+          {id:'w_flex', label:'Romp flexie (rectus abdominis)', type:'mrc'},
+          {id:'w_ext', label:'Romp extensie (erector spinae)', type:'mrc'},
+          {id:'w_lat_l', label:'Lateraalflexie links', type:'mrc'},
+          {id:'w_lat_r', label:'Lateraalflexie rechts', type:'mrc'},
+          {id:'w_glut_max_l', label:'Gluteus maximus links', type:'mrc'},
+          {id:'w_glut_max_r', label:'Gluteus maximus rechts', type:'mrc'},
+          {id:'w_glut_med_l', label:'Gluteus medius links', type:'mrc'},
+          {id:'w_glut_med_r', label:'Gluteus medius rechts', type:'mrc'},
+          {id:'w_core', label:'Core stabiliteit (plank / holow body)', type:'tekst', placeholder:'Seconden / compensatie...'},
+        ]
+      },
+      {
+        id: 's_ortho',
+        titel: 'Specifieke Orthopedische Testen',
+        velden: [
+          {id:'t_slr', label:'Straight Leg Raise (SLR)', type:'pn_graden', info:'Norm: pijnvrij > 70°. Positief bij uitstraling < 60°'},
+          {id:'t_slr_l', label:'SLR links — hoek', type:'tekst', placeholder:'Graad bij pijnopwekking + karakter...'},
+          {id:'t_slr_r', label:'SLR rechts — hoek', type:'tekst', placeholder:'Graad bij pijnopwekking + karakter...'},
+          {id:'t_crossed', label:'Gekruiste SLR (Fajersztajn)', type:'pn_bevinding', info:'Uitstraling contralateraal been = ernstige discushernia'},
+          {id:'t_slump', label:'Slump test', type:'pn_bevinding', info:'Positief bij reproductie uitstraling + verbetering bij cervicale extensie'},
+          {id:'t_femoral', label:'Femoral nerve stretch test', type:'pn_bevinding', info:'Buiklig, knie gebogen 90° + heupextensie = L2-L3-L4'},
+          {id:'t_prone_inst', label:'Prone instability test', type:'pn_bevinding', info:'Positief = pijn verbetert bij activatie extensoren'},
+          {id:'t_fabere', label:'FABERE / Patrick (SI-gewricht)', type:'pn_bevinding', info:'Heup in FABERE, druk op knie = SI-pijn ipsilateraal'},
+          {id:'t_fadir', label:'FADIR test (heup)', type:'pn_bevinding', info:'Flexie-Adductie-Interne rotatie = heupprobleem'},
+          {id:'t_sacral_thrust', label:'Sacral thrust test (SI)', type:'pn_bevinding', info:'Druk op sacrum in buiklig = SI-provocatie'},
+          {id:'t_compression', label:'SI-compressietest', type:'pn_bevinding', info:'Druk op beide SIAS naar mediaal in zijlig'},
+          {id:'t_distraction', label:'SI-distractietest', type:'pn_bevinding', info:'Druk op SIAS van elkaar in ruglig'},
+          {id:'t_gaenslen', label:'Gaenslen test', type:'pn_bevinding', info:'Hyperextensie heup in zijkant tafel = SI-stress'},
+          {id:'t_ober', label:'Ober test (ITB)', type:'pn_bevinding', info:'Zijlig, heup in abductie-extensie laten zakken'},
+          {id:'t_thomaas', label:'Thomas test (heupflexor contractuur)', type:'pn_bevinding', info:'Ruglig, knie naar borst, andere been valt niet plat = positief'},
+        ]
+      },
+      {
+        id: 's_neuro',
+        titel: 'Neurologisch Onderzoek',
+        velden: [
+          {id:'n_l3_sens', label:'Sensibiliteit L3 (mediaal bovenbeen)', type:'pn'},
+          {id:'n_l4_sens', label:'Sensibiliteit L4 (mediaal onderbeen)', type:'pn'},
+          {id:'n_l5_sens', label:'Sensibiliteit L5 (dorsum voet / grote teen)', type:'pn'},
+          {id:'n_s1_sens', label:'Sensibiliteit S1 (laterale voetrand / kleine teen)', type:'pn'},
+          {id:'n_s2_sens', label:'Sensibiliteit S2–S4 (perineaal / zadel)', type:'pn'},
+          {id:'n_patella', label:'Patellareflex (L3–L4)', type:'reflex'},
+          {id:'n_achilles', label:'Achillesreflex (S1)', type:'reflex'},
+          {id:'n_l4_kracht', label:'Kracht L4 — voetdorsaalflexie (tibialis anterior)', type:'mrc'},
+          {id:'n_l5_kracht', label:'Kracht L5 — grote teen extensie (EHL)', type:'mrc'},
+          {id:'n_s1_kracht', label:'Kracht S1 — plantairflexie (gastrocnemius)', type:'mrc'},
+          {id:'n_blaas', label:'Blaas-/darmfunctie (cauda equina screening)', type:'pn'},
+          {id:'n_babinski', label:'Babinski reflex', type:'pn_bevinding', info:'Positief = UMN lesie'},
+        ]
+      },
+      {
+        id: 's_conclusie',
+        titel: 'Conclusie & Behandelplan',
+        velden: [
+          {id:'c_diagnose', label:'Werkhypothese / diagnose', type:'tekst_groot', placeholder:'bijv. LRS L5-S1 links, NSLBP, SIG disfunctie...'},
+          {id:'c_classificatie', label:'Classificatie (indien van toepassing)', type:'tekst', placeholder:'bijv. McKenzie: extensieprobleem / lateraal syndroom...'},
+          {id:'c_bijkomend', label:'Bijkomende bevindingen', type:'tekst', placeholder:'bijv. heupflexorverkorting, SI-disfunctie, FABERE positief...'},
+          {id:'c_behandeling', label:'Behandelplan', type:'tekst_groot', placeholder:'Manuele therapie, McKenzie, motor control, EDU...'},
+          {id:'c_herevaluatie', label:'Herevaluatie gepland', type:'tekst', placeholder:'Datum / criteria...'},
+          {id:'c_doorverwijzing', label:'Doorverwijzing / rode vlaggen actie', type:'tekst', placeholder:'Neuroloog / orthopedie / huisarts / geen...'},
+        ]
+      }
+    ]
+  },
+
+  knie: {
+    id: 'knie',
+    titel: 'Klinisch Onderzoek — Knie',
+    regio: 'Kniegewricht',
+    color: '#22d3ee',
+    secties: [
+      {
+        id: 's_inspectie',
+        titel: 'Inspectie',
+        velden: [
+          {id:'ins_axes', label:'Asafwijking', type:'keuze3', opties:['Normaal','Varus (O-benen)','Valgus (X-benen)']},
+          {id:'ins_zwelling', label:'Zwelling / effusie', type:'keuze3', opties:['Geen','Lichte effusie','Matige effusie','Ernstige effusie','Extraarticulair']},
+          {id:'ins_atrofie', label:'Quadricepsatrofie', type:'keuze3', opties:['Geen','Licht','Matig — omtrekmeting links/rechts']},
+          {id:'ins_omtrek', label:'Omtrekmeting (10 cm boven knieschijf)', type:'tekst', placeholder:'Links: ... cm / Rechts: ... cm'},
+          {id:'ins_patella', label:'Patella positie', type:'keuze3', opties:['Normaal','Alta','Baja','Laterale tilt','Mediaal verschoven']},
+          {id:'ins_litteken', label:'Littekens / huidafwijkingen', type:'tekst', placeholder:'Beschrijf indien aanwezig...'},
+        ]
+      },
+      {
+        id: 's_palpatie',
+        titel: 'Palpatie',
+        velden: [
+          {id:'pal_jl_med', label:'Mediale gewrichtsspleet', type:'pn'},
+          {id:'pal_jl_lat', label:'Laterale gewrichtsspleet', type:'pn'},
+          {id:'pal_mcl', label:'MCL (mediaal collateraal ligament)', type:'pn'},
+          {id:'pal_lcl', label:'LCL (lateraal collateraal ligament)', type:'pn'},
+          {id:'pal_patella', label:'Patella — randen / onderpool', type:'pn'},
+          {id:'pal_patellapees', label:'Patellapees (apex — tibiatuberositas)', type:'pn'},
+          {id:'pal_quad', label:'Quadricepspees', type:'pn'},
+          {id:'pal_hoffa', label:'Hoffa vetlichaam (infrapatellair)', type:'pn'},
+          {id:'pal_pes', label:'Pes anserinus', type:'pn'},
+          {id:'pal_popliteus', label:'Popliteale fossa', type:'pn'},
+          {id:'pal_itb', label:'IT-band (Gerdy tubercle)', type:'pn'},
+          {id:'pal_effusie_patella', label:'Patelladans (effusie)', type:'pn_bevinding', info:'Positief bij > 10ml intraarticuair vocht'},
+          {id:'pal_bulge', label:'Bulge sign (kleine effusie)', type:'pn_bevinding', info:'Veeg mediaal, druk lateraal — golf mediaal = positief'},
+        ]
+      },
+      {
+        id: 's_rom',
+        titel: 'Actieve & Passieve ROM (graden)',
+        velden: [
+          {id:'rom_ext_act', label:'Actieve extensie', type:'rom', norm:'0°'},
+          {id:'rom_flex_act', label:'Actieve flexie', type:'rom', norm:'135–140°'},
+          {id:'rom_ext_pas', label:'Passieve extensie / hyperextensie', type:'rom', norm:'0–5°'},
+          {id:'rom_flex_pas', label:'Passieve flexie', type:'rom', norm:'140–150°'},
+          {id:'rom_ext_lag', label:'Extensielag (onvermogen actief te strekken)', type:'tekst', placeholder:'Graden extensielag indien aanwezig...'},
+          {id:'rom_pijn', label:'Pijnlijk traject', type:'tekst', placeholder:'Arc of pain, eindgevoel, kapsel/leguard...'},
+        ]
+      },
+      {
+        id: 's_weerstand',
+        titel: 'Weerstandstesten (MRC 0–5)',
+        velden: [
+          {id:'w_quad', label:'Quadriceps (extensie)', type:'mrc'},
+          {id:'w_ham', label:'Hamstrings (flexie)', type:'mrc'},
+          {id:'w_glut_med', label:'Gluteus medius (heupabductie)', type:'mrc'},
+          {id:'w_gastroc', label:'Gastrocnemius / kuit', type:'mrc'},
+          {id:'w_lsi_quad', label:'LSI Quadriceps (indien gemeten)', type:'tekst', placeholder:'bijv. 82% bij isokinetisch / 5RM test...'},
+          {id:'w_lsi_ham', label:'LSI Hamstrings (indien gemeten)', type:'tekst', placeholder:'...'},
+        ]
+      },
+      {
+        id: 's_ortho',
+        titel: 'Specifieke Orthopedische Testen',
+        velden: [
+          {id:'t_lachmans', label:'Lachman test (VKB)', type:'pn_bevinding', info:'Knie 20–30° flexie, anterieure schuif tibia. Eindgevoel: hard/zacht'},
+          {id:'t_ant_drawer', label:'Anterior drawer test (VKB)', type:'pn_bevinding', info:'90° flexie, anterieure translatie tibia'},
+          {id:'t_pivot', label:'Pivot shift test (VKB rotatie-instabiliteit)', type:'pn_bevinding', info:'Valgus + interne rotatie + extensie → subluxatie'},
+          {id:'t_post_drawer', label:'Posterior drawer test (AKB)', type:'pn_bevinding', info:'90° flexie, posterieure translatie tibia'},
+          {id:'t_valgus_stress', label:'Valgus stress test MCL (0° en 30°)', type:'pn_bevinding', info:'Bij 30° = geïsoleerd MCL, bij 0° = ook AKB/ACL'},
+          {id:'t_varus_stress', label:'Varus stress test LCL (0° en 30°)', type:'pn_bevinding', info:'Opening lateraal = LCL insufficiëntie'},
+          {id:'t_mcmurray', label:'McMurray test (meniscus)', type:'pn_bevinding', info:'Rotatie + extensie vanuit flexie. Klik/pijn = positief'},
+          {id:'t_apley', label:'Apley grind test (meniscus)', type:'pn_bevinding', info:'Buiklig 90° flexie, compressie + rotatie'},
+          {id:'t_thessaly', label:'Thessaly test (meniscus)', type:'pn_bevinding', info:'Éénbeenstand 20° knieflexie, rotatie van het lichaam'},
+          {id:'t_clarke', label:'Clarke test / patellar grind (PFPS)', type:'pn_bevinding', info:'Druk op patella, quad aanspannen'},
+          {id:'t_slds', label:'Single leg decline squat SLDS (patellapees)', type:'pn_bevinding', info:'25° helling, 60° flexie. Pijn apex = positief'},
+          {id:'t_ober', label:'Ober test (IT-band)', type:'pn_bevinding', info:'Zijlig, abductie-extensie heup, laat been zakken'},
+          {id:'t_noble', label:'Noble compression test (ITBS)', type:'pn_bevinding', info:'Druk 3 cm boven laterale epicondyl bij 30° flexie'},
+          {id:'t_dial', label:'Dial test posterolateraal (30° en 90°)', type:'pn_bevinding', info:'Externe tibia rotatie in buiklig. > 10° asymmetrie = PLC'},
+          {id:'t_squat_line', label:'Single leg squat — knietracking', type:'pn_bevinding', info:'Valgus neiging, pijn, compensatie observeren'},
+        ]
+      },
+      {
+        id: 's_neuro',
+        titel: 'Neurologisch Onderzoek',
+        velden: [
+          {id:'n_sens_med', label:'Sensibiliteit mediaal onderbeen (n. saphenus)', type:'pn'},
+          {id:'n_sens_lat', label:'Sensibiliteit lateraal onderbeen (n. peroneus)', type:'pn'},
+          {id:'n_sens_dors', label:'Sensibiliteit dorsum voet', type:'pn'},
+          {id:'n_patella', label:'Patellareflex (L3–L4)', type:'reflex'},
+          {id:'n_achilles', label:'Achillesreflex (S1)', type:'reflex'},
+          {id:'n_quad_kracht', label:'Kracht quadriceps (L3–L4)', type:'mrc'},
+          {id:'n_dors_kracht', label:'Kracht dorsaalflexie (L4–L5)', type:'mrc'},
+        ]
+      },
+      {
+        id: 's_conclusie',
+        titel: 'Conclusie & Behandelplan',
+        velden: [
+          {id:'c_diagnose', label:'Werkhypothese / diagnose', type:'tekst_groot', placeholder:'bijv. VKB-ruptuur links, mediale meniscuslaesie, PFPS rechts...'},
+          {id:'c_structuren', label:'Betrokken structuren', type:'tekst', placeholder:'bijv. VKB + mediale meniscus (terrible triad)...'},
+          {id:'c_stadium', label:'Stadium / graad', type:'tekst', placeholder:'bijv. graad II MCL, reactieve tendinopathie...'},
+          {id:'c_behandeling', label:'Behandelplan', type:'tekst_groot', placeholder:'Conservatief / chirurgisch overleg / protocol...'},
+          {id:'c_herevaluatie', label:'Herevaluatie gepland', type:'tekst', placeholder:'Datum / criteria...'},
+          {id:'c_doorverwijzing', label:'Doorverwijzing', type:'tekst', placeholder:'Orthopedie / revalidatiearts / geen...'},
+        ]
+      }
+    ]
+  },
+
+  schouder: {
+    id: 'schouder',
+    titel: 'Klinisch Onderzoek — Schouder',
+    regio: 'Schoudergewricht / RC / AC-gewricht',
+    color: '#f43f5e',
+    secties: [
+      {
+        id: 's_inspectie',
+        titel: 'Inspectie',
+        velden: [
+          {id:'ins_sym', label:'Schoudersymmetrie', type:'keuze3', opties:['Symmetrisch','Links hoger','Rechts hoger']},
+          {id:'ins_scap', label:'Scapulapositie / winging', type:'keuze3', opties:['Normaal','Mediale winging','Laterale winging','Verhoogd','Verlaagd','Protractie']},
+          {id:'ins_atrofie', label:'Spieratrofie', type:'tekst', placeholder:'Supra/infraspinatus, deltoid, trapezius...'},
+          {id:'ins_zwelling', label:'Zwelling / deformiteit', type:'tekst', placeholder:'AC-gewricht, anterieur, posterolateraal...'},
+          {id:'ins_litteken', label:'Littekens', type:'tekst', placeholder:'Anterieur / lateraal / posterieur...'},
+        ]
+      },
+      {
+        id: 's_palpatie',
+        titel: 'Palpatie',
+        velden: [
+          {id:'pal_ac', label:'AC-gewricht', type:'pn'},
+          {id:'pal_sc', label:'SC-gewricht', type:'pn'},
+          {id:'pal_acr', label:'Anterieur acromion / subacromiale ruimte', type:'pn'},
+          {id:'pal_gc', label:'Anterieur GH-gewricht', type:'pn'},
+          {id:'pal_supraspinatus', label:'Supraspinatus insertie (G. tubercule)', type:'pn'},
+          {id:'pal_infraspinatus', label:'Infraspinatus insertie', type:'pn'},
+          {id:'pal_subscap', label:'Subscapularis (anterieur bij rotatie)', type:'pn'},
+          {id:'pal_bicep', label:'Lange bicepspees (sulcus bicipitalis)', type:'pn'},
+          {id:'pal_corac', label:'Coracoid process', type:'pn'},
+          {id:'pal_trap', label:'Trapezius / levator scapulae', type:'pn'},
+          {id:'pal_warmte', label:'Lokale warmte', type:'pn'},
+        ]
+      },
+      {
+        id: 's_rom',
+        titel: 'Actieve & Passieve ROM (graden)',
+        velden: [
+          {id:'rom_flex_act', label:'Actieve flexie', type:'rom', norm:'0–180°'},
+          {id:'rom_abd_act', label:'Actieve abductie', type:'rom', norm:'0–180°'},
+          {id:'rom_er_act', label:'Actieve exorotatie (0°)', type:'rom', norm:'0–60°'},
+          {id:'rom_ir_act', label:'Actieve endorotatie (achter rug)', type:'tekst', placeholder:'Niveau ruggenwervels, bijv. Th10...'},
+          {id:'rom_flex_pas', label:'Passieve flexie', type:'rom', norm:'0–180°'},
+          {id:'rom_abd_pas', label:'Passieve abductie', type:'rom', norm:'0–180°'},
+          {id:'rom_er_pas', label:'Passieve exorotatie (90° abd)', type:'rom', norm:'0–90°'},
+          {id:'rom_ir_pas', label:'Passieve endorotatie (90° abd)', type:'rom', norm:'0–70°'},
+          {id:'rom_arc', label:'Painful arc (60°–120°)', type:'pn'},
+          {id:'rom_scap', label:'Scapulaire ritme / dyskinese', type:'keuze3', opties:['Normaal','Type I (inferior winging)','Type II (superior tilt verstoord)','Type III (mediale winging)']},
+        ]
+      },
+      {
+        id: 's_weerstand',
+        titel: 'Weerstandstesten (MRC 0–5)',
+        velden: [
+          {id:'w_supraspinatus', label:'Supraspinatus (abductie 90° / empty can)', type:'mrc'},
+          {id:'w_infraspinatus', label:'Infraspinatus (exorotatie 0°)', type:'mrc'},
+          {id:'w_subscap', label:'Subscapularis (endorotatie / lift-off)', type:'mrc'},
+          {id:'w_deltoid', label:'Deltoid (abductie)', type:'mrc'},
+          {id:'w_biceps', label:'Biceps (elleboogflexie)', type:'mrc'},
+          {id:'w_serratus', label:'Serratus anterior (push-up plus)', type:'mrc'},
+          {id:'w_lower_trap', label:'Lower trapezius (Y-positie)', type:'mrc'},
+          {id:'w_er_ir_ratio', label:'ER/IR krachtverhouding (indien gemeten)', type:'tekst', placeholder:'bijv. ER/IR = 0.72 (norm ≥ 0.66)...'},
+        ]
+      },
+      {
+        id: 's_ortho',
+        titel: 'Specifieke Orthopedische Testen',
+        velden: [
+          {id:'t_neer', label:'Neer impingement test', type:'pn_bevinding', info:'Passieve flexie met endorotatie, fixeer scapula'},
+          {id:'t_hawkins', label:'Hawkins-Kennedy test', type:'pn_bevinding', info:'90° flexie + passieve endorotatie = subacromiale provocatie'},
+          {id:'t_empty_can', label:'Empty can test / Jobe (supraspinatus)', type:'pn_bevinding', info:'90° abductie, 30° horizontale flex, duimen naar beneden, weerstand'},
+          {id:'t_full_can', label:'Full can test (supraspinatus kracht)', type:'pn_bevinding', info:'90° abductie, duimen omhoog, weerstand'},
+          {id:'t_drop_arm', label:'Drop arm test (RC ruptuur)', type:'pn_bevinding', info:'Arm laten zakken vanuit 90° abductie. Kan niet = massieve ruptuur'},
+          {id:'t_lag_er', label:'Exorotatielag sign (infraspinatus ruptuur)', type:'pn_bevinding', info:'Passieve ER, loslaten — arm valt terug = lag sign positief'},
+          {id:'t_lag_ir', label:'Lift-off test (subscapularis)', type:'pn_bevinding', info:'Hand achter rug, pushback — kan niet lossen = positief'},
+          {id:'t_belly_press', label:'Belly press test (subscapularis)', type:'pn_bevinding', info:'Druk op buik, elleboog naar voren — endorotatie zwakte'},
+          {id:'t_arc_sign', label:'Arc sign / pain arc 60–120°', type:'pn_bevinding', info:'Pijn in midrange abductie = subacromiale problematiek'},
+          {id:'t_speeds', label:'Speed test (bicepspees lange kop)', type:'pn_bevinding', info:'Elleboog gestrekt, supinatie, weerstand flexie — pijn sulcus'},
+          {id:'t_yergason', label:'Yergason test (bicepspees)', type:'pn_bevinding', info:'Elleboog 90° flexie, supinatie tegen weerstand — pijn sulcus'},
+          {id:'t_obrien', label:"O'Brien test (SLAP / AC-gewricht)", type:'pn_bevinding', info:'90° flex, 15° ADD, endorot (duim naar beneden), weerstand, herhaal supinatie'},
+          {id:'t_ac_cross', label:'Cross-body adductie test (AC-gewricht)', type:'pn_bevinding', info:'Actieve/passieve horizontale adductie — pijn AC = positief'},
+          {id:'t_apprehension', label:'Apprehension test (anterieure instabiliteit)', type:'pn_bevinding', info:'90° abductie + exorotatie — angstgevoel / subluxatiegevoel'},
+          {id:'t_relocation', label:'Relocation test (Jobe)', type:'pn_bevinding', info:'Posterieure druk op humerushoofd bij apprehensie positief'},
+          {id:'t_sulcus', label:'Sulcus sign (inferieure instabiliteit)', type:'pn_bevinding', info:'Tractie arm naar caudaal — sulcus subacromaal'},
+          {id:'t_ant_load', label:'Anterior load and shift test', type:'pn_bevinding', info:'Anterieure vertaling GH-hoofd'},
+          {id:'t_scap_assist', label:'Scapular assistance test', type:'pn_bevinding', info:'Manuele opwaartse rotatie scapula bij abductie — verbetering = scapulaire dysfunctie'},
+        ]
+      },
+      {
+        id: 's_neuro',
+        titel: 'Neurologisch Onderzoek',
+        velden: [
+          {id:'n_c5_sens', label:'Sensibiliteit C5 (laterale bovenarm)', type:'pn'},
+          {id:'n_c6_sens', label:'Sensibiliteit C6 (duim / laterale onderarm)', type:'pn'},
+          {id:'n_axillaris', label:'N. axillaris (laterale deltoid)', type:'pn'},
+          {id:'n_biceps', label:'Bicepsreflex (C5–C6)', type:'reflex'},
+          {id:'n_deltoid_kracht', label:'Kracht deltoid C5', type:'mrc'},
+          {id:'n_biceps_kracht', label:'Kracht biceps C5–C6', type:'mrc'},
+          {id:'n_ultt1', label:'ULTT1 — n. medianus', type:'pn_bevinding', info:'Schouderabductie + elleboogextensie + polsextensie + cervicale contralaterale flex'},
+        ]
+      },
+      {
+        id: 's_conclusie',
+        titel: 'Conclusie & Behandelplan',
+        velden: [
+          {id:'c_diagnose', label:'Werkhypothese / diagnose', type:'tekst_groot', placeholder:'bijv. RC tendinopathie supraspinatus, partiële ATFL ruptuur...'},
+          {id:'c_structuren', label:'Betrokken structuren', type:'tekst', placeholder:'bijv. supraspinatus + subacromiale bursa...'},
+          {id:'c_conservatief', label:'Conservatief / chirurgisch beleid', type:'keuze3', opties:['Conservatief kinesitherapie','Chirurgisch consult aangewezen','Injectie overwegen','Watchful waiting']},
+          {id:'c_behandeling', label:'Behandelplan', type:'tekst_groot', placeholder:'Scapulaire stabilisatie, RC progressie, manuele therapie...'},
+          {id:'c_herevaluatie', label:'Herevaluatie gepland', type:'tekst', placeholder:'Datum / criteria...'},
+          {id:'c_doorverwijzing', label:'Doorverwijzing', type:'tekst', placeholder:'Orthopedie / revalidatiearts / geen...'},
+        ]
+      }
+    ]
+  },
+
+  bekken: {
+    id: 'bekken',
+    titel: 'Klinisch Onderzoek — Bekken & Heup',
+    regio: 'Bekken / SI-gewricht / Heup',
+    color: '#a78bfa',
+    secties: [
+      {
+        id: 's_inspectie',
+        titel: 'Inspectie',
+        velden: [
+          {id:'ins_stand', label:'Bekkenstand (staand)', type:'keuze3', opties:['Symmetrisch','Links hoger','Rechts hoger','Anterieure tilt','Posterieure tilt','Oblieks']},
+          {id:'ins_lumbaal', label:'Lumbale lordose', type:'keuze3', opties:['Normaal','Vergroot','Verminderd']},
+          {id:'ins_sias', label:'SIAS-symmetrie', type:'tekst', placeholder:'Links-rechts verschil in hoogte / diepte...'},
+          {id:'ins_sips', label:'SIPS-symmetrie', type:'tekst', placeholder:'Links-rechts verschil...'},
+          {id:'ins_trendelenburg', label:'Trendelenburg test (staand)', type:'pn_bevinding', info:'Bekken daalt contralateraal = gluteus medius zwakte ipsilateraal'},
+          {id:'ins_looppatroon', label:'Looppatroon', type:'tekst', placeholder:'Antalgisch, Trendelenburg, beenlengteverschil...'},
+          {id:'ins_beenlengte', label:'Beenlengteverschil (klinisch)', type:'tekst', placeholder:'SIAS–mediale malleolus links: ...cm / rechts: ...cm'},
+        ]
+      },
+      {
+        id: 's_palpatie',
+        titel: 'Palpatie',
+        velden: [
+          {id:'pal_sias_l', label:'SIAS links', type:'pn'},
+          {id:'pal_sias_r', label:'SIAS rechts', type:'pn'},
+          {id:'pal_sips_l', label:'SIPS links', type:'pn'},
+          {id:'pal_sips_r', label:'SIPS rechts', type:'pn'},
+          {id:'pal_pubis', label:'Symphysis pubis', type:'pn'},
+          {id:'pal_ischium', label:'Tuberositas ischii', type:'pn'},
+          {id:'pal_trochanter', label:'Trochanter major (bursa)', type:'pn'},
+          {id:'pal_lig_inguinal', label:'Liesband / inguinale regio', type:'pn'},
+          {id:'pal_piriformis', label:'Piriformis (diep gluteaal)', type:'pn'},
+          {id:'pal_tfl', label:'TFL / IT-band', type:'pn'},
+          {id:'pal_add', label:'Adductoren (insertie pubis)', type:'pn'},
+          {id:'pal_hamstring', label:'Hamstrings (proximale insertie)', type:'pn'},
+        ]
+      },
+      {
+        id: 's_rom',
+        titel: 'Heup ROM (graden)',
+        velden: [
+          {id:'rom_flex_l', label:'Flexie links', type:'rom', norm:'0–125°'},
+          {id:'rom_flex_r', label:'Flexie rechts', type:'rom', norm:'0–125°'},
+          {id:'rom_ext_l', label:'Extensie links', type:'rom', norm:'0–20°'},
+          {id:'rom_ext_r', label:'Extensie rechts', type:'rom', norm:'0–20°'},
+          {id:'rom_abd_l', label:'Abductie links', type:'rom', norm:'0–45°'},
+          {id:'rom_abd_r', label:'Abductie rechts', type:'rom', norm:'0–45°'},
+          {id:'rom_add_l', label:'Adductie links', type:'rom', norm:'0–30°'},
+          {id:'rom_add_r', label:'Adductie rechts', type:'rom', norm:'0–30°'},
+          {id:'rom_er_l', label:'Exorotatie links (90° flexie)', type:'rom', norm:'0–45°'},
+          {id:'rom_er_r', label:'Exorotatie rechts', type:'rom', norm:'0–45°'},
+          {id:'rom_ir_l', label:'Endorotatie links (90° flexie)', type:'rom', norm:'0–45°'},
+          {id:'rom_ir_r', label:'Endorotatie rechts', type:'rom', norm:'0–45°'},
+          {id:'rom_pijn', label:'Pijnlijk traject / eindgevoel', type:'tekst', placeholder:'Kapsel / spier / pijn + richting...'},
+        ]
+      },
+      {
+        id: 's_weerstand',
+        titel: 'Weerstandstesten (MRC 0–5)',
+        velden: [
+          {id:'w_glut_max_l', label:'Gluteus maximus links (extensie)', type:'mrc'},
+          {id:'w_glut_max_r', label:'Gluteus maximus rechts', type:'mrc'},
+          {id:'w_glut_med_l', label:'Gluteus medius links (abductie)', type:'mrc'},
+          {id:'w_glut_med_r', label:'Gluteus medius rechts', type:'mrc'},
+          {id:'w_add_l', label:'Adductoren links', type:'mrc'},
+          {id:'w_add_r', label:'Adductoren rechts', type:'mrc'},
+          {id:'w_hip_flex_l', label:'Heupflexoren links (iliopsoas)', type:'mrc'},
+          {id:'w_hip_flex_r', label:'Heupflexoren rechts', type:'mrc'},
+          {id:'w_er_l', label:'Exorotatoren links (piriformis)', type:'mrc'},
+          {id:'w_er_r', label:'Exorotatoren rechts', type:'mrc'},
+        ]
+      },
+      {
+        id: 's_ortho',
+        titel: 'Specifieke Orthopedische Testen',
+        velden: [
+          {id:'t_fabere', label:'FABERE / Patrick test', type:'pn_bevinding', info:'Heup in F-AB-ER-E positie, druk op knie — SI of heup'},
+          {id:'t_fadir', label:'FADIR test (impingement heup)', type:'pn_bevinding', info:'Flexie 90° + Adductie + Interne rotatie — anterolaterale heuppijn'},
+          {id:'t_thomas', label:'Thomas test (heupflexor contractuur)', type:'pn_bevinding', info:'Ruglig, knie naar borst, andere been — vlakt niet = contractuur'},
+          {id:'t_ely', label:'Ely test (rectus femoris contractuur)', type:'pn_bevinding', info:'Buiklig, knie buigen — heup komt van tafel = positief'},
+          {id:'t_ober', label:'Ober test (TFL/ITB contractuur)', type:'pn_bevinding', info:'Zijlig, heup in abductie-extensie, laten zakken — kan niet = contractuur'},
+          {id:'t_sacral_thrust', label:'Sacral thrust test (SI)', type:'pn_bevinding', info:'Buiklig, druk op sacrum'},
+          {id:'t_compression', label:'SI-compressietest', type:'pn_bevinding', info:'Zijlig, druk op os ilium naar mediaal'},
+          {id:'t_distraction', label:'SI-distractietest', type:'pn_bevinding', info:'Ruglig, druk SIAS van elkaar'},
+          {id:'t_gaenslen', label:'Gaenslen test', type:'pn_bevinding', info:'Heup hyperextensie aan tafeleinde, andere knie naar borst'},
+          {id:'t_thigh_thrust', label:'Thigh thrust test (SI)', type:'pn_bevinding', info:'Ruglig, heup 90°, axiale druk door femur'},
+          {id:'t_hip_scour', label:'Hip scour test (heupgewricht)', type:'pn_bevinding', info:'Circulaire beweging heup onder axiale belasting'},
+          {id:'t_hip_log_roll', label:'Log roll test (heupgewricht)', type:'pn_bevinding', info:'Ruglig, interne + externe rotatie zonder gewicht — pijn = GH-gewricht'},
+          {id:'t_trendelenburg', label:'Trendelenburg test (GMed)', type:'pn_bevinding', info:'Eénbeenstand — bekken daalt contralateraal = positief'},
+          {id:'t_piriformis', label:'Piriformis stretch test', type:'pn_bevinding', info:'Ruglig, flexie + ADD + IR heup — diep gluteaal pijn / uitstraling'},
+          {id:'t_adductor', label:'Adductor squeeze test', type:'pn_bevinding', info:'Ruglig, benen licht gebogen, samenknijpen been — liesgebied'},
+          {id:'t_active_slr', label:'Active SLR test (bekkengordel)', type:'pn_bevinding', info:'Been optillen in ruglig — pijn / zwaartegevoel bekken = positief'},
+        ]
+      },
+      {
+        id: 's_neuro',
+        titel: 'Neurologisch Onderzoek',
+        velden: [
+          {id:'n_l2_sens', label:'Sensibiliteit L2 (anterieur bovenbeen)', type:'pn'},
+          {id:'n_l3_sens', label:'Sensibiliteit L3 (mediaal bovenbeen)', type:'pn'},
+          {id:'n_l4_sens', label:'Sensibiliteit L4 (mediaal onderbeen)', type:'pn'},
+          {id:'n_l5_sens', label:'Sensibiliteit L5 (grote teen / dorsum voet)', type:'pn'},
+          {id:'n_s1_sens', label:'Sensibiliteit S1 (laterale voetrand)', type:'pn'},
+          {id:'n_perineum', label:'Perineale sensibiliteit (S2–S4)', type:'pn'},
+          {id:'n_patella', label:'Patellareflex (L3–L4)', type:'reflex'},
+          {id:'n_achilles', label:'Achillesreflex (S1)', type:'reflex'},
+          {id:'n_slr', label:'SLR test (ischiadicus)', type:'pn_bevinding', info:'Uitstraling bij < 60° = radiculopathie'},
+          {id:'n_femoral_stretch', label:'Femoral nerve stretch (L2–L4)', type:'pn_bevinding', info:'Buiklig, knie gebogen + heupextensie — anterieure uitstraling'},
+        ]
+      },
+      {
+        id: 's_conclusie',
+        titel: 'Conclusie & Behandelplan',
+        velden: [
+          {id:'c_diagnose', label:'Werkhypothese / diagnose', type:'tekst_groot', placeholder:'bijv. SIG disfunctie links, coxartrose, lieskanaalproblematiek...'},
+          {id:'c_structuren', label:'Betrokken structuren', type:'tekst', placeholder:'bijv. SI-gewricht + piriformis + GMed...'},
+          {id:'c_behandeling', label:'Behandelplan', type:'tekst_groot', placeholder:'Manuele therapie SI, stabilisatie bekken, heupkracht...'},
+          {id:'c_herevaluatie', label:'Herevaluatie gepland', type:'tekst', placeholder:'Datum / criteria...'},
+          {id:'c_doorverwijzing', label:'Doorverwijzing', type:'tekst', placeholder:'Gynaecoloog / orthopedie / revalidatiearts / geen...'},
+        ]
+      }
+    ]
+  }
+};
+
+
 // ── STATE FORMULIEREN ──
 let activeForm = null;
 let activeFormPatId = null;
@@ -2572,9 +3163,259 @@ function saveAndPrintForm() {
 }
 
 
+
+// ── EVAL FORM STATE ──
+let activeEvalForm = null;
+let activeEvalPatId = null;
+let evalAnswers = {};
+
+// ── EVAL FORM OPENEN ──
+function openEvalForm(formId, patId) {
+  const form = EVAL_FORMS[formId];
+  if(!form) return;
+  activeEvalForm = formId;
+  activeEvalPatId = patId || null;
+  evalAnswers = {};
+  const pts = loadPatients();
+  const pt = patId ? pts.find(p => p.id === patId) : null;
+  const datum = new Date().toLocaleDateString('nl-BE',{day:'2-digit',month:'2-digit',year:'numeric'});
+  document.getElementById('eval-modal-title').textContent = form.titel;
+  renderEvalFormBody(form, pt, datum);
+  document.getElementById('eval-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeEvalForm() {
+  document.getElementById('eval-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function renderEvalFormBody(form, pt, datum) {
+  const color = form.color;
+  let html = '';
+  // Header
+  html += '<div style="background:' + color + '15;border:1px solid ' + color + '33;border-radius:8px;padding:12px 16px;margin-bottom:16px;">';
+  html += '<div style="font-size:13px;font-weight:700;color:' + color + '">' + form.regio + '</div>';
+  if(pt) html += '<div style="font-size:11px;color:var(--muted);font-family:Geist Mono,monospace;margin-top:2px">Patiënt: <strong style="color:var(--text)">' + pt.name + '</strong> · ' + datum + '</div>';
+  else html += '<div style="font-size:11px;color:var(--muted);font-family:Geist Mono,monospace;margin-top:2px">' + datum + '</div>';
+  html += '</div>';
+  // Sections
+  form.secties.forEach(sectie => {
+    html += '<div style="margin-bottom:18px;">';
+    html += '<div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);font-family:Geist Mono,monospace;font-weight:700;margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid var(--border)">' + sectie.titel + '</div>';
+    sectie.velden.forEach(veld => {
+      html += renderEvalVeld(veld, form.id);
+    });
+    html += '</div>';
+  });
+  document.getElementById('eval-modal-body').innerHTML = html;
+}
+
+function renderEvalVeld(veld, formId) {
+  let html = '<div style="margin-bottom:10px;" id="evalveld-' + veld.id + '">';
+  html += '<div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:4px;">' + veld.label;
+  if(veld.info) html += ' <span style="font-size:10px;color:var(--muted);font-weight:400;font-style:italic">— ' + veld.info + '</span>';
+  if(veld.norm) html += ' <span style="font-size:10px;color:var(--muted2);font-family:Geist Mono,monospace;margin-left:4px">norm: ' + veld.norm + '</span>';
+  html += '</div>';
+
+  if(veld.type === 'pn') {
+    // Positief / Negatief / Niet getest
+    html += '<div style="display:flex;gap:6px;">';
+    ['Negatief','Positief','Niet getest'].forEach(opt => {
+      const bg = opt === 'Positief' ? 'rgba(239,68,68,.1)' : opt === 'Negatief' ? 'rgba(34,197,94,.1)' : 'var(--surface2)';
+      const bc = opt === 'Positief' ? 'rgba(239,68,68,.3)' : opt === 'Negatief' ? 'rgba(34,197,94,.3)' : 'var(--border)';
+      const col = opt === 'Positief' ? '#ef4444' : opt === 'Negatief' ? '#22c55e' : 'var(--muted)';
+      html += '<button onclick="setEvalAnswer(\'' + formId + '\',\'' + veld.id + '\',\'' + opt + '\')" id="evbtn-' + veld.id + '-' + opt.replace(/ /g,'_') + '" style="flex:1;padding:6px 4px;border-radius:5px;border:1px solid ' + bc + ';background:' + bg + ';color:' + col + ';font-size:11px;font-weight:600;cursor:pointer;font-family:Geist,sans-serif;transition:opacity .1s;">' + opt + '</button>';
+    });
+    html += '</div>';
+  } else if(veld.type === 'pn_bevinding') {
+    html += '<div style="display:flex;gap:6px;margin-bottom:5px;">';
+    ['Negatief','Positief','Niet getest'].forEach(opt => {
+      const bg = opt === 'Positief' ? 'rgba(239,68,68,.1)' : opt === 'Negatief' ? 'rgba(34,197,94,.1)' : 'var(--surface2)';
+      const bc = opt === 'Positief' ? 'rgba(239,68,68,.3)' : opt === 'Negatief' ? 'rgba(34,197,94,.3)' : 'var(--border)';
+      const col = opt === 'Positief' ? '#ef4444' : opt === 'Negatief' ? '#22c55e' : 'var(--muted)';
+      html += '<button onclick="setEvalAnswer(\'' + formId + '\',\'' + veld.id + '\',\'' + opt + '\')" id="evbtn-' + veld.id + '-' + opt.replace(/ /g,'_') + '" style="flex:1;padding:6px 4px;border-radius:5px;border:1px solid ' + bc + ';background:' + bg + ';color:' + col + ';font-size:11px;font-weight:600;cursor:pointer;font-family:Geist,sans-serif;">' + opt + '</button>';
+    });
+    html += '</div>';
+    html += '<input type="text" id="evtxt-' + veld.id + '" placeholder="Bevinding / opmerking..." onchange="setEvalAnswerTxt(\'' + formId + '\',\'' + veld.id + '_bevinding\',this.value)" style="width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:5px 10px;color:var(--text);font-family:Geist,sans-serif;font-size:12px;outline:none;">';
+  } else if(veld.type === 'pn_graden') {
+    html += '<div style="display:flex;gap:6px;margin-bottom:5px;">';
+    ['Negatief','Positief','Niet getest'].forEach(opt => {
+      const bg = opt === 'Positief' ? 'rgba(239,68,68,.1)' : opt === 'Negatief' ? 'rgba(34,197,94,.1)' : 'var(--surface2)';
+      const bc = opt === 'Positief' ? 'rgba(239,68,68,.3)' : opt === 'Negatief' ? 'rgba(34,197,94,.3)' : 'var(--border)';
+      const col = opt === 'Positief' ? '#ef4444' : opt === 'Negatief' ? '#22c55e' : 'var(--muted)';
+      html += '<button onclick="setEvalAnswer(\'' + formId + '\',\'' + veld.id + '\',\'' + opt + '\')" id="evbtn-' + veld.id + '-' + opt.replace(/ /g,'_') + '" style="flex:1;padding:6px 4px;border-radius:5px;border:1px solid ' + bc + ';background:' + bg + ';color:' + col + ';font-size:11px;font-weight:600;cursor:pointer;font-family:Geist,sans-serif;">' + opt + '</button>';
+    });
+    html += '</div>';
+    html += '<input type="text" id="evtxt-' + veld.id + '" placeholder="° graden / details..." onchange="setEvalAnswerTxt(\'' + formId + '\',\'' + veld.id + '_detail\',this.value)" style="width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:5px 10px;color:var(--text);font-family:Geist,sans-serif;font-size:12px;outline:none;">';
+  } else if(veld.type === 'rom') {
+    html += '<div style="display:flex;gap:8px;align-items:center;">';
+    html += '<input type="number" min="0" max="360" placeholder="°" onchange="setEvalAnswerTxt(\'' + formId + '\',\'' + veld.id + '\',this.value+\'°\')" style="width:80px;background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:5px 10px;color:var(--text);font-family:Geist Mono,sans-serif;font-size:12px;outline:none;">';
+    html += '<span style="font-size:11px;color:var(--muted)">graden</span>';
+    ['Pijnvrij','Pijn bij eindstand','Pijn in traject','Beperkt'].forEach(opt => {
+      html += '<button onclick="setEvalAnswer(\'' + formId + '\',\'' + veld.id + '_kwal\',\'' + opt + '\')" id="evbtn-' + veld.id + '-' + opt.replace(/ /g,'_') + '" style="flex:1;padding:4px 6px;border-radius:5px;border:1px solid var(--border);background:var(--surface2);color:var(--muted);font-size:10px;cursor:pointer;font-family:Geist,sans-serif;">' + opt + '</button>';
+    });
+    html += '</div>';
+  } else if(veld.type === 'mrc') {
+    html += '<div style="display:flex;gap:4px;">';
+    ['0','1','2','3','4','5'].forEach(score => {
+      const labels = {0:'0\nGeen',1:'1\nTrace',2:'2\nGrav',3:'3\nAnti-grav',4:'4\nWeerstand',5:'5\nNormaal'};
+      html += '<button onclick="setEvalAnswer(\'' + formId + '\',\'' + veld.id + '\',\'' + score + '\')" id="evbtn-' + veld.id + '-' + score + '" style="flex:1;padding:4px 2px;border-radius:5px;border:1px solid var(--border);background:var(--surface2);color:var(--muted);font-size:10px;cursor:pointer;font-family:Geist Mono,monospace;line-height:1.2;white-space:pre;">' + labels[score] + '</button>';
+    });
+    html += '</div>';
+  } else if(veld.type === 'reflex') {
+    html += '<div style="display:flex;gap:6px;">';
+    ['Normaal (++)','Versterkt (+++/++++)','Verminderd (+)','Afwezig (0)','Niet getest'].forEach(opt => {
+      const key = opt.replace(/[^a-z0-9]/gi,'_');
+      html += '<button onclick="setEvalAnswer(\'' + formId + '\',\'' + veld.id + '\',\'' + opt + '\')" id="evbtn-' + veld.id + '-' + key + '" style="flex:1;padding:5px 3px;border-radius:5px;border:1px solid var(--border);background:var(--surface2);color:var(--muted);font-size:10px;cursor:pointer;font-family:Geist,sans-serif;">' + opt + '</button>';
+    });
+    html += '</div>';
+  } else if(veld.type === 'keuze3') {
+    html += '<div style="display:flex;flex-wrap:wrap;gap:5px;">';
+    veld.opties.forEach(opt => {
+      const key = opt.replace(/[^a-z0-9]/gi,'_');
+      html += '<button onclick="setEvalAnswer(\'' + formId + '\',\'' + veld.id + '\',\'' + opt + '\')" id="evbtn-' + veld.id + '-' + key + '" style="padding:5px 10px;border-radius:5px;border:1px solid var(--border);background:var(--surface2);color:var(--muted);font-size:11px;cursor:pointer;font-family:Geist,sans-serif;">' + opt + '</button>';
+    });
+    html += '</div>';
+  } else if(veld.type === 'tekst') {
+    html += '<input type="text" placeholder="' + (veld.placeholder||'') + '" onchange="setEvalAnswerTxt(\'' + formId + '\',\'' + veld.id + '\',this.value)" style="width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:7px 10px;color:var(--text);font-family:Geist,sans-serif;font-size:12px;outline:none;">';
+  } else if(veld.type === 'tekst_groot') {
+    html += '<textarea placeholder="' + (veld.placeholder||'') + '" onchange="setEvalAnswerTxt(\'' + formId + '\',\'' + veld.id + '\',this.value)" style="width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:7px 10px;color:var(--text);font-family:Geist,sans-serif;font-size:12px;outline:none;min-height:70px;resize:vertical;"></textarea>';
+  }
+  html += '</div>';
+  return html;
+}
+
+function setEvalAnswer(formId, veldId, waarde) {
+  evalAnswers[veldId] = waarde;
+  // Visual feedback - highlight active button
+  const prefix = 'evbtn-' + veldId + '-';
+  document.querySelectorAll('[id^="' + prefix + '"]').forEach(btn => {
+    const isActive = btn.id === prefix + waarde.replace(/ /g,'_').replace(/[^a-z0-9_]/gi,'_');
+    btn.style.background = isActive ? (waarde==='Positief'?'rgba(239,68,68,.25)':waarde==='Negatief'?'rgba(34,197,94,.25)':'var(--surface3)') : '';
+    btn.style.color = isActive ? (waarde==='Positief'?'#ef4444':waarde==='Negatief'?'#22c55e':'var(--text)') : '';
+    btn.style.borderColor = isActive ? (waarde==='Positief'?'rgba(239,68,68,.5)':waarde==='Negatief'?'rgba(34,197,94,.5)':'var(--border2)') : '';
+  });
+}
+function setEvalAnswerTxt(formId, veldId, waarde) {
+  evalAnswers[veldId] = waarde;
+}
+
+function printEvalForm() {
+  const form = EVAL_FORMS[activeEvalForm];
+  if(!form) return;
+  const pts = loadPatients();
+  const pt = activeEvalPatId ? pts.find(p => p.id === activeEvalPatId) : null;
+  const datum = new Date().toLocaleDateString('nl-BE',{day:'2-digit',month:'2-digit',year:'numeric'});
+  let html = '<h1>' + form.titel + '</h1>';
+  html += '<div class="pf-meta">Regio: ' + form.regio + (pt ? ' · Patiënt: ' + pt.name : '') + ' · ' + datum + '</div>';
+  form.secties.forEach(sectie => {
+    html += '<h2>' + sectie.titel + '</h2>';
+    sectie.velden.forEach(veld => {
+      const ans = evalAnswers[veld.id];
+      const ansBev = evalAnswers[veld.id + '_bevinding'];
+      const ansDetail = evalAnswers[veld.id + '_detail'];
+      const ansKwal = evalAnswers[veld.id + '_kwal'];
+      let antwoord = ans || '_______________';
+      if(ansBev) antwoord += ' — ' + ansBev;
+      if(ansDetail) antwoord += ' (' + ansDetail + '°)';
+      if(ansKwal) antwoord += ' · ' + ansKwal;
+      const kleur = ans === 'Positief' ? '#dc2626' : ans === 'Negatief' ? '#16a34a' : '#374151';
+      html += '<div class="pf-ex" style="border-bottom:1px solid #e5e7eb;padding:5px 0;">';
+      html += '<div class="pf-ex-name" style="font-weight:600;font-size:12px;flex:1;">' + veld.label + '</div>';
+      html += '<div style="font-size:11px;color:' + kleur + ';font-weight:' + (ans?'700':'400') + ';min-width:160px;text-align:right;">' + antwoord + '</div>';
+      html += '</div>';
+    });
+  });
+  html += '<div class="pf-footer">KineProtocol · Klinisch Evaluatieformulier · ' + datum + '</div>';
+  document.getElementById('print-fiche').innerHTML = html;
+  closeEvalForm();
+  setTimeout(() => window.print(), 100);
+}
+
+function printBlankEvalForm(formId) {
+  const form = EVAL_FORMS[formId];
+  if(!form) return;
+  const datum = new Date().toLocaleDateString('nl-BE',{day:'2-digit',month:'2-digit',year:'numeric'});
+  let html = '<h1>' + form.titel + '</h1>';
+  html += '<div class="pf-meta">Patiënt: _________________________ &nbsp;&nbsp; Datum: _________________ &nbsp;&nbsp; Kinesist: _________________</div>';
+  form.secties.forEach(sectie => {
+    html += '<h2>' + sectie.titel + '</h2>';
+    sectie.velden.forEach(veld => {
+      html += '<div class="pf-ex" style="border-bottom:1px solid #e5e7eb;padding:5px 0;min-height:26px;">';
+      html += '<div class="pf-ex-name" style="font-weight:600;font-size:12px;flex:1;">' + veld.label;
+      if(veld.info) html += '<br><span style="font-weight:400;font-size:10px;color:#6b7280;font-style:italic">' + veld.info + '</span>';
+      if(veld.norm) html += '<span style="font-weight:400;font-size:10px;color:#9ca3af;margin-left:6px">norm: ' + veld.norm + '</span>';
+      html += '</div>';
+      if(veld.type === 'pn' || veld.type === 'pn_bevinding' || veld.type === 'pn_graden') {
+        html += '<div style="display:flex;gap:12px;align-items:center;font-size:11px;">';
+        html += '<label style="display:flex;align-items:center;gap:4px;"><input type="checkbox"> Negatief</label>';
+        html += '<label style="display:flex;align-items:center;gap:4px;"><input type="checkbox"> Positief</label>';
+        html += '<label style="display:flex;align-items:center;gap:4px;"><input type="checkbox"> Niet getest</label>';
+        html += '<span style="flex:1;border-bottom:1px solid #d1d5db;margin-left:8px;">&nbsp;</span>';
+        html += '</div>';
+      } else if(veld.type === 'rom') {
+        html += '<div style="display:flex;gap:8px;align-items:center;font-size:11px;">';
+        html += '<span>_____° &nbsp;</span>';
+        ['Pijnvrij','Pijn bij eindstand','Pijn in traject','Beperkt'].forEach(o => {
+          html += '<label style="display:flex;align-items:center;gap:3px;"><input type="checkbox"> ' + o + '</label>';
+        });
+        html += '</div>';
+      } else if(veld.type === 'mrc') {
+        html += '<div style="display:flex;gap:8px;font-size:11px;">';
+        ['0','1','2','3','4','5'].forEach(s => html += '<label><input type="checkbox"> ' + s + '</label>');
+        html += '</div>';
+      } else if(veld.type === 'reflex') {
+        html += '<div style="font-size:11px;">0 &nbsp;/&nbsp; + &nbsp;/&nbsp; ++ &nbsp;/&nbsp; +++ &nbsp;/&nbsp; ++++ &nbsp; &nbsp;<span style="border-bottom:1px solid #d1d5db">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>';
+      } else if(veld.type === 'keuze3') {
+        html += '<div style="display:flex;flex-wrap:wrap;gap:8px;font-size:11px;">';
+        veld.opties.forEach(o => html += '<label style="display:flex;align-items:center;gap:3px;"><input type="checkbox"> ' + o + '</label>');
+        html += '</div>';
+      } else if(veld.type === 'tekst' || veld.type === 'tekst_groot') {
+        const lines = veld.type === 'tekst_groot' ? 3 : 1;
+        for(let i=0;i<lines;i++) html += '<div style="border-bottom:1px solid #d1d5db;min-height:18px;margin-top:2px;">&nbsp;</div>';
+      }
+      html += '</div>';
+    });
+  });
+  html += '<div class="pf-footer">KineProtocol · Klinisch Evaluatieformulier · ' + datum + '</div>';
+  document.getElementById('print-fiche').innerHTML = html;
+  setTimeout(() => window.print(), 100);
+}
+
+// ── EVALUATIEFORMULIEREN SCHERM ──
+function showEvalFormsScreen() {
+  hideAllScreens();
+  document.getElementById('screen-eval-forms').style.display = '';
+  setNav('eval-forms');
+  renderEvalFormsScreen();
+}
+function renderEvalFormsScreen() {
+  const color_map = {nek:'#60a5fa', lage_rug:'#34d399', knie:'#22d3ee', schouder:'#f43f5e', bekken:'#a78bfa'};
+  let html = '';
+  Object.values(EVAL_FORMS).forEach(form => {
+    const c = form.color;
+    const telVelden = form.secties.reduce((s,sec) => s + sec.velden.length, 0);
+    const telTesten = form.secties.find(s => s.id === 's_ortho')?.velden.length || 0;
+    html += '<div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:12px;">';
+    html += '<div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:10px;">';
+    html += '<div>';
+    html += '<div style="font-family:Instrument Serif,serif;font-size:17px;font-weight:400;">' + form.titel + '</div>';
+    html += '<div style="font-size:11px;color:var(--muted);font-family:Geist Mono,monospace;margin-top:2px">' + form.secties.length + ' secties · ' + telVelden + ' velden · ' + telTesten + ' testen</div>';
+    html += '</div>';
+    html += '<div style="font-size:10px;padding:3px 10px;border-radius:10px;background:' + c + '15;color:' + c + ';border:1px solid ' + c + '33;font-family:Geist Mono,monospace;font-weight:600;">' + form.regio + '</div>';
+    html += '</div>';
+    html += '<div style="display:flex;gap:8px;flex-wrap:wrap;">';
+    html += '<button onclick="openEvalForm(\'' + form.id + '\',null)" style="flex:1;min-width:140px;padding:8px 14px;background:' + c + '18;border:1px solid ' + c + '33;color:' + c + ';border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;font-family:Geist,sans-serif;">📝 Digitaal invullen</button>';
+    html += '<button onclick="printBlankEvalForm(\'' + form.id + '\')" style="flex:1;min-width:140px;padding:8px 14px;background:var(--surface2);border:1px solid var(--border);color:var(--muted);border-radius:6px;font-size:12px;cursor:pointer;font-family:Geist,sans-serif;">🖨 Leeg afdrukken</button>';
+    html += '</div></div>';
+  });
+  document.getElementById('eval-forms-list').innerHTML = html;
+}
+
+
 // ── ESC closes all modals ──
 document.addEventListener('keydown', e => {
-  if(e.key === 'Escape') { closeYT(); closeRF(); closeFiche(); closePatNew(); closePatLink(); closeBeslisboom(); closeForm(); }
+  if(e.key === 'Escape') { closeYT(); closeRF(); closeFiche(); closePatNew(); closePatLink(); closeBeslisboom(); closeForm(); closeEvalForm(); }
 });
 
 // ── RENDER PHASE ──

@@ -85,8 +85,7 @@ function getInitials(name) {
   return name.split(' ').filter(Boolean).map(w=>w[0].toUpperCase()).slice(0,2).join('');
 }
 function getProtoColor(pid) {
-  const colors = {acl:'#22d3ee',tka:'#a78bfa',pfps:'#f97316',lh:'#34d399',rc:'#f43f5e',pt:'#fb923c',at:'#e879f9',bureau:'#60a5fa',enkel:'#f59e0b',over:'#10b981'};
-  return colors[pid] || '#71717a';
+  return protocols[pid]?.color || '#71717a';
 }
 function formatDate(iso) {
   if(!iso) return '';
@@ -208,9 +207,9 @@ function renderScoreSection(pt, p) {
     }
     html += '</div>';
 
-    // Mini chart if 2+ measurements
-    if(history.length >= 2) {
-      html += renderMiniChart(history, sc, color);
+    // Chart from 1+ measurements
+    if(history.length >= 1) {
+      html += renderScoreChart(history, sc, color);
     }
 
     // History table
@@ -257,46 +256,60 @@ function addPatientScoreByName(patId, scoreName) {
   const pt = pts.find(p => p.id === patId);
   if(pt) renderPatientDetail(pt, protocols[pt.protoId]);
 }
-function renderMiniChart(history, sc, color) {
-  const W = 280, H = 60, PAD = 8;
-  const vals = history.map(h => h.value);
-  const minV = Math.min(...vals, 0);
-  const maxV = Math.max(...vals, sc.max);
-  const range = maxV - minV || 1;
-  const xStep = (W - PAD*2) / (history.length - 1 || 1);
+function renderScoreChart(history, sc, color) {
+  const W = 400, H = 110, PL = 34, PR = 10, PT = 10, PB = 22;
+  const iW = W - PL - PR, iH = H - PT - PB;
+  const vMin = 0, vMax = sc.max, vRange = vMax - vMin || 1;
+  const toX = i => PL + i * (iW / Math.max(history.length - 1, 1));
+  const toY = v => PT + iH - ((v - vMin) / vRange) * iH;
 
-  // Points
-  const points = history.map((h, i) => ({
-    x: PAD + i * xStep,
-    y: H - PAD - ((h.value - minV) / range) * (H - PAD*2)
-  }));
+  let svg = `<svg viewBox="0 0 ${W} ${H}" style="width:100%;height:110px;display:block;margin-bottom:10px;" role="img">`;
 
-  // Polyline
-  const polyline = points.map(p => p.x + ',' + p.y).join(' ');
-
-  // RTS threshold line (first range boundary)
-  const rtsVal = sc.invert ? sc.ranges[0].max : sc.ranges[0].min;
-  const rtsY = H - PAD - ((rtsVal - minV) / range) * (H - PAD*2);
-
-  let svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" style="width:100%;height:60px;margin-bottom:8px;display:block;">';
-  svg += '<rect width="' + W + '" height="' + H + '" fill="var(--surface2)" rx="4"/>';
-  // RTS line
-  if(rtsY >= PAD && rtsY <= H-PAD) {
-    svg += '<line x1="' + PAD + '" y1="' + rtsY + '" x2="' + (W-PAD) + '" y2="' + rtsY + '" stroke="#22c55e" stroke-width="1" stroke-dasharray="3,2" opacity="0.5"/>';
-    svg += '<text x="' + (W-PAD-2) + '" y="' + (rtsY-2) + '" font-size="7" fill="#22c55e" text-anchor="end" opacity="0.7">RTS</text>';
-  }
-  // Area fill
-  if(points.length > 1) {
-    const areaPath = 'M ' + points[0].x + ' ' + (H-PAD) + ' L ' + points.map(p => p.x + ' ' + p.y).join(' L ') + ' L ' + points[points.length-1].x + ' ' + (H-PAD) + ' Z';
-    svg += '<path d="' + areaPath + '" fill="' + color + '" opacity="0.12"/>';
-    svg += '<polyline points="' + polyline + '" fill="none" stroke="' + color + '" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>';
-  }
-  // Dots
-  points.forEach((p, i) => {
-    svg += '<circle cx="' + p.x + '" cy="' + p.y + '" r="3" fill="' + color + '"/>';
-    svg += '<text x="' + p.x + '" y="' + (H-1) + '" font-size="7" fill="var(--muted2)" text-anchor="middle" font-family="monospace">' + formatDate(history[i].date).slice(0,5) + '</text>';
+  // Colored range bands
+  sc.ranges.forEach(r => {
+    const y1 = Math.max(PT, toY(r.max));
+    const y2 = Math.min(PT + iH, toY(r.min));
+    if(y2 > y1) svg += `<rect x="${PL}" y="${y1}" width="${iW}" height="${y2 - y1}" fill="${r.color}" opacity="0.07"/>`;
   });
-  svg += '</svg>';
+
+  // Horizontal grid lines + Y-axis labels
+  [0, 0.25, 0.5, 0.75, 1].forEach(t => {
+    const y = PT + iH * (1 - t);
+    const v = Math.round(vMin + t * vRange);
+    svg += `<line x1="${PL}" y1="${y}" x2="${W - PR}" y2="${y}" stroke="var(--border)" stroke-width="0.5" opacity="0.6"/>`;
+    svg += `<text x="${PL - 4}" y="${y + 3.5}" font-size="7" fill="var(--muted2)" text-anchor="end" font-family="monospace">${v}</text>`;
+  });
+
+  // RTS threshold line
+  const rtsVal = sc.invert ? sc.ranges[0].max : sc.ranges[sc.ranges.length - 1].min;
+  const rtsY = toY(rtsVal);
+  if(rtsY >= PT && rtsY <= PT + iH) {
+    svg += `<line x1="${PL}" y1="${rtsY}" x2="${W - PR}" y2="${rtsY}" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.7"/>`;
+    svg += `<text x="${W - PR - 3}" y="${rtsY - 4}" font-size="7.5" fill="#22c55e" text-anchor="end" font-weight="600" font-family="monospace">RTS</text>`;
+  }
+
+  const pts = history.map((h, i) => ({ x: toX(i), y: toY(h.value) }));
+
+  // Area + line (2+ points)
+  if(pts.length >= 2) {
+    const area = `M ${pts[0].x} ${PT + iH} L ${pts.map(p => `${p.x} ${p.y}`).join(' L ')} L ${pts[pts.length-1].x} ${PT + iH} Z`;
+    svg += `<path d="${area}" fill="${color}" opacity="0.12"/>`;
+    svg += `<polyline points="${pts.map(p => `${p.x},${p.y}`).join(' ')}" fill="none" stroke="${color}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>`;
+  }
+
+  // Data points + value labels + date labels
+  pts.forEach((p, i) => {
+    const h = history[i];
+    const band = sc.ranges.find(r => sc.invert ? h.value <= r.max && h.value >= r.min : h.value >= r.min && h.value <= r.max);
+    const dc = band ? band.color : color;
+    svg += `<circle cx="${p.x}" cy="${p.y}" r="4.5" fill="${dc}" stroke="var(--surface)" stroke-width="2"/>`;
+    svg += `<text x="${p.x}" y="${p.y - 9}" font-size="8.5" fill="${dc}" text-anchor="middle" font-weight="700" font-family="monospace">${h.value}</text>`;
+    svg += `<text x="${p.x}" y="${H - 3}" font-size="7" fill="var(--muted2)" text-anchor="middle" font-family="monospace">${formatDate(h.date).slice(0, 5)}</text>`;
+  });
+
+  // Chart border
+  svg += `<rect x="${PL}" y="${PT}" width="${iW}" height="${iH}" fill="none" stroke="var(--border)" stroke-width="0.5" rx="2"/>`;
+  svg += `</svg>`;
   return svg;
 }
 
@@ -351,43 +364,26 @@ function renderPatientDetail(pt, p) {
   html += `</div>`;
 
   // Sessie log
-  html += `<div class="slabel">Sessienotities</div>`;
-  if(sessions.length) {
-    html += `<div class="session-list">`;
-    sessions.slice().reverse().forEach((s, ri) => {
-      const idx = sessions.length - 1 - ri;
-      html += `<div class="session-item">
-        <div class="session-date">${formatDate(s.date)} · ${p.phases[s.phaseIdx]?.label || ''}</div>
-        <div class="session-note">${s.note}</div>
-        <div class="session-actions"><button class="session-del" onclick="deleteSession('${pt.id}',${idx})">Verwijder</button></div>
-      </div>`;
-    });
-    html += `</div>`;
-  } else {
-    html += `<div style="color:var(--muted);font-size:12px;padding:12px 0;">Nog geen sessies geregistreerd.</div>`;
-  }
-
-  html += `<textarea class="add-session-area" id="new-session-text" placeholder="Sessienotitie toevoegen... (bijv. fase 2 gestart, LSI quad 74%, klachten afgenomen)"></textarea>
-  <button class="add-session-btn" onclick="addSession('${pt.id}')">+ Notitie opslaan</button>`;
+  html += renderSessionSection(pt, p);
 
   // Scores section
   html += renderScoreSection(pt, p);
 
   // Testformulieren sectie
-  var ptProtoForms = Object.entries(FORMS).filter(function(e){return e[1].protocol===p.id;});
+  const ptProtoForms = Object.entries(FORMS).filter(e => e[1].protocol === p.id);
   if(ptProtoForms.length > 0) {
     html += '<div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border);">';
     html += '<div class="slabel">Testformulieren</div><div style="display:flex;gap:8px;flex-wrap:wrap;">';
-    ptProtoForms.forEach(function(entry) {
-      var fId=entry[0],frm=entry[1];
-      html += '<button onclick="openForm(\''+fId+'\',\''+pt.id+'\''+')" style="background:rgba(167,139,250,.08);border:1px solid rgba(167,139,250,.2);color:#a78bfa;padding:8px 14px;border-radius:6px;font-size:12px;cursor:pointer;font-family:Geist,sans-serif;font-weight:500;">\u{1F4DD} '+frm.name+'</button>';
+    ptProtoForms.forEach(([fId, frm]) => {
+      html += `<button onclick="openForm('${fId}','${pt.id}')" style="background:rgba(167,139,250,.08);border:1px solid rgba(167,139,250,.2);color:#a78bfa;padding:8px 14px;border-radius:6px;font-size:12px;cursor:pointer;font-family:Geist,sans-serif;font-weight:500;">📝 ${frm.name}</button>`;
     });
     html += '</div></div>';
   }
-  // Export
+
+  // Export + print
   html += `<div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border);display:flex;gap:8px;flex-wrap:wrap;">
+    <button onclick="printOefenblad('${pt.id}')" style="background:${color}18;border:1px solid ${color}44;color:${color};padding:8px 14px;border-radius:6px;font-size:12px;cursor:pointer;font-family:Geist,sans-serif;font-weight:600;">📋 Oefenblad afdrukken</button>
     <button onclick="exportPatient('${pt.id}')" style="background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:8px 14px;border-radius:6px;font-size:12px;cursor:pointer;font-family:Geist,sans-serif;">📄 Exporteer traject</button>
-    <button onclick="printPatient('${pt.id}')" style="background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:8px 14px;border-radius:6px;font-size:12px;cursor:pointer;font-family:Geist,sans-serif;">🖨 Afdrukken</button>
   </div>`;
 
   document.getElementById('pat-detail-body').innerHTML = html;
@@ -401,18 +397,120 @@ function setPatientPhase(patId, phaseIdx) {
   const p = protocols[pt.protoId];
   renderPatientDetail(pt, p);
 }
-function addSession(patId) {
-  const note = document.getElementById('new-session-text')?.value?.trim();
-  if(!note) return;
+// ── SESSIE-LOG ──
+function renderSessionSection(pt, p) {
+  const sessions = pt.sessions || [];
+  const phaseIdx = pt.phaseIndex || 0;
+  const ph = p.phases[phaseIdx];
+  const exs = ph ? ph.exercises : [];
+  const color = protocols[pt.protoId]?.color || '#71717a';
+  const today = new Date().toISOString().slice(0, 10);
+
+  let html = `<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+    <div class="slabel" style="margin-bottom:0">Sessie-log <span style="font-weight:400;color:var(--muted2);font-size:10px;">(${sessions.length} sessies)</span></div>
+    <button class="session-new-btn" id="sf-toggle-${pt.id}" onclick="toggleSessionForm('${pt.id}',true)">+ Nieuwe sessie</button>
+  </div>`;
+
+  // Inline sessie-formulier
+  html += `<div id="sf-form-${pt.id}" style="display:none;">
+    <div class="session-form-card">
+      <div class="session-form-title">Sessie registreren — ${ph ? ph.label : ''}</div>
+      <div class="session-form-grid">
+        <div>
+          <div class="form-label">Datum</div>
+          <input type="date" id="sf-date-${pt.id}" value="${today}" class="form-input" style="font-size:12px;padding:7px 10px;">
+        </div>
+        <div>
+          <div class="form-label">NRS Pijn (0–10)</div>
+          <div style="display:flex;align-items:center;gap:10px;margin-top:8px;">
+            <input type="range" id="sf-nrs-${pt.id}" min="0" max="10" value="3" style="flex:1;accent-color:${color};"
+              oninput="const v=this.value,el=document.getElementById('sf-nrsv-${pt.id}');el.textContent=v;el.style.color=v<=3?'#22c55e':v<=6?'#f59e0b':'#ef4444'">
+            <span id="sf-nrsv-${pt.id}" style="font-size:20px;font-weight:700;font-family:Geist Mono,monospace;color:#22c55e;min-width:24px;text-align:right;">3</span>
+          </div>
+        </div>
+        <div>
+          <div class="form-label">Duur (min)</div>
+          <input type="number" id="sf-duur-${pt.id}" value="45" min="5" max="180" class="form-input" style="font-size:12px;padding:7px 10px;">
+        </div>
+      </div>
+      ${exs.length ? `<div style="margin-bottom:12px;">
+        <div class="form-label" style="margin-bottom:8px;">Oefeningen uitgevoerd</div>
+        <div class="session-ex-grid">
+          ${exs.map((ex, i) => `<label class="session-ex-check">
+            <input type="checkbox" id="sf-ex-${pt.id}-${i}" value="${ex.name}" style="accent-color:${color};flex-shrink:0;">
+            <span>${ex.name}</span>
+          </label>`).join('')}
+        </div>
+      </div>` : ''}
+      <div class="form-label">Klinische notitie</div>
+      <textarea id="sf-note-${pt.id}" class="add-session-area" style="margin-top:6px;min-height:72px;" placeholder="Bijv: goede tolerantie, NRS daalt naar 3, LSI quad 82%, ROM 130°..."></textarea>
+      <div style="display:flex;gap:8px;margin-top:12px;">
+        <button onclick="saveSession('${pt.id}')" style="background:${color};color:#000;border:none;padding:9px 18px;border-radius:6px;font-size:12.5px;font-weight:700;cursor:pointer;font-family:Geist,sans-serif;">Sessie opslaan</button>
+        <button onclick="toggleSessionForm('${pt.id}',false)" style="background:var(--surface3);border:1px solid var(--border);color:var(--muted);padding:9px 14px;border-radius:6px;font-size:12px;cursor:pointer;font-family:Geist,sans-serif;">Annuleren</button>
+      </div>
+    </div>
+  </div>`;
+
+  if(sessions.length) {
+    html += `<div class="session-list">`;
+    sessions.slice().reverse().forEach((s, ri) => {
+      const idx = sessions.length - 1 - ri;
+      const sPhLabel = p.phases[s.phaseIdx]?.label || '';
+      const nrs = s.nrs != null ? parseInt(s.nrs) : null;
+      const nrsColor = nrs == null ? null : nrs <= 3 ? '#22c55e' : nrs <= 6 ? '#f59e0b' : '#ef4444';
+      html += `<div class="session-card">
+        <div class="session-card-header">
+          <span class="session-date-badge">${formatDate(s.date)}</span>
+          ${sPhLabel ? `<span class="session-phase-tag">${sPhLabel}</span>` : ''}
+          ${s.duur ? `<span class="session-meta-tag">⏱ ${s.duur} min</span>` : ''}
+          ${nrs != null ? `<span class="session-nrs-badge" style="background:${nrsColor}22;border-color:${nrsColor}55;color:${nrsColor};">NRS ${nrs}</span>` : ''}
+          <button class="session-del" onclick="deleteSession('${pt.id}',${idx})" title="Verwijder">✕</button>
+        </div>
+        ${s.exs && s.exs.length ? `<div class="session-exs">${s.exs.map(e => `<span class="session-ex-tag">${e}</span>`).join('')}</div>` : ''}
+        ${s.note ? `<div class="session-note">${s.note}</div>` : ''}
+      </div>`;
+    });
+    html += `</div>`;
+  } else {
+    html += `<div class="session-empty">Nog geen sessies. Klik op "+ Nieuwe sessie" om te starten.</div>`;
+  }
+  return html;
+}
+
+function toggleSessionForm(patId, show) {
+  const form = document.getElementById('sf-form-' + patId);
+  const btn = document.getElementById('sf-toggle-' + patId);
+  if(!form) return;
+  form.style.display = show ? '' : 'none';
+  if(btn) btn.style.display = show ? 'none' : '';
+  if(show) setTimeout(() => form.scrollIntoView({behavior:'smooth', block:'nearest'}), 50);
+}
+
+function saveSession(patId) {
   const pts = loadPatients();
   const pt = pts.find(p => p.id === patId);
   if(!pt) return;
+  const phaseIdx = pt.phaseIndex || 0;
+  const exs = protocols[pt.protoId]?.phases[phaseIdx]?.exercises || [];
+  const selectedExs = exs.map((ex, i) => {
+    const cb = document.getElementById(`sf-ex-${patId}-${i}`);
+    return cb?.checked ? ex.name : null;
+  }).filter(Boolean);
+  const session = {
+    id: genId(),
+    date: document.getElementById(`sf-date-${patId}`)?.value || new Date().toISOString().slice(0, 10),
+    phaseIdx,
+    nrs: parseInt(document.getElementById(`sf-nrs-${patId}`)?.value) ?? null,
+    duur: parseInt(document.getElementById(`sf-duur-${patId}`)?.value) || null,
+    exs: selectedExs,
+    note: document.getElementById(`sf-note-${patId}`)?.value?.trim() || ''
+  };
   if(!pt.sessions) pt.sessions = [];
-  pt.sessions.push({date: new Date().toISOString().slice(0,10), note, phaseIdx: pt.phaseIndex || 0});
+  pt.sessions.push(session);
   savePatients(pts);
-  const p = protocols[pt.protoId];
-  renderPatientDetail(pt, p);
+  renderPatientDetail(pt, protocols[pt.protoId]);
 }
+
 function deleteSession(patId, idx) {
   const pts = loadPatients();
   const pt = pts.find(p => p.id === patId);
@@ -590,4 +688,140 @@ function printPatient(patId) {
   html += `<div class="pf-footer">KineProtocol · ${datum}</div>`;
   document.getElementById('print-fiche').innerHTML = html;
   window.print();
+}
+
+// ── THUISOEFENBLAD ──
+function printOefenblad(patId) {
+  const pts = loadPatients();
+  const pt = pts.find(p => p.id === patId);
+  if(!pt) return;
+  const p = protocols[pt.protoId];
+  const phaseIdx = pt.phaseIndex || 0;
+  const ph = p.phases[phaseIdx];
+  const age = pt.dob ? calcAge(pt.dob) : null;
+  const datum = new Date().toLocaleDateString('nl-BE', {day:'2-digit', month:'2-digit', year:'numeric'});
+  const color = p.color;
+  const exs = ph ? ph.exercises : [];
+
+  const exsHtml = exs.map((ex, i) => {
+    const params = ex.params ? ex.params.map(([k,v]) => `<span class="param"><strong>${k}:</strong> ${v}</span>`).join('') : '';
+    const catLabel = ex.cat ? `<span class="ex-cat">${ex.cat}</span>` : '';
+    return `<div class="ex-card">
+      <div class="ex-header">
+        <div class="ex-num">${i + 1}</div>
+        <div class="ex-content">
+          <div class="ex-name">${ex.name}</div>
+          ${catLabel}
+        </div>
+      </div>
+      ${params ? `<div class="ex-params">${params}</div>` : ''}
+      ${ex.note ? `<div class="ex-note">${ex.note}</div>` : ''}
+      <div class="ex-patient-notes"><div class="ex-notes-label">Eigen notities:</div><div class="ex-notes-line"></div></div>
+    </div>`;
+  }).join('');
+
+  const goalsHtml = ph?.goals?.length ? `<div class="goals-box">
+    <div class="goals-title">Doelstellingen — ${ph.label}</div>
+    ${ph.goals.map(g => `<div class="goal-row"><span class="goal-bullet" style="color:${color}">▸</span><span>${g}</span></div>`).join('')}
+  </div>` : '';
+
+  const html = `<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>Oefenblad — ${pt.name}</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist+Mono:wght@400;500&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Geist',sans-serif;color:#111;background:#fff;font-size:13px;line-height:1.5;}
+  .page{max-width:780px;margin:0 auto;padding:36px 44px;}
+  header{display:flex;align-items:flex-start;justify-content:space-between;padding-bottom:16px;margin-bottom:20px;border-bottom:3px solid ${color};}
+  .hdr-title{font-family:'Instrument Serif',serif;font-size:28px;font-weight:400;color:${color};margin-bottom:4px;letter-spacing:-.02em;}
+  .hdr-proto{font-size:13px;color:#555;margin-bottom:10px;}
+  .hdr-meta{font-size:11.5px;color:#444;font-family:'Geist Mono',monospace;display:flex;flex-direction:column;gap:2px;}
+  .hdr-right{text-align:right;}
+  .hdr-logo{font-family:'Instrument Serif',serif;font-size:20px;color:#111;margin-bottom:2px;}
+  .hdr-sub{font-size:10px;color:#999;font-family:'Geist Mono',monospace;}
+  .hdr-date{font-size:11px;color:#aaa;margin-top:8px;font-family:'Geist Mono',monospace;}
+  .phase-banner{display:flex;align-items:center;gap:12px;background:${color}0d;border:1.5px solid ${color}44;border-radius:8px;padding:11px 16px;margin-bottom:16px;}
+  .phase-dot{width:12px;height:12px;border-radius:50%;background:${color};flex-shrink:0;}
+  .phase-label{font-size:11px;color:${color};font-family:'Geist Mono',monospace;font-weight:600;margin-bottom:2px;}
+  .phase-title{font-size:15px;font-weight:600;}
+  .phase-weeks{font-size:11px;color:#888;font-family:'Geist Mono',monospace;margin-left:10px;}
+  .goals-box{background:#f7f7f7;border-radius:8px;padding:12px 16px;margin-bottom:18px;}
+  .goals-title{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#888;font-family:'Geist Mono',monospace;margin-bottom:8px;}
+  .goal-row{display:flex;gap:8px;font-size:12px;color:#333;margin-bottom:3px;}
+  .goal-bullet{flex-shrink:0;font-weight:700;}
+  .section-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#aaa;font-family:'Geist Mono',monospace;margin-bottom:12px;}
+  .ex-card{border:1px solid #e5e5e5;border-radius:8px;padding:14px 16px;margin-bottom:11px;break-inside:avoid;page-break-inside:avoid;}
+  .ex-header{display:flex;align-items:flex-start;gap:10px;margin-bottom:8px;}
+  .ex-num{width:26px;height:26px;border-radius:50%;background:${color};color:#000;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;margin-top:1px;}
+  .ex-content{flex:1;}
+  .ex-name{font-size:14px;font-weight:600;margin-bottom:2px;}
+  .ex-cat{font-size:10px;color:${color};font-family:'Geist Mono',monospace;text-transform:uppercase;letter-spacing:.08em;}
+  .ex-params{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px;}
+  .param{background:${color}12;border:1px solid ${color}30;border-radius:4px;padding:3px 9px;font-size:11.5px;font-family:'Geist Mono',monospace;}
+  .ex-note{font-size:11.5px;color:#666;line-height:1.55;margin-bottom:8px;font-style:italic;}
+  .ex-patient-notes{margin-top:8px;padding-top:8px;border-top:1px dashed #e8e8e8;}
+  .ex-notes-label{font-size:9px;color:#ccc;text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px;}
+  .ex-notes-line{height:1px;background:#e8e8e8;margin-bottom:5px;}
+  footer{margin-top:28px;padding-top:12px;border-top:1px solid #eee;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;}
+  .footer-info{font-size:10px;color:#bbb;}
+  .footer-info strong{color:#999;}
+  .footer-warning{font-size:10.5px;color:#d97706;background:#fffbeb;border:1px solid #fde68a;border-radius:5px;padding:5px 10px;}
+  @media print{
+    .page{padding:18px 22px;}
+    body{font-size:12px;}
+    @page{margin:1.2cm;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div>
+      <div class="hdr-title">Thuisoefenprogramma</div>
+      <div class="hdr-proto">${p.title}</div>
+      <div class="hdr-meta">
+        <div>Patiënt: <strong>${pt.name}</strong>${age ? ' · ' + age + ' jaar' : ''}</div>
+        <div>Startdatum: <strong>${formatDate(pt.startDate) || '—'}</strong></div>
+      </div>
+    </div>
+    <div class="hdr-right">
+      <div class="hdr-logo">KineProtocol</div>
+      <div class="hdr-sub">Evidence-based revalidatie</div>
+      <div class="hdr-date">Aangemaakt: ${datum}</div>
+    </div>
+  </header>
+
+  ${ph ? `<div class="phase-banner">
+    <div class="phase-dot"></div>
+    <div style="flex:1;">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div class="phase-label">${ph.label}</div>
+        <div class="phase-title">${ph.title}</div>
+        <div class="phase-weeks">${ph.weeks}</div>
+      </div>
+      ${ph.evidence ? `<div style="font-size:11px;color:#666;margin-top:3px;">${ph.evidence.replace(/<[^>]+>/g,'')}</div>` : ''}
+    </div>
+  </div>` : ''}
+
+  ${goalsHtml}
+
+  <div class="section-label">${exs.length} oefeningen · ${ph ? ph.label : 'Huidig programma'}</div>
+  ${exsHtml}
+
+  <footer>
+    <div class="footer-info">KineProtocol · ${datum} · <strong>${pt.name}</strong> · <strong>${p.title}</strong></div>
+    <div class="footer-warning">⚠ Stop bij toename van klachten en contacteer uw kinesitherapeut.</div>
+  </footer>
+</div>
+<script>window.addEventListener('load',()=>window.print());<\/script>
+</body>
+</html>`;
+
+  const win = window.open('', '_blank');
+  if(!win) { alert('Pop-up geblokkeerd. Sta pop-ups toe voor KineProtocol.'); return; }
+  win.document.write(html);
+  win.document.close();
 }

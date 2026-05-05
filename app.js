@@ -37,6 +37,39 @@ function closeYT() {
   document.body.style.overflow = '';
 }
 
+// ── RECENTE PROTOCOLLEN ──
+const RECENT_KEY = 'kp_recent';
+function trackRecent(id) {
+  let recent = JSON.parse(localStorage.getItem(RECENT_KEY) || '[]');
+  recent = [id, ...recent.filter(r => r !== id)].slice(0, 3);
+  localStorage.setItem(RECENT_KEY, JSON.stringify(recent));
+}
+function renderRecent() {
+  const container = document.getElementById('recent-section');
+  if(!container) return;
+  const recent = JSON.parse(localStorage.getItem(RECENT_KEY) || '[]').filter(id => protocols[id]);
+  if(!recent.length) { container.style.display = 'none'; return; }
+  container.style.display = '';
+  let html = '<div class="slabel" style="margin-bottom:10px;">Recentelijk bekeken</div><div class="recent-row">';
+  recent.forEach(id => {
+    const p = protocols[id];
+    html += `<div class="recent-chip" onclick="showProto('${id}')">
+      <div class="recent-chip-dot" style="background:${p.color}"></div>
+      <div class="recent-chip-name">${p.title}</div>
+    </div>`;
+  });
+  html += '</div>';
+  container.innerHTML = html;
+}
+
+// ── FILTER PROTOCOLLEN ──
+function filterProtos(regio) {
+  document.querySelectorAll('.filter-tab').forEach(t => t.classList.toggle('active', t.dataset.regio === regio));
+  document.querySelectorAll('.protocol-card[data-regio]').forEach(card => {
+    card.style.display = (regio === 'alles' || card.dataset.regio === regio) ? '' : 'none';
+  });
+}
+
 // ── NAVIGATION ──
 function hideAllScreens() {
   ['screen-home','screen-proto','screen-patients','screen-patient-detail','screen-eval-forms','screen-search'].forEach(id => {
@@ -55,10 +88,13 @@ function showHome() {
   document.getElementById('screen-home').style.display = '';
   document.getElementById('searchInput').value = '';
   setNav('home'); currentProto = null;
+  renderRecent();
+  filterProtos('alles');
 }
 function showProto(id) {
   const p = protocols[id]; if(!p) return;
   currentProto = p;
+  trackRecent(id);
   hideAllScreens();
   document.getElementById('screen-proto').style.display = 'flex';
   document.getElementById('proto-breadcrumb').textContent = p.title;

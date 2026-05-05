@@ -1,0 +1,74 @@
+// KineProtocol — Service Worker
+// Cacht alle app-bestanden voor offline gebruik (cache-first strategie)
+
+const CACHE = 'kineprotocol-v1';
+
+const PRECACHE = [
+  './',
+  './index.html',
+  './app.js',
+  './auth.js',
+  './patients.js',
+  './protocols.js',
+  './manifest.json',
+  './icons/icon-72x72.png',
+  './icons/icon-96x96.png',
+  './icons/icon-128x128.png',
+  './icons/icon-144x144.png',
+  './icons/icon-152x152.png',
+  './icons/icon-192x192.png',
+  './icons/icon-384x384.png',
+  './icons/icon-512x512.png',
+  'https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist+Mono:wght@300;400;500;600&family=Geist:wght@300;400;500;600;700&display=swap',
+];
+
+// Install: precache alles
+self.addEventListener('install', event => {
+  event.waitUntil(
+    caches.open(CACHE).then(cache => cache.addAll(PRECACHE)).then(() => self.skipWaiting())
+  );
+});
+
+// Activate: verwijder oude caches
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys()
+      .then(keys => Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k))))
+      .then(() => self.clients.claim())
+  );
+});
+
+// Fetch: cache-first, met network-fallback
+// Supabase API calls altijd naar netwerk (nooit cachen)
+self.addEventListener('fetch', event => {
+  const url = event.request.url;
+
+  // Supabase + externe API's: altijd netwerk
+  if (url.includes('supabase.co') || url.includes('googleapis.com/css')) {
+    event.respondWith(
+      fetch(event.request).catch(() => caches.match(event.request))
+    );
+    return;
+  }
+
+  // YouTube iframes en andere externe content: netwerk only
+  if (url.includes('youtube.com') || url.includes('youtu.be')) {
+    return;
+  }
+
+  // Alle app-bestanden: cache-first
+  event.respondWith(
+    caches.match(event.request).then(cached => {
+      if (cached) return cached;
+      return fetch(event.request).then(response => {
+        // Alleen geldige responses cachen
+        if (!response || response.status !== 200 || response.type === 'opaque') {
+          return response;
+        }
+        const clone = response.clone();
+        caches.open(CACHE).then(cache => cache.put(event.request, clone));
+        return response;
+      });
+    })
+  );
+});

@@ -705,7 +705,80 @@ const protocols = {
        criteria_stop:['Persisterende hyperpronatie FPI > +9 na optimale therapie → maatorthesen + podoloog'],
        redflags:['Toename mediaal kniepijn bij sporten + pronatie → PFPS evaluatie','Shin splints recidief → loopvolume + pronatie screen + schoeisel check','Chronische mediale enkelpijn → PTTD stadium check']}
     ],
-    refs:'Mousavi SH et al. (2024) — Gait retraining targeting foot pronation: systematic review and meta-analysis. PLoS ONE 19(3):e0298646. | Huang C et al. (2022) — Short foot exercise on foot alignment in flatfoot: meta-analysis. IJERPH 19(19):11994. | Network meta-analysis (2024) — Comparing exercise therapy efficacy in adult flexible flatfoot (11 RCTs). Sci Reports. | Sánchez-Rodríguez R et al. (2020) — Modification of pronated foot posture after therapeutic exercises. IJERPH PMC7697388. | Alam F et al. (2018) — Tibialis posterior strengthening and iliopsoas stretching in pronated feet. RCT. | Kulig K et al. (2004) — Selective activation of tibialis posterior: MRI evaluation. Med Sci Sports Exerc. | Barton CJ et al. (2011) — Rearfoot eversion predicts foot orthoses efficacy in PFPS. Br J Sports Med. | Hara S et al. (2023) — Short foot exercises for flat foot deformity: systematic review. J Back Musculoskelet Rehabil.'}
+    refs:'Mousavi SH et al. (2024) — Gait retraining targeting foot pronation: systematic review and meta-analysis. PLoS ONE 19(3):e0298646. | Huang C et al. (2022) — Short foot exercise on foot alignment in flatfoot: meta-analysis. IJERPH 19(19):11994. | Network meta-analysis (2024) — Comparing exercise therapy efficacy in adult flexible flatfoot (11 RCTs). Sci Reports. | Sánchez-Rodríguez R et al. (2020) — Modification of pronated foot posture after therapeutic exercises. IJERPH PMC7697388. | Alam F et al. (2018) — Tibialis posterior strengthening and iliopsoas stretching in pronated feet. RCT. | Kulig K et al. (2004) — Selective activation of tibialis posterior: MRI evaluation. Med Sci Sports Exerc. | Barton CJ et al. (2011) — Rearfoot eversion predicts foot orthoses efficacy in PFPS. Br J Sports Med. | Hara S et al. (2023) — Short foot exercises for flat foot deformity: systematic review. J Back Musculoskelet Rehabil.'},
+
+  si:{id:'si',title:'Schouderinstabiliteit',subtitle:'Anterieure instabiliteit (TUBS / Bankart) en multidirectionele instabiliteit (AMBRI) — conservatief & post-chirurgisch',color:'#f472b6',
+    phases:[
+      {label:'Fase 1',title:'Immobilisatie & Bescherming',weeks:'Week 0–3',
+       evidence:'Immobilisatie in externe rotatie toonde in kleine RCT\'s 0% recidief vs. 30% in interne rotatie (Itoi et al., 2007), maar grote RCT (Liavaag et al., 2011, n=198) toonde <strong>géén verschil</strong>. Huidig advies: neutrale sling 3–4 weken. Bij AMBRI: rust + periscapulaire activatie direct starten. N. axillaris beschadigd bij 5–14% van anterieure luxaties — vroegtijdig screenen op deltoidzwakte.',
+       goals:['Pijn VAS ≤ 3/10 in rust en bij beweging','Wondgenezing en oedeem onder controle (post-OK)','Elleboog, pols en vingers: volledige ROM behouden','Periscapulaire spieractivatie initiëren','Cervicale en thoracale mobiliteit bewaren'],
+       exercises:[
+         {name:'Elleboogflexie/-extensie + onderarmrotatie',params:[['Reps','15–20'],['Sets','3'],['Freq','3×/dag']],note:'Sling tijdelijk af. Volledige ROM in pijnvrij bereik. Spierpomping voorkomt atrofie.',cat:'mobiliteit'},
+         {name:'Pols- en vingermobilisatie',params:[['Reps','10 actief'],['Freq','elk uur']],note:'DVT-preventie + vochtresorptie. Klein maar frequent.',cat:'mobiliteit'},
+         {name:'Isometrische scapulaire retractie-depressie',params:[['Hold','5–10 sec'],['Reps','10–15'],['Sets','3']],note:'Zittend, schouderbladen naar elkaar + omlaag trekken. Spierspanning bewaren tijdens immobilisatie.',cat:'kracht'},
+         {name:'Codman-pendel (post-OK: na chirurgtoestemming)',params:[['Duur','2 min'],['Sets','2'],['Freq','2×/dag']],note:'Voorovergebogen, arm hangt los. Zwaartekracht-tractie ontspant kapsel. Start week 1–2.',cat:'mobiliteit'},
+         {name:'Cervicale actieve rotatie en zijflexie',params:[['Reps','5–10 elk'],['Sets','2–3']],note:'Verlengte slinghouding veroorzaakt cervicale overbelasting. Dagelijks bewegen voorkomt pijn.',cat:'mobiliteit'},
+         {name:'Diafragmatische ademhaling + houdingscorrectie',params:[['Duur','5 min'],['Freq','2–3×/dag']],note:'Compensatoire voorwaartse hoofdhouding in sling. Kin intrekken + thoracale extensie actief bewaken.',cat:'stabiliteit'}],
+       criteria_go:['Sling 3–4 weken (post-OK) of 2–3 weken (conservatief)','Elleboog/pols volledige ROM','Isometrische scapulaire activatie zonder pijntoename','Pijn ≤ 3/10 in rust','Geen infectietekens post-OK'],
+       criteria_stop:['Tekenen wondinfectie of hematoom → chirurgconsult','Neurologische uitval post-operatief'],
+       redflags:['N. axillaris letsel: deltoidverlamming of gevoelsverlies laterale bovenarm → onmiddellijk chirurgconsult (5–14% incidentie na anterieure luxatie)','Wondinfectie: roodheid, warmte, pusvorming → spoedconsult','CRPS-tekenen: brandende pijn, huidveranderingen, oedeemfixatie → revalidatiearts']},
+      {label:'Fase 2',title:'Vroege ROM & Scapulaire Basis',weeks:'Week 3–8',
+       evidence:'Scapulaire dyskinese aanwezig bij 67% van patiënten na schouderinstabiliteit (Kibler et al., 2013). <strong>Serratus anterior</strong> is primaire stabilisator voor scapulaire upward rotation. Post-Bankart: passieve ER beperkt tot ≤ 30° tot week 6 om het anteriorkapsel te beschermen. GIRD > 20° is onafhankelijke risicofactor voor re-instabiliteit.',
+       goals:['Passieve elevatie in scapulair vlak ≥ 90°','Passieve ER ≤ 30° (post-Bankart) of volledig (conservatief AMBRI)','Actieve elevatie ≥ 60° pijnvrij','Scapulaire winging verdwenen bij wall slides','IR ≥ 60° pijnvrij'],
+       exercises:[
+         {name:'Pendel/Codman actief',params:[['Duur','2–3 min'],['Sets','2–3'],['Freq','2×/dag']],note:'Progressief grotere cirkels. Arm volledig ontspannen laten hangen. Nooit forceren.',cat:'mobiliteit'},
+         {name:'PROM elevatie in scapulair vlak (stok of kinesist)',params:[['Reps','10–15'],['Sets','2–3']],note:'Scapulair vlak = 30–40° anterieur van frontaal. Veiligst voor anteriorkapsel. Target: 90° week 4, 120° week 6.',cat:'mobiliteit'},
+         {name:'AAROM elevatie met stok (gezond been helpt)',params:[['Reps','15–20'],['Sets','3']],note:'Stok in gestrekte arm vangen, gezonde arm begeleidt omhoog. Progressie naar actief-geassisteerd.',cat:'mobiliteit'},
+         {name:'Scapulaire retractie + depressie met elastiek',params:[['Reps','15–20'],['Sets','3']],note:'Duimen omhoog, trekken naar heupzakken ("thumbs to pockets"). Basis periscapulaire kracht.',cat:'kracht'},
+         {name:'Serratus wall slide',params:[['Reps','10–12'],['Sets','3']],note:'Onderarmen op muur, 90° elevatie. Proneer onderarm + schuif omhoog met serratus. Geen scapulaire winging. Fundamentele oefening.',cat:'kracht'},
+         {name:'Side-lying IR met lichte elastiek',params:[['Reps','15–20'],['Sets','3']],note:'Elleboog 90°, roteer naar buik. Post-Bankart: ook voorzichtige ER tot ≤ 30° vanaf week 4.',cat:'kracht'},
+         {name:'Thoracale extensiemobilisatie (rol of manueel)',params:[['Duur','5 min'],['Freq','dagelijks']],note:'Compensatiepatronen via thorax voorkomen bij beperkte schoudermobiliteit. Manuele therapie effectief.',cat:'mobiliteit'}],
+       criteria_go:['Passieve elevatie ≥ 90°','Actieve elevatie ≥ 60° pijnvrij','IR ≥ 60°','Post-Bankart passieve ER ≤ 30° of conservatief full ER','Scapulaire winging verdwenen bij wall slides','Pijn ≤ 3/10'],
+       criteria_stop:['Pijn > 5/10 bij passieve mobilisatie → trager opbouwen','Toename instabiliteitsgevoel → chirurgconsult'],
+       redflags:['Acuut "losschieten" gevoel bij oefening → stop, evalueer re-luxatie radiologisch','Progressieve deltoidzwakte 1–3 maanden post-luxatie → axillaire neuropathie evalueren (EMG)']},
+      {label:'Fase 3',title:'Krachtherstel & Neuromusculaire Controle',weeks:'Week 8–16',
+       evidence:'<strong>ER/IR krachtverhouding ≥ 0.66</strong> is preventief voor anterieure instabiliteit (Ellenbecker & Mattalino, 1997). Asymmetrie > 20% in ER-kracht verhoogt recidiefrisico. Proprioceptieve deficieten na luxatie persisteren tot 6 maanden (Lephart et al., 1994). <strong>PNF D2-diagonalen</strong> activeren RC + deltoideus coactivatie optimaal en zijn essentieel voor neuromusculaire heropbouw.',
+       goals:['Volledige actieve ROM (elevatie ≥ 170°, ER ≥ 60°, IR ≥ 70°)','ER/IR krachtverhouding ≥ 0.66','ER-krachtsasymmetrie ≤ 20%','Scapulaire upward rotation normaal bij elevatie','JPS (joint position sense) fout < 5° bij 45° abductie','Overhead bewegen zonder compensatiepatroon'],
+       exercises:[
+         {name:'Side-lying external rotation (dumbbell/elastiek)',params:[['Reps','12–15'],['Sets','3–4']],note:'Kussen onder bovenarm. Elleboog 90°. Prioriteitsoefening voor ER/IR ratio. Progressie: licht → matig → zwaar.',cat:'kracht'},
+         {name:'Prone Y/T/W (scapulaire stabilisatoren)',params:[['Reps','10–12'],['Sets','3']],note:'Y = abductie 120° duimen omhoog. T = horizontale abductie 90°. W = abductie 90° + maximale ER. Start zonder gewicht.',cat:'kracht'},
+         {name:'Prone ER in 90/90 positie',params:[['Reps','10–12'],['Sets','3']],note:'Bovenarm 90° abductie, elleboog 90°, roteer naar plafond. Teres minor + infraspinatus specifiek.',cat:'kracht'},
+         {name:'Serratus push-up plus (muur → grond)',params:[['Reps','10–15'],['Sets','3']],note:'"Plus" = extra protractie op top van beweging. Progressie: muur → schuine ondersteun → grond. Serratus anterior prioriteit.',cat:'kracht'},
+         {name:'PNF D2 flexie/extensie (elastiek)',params:[['Reps','12'],['Sets','3']],note:'D2 flexie: laag buiten → hoog binnen (duim omhoog). Rotatorenmanchet coactivatie in functioneel diagonaal patroon.',cat:'neuro'},
+         {name:'Rhythmic stabilization (zittend/staan)',params:[['Duur','30 sec'],['Sets','3–5']],note:'Therapeut geeft alternerende lichte perturbaties van alle kanten. Reflexmatige coactivatie. Progressie: stabiele stoel → BOSU.',cat:'neuro'},
+         {name:'Schouder tap in quadruped (proprioceptie)',params:[['Reps','10/zijde'],['Sets','3']],note:'Knieën + handen, één hand optillen terwijl gewicht overgedragen wordt. Gesloten keten proprioceptie.',cat:'stabiliteit'},
+         {name:'Weerstandsband-rotaties bij 0° + 45° abductie',params:[['Reps','15–20'],['Sets','3']],note:'Meerdere abductiehoeken voor volledige krachtopbouw. Progressie: isotonisch → isokinetisch-achtig.',cat:'kracht'}],
+       criteria_go:['Actieve elevatie ≥ 170°, ER ≥ 60°, IR ≥ 70°','ER/IR ratio ≥ 0.66','ER-asymmetrie ≤ 20%','JPS fout < 5°','Pijn ≤ 2/10 bij alle oefeningen','Geen instabiliteitsgevoel bij dagdagelijkse activiteiten'],
+       criteria_stop:['ER/IR ratio < 0.60 na 14 weken → intensiveer ER-specifiek + eventueel isokinetisch testen'],
+       redflags:[]},
+      {label:'Fase 4',title:'Dynamische Stabilisatie & Functioneel',weeks:'Week 16–24',
+       evidence:'CKC overhead oefeningen verbeteren coactivatie rotatorenmanchet effectiever dan OKC (Uhl et al., 2003). Post-Bankart return to throwing: minimum 6 maanden (Wilk et al., 2013). <strong>Rhythmic stabilization in 90/90°</strong> is de meest veeleisende proprioceptieve uitdaging voor anterieure instabiliteit en verplicht vóór overhead sport.',
+       goals:['Push-up 3×10 volledig pijnvrij','Overhead press ≥ 8 kg pijnvrij','Dynamische stabilisatie in 90/90° positie stabiel (45 sec)','Sport-specifieke bewegingen geïntroduceerd','WOSI ≤ 630 (70% van normaal)'],
+       exercises:[
+         {name:'Push-up progressie',params:[['Reps','10–15'],['Sets','3']],note:'Knieën → grond → voet-elevated → plyometrisch. Scapulaire controle bewaken. "Plus" = serratus activatie op top.',cat:'kracht'},
+         {name:'Dumbbell overhead press (licht → matig)',params:[['Reps','10–12'],['Sets','3']],note:'Start neutraal (duimen voor). < 90° abductie eerste weken. Progressie naar frontaal vlak. Stabiliteit bewaken.',cat:'kracht'},
+         {name:'Lat pulldown → assisted pull-up',params:[['Reps','8–10'],['Sets','3']],note:'60% lichaamsgewicht lat pulldown → assisted → regulier pull-up. Retractie-depressie scapula bij elke rep.',cat:'kracht'},
+         {name:'PNF D2 weerstand sport-specifiek (snelheid opbouwen)',params:[['Reps','12'],['Sets','3']],note:'Snelheidstoename in patroon. Ball-throwing simulatie met elastiek. Sport-specifieke hoeken en snelheden.',cat:'neuro'},
+         {name:'Rhythmic stabilization 90/90° abductie',params:[['Duur','30–45 sec'],['Sets','3–5']],note:'Bovenarm 90° abductie, elleboog 90°. Therapeut geeft multidirectionele perturbaties. Moeilijkste positie voor anterieure instabiliteit.',cat:'neuro'},
+         {name:'Wall ball throws (2–3 kg, 2 → 1 hand)',params:[['Reps','15–20'],['Sets','3–4']],note:'Dichtbij muur, twee handen, progressie naar één hand. Reactieve stabilisatie. Kan ook met rebound-trainer.',cat:'neuro'},
+         {name:'Interval Throwing Program stap 1–3 (werpatleten)',params:[['Afstand','45 voet → 60 voet → 90 voet']],note:'Wilk et al. 2013 protocol. Enkel bij werpatleten + chirurggoedkeuring. Na minimum 6 maanden post-Bankart.',cat:'neuro'}],
+       criteria_go:['Push-up 3×10 pijnvrij','Overhead press ≥ 8 kg pijnvrij','Rhythmic stabilization 90/90° stabiel 45 sec','Geen instabiliteitsgevoel bij functionele bewegingen','WOSI ≤ 630'],
+       criteria_stop:['Instabiliteitsgevoel bij overhead activiteiten → terug fase 3 + heroverweeg chirurgie bij conservatief falen'],
+       redflags:['Acute luxatie tijdens revalidatie → stop protocol, chirurgconsult','Persisterende instabiliteit conservatief > 6 maanden → chirurgische indicatie herbekijken (inferieure kapselshift bij AMBRI)']},
+      {label:'Fase 5',title:'Return to Sport',weeks:'Mnd 6–9',
+       evidence:'Recidiefpercentage post-Bankart artroscopisch: 6–10%, contactsporten 15–20% (Brophy & Marx, 2009). <strong>ISIS-score > 6</strong> (Balg & Boileau 2007) = hoog recidiefrisico → patiënt informeren. AMBRI conservatief: 80–90% goed resultaat op lange termijn (Burkhead & Rockwood, 1992). Preventief RC-onderhoudsprogramma verlaagt recidief bij sporters.',
+       goals:['Krachtsasymmetrie ≤ 10% (ER, abductie)','ER/IR ratio ≥ 0.66 gehandhaafd','WOSI ≤ 420 (≥ 80% normaal)','Interval Sport Program voltooid','Sport-specifieke bewegingen pijnvrij en stabiel','Chirurgische goedkeuring (post-Bankart)'],
+       exercises:[
+         {name:'Interval Throwing Program compleet (werpatleten)',params:[['Fase','4–6: 120 voet → max. afstand → bullpen']],note:'Wilk et al. protocol. Minimum 6 weken voor fase 4–6. Geen pijn of vermoeidheid van schouder als criterium.',cat:'neuro'},
+         {name:'Contactsport progressie (rugby, judo, vechtsporten)',params:[['Opbouw','vallen + steunen → licht contact → vol contact']],note:'Beschermingsbrace eerste seizoen overwegen bij hoog-risico sporten. Maandelijkse evaluatie eerste 6 maanden.',cat:'neuro'},
+         {name:'Return to swimming (zwemmers)',params:[['Volgorde','rugslag → borstkraul → vlinderslag']],note:'Bilateraal ademhalen verplicht eerste 4 weken. Scapulaire controle bij elke slagcyclus monitoren.',cat:'cardio'},
+         {name:'Preventief RC-onderhoudsprogramma (levenslang)',params:[['Freq','2–3×/week'],['Duur','20 min']],note:'Y/T/W 3×12 + ER band 3×15 + serratus push-up plus 3×10. Eerste jaar verplicht. Daarna als warm-up bij sport.',cat:'kracht'},
+         {name:'ISIS-score risicobeoordeling (Balg & Boileau 2007)',params:[['Timing','vóór RTS']],note:'Score > 6 = hoog recidiefrisico bij Bankart. Patiënt informeren over recidiefkans en beschermingsmaatregelen.',cat:'test'}],
+       criteria_go:['Krachtsasymmetrie ≤ 10%','ER/IR ratio ≥ 0.66','WOSI ≤ 420','Sport-specifieke bewegingen pijnvrij','Chirurgische goedkeuring','Minimum 6 mnd post-Bankart of 4 mnd conservatief AMBRI'],
+       criteria_stop:['WOSI > 630 na 9 maanden → herbeoordeel conservatief vs. chirurgisch'],
+       redflags:['Nieuwe luxatie bij sport → stop, heroverweeg chirurgische indicatie (ISIS-score bepalen)','AMBRI zonder voldoende verbetering na 9 maanden conservatief → inferieure kapselshift overwegen']}
+    ],
+    refs:'Itoi E et al. (2007) — Immobilization in external rotation reduces reluxation risk after first-time shoulder dislocation. J Bone Joint Surg Am. | Kibler WB et al. (2013) — Clinical implications of scapular dyskinesis in shoulder injury. Br J Sports Med. | Lephart SM et al. (1994) — Proprioception after glenohumeral dislocation. J Shoulder Elbow Surg. | Balg F & Boileau P (2007) — The instability severity index score. J Bone Joint Surg Br. | Brophy RH & Marx RG (2009) — Treatment of traumatic anterior shoulder instability. Clin Orthop Relat Res. | Burkhead WZ & Rockwood CA (1992) — Treatment of instability of the shoulder with an exercise program. J Bone Joint Surg Am. | Wilk KE et al. (2013) — Shoulder injuries in the overhead athlete. J Orthop Sports Phys Ther.'}
 };
 
 // ── CATEGORIES ──
@@ -780,6 +853,14 @@ const SCORES = {
     {name:'NDI', full:'Neck Disability Index', max:50, unit:'punten',
      ranges:[{label:'Geen beperking (0–4)',min:0,max:4,color:'#22c55e'},{label:'Matig (15–24)',min:5,max:24,color:'#f59e0b'},{label:'Ernstig (≥ 25)',min:25,max:50,color:'#ef4444'}],
      rts:'< 10 voor ontslag', mcid:7, invert:true},
+  ],
+  si: [
+    {name:'WOSI', full:'Western Ontario Shoulder Instability Index', max:2100, unit:'ptn', invert:true,
+     ranges:[{label:'Minimale beperking',min:0,max:420,color:'#22c55e'},{label:'Matige beperking',min:421,max:1050,color:'#f59e0b'},{label:'Ernstige beperking',min:1051,max:2100,color:'#ef4444'}],
+     rts:'≤ 420 ptn voor RTS', mcid:212},
+    {name:'DASH', full:'Disabilities of the Arm, Shoulder and Hand', max:100, unit:'punten', invert:true,
+     ranges:[{label:'Minimale beperking',min:0,max:20,color:'#22c55e'},{label:'Matige beperking',min:21,max:40,color:'#f59e0b'},{label:'Ernstige beperking',min:41,max:100,color:'#ef4444'}],
+     rts:'< 20 voor RTS', mcid:10.2},
   ],
 };
 
@@ -1001,6 +1082,57 @@ const BESLISBOOM = {
           {label: 'Invaliderend + topsport + > 12 mnd therapie', advies: 'Orthopedisch consult. ESWT eerst. Chirurgie (debridement) als laatste optie — beperkt evidence.', color: '#f59e0b'},
         ]
       }
+    ]
+  },
+  si: {
+    title: 'Schouderinstabiliteit — Klinische beslisboom',
+    stappen: [
+      {
+        id: 'start',
+        vraag: 'Type instabiliteit?',
+        info: 'TUBS = Traumatisch, Unidirectioneel, Bankart laesie, Chirurgie overwegen. AMBRI = Atraumatisch, Multidirectioneel, Bilateraal, Rehab eerste keuze, Inferieure capsulaire shift als chirurgie.',
+        opties: [
+          {label: 'TUBS — traumatisch (val, sport, luxatie)', next: 'tubs_leeftijd', color: '#ef4444'},
+          {label: 'AMBRI — atraumatisch / habitueel / hypermobiliteit', next: 'ambri', color: '#f59e0b'},
+        ]
+      },
+      {
+        id: 'tubs_leeftijd',
+        vraag: 'Leeftijd patiënt bij eerste luxatie?',
+        info: 'Recidiefkans: < 20 jr = 80–90%. 20–30 jr = 60–70%. > 30 jr = 30–50%. Balg & Boileau ISIS-score bepaalt chirurgisch risico.',
+        opties: [
+          {label: '< 25 jaar — hoog recidiefrisico', next: 'tubs_sport', color: '#ef4444'},
+          {label: '≥ 25 jaar — matig recidiefrisico', next: 'tubs_conservatief', color: '#f59e0b'},
+        ]
+      },
+      {
+        id: 'tubs_sport',
+        vraag: 'Contactsport of overhead sport met ISIS-score?',
+        info: 'ISIS ≥ 6/10: vroege chirurgie aanbevolen (Balg & Boileau 2007). ISIS < 6: conservatief rehabilitatie 3–6 maanden eerst.',
+        opties: [
+          {label: 'Contactsport + ISIS ≥ 6', advies: 'Verwijzing orthopeed voor Bankart-repair (arthroscopisch). Preoperatieve kinesitherapie: scapulaire controle + RC-kracht. Post-op protocol fase 1 starten.', color: '#ef4444'},
+          {label: 'Recreatief / ISIS < 6', next: 'tubs_conservatief', color: '#f59e0b'},
+        ]
+      },
+      {
+        id: 'tubs_conservatief',
+        vraag: 'Respons op conservatief programma na 12–16 weken?',
+        info: 'Burkhead & Rockwood 1992: 80% succesrate conservatief bij AMBRI; 16% bij TUBS. Controleer WOSI-score: MCID = 212 punten.',
+        opties: [
+          {label: 'WOSI verbeterd ≥ 212 ptn, geen recidief', advies: 'Goed verloop. Continueer protocol naar fase 4–5. RTS-criteria checken.', color: '#22c55e'},
+          {label: 'Recidief luxatie of subluxatie tijdens revalidatie', advies: 'Orthopedisch consult. MRI arthro voor Bankart/HAGL/Hill-Sachs. Chirurgische stabilisatie overwegen.', color: '#ef4444'},
+          {label: 'Geen verbetering, geen recidief na 4 mnd', advies: 'Intensiveer neuromusculaire training. Proprioceptieve training. Psychosociaal component evalueren. Herevalueer na 8 weken.', color: '#f59e0b'},
+        ]
+      },
+      {
+        id: 'ambri',
+        vraag: 'Hypermobiliteit of gegeneraliseerde laxiteit aanwezig (Beighton ≥ 4)?',
+        info: 'Gegeneraliseerde hypermobiliteit vereist aanpassing van het protocol: geen passieve rekking, focus op dynamische stabiliteit en proprioceptie.',
+        opties: [
+          {label: 'Beighton ≥ 4 — hypermobiel', advies: 'Geen stretching. Focus op dynamische stabilisatie, RC-cocontractie, scapulaire retractie. Lange revalidatieduur (9–12 mnd). Chirurgie zelden geïndiceerd.', color: '#f59e0b'},
+          {label: 'Beighton < 4 — normale laxiteit', advies: 'Standaard AMBRI-protocol. Scapulaire controle fase 1–2. Neuromusculaire training fase 3. 6 mnd conservatief voor chirurgische beslissing.', color: '#22c55e'},
+        ]
+      },
     ]
   }
 };
@@ -1248,6 +1380,37 @@ const FORMS = {
       {id:'v_sport', tekst:'SPORT — Hardlopen', type:'keuze', sport:true, opties:[{label:'Geen moeite',score:4},{label:'Kleine moeite',score:3},{label:'Matige moeite',score:2},{label:'Grote moeite',score:1},{label:'Niet mogelijk',score:0},{label:'Niet van toepassing',score:null}]},
       {id:'v_sport2', tekst:'SPORT — Springen', type:'keuze', sport:true, opties:[{label:'Geen moeite',score:4},{label:'Kleine moeite',score:3},{label:'Matige moeite',score:2},{label:'Grote moeite',score:1},{label:'Niet mogelijk',score:0},{label:'Niet van toepassing',score:null}]},
       {id:'v_sport3', tekst:'SPORT — Richtingsveranderingen', type:'keuze', sport:true, opties:[{label:'Geen moeite',score:4},{label:'Kleine moeite',score:3},{label:'Matige moeite',score:2},{label:'Grote moeite',score:1},{label:'Niet mogelijk',score:0},{label:'Niet van toepassing',score:null}]},
+    ]
+  },
+  'wosi': {
+    name: 'WOSI',
+    full: 'Western Ontario Shoulder Instability Index',
+    protocol: 'si',
+    max: 2100,
+    rts: '≤ 420 ptn voor RTS',
+    intro: 'Geef voor elke uitspraak aan hoeveel last u de afgelopen week heeft ervaren. Schuif de slider van 0 (geen last) naar 100 (maximale last). Score = som van alle 21 vragen (max 2100); lagere score = minder beperking.',
+    vragen: [
+      {id:'w1', tekst:'Pijn bij activiteiten boven het hoofd', type:'slider', max:100},
+      {id:'w2', tekst:'Pijn door zijdelingse krachten op de schouder (b.v. bij het openen van een deur)', type:'slider', max:100},
+      {id:'w3', tekst:'Pijn bij het dragen van een zwaar voorwerp', type:'slider', max:100},
+      {id:'w4', tekst:'Pijn of abnormaal gevoel in de schouder tijdens sport of lichamelijke activiteit', type:'slider', max:100},
+      {id:'w5', tekst:'Zwaktegevoel in de schouder', type:'slider', max:100},
+      {id:'w6', tekst:'Moeite om uw arm boven het hoofd te controleren bij activiteiten', type:'slider', max:100},
+      {id:'w7', tekst:'Gevoel van "lossheid" of "uit de kom gaan" in de schouder bij dagelijkse activiteiten', type:'slider', max:100},
+      {id:'w8', tekst:'Moeite om aan sport of lichamelijke activiteiten deel te nemen', type:'slider', max:100},
+      {id:'w9', tekst:'Moeite om mee te doen aan de sport of activiteit op uw gewenst niveau', type:'slider', max:100},
+      {id:'w10', tekst:'Moeite bij het tillen van zware voorwerpen', type:'slider', max:100},
+      {id:'w11', tekst:'Stijfheid in de schouder', type:'slider', max:100},
+      {id:'w12', tekst:'Problemen met de schouder die uw werk beïnvloeden', type:'slider', max:100},
+      {id:'w13', tekst:'Noodzaak om uw schouder te bewaken bij dagelijkse activiteiten', type:'slider', max:100},
+      {id:'w14', tekst:'Pijn bij draaien of roteren van de schouder', type:'slider', max:100},
+      {id:'w15', tekst:'Zorgen over de schouder bij normale dagelijkse activiteiten', type:'slider', max:100},
+      {id:'w16', tekst:'Emotionele toestand beïnvloed door schouderprobleem', type:'slider', max:100},
+      {id:'w17', tekst:'Frustratiegevoelens door schouderprobleem', type:'slider', max:100},
+      {id:'w18', tekst:'Angst voor instabiliteit of herhaling van luxatie', type:'slider', max:100},
+      {id:'w19', tekst:'Verandering van levensstijl door schouderprobleem', type:'slider', max:100},
+      {id:'w20', tekst:'Problemen met vrienden/familie door schouderprobleem', type:'slider', max:100},
+      {id:'w21', tekst:'Toekomstperspectief — zorgen over schouder op lange termijn', type:'slider', max:100},
     ]
   }
 };

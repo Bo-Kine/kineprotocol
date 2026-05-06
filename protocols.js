@@ -778,7 +778,68 @@ const protocols = {
        criteria_stop:['WOSI > 630 na 9 maanden → herbeoordeel conservatief vs. chirurgisch'],
        redflags:['Nieuwe luxatie bij sport → stop, heroverweeg chirurgische indicatie (ISIS-score bepalen)','AMBRI zonder voldoende verbetering na 9 maanden conservatief → inferieure kapselshift overwegen']}
     ],
-    refs:'Itoi E et al. (2007) — Immobilization in external rotation reduces reluxation risk after first-time shoulder dislocation. J Bone Joint Surg Am. | Kibler WB et al. (2013) — Clinical implications of scapular dyskinesis in shoulder injury. Br J Sports Med. | Lephart SM et al. (1994) — Proprioception after glenohumeral dislocation. J Shoulder Elbow Surg. | Balg F & Boileau P (2007) — The instability severity index score. J Bone Joint Surg Br. | Brophy RH & Marx RG (2009) — Treatment of traumatic anterior shoulder instability. Clin Orthop Relat Res. | Burkhead WZ & Rockwood CA (1992) — Treatment of instability of the shoulder with an exercise program. J Bone Joint Surg Am. | Wilk KE et al. (2013) — Shoulder injuries in the overhead athlete. J Orthop Sports Phys Ther.'}
+    refs:'Itoi E et al. (2007) — Immobilization in external rotation reduces reluxation risk after first-time shoulder dislocation. J Bone Joint Surg Am. | Kibler WB et al. (2013) — Clinical implications of scapular dyskinesis in shoulder injury. Br J Sports Med. | Lephart SM et al. (1994) — Proprioception after glenohumeral dislocation. J Shoulder Elbow Surg. | Balg F & Boileau P (2007) — The instability severity index score. J Bone Joint Surg Br. | Brophy RH & Marx RG (2009) — Treatment of traumatic anterior shoulder instability. Clin Orthop Relat Res. | Burkhead WZ & Rockwood CA (1992) — Treatment of instability of the shoulder with an exercise program. J Bone Joint Surg Am. | Wilk KE et al. (2013) — Shoulder injuries in the overhead athlete. J Orthop Sports Phys Ther.'},
+
+  orif:{id:'orif',title:'ORIF Distale Radius',subtitle:'Open repositie & interne fixatie van distale radiusfractuur (AO type A2–C3) — postoperatief revalidatieprotocol pols & hand',color:'#38bdf8',
+    phases:[
+      {label:'Fase 1',title:'Bescherming & Oedeemcontrole',weeks:'Week 0–2',
+       evidence:'Volaire plaatfixatie laat <strong>vroege mobilisatie van aangrenzende gewrichten</strong> toe vanaf dag 1–3 postoperatief. Vingers en elleboog vroegtijdig mobiliseren vermindert stijfheid en oedeem significant (Souer et al. 2011). <strong>Elevatie boven hartniveau</strong> is de meest effectieve oedeemreductie in de eerste week. Pols zelf blijft in spalk (volar back-slab) of brace tot radiologische controle.',
+       goals:['Oedeem en pijn controleren (NRS < 4 in rust)','ROM vingers, elleboog en schouder volledig bewaren','DVT-preventie via distale circulatie','Wondgenezing bewaken (hechting verwijdering dag 10–14)','Patiënt informeren over beschermingsfase'],
+       exercises:[
+         {name:'Elevatie & cryotherapie',params:[['Freq','3–5×/dag'],['Duur','15–20 min'],['Positie','pols boven hartniveau']],note:'Handdoek om ijs. Nooit ijs direct op huid. Effectiefst in eerste 72u voor oedeemreductie.',cat:'mobiliteit'},
+         {name:'Vinger AROM — composite fist',params:[['Reps','20–25'],['Sets','4–6×/dag'],['Target','volledige vuist']],note:'Alle vingers tegelijk naar volledige flexie + volledige extensie. Houd 3 sec. Duim apart abductie/oppositie. Cruciaal voor peesgliding.',cat:'mobiliteit'},
+         {name:'Elleboog AROM flexie/extensie',params:[['Reps','15–20'],['Sets','3×/dag']],note:'Pols in neutrale positie in spalk. Volledige elleboogflexie en extensie. Voorkomt stijfheid m. biceps en m. brachioradialis.',cat:'mobiliteit'},
+         {name:'Schouder AROM (pendel + elevatie)',params:[['Reps','10–15'],['Sets','2×/dag']],note:'Gravity-assisted pendel voor schouder. Voorwaartse elevatie en abductie vrij. Schouder mag niet verwaarlosd worden bij DRF.',cat:'mobiliteit'},
+         {name:'Retrograde massage hand → pols',params:[['Duur','5 min'],['Freq','3×/dag']],note:'Lymfedrainage: cirkelvormige druk van vingers richting elleboog. Zachte druk, nooit over operatiewonde. Start dag 3 postoperatief.',cat:'manueel'},
+         {name:'Isometrische handknijp in spalk',params:[['Hold','5 sec'],['Reps','10'],['Sets','3×/dag']],note:'Zacht kussen of opgerolde handdoek knijpen. Alleen uitvoeren als pijnvrij (NRS < 3). Houdt intrinsieke handspieren actief.',cat:'kracht'}],
+       criteria_go:['Pijn NRS < 4 in rust','Vingers volledig beweegbaar','Geen tekenen CRPS (brandende pijn, kleurverandering, allodynie)','Radiologische controle akkoord (chirurg)','Wonde gesloten, geen infectietekenen'],
+       criteria_stop:['Toename oedeem na oefening','Koorts > 38.5°C (infectie vermoeden)','Nieuwe gevoelsstoornissen duim/index/middenvinger (n. medianus)','Pijn NRS > 8 in rust'],
+       redflags:['Koorts + roodheid wonde → infectie → spoedreferral chirurg','Nieuwe tintelingen/gevoelsverlies duim, index, middenvinger → acuut CTS → chirurg','Blauwpaarse vingers → vasculaire complicatie → spoedreferral','Brandende pijn + allodynie + kleurverandering → CRPS type 1 → pijnkliniek']},
+
+      {label:'Fase 2',title:'Vroege ROM Pols & Littekenzorg',weeks:'Week 2–6',
+       evidence:'Na volaire plaatfixatie kan <strong>actieve polsmobilisatie starten bij week 2–3</strong>, na chirurgische controle (Quadlbauer et al. 2017). Pronosupinatie vraagt speciale aandacht: de rotatie van de onderarm is functioneel cruciaal (eten, schrijven) en herstelt trager dan flexie/extensie. <strong>Littekenmassage</strong> vanaf dag 14 (hechtingen verwijderd) vermindert adhesies en gevoeligheid significant.',
+       goals:['AROM pols 50% van normaal bereiken (F/E ≥ 40°, pro/sup ≥ 60°)','Functionele vingergreep hervatten voor ADL','Litteken soepel, vlak en pijnvrij houden','Lichte ADL zonder pijn hervatten'],
+       exercises:[
+         {name:'Pols AROM flexie/extensie',params:[['Reps','10–15'],['Sets','4–6×/dag'],['ROM','pijnvrij bereik']],note:'Onderarm gesteund op tafel. Actieve beweging pols omhoog/omlaag. Nooit forceren. Elke week meetbaar vooruitgang verwachten.',cat:'mobiliteit'},
+         {name:'Pols AROM radiale & ulnaire deviatie',params:[['Reps','10–15'],['Sets','3×/dag']],note:'Onderarm pronatie op tafel. Pols lateraal links-rechts. Vaak beperkt bij DRF door botpatroon — niet forceren.',cat:'mobiliteit'},
+         {name:'Pronosupinatie AROM',params:[['Reps','10–15'],['Sets','4×/dag'],['Positie','elleboog 90°, bovenarm langs romp']],note:'Elleboog gebogen aan zij houden (korte hefboom). Handpalm omhoog → omlaag. Starten met onbelast, pijnvrij.',cat:'mobiliteit'},
+         {name:'Grijpkracht — zachte putty',params:[['Reps','15–20'],['Sets','3'],['Weerstand','zacht (geel/rood)']],note:'Volledig knijpen in putty. Progressie naar harder materiaal. Grip strength herstel is bepalend voor functionele uitkomst.',cat:'kracht'},
+         {name:'Pincetgreep & oppositie',params:[['Reps','15'],['Sets','3×/dag']],note:'Duim-index, duim-middenvinger, duim-ringvinger. Kleine objecten oppakken (munt, knoop). Fijne motoriek stimuleren.',cat:'kracht'},
+         {name:'Littekenmassage',params:[['Duur','3–5 min'],['Freq','2×/dag'],['Start','dag 14 postoperatief']],note:'Cirkelvormige druk op litteken (niet erover). Cross-friction in 4 richtingen. Siliconen sheet als aanvulling 23u/dag. Verlaagt adhesievorming.',cat:'manueel'},
+         {name:'Functionele ADL-training',params:[['Activiteiten','eten, schrijven, hygiëne'],['Nivo','licht, pijnvrij']],note:'Aangepaste grip bij eten. Lichte schrijfopdrachten. Geen zwaar tillen (> 0.5 kg). Stimuleert neuromusculaire integratie.',cat:'neuro'}],
+       criteria_go:['Röntgen consolidatie ok (chirurg controle week 4–6)','Pols AROM F/E ≥ 40° actief','Pro/sup ≥ 60° actief','Pijn NRS ≤ 3 bij oefening','Litteken gesloten, geen adhesies'],
+       criteria_stop:['Crepitatie of klikgeluid in pols bij beweging','Acuut zwellen pols na oefening (> 2 cm omtrek)','Toename pijn > NRS 5 na oefening (24u-regel)'],
+       redflags:['Scherpe pijn bij pronosupinatie → TFCC-letsel → orthopedisch consult','Aanhoudende n. medianus klachten (CTS) → chirurgisch consult']},
+
+      {label:'Fase 3',title:'Krachtherstel & Functionele Integratie',weeks:'Week 6–12',
+       evidence:'<strong>Grip strength < 75% van contralateraal</strong> correleert sterk met functioneel verlies bij DRF (MacDermid et al. 2004). Pronosupinatie kracht herstelt het traagst (vaak pas bij 6 maanden). <strong>HSR-principes</strong> (Heavy Slow Resistance, 3×8–10RM) zijn effectiever dan lage weerstand / hoge herhaling voor botgenezing en peeskracht. Eigenoefening 2× per dag superieur aan 1× per dag in deze fase.',
+       goals:['Grip strength ≥ 60% contralateraal','Volledige AROM pols (F/E ≥ 60°, pro/sup ≥ 80°)','Hervatten lichte werkactiviteiten en sport','PRWE < 40'],
+       exercises:[
+         {name:'Polsextensie met weerstand',params:[['Sets','3'],['Reps','10–12'],['Belasting','licht → progressief'],['Tempo','2-1-2']],note:'Onderarm op tafel, pols over rand. Dumbbell omhoog brengen. Startgewicht 0.5–1 kg. Wekelijks progressie. Eccentrische fase langzaam.',cat:'kracht'},
+         {name:'Polsflexie met weerstand',params:[['Sets','3'],['Reps','10–12'],['Belasting','licht → progressief']],note:'Zelfde positie als extensie. Palmaris longus en flexoren trainen. Combineer altijd met extensie voor balans.',cat:'kracht'},
+         {name:'Pronosupinatie met gewicht',params:[['Sets','3'],['Reps','10–15'],['Gewicht','0.5 → 2 kg'],['Positie','elleboog 90°']],note:'Hamer of dumbbell vasthouden (hefboomeffect). Langzaam draaien. Wekelijks gewicht ophogen bij pijnvrij verloop. Meest functioneel gevoelige beweging.',cat:'kracht'},
+         {name:'Handknijpkracht progressie',params:[['Tool','knijpbal → veer → hand dynamometer'],['Sets','3×15'],['Freq','2×/dag']],note:'Meten met Jamar dynamometer (gemiddelde 3 pogingen, elleboog 90°). Bijhouden als percentage van contralateraal. Doel fase 3: ≥ 60%.',cat:'kracht'},
+         {name:'Pincetgreep weerstand',params:[['Tool','pinch meter, elastiek, clothespeg'],['Reps','15'],['Sets','3']],note:'Lateral pinch (duim-laterale zijde index), pulp pinch (top tot top), tripod pinch. Schrijven en fijne motoriek direct stimuleren.',cat:'kracht'},
+         {name:'Functionele grijpoefeningen',params:[['Objecten','cilinder, bol, sleutel, mok'],['Activiteiten','boodschappen dragen, trapleuning'],['Belasting','progressief']],note:'Simuleer echte ADL. Plastische zak met gewicht dragen (500g → 2kg). Functionele krachtherstel is einddoel, niet isolatieoefeningen.',cat:'neuro'},
+         {name:'Proprioceptie & joint position sense pols',params:[['Sets','2–3'],['Duur','30–60 sec'],['Tool','perturbatieboard, theraband']],note:'Ogen dicht pols in neutrale positie houden. Zachte tapping op pols (rhythmic stabilization). Cruciaal voor sport en manueel werk.',cat:'stabiliteit'}],
+       criteria_go:['Grip ≥ 60% contralateraal (Jamar)','Pols AROM F/E ≥ 60°','Pro/sup ≥ 80°','PRWE < 40','Pijn NRS ≤ 2 bij dagelijkse activiteiten'],
+       criteria_stop:['Pijn > NRS 4 na krachtoefening (24u-regel)','Gezwollen pols na training'],
+       redflags:['EPL-peesruptuur (duim kan niet strekken) → spoedreferral handchirurg','Aanhoudende dorsale pijn bij belasting → scafoïd non-union of DISI-deformiteit → röntgen']},
+
+      {label:'Fase 4',title:'Volledig Functioneel & Return to Sport',weeks:'Week 12–20',
+       evidence:'Volledig krachtherstel na DRF duurt <strong>12–24 maanden</strong>, maar functioneel herstel voor ADL en recreatieve sport is haalbaar bij 3–5 maanden (Lozano-Calderón et al. 2008). <strong>Sport-specifieke revalidatie</strong> nodig bij contact- en overheadsporten. <strong>PRWE < 20</strong> is doelstelling voor volledige functionele vrijgave. Work hardening essentieel voor manuele beroepen (schrijnwerker, kapper, verpleegkundige).',
+       goals:['Grip strength ≥ 90% contralateraal','PRWE < 20','Volledige AROM en kracht hersteld','Sport- en werkhervatting volledig en pijnvrij'],
+       exercises:[
+         {name:'Plyometrische polsbelasting',params:[['Tool','medicine ball (1–2 kg), wall throws'],['Sets','3'],['Reps','10–15']],note:'Polsbewegingen met snelheid en reactie. Wall press-ups met polswiggelen. Essentieel voor racketsporten, volleybal, basketbal.',cat:'neuro'},
+         {name:'Sportspecifieke bewegingen',params:[['Afhankelijk van','sport, beroep'],['Voorbeelden','racket, stok, bat, kneden, typen']],note:'Simuleer exacte bewegingspatronen van sport of werk. Progressief qua snelheid en weerstand. Samenwerken met coach/ergotherapeut.',cat:'neuro'},
+         {name:'Volledige krachtketen bovenste extremiteit',params:[['Oefeningen','push-up, row, overhead press'],['Sets','3–4'],['Reps','8–12']],note:'Pols integreren in globale kettingoefeningen. Neutralpolspositie bij belasting. Push-up op vuisten of met polswig voor comfort.',cat:'kracht'},
+         {name:'Work hardening programma',params:[['Duur','4–6 weken'],['Freq','3–5×/week'],['Begeleiding','ergotherapeut']],note:'Gesimuleerde werktaken: tillen, dragen, schrijven, gereedschap. Opbouw naar full-time werkhervatting. Verplicht bij manuele beroepen.',cat:'neuro'},
+         {name:'Onderhoud & preventie',params:[['Freq','2×/week'],['Duur','15–20 min']],note:'Excentrisch-concentrisch polscircuit. Proprioceptieve oefeningen. Polsbrace bij risico-activiteiten eerste jaar. Valpreventie training.',cat:'kracht'}],
+       criteria_go:['Grip ≥ 90% contralateraal','PRWE < 20','Pro/sup ≥ 90°, F/E ≥ 80°','Sportspecifieke tests pijnvrij','Chirurgische vrijgave (indien implantaat verwijdering)'],
+       criteria_stop:['PRWE stagneert > 8 weken → ergotherapeut inschakelen'],
+       redflags:['Implantaat-falen of breuk (röntgen) → spoedreferral chirurg','Nieuw trauma of val op pols → exclusief röntgen']}
+    ],
+    refs:'Souer JS et al. (2011) — Wrist rehabilitation programs after distal radius fractures. J Hand Surg Am. | Quadlbauer S et al. (2017) — Early rehabilitation after volar locked plating of distal radius fractures. J Wrist Surg. | MacDermid JC et al. (2004) — The Patient-Rated Wrist Evaluation (PRWE): psychometric properties. J Hand Ther. | Lozano-Calderón SA et al. (2008) — The quality and strength of evidence for etiology: example of carpal tunnel syndrome. J Hand Surg Am. | Lattanza LL et al. (2017) — Open vs closed reduction of distal radius fractures in elderly. J Bone Joint Surg Am. | Valdes K et al. (2012) — A comparison of conservative interventions for distal radius fracture. J Hand Ther. | Ruch DS & Papadonikolakis A (2006) — Volar versus dorsal plating in the management of intra-articular distal radius fractures. J Hand Surg Am.'}
 };
 
 // ── CATEGORIES ──
@@ -861,6 +922,14 @@ const SCORES = {
     {name:'DASH', full:'Disabilities of the Arm, Shoulder and Hand', max:100, unit:'punten', invert:true,
      ranges:[{label:'Minimale beperking',min:0,max:20,color:'#22c55e'},{label:'Matige beperking',min:21,max:40,color:'#f59e0b'},{label:'Ernstige beperking',min:41,max:100,color:'#ef4444'}],
      rts:'< 20 voor RTS', mcid:10.2},
+  ],
+  orif: [
+    {name:'PRWE', full:'Patient-Rated Wrist Evaluation', max:100, unit:'punten', invert:true,
+     ranges:[{label:'Minimale beperking',min:0,max:20,color:'#22c55e'},{label:'Matige beperking',min:21,max:50,color:'#f59e0b'},{label:'Ernstige beperking',min:51,max:100,color:'#ef4444'}],
+     rts:'< 20 voor RTS (Deel A + Deel B ÷ 2)', mcid:11.5},
+    {name:'QuickDASH', full:'Disabilities of the Arm, Shoulder and Hand — kort', max:100, unit:'punten', invert:true,
+     ranges:[{label:'Minimale beperking',min:0,max:20,color:'#22c55e'},{label:'Matige beperking',min:21,max:40,color:'#f59e0b'},{label:'Ernstige beperking',min:41,max:100,color:'#ef4444'}],
+     rts:'< 20 voor RTS', mcid:8},
   ],
 };
 
@@ -1131,6 +1200,59 @@ const BESLISBOOM = {
         opties: [
           {label: 'Beighton ≥ 4 — hypermobiel', advies: 'Geen stretching. Focus op dynamische stabilisatie, RC-cocontractie, scapulaire retractie. Lange revalidatieduur (9–12 mnd). Chirurgie zelden geïndiceerd.', color: '#f59e0b'},
           {label: 'Beighton < 4 — normale laxiteit', advies: 'Standaard AMBRI-protocol. Scapulaire controle fase 1–2. Neuromusculaire training fase 3. 6 mnd conservatief voor chirurgische beslissing.', color: '#22c55e'},
+        ]
+      },
+    ]
+  },
+  orif: {
+    title: 'ORIF Distale Radius — Klinische beslisboom',
+    stappen: [
+      {
+        id: 'start',
+        vraag: 'Postoperatieve complicaties aanwezig?',
+        info: 'Check actief op CRPS, CTS, EPL-ruptuur en plaatproblemen. De meeste complicaties manifesteren zich in week 2–8. Vroeg opsporen verbetert uitkomst sterk.',
+        opties: [
+          {label: 'Brandende pijn, allodynie of kleurverandering', next: 'crps', color: '#ef4444'},
+          {label: 'Nieuwe tintelingen duim/index/middenvinger', next: 'cts', color: '#f59e0b'},
+          {label: 'Duim kan niet actief strekken (EPL)', advies: 'EPL-peesruptuur — complicatie van volaire plaat of haakje. Spoedreferral handchirurg. Tenodese of transplantaat nodig.', color: '#ef4444'},
+          {label: 'Geen complicaties — normaal verloop', next: 'kracht', color: '#22c55e'},
+        ]
+      },
+      {
+        id: 'crps',
+        vraag: 'CRPS type 1 waarschijnlijk (Budapest-criteria)?',
+        info: 'Budapest-criteria: 4 symptoomcategorieën (sensorisch, vasomotorisch, sudomotorisch, motorisch/trofisch) en 2 tekencategorieën aanwezig. CRPS treedt op bij 2–8% van DRF.',
+        opties: [
+          {label: 'Budapest-criteria positief (≥ 3 categorieën)', advies: 'Multidisciplinair CRPS-protocol starten. Desensibilisatie + graded motor imagery. Pijnkliniek verwijzing. Revalidatie doorgaan maar aanpassen (geen forceren, pijneducatie).', color: '#ef4444'},
+          {label: 'Vermoeden maar onvolledig beeld', advies: 'Laagdrempelig verwijzen reumatologie of pijnkliniek. Milde desensibilisatie starten (textuuroefeningen). Herevalueer na 2 weken.', color: '#f59e0b'},
+        ]
+      },
+      {
+        id: 'cts',
+        vraag: 'Carpaaltunnelsyndroom — acuut of pre-existent?',
+        info: 'Acuut postoperatief CTS (eerste 2 weken) door oedeem of hematoom vereist spoedingreep. Pre-existent CTS kan verergeren na DRF. Phalen en Tinel positief.',
+        opties: [
+          {label: 'Acuut (< 2 weken postoperatief), ernstig', advies: 'Spoedreferral chirurg — mogelijk oedeemdruk of hematoomdruk op n. medianus. Carpaaltunnelrelease kan nodig zijn.', color: '#ef4444'},
+          {label: 'Chronisch of mild (tintelingen, nachtpijn)', advies: 'Nachtspalk in neutrale positie. Conservatief 6–8 weken. Bij uitblijven herstel: orthopedie consulteren voor carpaaltunnelrelease.', color: '#f59e0b'},
+        ]
+      },
+      {
+        id: 'kracht',
+        vraag: 'Krachtherstel grip na fase 3 (week 10–12)?',
+        info: 'Grip strength < 60% van contralateraal op week 12 wijst op vertraagd herstel. Oorzaken: onvoldoende training, pijnremming, CRPS subklinisch, peesadhesies.',
+        opties: [
+          {label: 'Grip ≥ 60% contralateraal — normaal verloop', next: 'rts', color: '#22c55e'},
+          {label: 'Grip < 60% na 12 weken training', advies: 'Ergotherapeut inschakelen voor intensief handrevalidatieprogramma. HSR-principes toepassen (3×8RM). CRPS uitsluiten. Herevalueer na 4 weken.', color: '#f59e0b'},
+        ]
+      },
+      {
+        id: 'rts',
+        vraag: 'Return to Sport / Work criteria gehaald?',
+        info: 'PRWE < 20, grip ≥ 90% contralateraal, AROM F/E ≥ 80°, pro/sup ≥ 90°, pijnvrij bij sportspecifieke bewegingen.',
+        opties: [
+          {label: 'Alle criteria gehaald', advies: 'Volledige RTS/RTW. Onderhoudsprogramma 2×/week. Polsbrace bij risico-activiteiten eerste jaar. Afsluiting na 6 maanden follow-up.', color: '#22c55e'},
+          {label: 'PRWE < 20 maar grip 75–89%', advies: 'Gedeeltelijke RTS voor niet-contact activiteiten. Grip training intensiveren. Herevalueer na 4 weken. Manuele beroepen: ergotherapeut work hardening.', color: '#f59e0b'},
+          {label: 'Criteria niet gehaald na 5 maanden', advies: 'Multidisciplinaire evaluatie. Röntgen/CT voor botgenezing. CRPS uitsluiten. Implantaat positie controleren. Ergotherapeut inschakelen.', color: '#ef4444'},
         ]
       },
     ]
@@ -1411,6 +1533,31 @@ const FORMS = {
       {id:'w19', tekst:'Verandering van levensstijl door schouderprobleem', type:'slider', max:100},
       {id:'w20', tekst:'Problemen met vrienden/familie door schouderprobleem', type:'slider', max:100},
       {id:'w21', tekst:'Toekomstperspectief — zorgen over schouder op lange termijn', type:'slider', max:100},
+    ]
+  },
+  'prwe': {
+    name: 'PRWE',
+    full: 'Patient-Rated Wrist Evaluation',
+    protocol: 'orif',
+    max: 150,
+    rts: '≤ 20 (berekend: Deel A + Deel B ÷ 2)',
+    intro: 'De PRWE meet pijn en functie van de pols. Schuif elke slider naar de waarde die het best uw afgelopen week beschrijft (0 = geen pijn/geen moeite, 10 = ergste pijn/onmogelijk). PRWE-score = Deel A (som 5 vragen) + Deel B (som 10 vragen ÷ 2) — maximumscore 100.',
+    vragen: [
+      {id:'pa1', tekst:'DEEL A — PIJN | Hoe erg was uw GEMIDDELDE pijn in de pols de afgelopen week?', type:'slider', max:10},
+      {id:'pa2', tekst:'PIJN | Hoe erg was de ERGSTE pijn in uw pols de afgelopen week?', type:'slider', max:10},
+      {id:'pa3', tekst:'PIJN | Hoe erg was pijn bij het uitvoeren van een herhalende polsactiviteit?', type:'slider', max:10},
+      {id:'pa4', tekst:'PIJN | Hoe erg was pijn bij rust of activiteit waarbij de pols minder bewogen werd?', type:'slider', max:10},
+      {id:'pa5', tekst:'PIJN | Hoe erg was pijn bij het dragen van een voorwerp van 5 kg?', type:'slider', max:10},
+      {id:'pb1', tekst:'DEEL B — SPECIFIEKE FUNCTIE | Een deur omdraaien met een sleutel', type:'slider', max:10},
+      {id:'pb2', tekst:'FUNCTIE | Een mes en vork gebruiken tijdens het eten', type:'slider', max:10},
+      {id:'pb3', tekst:'FUNCTIE | Een overhemdknoop dichtmaken', type:'slider', max:10},
+      {id:'pb4', tekst:'FUNCTIE | Een zware deur opentrekken', type:'slider', max:10},
+      {id:'pb5', tekst:'FUNCTIE | Een pot openmaken', type:'slider', max:10},
+      {id:'pb6', tekst:'FUNCTIE | Iets met de hand boven het hoofd vastmaken (bijv. haar)', type:'slider', max:10},
+      {id:'pb7', tekst:'GEWONE ACTIVITEITEN | Persoonlijke verzorging (wassen, aankleden)', type:'slider', max:10},
+      {id:'pb8', tekst:'GEWONE ACTIVITEITEN | Huishoudelijke taken (poetsen, koken)', type:'slider', max:10},
+      {id:'pb9', tekst:'GEWONE ACTIVITEITEN | Werk of beroepsactiviteiten', type:'slider', max:10},
+      {id:'pb10', tekst:'GEWONE ACTIVITEITEN | Recreatieve activiteiten of sport', type:'slider', max:10},
     ]
   }
 };

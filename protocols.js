@@ -979,6 +979,53 @@ const protocols = {
     refs:'Page MJ et al. (2022) — Surgery for carpal tunnel syndrome. Cochrane Database Syst Rev. | Fernández-de-las-Peñas C et al. (2021) — Manual therapy versus surgery for carpal tunnel syndrome: a randomized parallel-group trial. J Pain. | Walker WC et al. (2000) — Neutral wrist splinting in carpal tunnel syndrome: a comparison of night-only versus full-time wear instructions. Arch Phys Med Rehabil. | Atroshi I et al. (2009) — Endoscopic carpal tunnel release: a prospective assessment of 255 consecutive cases. J Bone Joint Surg Am. | Marshall SC et al. (2007) — Local corticosteroid injection for carpal tunnel syndrome. Cochrane Database Syst Rev. | Wehbé MA & Schlegel JM (2004) — Nerve and tendon gliding exercises and the conservative management of carpal tunnel syndrome. J Hand Ther. | Huisstede BM et al. (2010) — Carpal tunnel syndrome: hand therapists\' view on factors associated with outcomes of nonsurgical and surgical treatment. Arch Phys Med Rehabil. | Bland JD (2007) — Carpal tunnel syndrome. BMJ. | Shiels SM et al. (2016) — Scar management after carpal tunnel release. J Hand Surg Am.'}
 };
 
+// ── REGIO MAPPING (protocol → regio) ──
+const REGIO_MAP = {
+  acl:'Knie & Heup', tka:'Knie & Heup', pfps:'Knie & Heup', pt:'Knie & Heup',
+  lh:'Lumbaal & Cervicaal', bureau:'Lumbaal & Cervicaal',
+  rc:'Schouder & Arm', si:'Schouder & Arm',
+  at:'Enkel & Voet', enkel:'Enkel & Voet', over:'Enkel & Voet',
+  orif:'Pols & Hand', dq:'Pols & Hand', cts:'Pols & Hand',
+};
+
+// ── SPIERGROEP KEYWORD MAPPING ──
+const SPIER_KEYWORDS = [
+  {spier:'Quadriceps',               color:'#22d3ee',
+   kw:['squat','kniebuig','leg press','beenpers','quadriceps','extensie knie','knie-extensie','VMO','terminal knee','wall squat','step-up','step up','lunge','uitval','beenheffen','SLR','beenpress','leg extension']},
+  {spier:'Hamstrings',               color:'#f97316',
+   kw:['hamstring','beenbuig','nordic','leg curl','deadlift','hip hinge','RDL','heupscharnierbeweging']},
+  {spier:'Gluteus maximus',          color:'#a78bfa',
+   kw:['heupbrug','bridge','hip thrust','gluteus','bilspier','heupextensie','hip extension','donkey kick','deadlift','RDL']},
+  {spier:'Gluteus medius',           color:'#fb923c',
+   kw:['heupabductie','abductie','clamshell','side-lying','lateral walk','band walk','gluteus medius','heupstabilisatie','X-band']},
+  {spier:'Gastrocnemius / Soleus',   color:'#4ade80',
+   kw:['kuitheffen','calf','gastrocnemius','soleus','plantairflexie','staan op teen','enkelpush','alfredson','eccentrisch kuit']},
+  {spier:'Tibialis / Peronealen',    color:'#34d399',
+   kw:['tibialis','peroneus','dorsaalflexie','enkelpropriocept','BOSU','wiebelplank','perturbatie','evenwicht','balance','wiebelboard','taping enkel']},
+  {spier:'Rotatorenmanchet',         color:'#f43f5e',
+   kw:['rotator','RC','supraspinatus','infraspinatus','subscapularis','teres','externe rotatie','interne rotatie','ER rotatie','IR rotatie','side-lying ER','ER/IR','sleeper stretch']},
+  {spier:'Deltoideus',               color:'#e879f9',
+   kw:['deltoideus','schouderpress','shoulder press','zijwaartse heffing','laterale heffing','overhead press','abductie schouder','frontheffing']},
+  {spier:'Trapezius / Rhomboïden',   color:'#60a5fa',
+   kw:['trapezius','rhomboïd','scapulaire','retractie','row','Y-T-W','prone Y','face pull','scapula','Brugger','upper trap','lower trap','wall slide schouder']},
+  {spier:'Core / Buikspieren',       color:'#facc15',
+   kw:['plank','core','buik','dead bug','crunch','pallof','McGill','hollowing','stabilisatie romp','transversus','multifidus','CO-contractie','rollout','sit-up','bird dog']},
+  {spier:'Lumbale extensoren',       color:'#f59e0b',
+   kw:['rugextensie','erector','back extension','hyperextensie','McKenzie','lumbaal','roman chair','rugspier','prone extension','cobra']},
+  {spier:'Heupflexoren',             color:'#818cf8',
+   kw:['iliopsoas','heupflexie','hip flexor','knieheffen','marching','step march','thomas stretch','couch stretch']},
+  {spier:'Cervicale spieren',        color:'#38bdf8',
+   kw:['nek','cervicaal','DNF','deep neck','cranio','occipitaal','suboccipitaal','nekspier','hoofdheffing','chin tuck','nekflexie']},
+  {spier:'Biceps / Triceps',         color:'#84cc16',
+   kw:['biceps','triceps','elleboog','curl','arm extensie','pushdown']},
+  {spier:'Polsflexoren / Extensoren',color:'#f472b6',
+   kw:['polsflexie','polsextensie','wrist','deviatie','APL','EPB','polsrotatie','pronatie','supinatie','pro-supinatie','radiale','ulnaire']},
+  {spier:'Intrinsieke handspieren',  color:'#94a3b8',
+   kw:['grip','knijp','pinch','pincet','duim','vinger','thera-putty','rijstbak','sensibiliteit','fijnmotoriek','zenuwglijden','pesglijden']},
+  {spier:'Heupabductoren / Adductoren', color:'#10b981',
+   kw:['adductie','adductor','sumo','groin','lies','heup lateraal']},
+];
+
 // ── CATEGORIES ──
 const CAT = {
   kracht:     {icon:'💪', label:'Kracht',      color:'#f97316'},

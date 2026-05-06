@@ -72,7 +72,7 @@ function filterProtos(regio) {
 
 // ── NAVIGATION ──
 function hideAllScreens() {
-  ['screen-home','screen-proto','screen-patients','screen-patient-detail','screen-eval-forms','screen-search'].forEach(id => {
+  ['screen-home','screen-proto','screen-patients','screen-patient-detail','screen-eval-forms','screen-library','screen-search'].forEach(id => {
     const el = document.getElementById(id);
     if(el) el.style.display = 'none';
   });
@@ -828,6 +828,154 @@ function printBlankEvalForm(formId) {
   html += '<div class="pf-footer">KineProtocol · Klinisch Evaluatieformulier · ' + datum + '</div>';
   document.getElementById('print-fiche').innerHTML = html;
   setTimeout(() => window.print(), 100);
+}
+
+// ── OEFENBIBLIOTHEEK ──
+let libGroupBy = 'regio';
+let libCache = null;
+
+function buildExerciseLibrary() {
+  if(libCache) return libCache;
+  const seen = new Set();
+  const lib = [];
+  Object.values(protocols).forEach(p => {
+    const regio = REGIO_MAP[p.id] || 'Overig';
+    p.phases.forEach(ph => {
+      (ph.exercises || []).forEach(ex => {
+        if(seen.has(ex.name)) return;
+        seen.add(ex.name);
+        const nameLow = ex.name.toLowerCase();
+        const noteLow = (ex.note || '').toLowerCase();
+        const spieren = SPIER_KEYWORDS
+          .filter(s => s.kw.some(kw => nameLow.includes(kw.toLowerCase()) || noteLow.includes(kw.toLowerCase())))
+          .map(s => ({spier: s.spier, color: s.color}));
+        lib.push({
+          name: ex.name,
+          params: ex.params || [],
+          note: ex.note || '',
+          cat: ex.cat || '',
+          protoId: p.id,
+          protoTitle: p.title,
+          protoColor: p.color,
+          phaseLabel: ph.label,
+          regio,
+          spieren: spieren.length ? spieren : [{spier:'Overig', color:'#52525b'}],
+        });
+      });
+    });
+  });
+  libCache = lib;
+  // Update badge
+  const badge = document.getElementById('lib-count-badge');
+  if(badge) badge.textContent = lib.length + ' oef.';
+  return lib;
+}
+
+function showLibrary() {
+  hideAllScreens();
+  const el = document.getElementById('screen-library');
+  el.style.display = 'flex';
+  setNav('library');
+  buildExerciseLibrary();
+  renderLibrary('');
+}
+
+function setLibGroup(mode) {
+  libGroupBy = mode;
+  document.getElementById('lib-btn-regio').classList.toggle('active', mode === 'regio');
+  document.getElementById('lib-btn-spier').classList.toggle('active', mode === 'spier');
+  renderLibrary(document.getElementById('lib-search')?.value || '');
+}
+
+function filterLibrary(query) {
+  renderLibrary(query);
+}
+
+function renderLibrary(query) {
+  const body = document.getElementById('lib-body');
+  if(!body) return;
+  const lib = buildExerciseLibrary();
+  const q = (query || '').toLowerCase().trim();
+  const filtered = q ? lib.filter(ex =>
+    ex.name.toLowerCase().includes(q) ||
+    ex.regio.toLowerCase().includes(q) ||
+    ex.spieren.some(s => s.spier.toLowerCase().includes(q)) ||
+    ex.protoTitle.toLowerCase().includes(q) ||
+    (ex.note && ex.note.toLowerCase().includes(q))
+  ) : lib;
+
+  // Group
+  const groups = {};
+  filtered.forEach(ex => {
+    const keys = libGroupBy === 'spier'
+      ? ex.spieren.map(s => s.spier)
+      : [ex.regio];
+    keys.forEach(key => {
+      if(!groups[key]) groups[key] = {items:[], color: libGroupBy === 'spier'
+        ? ex.spieren.find(s => s.spier === key)?.color || '#52525b'
+        : '#71717a'};
+      // Avoid duplicates within group
+      if(!groups[key].items.find(e => e.name === ex.name)) groups[key].items.push(ex);
+    });
+  });
+
+  // Sort group keys
+  const regio_order = ['Knie & Heup','Lumbaal & Cervicaal','Schouder & Arm','Enkel & Voet','Pols & Hand','Overig'];
+  const spier_order = SPIER_KEYWORDS.map(s => s.spier).concat(['Overig']);
+  const order = libGroupBy === 'spier' ? spier_order : regio_order;
+  const sortedKeys = Object.keys(groups).sort((a, b) => {
+    const ia = order.indexOf(a), ib = order.indexOf(b);
+    return (ia < 0 ? 999 : ia) - (ib < 0 ? 999 : ib);
+  });
+
+  if(!sortedKeys.length) {
+    body.innerHTML = `<div style="color:var(--muted);font-size:13px;padding:24px 0;text-align:center;">Geen oefeningen gevonden voor "${q}"</div>`;
+    return;
+  }
+
+  const CAT_ICONS = {kracht:'💪',mobiliteit:'🔄',stabiliteit:'⚖',neuro:'🧠',cardio:'🏃',manueel:'🤲',test:'📏'};
+
+  body.innerHTML = sortedKeys.map((key, gi) => {
+    const g = groups[key];
+    const isOpen = q || gi < 3; // auto-open first 3 groups or when searching
+    const exHtml = g.items.map(ex => {
+      const paramsStr = ex.params.slice(0,3).map(p => `<span>${p[0]}: <strong>${p[1]}</strong></span>`).join(' · ');
+      const catIcon = CAT_ICONS[ex.cat] || '';
+      // Spier badges (when grouped by regio show spieren, when by spier show protocol)
+      const badges = libGroupBy === 'regio'
+        ? ex.spieren.slice(0,2).map(s => `<span class="lib-ex-badge" style="background:${s.color}15;border-color:${s.color}33;color:${s.color};">${s.spier}</span>`).join('')
+        : `<span class="lib-ex-badge" style="background:${ex.protoColor}15;border-color:${ex.protoColor}33;color:${ex.protoColor};">${ex.protoId.toUpperCase()}</span>`;
+      return `<div class="lib-ex" onclick="this.classList.toggle('expanded')">
+        <div class="lib-ex-dot" style="background:${ex.protoColor}"></div>
+        <div class="lib-ex-main">
+          <div class="lib-ex-name">${ex.name} ${catIcon ? `<span style="font-size:10px;opacity:.6">${catIcon}</span>` : ''}</div>
+          <div class="lib-ex-badges">${badges}
+            <span class="lib-ex-badge" style="background:var(--surface3);border-color:var(--border);color:var(--muted);">${ex.phaseLabel} · ${ex.protoTitle.split(' ').slice(0,2).join(' ')}</span>
+          </div>
+          ${paramsStr ? `<div class="lib-ex-params">${paramsStr}</div>` : ''}
+          ${ex.note ? `<div class="lib-ex-note">${ex.note}</div>` : ''}
+        </div>
+      </div>`;
+    }).join('');
+
+    return `<div class="lib-group">
+      <div class="lib-group-head" onclick="toggleLibGroup(${gi})">
+        <div class="lib-group-dot" style="background:${g.color}"></div>
+        <div class="lib-group-name">${key}</div>
+        <div class="lib-group-count">${g.items.length} oefeningen</div>
+        <div class="lib-group-arrow ${isOpen?'open':''}" id="lib-arr-${gi}">▶</div>
+      </div>
+      <div class="lib-group-body ${isOpen?'open':''}" id="lib-grp-${gi}">${exHtml}</div>
+    </div>`;
+  }).join('');
+}
+
+function toggleLibGroup(gi) {
+  const body = document.getElementById('lib-grp-' + gi);
+  const arrow = document.getElementById('lib-arr-' + gi);
+  if(!body) return;
+  const open = body.classList.toggle('open');
+  if(arrow) arrow.classList.toggle('open', open);
 }
 
 // ── EVALUATIEFORMULIEREN SCHERM ──

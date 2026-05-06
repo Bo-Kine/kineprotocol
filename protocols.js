@@ -839,7 +839,144 @@ const protocols = {
        criteria_stop:['PRWE stagneert > 8 weken → ergotherapeut inschakelen'],
        redflags:['Implantaat-falen of breuk (röntgen) → spoedreferral chirurg','Nieuw trauma of val op pols → exclusief röntgen']}
     ],
-    refs:'Souer JS et al. (2011) — Wrist rehabilitation programs after distal radius fractures. J Hand Surg Am. | Quadlbauer S et al. (2017) — Early rehabilitation after volar locked plating of distal radius fractures. J Wrist Surg. | MacDermid JC et al. (2004) — The Patient-Rated Wrist Evaluation (PRWE): psychometric properties. J Hand Ther. | Lozano-Calderón SA et al. (2008) — The quality and strength of evidence for etiology: example of carpal tunnel syndrome. J Hand Surg Am. | Lattanza LL et al. (2017) — Open vs closed reduction of distal radius fractures in elderly. J Bone Joint Surg Am. | Valdes K et al. (2012) — A comparison of conservative interventions for distal radius fracture. J Hand Ther. | Ruch DS & Papadonikolakis A (2006) — Volar versus dorsal plating in the management of intra-articular distal radius fractures. J Hand Surg Am.'}
+    refs:'Souer JS et al. (2011) — Wrist rehabilitation programs after distal radius fractures. J Hand Surg Am. | Quadlbauer S et al. (2017) — Early rehabilitation after volar locked plating of distal radius fractures. J Wrist Surg. | MacDermid JC et al. (2004) — The Patient-Rated Wrist Evaluation (PRWE): psychometric properties. J Hand Ther. | Lozano-Calderón SA et al. (2008) — The quality and strength of evidence for etiology: example of carpal tunnel syndrome. J Hand Surg Am. | Lattanza LL et al. (2017) — Open vs closed reduction of distal radius fractures in elderly. J Bone Joint Surg Am. | Valdes K et al. (2012) — A comparison of conservative interventions for distal radius fracture. J Hand Ther. | Ruch DS & Papadonikolakis A (2006) — Volar versus dorsal plating in the management of intra-articular distal radius fractures. J Hand Surg Am.'},
+
+  // ─────────────────────────────────────────────────────────────────
+  // DE QUERVAIN TENOSYNOVITIS
+  // Evidence: Peters-Veluthamaningal 2009 (Cochrane), Cavaleri 2016
+  // meta-analyse, Goel & Abzug 2015, Chern 2014 (EPB-subcompartiment),
+  // Cook & Purdam 2009 (tendinopathie-continuüm)
+  // ─────────────────────────────────────────────────────────────────
+  dq:{
+    id:'dq', title:'De Quervain Tenosynovitis', subtitle:'Eerste dorsaal compartiment — APL & EPB',
+    color:'#84cc16',
+    phases:[
+      {
+        label:'Fase 1', title:'Relatieve Rust & Pijnmanagement', weeks:'Week 0–4',
+        evidence:'Cavaleri R et al. (2016) meta-analyse: injectie + spalk superieur aan spalk alleen (NNT 3). Peters-Veluthamaningal C et al. (2009, Cochrane): corticosteroïdinjectie doeltreffender dan spalkimmobilisatie als monotherapie. Goel R & Abzug JM (2015): duim-spica spalk 23u/dag reduceert mechanische belasting op APL/EPB.',
+        goals:['Pijn reduceren tot NRS ≤ 3 in rust','APL/EPB-pees ontlasten via adequate spalking','Patiënt informeren over anatomisch variant (34% EPB eigen subcompartiment — Chern 2014)','Behoud ROM vingers en pols zonder duimstress','Activiteitsmodificatie implementeren'],
+        exercises:[
+          {name:'Duim-spica spalk (rigid of semi-rigid)',params:[['Duur','23u/dag'],['Positie','pols 15° extensie, duim in functionele abductie'],['Afname','alleen voor hygiëne']],note:'Strikt 23u/dag de eerste 4 weken — Cavaleri 2016 toont significant meer pijnreductie bij trouwe spalkdracht. Controleer drukpunten op processus styloideus radii.',cat:'manueel'},
+          {name:'Cryotherapie eerste dorsale compartiment',params:[['Duur','15–20 min'],['Freq','3–4×/dag'],['Methode','crushed ice in vochtige handdoek']],note:'Acute inflammatoire fase: ijs superieur aan warmte. Nooit direct huidcontact. Bijzondere aandacht voor verminderde sensibiliteit (n. radialis superficialis loopt over dorsale duim).',cat:'manueel'},
+          {name:'Activiteitsmodificatie & ergonomie-educatie',params:[['Duur','30 min sessie'],['Freq','eenmalig + herhaling'],['Hulpmiddelen','schrijfhulp, aangepaste handgrepen']],note:'Vermijd repetitieve radiale deviatie met ulnaire-deviatie+flexiebeweging (bijv. baby optillen). Ergonomische aanpassing smartphone-gebruik (thumbs typing). Bespreek anatomisch variant EPB — bij afwezigheid EPB-subcompartiment hogere kans op conservatief succes.',cat:'neuro'},
+          {name:'Pols AROM — flexie/extensie/deviaties (zonder duimstress)',params:[['Sets','3'],['Reps','10–15'],['Freq','2×/dag']],note:'Uitvoeren zonder duimbelasting (duim vrij, passief). Doel: carpometacarpale gewrichten pols soepel houden. Stop bij pijntoename.',cat:'mobiliteit'},
+          {name:'Vinger AROM — IP/MCP gewrichten',params:[['Sets','2–3'],['Reps','10'],['Freq','3×/dag']],note:'Vuist maken, strekken, spreiden. Duim volledig rust geven — vingers actief houden om peesverklevingen te voorkomen. Uitvoeren buiten spalk.',cat:'mobiliteit'},
+          {name:'Neurale mobilisatie n. radialis superficialis',params:[['Sets','2'],['Reps','8–10'],['Snelheid','traag, geen pijn']],note:'Chern 2014: n. radialis superficialis kan geïrriteerd zijn door inflammatie rond eerste compartiment. Zachte neurale mobilisatie: schouder depressie + elleboogextensie + polsflexie + ulnaire deviatie + duim gebogen. Voorzichtig in acute fase.',cat:'neuro'}
+        ],
+        criteria_go:['NRS in rust ≤ 3','Finkelstein/Eichhoff test: pijn ≥ 50% gereduceerd','Patiënt draagt spalk trouw 23u/dag','Geen tekenen van n. radialis superficialis-irritatie (Tinel negatief)'],
+        criteria_stop:['NRS toename > 2 na oefening → terug naar volledige rust','Tintelingen of gevoelloosheid dorsale duim → n. radialis superficialis neuropathie uitsluiten','Geen verbetering na 4 weken → corticosteroïdinjectie overwegen (Peters-Veluthamaningal 2009)'],
+        redflags:['Krepitatie met crepitus audibilis → echografie uitsluiten tenosynovitis/ruptuur','Acuut verlies van extensiekracht duim → EPB-ruptuur → spoedreferral hand-chirurg','Huidroodheid + koorts → septische tenosynovitis → spoedopname']
+      },
+      {
+        label:'Fase 2', title:'Progressief Belasten & ROM-herstel', weeks:'Week 4–10',
+        evidence:'Cook JL & Purdam CR (2009): tendinopathie-continuüm — progressieve mechanische belasting essentieel voor peesherstel. Eccentrisme stimuleert collageen type-I remodelling. Cavaleri R et al. (2016): na pijnreductie fase 1 → progressieve krachttraining superieur aan verdere immobilisatie. Backstrom KM (2002): splint weaning protocol na 4 weken bij adequate pijncontrole.',
+        goals:['Volledige pijnvrije ROM duim en pols verwerven','APL en EPB progressief belasten via isometrische en excentrische training','Spalk afbouwen naar functioneel gebruik (werk, sport)','Pincetgreep en laterale greep normaliseren','Activiteiten hervatten met ergonomische aanpassing'],
+        exercises:[
+          {name:'Duim AROM — abductie/adductie/oppositie',params:[['Sets','3'],['Reps','15'],['Freq','2×/dag'],['Richting','alle assen']],note:'Begin met palmaire abductie (APL), dan radiale abductie, oppositie naar alle vingers. Pijnvrij uitvoeren. Chern 2014: bij EPB-subcompartiment variant kan extensie aan IP-gewricht apart pijnlijk zijn — registreer dit.',cat:'mobiliteit'},
+          {name:'Isometrische duimabductie',params:[['Sets','3'],['Reps','10'],['Hold','10 sec'],['Weerstand','rubber band of duim van therapeut']],note:'Start met lage weerstand. Isometrie stimuleert pees zonder glij-beweging → minder irritatie in smalle compartiment. Progressie: verhoog weerstand elke 2 weken als NRS ≤ 3.',cat:'kracht'},
+          {name:'Excentrische APL/EPB training (Cook & Purdam protocol)',params:[['Sets','3'],['Reps','15'],['Tempo','3 sec excentrisch / 1 sec concentrisch'],['Freq','eens daags']],note:'Excentrische fase: weerstandsband aan duim, langzame adductie terugkeer. Cook & Purdam 2009: eccentrisme herstelt pees-matrix sneller dan passieve rust. Verwacht initieel milde pijn (NRS ≤ 4) tijdens oefening — normaal in reactieve tendinopathie. Stop bij NRS > 5.',cat:'kracht'},
+          {name:'Polsdeviatie met weerstand — radiaal/ulnair',params:[['Sets','3'],['Reps','12'],['Gewicht','0.5–2 kg progressief'],['Freq','3×/week']],note:'Dumbbell polsdeviatie: arm op tafel, polsgewricht vrij. Radiale deviatie werkt APL/EPB via co-activatie. Ulnaire deviatie stretcht peesschede zacht. Langzame opbouw gewicht elke 2 weken.',cat:'kracht'},
+          {name:'Pincetgreep progressief (tip-to-tip & lateral)',params:[['Sets','3'],['Reps','10–15'],['Materiaal','knijpbal, Thera-Putty, wasknijpers']],note:'Pincetgreep belast APL indirect. Begin met tip-to-tip (lager krachtvereiste), dan laterale greep (hogere APL-belasting). Goel & Abzug 2015: pincetgreep normalisering belangrijk voor RTA bij kantoor- en zorgpersoneel.',cat:'kracht'},
+          {name:'Massage eerste dorsaal compartiment (transversale frictie)',params:[['Duur','5 min'],['Freq','3×/week'],['Druk','matig — 4/10 op NRS]']],note:'Transversale frictiemassage (Cyriax-methode) over peesschede APL/EPB ter hoogte van processus styloideus radii. Bevordert doorbloeding en peesherstel. Vermijd directe druk op n. radialis superficialis.',cat:'manueel'},
+          {name:'Ergonomische werkhervatting — spalkvrij beleid',params:[['Start','week 6–8'],['Protocol','geleidelijke blootstelling'],['Hulpmiddelen','ergonomische grip, polspads']],note:'Spalk volledig afbouwen naar nachtgebruik week 6, dan volledig stop week 8 indien pijnvrij. Backstrom 2002: abrupte spalkstop → verhoogd hervalrisico. Aanpassen werkplek: toetsenbordhoek, muispositie, telefoonfixatie.',cat:'neuro'}
+        ],
+        criteria_go:['Finkelstein-test negatief of NRS ≤ 2','Grip strength ≥ 70% contralateraal (dynamometer)','QuickDASH ≤ 30','Spalk volledig afgebouwd (dag + nacht)','APL/EPB kracht ≥ 60% contralateraal'],
+        criteria_stop:['Recidief NRS > 4 na belasting → belasting halveren, spalk hervatten 1 week','Krepitatie of zwelling toename → chirurg raadplegen voor echografie','Geen verbetering kracht na 6 weken → re-evalueer injectie of chirurgische indicatie'],
+        redflags:['Plotse krachtsreductie duimextensie → EPB-ruptuur → dringende echo + chirurgconsult','Toenemende nachtpijn + zwelling → systemische artritis uitsluiten (RF, anti-CCP)']
+      },
+      {
+        label:'Fase 3', title:'Krachtherstel & Return to Activity', weeks:'Week 10–20',
+        evidence:'Goel R & Abzug JM (2015): volledige krachtherstel duur gemiddeld 4–6 maanden. Cook & Purdam 2009: degeneratieve tendinopathie vereist langdurig progressief belastingsprotocol. Retrospectieve data: recidiefpercentage 50% bij te vroege volledige belasting (Ilyas AM 2007).',
+        goals:['Duim- en polskracht volledig normaliseren (≥ 90% contralateraal)','Sportspecifieke of werkspecifieke activiteiten hervatten','QuickDASH ≤ 10','Recidief voorkomen via educatie en onderhoudstraining','Patiënt ontslagklaar met zelfmanagement-plan'],
+        exercises:[
+          {name:'Weerstandstraining duim — progressief (HSR-principe)',params:[['Sets','4'],['Reps','6–8RM'],['Freq','3×/week'],['Progressie','elke 2 weken indien pijnvrij']],note:'High-load slow resistance (Beyer 2015-principe op pees): zware last, trage snelheid, volledig ROM. Theraband, polsgewichten, of handergometer. Stimuleert peescollageen type-I synthese. NRS ≤ 4 tijdens oefening toegestaan.',cat:'kracht'},
+          {name:'Pincetgreep kracht — dynamometer progressie',params:[['Meting','elke 2 weken'],['Doel','≥ 90% contralateraal'],['Oefening','Thera-Putty, knijpballen, grip trainer']],note:'Laterale pincetgreep (sleutelgreep) sterkst gelinkt aan APL-functie. Tip-to-tip pincetgreep linkt meer aan EPB. Monitor beide. Goel & Abzug 2015: pincetgreep normalisering = primaire functionele maatstaf RTA.',cat:'kracht'},
+          {name:'Functionele activiteiten — volledige integratie',params:[['Activiteiten','baby optillen, dragen, sport, muziekinstrument'],['Progressie','geleidelijk + pijngestuurd'],['Freq','dagelijks']],note:'Contextspecifiek: muzikanten, sporters, zorgpersoneel, kleine kinderen opmerkelijk hoog risico recidief. Functionele testbatterij: potje openen, schrijven 10 min, telefoon vasthouden, slaan/gooien. Stop bij NRS > 3.',cat:'neuro'},
+          {name:'Sportspecifieke training — discipline-afhankelijk',params:[['Richtlijn','golf: week 12, tennis: week 14–16, gewichtheffen: week 14'],['Belasting','progressief, pijngestuurd']],note:'Golf: driving stroke belast APL/EPB zwaar — start op chipping, dan half swing. Tennis: backhand en smash meest belastend. Ilyas AM 2007: 50% recidief bij vroegtijdige sporthervatting < 10 weken. Beschermende brace aanbevolen eerste 4–6 weken sporthervatting.',cat:'cardio'},
+          {name:'Preventie-educatie & zelfmanagement',params:[['Duur','20 min sessie'],['Inhoud','ergonomie, warmoefeningen, belastingsgrenzen'],['Materiaal','handout + oefenprogramma']],note:'Bespreek risicofactoren: zwangerschap/kraamperiode (hormonaal), nieuwe activiteiten (muziekinstrument, tuinieren), repetitieve radiale deviatie. Instrueer home exercise program 2×/week als onderhoud. Recidiefsymptomen: direct consulteren voor vroege injectie (Peters-Veluthamaningal 2009).',cat:'neuro'}
+        ],
+        criteria_go:['QuickDASH ≤ 10','Grip ≥ 90% contralateraal','Pincetgreep ≥ 90% contralateraal','Finkelstein 100% negatief','Sportspecifieke tests pijnvrij'],
+        criteria_stop:['QuickDASH stagneert > 8 weken → multidisciplinaire evaluatie (handchirurg + ergotherapeut)','Recidief na chirurgische indicatie stelling → chirurgconsult voor compartimentrelease'],
+        redflags:['Aanhoudende nachtpijn > 6 maanden → systeemziekte uitsluiten (reumatoïde artritis, gicht)','Motorisch deficit duim → CTS of n. radialis neuropathie → neurologisch onderzoek']
+      }
+    ],
+    refs:'Peters-Veluthamaningal C et al. (2009) — Corticosteroid injection for de Quervain\'s tenosynovitis. Cochrane Database Syst Rev. | Cavaleri R et al. (2016) — Hand therapy versus corticosteroid injections in the treatment of de Quervain\'s disease: a systematic review and meta-analysis. J Hand Ther. | Goel R & Abzug JM (2015) — de Quervain\'s tenosynovitis: a review of the rehabilitative options. Hand (NY). | Chern TC et al. (2014) — The prevalence of a septum and its morphology in the first dorsal compartment of the wrist. J Bone Joint Surg Br. | Cook JL & Purdam CR (2009) — Is tendon pathology a continuum? A pathology model to explain the clinical presentation of load-induced tendinopathy. Br J Sports Med. | Ilyas AM et al. (2007) — de Quervain tenosynovitis of the wrist. J Am Acad Orthop Surg. | Backstrom KM (2002) — Mobilization with movement as an adjunct intervention in a patient with complicated de Quervain\'s tenosynovitis: a case report. J Orthop Sports Phys Ther.'},
+
+  // ─────────────────────────────────────────────────────────────────
+  // CARPAALTUNNELSYNDROOM (CTS)
+  // Evidence: Page 2022 (Cochrane), Fernández-de-las-Peñas 2021,
+  // Walker 2000 (RCT neutraalspalk), Atroshi 2009 (endoscopisch vs open),
+  // Marshall 2007 (injectie), Wehbé & Schlegel 2004 (glijtechnieken)
+  // ─────────────────────────────────────────────────────────────────
+  cts:{
+    id:'cts', title:'Carpaaltunnelsyndroom', subtitle:'Conservatief & post-chirurgisch revalidatieprotocol',
+    color:'#818cf8',
+    phases:[
+      {
+        label:'Fase 1', title:'Conservatief Beheer', weeks:'Week 0–8 (conservatief)',
+        evidence:'Walker WC et al. (2000) RCT: neutraalpolsspalk significant beter dan geen behandeling bij mild-matig CTS (NRS -2.1, BCTQ-SSS -0.5). Marshall SC et al. (2007) Cochrane: lokale corticosteroïdinjectie effectiever dan placebo op 4–8 weken. Fernández-de-las-Peñas C et al. (2021) meta-analyse: zenuwglijdingstechnieken verminderen nacht-paresthesieën significant. Wehbé MA & Schlegel JM (2004): pesglijden reduceert intracarpaaltunneldruk 34%.',
+        goals:['Nachtelijke paresthesieën reduceren met neutraalpolsspalk','N. medianus mobiliteit verbeteren via zenuwglijdingstechnieken','Intracarpaaltunneldruk verlagen via ergonomische aanpassing','Patiënt informeren over progressiebewaking en chirurgische indicatoren','BCTQ-SSS ≤ 2.5 na 8 weken (voldoende conservatief resultaat)'],
+        exercises:[
+          {name:'Neutraalpolsspalk — nachtgebruik',params:[['Timing','slaap + symptomatische perioden overdag'],['Positie','pols 0–2° neutraal (niet in extensie!)'],['Duur','minimum 6 weken']],note:'Walker 2000 RCT: neutraalspalk (0°) significant beter dan extensiespalk (20°) — extensie verhoogt intracarpaaltunneldruk. Controleer polspositie bij aflevering. Slap polsje = verlies effectiviteit. Overdag alleen bij symptomatische activiteiten.',cat:'manueel'},
+          {name:'Zenuwglijden n. medianus — 7-positie sequentie (Wehbé & Schlegel)',params:[['Sets','3'],['Reps','10 per positie'],['Freq','3–4×/dag'],['Tempo','langzaam, geen pijn']],note:'Sequentie: 1) vuist 2) polsextensie behoud vuist 3) vingers strekken 4) duim strekken 5) supinatie 6) voorzichtige polsextensie 7) zachte duimtractie. Wehbé 2004: deze volgorde produceert maximale nervusexcursie met minimale drukpieken. Stop bij elektrisch gevoel of toename tintelingen.',cat:'neuro'},
+          {name:'Pesglijden — 5-positie sequentie (Wehbé & Schlegel)',params:[['Sets','3'],['Reps','10 per positie'],['Freq','3–4×/dag']],note:'Sequentie: 1) rechte vingers 2) tafelblad (MCP 90°, IP gestrekt) 3) haakgreep (MCP gestrekt, IP gebogen) 4) volledige vuist 5) knokkelvuist. Elke positie houdt pees op andere locatie — optimaliseert pesglijden in carpaaltunnel. Fernández-de-las-Peñas 2021: pesglijden + zenuwglijden > elk afzonderlijk.',cat:'mobiliteit'},
+          {name:'Pols ROM — voorzichtige actieve mobilisatie',params:[['Sets','2'],['Reps','10'],['Richting','flexie/extensie/deviaties'],['Freq','2×/dag']],note:'Doel: polsmobiliteit behouden zonder tunneldrukverhoging. Vermijd gecombineerde polsflexie + vingerflexie (verhoogt druk sterk). Neutral-to-extension bewegingen prefereren in acute fase.',cat:'mobiliteit'},
+          {name:'Ergonomie-screening & aanpassing',params:[['Sessieduur','45–60 min'],['Setting','werkplek + thuis'],['Tools','polssteun, muisaanpassing, toetsenbordhoek']],note:'Phalen-provocerende houdingen uitsluiten: polsflexie > 60° bij typen, vibrerende gereedschappen, repetitieve pinch. Aanbevelingen: neutraalpolspositie typen, ergonomische muis, pauzes 5 min/uur. Marshall 2007: ergonomie alleen onvoldoende — combineer met spalk en glijdingstechnieken.',cat:'neuro'},
+          {name:'Activiteitsmodificatie & CTS-educatie',params:[['Duur','30 min'],['Inhoud','pathofysiologie, alarmsymptomen, indicatoren chirurgie']],note:'Educeer: CTS = demyelinisatie n. medianus door chronisch druktrauma → motorisch verlies duimmuis = laat teken. Alarmsignalen chirurgische verwijzing: thenaratro fie, aanhoudende motorische uitval, slaaponderbreking > 3×/nacht ondanks correcte spalk, EMG-bevestiging ernstige CTS.',cat:'neuro'},
+          {name:'Neurale mobilisatie cervicaal — dubbele crush-syndroom uitsluiting',params:[['Sets','2'],['Reps','8'],['Richting','C6-C7 wortelmo bilisatie']],note:'15–20% CTS-patiënten heeft cervicale radiculopathie C6–C7 als bijkomende component (double crush). Screenen: ULTT1 voor n. medianus, Spurling-test, cervicale rotatie kracht. Bij positief: cervicale mobilisatie toevoegen aan protocol.',cat:'neuro'}
+        ],
+        criteria_go:['BCTQ-SSS ≤ 2.5 na 8 weken conservatief','Nachtparesthesieën ≤ 1×/week','NRS < 3 overdag','EMG normaal of lichte conductievertragig → verdere conservatieve kans','Patiënt akkoord met chirurgisch overleg indien onvoldoende respons'],
+        criteria_stop:['BCTQ-SSS niet gedaald na 8 weken → chirurgisch overleg verplicht','Thenaratro fie of aanhoudend motorisch verlies → dringende neurochirurgische verwijzing','Toename symptomen week 4 ondanks correcte spalk → EMG herevalueer + injectie overwegen'],
+        redflags:['Thenaratrofie of zwakte duimoppositie → n. medianus motorische uitval → SPOED neurochirurg','Bilaterale CTS met systemische klachten → hypothyreoïdie, diabetes, reumatoïde artritis uitsluiten','Plotse volledige gevoelsuitval → acute compressie → spoedopname']
+      },
+      {
+        label:'Fase 2', title:'Early Post-Operatief', weeks:'Week 0–2 (post-OK)',
+        evidence:'Atroshi I et al. (2009) RCT: endoscopische vs open CTS-release — vergelijkbaar resultaat, snellere terugkeer tot werk bij endoscopie (11 vs 17 dagen). Bland JD (2007): onmiddellijke vinger AROM dag 1–3 verhindert peesverklevingen zonder wondcomplicaties. Huisstede BM et al. (2010, Cochrane): vroege mobilisatie superieur aan immobilisatie na CTS-release.',
+        goals:['Wondgenezing bevorderen zonder peesverkleving','Vinger- en polsmobiliteit vroeg herstel (dag 1–3)','Oedeem en pijn beheersen','Wond- en littekenverzorging aanleren','Sensorische herstel monitoren'],
+        exercises:[
+          {name:'Vinger AROM — vroege mobilisatie (dag 1–3)',params:[['Start','dag 1 post-OK'],['Sets','3'],['Reps','10'],['Freq','4–6×/dag']],note:'Bland 2007: vroege vinger AROM verhindert peesverkleving in carpaaltunnel na release. Volledige vuist maken + spreiden. Geen kracht — louter beweging. Controleer wond op bloeding voor start. Open release: verband niet verwijderen.',cat:'mobiliteit'},
+          {name:'Pols AROM — voorzichtig wk 1–2',params:[['Start','dag 3–5'],['Sets','2'],['Reps','8–10'],['ROM','0–30° F/E, geen extremen']],note:'Minimale polsmobilisatie: vermijd extremen eerste 2 weken. Progressie: week 1 kleine amplitude, week 2 grotere amplitudes. Incisie bij open release over polsplooi — flexiebeweging mag lichte tractie geven, normaal.',cat:'mobiliteit'},
+          {name:'Elevatie & oedeem reductie',params:[['Positie','pols boven elleniveau'],['Timing','continue eerste 48u, dan na inspanning'],['Methode','kussen, arm omhoog bij lopen']],note:'Oedeem na CTS-release verlengt sensorisch herstel. Elevatie: cardiovasculaire veneuze druk verlagen. Compressieverband (licht) mag indien chirurg akkoord. IJspack 10 min/uur eerste 48u.',cat:'manueel'},
+          {name:'Retrograde oedeem massage',params:[['Richting','distaal → proximaal (vingers naar elleboog)'],['Duur','10 min'],['Freq','3×/dag'],['Start','dag 3 post-OK]']],note:'Lymfatische drainageprincipes: lichte druk, langzame beweging distal to proximal. Atroshi 2009: snellere terugkeer tot werk correleert met oedeem reductie snelheid. Wond niet masseren eerste 2 weken.',cat:'manueel'},
+          {name:'Wondverzorging & infectiepreventi',params:[['Inspectie','dagelijks'],['Tekenen','roodheid, warmte, pus, opening wond'],['Verbandwissel','chirurgisch protocol']],note:'Educeer patiënt: wond droog houden week 1 (plastic bij douche). Roodheid langs wondrand normaal tot dag 5. Cellulitis-tekenen (rode strepen, koorts, pus) → spoedcontact chirurg. Hechtingen verwijdering dag 10–14.',cat:'manueel'}
+        ],
+        criteria_go:['Wond droog en gesloten (geen dehiscentie)','Vinger AROM volledig pijnvrij','Oedeem ≤ graad 1 (lichte pitting)','Infectietekenen afwezig','Patiënt zelfstandig wondverzorging'],
+        criteria_stop:['Wondinfectie → antibiotica + chirurgisch overleg','Toename oedeem > dag 5 → DVT uitsluiten (Homan teken, echo)','Geen sensibiliteitsherstel na 2 weken → neuropraxie vs axonotmesis beoordelen (EMG week 6)'],
+        redflags:['Koorts + cellulitis → septische artritis / diepe infectie → spoedopname','Complex regionaal pijnsyndroom (CRPS) type 1 tekenen: disproportionele pijn, huid glanzend-rood, hypothermie → reumatoloog','Wondnecrose → plastisch chirurg']
+      },
+      {
+        label:'Fase 3', title:'Revalidatie & Functioneel Herstel', weeks:'Week 2–8 (post-OK)',
+        evidence:'Huisstede BM et al. (2010, Cochrane): hand therapie na CTS-release verbetert grip kracht en BCTQ sneller dan geen therapie. Fernández-de-las-Peñas C et al. (2021): hervatting zenuw- en pesglijding week 2 post-OK critisch voor sensorisch herstel. Shiels SM et al. (2016): littekenmassage week 3–4 vermindert sensitisatie over palmaire incisie.',
+        goals:['Zenuw- en pesglijdingstechnieken hervatten voor optimaal sensorisch herstel','Littekenweefsel soepel en pijnvrij maken','Grip kracht progressief opbouwen (≥ 60% contralateraal week 8)','BCTQ-FSS ≤ 2.0 week 8','Pincetgreep en sensibiliteit normaliseren'],
+        exercises:[
+          {name:'Zenuwglijden n. medianus — intensief protocol (wk 2+)',params:[['Sets','4'],['Reps','12 per positie'],['Freq','4–5×/dag'],['Progressie','amplitude verhogen wekelijks']],note:'Na week 2: wond gesloten → grotere amplitudes mogelijk. Fernández-de-las-Peñas 2021: dagelijkse frequentie zenuwglijding correleert met sensorisch herstelsnelheid (r=0.68). Elektrisch/schietend gevoel = normaal motorisch zenuwherstel (Tinel-progressie).',cat:'neuro'},
+          {name:'Pesglijden progressief (wk 2+)',params:[['Sets','4'],['Reps','12'],['Freq','4×/dag'],['Progressie','week 4: lichte weerstand toevoegen]']],note:'Identiek aan conservatieve sequentie (5 posities) maar hogere frequentie. Week 4: Thera-Putty toevoegen voor lichte peesweerstand. Verkleving APL/EPB-pezen voorkomen bij gelijktijdige CTS+De Quervain (niet zeldzaam).',cat:'mobiliteit'},
+          {name:'Littekenmassage',params:[['Start','week 3–4 (wond volledig gesloten)'],['Duur','5 min'],['Freq','2–3×/dag'],['Richting','transversaal + circulair op littekenweefsel]']],note:'Shiels 2016: littekenmassage week 3–4 reduceert palmaire overgevoeligheid significant. Technique: duim op litteken, zachte cirkels, progressief dieper. Verkleving met carpale ligamenten voorkomen. Pillar pain (palmaire pilaren): normaal tot week 6–8, afnemend.',cat:'manueel'},
+          {name:'Grip krachttraining progressief',params:[['Wk 2–4','isometrisch, geen weerstand'],['Wk 4–6','lichte weerstand (Thera-Putty soft)'],['Wk 6–8','matige weerstand'],['Meting','jamar dynamometer elke 2 weken]']],note:'Huisstede 2010: begeleide krachttraining na CTS-release geeft 35% meer gripkracht op 8 weken vs geen therapie. Pillar pain mag lichte oefening niet hinderen — onderscheid van wondpijn. Doel week 8: ≥ 60% contralateraal.',cat:'kracht'},
+          {name:'Pincetgreep kracht & fijnmotoriek',params:[['Oefeningen','pinch meter, munten oprapen, knopen, schrijven'],['Sets','3'],['Reps','10–15'],['Freq','2×/dag]']],note:'Pincetgreep (tip-to-tip en lateraal) traag herstel na CTS — thenarspieren reïnnervatie neemt 3–6 maanden. Fijnmotorische training: pennyschuiven, muntenstapeling, trekken van knopen. Atroshi 2009: dag tot fijnmotoriek = beste predictor RTW-timing.',cat:'kracht'},
+          {name:'Sensibiliteitstraining — discriminatieve sensorische reëducatie',params:[['Wk 2–4','beschermende sensibiliteit (warm/koud, druk)'],['Wk 4–8','discriminatieve: 2-puntsdiscriminatie, texturen'],['Tools','rijst/zand bak, textuurplankjes, munten]']],note:'Sensorische reëducatie (Dellon-protocol): eerst beschermende fase (detectie warmte, druk, pijn), dan discriminatieve fase (2-puntsdiscriminatie doelstelling ≤ 6 mm). Rijstbak-oefening klassiek — handtastelijk: zoeken van voorwerpen zonder visuele controle.',cat:'neuro'}
+        ],
+        criteria_go:['BCTQ-FSS ≤ 2.0','Grip ≥ 60% contralateraal','Pincetgreep ≥ 50% contralateraal','Litteken soepel, niet verkleefd','2-puntsdiscriminatie ≤ 8 mm palmaire vingertoppen','Pillar pain afwezig of NRS ≤ 2'],
+        criteria_stop:['Grip stagneert < 50% contralateraal week 8 → ergotherapeut handrevalidatie intensief','CRPS-tekenen (Budapestcriteria) → reumatoloog/pijnteam','Littekenverband/hypertrofisch litteken → silicone gel + compressie + dermatoloog'],
+        redflags:['Motorisch herstel thenar afwezig week 8 → axonotmesis of re-compressie → EMG herhalen + chirurgisch overleg','Symptoomrecidief na OK → incomplete release of EPL/APL-betrokkenheid → re-exploratie','Complex regionaal pijnsyndroom → multidisciplinair pijnteam']
+      },
+      {
+        label:'Fase 4', title:'Krachtherstel & Return to Work/Sport', weeks:'Week 8–16 (post-OK)',
+        evidence:'Atroshi I et al. (2009): RTW mediaan 11 dagen endoscopisch vs 17 dagen open (lichte arbeid). Manuele arbeid: mediaan 28 dagen. Huisstede BM et al. (2010, Cochrane): geen evidence voor routinehand therapie > 8 weken bij ongecompliceerde CTS-release. NICE guideline (2022): work hardening effectief voor manuele beroepen.',
+        goals:['Volledige grip kracht (≥ 90% contralateraal)','BCTQ-SSS ≤ 1.5 en BCTQ-FSS ≤ 1.5','Volledige werkhervatting alle beroepscategorieën','Sportspecifieke activiteiten volledig hervatten','Recidief preventie via ergonomie-programma'],
+        exercises:[
+          {name:'Volledige handkrachttraining — intensief',params:[['Sets','4'],['Reps','8–12RM'],['Freq','3×/week'],['Oefeningen','knijpbal, handergometer, theraband, dumbbell polsoefeningen]']],note:'HSR-principe: hoge belasting, trage uitvoering. Grip, pincetgreep, polsflexie/-extensie, pro-supinatie. Jamar-meting elke 2 weken. Streefdoel: ≥ 90% contralateraal voor sporters en manuele werkers, ≥ 85% voor kantoorfuncties.',cat:'kracht'},
+          {name:'Work hardening programma — functieherstel manuele beroepen',params:[['Duur','4–6 weken'],['Freq','3–5×/week'],['Setting','ergotherapeut + kinesitherapeut']],note:'Gesimuleerde werktaken: tillen, dragen, gereedschap, schrijven, computerwerk. NICE 2022: work hardening programma vermindert langdurig ziekteverzuim bij manuele beroepen na CTS-release met 40%. Minimaal verplicht voor bouwvak, zorg, horeca.',cat:'neuro'},
+          {name:'Sportspecifieke revalidatie',params:[['Racketsporten','week 10–12'],['Contactsporten','week 12–14'],['Kracht-/vecht sport','week 14–16'],['Progressie','pijngestuurd]']],note:'Racketsporten: backhand en smash = maximale polsbelasting. Beginnen met lichte rally week 10, wedstrijd week 12–14. Klimmen: volledige hervatting week 14–16 (crimp-greep meest belastend). Zwemmen: week 8–10 (wond gesloten). Fitnessapparatuur: week 10.',cat:'cardio'},
+          {name:'Ergonomie-programma definitief — recidief preventie',params:[['Sessie','45 min screeningsgesprek'],['Tools','ergonomisch adviesrapport'],['Follow-up','1 maand, 3 maanden, 12 maanden]']],note:'CTS-recidiefpercentage na open release: 3–10% op 5 jaar. Na endoscopisch: 2–7%. Risicogroepen: manuele beroepen, zwaarlijvigheid, diabetes, hypothyreoïdie. Aanpak: ergonomische polspositie bij grip, trillingsreductie, reguliere pauzes, nachtspalk bij productiepieken.',cat:'neuro'},
+          {name:'Zelfmanagement & ontslagplan',params:[['Inhoud','HEP, alarmsignalen, contact bij recidief'],['Materiaal','schriftelijk + digitaal']],note:'Ontslaggesprek: uitleg recidiefsymptomen (nachtpijn, tintelingen), instructie hervatten glijdingstechnieken bij prodromale symptomen. Contactinformatie kinesitherapeut voor directe heropstart bij recidief. Jaarlijkse ergonomische check bij risicogroepen.',cat:'neuro'}
+        ],
+        criteria_go:['Grip ≥ 90% contralateraal','BCTQ-SSS ≤ 1.5 EN BCTQ-FSS ≤ 1.5','2-puntsdiscriminatie ≤ 6 mm','Sportspecifieke tests volledig pijnvrij','Werkspecifieke taken volledig functioneel','Patiënt zelfmanagement-plan begrepen'],
+        criteria_stop:['Grip < 75% na 16 weken → ergotherapeut intensief handrevalidatie','BCTQ stagneert → multidisciplinaire evaluatie: re-compressie, CRPS, cervicale double-crush'],
+        redflags:['Symptoomrecidief na 3 maanden → EMG herhalen + chirurgisch overleg re-exploratie','Nieuwe contralaterale CTS-symptomen → bilateral CTS screening — systemische oorzaak!','Cervicale radiculopathie C6 nieuw → MRI cervicaal — discushernia post-OK verdringing']
+      }
+    ],
+    refs:'Page MJ et al. (2022) — Surgery for carpal tunnel syndrome. Cochrane Database Syst Rev. | Fernández-de-las-Peñas C et al. (2021) — Manual therapy versus surgery for carpal tunnel syndrome: a randomized parallel-group trial. J Pain. | Walker WC et al. (2000) — Neutral wrist splinting in carpal tunnel syndrome: a comparison of night-only versus full-time wear instructions. Arch Phys Med Rehabil. | Atroshi I et al. (2009) — Endoscopic carpal tunnel release: a prospective assessment of 255 consecutive cases. J Bone Joint Surg Am. | Marshall SC et al. (2007) — Local corticosteroid injection for carpal tunnel syndrome. Cochrane Database Syst Rev. | Wehbé MA & Schlegel JM (2004) — Nerve and tendon gliding exercises and the conservative management of carpal tunnel syndrome. J Hand Ther. | Huisstede BM et al. (2010) — Carpal tunnel syndrome: hand therapists\' view on factors associated with outcomes of nonsurgical and surgical treatment. Arch Phys Med Rehabil. | Bland JD (2007) — Carpal tunnel syndrome. BMJ. | Shiels SM et al. (2016) — Scar management after carpal tunnel release. J Hand Surg Am.'}
 };
 
 // ── CATEGORIES ──
@@ -930,6 +1067,22 @@ const SCORES = {
     {name:'QuickDASH', full:'Disabilities of the Arm, Shoulder and Hand — kort', max:100, unit:'punten', invert:true,
      ranges:[{label:'Minimale beperking',min:0,max:20,color:'#22c55e'},{label:'Matige beperking',min:21,max:40,color:'#f59e0b'},{label:'Ernstige beperking',min:41,max:100,color:'#ef4444'}],
      rts:'< 20 voor RTS', mcid:8},
+  ],
+  dq: [
+    {name:'QuickDASH', full:'Disabilities of the Arm, Shoulder and Hand — kort', max:100, unit:'punten', invert:true,
+     ranges:[{label:'Minimale beperking',min:0,max:20,color:'#22c55e'},{label:'Matige beperking',min:21,max:40,color:'#f59e0b'},{label:'Ernstige beperking',min:41,max:100,color:'#ef4444'}],
+     rts:'≤ 10 voor volledige RTA', mcid:8},
+    {name:'NRS-pijn', full:'Numerieke Pijnschaal — Finkelstein-belasting', max:10, unit:'/ 10', invert:true,
+     ranges:[{label:'Pijnvrij',min:0,max:2,color:'#22c55e'},{label:'Matig',min:3,max:5,color:'#f59e0b'},{label:'Ernstig',min:6,max:10,color:'#ef4444'}],
+     rts:'≤ 2 bij Finkelstein-manoeuvre voor RTA', mcid:2},
+  ],
+  cts: [
+    {name:'BCTQ-SSS', full:'Boston Carpal Tunnel Questionnaire — Symptom Severity Scale', max:5, unit:'/ 5', invert:true,
+     ranges:[{label:'Minimale symptomen',min:1,max:2,color:'#22c55e'},{label:'Matige symptomen',min:2.1,max:3.5,color:'#f59e0b'},{label:'Ernstige symptomen',min:3.6,max:5,color:'#ef4444'}],
+     rts:'≤ 1.5 voor chirurgisch ontslagklaar / ≤ 2.5 conservatief succes', mcid:0.74},
+    {name:'BCTQ-FSS', full:'Boston Carpal Tunnel Questionnaire — Functional Status Scale', max:5, unit:'/ 5', invert:true,
+     ranges:[{label:'Minimale beperking',min:1,max:2,color:'#22c55e'},{label:'Matige beperking',min:2.1,max:3.5,color:'#f59e0b'},{label:'Ernstige beperking',min:3.6,max:5,color:'#ef4444'}],
+     rts:'≤ 1.5 voor volledige RTA', mcid:0.53},
   ],
 };
 
@@ -1256,6 +1409,142 @@ const BESLISBOOM = {
         ]
       },
     ]
+  },
+
+  dq: {
+    title: 'De Quervain Tenosynovitis — Klinische beslisboom',
+    stappen: [
+      {
+        id: 'start',
+        vraag: 'Is er anatomisch bewijs voor EPB-subcompartiment?',
+        info: 'Chern TC et al. (2014): 34% van patiënten heeft EPB in apart subcompartiment van eerste dorsaal compartiment. Dit verklaart conservatief falen en vereist aparte chirurgische release. Echografisch te beoordelen.',
+        opties: [
+          {label: 'Geen subcompartiment (66%)', next: 'conservatief', color: '#22d3ee'},
+          {label: 'EPB-subcompartiment aanwezig (34%)', next: 'subcompartiment', color: '#f59e0b'},
+          {label: 'Onbekend / echo niet beschikbaar', next: 'conservatief', color: '#71717a'},
+        ]
+      },
+      {
+        id: 'conservatief',
+        vraag: 'Conservatief beleid starten — respons na 6–8 weken?',
+        info: 'Peters-Veluthamaningal 2009 (Cochrane): 83% succespercentage injectie + spalk bij standaard eerste compartiment. Cavaleri 2016: combinatie superieur aan elk afzonderlijk. Evalueer na 6 weken.',
+        opties: [
+          {label: 'Goede respons (NRS ≤ 2, QuickDASH ≤ 20)', advies: 'Verdere conservatieve revalidatie. Ga naar fase 2 protocol. Onderhoud spalk nachtgebruik week 5–8. Herevalueer maandelijks.', color: '#22c55e'},
+          {label: 'Gedeeltelijke respons (NRS 3–5)', next: 'injectie', color: '#f59e0b'},
+          {label: 'Geen respons / verslechtering', next: 'injectie', color: '#ef4444'},
+        ]
+      },
+      {
+        id: 'subcompartiment',
+        vraag: 'EPB-subcompartiment — chirurgische indicatie direct overwegen?',
+        info: 'Chern 2014: patiënten met EPB-subcompartiment hebben significant lager conservatief succespercentage (38% vs 83%). Echogeleide injectie specifiek in beide subcompartementen verhoogt succeskans.',
+        opties: [
+          {label: 'Echogeleide injectie beide subcompartementen', next: 'injectie_echo', color: '#a78bfa'},
+          {label: 'Direct chirurgische release (actieve patiënt, manueel beroep)', next: 'chirurgie', color: '#f59e0b'},
+        ]
+      },
+      {
+        id: 'injectie',
+        vraag: 'Corticosteroïdinjectie eerste compartiment — resultaat na 4–6 weken?',
+        info: 'Peters-Veluthamaningal 2009: NNT = 3 voor significante pijnreductie. Triamcinolon 40 mg of methylprednisolon 40 mg in 1 ml lidocaïne 1%. Maximum 2 injecties — daarna chirurgische indicatie. Injectie blind 64% accurate plaatsing — echo-geleiding verhoogt naar 97%.',
+        opties: [
+          {label: 'Respons na injectie (≥ 50% pijnreductie)', next: 'revalidatie_succes', color: '#22c55e'},
+          {label: 'Geen/onvoldoende respons na 2 injecties', next: 'chirurgie', color: '#ef4444'},
+          {label: 'Recidief na initiële respons', next: 'chirurgie', color: '#f59e0b'},
+        ]
+      },
+      {
+        id: 'injectie_echo',
+        vraag: 'Echogeleide injectie beide subcompartementen — resultaat?',
+        info: 'Accurate plaatsing in beide subcompartementen (APL + EPB apart) verhoogt succeskans bij anatomisch variant tot 65%. Echo-geleiding verplicht bij bekend subcompartiment.',
+        opties: [
+          {label: 'Succes (≥ 50% reductie)', next: 'revalidatie_succes', color: '#22c55e'},
+          {label: 'Geen succes', next: 'chirurgie', color: '#ef4444'},
+        ]
+      },
+      {
+        id: 'revalidatie_succes',
+        vraag: 'Revalidatiefase na conservatief succes — protocol adherentie?',
+        info: 'Ilyas AM 2007: 50% recidiefpercentage bij onvoldoende revalidatie na injectie-succes. Fase 2–3 protocol (progressieve belasting, excentrische training) essentieel voor duurzaam resultaat.',
+        opties: [
+          {label: 'Volledige protocol adherentie', advies: 'Volledig protocol fase 2–3 doorlopen. Recidief preventie: ergonomie + onderhoudstraining 2×/week. Ontslagklaar na QuickDASH ≤ 10 en kracht ≥ 90%.', color: '#22c55e'},
+          {label: 'Onvoldoende adherentie / recidief', advies: 'Herhaal fase 1 protocol. Tweede injectie overwegen. Bespreek chirurgische optie bij 3e episode. Ergotherapeut inschakelen voor werkplekadaptatie.', color: '#f59e0b'},
+        ]
+      },
+      {
+        id: 'chirurgie',
+        vraag: 'Chirurgische release eerste dorsaal compartiment — complicatierisico inschatten?',
+        info: 'Standaardprocedure: longitudinale incisie boven eerste compartiment, release APL + EPB retinaculum. Bij subcompartiment: dubbele release verplicht. Hoofdcomplicaties: n. radialis superficialis letsel (7%), wondinfectie (2%), subluxatie pees (1%).',
+        opties: [
+          {label: 'Laag risico — geen anatomisch variant', advies: 'Ambulante ingreep lokale anesthesie. Post-OK: fase 2 protocol start dag 1–3. Werkvrijstelling: kantoor 10–14 dagen, manueel 4–6 weken. Verwacht succes > 90%.', color: '#22c55e'},
+          {label: 'Hoog risico — EPB-subcompartiment aanwezig', advies: 'Verplichte dubbele release (APL EN EPB subcompartiment). Chirurg informeren over anatomisch variant. Post-OK: n. radialis superficialis monitoren. Recidief na chirurgie < 5%.', color: '#f59e0b'},
+        ]
+      },
+    ]
+  },
+
+  cts: {
+    title: 'Carpaaltunnelsyndroom — Klinische beslisboom',
+    stappen: [
+      {
+        id: 'ernst',
+        vraag: 'Wat is de ernst van het CTS op basis van kliniek en EMG?',
+        info: 'Mild CTS: alleen sensorische klachten, EMG normale motorische conductie of lichte vertraging. Matig: sensorisch + nachtpijn, EMG matige vertraging. Ernstig: motorische uitval (thenaratrofie), EMG ernstige vertraging of afwezig. Page 2022 (Cochrane): chirurgie superieur aan conservatief bij matig-ernstig CTS op 12 maanden.',
+        opties: [
+          {label: 'Mild CTS (sensorisch, geen motorische uitval)', next: 'conservatief', color: '#22c55e'},
+          {label: 'Matig CTS (nachtpijn > 3×/week, EMG matig)', next: 'conservatief_chirurg', color: '#f59e0b'},
+          {label: 'Ernstig CTS (thenaratrofie, EMG ernstig)', next: 'chirurgie_dringend', color: '#ef4444'},
+        ]
+      },
+      {
+        id: 'conservatief',
+        vraag: 'Conservatief beleid mild CTS — respons na 8 weken?',
+        info: 'Walker 2000 RCT: neutraalspalk 8 weken + glijdingstechnieken → 60–70% symptoomreductie bij mild CTS. Marshall 2007: injectie toevoegen bij onvoldoende splintrespons. Fernández-de-las-Peñas 2021: neurodynamics significant effectief.',
+        opties: [
+          {label: 'Goede respons (BCTQ-SSS ≤ 2.5)', advies: 'Conservatief succes. Continueer nachtspalk 4 weken extra. Onderhoud glijdingstechnieken 2×/dag. Ergonomische aanpassing permanent. Herevalueer na 3 maanden.', color: '#22c55e'},
+          {label: 'Gedeeltelijke respons (BCTQ-SSS 2.5–3.5)', next: 'injectie', color: '#f59e0b'},
+          {label: 'Geen respons na 8 weken', next: 'chirurgie', color: '#ef4444'},
+        ]
+      },
+      {
+        id: 'conservatief_chirurg',
+        vraag: 'Matig CTS — conservatief proberen of direct chirurgie?',
+        info: 'Page 2022 (Cochrane): bij matig CTS is chirurgie superieur op 12 maanden (BCTQ-SSS -0.51 verschil). Echter: 6–8 weken conservatief beleid ethisch verantwoord als patiënt chirurgie wil uitstellen.',
+        opties: [
+          {label: 'Proefperiode conservatief (6–8 weken)', next: 'conservatief', color: '#f59e0b'},
+          {label: 'Direct chirurgische verwijzing (voorkeur patiënt)', next: 'chirurgie', color: '#22d3ee'},
+          {label: 'Overbrugging: injectie terwijl wachtend op chirurgie', next: 'injectie', color: '#a78bfa'},
+        ]
+      },
+      {
+        id: 'chirurgie_dringend',
+        vraag: 'Ernstig CTS met motorische uitval — dringende chirurgische indicatie',
+        info: 'Thenaratrofie = axonotmesis n. medianus → motorische reïnnervatie na release mogelijk maar onvolledig. Hoe langer gewacht, hoe minder motorisch herstel.',
+        opties: [
+          {label: 'Dringende chirurgische verwijzing (< 4 weken)', advies: 'SPOED: thenaratrofie = irreversibele axonotmesis bij langdurig uitstel. Verwijsbrief: "Ernstig CTS met motorische uitval — dringende release." Nachtspalk + zachte glijdingstechnieken als overbrugging.', color: '#ef4444'},
+          {label: 'Afwachten na shared decision-making', advies: 'RISICO: Langer wachten vergroot kans op permanente motorische uitval thenar. Schriftelijk informeren en gedocumenteerde informed consent bij uitstel. Maximaal 4 weken wachten.', color: '#f59e0b'},
+        ]
+      },
+      {
+        id: 'injectie',
+        vraag: 'Corticosteroïdinjectie carpaaltunnel — resultaat na 4–6 weken?',
+        info: 'Marshall 2007 (Cochrane): lokale injectie effectiever dan placebo op 4–8 weken. Methylprednisolon 40 mg of triamcinolon 20 mg in 1 ml lidocaïne 1%. Maximum 2 injecties per jaar. Bij zwangerschap: veilig.',
+        opties: [
+          {label: 'Goede respons (BCTQ-SSS reductie ≥ 0.5)', next: 'conservatief', color: '#22c55e'},
+          {label: 'Onvoldoende respons na 2 injecties', next: 'chirurgie', color: '#ef4444'},
+          {label: 'Zwangerschap gerelateerd CTS', advies: 'CTS in zwangerschap: neutraalspalk + glijdingstechnieken + injectie veilig. 50% spontane resolutie post-partum binnen 3 maanden. Chirurgie enkel bij ernstige motorische uitval. Herevalueer 3 maanden post-partum.', color: '#a78bfa'},
+        ]
+      },
+      {
+        id: 'chirurgie',
+        vraag: 'CTS-release — endoscopisch of open techniek?',
+        info: 'Atroshi I et al. (2009): endoscopisch vs open — vergelijkbaar resultaat op 12 maanden. Endoscopisch: snellere RTW (11 vs 17 dagen). Open: beter zicht bij anatomische varianten of revisie.',
+        opties: [
+          {label: 'Endoscopische release (manuele beroepen, snelle RTW)', advies: 'Voorkeur bij: manuele beroepen, jongere actieve patiënten. RTW: 10–14 dagen lichte arbeid, 3–4 weken manueel. Post-OK: fase 2 protocol dag 1–3. Success rate 97% (Atroshi 2009).', color: '#22c55e'},
+          {label: 'Open release (revisie, anatomische varianten)', advies: 'Voorkeur bij: revisie CTS, abnormale anatomie, ernstige thenaratrofie. RTW: 14–21 dagen lichte arbeid, 4–6 weken manueel. Post-OK: fase 2 protocol dag 3–5. Uitgebreid littekenmassage protocol.', color: '#f59e0b'},
+        ]
+      },
+    ]
   }
 };
 
@@ -1558,6 +1847,150 @@ const FORMS = {
       {id:'pb8', tekst:'GEWONE ACTIVITEITEN | Huishoudelijke taken (poetsen, koken)', type:'slider', max:10},
       {id:'pb9', tekst:'GEWONE ACTIVITEITEN | Werk of beroepsactiviteiten', type:'slider', max:10},
       {id:'pb10', tekst:'GEWONE ACTIVITEITEN | Recreatieve activiteiten of sport', type:'slider', max:10},
+    ]
+  },
+
+  'bctq': {
+    name: 'BCTQ',
+    full: 'Boston Carpal Tunnel Questionnaire (SSS + FSS)',
+    protocol: 'cts',
+    max: 5,
+    rts: 'SSS ≤ 1.5 en FSS ≤ 1.5 voor ontslagklaar',
+    intro: 'De BCTQ bestaat uit twee delen. Deel 1 (SSS — Symptoom Ernst): hoe ernstig waren uw klachten de afgelopen 2 weken? Deel 2 (FSS — Functionele Status): hoeveel moeite had u met dagelijkse activiteiten? Kies telkens de meest passende optie (1 = geen klachten / geen moeite, 5 = ernstige klachten / onmogelijk).',
+    vragen: [
+      {id:'sss1', tekst:'DEEL 1 — SYMPTOMEN (SSS) | Hoe erg was de nachtelijke pijn in uw hand/pols de afgelopen 2 weken?', type:'keuze', opties:[
+        {label:'Geen nachtelijke pijn', score:1},
+        {label:'Milde pijn', score:2},
+        {label:'Matige pijn', score:3},
+        {label:'Ernstige pijn', score:4},
+        {label:'Ondraaglijke pijn', score:5},
+      ]},
+      {id:'sss2', tekst:'SSS | Hoe vaak werd u de afgelopen 2 weken wakker door pijn in hand/pols?', type:'keuze', opties:[
+        {label:'Nooit', score:1},
+        {label:'Eenmaal', score:2},
+        {label:'2–3 maal', score:3},
+        {label:'4–5 maal', score:4},
+        {label:'Meer dan 5 maal', score:5},
+      ]},
+      {id:'sss3', tekst:'SSS | Had u overdag pijn in uw hand/pols de afgelopen 2 weken?', type:'keuze', opties:[
+        {label:'Geen pijn overdag', score:1},
+        {label:'Milde pijn overdag', score:2},
+        {label:'Matige pijn overdag', score:3},
+        {label:'Ernstige pijn overdag', score:4},
+        {label:'Ondraaglijke pijn overdag', score:5},
+      ]},
+      {id:'sss4', tekst:'SSS | Hoe lang duurden gemiddeld de pijnaanvallen overdag de afgelopen 2 weken?', type:'keuze', opties:[
+        {label:'Geen pijn overdag', score:1},
+        {label:'< 10 minuten', score:2},
+        {label:'10–60 minuten', score:3},
+        {label:'> 60 minuten', score:4},
+        {label:'Continue pijn', score:5},
+      ]},
+      {id:'sss5', tekst:'SSS | Hoe vaak had u gevoelloosheid (doof gevoel) in uw hand de afgelopen 2 weken?', type:'keuze', opties:[
+        {label:'Nooit', score:1},
+        {label:'Milde gevoelloosheid', score:2},
+        {label:'Matige gevoelloosheid', score:3},
+        {label:'Ernstige gevoelloosheid', score:4},
+        {label:'Continue gevoelloosheid', score:5},
+      ]},
+      {id:'sss6', tekst:'SSS | Hoe erg waren tintelingen in uw hand de afgelopen 2 weken?', type:'keuze', opties:[
+        {label:'Geen tintelingen', score:1},
+        {label:'Milde tintelingen', score:2},
+        {label:'Matige tintelingen', score:3},
+        {label:'Ernstige tintelingen', score:4},
+        {label:'Ondraaglijke tintelingen', score:5},
+      ]},
+      {id:'sss7', tekst:'SSS | Hoe ernstig was de zwakte in uw hand/pols de afgelopen 2 weken?', type:'keuze', opties:[
+        {label:'Geen zwakte', score:1},
+        {label:'Milde zwakte', score:2},
+        {label:'Matige zwakte', score:3},
+        {label:'Ernstige zwakte', score:4},
+        {label:'Extreme zwakte', score:5},
+      ]},
+      {id:'sss8', tekst:'SSS | Hoe ernstig was het tintelende gevoel in uw hand de afgelopen 2 weken?', type:'keuze', opties:[
+        {label:'Geen tinteling', score:1},
+        {label:'Milde tinteling', score:2},
+        {label:'Matige tinteling', score:3},
+        {label:'Ernstige tinteling', score:4},
+        {label:'Ondraaglijke tinteling', score:5},
+      ]},
+      {id:'sss9', tekst:'SSS | Hoe ernstig was gevoelloosheid of tinteling \'s nachts de afgelopen 2 weken?', type:'keuze', opties:[
+        {label:'Geen nachtelijke symptomen', score:1},
+        {label:'Milde nachtelijke symptomen', score:2},
+        {label:'Matige nachtelijke symptomen', score:3},
+        {label:'Ernstige nachtelijke symptomen', score:4},
+        {label:'Ondraaglijke nachtelijke symptomen', score:5},
+      ]},
+      {id:'sss10', tekst:'SSS | Had u moeite met kleine voorwerpen vasthouden (bijv. sleutels, pen)?', type:'keuze', opties:[
+        {label:'Geen moeite', score:1},
+        {label:'Lichte moeite', score:2},
+        {label:'Matige moeite', score:3},
+        {label:'Grote moeite', score:4},
+        {label:'Onmogelijk', score:5},
+      ]},
+      {id:'sss11', tekst:'SSS | Had u pijn bij het maken van een vuist of knijpen?', type:'keuze', opties:[
+        {label:'Geen pijn', score:1},
+        {label:'Milde pijn', score:2},
+        {label:'Matige pijn', score:3},
+        {label:'Ernstige pijn', score:4},
+        {label:'Ondraaglijke pijn', score:5},
+      ]},
+      {id:'fss1', tekst:'DEEL 2 — FUNCTIONELE STATUS (FSS) | Schrijven', type:'keuze', opties:[
+        {label:'Geen moeite', score:1},
+        {label:'Lichte moeite', score:2},
+        {label:'Matige moeite', score:3},
+        {label:'Grote moeite', score:4},
+        {label:'Onmogelijk vanwege handsymptomen', score:5},
+      ]},
+      {id:'fss2', tekst:'FSS | Een knoop dichtmaken', type:'keuze', opties:[
+        {label:'Geen moeite', score:1},
+        {label:'Lichte moeite', score:2},
+        {label:'Matige moeite', score:3},
+        {label:'Grote moeite', score:4},
+        {label:'Onmogelijk vanwege handsymptomen', score:5},
+      ]},
+      {id:'fss3', tekst:'FSS | Een boek vasthouden tijdens het lezen', type:'keuze', opties:[
+        {label:'Geen moeite', score:1},
+        {label:'Lichte moeite', score:2},
+        {label:'Matige moeite', score:3},
+        {label:'Grote moeite', score:4},
+        {label:'Onmogelijk vanwege handsymptomen', score:5},
+      ]},
+      {id:'fss4', tekst:'FSS | Een telefoon vasthouden tijdens een gesprek', type:'keuze', opties:[
+        {label:'Geen moeite', score:1},
+        {label:'Lichte moeite', score:2},
+        {label:'Matige moeite', score:3},
+        {label:'Grote moeite', score:4},
+        {label:'Onmogelijk vanwege handsymptomen', score:5},
+      ]},
+      {id:'fss5', tekst:'FSS | Een pot of bokaal openmaken', type:'keuze', opties:[
+        {label:'Geen moeite', score:1},
+        {label:'Lichte moeite', score:2},
+        {label:'Matige moeite', score:3},
+        {label:'Grote moeite', score:4},
+        {label:'Onmogelijk vanwege handsymptomen', score:5},
+      ]},
+      {id:'fss6', tekst:'FSS | Boodschappen doen', type:'keuze', opties:[
+        {label:'Geen moeite', score:1},
+        {label:'Lichte moeite', score:2},
+        {label:'Matige moeite', score:3},
+        {label:'Grote moeite', score:4},
+        {label:'Onmogelijk vanwege handsymptomen', score:5},
+      ]},
+      {id:'fss7', tekst:'FSS | Wassen en aankleden', type:'keuze', opties:[
+        {label:'Geen moeite', score:1},
+        {label:'Lichte moeite', score:2},
+        {label:'Matige moeite', score:3},
+        {label:'Grote moeite', score:4},
+        {label:'Onmogelijk vanwege handsymptomen', score:5},
+      ]},
+      {id:'fss8', tekst:'FSS | Zware huishoudelijke taken (stofzuigen, vaat doen)', type:'keuze', opties:[
+        {label:'Geen moeite', score:1},
+        {label:'Lichte moeite', score:2},
+        {label:'Matige moeite', score:3},
+        {label:'Grote moeite', score:4},
+        {label:'Onmogelijk vanwege handsymptomen', score:5},
+      ]},
     ]
   }
 };

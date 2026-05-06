@@ -13,7 +13,7 @@
 <title>KineProtocol</title>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist+Mono:wght@300;400;500;600&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0a0a0b;--surface:#111113;--surface2:#18181b;--surface3:#1f1f23;--border:#27272a;--border2:#3f3f46;--text:#fafafa;--muted:#71717a;--muted2:#52525b;--acl:#22d3ee;--tka:#a78bfa;--pfps:#f97316;--lh:#34d399;--rc:#f43f5e;--pt:#fb923c;--at:#e879f9;--bureau:#60a5fa;--enkel:#f59e0b;--over:#10b981;--si:#f472b6;--orif:#38bdf8;--new:#4ade80;--safe-top:env(safe-area-inset-top);--safe-bottom:env(safe-area-inset-bottom);}
+:root{--bg:#0a0a0b;--surface:#111113;--surface2:#18181b;--surface3:#1f1f23;--border:#27272a;--border2:#3f3f46;--text:#fafafa;--muted:#71717a;--muted2:#52525b;--acl:#22d3ee;--tka:#a78bfa;--pfps:#f97316;--lh:#34d399;--rc:#f43f5e;--pt:#fb923c;--at:#e879f9;--bureau:#60a5fa;--enkel:#f59e0b;--over:#10b981;--si:#f472b6;--orif:#38bdf8;--dq:#84cc16;--cts:#818cf8;--new:#4ade80;--safe-top:env(safe-area-inset-top);--safe-bottom:env(safe-area-inset-bottom);}
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
 html,body{height:100%;overflow:hidden;overscroll-behavior:none;}
 body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-size:14px;display:flex;flex-direction:column;}
@@ -429,6 +429,8 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
     <div class="sidebar-divider"></div>
     <div class="sidebar-section">Pols &amp; Hand</div>
     <div class="nav-item" id="nav-orif" onclick="showProto('orif')"><div class="nav-dot" style="background:var(--orif)"></div><div style="flex:1"><div class="nav-title">ORIF Distale Radius</div><div class="nav-sub">4 fasen · 0–5 mnd</div></div><span class="nav-badge" style="background:rgba(56,189,248,.1);color:var(--orif)">DRF</span></div>
+    <div class="nav-item" id="nav-dq" onclick="showProto('dq')"><div class="nav-dot" style="background:var(--dq)"></div><div style="flex:1"><div class="nav-title">De Quervain</div><div class="nav-sub">3 fasen · 0–20 wkn</div></div><span class="nav-badge" style="background:rgba(132,204,22,.1);color:var(--dq)">APL</span></div>
+    <div class="nav-item" id="nav-cts" onclick="showProto('cts')"><div class="nav-dot" style="background:var(--cts)"></div><div style="flex:1"><div class="nav-title">Carpaaltunnelsyndroom</div><div class="nav-sub">4 fasen · conservatief/post-OK</div></div><span class="nav-badge" style="background:rgba(129,140,248,.1);color:var(--cts)">CTS</span></div>
     <div class="sidebar-divider"></div>
     <div class="sidebar-section">Evaluatieformulieren</div>
     <div class="nav-item" id="nav-eval-forms" onclick="showEvalFormsScreen()"><span style="font-size:15px;">🩺</span><span class="nav-title">Klinisch onderzoek</span><span style="font-size:10px;padding:2px 7px;border-radius:10px;background:rgba(248,113,113,.15);color:#f87171;font-family:'Geist Mono',monospace;">5 regio</span></div>
@@ -443,9 +445,9 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
       <div class="home-greeting">Goeiedag,<br><em>klinische kennis</em> binnen handbereik.</div>
       <div class="home-sub">Evidence-based revalidatieprotocollen — snel opzoekbaar, klinisch toepasbaar.</div>
       <div class="stats-row">
-        <div class="stat"><div class="stat-num" style="color:var(--acl)">12</div><div class="stat-label">Protocollen</div></div>
-        <div class="stat"><div class="stat-num" style="color:var(--tka)">60</div><div class="stat-label">Fasen</div></div>
-        <div class="stat"><div class="stat-num" style="color:var(--pfps)">339</div><div class="stat-label">Oefeningen</div></div>
+        <div class="stat"><div class="stat-num" style="color:var(--acl)">14</div><div class="stat-label">Protocollen</div></div>
+        <div class="stat"><div class="stat-num" style="color:var(--tka)">67</div><div class="stat-label">Fasen</div></div>
+        <div class="stat"><div class="stat-num" style="color:var(--pfps)">379</div><div class="stat-label">Oefeningen</div></div>
         <div class="stat"><div class="stat-num" style="color:var(--rc)" id="stat-patients">0</div><div class="stat-label">Patiënten</div></div>
       </div>
       <div id="recent-section" style="display:none;margin-bottom:24px;"></div>
@@ -471,6 +473,8 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
         <div class="protocol-card" data-regio="enkel" style="--card-color:#f59e0b" onclick="showProto('enkel')"><div class="card-arrow">&#8599;</div><div class="card-icon">🦶</div><div class="card-title">Enkeldistorsie</div><div class="card-desc">Graad I–III. PEACE &amp; LOVE, proprioceptie, RTS-criteria.</div><div class="card-meta"><span class="card-tag col">1–12 wkn</span><span class="card-tag col">5 fasen</span></div></div>
         <div class="protocol-card" data-regio="enkel" style="--card-color:#10b981" onclick="showProto('over')"><div class="card-arrow">&#8599;</div><div class="card-icon">🦶</div><div class="card-title">Overpronatie Syndroom</div><div class="card-desc">Platvoet, short foot exercise, tibialis posterior, gait retraining.</div><div class="card-meta"><span class="card-tag col">8–18+ wkn</span><span class="card-tag col">4 fasen</span></div></div>
         <div class="protocol-card" data-regio="pols" style="--card-color:var(--orif)" onclick="showProto('orif')"><div class="card-arrow">&#8599;</div><div class="card-icon">🦴</div><div class="card-title">ORIF Distale Radius</div><div class="card-desc">Volaire plaatfixatie DRF. Oedeem, ROM, kracht, RTS & CRPS-screening.</div><div class="card-meta"><span class="card-tag col">0–5 mnd</span><span class="card-tag col">4 fasen</span></div></div>
+        <div class="protocol-card" data-regio="pols" style="--card-color:var(--dq)" onclick="showProto('dq')"><div class="card-arrow">&#8599;</div><div class="card-icon">👍</div><div class="card-title">De Quervain Tenosynovitis</div><div class="card-desc">Eerste dorsaal compartiment. Spalk, injectie, excentrisch, RTA.</div><div class="card-meta"><span class="card-tag col">0–20 wkn</span><span class="card-tag col">3 fasen</span></div></div>
+        <div class="protocol-card" data-regio="pols" style="--card-color:var(--cts)" onclick="showProto('cts')"><div class="card-arrow">&#8599;</div><div class="card-icon">🖐️</div><div class="card-title">Carpaaltunnelsyndroom</div><div class="card-desc">Conservatief & post-chirurgisch. Zenuwglijden, sensibiliteit, RTW.</div><div class="card-meta"><span class="card-tag col">0–16 wkn</span><span class="card-tag col">4 fasen</span></div></div>
         <div class="add-card"><div style="font-size:20px;">+</div><div style="font-size:12px;">Nieuw protocol</div><div style="font-size:10px;color:var(--muted2);">Vraag Claude</div></div>
       </div>
     </div>
@@ -537,6 +541,8 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
     <button class="bnav-item" id="bnav-enkel" onclick="showProto('enkel')"><div class="bnav-icon">🦵</div><div class="bnav-label">LAS</div><div class="bnav-dot" style="background:#f59e0b"></div></button>
     <button class="bnav-item" id="bnav-si" onclick="showProto('si')"><div class="bnav-icon">💪</div><div class="bnav-label">SI</div><div class="bnav-dot" style="background:var(--si)"></div></button>
     <button class="bnav-item" id="bnav-orif" onclick="showProto('orif')"><div class="bnav-icon">🦴</div><div class="bnav-label">DRF</div><div class="bnav-dot" style="background:var(--orif)"></div></button>
+    <button class="bnav-item" id="bnav-dq" onclick="showProto('dq')"><div class="bnav-icon">👍</div><div class="bnav-label">DQ</div><div class="bnav-dot" style="background:var(--dq)"></div></button>
+    <button class="bnav-item" id="bnav-cts" onclick="showProto('cts')"><div class="bnav-icon">🖐️</div><div class="bnav-label">CTS</div><div class="bnav-dot" style="background:var(--cts)"></div></button>
     <button class="bnav-item" id="bnav-eval-forms" onclick="showEvalFormsScreen()"><div class="bnav-icon">🩺</div><div class="bnav-label">Eval</div><div class="bnav-dot" style="background:#f87171"></div></button>
     <button class="bnav-item" id="bnav-patients" onclick="showPatients()"><div class="bnav-icon">👥</div><div class="bnav-label">Patiënten</div><div class="bnav-dot" style="background:#4ade80"></div></button>
     <button class="bnav-item" id="bnav-search" onclick="document.getElementById('searchInput').focus()"><div class="bnav-icon">&#128269;</div><div class="bnav-label">Zoeken</div><div class="bnav-dot"></div></button>

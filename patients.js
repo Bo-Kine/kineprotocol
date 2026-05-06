@@ -100,12 +100,141 @@ function calcAge(dob) {
 }
 
 
+// ── DASHBOARD HELPERS ──
+function getDaysSinceLastSession(pt) {
+  if(!pt.sessions || !pt.sessions.length) return null;
+  const last = pt.sessions[pt.sessions.length - 1];
+  if(!last.date) return null;
+  return Math.round((Date.now() - new Date(last.date)) / 86400000);
+}
+function getScoreTrend(pt) {
+  const sc = (SCORES[pt.protoId] || [])[0];
+  if(!sc) return null;
+  const hist = (getPatientScores(pt.id)[sc.name] || []);
+  if(hist.length < 2) return null;
+  const diff = hist[hist.length-1].value - hist[hist.length-2].value;
+  if(Math.abs(diff) < 2) return 'stable';
+  return sc.invert ? (diff < 0 ? 'up' : 'down') : (diff > 0 ? 'up' : 'down');
+}
+function getCriteriaProgress(pt) {
+  const p = protocols[pt.protoId];
+  if(!p) return {done:0, total:0};
+  const phaseIdx = pt.phaseIndex || 0;
+  const go = p.phases[phaseIdx]?.criteria_go || [];
+  const state = (pt.criteria || {})[phaseIdx] || [];
+  return {done: state.filter(Boolean).length, total: go.length};
+}
+
+// ── CRITERIA TOGGLE ──
+function toggleCriteria(patId, phaseIdx, idx) {
+  const pts = loadPatients();
+  const pt = pts.find(p => p.id === patId);
+  if(!pt) return;
+  if(!pt.criteria) pt.criteria = {};
+  const key = String(phaseIdx);
+  const total = protocols[pt.protoId]?.phases[phaseIdx]?.criteria_go?.length || 0;
+  if(!pt.criteria[key]) pt.criteria[key] = new Array(total).fill(false);
+  pt.criteria[key][idx] = !pt.criteria[key][idx];
+  savePatients(pts);
+  renderPatientDetail(pt, protocols[pt.protoId]);
+}
+
+// ── CRITERIA SECTIE ──
+function renderCriteriaSection(pt, p) {
+  const phaseIdx = pt.phaseIndex || 0;
+  const ph = p.phases[phaseIdx];
+  if(!ph) return '';
+  const color = getProtoColor(pt.protoId);
+  const criteriaGo = ph.criteria_go || [];
+  const criteriaStop = ph.criteria_stop || [];
+  const redFlags = ph.redflags || [];
+  const state = (pt.criteria || {})[phaseIdx] || [];
+  const doneCnt = state.filter(Boolean).length;
+  const totalCnt = criteriaGo.length;
+  const allDone = totalCnt > 0 && doneCnt === totalCnt;
+
+  let html = `<div class="criteria-section">`;
+  html += `<div class="slabel">Fase-criteria <span style="font-weight:400;color:var(--muted2);font-size:10px;">${ph.label}</span></div>`;
+
+  if(allDone) {
+    html += `<div class="criteria-go-banner">
+      <div style="font-size:22px;line-height:1">✅</div>
+      <div>
+        <div style="font-size:13px;font-weight:700;color:#22c55e;">Klaar voor volgende fase</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:2px;">Alle go-criteria gehaald — bespreek fase-overgang met patiënt.</div>
+      </div>
+    </div>`;
+  }
+
+  if(criteriaGo.length) {
+    html += `<div style="margin-bottom:14px;">`;
+    html += `<div class="criteria-sub-label" style="color:var(--muted2)">Go-criteria <span style="color:${allDone?'#22c55e':'var(--muted2)'}">${doneCnt}/${totalCnt}</span></div>`;
+    criteriaGo.forEach((c, i) => {
+      const checked = state[i] === true;
+      html += `<div class="criteria-item" onclick="toggleCriteria('${pt.id}',${phaseIdx},${i})" style="cursor:pointer;background:${checked?color+'12':'var(--surface2)'};border:1px solid ${checked?color+'33':'var(--border)'};">
+        <div class="criteria-check" style="border-color:${checked?color:'var(--border2)'};background:${checked?color:'transparent'};">
+          ${checked ? `<svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>` : ''}
+        </div>
+        <div class="criteria-label" style="color:${checked?'var(--muted)':'var(--text)'};text-decoration:${checked?'line-through':'none'}">${c}</div>
+      </div>`;
+    });
+    html += `</div>`;
+  }
+
+  if(criteriaStop.length) {
+    html += `<div style="margin-bottom:12px;">`;
+    html += `<div class="criteria-sub-label" style="color:#f59e0b;">Stop-criteria</div>`;
+    criteriaStop.forEach(c => {
+      html += `<div class="criteria-stop-item">
+        <div style="color:#f59e0b;font-size:11px;flex-shrink:0;margin-top:2px;">⚠</div>
+        <div style="font-size:12px;color:var(--muted);line-height:1.5;">${c}</div>
+      </div>`;
+    });
+    html += `</div>`;
+  }
+
+  if(redFlags.length) {
+    html += `<div class="criteria-sub-label" style="color:#ef4444;">🚩 Red flags</div>`;
+    redFlags.forEach(f => {
+      html += `<div class="criteria-rf-item">
+        <div style="color:#ef4444;font-size:11px;flex-shrink:0;margin-top:2px;">⛔</div>
+        <div style="font-size:12px;color:var(--muted);line-height:1.5;">${f}</div>
+      </div>`;
+    });
+  }
+
+  html += `</div>`;
+  return html;
+}
+
 // ── PATIËNTEN SCHERM ──
 function showPatients() {
   hideAllScreens();
   document.getElementById('screen-patients').style.display = '';
   setNav('patients');
   renderPatientList();
+  renderDashSummary();
+}
+function renderDashSummary() {
+  const bar = document.getElementById('dash-summary-bar');
+  if(!bar) return;
+  const pts = loadPatients();
+  if(!pts.length) { bar.style.display = 'none'; return; }
+  const overdue = pts.filter(pt => { const d = getDaysSinceLastSession(pt); return d !== null && d > 7; }).length;
+  const goReady = pts.filter(pt => { const c = getCriteriaProgress(pt); return c.total > 0 && c.done === c.total; }).length;
+  const noSession = pts.filter(pt => getDaysSinceLastSession(pt) === null).length;
+  bar.style.display = 'flex';
+  bar.innerHTML = [
+    {label:'Totaal', val: pts.length, color:'var(--muted)', bg:'var(--surface2)'},
+    overdue > 0 ? {label:'Overdue', val: overdue, color:'#ef4444', bg:'rgba(239,68,68,.1)'} : null,
+    goReady > 0 ? {label:'Klaar voor upgrade', val: goReady, color:'#22c55e', bg:'rgba(34,197,94,.1)'} : null,
+    noSession > 0 ? {label:'Geen sessie', val: noSession, color:'var(--muted2)', bg:'var(--surface3)'} : null,
+  ].filter(Boolean).map(s =>
+    `<div style="background:${s.bg};border:1px solid ${s.color}33;border-radius:7px;padding:8px 14px;display:flex;align-items:center;gap:8px;">
+      <div style="font-size:18px;font-weight:700;font-family:'Geist Mono',monospace;color:${s.color};line-height:1;">${s.val}</div>
+      <div style="font-size:10.5px;color:${s.color};font-family:'Geist Mono',monospace;white-space:nowrap;">${s.label}</div>
+    </div>`
+  ).join('');
 }
 function renderPatientList() {
   const pts = loadPatients();
@@ -114,33 +243,78 @@ function renderPatientList() {
     container.innerHTML = `<div class="pat-empty"><div class="pat-empty-icon">👥</div><div class="pat-empty-text">Nog geen patiënten</div><div class="pat-empty-sub">Voeg een patiënt toe om hun traject bij te houden.</div></div>`;
     return;
   }
-  container.innerHTML = `<div class="pat-list">${pts.map(pt => {
+
+  // Sort: overdue (> 7d) first, then by days since last session desc
+  const sorted = pts.slice().sort((a, b) => {
+    const dA = getDaysSinceLastSession(a) ?? 999;
+    const dB = getDaysSinceLastSession(b) ?? 999;
+    return dB - dA;
+  });
+
+  const trendIcon = t => t === 'up' ? '<span style="color:#22c55e;font-size:13px;" title="Score verbeterd">↑</span>'
+    : t === 'down' ? '<span style="color:#ef4444;font-size:13px;" title="Score verslechterd">↓</span>'
+    : t === 'stable' ? '<span style="color:#f59e0b;font-size:13px;" title="Score stabiel">→</span>' : '';
+
+  container.innerHTML = `<div class="dash-grid">${sorted.map(pt => {
     const p = protocols[pt.protoId];
     if(!p) return '';
     const color = getProtoColor(pt.protoId);
     const phaseIdx = pt.phaseIndex || 0;
     const ph = p.phases[phaseIdx];
-    const progress = Math.round(((phaseIdx) / p.phases.length) * 100);
+    const days = getDaysSinceLastSession(pt);
+    const trend = getScoreTrend(pt);
+    const crit = getCriteriaProgress(pt);
+    const progress = Math.round((phaseIdx / p.phases.length) * 100);
     const age = pt.dob ? calcAge(pt.dob) : null;
-    const lastNote = pt.sessions && pt.sessions.length ? pt.sessions[pt.sessions.length-1].note : '';
-    return `<div class="pat-card" onclick="showPatientDetail('${pt.id}')">
-      <div class="pat-card-top">
-        <div class="pat-avatar" style="background:${color}22;color:${color}">${getInitials(pt.name)}</div>
-        <div style="flex:1">
-          <div class="pat-name">${pt.name}</div>
-          <div class="pat-meta">${age ? age + 'j · ' : ''}Start: ${formatDate(pt.startDate) || '—'}</div>
+    const isOverdue = days !== null && days > 7;
+    const noSession = days === null;
+    const allCritDone = crit.total > 0 && crit.done === crit.total;
+
+    const daysBadge = noSession
+      ? `<span class="dash-badge dash-badge-muted">Geen sessie</span>`
+      : isOverdue
+        ? `<span class="dash-badge dash-badge-warn">${days}d geleden ⚠</span>`
+        : `<span class="dash-badge dash-badge-ok">${days === 0 ? 'Vandaag' : days + 'd geleden'}</span>`;
+
+    const critBlock = crit.total > 0
+      ? `<div class="dash-crit" style="border-color:${allCritDone?'rgba(34,197,94,.3)':'var(--border)'};background:${allCritDone?'rgba(34,197,94,.07)':'var(--surface2)'};">
+          <div style="font-size:9.5px;color:var(--muted2);font-family:'Geist Mono',monospace;text-transform:uppercase;letter-spacing:.05em;">Criteria</div>
+          <div style="font-size:18px;font-weight:700;line-height:1;color:${allCritDone?'#22c55e':'var(--text)'};">${crit.done}/${crit.total}</div>
+          ${allCritDone ? `<div style="font-size:8.5px;color:#22c55e;font-family:'Geist Mono',monospace;font-weight:700;">✓ GO</div>` : ''}
+         </div>` : '';
+
+    return `<div class="dash-card" onclick="showPatientDetail('${pt.id}')"
+        style="border-color:${isOverdue?'rgba(239,68,68,.28)':allCritDone?'rgba(34,197,94,.2)':'var(--border)'};background:${isOverdue?'rgba(239,68,68,.03)':allCritDone?'rgba(34,197,94,.02)':'var(--surface)'};">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+        <div style="width:38px;height:38px;border-radius:50%;background:${color}22;color:${color};display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;">${getInitials(pt.name)}</div>
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:13.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${pt.name}</div>
+          <div style="font-size:10.5px;color:var(--muted);font-family:'Geist Mono',monospace;">${age ? age + 'j · ' : ''}${p.title.split(' ').slice(0,2).join(' ')}</div>
         </div>
-        <div class="pat-proto-badge" style="background:${color}18;color:${color}">${pt.protoId.toUpperCase()}</div>
+        <div style="background:${color}18;color:${color};padding:2px 8px;border-radius:10px;font-size:10px;font-family:'Geist Mono',monospace;font-weight:700;flex-shrink:0;">${pt.protoId.toUpperCase()}</div>
       </div>
-      <div class="pat-progress">
-        <div class="pat-phase-label">${ph ? ph.label + ' — ' + ph.title : '—'}</div>
-        <div class="pat-progress-label">${phaseIdx+1}/${p.phases.length}</div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:10px;flex-wrap:wrap;">
+        <div style="background:${color}15;border:1px solid ${color}33;color:${color};padding:3px 9px;border-radius:5px;font-size:11px;font-weight:600;">${ph ? ph.label : '—'}</div>
+        <div style="font-size:10.5px;color:var(--muted2);font-family:'Geist Mono',monospace;flex:1;">${ph ? ph.weeks : ''}</div>
+        ${trendIcon(trend)}
       </div>
-      <div class="pat-progress" style="margin-top:5px;">
-        <div class="pat-progress-bar"><div class="pat-progress-fill" style="width:${progress}%;background:${color}"></div></div>
-        <div class="pat-progress-label">${progress}%</div>
+      <div style="display:flex;gap:6px;margin-bottom:12px;align-items:stretch;">
+        <div class="dash-stat">
+          <div style="font-size:9.5px;color:var(--muted2);font-family:'Geist Mono',monospace;text-transform:uppercase;letter-spacing:.05em;">Sessies</div>
+          <div style="font-size:20px;font-weight:700;color:var(--text);line-height:1;">${(pt.sessions||[]).length}</div>
+        </div>
+        ${critBlock}
+        <div class="dash-stat" style="flex:1;justify-content:center;">
+          <div style="font-size:9.5px;color:var(--muted2);font-family:'Geist Mono',monospace;text-transform:uppercase;letter-spacing:.05em;">Laatste sessie</div>
+          ${daysBadge}
+        </div>
       </div>
-      ${lastNote ? `<div class="pat-notes-preview">📝 ${lastNote}</div>` : ''}
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;height:4px;background:var(--surface3);border-radius:2px;overflow:hidden;">
+          <div style="height:100%;width:${progress}%;background:${color};border-radius:2px;"></div>
+        </div>
+        <div style="font-size:10px;color:var(--muted2);font-family:'Geist Mono',monospace;white-space:nowrap;">${phaseIdx+1} / ${p.phases.length} fasen</div>
+      </div>
     </div>`;
   }).join('')}</div>`;
 }
@@ -362,6 +536,9 @@ function renderPatientDetail(pt, p) {
     </div>`;
   });
   html += `</div>`;
+
+  // Criteria checklist (go/stop/redflags voor huidige fase)
+  html += renderCriteriaSection(pt, p);
 
   // Sessie log
   html += renderSessionSection(pt, p);

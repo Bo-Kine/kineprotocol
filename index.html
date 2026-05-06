@@ -77,6 +77,26 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
 .recent-chip:hover{border-color:var(--border2);background:var(--surface2);}
 .recent-chip-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
 .recent-chip-name{font-size:12px;font-weight:500;white-space:nowrap;}
+/* Patiënten dashboard */
+.dash-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin-bottom:16px;}
+.dash-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px;cursor:pointer;transition:all .15s;}
+.dash-card:hover{border-color:var(--border2);transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,0,0,.25);}
+.dash-stat{background:var(--surface2);border:1px solid var(--border);border-radius:7px;padding:8px 12px;display:flex;flex-direction:column;gap:3px;min-width:54px;}
+.dash-crit{background:var(--surface2);border:1px solid var(--border);border-radius:7px;padding:8px 12px;display:flex;flex-direction:column;gap:2px;min-width:64px;text-align:center;align-items:center;}
+.dash-badge{display:inline-block;font-size:10.5px;font-family:'Geist Mono',monospace;padding:4px 8px;border-radius:5px;font-weight:600;white-space:nowrap;}
+.dash-badge-ok{background:rgba(34,197,94,.1);color:#22c55e;}
+.dash-badge-warn{background:rgba(239,68,68,.1);color:#ef4444;}
+.dash-badge-muted{background:var(--surface3);color:var(--muted2);}
+/* Criteria checklist */
+.criteria-section{margin-top:20px;padding-top:16px;border-top:1px solid var(--border);}
+.criteria-go-banner{background:rgba(34,197,94,.09);border:1px solid rgba(34,197,94,.28);border-radius:8px;padding:12px 16px;margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+.criteria-item{display:flex;align-items:flex-start;gap:10px;padding:8px 10px;border-radius:7px;margin-bottom:4px;transition:background .1s,border-color .1s;user-select:none;}
+.criteria-item:hover{filter:brightness(1.08);}
+.criteria-check{width:18px;height:18px;border-radius:4px;border:1.5px solid var(--border2);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;transition:all .12s;}
+.criteria-label{font-size:12.5px;line-height:1.5;transition:color .12s;}
+.criteria-stop-item{display:flex;align-items:flex-start;gap:8px;padding:7px 10px;border-radius:6px;margin-bottom:4px;background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.18);}
+.criteria-rf-item{display:flex;align-items:flex-start;gap:8px;padding:7px 10px;border-radius:6px;margin-bottom:4px;background:rgba(239,68,68,.07);border:1px solid rgba(239,68,68,.2);}
+.criteria-sub-label{font-size:10.5px;font-family:'Geist Mono',monospace;text-transform:uppercase;letter-spacing:.07em;margin-bottom:8px;}
 /* Viewer */
 .viewer{flex:1;display:flex;flex-direction:column;overflow:hidden;}
 .viewer-header{padding:18px 24px 0;border-bottom:1px solid var(--border);flex-shrink:0;}
@@ -498,9 +518,13 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
     <div id="screen-patients" style="display:none;overflow-y:auto;flex:1;-webkit-overflow-scrolling:touch;">
       <div class="pat-screen">
         <div class="pat-header">
-          <div class="pat-header-title">Mijn patiënten</div>
+          <div>
+            <div class="pat-header-title">Patiëntendashboard</div>
+            <div style="font-size:11.5px;color:var(--muted);margin-top:2px;">Gesorteerd op actief — overdue bovenaan</div>
+          </div>
           <button class="pat-add-btn" onclick="openPatNew()">+ Nieuwe patiënt</button>
         </div>
+        <div id="dash-summary-bar" style="display:none;gap:8px;margin-bottom:16px;flex-wrap:wrap;"></div>
         <div id="pat-list-container"></div>
       </div>
     </div>

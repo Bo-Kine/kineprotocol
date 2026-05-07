@@ -398,6 +398,65 @@ const protocols = {
        redflags:['Acute ruptuur symptomen → spoed orthopedie','VISA-P progressief dalend ondanks optimale aanpak → heroverwegen diagnose of chirurgisch consult']}
     ],
     refs:'Rio et al. (2015) — Isometric exercise reduces pain immediately in tendinopathy. BJSM RCT. | Beyer et al. (2015) — Heavy slow resistance vs eccentric training for patellar tendinopathy. Am J Sports Med RCT. | Kongsgaard et al. (2010) — HSR training superior to eccentric and corticosteroid. Scand J Med Sci Sports RCT. | Cook & Purdam (2009) — Tendinopathy continuum model. BJSM. | Malliaras et al. (2015) — Patellar tendinopathy management. J Orthop Sports Phys Ther. | Visnes & Bahr (2007) — Eccentric training prevention of patellar tendinopathy. Am J Sports Med. | van der Worp et al. (2011) — Risk factors for patellar tendinopathy. Br J Sports Med.'},
+  gmt:{id:'gmt',title:'Gluteus Med./Min. Tendinopathie',subtitle:'Greater Trochanteric Pain Syndrome — laterale heuppijn, load management, progressieve abductorkracht',color:'#14b8a6',icon:'🦴',
+    phases:[
+      {label:'Fase 1',title:'Pijnmanagement & Educatie',weeks:'Weken 0–2',
+       evidence:'<strong>Greater Trochanteric Pain Syndrome (GTPS)</strong> wordt veroorzaakt door compressie én tensiele belasting van de gluteus medius/minimus peesinserties op de trochanter major. <strong>Compressie</strong> bij heup-adductieposities (been-over-been, liggen op aangedane zijde) is de primaire pijndriver. <strong>Isometrische oefeningen</strong> hebben een directe pijnmodulerend effect (Rio et al. 2015). Vermijd rekken van de laterale heup — dit vergroot compressie. <strong>Mellor et al. (2018)</strong> toonde aan dat educatie + oefening superieur is aan corticosteroïdinjecties op 52 weken.',
+       goals:['Compressief vs. tensiel belastingsmodel uitleggen','Compressieve houdingen elimineren (been-over-been, endorotatie, liggen op aangedane zijde)','Slaapadaptatie: kussen tussen de knieën bij zijligging','Isometrische pijnmodulatie starten','Dagelijkse activiteiten handhaven binnen pijngrenzen (NRS ≤ 4)'],
+       exercises:[
+         {name:'Isometrische heupabductie (staand)',cat:'kracht',params:[['Weerstand','Wand / stoel'],['Duur','30–45 sec'],['Sets','3–5'],['Rust','60 sec']],note:'Sta rechtop, druk laterale knie of been tegen wand. Romp neutraal, geen heup-adductie. Pijn ≤ 3/10 NRS. Pijnmodulerend effect treedt op binnen 30–45 sec.'},
+         {name:'Pelvische neutralisatie (rugligging)',cat:'stabiliteit',params:[['Reps','10–15'],['Sets','3']],note:'Rugligging, knieën gebogen. Lichte activatie transversus abdominis zonder bekkenrotatie. Voorbereiding op belasting.'},
+         {name:'Isometrische heupabductie (rugligging)',cat:'kracht',params:[['Duur','20–30 sec'],['Sets','3'],['Rust','45 sec']],note:'Rugligging, benen gestrekt. Span abductoren aan alsof je benen uit elkaar wil bewegen. Geen zichtbare beweging. Pijn ≤ 3/10.'},
+       ],
+       criteria_go:['Pijn bij rust ≤ 2/10 NRS','Compressieve houdingen consequent vermeden','Pijneducatie begrepen en toegepast'],
+       criteria_stop:['Pijn > 5/10 bij isometrische oefening → rust + verlaag intensiteit','Uitstralende pijn naar knie of lies → lumbale screening vóór voortgang'],
+       redflags:['Nachtpijn zonder houdingsafhankelijkheid → uitsluiten tumor of infectie','Uitstraling L4/L5 dermatoom → lumbale hernia screenen','Zwelling + warmte + koorts → bursitis septica uitsluiten','Progressief krachtsverlies heup → neurologisch consult'],
+      },
+      {label:'Fase 2',title:'Isotone Opbouw',weeks:'Weken 2–8',
+       evidence:'<strong>Progressief isotone heupabductietraining</strong> (Allison et al. 2016) vermindert pijn en verbetert functioneren bij GTPS. Tensiele belasting via abductie in neutrale positie is veilig en effectief. Vermijd nog steeds maximale heup-adductie/endorotatie. Start laagdrempelig in zijligging en bouw op naar belast staan. Monitor de pijnrespons 24u na elke sessie: stijging ≤ 2/10 boven uitgangsniveau is acceptabel.',
+       goals:['Opbouwen isotone abductorkracht in zijligging en staand','Herstel symmetrische bekkencontrole bij stap en wandelen','Pijn stabiel of dalend tijdens én 24u na training','Terugkeer pijnvrij vlak wandelen'],
+       exercises:[
+         {name:'Zijliggende heupabductie',cat:'kracht',params:[['Reps','15–20'],['Sets','3'],['Rust','60 sec']],note:'Zijligging, onderste knie licht gebogen. Bovenste been opheffen tot 30–40°, neutrale heupstand (geen endorotatie). Controleer pelvische neutraliteit.'},
+         {name:'Clamshell',cat:'kracht',params:[['Reps','15–20'],['Sets','3'],['Weerstand','Geen / lichte band']],note:'Zijligging, heupen 45° gebogen, knieën samen. Open bovenknie als een schelp. Voeten samen. Progressie: lichte weerstandsband.'},
+         {name:'Staande heupabductie',cat:'kracht',params:[['Reps','12–15'],['Sets','3'],['Weerstand','Geen / band']],note:'Staand, been lateraal opheffen tot 30°. Romp stabiel, geen laterale rompkanteling. Progressie: weerstandsband proximaal.'},
+         {name:'Gluteale brug (bilateraal)',cat:'kracht',params:[['Reps','15'],['Sets','3']],note:'Rugligging, voeten heupbreed. Bekken optillen tot neutrale heup-knie-schouder lijn. Geen hyperlordose. Activeer gluteus maximus actief.'},
+         {name:'Dead Bug (heupabductie variant)',cat:'stabiliteit',params:[['Reps','8–10 p.z.'],['Sets','3']],note:'Rugligging, armen omhoog. Strek contralateraal been terwijl ipsilateraal been isometrische abductie houdt. Lumbaal contact met vloer bewaren.'},
+       ],
+       criteria_go:['Zijliggende abductie 15 reps zonder pijn > 3/10','Pijn 24u na training ≤ 2/10 boven uitgangswaarde','Éénbeensbalans > 10 sec zonder bekken-drop'],
+       criteria_stop:['Pijn > 4/10 tijdens oefening → verlaag belasting of range','Pijnpiek > 2/10 boven uitgangswaarde > 24u → verlaag volume'],
+       redflags:['Acuut pijntoename bij zeer lage belasting → avulsiefractuur trochanter major uitsluiten'],
+      },
+      {label:'Fase 3',title:'Krachtontwikkeling',weeks:'Weken 8–16',
+       evidence:'<strong>Hoge-belasting progressieve weerstandstraining (HSR)</strong> is superieur aan stretchoefeningen voor pijnreductie én functioneel herstel bij GTPS (Mellor et al. 2018). Gecombineerde heup-extensie + abductie in functionele posities reprobeert de peesfunctie het beste. <strong>LSI ≥ 80%</strong> abductiekracht is een minimumcriterium voor progressie. Ganderton et al. (2018) bevestigt dat functionele gluteale belasting superieur is aan geen behandeling.',
+       goals:['Maximale abductorkracht opbouwen (LSI ≥ 85%)','Éénbeensstabiliteit onder progressieve belasting','Pijnvrij traplopen en 30+ min wandelen','Introductie functionele patronen: squat, step-up, deadlift'],
+       exercises:[
+         {name:'Éénbeensstand (progressief)',cat:'stabiliteit',params:[['Duur','30–60 sec'],['Sets','3 p.z.'],['Progressie','Instabiel oppervlak']],note:'Éénbeensstand, bekken horizontaal, geen heupvalgus. Progressie: ogen dicht → instabiel oppervlak → armbewegingen toevoegen.'},
+         {name:'Laterale band walk',cat:'kracht',params:[['Stappen','10–15 p.r.'],['Sets','3'],['Band','Licht → matig']],note:'Matige knieflexie, voeten parallel, stap lateraal. Romp rechtop, geen Trendelenburg. Weerstandsband proximaal knie of enkels.'},
+         {name:'Step-up (excentrisch gecontroleerd)',cat:'kracht',params:[['Reps','10–12 p.z.'],['Sets','3'],['Hoogte','15–25 cm'],['Tempo','3 sec neer']],note:'Stap op plateau, excentrisch gecontroleerd naar beneden. Knietracking boven 2e teen bewaken. Progressie: hoogte en gewicht verhogen.'},
+         {name:'Squat (heupbreedte)',cat:'kracht',params:[['Reps','10–12'],['Sets','3'],['Diepte','90°']],note:'Voeten heupbreed, tenen licht uitgedraaid. Controleer laterale kniestabiliteit en bekkencontrole. Progressie: goblet squat → barbell squat.'},
+         {name:'Romanian Deadlift (bilateraal)',cat:'kracht',params:[['Reps','10'],['Sets','3'],['Gewicht','Licht → matig']],note:'Heupscharnierbeweging, neutrale wervelkolom, lichte knieflexie. Voel rek hamstrings. Progressie naar éénbeens RDL in fase 4.'},
+         {name:'Gluteale brug (éénbeens)',cat:'kracht',params:[['Reps','10–12 p.z.'],['Sets','3']],note:'Rugligging, één voet op grond. Bekken optillen en horizontaal controleren. Geen bekkenrotatie naar vrije zijde.'},
+       ],
+       criteria_go:['Éénbeensstand > 30 sec zonder bekken-drop','Step-up 15 reps zonder pijn > 3/10','LSI abductiekracht ≥ 80%','Pijnvrij wandelen ≥ 30 min'],
+       criteria_stop:['Pijn > 4/10 bij squat → controleer kniepositie, verlaag diepte','Bekken-drop bij éénbeensstand → terug naar bilaterale stabilisatie'],
+       redflags:['Laterale kniepijn bij step-up → differentiaal ITB-syndroom (Noble compression test)'],
+      },
+      {label:'Fase 4',title:'Functionele Terugkeer & RTS',weeks:'Weken 16–24+',
+       evidence:'<strong>Functionele terugkeer</strong> vereist progressieve blootstelling aan sport- en beroepsspecifieke activiteiten met monitoring van pijnrespons. <strong>LSI ≥ 90%</strong> abductiekracht is de RTS-drempel (Grimaldi & Fearon 2015). Plyometrische abductorbelasting en loophervatting zijn veilig na voldoende krachtherstel. <strong>Zelfmanagement</strong> (flare-up protocol) is essentieel voor langetermijnresultaten.',
+       goals:['Pijnvrije terugkeer naar sport of beroepsactiviteit','LSI abductiekracht ≥ 90%','Pijnvrij hardlopen ≥ 30 min (indien van toepassing)','Flare-up zelfmanagementplan gekend en geoefend'],
+       exercises:[
+         {name:'Éénbeens Romanian Deadlift',cat:'kracht',params:[['Reps','8–10 p.z.'],['Sets','3–4'],['Gewicht','Matig → zwaar']],note:'Balans op één been, romp kantelen terwijl vrij been posteriorwaarts strekt. Bekken neutraal, lichte knieflexie standbeen. Progressie: gewicht toevoegen.'},
+         {name:'Zijwaartse uitval (lateral lunge)',cat:'kracht',params:[['Reps','10 p.z.'],['Sets','3']],note:'Stap breed lateraal, buig knie terwijl ander been gestrekt blijft. Romp licht voorover. Progressie: gewicht toevoegen, explosieve terugkeer.'},
+         {name:'Step-down (excentrisch)',cat:'kracht',params:[['Reps','10–15 p.z.'],['Sets','3'],['Tempo','3 sec neer']],note:'Sta op rand plateau, laat contralateraal been gecontroleerd zakken. Knietracking ipsilateraal controleren. Geen valgus.'},
+         {name:'Laterale hop (gecontroleerd)',cat:'cardio',params:[['Reps','8–10 p.z.'],['Sets','3']],note:'Hop lateraal, land op één been met zachte knieflexie. Valgus vermijden bij landing. Alleen na pijnvrije krachtontwikkeling (fase 3).'},
+         {name:'Looptraining (GMT progressief)',cat:'cardio',params:[['Start','Wandel-loop intervals'],['Progressie','10% per week']],note:'Begin op vlakke ondergrond. Progressie naar heuvels. Monitor 24u pijnrespons. Stop/verlaag indien NRS > 3/10 na 24u.'},
+       ],
+       criteria_go:['LSI abductiekracht ≥ 90%','Pijn ≤ 1/10 bij alle dagelijkse activiteiten','Single-leg squat zonder Trendelenburg','Hardlopen 30 min pijnvrij (indien van toepassing)'],
+       criteria_stop:['Pijntoename > 2/10 > 24u na sportactiviteit → volume verlagen, niet stoppen','Flare-up tekenen → fase 3 oefeningen hervatten'],
+       redflags:['Pijn bij rust refractair aan conservatief beleid → MRI overwegen (partiele ruptuur)','Nieuwe liespijn bij belasting → coxartrose uitsluiten'],
+      },
+    ],
+    refs:'Mellor R et al. (2018). Education plus exercise versus corticosteroid injection versus wait and see for greater trochanteric pain syndrome. BMJ. | Allison K et al. (2016). Hip abductor strength training is superior to stretching for improving outcomes in GTPS: randomised controlled trial. British Journal of Sports Medicine. | Ganderton C et al. (2018). Gluteal loading versus sham exercises to improve pain and dysfunction in postmenopausal women with GTPS. Journal of Women\'s Health. | Rio E et al. (2015). Isometric exercise induces analgesia and reduces inhibition in patellar tendinopathy. British Journal of Sports Medicine. | Grimaldi A & Fearon A (2015). Gluteal tendinopathy: integrating pathomechanics and clinical features in its management. Journal of Orthopaedic and Sports Physical Therapy.'},
   at:{id:'at',title:'Achillespees Tendinopathie',subtitle:'Conservatief revalidatieprotocol voor midportion en insertionele achillespees tendinopathie',color:'#e879f9',
     phases:[
       {label:'Fase 0',title:'Diagnostiek & Classificatie',weeks:'Vóór behandelstart',
@@ -981,7 +1040,7 @@ const protocols = {
 
 // ── REGIO MAPPING (protocol → regio) ──
 const REGIO_MAP = {
-  acl:'Knie & Heup', tka:'Knie & Heup', pfps:'Knie & Heup', pt:'Knie & Heup',
+  acl:'Knie & Heup', tka:'Knie & Heup', pfps:'Knie & Heup', pt:'Knie & Heup', gmt:'Knie & Heup',
   lh:'Lumbaal & Cervicaal', bureau:'Lumbaal & Cervicaal',
   rc:'Schouder & Arm', si:'Schouder & Arm',
   at:'Enkel & Voet', enkel:'Enkel & Voet', over:'Enkel & Voet',
@@ -1083,6 +1142,22 @@ const SCORES = {
     {name:'VISA-P', full:'Victorian Institute of Sport Assessment – Patella', max:100, unit:'punten',
      ranges:[{label:'RTS-klaar',min:90,max:100,color:'#22c55e'},{label:'Sport beperkt',min:65,max:89,color:'#f59e0b'},{label:'Ernstige klachten',min:0,max:64,color:'#ef4444'}],
      rts:'≥ 90 voor volledig sporten', mcid:13},
+  ],
+  gmt: [
+    {name:'NRS Activiteitspijn', full:'Numeric Rating Scale — pijn bij belastende activiteit (wandelen, traplopen)',
+     unit:'/10', max:10, invert:true, rts:'≤ 2/10 bij alle activiteiten', mcid:'2',
+     ranges:[
+       {label:'Minimaal (0–2)',    min:0,  max:2,  color:'#22c55e'},
+       {label:'Matig (3–5)',       min:3,  max:5,  color:'#f59e0b'},
+       {label:'Ernstig (6–10)',    min:6,  max:10, color:'#ef4444'},
+     ]},
+    {name:'Éénbeensstabiliteit', full:'Single-leg stance tijd — maat voor bekkencontrole en gluteus medius functie',
+     unit:'sec', max:60, invert:false, rts:'≥ 30 sec', mcid:'5',
+     ranges:[
+       {label:'Functioneel (≥ 30 sec)',     min:30, max:60, color:'#22c55e'},
+       {label:'Beperkt (15–29 sec)',         min:15, max:29, color:'#f59e0b'},
+       {label:'Ernstig beperkt (< 15 sec)', min:0,  max:14, color:'#ef4444'},
+     ]},
   ],
   at: [
     {name:'VISA-A', full:'Victorian Institute of Sport Assessment – Achilles', max:100, unit:'punten',
@@ -1592,7 +1667,32 @@ const BESLISBOOM = {
         ]
       },
     ]
-  }
+  },
+  gmt: {
+    title: 'Beslisboom — GMT / GTPS',
+    stappen: [
+      {id:'s1', vraag:'Wat is de primaire pijnlocatie?',
+       info:'Palpeer de trochanter major. Vergelijk met anterieure heup (lies), lumbaal en laterale knie.',
+       opties:[
+         {label:'Laterale heup (trochanter major)', color:'#14b8a6', next:'s2'},
+         {label:'Anterieure heup of lies', color:'#f59e0b', advies:'Anterieure heuppijn: overweeg FAI, coxartrose of heupflexortendinopathie. Specifieke klinische tests (FADIR, FABER) en eventueel beeldvorming aanbevolen.'},
+         {label:'Laterale knie of uitstralend', color:'#f97316', advies:'Differentiaal: ITB-syndroom (Noble compression test) vs. lumbale L4/L5 radiculopathie (SLR, neurologisch onderzoek). Lumbale screening aanbevolen.'},
+       ]},
+      {id:'s2', vraag:'Is er compressiepijn bij de trochanter major?',
+       info:'Provocatietests: zitten met gekruiste benen, liggen op aangedane zijde, been-over-been positie.',
+       opties:[
+         {label:'Ja — duidelijk compressiegevoelig', color:'#ef4444', next:'s3'},
+         {label:'Nee — pijn enkel bij tensiele belasting', color:'#22c55e', advies:'Tensiel GTPS: start fase 2 (isotone opbouw). Focus op progressieve abductorkrachttraining.'},
+       ]},
+      {id:'s3', vraag:'Hoe ernstig is de huidige pijnbeleving en functionele beperking?',
+       info:'NRS pijn bij activiteit. Zijn dagelijkse activiteiten ernstig beperkt?',
+       opties:[
+         {label:'NRS > 5 / sterk beperkt in ADL', color:'#ef4444', advies:'Acuut compressief GTPS: focus op fase 1. Isometrische pijnmodulatie (30–45 sec, 3–5 sets). Overweeg corticosteroïdinjectie bij refractaire acute fase.'},
+         {label:'NRS 3–5 / matig beperkt', color:'#f59e0b', advies:'Subacuut GTPS: combineer fase 1 (educatie) met vroege fase 2 (zijliggende abductie). Monitor 24u pijnrespons.'},
+         {label:'NRS < 3 / pijn voornamelijk bij sport', color:'#22c55e', advies:'Belastingsgerelateerd GTPS: start fase 3 (krachtontwikkeling). RTS-criterium: LSI ≥ 90% abductiekracht.'},
+       ]},
+    ],
+  },
 };
 
 // ── TESTFORMULIEREN ──

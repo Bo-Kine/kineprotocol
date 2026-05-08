@@ -360,6 +360,8 @@ function printFiche() {
   if(notes) html += `<h2>Notities</h2><div class="pf-notes">${notes}</div>`;
   html += `<div class="pf-footer">KineProtocol · Evidence-based revalidatie · ${datum}</div>`;
   document.getElementById('print-fiche').innerHTML = html;
+  document.body.style.overflow = '';
+  document.documentElement.style.overflow = '';
   window.print();
 }
 function copyFiche() {
@@ -607,7 +609,9 @@ function saveAndPrintForm() {
   html += '<div class="pf-footer">KineProtocol · ' + datum + '</div>';
   document.getElementById('print-fiche').innerHTML = html;
   closeForm();
-  setTimeout(() => window.print(), 100);
+  document.body.style.overflow = '';
+  document.documentElement.style.overflow = '';
+  setTimeout(() => window.print(), 150);
 }
 
 
@@ -777,7 +781,9 @@ function printEvalForm() {
   html += '<div class="pf-footer">KineProtocol · Klinisch Evaluatieformulier · ' + datum + '</div>';
   document.getElementById('print-fiche').innerHTML = html;
   closeEvalForm();
-  setTimeout(() => window.print(), 100);
+  document.body.style.overflow = '';
+  document.documentElement.style.overflow = '';
+  setTimeout(() => window.print(), 150);
 }
 
 function printBlankEvalForm(formId) {
@@ -827,7 +833,9 @@ function printBlankEvalForm(formId) {
   });
   html += '<div class="pf-footer">KineProtocol · Klinisch Evaluatieformulier · ' + datum + '</div>';
   document.getElementById('print-fiche').innerHTML = html;
-  setTimeout(() => window.print(), 100);
+  document.body.style.overflow = '';
+  document.documentElement.style.overflow = '';
+  setTimeout(() => window.print(), 150);
 }
 
 // ── OEFENBIBLIOTHEEK ──

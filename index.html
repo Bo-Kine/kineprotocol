@@ -389,6 +389,7 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
 .form-option-label.selected{background:var(--surface3);}
 /* Print */
 @media print{
+  html,body{height:auto!important;overflow:visible!important;background:#fff!important;display:block!important;color:#000!important;}
   body>*:not(#print-fiche){display:none!important;}
   #print-fiche{display:block!important;font-family:'Geist',sans-serif;padding:20px;color:#000;}
   #print-fiche h1{font-size:20px;margin-bottom:4px;}

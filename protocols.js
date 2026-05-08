@@ -62,7 +62,7 @@ const protocols = {
        criteria_stop:['ACL-RSI < 50 → psycholoog'],
        redflags:['Nieuwe instabiliteitsepisode → stop sport, evalueer ACL','Contralateraal risico 3–6× verhoogd → bilateraal preventief programma']}
     ],
-    refs:'van Melick et al. (2016) — Evidence-based ACL rehabilitation. BJSM. | Grindem et al. (2016) — Decision rules reduce reinjury risk 84%. BJSM. | Hughes et al. (2019) — BFR training after ACL. J Strength Cond Res.'},
+    refs:'van Melick et al. (2016) — Evidence-based ACL rehabilitation. BJSM. | Grindem et al. (2016) — Decision rules reduce reinjury risk 84%. BJSM. | Hughes et al. (2019) — BFR training after ACL. Phys Ther Sport.'},
 
   tka:{id:'tka',title:'Totale Knieprothese',subtitle:'TKA revalidatie inclusief prehabilitatie, ERAS-protocol en sporthervatting',color:'#a78bfa',
     phases:[
@@ -120,7 +120,7 @@ const protocols = {
        criteria_stop:['Chronische pijn > 3 mnd → pijnkliniek'],
        redflags:['Prothese-instabiliteit, klikken → orthopedisch chirurg']}
     ],
-    refs:'Artz et al. (2015) — Physiotherapy after TKR. BMC Musculoskeletal Disorders. | Jakobsen et al. (2014) — Preoperative quad strength predicts TKA outcome. J Bone Joint Surg. | Kehlet & Thienpont (2013) — Fast-track knee arthroplasty. Bone Joint J.'},
+    refs:'Artz et al. (2015) — Physiotherapy after TKR: systematic review. BMC Musculoskeletal Disorders. | Jakobsen et al. (2014) — Early progressive strength training to enhance recovery after fast-track TKA. Arthritis Care Res. | Kehlet & Thienpont (2013) — Fast-track knee arthroplasty. The Knee.'},
 
   pfps:{id:'pfps',title:'Patellofemoraal Pijnsyndroom',subtitle:'Multifactorieel protocol met subclassificatie, heupfocus en gait retraining',color:'#f97316',
     phases:[
@@ -168,7 +168,7 @@ const protocols = {
        criteria_stop:['Pijn > VAS 3 bij sport → fase 2 consolideren'],
        redflags:['Recidief na RTS → loopvolume-monitoring activeren']}
     ],
-    refs:'Lack et al. (2015) — Hip-targeted physiotherapy superior for PFPS. BJSM. | Rathleff et al. (2015) — High-load training in PFPS. Scand J Med Sci Sports. | Barton et al. (2017) — Patellar taping. BJSM. | Willy et al. (2012) — Gait retraining. J Orthop Sports Phys Ther.'},
+    refs:'Lack et al. (2015) — Hip-targeted physiotherapy superior for PFPS: meta-analysis. BJSM. | Crossley et al. (2016) — Patellofemoral pain consensus statement from the 4th International Research Retreat. BJSM. | Barton et al. (2014) — Patellar taping for patellofemoral pain: systematic review. BJSM. | Willy et al. (2012) — Gait retraining reduces patellofemoral joint stress. Clin Biomech.'},
 
   lh:{id:'lh',title:'Lumbale Hernia',subtitle:'Conservatief en postoperatief revalidatieprotocol voor lumbale discushernia met radiculopathie',color:'#34d399',
     phases:[
@@ -229,7 +229,7 @@ const protocols = {
        criteria_stop:['ODI > 40% na 16 wkn → multidisciplinaire revalidatie'],
        redflags:['Nieuwe cauda equina symptomen → SPOED','Hoog chroniciteitsrisico: FABQ > 44, depressie → multidisciplinair']}
     ],
-    refs:'Malmivaara et al. (1995) — Bed rest vs activity for LBP. NEJM. | Hides et al. (2001) — Motor control training for LBP. Spine. | Nee et al. (2012) — Neural tissue management. Man Ther. | Berglund et al. (2015) — Heavy resistance training for LBP. Spine. | Steffens et al. (2016) — Prevention of LBP. JAMA Intern Med.'},
+    refs:'Malmivaara et al. (1995) — Bed rest vs activity for LBP. NEJM. | Hides et al. (2001) — Motor control training for LBP. Spine. | Nee et al. (2012) — Neural tissue management for cervicobrachial pain. J Physiother. | Berglund et al. (2015) — Heavy resistance training for LBP. J Strength Cond Res. | Steffens et al. (2016) — Prevention of LBP. JAMA Intern Med.'},
 
   rc:{id:'rc',title:'Rotatorenmanchet',subtitle:'Conservatief en postoperatief protocol voor rotatorenmanchet letsel (partieel / volledig / post-OK)',color:'#f43f5e',
     phases:[
@@ -315,7 +315,7 @@ const protocols = {
        criteria_stop:['Recidief zonder verbetering na 4 weken → kinesist opnieuw'],
        redflags:['Frozen shoulder ontwikkeling (stijfheid alle richtingen) → agressief aanpakken of injectie','Nieuwe axillaire neuropathie na trauma → spoed neurologie']}
     ],
-    refs:'Hegedus et al. (2012) — Physical examination tests for shoulder pathology. BJSM meta-analyse. | Kukkonen et al. (2015) — Conservative vs surgical for RC tears. J Bone Joint Surg RCT. | Kibler et al. (2013) — The role of the scapula in athletic shoulder function. AJSM. | Cools et al. (2007) — Rehabilitation of scapular muscle balance. AJSM. | Rio et al. (2015) — Isometric contractions for pain in tendinopathy. BJSM. | Beyer et al. (2015) — Heavy slow resistance vs eccentric training. Am J Sports Med. | Van der Meijden et al. (2012) — Rehabilitation after arthroscopic RC repair. J Shoulder Elbow Surg.'},
+    refs:'Hegedus et al. (2012) — Physical examination tests for shoulder pathology: BJSM meta-analyse. | Kukkonen et al. (2015) — Conservative vs surgical for RC tears: RCT. J Bone Joint Surg Am. | Kibler et al. (2013) — Clinical implications of scapular dyskinesis in shoulder injury. BJSM. | Cools et al. (2007) — Rehabilitation of scapular muscle balance. Am J Sports Med. | Rio et al. (2015) — Isometric contractions reduce pain in tendinopathy. BJSM. | Beyer et al. (2015) — Heavy slow resistance vs eccentric training for tendinopathy. Am J Sports Med. | Van der Meijden et al. (2012) — Rehabilitation after arthroscopic RC repair. Int J Sports Phys Ther.'},
 
   pt:{id:'pt',title:'Patellapees Tendinopathie',subtitle:'Conservatief revalidatieprotocol voor patellaire tendinopathie (jumper&#x27;s knee)',color:'#fb923c',
     phases:[
@@ -397,7 +397,7 @@ const protocols = {
        criteria_stop:['VISA-P < 80 → activeer fase 1–2 direct','Krachtverlies LSI < 85% → krachtcyclus herstarten'],
        redflags:['Acute ruptuur symptomen → spoed orthopedie','VISA-P progressief dalend ondanks optimale aanpak → heroverwegen diagnose of chirurgisch consult']}
     ],
-    refs:'Rio et al. (2015) — Isometric exercise reduces pain immediately in tendinopathy. BJSM RCT. | Beyer et al. (2015) — Heavy slow resistance vs eccentric training for patellar tendinopathy. Am J Sports Med RCT. | Kongsgaard et al. (2010) — HSR training superior to eccentric and corticosteroid. Scand J Med Sci Sports RCT. | Cook & Purdam (2009) — Tendinopathy continuum model. BJSM. | Malliaras et al. (2015) — Patellar tendinopathy management. J Orthop Sports Phys Ther. | Visnes & Bahr (2007) — Eccentric training prevention of patellar tendinopathy. Am J Sports Med. | van der Worp et al. (2011) — Risk factors for patellar tendinopathy. Br J Sports Med.'},
+    refs:'Rio et al. (2015) — Isometric exercise reduces pain immediately in tendinopathy. BJSM. | Beyer et al. (2015) — Heavy slow resistance vs eccentric training: RCT. Am J Sports Med. | Kongsgaard et al. (2009) — HSR training superior to eccentric and corticosteroid for patellar tendinopathy. Scand J Med Sci Sports. | Cook & Purdam (2009) — Tendinopathy continuum model. BJSM. | Malliaras et al. (2015) — Patellar tendinopathy management. J Orthop Sports Phys Ther. | Visnes & Bahr (2007) — Eccentric training and patellar tendinopathy in volleyball players. Br J Sports Med. | van der Worp et al. (2011) — Risk factors for patellar tendinopathy. Br J Sports Med.'},
   gmt:{id:'gmt',title:'Gluteus Med./Min. Tendinopathie',subtitle:'Greater Trochanteric Pain Syndrome — laterale heuppijn, load management, progressieve abductorkracht',color:'#14b8a6',icon:'🦴',
     phases:[
       {label:'Fase 1',title:'Pijnmanagement & Educatie',weeks:'Weken 0–2',
@@ -456,7 +456,7 @@ const protocols = {
        redflags:['Pijn bij rust refractair aan conservatief beleid → MRI overwegen (partiele ruptuur)','Nieuwe liespijn bij belasting → coxartrose uitsluiten'],
       },
     ],
-    refs:'Mellor R et al. (2018). Education plus exercise versus corticosteroid injection versus wait and see for greater trochanteric pain syndrome. BMJ. | Allison K et al. (2016). Hip abductor strength training is superior to stretching for improving outcomes in GTPS: randomised controlled trial. British Journal of Sports Medicine. | Ganderton C et al. (2018). Gluteal loading versus sham exercises to improve pain and dysfunction in postmenopausal women with GTPS. Journal of Women\'s Health. | Rio E et al. (2015). Isometric exercise induces analgesia and reduces inhibition in patellar tendinopathy. British Journal of Sports Medicine. | Grimaldi A & Fearon A (2015). Gluteal tendinopathy: integrating pathomechanics and clinical features in its management. Journal of Orthopaedic and Sports Physical Therapy.'},
+    refs:'Mellor R et al. (2018) — Education plus exercise versus corticosteroid injection versus wait and see for GTPS. BMJ. | Allison K et al. (2016) — Hip abductor muscle weakness in greater trochanteric pain syndrome. Med Sci Sports Exerc. | Ganderton C et al. (2018) — Gluteal loading versus sham exercises for GTPS in postmenopausal women. J Womens Health. | Rio E et al. (2015) — Isometric exercise reduces pain in tendinopathy. BJSM. | Grimaldi A & Fearon A (2015) — Gluteal tendinopathy: pathomechanics and clinical management. J Orthop Sports Phys Ther.'},
   at:{id:'at',title:'Achillespees Tendinopathie',subtitle:'Conservatief revalidatieprotocol voor midportion en insertionele achillespees tendinopathie',color:'#e879f9',
     phases:[
       {label:'Fase 0',title:'Diagnostiek & Classificatie',weeks:'Vóór behandelstart',
@@ -537,7 +537,7 @@ const protocols = {
        criteria_stop:['VISA-A < 80 → isometrie + volume reduceren direct','Krachtverlies LSI < 85% → krachtcyclus herstarten'],
        redflags:['Acute ruptuur symptomen → spoed','VISA-A progressief dalend ondanks optimale aanpak → orthopedisch overleg','Nieuw fluorochinolonen-gebruik → informeer arts over tendinopathie-voorgeschiedenis']}
     ],
-    refs:'Alfredson et al. (1998) — Heavy-load eccentric calf muscle training for chronic Achilles tendinosis. Am J Sports Med RCT. | Beyer et al. (2015) — HSR vs eccentric training for Achilles tendinopathy. Am J Sports Med RCT. | Rio et al. (2017) — Isometric exercise for tendinopathy pain relief. Br J Sports Med. | Silbernagel et al. (2007) — Continued sports activity using a pain-monitoring model. Am J Sports Med. | Jonsson et al. (2008) — New regimen for eccentric calf muscle training in insertional Achilles tendinopathy. Br J Sports Med. | Cook & Purdam (2009) — Tendinopathy continuum model. Br J Sports Med. | Silbernagel et al. (2020) — Consensus on RTS after Achilles tendon rupture. Br J Sports Med.'},
+    refs:'Alfredson et al. (1998) — Heavy-load eccentric calf muscle training for Achilles tendinosis. Am J Sports Med. | Beyer et al. (2015) — Heavy slow resistance vs eccentric training for Achilles tendinopathy. Am J Sports Med. | Rio et al. (2017) — Isometric contractions are more analgesic than isotonic contractions for tendon pain. Clin J Sport Med. | Silbernagel et al. (2007) — Continued sports activity using a pain-monitoring model. Am J Sports Med. | Jonsson et al. (2008) — New regimen for eccentric training in insertional Achilles tendinopathy. Br J Sports Med. | Cook & Purdam (2009) — Tendinopathy continuum model. Br J Sports Med. | Habets et al. (2015) — Eccentric exercise training in chronic mid-portion Achilles tendinopathy: systematic review. Scand J Med Sci Sports.'},
   bureau:{id:'bureau',title:'Bureauhouding & Nekklachten',subtitle:'Revalidatie en preventie van werkgerelateerde nek-, schouder- en rugklachten (trapezius syndroom, cervicogene hoofdpijn, thoracale kyfose, acute lumbago)',color:'#60a5fa',
     phases:[
       {label:'Fase 0',title:'Diagnostiek & Subclassificatie',weeks:'Eerste contact',
@@ -610,7 +610,7 @@ const protocols = {
        criteria_stop:['NDI blijft > 20 na 3 maanden → biopsychosociaal model herbekijken, psycholoog?','Hoofdpijn blijft → neuroloog'],
        redflags:['Nieuwe neurologische symptomen (tinteling, krachtsverlies arm) → MRI cervicaal','Progressieve nekpijn + gewichtsverlies + nachtzweten → oncologische screening']}
     ],
-    refs:'Jull et al. (2009) — Therapeutic exercise for cervicogenic headache. Spine RCT. | Andersen et al. (2008) — Neck/shoulder exercises for office workers. JAMA RCT. | Cleland et al. (2007) — Thoracic manipulation for neck pain. J Orthop Sports Phys Ther. | French et al. (2006) — Superficial heat for LBP. Cochrane. | Hoe et al. (2012) — Ergonomics interventions for upper limb work disorders. Cochrane. | Verhagen et al. (2013) — Conservative interventions for neck pain in office workers. Cochrane. | Linton (2001) — Psychosocial risk factors for neck and back pain. Spine.'},
+    refs:'Jull et al. (2002) — Therapeutic exercise for cervicogenic headache: RCT. Spine. | Andersen et al. (2008) — Neck/shoulder exercises reduce pain in office workers: RCT. Med Sci Sports Exerc. | Cleland et al. (2007) — Thoracic manipulation for neck pain. Phys Ther. | French et al. (2006) — Superficial heat for LBP. Cochrane. | Hoe et al. (2012) — Ergonomics interventions for upper limb work disorders. Cochrane. | Verhagen et al. (2013) — Conservative interventions for neck pain in office workers. Cochrane. | Linton (2000) — Psychosocial risk factors for neck and back pain. Spine.'},
   enkel:{id:'enkel',title:'Enkeldistorsie',subtitle:'Laterale enkeldistorsie — graad I, II en III (ATFL/CFL/PTFL) + chronische instabiliteit',color:'#f59e0b',
     phases:[
       {label:'Fase 0',title:'Diagnostiek & Graadclassificatie',weeks:'Dag 0–3 na letsel',
@@ -837,7 +837,7 @@ const protocols = {
        criteria_stop:['WOSI > 630 na 9 maanden → herbeoordeel conservatief vs. chirurgisch'],
        redflags:['Nieuwe luxatie bij sport → stop, heroverweeg chirurgische indicatie (ISIS-score bepalen)','AMBRI zonder voldoende verbetering na 9 maanden conservatief → inferieure kapselshift overwegen']}
     ],
-    refs:'Itoi E et al. (2007) — Immobilization in external rotation reduces reluxation risk after first-time shoulder dislocation. J Bone Joint Surg Am. | Kibler WB et al. (2013) — Clinical implications of scapular dyskinesis in shoulder injury. Br J Sports Med. | Lephart SM et al. (1994) — Proprioception after glenohumeral dislocation. J Shoulder Elbow Surg. | Balg F & Boileau P (2007) — The instability severity index score. J Bone Joint Surg Br. | Brophy RH & Marx RG (2009) — Treatment of traumatic anterior shoulder instability. Clin Orthop Relat Res. | Burkhead WZ & Rockwood CA (1992) — Treatment of instability of the shoulder with an exercise program. J Bone Joint Surg Am. | Wilk KE et al. (2013) — Shoulder injuries in the overhead athlete. J Orthop Sports Phys Ther.'},
+    refs:'Itoi E et al. (2007) — Immobilization in external rotation reduces reluxation risk after shoulder dislocation. J Bone Joint Surg Am. | Kibler WB et al. (2013) — Clinical implications of scapular dyskinesis in shoulder injury. Br J Sports Med. | Lephart SM et al. (1994) — Proprioception after glenohumeral dislocation. J Shoulder Elbow Surg. | Balg F & Boileau P (2007) — The instability severity index score. J Bone Joint Surg Br. | Brophy RH & Marx RG (2009) — Treatment of traumatic anterior shoulder instability. Arthroscopy. | Burkhead WZ & Rockwood CA (1992) — Treatment of instability of the shoulder with an exercise program. J Bone Joint Surg Am. | Wilk KE et al. (2009) — Shoulder injuries in the overhead athlete. J Orthop Sports Phys Ther.'},
 
   orif:{id:'orif',title:'ORIF Distale Radius',subtitle:'Open repositie & interne fixatie van distale radiusfractuur (AO type A2–C3) — postoperatief revalidatieprotocol pols & hand',color:'#38bdf8',
     phases:[
@@ -898,7 +898,7 @@ const protocols = {
        criteria_stop:['PRWE stagneert > 8 weken → ergotherapeut inschakelen'],
        redflags:['Implantaat-falen of breuk (röntgen) → spoedreferral chirurg','Nieuw trauma of val op pols → exclusief röntgen']}
     ],
-    refs:'Souer JS et al. (2011) — Wrist rehabilitation programs after distal radius fractures. J Hand Surg Am. | Quadlbauer S et al. (2017) — Early rehabilitation after volar locked plating of distal radius fractures. J Wrist Surg. | MacDermid JC et al. (2004) — The Patient-Rated Wrist Evaluation (PRWE): psychometric properties. J Hand Ther. | Lozano-Calderón SA et al. (2008) — The quality and strength of evidence for etiology: example of carpal tunnel syndrome. J Hand Surg Am. | Lattanza LL et al. (2017) — Open vs closed reduction of distal radius fractures in elderly. J Bone Joint Surg Am. | Valdes K et al. (2012) — A comparison of conservative interventions for distal radius fracture. J Hand Ther. | Ruch DS & Papadonikolakis A (2006) — Volar versus dorsal plating in the management of intra-articular distal radius fractures. J Hand Surg Am.'},
+    refs:'Souer JS et al. (2011) — Wrist rehabilitation after volar plate fixation of distal radius fractures. J Bone Joint Surg Am. | Quadlbauer S et al. (2017) — Early rehabilitation after volar locked plating of distal radius fractures. J Wrist Surg. | MacDermid JC et al. (2004) — The Patient-Rated Wrist Evaluation (PRWE): psychometric properties. J Hand Ther. | Lozano-Calderón SA et al. (2008) — Quality and strength of evidence for etiology in orthopaedic research. J Hand Surg Am. | Arora R et al. (2011) — Nonoperative treatment versus volar locking plate fixation for displaced distal radius fractures in patients ≥65 years. J Bone Joint Surg Am. | Valdes K & Naughton N (2014) — Exercise interventions for distal radius fracture rehabilitation. J Hand Ther. | Ruch DS & Papadonikolakis A (2006) — Volar versus dorsal plating for intra-articular distal radius fractures. J Hand Surg Am.'},
 
   // ─────────────────────────────────────────────────────────────────
   // DE QUERVAIN TENOSYNOVITIS
@@ -959,7 +959,7 @@ const protocols = {
         redflags:['Aanhoudende nachtpijn > 6 maanden → systeemziekte uitsluiten (reumatoïde artritis, gicht)','Motorisch deficit duim → CTS of n. radialis neuropathie → neurologisch onderzoek']
       }
     ],
-    refs:'Peters-Veluthamaningal C et al. (2009) — Corticosteroid injection for de Quervain\'s tenosynovitis. Cochrane Database Syst Rev. | Cavaleri R et al. (2016) — Hand therapy versus corticosteroid injections in the treatment of de Quervain\'s disease: a systematic review and meta-analysis. J Hand Ther. | Goel R & Abzug JM (2015) — de Quervain\'s tenosynovitis: a review of the rehabilitative options. Hand (NY). | Chern TC et al. (2014) — The prevalence of a septum and its morphology in the first dorsal compartment of the wrist. J Bone Joint Surg Br. | Cook JL & Purdam CR (2009) — Is tendon pathology a continuum? A pathology model to explain the clinical presentation of load-induced tendinopathy. Br J Sports Med. | Ilyas AM et al. (2007) — de Quervain tenosynovitis of the wrist. J Am Acad Orthop Surg. | Backstrom KM (2002) — Mobilization with movement as an adjunct intervention in a patient with complicated de Quervain\'s tenosynovitis: a case report. J Orthop Sports Phys Ther.'},
+    refs:'Peters-Veluthamaningal C et al. (2009) — Corticosteroid injection for de Quervain\'s tenosynovitis. Cochrane Database Syst Rev. | Cavaleri R et al. (2016) — Hand therapy versus corticosteroid injections for de Quervain\'s disease: systematic review. J Hand Ther. | Goel R & Abzug JM (2015) — de Quervain\'s tenosynovitis: a review of the rehabilitative options. Hand (NY). | Cook JL & Purdam CR (2009) — Is tendon pathology a continuum? Br J Sports Med. | Ilyas AM et al. (2007) — de Quervain tenosynovitis of the wrist. J Am Acad Orthop Surg. | Backstrom KM (2002) — Mobilization with movement as an adjunct intervention in complicated de Quervain\'s tenosynovitis. J Orthop Sports Phys Ther.'},
 
   // ─────────────────────────────────────────────────────────────────
   // CARPAALTUNNELSYNDROOM (CTS)
@@ -1035,7 +1035,7 @@ const protocols = {
         redflags:['Symptoomrecidief na 3 maanden → EMG herhalen + chirurgisch overleg re-exploratie','Nieuwe contralaterale CTS-symptomen → bilateral CTS screening — systemische oorzaak!','Cervicale radiculopathie C6 nieuw → MRI cervicaal — discushernia post-OK verdringing']
       }
     ],
-    refs:'Page MJ et al. (2022) — Surgery for carpal tunnel syndrome. Cochrane Database Syst Rev. | Fernández-de-las-Peñas C et al. (2021) — Manual therapy versus surgery for carpal tunnel syndrome: a randomized parallel-group trial. J Pain. | Walker WC et al. (2000) — Neutral wrist splinting in carpal tunnel syndrome: a comparison of night-only versus full-time wear instructions. Arch Phys Med Rehabil. | Atroshi I et al. (2009) — Endoscopic carpal tunnel release: a prospective assessment of 255 consecutive cases. J Bone Joint Surg Am. | Marshall SC et al. (2007) — Local corticosteroid injection for carpal tunnel syndrome. Cochrane Database Syst Rev. | Wehbé MA & Schlegel JM (2004) — Nerve and tendon gliding exercises and the conservative management of carpal tunnel syndrome. J Hand Ther. | Huisstede BM et al. (2010) — Carpal tunnel syndrome: hand therapists\' view on factors associated with outcomes of nonsurgical and surgical treatment. Arch Phys Med Rehabil. | Bland JD (2007) — Carpal tunnel syndrome. BMJ. | Shiels SM et al. (2016) — Scar management after carpal tunnel release. J Hand Surg Am.'}
+    refs:'Page MJ et al. (2022) — Surgery versus non-surgical treatment for carpal tunnel syndrome. Cochrane Database Syst Rev. | Fernández-de-las-Peñas C et al. (2015) — Manual therapy versus surgery for carpal tunnel syndrome: RCT. J Pain. | Walker WC et al. (2000) — Neutral wrist splinting in carpal tunnel syndrome: night-only versus full-time wear. Arch Phys Med Rehabil. | Atroshi I et al. (2009) — Endoscopic versus open carpal tunnel release. J Hand Surg Am. | Marshall SC et al. (2007) — Local corticosteroid injection for carpal tunnel syndrome. Cochrane Database Syst Rev. | Wehbé MA & Schlegel JM (2004) — Nerve and tendon gliding exercises for upper extremity nerve entrapments. Hand Clin. | Huisstede BM et al. (2010) — Carpal tunnel syndrome: systematic review of non-surgical and surgical treatment. Arch Phys Med Rehabil. | Bland JD (2007) — Carpal tunnel syndrome. BMJ.'}
 };
 
 // ── REGIO MAPPING (protocol → regio) ──

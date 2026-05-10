@@ -339,6 +339,38 @@ function renderFicheModal() {
   html += `<textarea class="fiche-notes-area" id="fiche-notes" placeholder="Voeg persoonlijke notities toe..."></textarea>`;
   document.getElementById('fiche-modal-body').innerHTML = html;
 }
+
+const PRINT_CSS = `
+  body{font-family:Arial,Helvetica,sans-serif;color:#000;background:#fff;padding:20px;margin:0;font-size:13px;}
+  h1{font-size:20px;font-weight:700;margin:0 0 4px;}
+  .pf-meta{font-size:12px;color:#555;margin-bottom:16px;border-bottom:1px solid #eee;padding-bottom:8px;}
+  h2{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#555;border-bottom:1px solid #ddd;padding-bottom:3px;margin:16px 0 6px;}
+  .pf-ex{display:flex;gap:12px;padding:5px 0;border-bottom:1px solid #f0f0f0;align-items:baseline;}
+  .pf-ex-name{font-weight:600;font-size:12px;flex:1;}
+  .pf-ex-params{font-size:11px;color:#555;font-family:monospace;white-space:nowrap;}
+  .pf-goal{font-size:11px;color:#333;padding:2px 0 2px 8px;}
+  .pf-notes{font-size:11px;border:1px solid #ccc;padding:8px;border-radius:4px;min-height:60px;margin-top:8px;white-space:pre-wrap;}
+  .pf-footer{margin-top:20px;font-size:10px;color:#999;border-top:1px solid #ddd;padding-top:6px;}
+  @media print{body{padding:0;}}
+`;
+
+function triggerPrint(bodyHtml) {
+  let frame = document.getElementById('kp-print-frame');
+  if (frame) frame.remove();
+  frame = document.createElement('iframe');
+  frame.id = 'kp-print-frame';
+  frame.style.cssText = 'position:fixed;right:-9999px;bottom:0;width:1px;height:1px;border:0;visibility:hidden;';
+  document.body.appendChild(frame);
+  const doc = frame.contentDocument || frame.contentWindow.document;
+  doc.open();
+  doc.write('<!DOCTYPE html><html><head><meta charset="utf-8"><style>' + PRINT_CSS + '</style></head><body>' + bodyHtml + '</body></html>');
+  doc.close();
+  setTimeout(() => {
+    frame.contentWindow.focus();
+    frame.contentWindow.print();
+  }, 250);
+}
+
 function printFiche() {
   if(!currentProto) return;
   const p = currentProto;
@@ -359,10 +391,7 @@ function printFiche() {
   });
   if(notes) html += `<h2>Notities</h2><div class="pf-notes">${notes}</div>`;
   html += `<div class="pf-footer">KineProtocol · Evidence-based revalidatie · ${datum}</div>`;
-  document.getElementById('print-fiche').innerHTML = html;
-  document.body.style.overflow = '';
-  document.documentElement.style.overflow = '';
-  window.print();
+  triggerPrint(html);
 }
 function copyFiche() {
   if(!currentProto) return;
@@ -607,11 +636,8 @@ function saveAndPrintForm() {
   html += '<div style="margin-top:12px;padding:8px 12px;border-radius:4px;background:' + (isGood?'#dcfce7':'#fef3c7') + ';border:1px solid ' + (isGood?'#86efac':'#fcd34d') + ';">';
   html += '<strong>Totaalscore: ' + total + '/' + max + '</strong> — ' + (isGood ? '✓ Drempel behaald (' + form.rts + ')' : '⚠ Drempel nog niet behaald (' + form.rts + ')') + '</div>';
   html += '<div class="pf-footer">KineProtocol · ' + datum + '</div>';
-  document.getElementById('print-fiche').innerHTML = html;
   closeForm();
-  document.body.style.overflow = '';
-  document.documentElement.style.overflow = '';
-  setTimeout(() => window.print(), 150);
+  triggerPrint(html);
 }
 
 
@@ -779,11 +805,8 @@ function printEvalForm() {
     });
   });
   html += '<div class="pf-footer">KineProtocol · Klinisch Evaluatieformulier · ' + datum + '</div>';
-  document.getElementById('print-fiche').innerHTML = html;
   closeEvalForm();
-  document.body.style.overflow = '';
-  document.documentElement.style.overflow = '';
-  setTimeout(() => window.print(), 150);
+  triggerPrint(html);
 }
 
 function printBlankEvalForm(formId) {
@@ -832,10 +855,7 @@ function printBlankEvalForm(formId) {
     });
   });
   html += '<div class="pf-footer">KineProtocol · Klinisch Evaluatieformulier · ' + datum + '</div>';
-  document.getElementById('print-fiche').innerHTML = html;
-  document.body.style.overflow = '';
-  document.documentElement.style.overflow = '';
-  setTimeout(() => window.print(), 150);
+  triggerPrint(html);
 }
 
 // ── OEFENBIBLIOTHEEK ──

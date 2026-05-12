@@ -32,16 +32,16 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
 .offline-badge.show{display:flex;}
 /* Layout */
 .layout{display:flex;flex:1;overflow:hidden;}
-.sidebar{width:240px;background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;flex-shrink:0;overflow-y:auto;}
-.sidebar-section{padding:16px 12px 6px;font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);}
-.nav-item{display:flex;align-items:center;gap:10px;padding:9px 12px;margin:1px 8px;border-radius:7px;cursor:pointer;transition:background .12s;color:var(--text);}
+.sidebar{width:252px;background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;flex-shrink:0;overflow-y:auto;}
+.sidebar-section{padding:14px 14px 5px;font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);}
+.nav-item{display:flex;align-items:center;gap:10px;padding:8px 12px;margin:1px 8px;border-radius:8px;cursor:pointer;transition:background .12s;color:var(--text);}
 .nav-item:hover{background:var(--surface2);}
 .nav-item.active{background:var(--surface3);}
 .nav-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
 .nav-title{font-size:13px;font-weight:500;flex:1;}
 .nav-sub{font-size:11px;color:var(--muted);font-family:'Geist Mono',monospace;}
 .nav-badge{font-size:10px;padding:2px 7px;border-radius:10px;font-family:'Geist Mono',monospace;}
-.sidebar-divider{height:1px;background:var(--border);margin:6px 14px;}
+.sidebar-divider{height:1px;background:var(--border);margin:5px 14px;}
 .main{flex:1;overflow-y:auto;display:flex;flex-direction:column;-webkit-overflow-scrolling:touch;}
 /* Home */
 .home{padding:32px 28px;max-width:960px;}
@@ -53,24 +53,24 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
 .stat-num{font-family:'Instrument Serif',serif;font-size:26px;font-weight:400;line-height:1;}
 .stat-label{font-size:10px;color:var(--muted);margin-top:2px;font-family:'Geist Mono',monospace;}
 .protocol-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:12px;margin-bottom:28px;}
-.protocol-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px;cursor:pointer;transition:all .15s;position:relative;overflow:hidden;}
-.protocol-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--card-color);}
-.protocol-card:hover{border-color:var(--border2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.3);}
-.card-icon{font-size:22px;margin-bottom:8px;}
-.card-title{font-family:'Instrument Serif',serif;font-size:15px;font-weight:400;margin-bottom:3px;}
-.card-desc{font-size:11px;color:var(--muted);line-height:1.5;margin-bottom:10px;}
+.protocol-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 16px 14px;cursor:pointer;transition:all .18s;position:relative;overflow:hidden;}
+.protocol-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--card-color);border-radius:12px 12px 0 0;}
+.protocol-card:hover{border-color:var(--border2);transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,.35);}
+.card-icon{font-size:24px;margin-bottom:10px;}
+.card-title{font-family:'Instrument Serif',serif;font-size:15px;font-weight:400;margin-bottom:4px;line-height:1.25;}
+.card-desc{font-size:11px;color:var(--muted);line-height:1.55;margin-bottom:12px;}
 .card-meta{display:flex;gap:5px;flex-wrap:wrap;}
-.card-tag{font-size:10px;padding:2px 6px;border-radius:6px;font-family:'Geist Mono',monospace;border:1px solid var(--border);color:var(--muted);}
-.card-tag.col{border-color:var(--card-color);color:var(--card-color);}
+.card-tag{font-size:10px;padding:2px 7px;border-radius:6px;font-family:'Geist Mono',monospace;border:1px solid var(--border);color:var(--muted);}
+.card-tag.col{border-color:color-mix(in srgb,var(--card-color) 50%,transparent);color:var(--card-color);background:color-mix(in srgb,var(--card-color) 8%,transparent);}
 .card-arrow{position:absolute;top:14px;right:14px;color:var(--muted2);font-size:13px;transition:all .15s;}
 .protocol-card:hover .card-arrow{transform:translate(2px,-2px);color:var(--text);}
-.add-card{background:transparent;border:1px dashed var(--border2);border-radius:10px;padding:16px;cursor:pointer;transition:all .15s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-height:130px;color:var(--muted2);}
-.add-card:hover{border-color:var(--new);color:var(--new);background:rgba(74,222,128,.03);}
+.add-card{background:transparent;border:1px dashed var(--border2);border-radius:12px;padding:16px;cursor:pointer;transition:all .15s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-height:130px;color:var(--muted2);}
+.add-card:hover{border-color:var(--new);color:var(--new);background:rgba(74,222,128,.04);}
 /* Filter tabs */
 .filter-tabs{display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap;}
 .filter-tab{background:var(--surface);border:1px solid var(--border);color:var(--muted);padding:5px 14px;border-radius:20px;font-size:11.5px;cursor:pointer;font-family:'Geist Mono',monospace;transition:all .12s;white-space:nowrap;}
 .filter-tab:hover{border-color:var(--border2);color:var(--text);}
-.filter-tab.active{background:var(--surface3);border-color:var(--border2);color:var(--text);font-weight:500;}
+.filter-tab.active{background:var(--surface3);border-color:var(--border2);color:var(--text);font-weight:600;}
 /* Recente protocollen */
 .recent-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:4px;}
 .recent-chip{display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:8px 14px;cursor:pointer;transition:all .12s;}
@@ -131,7 +131,7 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
 .criteria-sub-label{font-size:10.5px;font-family:'Geist Mono',monospace;text-transform:uppercase;letter-spacing:.07em;margin-bottom:8px;}
 /* Viewer */
 .viewer{flex:1;display:flex;flex-direction:column;overflow:hidden;}
-.viewer-header{padding:18px 24px 0;border-bottom:1px solid var(--border);flex-shrink:0;}
+.viewer-header{padding:20px 24px 0;border-bottom:1px solid var(--border);flex-shrink:0;}
 .viewer-breadcrumb{font-size:11px;color:var(--muted);margin-bottom:10px;display:flex;align-items:center;gap:5px;font-family:'Geist Mono',monospace;}
 .viewer-breadcrumb span{cursor:pointer;transition:color .12s;}
 .viewer-breadcrumb span:hover{color:var(--text);}
@@ -143,13 +143,13 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
 .phase-timeline{display:flex;align-items:center;gap:0;margin:12px 0 4px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px;}
 .phase-timeline::-webkit-scrollbar{display:none;}
 .pt-step{display:flex;align-items:center;flex-shrink:0;}
-.pt-dot{width:28px;height:28px;border-radius:50%;border:2px solid var(--border2);background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:10px;font-family:'Geist Mono',monospace;color:var(--muted);cursor:pointer;transition:all .15s;flex-shrink:0;}
+.pt-dot{width:32px;height:32px;border-radius:50%;border:2px solid var(--border2);background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:10px;font-family:'Geist Mono',monospace;color:var(--muted);cursor:pointer;transition:all .15s;flex-shrink:0;}
 .pt-dot:hover{border-color:var(--proto-color,#fff);color:var(--text);}
 .pt-dot.active{border-color:var(--proto-color,#fff);background:var(--proto-color,#fff);color:#0a0a0b;font-weight:700;}
-.pt-dot.done{border-color:var(--proto-color,#fff);background:transparent;color:var(--proto-color,#fff);}
+.pt-dot.done{border-color:var(--proto-color,#fff);background:color-mix(in srgb,var(--proto-color,#fff) 15%,transparent);color:var(--proto-color,#fff);}
 .pt-dot.patient-current{box-shadow:0 0 0 3px var(--proto-color,#fff)44;border-color:var(--proto-color,#fff);}
-.pt-line{width:20px;height:2px;background:var(--border);flex-shrink:0;transition:background .15s;}
-.pt-line.done{background:var(--proto-color,#fff);opacity:.4;}
+.pt-line{width:24px;height:2px;background:var(--border);flex-shrink:0;transition:background .15s;}
+.pt-line.done{background:var(--proto-color,#fff);opacity:.35;}
 .pt-label{font-size:9px;font-family:'Geist Mono',monospace;color:var(--muted);text-align:center;margin-top:3px;white-space:nowrap;}
 /* Proto actions */
 .proto-actions{display:flex;align-items:center;gap:8px;margin-top:10px;padding-bottom:12px;flex-wrap:wrap;}
@@ -179,15 +179,15 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
 .glist li::before{content:'→';color:var(--proto-color,#fff);flex-shrink:0;margin-top:1px;font-family:'Geist Mono',monospace;}
 .slabel{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted2);margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid var(--border);font-family:'Geist Mono',monospace;font-weight:600;}
 .ex-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;margin-bottom:20px;}
-.ex-card{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:13px;transition:border-color .12s;}
-.ex-card:hover{border-color:var(--border2);}
-.ex-header{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:7px;}
-.ex-name{font-size:12.5px;font-weight:600;color:var(--text);}
-.ex-cat{font-size:9.5px;padding:2px 7px;border-radius:8px;font-family:'Geist Mono',monospace;border:1px solid;white-space:nowrap;flex-shrink:0;margin-top:1px;}
-.ex-params{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:6px;}
-.ep{background:var(--surface2);border:1px solid var(--border);padding:2px 7px;border-radius:3px;font-size:10.5px;color:var(--muted);font-family:'Geist Mono',monospace;}
+.ex-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px;transition:border-color .12s,box-shadow .12s;}
+.ex-card:hover{border-color:var(--border2);box-shadow:0 4px 12px rgba(0,0,0,.2);}
+.ex-header{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:8px;}
+.ex-name{font-size:12.5px;font-weight:600;color:var(--text);line-height:1.3;}
+.ex-cat{font-size:9.5px;padding:2px 7px;border-radius:8px;font-family:'Geist Mono',monospace;border:1px solid;white-space:nowrap;flex-shrink:0;margin-top:2px;}
+.ex-params{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:7px;}
+.ep{background:var(--surface2);border:1px solid var(--border);padding:2px 8px;border-radius:4px;font-size:10.5px;color:var(--muted);font-family:'Geist Mono',monospace;}
 .ep span{color:var(--text);font-weight:500;}
-.ex-note{font-size:11px;color:var(--muted);line-height:1.5;margin-top:6px;padding-top:6px;border-top:1px solid var(--border);}
+.ex-note{font-size:11px;color:var(--muted);line-height:1.55;margin-top:7px;padding-top:7px;border-top:1px solid var(--border);}
 .criteria-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px;}
 @media(max-width:520px){.criteria-grid{grid-template-columns:1fr}}
 .cbox{background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:12px 14px;}
@@ -230,14 +230,29 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
 .score-result.bad{background:rgba(239,68,68,.1);color:#ef4444;border:1px solid rgba(239,68,68,.2);}
 /* Bottom nav */
 .bottom-nav{display:none;background:var(--surface);border-top:1px solid var(--border);padding-bottom:var(--safe-bottom);flex-shrink:0;z-index:100;}
-.bottom-nav-inner{display:flex;overflow-x:auto;scrollbar-width:none;}
-.bottom-nav-inner::-webkit-scrollbar{display:none;}
-.bnav-item{flex:1;min-width:50px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:7px 2px;gap:2px;cursor:pointer;color:var(--muted);border:none;background:none;transition:color .12s;}
+.bottom-nav-inner{display:flex;}
+.bnav-item{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 2px 6px;gap:3px;cursor:pointer;color:var(--muted);border:none;background:none;transition:color .12s;}
 .bnav-item.active{color:var(--text);}
 .bnav-dot{width:4px;height:4px;border-radius:50%;background:currentColor;opacity:0;transition:opacity .12s;}
 .bnav-item.active .bnav-dot{opacity:1;}
-.bnav-icon{font-size:17px;line-height:1;}
-.bnav-label{font-size:9px;font-family:'Geist Mono',monospace;white-space:nowrap;}
+.bnav-icon{font-size:20px;line-height:1;}
+.bnav-label{font-size:9.5px;font-family:'Geist Mono',monospace;white-space:nowrap;}
+/* Bottom Sheet */
+.bottom-sheet{display:none;position:fixed;inset:0;z-index:500;background:rgba(0,0,0,.72);backdrop-filter:blur(4px);align-items:flex-end;}
+.bottom-sheet.open{display:flex;}
+.bottom-sheet-inner{width:100%;background:var(--surface);border-radius:16px 16px 0 0;max-height:82vh;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 -8px 32px rgba(0,0,0,.5);}
+.bs-handle{width:36px;height:4px;background:var(--border2);border-radius:2px;margin:10px auto 0;flex-shrink:0;}
+.bs-title{font-size:11px;font-family:'Geist Mono',monospace;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);padding:10px 18px 9px;border-bottom:1px solid var(--border);flex-shrink:0;}
+.bs-body{overflow-y:auto;padding:6px 10px 20px;-webkit-overflow-scrolling:touch;}
+.bs-section{font-size:9.5px;font-family:'Geist Mono',monospace;text-transform:uppercase;letter-spacing:.1em;color:var(--muted2);padding:10px 8px 3px;}
+.bs-item{display:flex;align-items:center;gap:10px;padding:10px 8px;border-radius:7px;cursor:pointer;transition:background .12s;width:100%;border:none;background:none;color:var(--text);text-align:left;}
+.bs-item:hover,.bs-item:active{background:var(--surface2);}
+.bs-item-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.bs-item-name{font-size:13px;font-weight:500;flex:1;}
+.bs-item-badge{font-size:10px;padding:2px 7px;border-radius:8px;font-family:'Geist Mono',monospace;}
+.bs-action{display:flex;align-items:center;gap:12px;padding:13px 8px;border-radius:7px;cursor:pointer;width:100%;border:none;background:none;color:var(--text);font-family:'Geist',sans-serif;text-align:left;font-size:13px;font-weight:500;transition:background .12s;}
+.bs-action:hover,.bs-action:active{background:var(--surface2);}
+.bs-action-icon{font-size:20px;width:32px;text-align:center;}
 /* Install banner */
 .install-banner{display:none;background:linear-gradient(135deg,#22d3ee11,#a78bfa11);border:1px solid #a78bfa33;border-radius:8px;padding:14px 16px;margin:16px;gap:12px;align-items:center;}
 .install-banner.show{display:flex;}
@@ -603,29 +618,56 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
     </div>
   </div>
 </div>
-<!-- Bottom nav -->
+<!-- Bottom nav (5 fixed tabs) -->
 <div class="bottom-nav">
   <div class="bottom-nav-inner">
-    <button class="bnav-item active" id="bnav-home" onclick="showHome()"><div class="bnav-icon">&#127968;</div><div class="bnav-label">Home</div><div class="bnav-dot"></div></button>
-    <button class="bnav-item" id="bnav-acl" onclick="showProto('acl')"><div class="bnav-icon">&#129463;</div><div class="bnav-label">ACL</div><div class="bnav-dot" style="background:var(--acl)"></div></button>
-    <button class="bnav-item" id="bnav-tka" onclick="showProto('tka')"><div class="bnav-icon">&#129471;</div><div class="bnav-label">TKA</div><div class="bnav-dot" style="background:var(--tka)"></div></button>
-    <button class="bnav-item" id="bnav-pfps" onclick="showProto('pfps')"><div class="bnav-icon">&#127919;</div><div class="bnav-label">PFPS</div><div class="bnav-dot" style="background:var(--pfps)"></div></button>
-    <button class="bnav-item" id="bnav-lh" onclick="showProto('lh')"><div class="bnav-icon">&#129504;</div><div class="bnav-label">LHN</div><div class="bnav-dot" style="background:var(--lh)"></div></button>
-    <button class="bnav-item" id="bnav-rc" onclick="showProto('rc')"><div class="bnav-icon">&#128170;</div><div class="bnav-label">RC</div><div class="bnav-dot" style="background:var(--rc)"></div></button>
-    <button class="bnav-item" id="bnav-pt" onclick="showProto('pt')"><div class="bnav-icon">🦵</div><div class="bnav-label">PT</div><div class="bnav-dot" style="background:#fb923c"></div></button>
-    <button class="bnav-item" id="bnav-gmt" onclick="showProto('gmt')"><div class="bnav-icon">🦴</div><div class="bnav-label">GMT</div><div class="bnav-dot" style="background:var(--gmt)"></div></button>
-    <button class="bnav-item" id="bnav-at" onclick="showProto('at')"><div class="bnav-icon">🦶</div><div class="bnav-label">AT</div><div class="bnav-dot" style="background:#e879f9"></div></button>
-    <button class="bnav-item" id="bnav-bureau" onclick="showProto('bureau')"><div class="bnav-icon">💻</div><div class="bnav-label">BNK</div><div class="bnav-dot" style="background:#60a5fa"></div></button>
-    <button class="bnav-item" id="bnav-over" onclick="showProto('over')"><div class="bnav-icon">🦶</div><div class="bnav-label">OVP</div><div class="bnav-dot" style="background:#10b981"></div></button>
-    <button class="bnav-item" id="bnav-enkel" onclick="showProto('enkel')"><div class="bnav-icon">🦵</div><div class="bnav-label">LAS</div><div class="bnav-dot" style="background:#f59e0b"></div></button>
-    <button class="bnav-item" id="bnav-si" onclick="showProto('si')"><div class="bnav-icon">💪</div><div class="bnav-label">SI</div><div class="bnav-dot" style="background:var(--si)"></div></button>
-    <button class="bnav-item" id="bnav-orif" onclick="showProto('orif')"><div class="bnav-icon">🦴</div><div class="bnav-label">DRF</div><div class="bnav-dot" style="background:var(--orif)"></div></button>
-    <button class="bnav-item" id="bnav-dq" onclick="showProto('dq')"><div class="bnav-icon">👍</div><div class="bnav-label">DQ</div><div class="bnav-dot" style="background:var(--dq)"></div></button>
-    <button class="bnav-item" id="bnav-cts" onclick="showProto('cts')"><div class="bnav-icon">🖐️</div><div class="bnav-label">CTS</div><div class="bnav-dot" style="background:var(--cts)"></div></button>
-    <button class="bnav-item" id="bnav-library" onclick="showLibrary()"><div class="bnav-icon">📚</div><div class="bnav-label">Bibliotheek</div><div class="bnav-dot" style="background:#facc15"></div></button>
-    <button class="bnav-item" id="bnav-eval-forms" onclick="showEvalFormsScreen()"><div class="bnav-icon">🩺</div><div class="bnav-label">Eval</div><div class="bnav-dot" style="background:#f87171"></div></button>
+    <button class="bnav-item active" id="bnav-home" onclick="showHome()"><div class="bnav-icon">🏠</div><div class="bnav-label">Home</div><div class="bnav-dot"></div></button>
+    <button class="bnav-item" id="bnav-protocollen" onclick="openProtoSheet()"><div class="bnav-icon">📋</div><div class="bnav-label">Protocollen</div><div class="bnav-dot"></div></button>
     <button class="bnav-item" id="bnav-patients" onclick="showPatients()"><div class="bnav-icon">👥</div><div class="bnav-label">Patiënten</div><div class="bnav-dot" style="background:#4ade80"></div></button>
-    <button class="bnav-item" id="bnav-search" onclick="document.getElementById('searchInput').focus()"><div class="bnav-icon">&#128269;</div><div class="bnav-label">Zoeken</div><div class="bnav-dot"></div></button>
+    <button class="bnav-item" id="bnav-library" onclick="showLibrary()"><div class="bnav-icon">📚</div><div class="bnav-label">Bibliotheek</div><div class="bnav-dot" style="background:#facc15"></div></button>
+    <button class="bnav-item" id="bnav-more" onclick="openMoreSheet()"><div class="bnav-icon">☰</div><div class="bnav-label">Meer</div><div class="bnav-dot"></div></button>
+  </div>
+</div>
+
+<!-- Protocol Sheet (slide-up) -->
+<div class="bottom-sheet" id="proto-sheet" onclick="if(event.target===this)closeProtoSheet()">
+  <div class="bottom-sheet-inner">
+    <div class="bs-handle"></div>
+    <div class="bs-title">Protocollen</div>
+    <div class="bs-body">
+      <div class="bs-section">Knie &amp; Heup</div>
+      <button class="bs-item" onclick="closeProtoSheet();showProto('acl')"><div class="bs-item-dot" style="background:var(--acl)"></div><span class="bs-item-name">ACL Reconstructie</span><span class="bs-item-badge" style="background:rgba(34,211,238,.1);color:var(--acl)">VKB</span></button>
+      <button class="bs-item" onclick="closeProtoSheet();showProto('tka')"><div class="bs-item-dot" style="background:var(--tka)"></div><span class="bs-item-name">Totale Knieprothese</span><span class="bs-item-badge" style="background:rgba(167,139,250,.1);color:var(--tka)">TKA</span></button>
+      <button class="bs-item" onclick="closeProtoSheet();showProto('pfps')"><div class="bs-item-dot" style="background:var(--pfps)"></div><span class="bs-item-name">Patellofemoraal Pijn</span><span class="bs-item-badge" style="background:rgba(249,115,22,.1);color:var(--pfps)">PFPS</span></button>
+      <button class="bs-item" onclick="closeProtoSheet();showProto('pt')"><div class="bs-item-dot" style="background:#fb923c"></div><span class="bs-item-name">Patellapees Tendinopathie</span><span class="bs-item-badge" style="background:rgba(251,146,60,.1);color:#fb923c">PT</span></button>
+      <button class="bs-item" onclick="closeProtoSheet();showProto('gmt')"><div class="bs-item-dot" style="background:var(--gmt)"></div><span class="bs-item-name">Gluteus Med./Min. Tendinopathie</span><span class="bs-item-badge" style="background:rgba(20,184,166,.1);color:var(--gmt)">GMT</span></button>
+      <div class="bs-section">Lumbaal &amp; Cervicaal</div>
+      <button class="bs-item" onclick="closeProtoSheet();showProto('lh')"><div class="bs-item-dot" style="background:var(--lh)"></div><span class="bs-item-name">Lumbale Hernia</span><span class="bs-item-badge" style="background:rgba(52,211,153,.1);color:var(--lh)">LHN</span></button>
+      <button class="bs-item" onclick="closeProtoSheet();showProto('bureau')"><div class="bs-item-dot" style="background:#60a5fa"></div><span class="bs-item-name">Bureauhouding &amp; Nekklachten</span><span class="bs-item-badge" style="background:rgba(96,165,250,.1);color:#60a5fa">BNK</span></button>
+      <div class="bs-section">Schouder &amp; Arm</div>
+      <button class="bs-item" onclick="closeProtoSheet();showProto('rc')"><div class="bs-item-dot" style="background:var(--rc)"></div><span class="bs-item-name">Rotatorenmanchet</span><span class="bs-item-badge" style="background:rgba(244,63,94,.1);color:var(--rc)">RC</span></button>
+      <button class="bs-item" onclick="closeProtoSheet();showProto('si')"><div class="bs-item-dot" style="background:var(--si)"></div><span class="bs-item-name">Schouderinstabiliteit</span><span class="bs-item-badge" style="background:rgba(244,114,182,.1);color:var(--si)">SI</span></button>
+      <div class="bs-section">Enkel &amp; Voet</div>
+      <button class="bs-item" onclick="closeProtoSheet();showProto('at')"><div class="bs-item-dot" style="background:#e879f9"></div><span class="bs-item-name">Achillespees Tendinopathie</span><span class="bs-item-badge" style="background:rgba(232,121,249,.1);color:#e879f9">AT</span></button>
+      <button class="bs-item" onclick="closeProtoSheet();showProto('enkel')"><div class="bs-item-dot" style="background:#f59e0b"></div><span class="bs-item-name">Enkeldistorsie</span><span class="bs-item-badge" style="background:rgba(245,158,11,.1);color:#f59e0b">LAS</span></button>
+      <button class="bs-item" onclick="closeProtoSheet();showProto('over')"><div class="bs-item-dot" style="background:#10b981"></div><span class="bs-item-name">Overpronatie Syndroom</span><span class="bs-item-badge" style="background:rgba(16,185,129,.1);color:#10b981">OVP</span></button>
+      <div class="bs-section">Pols &amp; Hand</div>
+      <button class="bs-item" onclick="closeProtoSheet();showProto('orif')"><div class="bs-item-dot" style="background:var(--orif)"></div><span class="bs-item-name">ORIF Distale Radius</span><span class="bs-item-badge" style="background:rgba(56,189,248,.1);color:var(--orif)">DRF</span></button>
+      <button class="bs-item" onclick="closeProtoSheet();showProto('dq')"><div class="bs-item-dot" style="background:var(--dq)"></div><span class="bs-item-name">De Quervain Tenosynovitis</span><span class="bs-item-badge" style="background:rgba(132,204,22,.1);color:var(--dq)">DQ</span></button>
+      <button class="bs-item" onclick="closeProtoSheet();showProto('cts')"><div class="bs-item-dot" style="background:var(--cts)"></div><span class="bs-item-name">Carpaaltunnelsyndroom</span><span class="bs-item-badge" style="background:rgba(129,140,248,.1);color:var(--cts)">CTS</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- More Sheet (slide-up) -->
+<div class="bottom-sheet" id="more-sheet" onclick="if(event.target===this)closeMoreSheet()">
+  <div class="bottom-sheet-inner" style="max-height:auto">
+    <div class="bs-handle"></div>
+    <div class="bs-title">Meer</div>
+    <div class="bs-body">
+      <button class="bs-action" onclick="closeMoreSheet();showEvalFormsScreen()"><span class="bs-action-icon">🩺</span><span>Klinische Evaluatieformulieren</span></button>
+      <button class="bs-action" onclick="closeMoreSheet();document.getElementById('searchInput').focus()"><span class="bs-action-icon">🔍</span><span>Zoeken</span></button>
+    </div>
   </div>
 </div>
 <!-- YouTube Modal -->

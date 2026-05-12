@@ -81,7 +81,31 @@ function setNav(id) {
   document.querySelectorAll('[id^="nav-"],[id^="bnav-"]').forEach(n => n.classList.remove('active'));
   const s = document.getElementById('nav-'+id), b = document.getElementById('bnav-'+id);
   if(s) s.classList.add('active');
-  if(b) b.classList.add('active');
+  if(b) {
+    b.classList.add('active');
+  } else {
+    // Map to mobile 5-tab nav
+    const mobileTab = protocols && protocols[id] ? 'protocollen'
+      : (id === 'eval-forms' || id === 'search') ? 'more' : null;
+    if(mobileTab) {
+      const bt = document.getElementById('bnav-'+mobileTab);
+      if(bt) bt.classList.add('active');
+    }
+  }
+}
+
+function openProtoSheet() {
+  document.getElementById('proto-sheet').classList.add('open');
+  document.body.style.overflow = '';
+}
+function closeProtoSheet() {
+  document.getElementById('proto-sheet').classList.remove('open');
+}
+function openMoreSheet() {
+  document.getElementById('more-sheet').classList.add('open');
+}
+function closeMoreSheet() {
+  document.getElementById('more-sheet').classList.remove('open');
 }
 function showHome() {
   hideAllScreens();

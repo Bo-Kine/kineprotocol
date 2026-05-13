@@ -1,7 +1,7 @@
 // KineProtocol — Service Worker
 // Cacht alle app-bestanden voor offline gebruik (cache-first strategie)
 
-const CACHE = 'kineprotocol-v2';
+const CACHE = 'kineprotocol-v3';
 
 const PRECACHE = [
   './',
@@ -29,12 +29,14 @@ self.addEventListener('install', event => {
   );
 });
 
-// Activate: verwijder oude caches
+// Activate: verwijder oude caches, claim clients en stuur reload-signaal
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys()
       .then(keys => Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k))))
       .then(() => self.clients.claim())
+      .then(() => self.clients.matchAll({type: 'window'}))
+      .then(clients => clients.forEach(c => c.postMessage({type: 'SW_UPDATED'})))
   );
 });
 

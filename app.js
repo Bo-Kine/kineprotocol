@@ -1176,6 +1176,9 @@ function handleSearch(q) {
 // ── SERVICE WORKER ──
 if('serviceWorker' in navigator) {
   window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+  navigator.serviceWorker.addEventListener('message', e => {
+    if(e.data && e.data.type === 'SW_UPDATED') window.location.reload();
+  });
 }
 
 // ── SWIPE NAVIGATIE ──

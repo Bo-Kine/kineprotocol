@@ -1038,12 +1038,169 @@ const protocols = {
     refs:'Page MJ et al. (2022) — Surgery versus non-surgical treatment for carpal tunnel syndrome. Cochrane Database Syst Rev. | Fernández-de-las-Peñas C et al. (2015) — Manual therapy versus surgery for carpal tunnel syndrome: RCT. J Pain. | Walker WC et al. (2000) — Neutral wrist splinting in carpal tunnel syndrome: night-only versus full-time wear. Arch Phys Med Rehabil. | Atroshi I et al. (2009) — Endoscopic versus open carpal tunnel release. J Hand Surg Am. | Marshall SC et al. (2007) — Local corticosteroid injection for carpal tunnel syndrome. Cochrane Database Syst Rev. | Wehbé MA & Schlegel JM (2004) — Nerve and tendon gliding exercises for upper extremity nerve entrapments. Hand Clin. | Huisstede BM et al. (2010) — Carpal tunnel syndrome: systematic review of non-surgical and surgical treatment. Arch Phys Med Rehabil. | Bland JD (2007) — Carpal tunnel syndrome. BMJ.'}
 };
 
+// ── PROTOCOL: HSI — Hamstring Strain Injury ──────────────────────────────────
+protocols.hsi = {id:'hsi',title:'Hamstring Blessure',subtitle:'Graad I–III hamstring strain — acute fase, progressief herstel en return to sprint',color:'#facc15',icon:'🦵',
+  phases:[
+    {label:'Fase 1',title:'Acute Fase & Pijncontrole',weeks:'Dag 0–5',
+     evidence:'<strong>POLICE principe</strong> (Protect, Optimal Loading, Ice, Compression, Elevation) vervangt RICE in de evidence-based benadering (Bleakley et al., 2012). <strong>Gradering</strong> is essentieel voor prognose: Graad I (< 10% vezels, terugkeer 1–2 wkn), Graad II (10–50%, 3–8 wkn), Graad III (> 50% / volledig, ≥ 8–16 wkn). MRI is de goudstandaard voor gradatie (Ekstrand et al., 2011). <strong>Vroege isometrische belasting</strong> (dag 1–2) is veilig en bevordert herstel beter dan absolute rust (Bayer et al., 2017). Vermijd agressief rekken in acute fase — dit vergroot het scheurdoppervlak.',
+     goals:['Pijn classificeren en graad inschatten (klinisch + evt. MRI)','POLICE toepassen (24–72u)','Isometrische hamstring-activatie starten (dag 1–2)','Wandelen pijnvrij zonder hinken (graad I–II voor dag 3–5)','Cryotherapie 3–4×/dag, 15–20 min'],
+     exercises:[
+       {name:'Cryotherapie',cat:'manueel',params:[['Freq','3–4×/dag'],['Duur','15–20 min'],['Compressie','elastisch verband']],note:'IJspak over compressieverband. Nooit ijs rechtstreeks op huid. Combineer met elevatie indien mogelijk.'},
+       {name:'Isometrische hamstring (rugligging)',cat:'kracht',params:[['Hold','8–10 sec'],['Reps','10'],['Sets','3'],['Freq','2–3×/dag']],note:'Rugligging, knie ~30° gebogen. Hak drukken in onderlaag. Geen pijn > 3/10. Start met lichte druk, progressief ophogen. Graad III: vertraag 1 week.'},
+       {name:'Stationaire fiets (laag)',cat:'cardio',params:[['Duur','10–15 min'],['Weerstand','minimaal'],['Zadel','hoog']],note:'Hoog zadel = minimale knieflex = minder hamstringsrekking. Geen pijn. Dag 2–3 bij graad I, dag 4–5 bij graad II.'},
+       {name:'Gluteale activatie (zijlig)',cat:'kracht',params:[['Reps','15'],['Sets','3']],note:'Bewaar proximale spierfunctie zonder hamstrings te belasten. Clamshell of abductie.'},
+     ],
+     criteria_go:['Pijn in rust ≤ 2/10','Wandelen zonder hinken','Isometrische test pijnvrij','Zwelling stabiel of dalend'],
+     criteria_stop:['Graad III vermoeden → echografie/MRI vóór verdere belasting','Zwelling toeneemt na belasting → rust verlengen'],
+     redflags:['Proximale avulsiefractuur (tuber ischiadicum) bij adolescenten → röntgen/MRI, geen belasting','Totale ruptuur (graad III proximaal) → orthopedisch chirurgisch advies','Gemeenschappelijk peesletsel (konjoint) → hoger recidiefrisico, langzamer protocol']},
+    {label:'Fase 2',title:'Subacute Krachtherstel',weeks:'Week 1–4',
+     evidence:'<strong>Progressieve isotonische belasting</strong> is superieur aan passieve rust voor cellulair herstel en peesremodeling (Järvinen et al., 2005). <strong>Nordic Hamstring Exercise (NHE)</strong> start pas wanneer excentrische belasting pijnvrij is — te vroeg starten vergroot het reruptuurrisico (Askling et al., 2003). <strong>L-protocol (Askling)</strong> — langzame, gecontroleerde excentrische rekking in extensie — is superieur aan snelle eccentrische contracties in de vroege herstelperiode. <strong>Criteria-gestuurde progressie</strong> over tijdgestuurde progressie: pijnvrij bij 5/10 inspanning vóór ophogen.',
+     goals:['Isotone hamstringkracht symmetrisch ≥ 70% LSI','Actieve knieflexie tot 90° pijnvrij','Lopen ≥ 10 min zonder hinkelen','Concentrische én excentrische krachtherstel starten'],
+     exercises:[
+       {name:'Prone leg curl (concentrisch)',cat:'kracht',params:[['Reps','12–15'],['Sets','3'],['Weerstand','licht → matig'],['Tempo','2-0-2']],note:'Buikligging, knie buigen tot 90°. Geen pijn > 3/10. Controleer range — stop bij pijnpiek.'},
+       {name:'Staande kniebuiging met band',cat:'kracht',params:[['Reps','12–15'],['Sets','3'],['Band','licht']],note:'Staand, band rond enkel. Knie buigen terwijl heup in extensie. Functioneel: vergelijkbaar met sprinteractiviteit.'},
+       {name:'Romanian Deadlift (bilateraal)',cat:'kracht',params:[['Reps','10–12'],['Sets','3'],['Gewicht','licht'],['Tempo','3-1-1']],note:'Heupscharnierbeweging. Neutrale WK. Stop bij pijngevel > 3/10. Traag excentrisch. Graad I: week 1, Graad II: week 2–3.'},
+       {name:'Askling L-protocol (gecontroleerd excentrisch)',cat:'kracht',params:[['Reps','6–8'],['Sets','2–3'],['Tempo','traag, gecontroleerd']],note:'Rugligging, been actief strekken en laten zakken terwijl hamstrings excentrisch werken. GEEN snel of ballistisch. Aanhouden tot lichte trek, nooit pijn > 3/10.'},
+       {name:'Fietsen progressief',cat:'cardio',params:[['Duur','20–30 min'],['Weerstand','licht → matig']],note:'Cardiovasculaire conditie behouden. Zadel geleidelijk verlagen als pijn dit toelaat.'},
+     ],
+     criteria_go:['Pijn tijdens oefening ≤ 3/10','Prone leg curl symmetrisch ≥ 70% LSI','Joggen 5 min pijnvrij','Geen pijn 24u na training'],
+     criteria_stop:['Pijn > 4/10 bij excentrisch → terugkeer naar concentrisch','LSI hamstring < 60% na week 3 → intensifieer, herbeoordeel'],
+     redflags:['Uitstralende pijn naar knie of rug → lumbale ischias screenen']},
+    {label:'Fase 3',title:'Loophervatting & Excentrische Opbouw',weeks:'Week 3–8',
+     evidence:'<strong>Nordic Hamstring Exercise</strong> reduceert het hamstring-herletselrisico met 51% (van der Horst et al., 2015 — RCT). Introductie op het moment dat excentrische belasting pijnvrij is op 3/10. <strong>Graded loophervatting</strong>: jogging → tempo → submaximale sprint. <strong>Snelheid is de risicofactor</strong>: hamstrings zijn meest actief bij 85–100% sprint (Dorn et al., 2012). Prematuur terugkeren naar sprint is de meest voorkomende oorzaak van recidief (Ekstrand et al., 2011). <strong>LSI ≥ 90%</strong> voor hamstringkracht is noodzakelijk voor sprinthervatting.',
+     goals:['Continu joggen ≥ 20 min pijnvrij','Nordic Hamstring 3 sets × 8 reps pijnvrij','Hamstring LSI ≥ 85%','Looptechniek zonder compensatie','Submaximale sprint (70–80%) pijnvrij'],
+     exercises:[
+       {name:'Nordic Hamstring Exercise',cat:'kracht',params:[['Reps','6 → 8 → 10'],['Sets','2 → 3'],['Freq','2–3×/week']],note:'Knielen, enkels gefixeerd, partner. Zo traag mogelijk zakken met gestrekt lichaam. Terugkomen met armen. MCID: 3 sets × 10 bij graad II-herstel. Vermijd in eerste 2 weken.'},
+       {name:'Hoge knieheffen (loopspel)',cat:'cardio',params:[['Afstand','20 m × 4–6'],['Freq','dagelijks']],note:'Loopspel: knieën optillen > 90°, hoog hakken. Loopcoördinatie en hamstingsactivatie zonder maximale snelheid.'},
+       {name:'Jogging → tempo run protocol',cat:'cardio',params:[['Start','10 min jog'],['Opbouw','5 min p.week'],['Snelheid','60% → 75% max']],note:'10%-regel. Monitor 24u-respons. Geen pijn volgende ochtend. Techniek: cadans 170–180 stappen/min, geen overstriding.'},
+       {name:'RDL unilateraal',cat:'kracht',params:[['Reps','8–10 p.z.'],['Sets','3'],['Gewicht','matig → zwaar']],note:'Balans op één been, contralateraal been excentrisch naar posterior. Meest hamstrings-belastende krachtoefening. Progressie: gewicht ophogen.'},
+       {name:'Submaximale sprints (70–80%)',cat:'cardio',params:[['Afstand','30–40 m × 6–8'],['Rust','volledige rust']],note:'Alleen na pijnvrije jogging ≥ 20 min en Nordic pijnvrij. Geleidelijk tempo verhogen. Criteria: NRS 0/10 24u nadien.'},
+     ],
+     criteria_go:['Hamstring LSI ≥ 85%','Nordic 3×10 pijnvrij','Sprint 80% pijnvrij + NRS 0 volgende dag','Continu jog 20 min'],
+     criteria_stop:['Pijn bij sprint → terug naar jogging','NRS > 2 volgende ochtend → volume verlagen'],
+     redflags:['Recidief bij submaximale sprint → stop, MRI herhalen, chirurgisch overleg bij konjoint ruptuur']},
+    {label:'Fase 4',title:'Return to Sport & Sprinthervatting',weeks:'Week 6–16',
+     evidence:'<strong>Multifactorieel RTS-beslissingsmodel</strong> omvat: kracht (LSI ≥ 90%), sport-specifieke tests, psychologische gereedheid en tijdcriterium. Tijd alleen is geen voldoende criterium: vroeg RTS (< 3 wkn) heeft 30% recidief (Orchard et al., 2005). <strong>Criteria-based RTS</strong> via Askling et al. (2013): drie H-testen (H-test, Askling H, Active Stretch Test) volledig pijnvrij. <strong>10/10-regel</strong>: volledige sprint mag pas wanneer 10 looptrainingen pijnvrij waren. <strong>Nordic Hamstring onderhoud</strong>: preventief effect slechts bij doorlopen gebruik (van der Horst et al., 2015).',
+     goals:['Maximale sprint (100%) pijnvrij','Hamstring LSI ≥ 90%','H-test en Askling-testen pijnvrij','Sport-specifieke drills volledig','Nordic hamstring onderhoudsprogramma gestart'],
+     exercises:[
+       {name:'Maximale sprints (progressief)',cat:'cardio',params:[['Opbouw','80% → 90% → 100%'],['Afstand','30–60 m'],['Rust','volledige rust per herhaling']],note:'Slechts 5–10% snelheidstoename per week. Monitor techniek (videoanalyse aanbevolen). NRS 0 na 24u = criterium voor volgende stap.'},
+       {name:'Verandering van richting (COD)',cat:'neuro',params:[['Oefeningen','T-test, agility ladder'],['Weken','1–2 voor veldhervatting']],note:'Snelle richtingswisselingen belasten hamstrings extra. Introduceer na pijnvrije rechte sprint.'},
+       {name:'Nordic Hamstring (onderhoud)',cat:'kracht',params:[['Reps','6–8'],['Sets','3'],['Freq','1–2×/week']],note:'Preventief programma voor de rest van het seizoen. 51% reductie van herletsel bij regelmatig gebruik.'},
+       {name:'H-test (Askling)',cat:'test',params:[['LSI','≥ 90%'],['Pijn','0/10']],note:'Patiënt staand, been optillen maximaal (actieve hip flexie met gestrekte knie). Pijnvrij + ≥ 90° = RTS-criterium. Vergelijk met contralateraal.'},
+     ],
+     criteria_go:['Sprint 100% pijnvrij ≥ 3 sessies','Hamstring LSI ≥ 90%','H-test pijnvrij','≥ 6–8 wkn herstelperiode (graad II), ≥ 12 wkn (graad III)'],
+     criteria_stop:['Pijn bij maximale sprint → terugkeren naar 80%, NHE intensifiëren'],
+     redflags:['Recidief op het veld → onmiddellijk stop, MRI, chirurgisch overleg bij proximale avulsie','Derde recidief → multidisciplinaire herbeoordeling (biomechanica, trainingslast, nutritie)']}
+  ],
+  refs:'Ekstrand J et al. (2011) — Hamstring muscle injuries in professional football: the UEFA injury study. Am J Sports Med. | van der Horst N et al. (2015) — The preventive effect of the Nordic hamstring exercise on hamstring injuries. Am J Sports Med. | Askling CM et al. (2013) — New RTS criteria after acute hamstring injuries in male soccer players. Knee Surg Sports Traumatol Arthrosc. | Bayer ML et al. (2017) — Early versus delayed rehabilitation after acute hamstring injury in males. Orthop J Sports Med. | Dorn TW et al. (2012) — Muscular strategy shift in human running. J Exp Biol. | Bleakley CM et al. (2012) — PRICE needs updating, should we call POLICE? BJSM.'};
+
+// ── PROTOCOL: ELB — Laterale Epicondylalgie ──────────────────────────────────
+protocols.elb = {id:'elb',title:'Laterale Epicondylalgie',subtitle:'Tennis Elbow — conservatief revalidatieprotocol voor de pees-aanhechting van de extensor carpi radialis brevis',color:'#c084fc',icon:'🎾',
+  phases:[
+    {label:'Fase 1',title:'Pijnmanagement & Isometrische Opbouw',weeks:'Week 1–4',
+     evidence:'<strong>Laterale epicondylalgie (LE)</strong> is een tendinopathie van voornamelijk de <em>extensor carpi radialis brevis</em> (ECRB) ter hoogte van de laterale epicondyl. Pathoanatomisch: degeneratief — geen primaire inflammatie (Coombes et al., 2015). <strong>Wait and see</strong> is effectief op 1 jaar (78% herstel) maar vertraagt kortetermijn herstel versus manuele therapie + oefening (Bisset et al., 2006 — Lancet). <strong>Isometrische wrist extension</strong> heeft een onmiddellijk pijnmodulerend effect, analoog aan tendinopathieprotocollen elders (Rio et al., 2015). <strong>Corticosteroïdinjecties</strong>: snelle kortetermijn pijnreductie maar inferieure lange termijn uitkomsten en hogere recidiefkans (Coombes et al., 2013 — Lancet).',
+     goals:['NRS ≤ 3/10 bij dagelijkse activiteiten','Isometrische wrist extension pijnvrij uitvoeren','Knijpkracht > 50% contralateraal','Orthese correct dragen (counterforce brace of polsspalk)','Werkergonomie geëvalueerd'],
+     exercises:[
+       {name:'Isometrische wrist extension',cat:'kracht',params:[['Hold','30–45 sec'],['Kracht','50–70% max'],['Sets','4'],['Rust','60 sec'],['Freq','dagelijks']],note:'Zittend, onderarm op tafel, pols in neutrale positie. Druk dorsumzijde hand tegen wand of contralaterale hand. Houd 30–45 sec. Pijn ≤ 3/10. Directe pijnreductie treedt op. Elke 6u herhaalbaar indien nodig.'},
+       {name:'Pols/vinger mobilisatie (actief)',cat:'mobiliteit',params:[['Reps','10–15'],['Sets','2–3'],['Richting','flexie–extensie, radiale/ulnaire deviatie']],note:'Voorzichtige actieve polsmobiliteit behouden. Geen passieve rekking van extensoren in acute fase.'},
+       {name:'Counterforce brace aanleren',cat:'manueel',params:[['Positie','2–3 cm distaal van laterale epicondyl'],['Duur','bij belasting']],note:'Epicondylitisspalk reduceert ECRB-spanning. Dragen bij belastende activiteiten, niet in rust. Pols vrij laten bewegen.'},
+       {name:'Neurale mobilisatie (radialis)',cat:'mobiliteit',params:[['Reps','10'],['Sets','2']],note:'Neurodynamica nervus radialis: schouderabductie 90°, elleboogextensie, pols flexie + ulnaire deviatie. Sensitisatie radiale zenuw is frequent geassocieerd met LE.'},
+       {name:'Cryotherapie na activiteit',cat:'manueel',params:[['Duur','10–15 min'],['Freq','na belasting']],note:'IJsmassage over laterale epicondyl. Symptoomgericht, niet primair behandeling.'},
+     ],
+     criteria_go:['NRS ≤ 3/10 bij isometrische test','Knijpkracht ≥ 50% contralateraal','Begrepen belastingsmanagement (provocerende taken vermijden of aanpassen)'],
+     criteria_stop:['Pijn > 5/10 bij isometrische test → verlaag kracht + duur','Zwelling + warmte → radiologisch onderzoek (avulsiefractuur, osteochondrose)'],
+     redflags:['Nachtpijn zonder mechanische trigger → uitsluiten tumoreus proces of cervicale radiculopathie C6','Neurologische uitval hand/pols → EMG cervicale C6-wortelcompressie','Leeftijd < 20j → epifysaire afwijking overwegen']},
+    {label:'Fase 2',title:'Excentrische & Isotone Peestraining',weeks:'Week 3–10',
+     evidence:'<strong>Excentrische training van de pols-extensoren</strong> is de kern van peesremodeling. <strong>Tyler Twist (Thera-Band Flexbar)</strong>: RCT door Tyler et al. (2010, J Orthop Sports Phys Ther) toonde 81% pijnreductie versus 22% controlegroep bij 6 weken. <strong>Heavy Slow Resistance (HSR)</strong> met tragere tempo (3-1-3) minstens equivalent aan excentrisch alleen (Beyer et al., 2015 — analoog aan achillespeesdata). <strong>Kinetische ketenbenadering</strong>: schouder- en polsstabiliteit, grijpkracht en proximale spierkracht zijn frequent gedeficiënt bij LE (Coombes et al., 2015). Behandel de volle keten, niet alleen de elleboog.',
+     goals:['PRTEE ≤ 40/100','Knijpkracht ≥ 75% contralateraal','Excentrische wrist extension pijnvrij','Grijpkracht dagelijkse activiteiten pijnvrij','Schouder- en polsstabilisatie genormaliseerd'],
+     exercises:[
+       {name:'Excentrische wrist extension (Thera-Band / dumbbell)',cat:'kracht',params:[['Reps','15'],['Sets','3'],['Tempo','3-0-3'],['Freq','2–3×/week'],['Progressie','licht → matig gewicht']],note:'Onderarm op tafel, pols over rand. Concentrisch met beide handen omhoog, excentrisch langzaam zakken met aangedane hand. Begin met 0.5 kg, progressief ophogen. Matige pijn (NRS 3–5) is acceptabel indien NRS 0 volgende ochtend.'},
+       {name:'Tyler Twist (Thera-Band Flexbar)',cat:'kracht',params:[['Reps','15'],['Sets','3'],['Freq','3×/week']],note:'Houd Flexbar voor je: aangedane hand bovenaan, onderdraait pols, gezonde hand houdt vast. Extensoren excentrisch controleren bij terugkeer. 81% pijnreductie aangetoond (Tyler 2010).'},
+       {name:'Pronatie/supinatie (gevarieerd)',cat:'kracht',params:[['Reps','15'],['Sets','3'],['Gewicht','licht hamer of dumbbell']],note:'Elleboog 90° gebogen, hamer langzaam proneren en supineren. Belast ECRB en supinator. Traag tempo.'},
+       {name:'Wrist curl (concentrisch pols flexie)',cat:'kracht',params:[['Reps','15'],['Sets','3']],note:'Handhaving flexor-extensor balans. Niet verwaarlozen: flexorkracht is ook deficiënt bij LE.'},
+       {name:'Schouderstabilisatie (scapulaire retractie)',cat:'kracht',params:[['Reps','15'],['Sets','3']],note:'Row, W-Y oefeningen. Proximate keten-optimalisatie: 35% van LE-patiënten heeft scapulaire dyskinese.'},
+     ],
+     criteria_go:['PRTEE ≤ 40/100','Knijpkracht ≥ 75% contralateraal','Excentrische test NRS ≤ 3 én NRS 0 volgende ochtend'],
+     criteria_stop:['PRTEE stagneert 3 weken → kinesistmanipulatie elleboog overwegen (Vicenzino et al. 2007)','Knijpkracht < 50% na week 6 → echo + orthopedie bij partiële ruptuur'],
+     redflags:['Acute krachtdaling pols → peesruptuur ECRB → chirurgisch consult','Geelkleuring huid ter hoogte van laterale epicondyl → post-injectie vet-atrofie']},
+    {label:'Fase 3',title:'Functionele Terugkeer & Sporthervatting',weeks:'Week 8–20+',
+     evidence:'<strong>Sportspecifieke progressie</strong> is essentieel bij tennissers, badmintonners en handarbeiders. <strong>Slagarmtechniek</strong>: forehand met elleboogextensie bij contact vergroot ECRB-belasting — techniekevaluatie door coach. <strong>Racketaanpassingen</strong>: groter gripformaat (3–5 mm groter), polyester naar multidraads snaren, lagere spanning (10% lager) reduceren ECRB-belasting significant (Rethnam & Tugh, 2010). <strong>Totale behandelduur</strong>: gemiddeld 6–12 maanden voor volledig herstel — langzamere peesheling dan spier. <strong>PRTEE < 20/100</strong> = functioneel herstel; < 10/100 = volledig sporthervatting.',
+     goals:['PRTEE < 20/100','Knijpkracht ≥ 90% contralateraal','Sportspecifieke belasting pijnvrij (tennis, handarbeid)','Terugvalpreventie: onderhoud + ergonomie'],
+     exercises:[
+       {name:'Sportspecifieke drills (tennissers)',cat:'neuro',params:[['Oefening','Forehand techniek, service'],['Coach','techniekanalyse']],note:'Open stam forehand vermindert elleboogbelasting. Slagtiming en contactpunt optimaliseren. Racketaanpassing evalueren.'},
+       {name:'Functionele grijptaken (handarbeiders)',cat:'neuro',params:[['Oefening','werksimulatie, gereedschapsgebruik'],['Duur','progressief van 30 → 60 → 120 min']],note:'Ergonomische aanpassing werkpost. Antivibratiehandschoenen bij trilgereedschap. Regelmatige pauzes (elke 30 min, 5 min stretch).'},
+       {name:'HSR onderhoud (3-1-3)',cat:'kracht',params:[['Reps','8–10'],['Sets','3'],['Freq','2×/week']],note:'Onderhoud peeskracht. Geleidelijk belasting ophogen tot lichaamsgewicht-equivalent. Preventief effect bij langdurige belasting.'},
+       {name:'Flexibiliteitsonderhoud pols/elleboog',cat:'mobiliteit',params:[['Duur','15 sec hold × 3'],['Freq','dagelijks']],note:'Zachte statische rek pols-extensoren. Niet in acute fase. Handhaving ROM als onderhoud.'},
+     ],
+     criteria_go:['PRTEE < 20/100','Knijpkracht ≥ 90%','Sportactiviteit ≥ 30 min pijnvrij','NRS 0 volgende ochtend na sporttraining'],
+     criteria_stop:['Terugval bij sporthervatting → techniekevaluatie + 2 weken intensifieer HSR','PRTEE > 40 na 12 weken → PRP-injectie of chirurgie overwegen'],
+     redflags:['Persistente klachten > 12 maanden ondanks optimale kinesitherapie → orthopedie: ECRB release, PRP, focale shockwave']},
+  ],
+  refs:'Bisset L et al. (2006) — Mobilisation with movement and exercise, corticosteroid injection, or wait and see for tennis elbow. Lancet. | Coombes BK et al. (2015) — Management of lateral elbow tendinopathy: one model fits all? J Orthop Sports Phys Ther. | Tyler TF et al. (2010) — Addition of isolated wrist extensor eccentric exercise to standard treatment for chronic lateral epicondylosis. J Orthop Sports Phys Ther. | Vicenzino B et al. (2007) — Specific manipulative therapy for tennis elbow. Man Ther. | Smidt N et al. (2002) — Corticosteroid injections, physiotherapy, or wait-and-see policy for lateral epicondylitis: a randomised controlled trial. Lancet.'};
+
+// ── PROTOCOL: MTSS — Mediaal Tibiaal Stresssyndroom ──────────────────────────
+protocols.mtss = {id:'mtss',title:'Shin Splints (MTSS)',subtitle:'Mediaal Tibiaal Stresssyndroom — belastingsmanagement, botremodeling en veilige loophervatting',color:'#0ea5e9',icon:'🦴',
+  phases:[
+    {label:'Fase 1',title:'Diagnose & Relatieve Rust',weeks:'Week 1–3',
+     evidence:'<strong>MTSS</strong> (Mediaal Tibiaal Stresssyndroom) is een botstresskwetsuur van de mediale tibiaschacht waarbij periostale tractie door de soleus/FDL leidt tot botremodeling en corticale stressreactie. Differentiaaldiagnose is cruciaal: <strong>compartimentsyndroom chronisch</strong> (drukverhoging bij inspanning), <strong>tibiale stressfractuur</strong> (focale pijn vs. diffuse pijn bij MTSS) en <strong>DVT</strong>. <strong>MRI goudstandaard</strong> voor classificatie (Bhatt et al., 2020): Grade 1–2 (periostaal oedeem, 2–6 wkn), Grade 3–4 (medullair oedeem / cortex, 6–16 wkn+). Incidentie bij lopers: 13–20%. <strong>Alternatief sporten</strong> (zwemmen, fietsen) is essentieel om conditie te behouden terwijl been geneest (Winters et al., 2013).',
+     goals:['Diagnose bevestigen (klinisch + MRI indien graad 3–4 suspect)','Provocerende loopactiviteit stoppen of drastisch verminderen','Alternatieve cardio starten (zwemmen/fietsen/pool running)','Pijn in rust 0/10','Risicofactoren identificeren (schoenwerk, loopvolume, voedingsdeficiëntie)'],
+     exercises:[
+       {name:'Zwemmen (crawl / rugslag)',cat:'cardio',params:[['Duur','30–45 min'],['Freq','4–5×/week']],note:'Geen compressiebelasting op tibia. Optimaal aerobe conditiebehoud. Geen schoolslag (plantairflexiekracht).'},
+       {name:'Aquajogging (diep water)',cat:'cardio',params:[['Duur','20–40 min'],['Freq','3–4×/week'],['Materiaal','drijfriem']],note:'Simuleert loopbeweging zonder grondcontact. Behoudt loopspecifieke neuromusculaire patronen. Hartfrequentie 10–15 bpm lager dan op land.'},
+       {name:'Stationaire fiets',cat:'cardio',params:[['Duur','30–45 min'],['Weerstand','matig']],note:'Minimale tibiale belasting. Goede conditiehandhaving. Zadel op correcte hoogte.'},
+       {name:'Kuitversterking (zittend, soleus)',cat:'kracht',params:[['Reps','15–20'],['Sets','3'],['Belasting','licht'],['Freq','3×/week']],note:'Knie 90° gebogen isoleert soleus. Tibiale aanhechting soleus is mede-oorzaak van MTSS. Kracht opbouwen zonder loopbelasting.'},
+       {name:'Voedingsscreening',cat:'manueel',params:[['Aandacht','Vitamine D, Calcium, Energiebeschikbaarheid']],note:'Lage energiebeschikbaarheid (Relative Energy Deficiency in Sport — RED-S) is sterke risicofactor, especially bij vrouwen. Vitamine D ≥ 75 nmol/L, Calcium 1000–1300 mg/dag aanbevolen.'},
+     ],
+     criteria_go:['Pijn bij wandelen 0/10','Hop test (enkel been) pijnvrij','Drukpijn tibia ≤ 2/10','MRI-graad ≤ 2 óf 3 weken rust MRI-grade ≤ 3'],
+     criteria_stop:['Focale tibiale pijn bij palpatie (1–2 cm) → stressfractuur uitsluiten via MRI','Graad 4 MRI → volledige rust 8–12 wkn + orthopedisch consult'],
+     redflags:['Tuningvork-test positief → stressfractuur tibia → MRI verplicht, geen loopactiviteit','Nachtpijn rustend aan tibia → botmetastase of osteoid osteoom uitsluiten','Compartimentdruk > 30 mmHg na inspanning → chronisch compartimentsyndroom → chirurgisch consult','Roodheid + warmte + koorts → osteomyelitis uitsluitendiagnose']},
+    {label:'Fase 2',title:'Krachtopbouw & Loopvoorbereiding',weeks:'Week 3–8',
+     evidence:'<strong>Tibiale beoladingscapaciteit verhogen</strong> is het kernprincipe: botten adapteren via Wolf\'s wet aan progressieve mechanische stimuli. <strong>Kuitkracht</strong>: zwakke soleus/gastrocnemius zijn geassocieerd met hogere tibiale belasting per stap (Meardon et al., 2014). <strong>Looptechniek</strong>: cadansverhoging (5–10% meer stappen/min) verlaagt tibiale belasting significant (Wille et al., 2014 — overstriding reduceert grondreactiekracht). <strong>Schoeisel</strong>: demping, correcte pasvorm en orthesen bij pronatie reduceren impact (Tenforde et al., 2013). <strong>Voetsterkte</strong>: intrinsieke voetspieren ondersteunen mediaal lengtegewelf en reduceren tibiale rotatie-stress.',
+     goals:['Kuitkracht LSI ≥ 85%','Tibiale drukpijn 0/10','Wandelen ≥ 30 min pijnvrij','Looptechniek geëvalueerd (cadans, footstrike)','Loopspecifieke krachtoefeningen pijnvrij'],
+     exercises:[
+       {name:'Single leg heel raise (progressief)',cat:'kracht',params:[['Reps','15–25 p.z.'],['Sets','3'],['Progressie','Bilateraal → unilateraal → gewicht'],['Freq','dagelijks']],note:'Opbouwen tot 25 reps unilateraal. Tibiale aanhechting soleus trainen. Gecontroleerde excentrische fase (3 sec neer).'},
+       {name:'Tibialis posterior versterking',cat:'kracht',params:[['Oefening','inversie met band'],['Reps','15'],['Sets','3']],note:'Tibialis posterior is primaire dynamische stabilisator mediaal gewelf. Zwakte → hyperpronatie → verhoogde tibiale rotatie-stress. Elastiek rond enkel, inversie weerstand.'},
+       {name:'Short foot exercise',cat:'kracht',params:[['Hold','10 sec'],['Reps','10'],['Sets','3'],['Freq','dagelijks']],note:'Activeer intrinsieke voetspieren door verkorten van voet zonder tenen te buigen. Essentieel voor mediaal gewelf support. Zittend → staand → éénbeens progressie.'},
+       {name:'Looptechniekevaluatie',cat:'manueel',params:[['Cadans','meten (stappen/min)'],['Target','170–180 stappen/min'],['Methode','metronoom-app']],note:'Cadans verhogen met 5–10% vermindert tibiale belasting 20–30%. Video-analyse footstrike: van hielstrike naar midfoot. Niet overhaast — geleidelijke aanpassing.'},
+       {name:'Wandelprogramma (progressief)',cat:'cardio',params:[['Start','15 min vlak'],['Opbouw','5 min p.week'],['Max','45 min vóór jogging']],note:'Wandelen = eerste tibiale belastingsstap. Pijnvrij wandelen 30+ min is voorwaarde voor loophervatting. Vlakke ondergrond, goed schoeisel.'},
+     ],
+     criteria_go:['Tibiale drukpijn 0/10','Wandelen 30 min pijnvrij','Single leg heel raise ≥ 20 reps','Hop test pijnvrij'],
+     criteria_stop:['Pijn na wandeling → meer rust, MRI herhalen','LSI kuit < 75% na week 6 → intensifieer, herbeoordeel'],
+     redflags:['Heroptredende focale pijn na loophervatting → stressfractuur, MRI']},
+    {label:'Fase 3',title:'Graded Loophervatting',weeks:'Week 6–14',
+     evidence:'<strong>Graded exposure model</strong>: loopbelasting ophogen met maximaal 10% per week (Nielsen et al., 2012). <strong>Walk-run protocol</strong>: beginnen met loopintervals van 1 min in een wandelsessie, geleidelijk uitbreiden. <strong>Botremodeling</strong>: volledig botremodeling duurt 3–6 maanden — symptoomafwezigheid ≠ structureel herstel. <strong>Tijdcriterium</strong>: minimum 6–8 weken na klachtenstart voor loophervatting bij Grade 1–2 MRI, 10–16 weken bij Grade 3–4. <strong>Hardloopoppervlak</strong>: zacht (gras, track) voor en gedurende loophervatting — asfaltheeft 10–15× hogere grondreactiekrachten dan zacht terrein.',
+     goals:['Continu joggen ≥ 20 min pijnvrij','Tibiale drukpijn 0/10 na loopsessies','Geen pijn 24u na elke loopsessie','Looptechniek cadans geoptimaliseerd','NRS 0 bij activiteit'],
+     exercises:[
+       {name:'Walk-run protocol (week 1–4)',cat:'cardio',params:[['Schema','1 min jog / 2 min walk × 8'],['Progressie','1 min jog / 1 min walk, dan 2/1, dan 5 min blokken'],['Freq','om de dag']],note:'Elke stap alleen als NRS 0 volgende ochtend. Pauzeer 1 week bij pijn. Zacht oppervlak. Tijdsinvestering: geduldige opbouw is de enige weg.'},
+       {name:'Progressief joggen (continu)',cat:'cardio',params:[['Opbouw','10 min → 15 → 20 → 30 min'],['Freq','3×/week'],['Ondergrond','gras/track → asfalt later']],note:'Na geslaagd walk-run: overstap naar continu joggen. 10%-regel strikt. Snelheid secundair aan volume. Schoeisel check elke 600 km.'},
+       {name:'Krachtkwartier (onderhoud)',cat:'kracht',params:[['Oefeningen','Heel raise, short foot, tibialis'],['Duur','15 min'],['Freq','3×/week']],note:'Preventief kracht onderhouden tijdens loopopbouw. Niet verwaarlozen als conditie terugkomt.'},
+       {name:'Cadans-training met metronoom',cat:'neuro',params:[['Target','cadans + 5–10%'],['Tool','metronoom-app (Garmin, Runkeeper)']],note:'Bewuste cadansverhoging 2–4 wkn tot het automatisch wordt. Na 6 wkn bewust trainen = nieuwe looppatroon ingebakken.'},
+     ],
+     criteria_go:['Continu joggen 20 min pijnvrij × 3 sessies','NRS 0 volgende ochtend na elke sessie','Tibiale drukpijn 0/10'],
+     criteria_stop:['NRS > 2 na jogsessie → terug naar walk-run','Recidiverende pijn → rust 1 week + MRI herhalen'],
+     redflags:['Acute hevige pijn tijdens lopen → stop onmiddellijk, stressfractuur uitsluiten','Volumerecidief zonder daling → biomechanische analyse + podoloog']},
+    {label:'Fase 4',title:'Volledig Sporthervatting & Preventie',weeks:'Week 10–20+',
+     evidence:'<strong>Recidiefrisico</strong> bij MTSS is hoog zonder structurele preventie (Tenforde et al., 2016). <strong>Preventieplan</strong>: progressieregels (10%), adequate rust, calciuminname, goed schoeisel en kracht-onderhoud. <strong>Vrouwen</strong>: relatieve energietekort (RED-S) screenen — femaleathlete triad sterk geassocieerd met MTSS en stressfractuurrecidief (De Souza et al., 2014). <strong>Periodisering</strong>: lopers die ≥ 60 km/week lopen zonder afbouwweken hebben 4× hogere MTSS-incidentie. <strong>Schoeisel</strong>: vervangen na 600–800 km.',
+     goals:['Volledig sportprogramma zonder pijn','Recidief-preventieplan actief','Kuitkracht LSI ≥ 90%','Loopvolume terug op vóór-blessure niveau'],
+     exercises:[
+       {name:'Volledige looptraining (sport-specifiek)',cat:'cardio',params:[['Volume','opbouw naar pre-blessure niveau'],['Afbouwweken','elke 4e week volume −30%'],['Oppervlak','variatie gras/track/weg']],note:'10%-regel blijft gelden ook in RTS-fase. Elke 4 weken een rustigere week. Niet in een keer het volledige volume hervatten.'},
+       {name:'Nordic Shin (tibialis anterior)',cat:'kracht',params:[['Reps','10–15'],['Sets','3'],['Freq','2×/week']],note:'Knielen op kniepad, enkels gefixeerd. Achterover kantelen met gestrekte romp. Eccentrische tibialis anterior. Preventief effect bij lopers (analogie Nordic Hamstring).'},
+       {name:'Preventief krachtkwartier (1×/week)',cat:'kracht',params:[['Oefeningen','heel raise, short foot, tibialis'],['Duur','15 min']],note:'Minimaal 1× per week voor de rest van het loopseizoen. Niet stoppen als pijn weg is.'},
+       {name:'Loopjournaal bijhouden',cat:'manueel',params:[['Bijhouden','km, pijn, schoeisel, ondergrond'],['Alarm','bij pijn > 2/10 → 2 rustdagen']],note:'Data-gestuurde progressie. Lopers die een loopjournaal bijhouden hebben 40% minder overbelastingsblessures (trainervaring + data).'},
+     ],
+     criteria_go:['Volledig loopprogramma pijnvrij','NRS 0 na alle sessies','Kuitkracht LSI ≥ 90%','Preventieplan begrepen en actief'],
+     criteria_stop:['Recidief pijn → 1 week rust + MRI + herbeoordeel volledig protocol'],
+     redflags:['Derde recidief MTSS → RED-S screening, botdichtheidsmeting (DEXA), multidisciplinaire beoordeling','Stressfractuur tibia complete cortex → draagloze brace + orthopedisch consult']}
+  ],
+  refs:'Moen MH et al. (2009) — Medial tibial stress syndrome: a critical review. Sports Med. | Winters M et al. (2013) — The medial tibial stress syndrome: a systematic review. Open Access J Sports Med. | Bhatt R et al. (2020) — Bone stress injury of the tibia. EFORT Open Rev. | Nielsen RO et al. (2012) — Training errors and running related injuries: a systematic review. Int J Sports Phys Ther. | Tenforde AS et al. (2016) — Identifying sex-specific risk factors for stress fractures in adolescent runners. Med Sci Sports Exerc. | Wille CM et al. (2014) — Ability of ultrasonographic findings to identify individuals with medial tibial stress syndrome. J Orthop Sports Phys Ther.'};
+
+
 // ── REGIO MAPPING (protocol → regio) ──
 const REGIO_MAP = {
-  acl:'Knie & Heup', tka:'Knie & Heup', pfps:'Knie & Heup', pt:'Knie & Heup', gmt:'Knie & Heup',
+  acl:'Knie & Heup', tka:'Knie & Heup', pfps:'Knie & Heup', pt:'Knie & Heup', gmt:'Knie & Heup', hsi:'Knie & Heup',
   lh:'Lumbaal & Cervicaal', bureau:'Lumbaal & Cervicaal',
-  rc:'Schouder & Arm', si:'Schouder & Arm',
-  at:'Enkel & Voet', enkel:'Enkel & Voet', over:'Enkel & Voet',
+  rc:'Schouder & Arm', si:'Schouder & Arm', elb:'Schouder & Arm',
+  at:'Enkel & Voet', enkel:'Enkel & Voet', over:'Enkel & Voet', mtss:'Enkel & Voet',
   orif:'Pols & Hand', dq:'Pols & Hand', cts:'Pols & Hand',
 };
 
@@ -1205,6 +1362,30 @@ const SCORES = {
     {name:'BCTQ-FSS', full:'Boston Carpal Tunnel Questionnaire — Functional Status Scale', max:5, unit:'/ 5', invert:true,
      ranges:[{label:'Minimale beperking',min:1,max:2,color:'#22c55e'},{label:'Matige beperking',min:2.1,max:3.5,color:'#f59e0b'},{label:'Ernstige beperking',min:3.6,max:5,color:'#ef4444'}],
      rts:'≤ 1.5 voor volledige RTA', mcid:0.53},
+  ],
+  hsi: [
+    {name:'Hamstring LSI', full:'Limb Symmetry Index — Hamstringkracht (handheld dynamometer of KH-ratio)', max:100, unit:'%',
+     ranges:[{label:'RTS-klaar (≥ 90%)',min:90,max:100,color:'#22c55e'},{label:'Sprinthervatting (85–89%)',min:85,max:89,color:'#f59e0b'},{label:'Onvoldoende (< 85%)',min:0,max:84,color:'#ef4444'}],
+     rts:'≥ 90% voor volledig RTS', mcid:null},
+    {name:'NRS Pijn bij activiteit', full:'Numeric Rating Scale — pijn bij jogging of sprint', max:10, unit:'/10', invert:true,
+     ranges:[{label:'Pijnvrij (0–1)',min:0,max:1,color:'#22c55e'},{label:'Matig (2–4)',min:2,max:4,color:'#f59e0b'},{label:'Ernstig (≥ 5)',min:5,max:10,color:'#ef4444'}],
+     rts:'0/10 bij 100% sprint', mcid:2},
+  ],
+  elb: [
+    {name:'PRTEE', full:'Patient-Rated Tennis Elbow Evaluation (0 = geen pijn, 100 = maximale pijn/beperking)', max:100, unit:'punten', invert:true,
+     ranges:[{label:'Functioneel herstel (0–20)',min:0,max:20,color:'#22c55e'},{label:'Matige klachten (21–40)',min:21,max:40,color:'#f59e0b'},{label:'Ernstige beperking (> 40)',min:41,max:100,color:'#ef4444'}],
+     rts:'< 20 voor sport / < 10 voor volledig herstel', mcid:11},
+    {name:'Knijpkracht LSI', full:'Limb Symmetry Index knijpkracht (dynamometer)', max:100, unit:'%',
+     ranges:[{label:'Symmetrisch (≥ 90%)',min:90,max:100,color:'#22c55e'},{label:'Matig (75–89%)',min:75,max:89,color:'#f59e0b'},{label:'Zwak (< 75%)',min:0,max:74,color:'#ef4444'}],
+     rts:'≥ 90% voor volledig RTS', mcid:null},
+  ],
+  mtss: [
+    {name:'NRS Looppijn', full:'Numeric Rating Scale — pijn bij lopen (eerste 5 min)', max:10, unit:'/10', invert:true,
+     ranges:[{label:'Pijnvrij (0)',min:0,max:0,color:'#22c55e'},{label:'Acceptabel (1–3)',min:1,max:3,color:'#f59e0b'},{label:'Niet acceptabel (≥ 4)',min:4,max:10,color:'#ef4444'}],
+     rts:'0/10 bij volledig loopprogramma', mcid:2},
+    {name:'Single leg heel raise', full:'Maximale reps unilateraal — maat voor kuitkracht', max:40, unit:'reps', invert:false,
+     ranges:[{label:'Goed (≥ 25 reps)',min:25,max:40,color:'#22c55e'},{label:'Matig (15–24)',min:15,max:24,color:'#f59e0b'},{label:'Zwak (< 15)',min:0,max:14,color:'#ef4444'}],
+     rts:'≥ 25 reps voor volledig loopprogramma', mcid:5},
   ],
 };
 
@@ -1690,6 +1871,68 @@ const BESLISBOOM = {
          {label:'NRS > 5 / sterk beperkt in ADL', color:'#ef4444', advies:'Acuut compressief GTPS: focus op fase 1. Isometrische pijnmodulatie (30–45 sec, 3–5 sets). Overweeg corticosteroïdinjectie bij refractaire acute fase.'},
          {label:'NRS 3–5 / matig beperkt', color:'#f59e0b', advies:'Subacuut GTPS: combineer fase 1 (educatie) met vroege fase 2 (zijliggende abductie). Monitor 24u pijnrespons.'},
          {label:'NRS < 3 / pijn voornamelijk bij sport', color:'#22c55e', advies:'Belastingsgerelateerd GTPS: start fase 3 (krachtontwikkeling). RTS-criterium: LSI ≥ 90% abductiekracht.'},
+       ]},
+    ],
+  },
+  hsi: {
+    title: 'Beslisboom — Hamstring Strain Injury',
+    stappen: [
+      {id:'s1', vraag:'Wat is de geschatte ernst van de hamstringblessure?',
+       info:'Klinische inschatting op basis van pijnintensiteit, lokalisatie, krachtverlies en mobiliteitsbeperking. MRI bevestigt de graad.',
+       opties:[
+         {label:'Graad I — minimale spiervezelscheur (< 10%)', color:'#22c55e', next:'s2'},
+         {label:'Graad II — partïele ruptuur (10–50%)', color:'#f59e0b', next:'s2'},
+         {label:'Graad III — uitgebreide ruptuur (> 50%) / totaal', color:'#ef4444', next:'s3'},
+       ]},
+      {id:'s2', vraag:'Is er sprake van proximale peesaantasting (konjoint pees)?',
+       info:'Proximale aantasting = pijn en zwakte ter hoogte van tuber ischiadicum + uitstraling naar gluteaalregio. MRI toon aantasting konjoint pees.',
+       opties:[
+         {label:'Nee — pijn in buik van de spier', color:'#22c55e', advies:'Spierbuiklesie: start fase 1–2 normaal protocol. Prognose graad I: 1–2 wkn; graad II: 3–8 wkn. Criteria-gestuurd protocol.'},
+         {label:'Ja — proximale peesaantasting', color:'#f59e0b', advies:'Konjoint peesletsel: langzamer protocol (extra 2–4 wkn per fase). Hoger recidiefrisico. Nordic hamstring met vertraging starten (week 4–6). Follow-up MRI aanbevolen.'},
+       ]},
+      {id:'s3', vraag:'Graad III — chirurgisch advies nodig?',
+       info:'Totale ruptuur of proximale avulsie van de hamstring kan chirurgische indicatie hebben, especially bij actieve atleten < 40j.',
+       opties:[
+         {label:'Proximale avulsie tuber ischiadicum', color:'#ef4444', advies:'Chirurgisch advies obligaat. Conservatief mogelijk bij sedentaire patiënten. Chirurgisch hechten geeft betere krachtherstel bij actieve atleten (Lempainen 2009).'},
+         {label:'Totale ruptuur in spierbuik', color:'#f59e0b', advies:'Meestal conservatief. Langzaam protocol: 12–20 wkn. MRI na 6 wkn. RTS pas na volledige krachtsymmetrie (LSI ≥ 90%).'},
+       ]},
+    ],
+  },
+  elb: {
+    title: 'Beslisboom — Laterale Epicondylalgie',
+    stappen: [
+      {id:'s1', vraag:'Is de pijn lateraal (epicondyl) of mediaal (golfersarm)?',
+       info:'Laterale epicondylalgie = extensor-origine (ECRB). Mediale epicondylalgie (golfersarm) = flexor-origine. Palpeer beide epicondylen.',
+       opties:[
+         {label:'Lateraal — tennis elbow (ECRB)', color:'#c084fc', next:'s2'},
+         {label:'Mediaal — golf elbow (flexoren)', color:'#60a5fa', advies:'Mediale epicondylalgie: analoog protocol maar met polsflexie-excentrische training. Cave: ulnaire zenuwinvloedzone (tinteling ring/pink).'},
+         {label:'Bilateraal of diffuus', color:'#f59e0b', advies:'Cervicale radiculopathie C6 uitsluiten. EMG + cervicale MRI overwegen. Neurologisch onderzoek.'},
+       ]},
+      {id:'s2', vraag:'Hoe lang bestaan de klachten al?',
+       info:'Acuut (< 6 wkn) vs. subacuut (6–12 wkn) vs. chronisch (> 12 wkn) beïnvloedt therapiekeuze.',
+       opties:[
+         {label:'Acuut — < 6 weken', color:'#22c55e', advies:'Acuut: relatieve rust, isometrische training, counterforce brace. Wait and see 78% succes op 1 jaar (Bisset 2006). Geen agressieve stretching.'},
+         {label:'Subacuut — 6–12 weken', color:'#f59e0b', advies:'Subacuut: isometrische → excentrische progressie. Manuele therapie elleboog (Mulligan/Vicenzino) toevoegen. PRTEE bijhouden.'},
+         {label:'Chronisch — > 12 weken', color:'#ef4444', advies:'Chronisch: HSR-protocol (traag, zwaar), Thera-Band Flexbar. Bij stagnatie na 6 wkn optimale therapie: PRP-injectie of shockwave overwegen. Chirurgisch consult bij > 12 mnd.'},
+       ]},
+    ],
+  },
+  mtss: {
+    title: 'Beslisboom — Mediaal Tibiaal Stresssyndroom',
+    stappen: [
+      {id:'s1', vraag:'Is de pijn diffuus mediaal tibiaal of focaal (< 2 cm)?',
+       info:'MTSS = diffuus pijngebied (> 5 cm) mediaal tibia. Focale pijn < 2 cm = stressfractuur tot bewijs van tegendeel.',
+       opties:[
+         {label:'Diffuus (> 5 cm) — typisch MTSS', color:'#0ea5e9', next:'s2'},
+         {label:'Focaal (< 2 cm) — stressfractuur suspect', color:'#ef4444', advies:'Stressfractuur: MRI verplicht. Geen loopactiviteit totdat MRI uitsluit. Graad 3–4 bot-stress: draagloze periode 6–12 wkn + orthopedisch consult.'},
+         {label:'Pijn bij rust of nacht', color:'#f59e0b', advies:'Nachtpijn + tibiale pijn: tumoreus proces of osteomyelitis uitsluiten. Bloedanalyse + röntgen + eventueel MRI. Geen loopactiviteit.'},
+       ]},
+      {id:'s2', vraag:'Hoe ernstig is de huidige impact op loopactiviteit?',
+       info:'Graderingshulp voor fase-toewijzing.',
+       opties:[
+         {label:'Kan nog lopen maar met pijn', color:'#f59e0b', advies:'MTSS graad 1–2 klinisch: verlaag loopvolume 50%, alternatieve cardio toevoegen. Geen complete rust — gradeerde belasting superieur (Winters 2013).'},
+         {label:'Loopactiviteit volledig gestopt', color:'#ef4444', advies:'MTSS graad 2–3 klinisch: MRI overwegen (grade 3 = medullair oedeem = 8–12 wkn). Start fase 1 volledig (aquajogging, kuitkracht). Loophervatting pas na criteria fase 2.'},
+         {label:'Pijn enkel bij hoge intensiteit', color:'#22c55e', advies:'MTSS mild/herstellend: skip fase 1, start fase 2. Cadansoptimalisatie + kuitkrachtprogramma. Progressieve loophervatting met 10%-regel.'},
        ]},
     ],
   },

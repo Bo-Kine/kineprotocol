@@ -86,6 +86,8 @@ function signOut() {
   localStorage.removeItem('kp_session');
   localStorage.removeItem('kp_patients');
   Object.keys(localStorage).filter(k => k.startsWith('kp_scores_')).forEach(k => localStorage.removeItem(k));
+  const userArea = document.getElementById('user-area');
+  if(userArea) userArea.style.display = 'none';
   updatePatientBadge();
   showLoginScreen();
 }
@@ -102,14 +104,12 @@ function showLoginScreen() {
 function hideLoginScreen() {
   document.getElementById('app-wrapper').style.display = 'flex';
   document.getElementById('login-screen').style.display = 'none';
-  // Update user indicator in topbar
+  const userArea = document.getElementById('user-area');
   const userEl = document.getElementById('user-indicator');
-  if(userEl && currentUser) {
+  if(userArea && userEl && currentUser) {
     userEl.textContent = currentUser.email.split('@')[0];
-    userEl.style.display = '';
+    userArea.style.display = 'flex';
   }
-  const logoutBtn = document.getElementById('logout-btn');
-  if(logoutBtn) logoutBtn.style.display = '';
 }
 
 async function handleLogin(mode) {

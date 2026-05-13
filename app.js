@@ -1,5 +1,14 @@
 // KineProtocol — App: navigatie, rendering, formulieren, zoeken, swipe, init
 
+// ── VERSION CHECK: forces hard reload when app is updated ──
+(function(){
+  const V = '6';
+  if(localStorage.getItem('kp_app_v') !== V) {
+    localStorage.setItem('kp_app_v', V);
+    window.location.replace(window.location.pathname + '?v=' + V + '&t=' + Date.now());
+  }
+})();
+
 let currentProto = null;
 let deferredPrompt = null;
 let editingPatientId = null;

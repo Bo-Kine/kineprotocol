@@ -50,7 +50,7 @@ function renderRecent() {
   const recent = JSON.parse(localStorage.getItem(RECENT_KEY) || '[]').filter(id => protocols[id]);
   if(!recent.length) { container.style.display = 'none'; return; }
   container.style.display = '';
-  let html = '<div class="slabel" style="margin-bottom:10px;">Recentelijk bekeken</div><div class="recent-row">';
+  let html = '<div class="section-label" style="padding:0;margin-bottom:10px;">RECENTELIJK BEKEKEN</div><div class="recent-row">';
   recent.forEach(id => {
     const p = protocols[id];
     html += `<div class="recent-chip" onclick="showProto('${id}')">
@@ -62,12 +62,52 @@ function renderRecent() {
   container.innerHTML = html;
 }
 
-// ── FILTER PROTOCOLLEN ──
+// ── FILTER PROTOCOLLEN (legacy, sidebar still uses filterProtos) ──
 function filterProtos(regio) {
   document.querySelectorAll('.filter-tab').forEach(t => t.classList.toggle('active', t.dataset.regio === regio));
   document.querySelectorAll('.protocol-card[data-regio]').forEach(card => {
     card.style.display = (regio === 'alles' || card.dataset.regio === regio) ? '' : 'none';
   });
+}
+
+// ── FEATURED HOME ──
+const REGIO_PROTOS = {
+  knie: ['acl','tka','pfps','pt','gmt','hsi'],
+  schouder: ['rc','si','elb'],
+  rug: ['lh','bureau'],
+  enkel: ['at','enkel','over','mtss'],
+  pols: ['orif','dq','cts'],
+};
+
+function filterFeatured(regio) {
+  document.querySelectorAll('.regio-card').forEach(c => c.classList.toggle('active', c.dataset.regio === regio));
+  renderFeatured(regio);
+}
+
+function renderFeatured(regio) {
+  const ids = REGIO_PROTOS[regio] || [];
+  const list = document.getElementById('featured-list');
+  if(!list) return;
+  list.innerHTML = ids.map(id => {
+    const p = protocols[id]; if(!p) return '';
+    const phases = p.phases ? p.phases.length : 0;
+    const exCount = p.phases ? p.phases.reduce((a,ph) => a + (ph.exercises ? ph.exercises.length : 0), 0) : 0;
+    const color = p.color || '#888';
+    const bg = `linear-gradient(135deg,${color}2a 0%,${color}0f 100%)`;
+    const border = `border:1px solid ${color}28;`;
+    return `<div class="featured-card" style="background:${bg};${border}" onclick="showProto('${id}')">
+      <div class="featured-card-top">
+        <span class="featured-card-icon">${p.icon||'📋'}</span>
+        <span class="featured-card-title">${p.title}</span>
+        <span class="featured-card-badge" style="background:${color}1e;color:${color}">${id.toUpperCase()}</span>
+      </div>
+      <div class="featured-card-footer">
+        ${phases ? `<span class="featured-card-tag">${phases} fasen</span>` : ''}
+        ${exCount ? `<span class="featured-card-tag">${exCount} oefeningen</span>` : ''}
+        <span class="featured-card-arrow">→</span>
+      </div>
+    </div>`;
+  }).join('');
 }
 
 // ── NAVIGATION ──
@@ -113,7 +153,7 @@ function showHome() {
   document.getElementById('searchInput').value = '';
   setNav('home'); currentProto = null;
   renderRecent();
-  filterProtos('alles');
+  filterFeatured('knie');
 }
 function showProto(id) {
   const p = protocols[id]; if(!p) return;
@@ -1212,6 +1252,8 @@ window.showPhase = function(i) {
 // ── INIT ──
 async function initApp() {
   initSwipe();
+  renderRecent();
+  filterFeatured('knie');
   // Try to restore session
   const stored = JSON.parse(localStorage.getItem('kp_session') || 'null');
   if(stored && stored.refresh_token) {

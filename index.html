@@ -43,15 +43,43 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
 .nav-badge{font-size:10px;padding:2px 7px;border-radius:10px;font-family:'Geist Mono',monospace;}
 .sidebar-divider{height:1px;background:var(--border);margin:5px 14px;}
 .main{flex:1;overflow-y:auto;display:flex;flex-direction:column;-webkit-overflow-scrolling:touch;}
-/* Home */
-.home{padding:32px 28px;max-width:960px;}
-.home-greeting{font-family:'Instrument Serif',serif;font-size:clamp(26px,5vw,38px);font-weight:400;line-height:1.15;margin-bottom:6px;letter-spacing:-.02em;}
-.home-greeting em{font-style:italic;background:linear-gradient(90deg,#22d3ee,#a78bfa,#f97316,#34d399,#f43f5e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.home-sub{color:var(--muted);font-size:13px;margin-bottom:28px;}
-.stats-row{display:flex;gap:10px;margin-bottom:28px;flex-wrap:wrap;}
-.stat{background:var(--surface2);border-radius:10px;padding:14px 18px;flex:1;min-width:85px;}
-.stat-num{font-family:'Instrument Serif',serif;font-size:28px;font-weight:400;line-height:1;}
-.stat-label{font-size:10px;color:var(--muted);margin-top:3px;font-family:'Geist Mono',monospace;}
+/* Hero */
+.hero{padding:28px 20px 22px;position:relative;overflow:hidden;background:linear-gradient(170deg,var(--surface2) 0%,var(--bg) 70%);flex-shrink:0;}
+.hero::after{content:'';position:absolute;right:-60px;top:-30px;width:280px;height:280px;background:radial-gradient(circle,rgba(34,211,238,.07) 0%,transparent 65%);border-radius:50%;pointer-events:none;}
+.hero-label{font-family:'Geist Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted2);margin-bottom:10px;}
+.hero-heading{font-family:'Instrument Serif',serif;font-size:clamp(26px,6vw,38px);font-weight:400;line-height:1.12;letter-spacing:-.02em;margin-bottom:8px;}
+.hero-heading em{font-style:italic;background:linear-gradient(100deg,#22d3ee 0%,#a78bfa 50%,#f97316 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-sub{font-size:12px;color:var(--muted);}
+.hero-body-icon{position:absolute;right:10px;top:10px;font-size:88px;opacity:.045;pointer-events:none;line-height:1;transform:rotate(8deg);}
+/* Stats */
+.stats-row{display:flex;gap:10px;padding:16px 20px;overflow-x:auto;scrollbar-width:none;flex-shrink:0;}
+.stats-row::-webkit-scrollbar{display:none;}
+.stat{background:var(--surface2);border-radius:12px;padding:12px 14px;flex-shrink:0;min-width:80px;display:flex;flex-direction:column;gap:4px;}
+.stat-icon-box{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px;margin-bottom:3px;}
+.stat-num{font-family:'Instrument Serif',serif;font-size:24px;font-weight:400;line-height:1;}
+.stat-label{font-size:9px;color:var(--muted);font-family:'Geist Mono',monospace;text-transform:uppercase;letter-spacing:.07em;}
+/* Section label */
+.section-label{font-family:'Geist Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted2);padding:0 20px;margin-bottom:8px;display:block;}
+/* Regio scroll */
+.regio-scroll{display:flex;gap:8px;padding:0 20px 16px;overflow-x:auto;scrollbar-width:none;}
+.regio-scroll::-webkit-scrollbar{display:none;}
+.regio-card{flex-shrink:0;background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:11px 13px;cursor:pointer;transition:all .15s;display:flex;flex-direction:column;align-items:center;gap:5px;min-width:74px;text-align:center;}
+.regio-card:hover{border-color:var(--border2);background:var(--surface3);}
+.regio-card.active{background:var(--surface3);border-color:rgba(255,255,255,.18);}
+.regio-card-icon{font-size:22px;line-height:1;}
+.regio-card-label{font-size:9.5px;color:var(--muted);font-family:'Geist Mono',monospace;white-space:nowrap;}
+.regio-card.active .regio-card-label{color:var(--text);}
+/* Featured cards */
+.featured-list{display:flex;flex-direction:column;gap:10px;padding:0 20px 28px;}
+.featured-card{border-radius:14px;padding:16px 18px;cursor:pointer;position:relative;overflow:hidden;transition:transform .15s,box-shadow .15s;display:flex;flex-direction:column;gap:10px;}
+.featured-card:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(0,0,0,.45);}
+.featured-card-top{display:flex;align-items:center;gap:10px;}
+.featured-card-icon{font-size:26px;line-height:1;flex-shrink:0;}
+.featured-card-title{font-family:'Instrument Serif',serif;font-size:17px;font-weight:400;color:#fff;line-height:1.2;flex:1;}
+.featured-card-badge{font-family:'Geist Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;border-radius:20px;flex-shrink:0;}
+.featured-card-footer{display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+.featured-card-tag{font-size:10px;padding:3px 9px;border-radius:20px;background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);font-family:'Geist Mono',monospace;}
+.featured-card-arrow{margin-left:auto;color:rgba(255,255,255,.45);font-size:14px;}
 .protocol-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:12px;margin-bottom:28px;}
 .protocol-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 16px 14px;cursor:pointer;transition:all .18s;position:relative;overflow:hidden;}
 .protocol-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--card-color);border-radius:12px 12px 0 0;}
@@ -376,6 +404,7 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
   .viewer-body{padding:16px;}
   .search-box{width:140px;}
   .protocol-grid{grid-template-columns:1fr 1fr;}
+  .featured-list{padding-bottom:calc(72px + var(--safe-bottom));}
 }
 @media(max-width:380px){.protocol-grid{grid-template-columns:1fr;}.search-box{width:110px;}}
 ::-webkit-scrollbar{width:4px;height:4px;}
@@ -513,46 +542,36 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
   </div>
   <div class="main" id="main">
     <!-- HOME -->
-    <div id="screen-home" class="home">
-      <div class="install-banner" id="installBanner"><div class="install-banner-text"><strong>Installeer KineProtocol</strong> voor offline gebruik.</div><button class="install-banner-btn" onclick="installApp()">Installeer</button><button class="install-banner-close" onclick="document.getElementById('installBanner').classList.remove('show')">x</button></div>
-      <div class="home-greeting">Goeiedag,<br><em>klinische kennis</em> binnen handbereik.</div>
-      <div class="home-sub">Evidence-based revalidatieprotocollen — snel opzoekbaar, klinisch toepasbaar.</div>
+    <div id="screen-home" style="overflow-y:auto;flex:1;-webkit-overflow-scrolling:touch;">
+      <!-- Hero -->
+      <div class="hero">
+        <div class="install-banner" id="installBanner" style="margin:0 0 16px;border-radius:10px;"><div class="install-banner-text"><strong>Installeer KineProtocol</strong> voor offline gebruik.</div><button class="install-banner-btn" onclick="installApp()">Installeer</button><button class="install-banner-close" onclick="document.getElementById('installBanner').classList.remove('show')">&#x2715;</button></div>
+        <div class="hero-label">WELKOM TERUG</div>
+        <div class="hero-heading">Goeiendag,<br><em>klinische kennis</em><br>binnen handbereik.</div>
+        <div class="hero-sub">Evidence-based revalidatieprotocollen.</div>
+        <div class="hero-body-icon">🦴</div>
+      </div>
+      <!-- Stats -->
       <div class="stats-row">
-        <div class="stat"><div class="stat-num" style="color:var(--acl)">18</div><div class="stat-label">Protocollen</div></div>
-        <div class="stat"><div class="stat-num" style="color:var(--tka)">82</div><div class="stat-label">Fasen</div></div>
-        <div class="stat"><div class="stat-num" style="color:var(--pfps)">453</div><div class="stat-label">Oefeningen</div></div>
-        <div class="stat"><div class="stat-num" style="color:var(--rc)" id="stat-patients">0</div><div class="stat-label">Patiënten</div></div>
+        <div class="stat"><div class="stat-icon-box" style="background:rgba(34,211,238,.15)">📋</div><div class="stat-num">18</div><div class="stat-label">Protocollen</div></div>
+        <div class="stat"><div class="stat-icon-box" style="background:rgba(167,139,250,.15)">📊</div><div class="stat-num">82</div><div class="stat-label">Fasen</div></div>
+        <div class="stat"><div class="stat-icon-box" style="background:rgba(249,115,22,.15)">💪</div><div class="stat-num">453</div><div class="stat-label">Oefeningen</div></div>
+        <div class="stat"><div class="stat-icon-box" style="background:rgba(244,63,94,.15)">👥</div><div class="stat-num" id="stat-patients">0</div><div class="stat-label">Patiënten</div></div>
       </div>
-      <div id="recent-section" style="display:none;margin-bottom:24px;"></div>
-      <div class="slabel">Beschikbare protocollen</div>
-      <div class="filter-tabs">
-        <div class="filter-tab active" data-regio="alles" onclick="filterProtos('alles')">Alles</div>
-        <div class="filter-tab" data-regio="knie" onclick="filterProtos('knie')">Knie &amp; Heup</div>
-        <div class="filter-tab" data-regio="schouder" onclick="filterProtos('schouder')">Schouder</div>
-        <div class="filter-tab" data-regio="rug" onclick="filterProtos('rug')">Lumbaal &amp; Cervicaal</div>
-        <div class="filter-tab" data-regio="enkel" onclick="filterProtos('enkel')">Enkel &amp; Voet</div>
-        <div class="filter-tab" data-regio="pols" onclick="filterProtos('pols')">Pols &amp; Hand</div>
+      <!-- Recent -->
+      <div id="recent-section" style="display:none;padding:0 20px;margin-bottom:16px;"></div>
+      <!-- Regio verkennen -->
+      <div class="section-label" style="margin-top:4px;">VERKEN PER REGIO</div>
+      <div class="regio-scroll">
+        <div class="regio-card active" data-regio="knie" onclick="filterFeatured('knie')"><div class="regio-card-icon">🦵</div><div class="regio-card-label">Knie &amp; Heup</div></div>
+        <div class="regio-card" data-regio="schouder" onclick="filterFeatured('schouder')"><div class="regio-card-icon">💪</div><div class="regio-card-label">Schouder</div></div>
+        <div class="regio-card" data-regio="rug" onclick="filterFeatured('rug')"><div class="regio-card-icon">🫁</div><div class="regio-card-label">Lumbaal</div></div>
+        <div class="regio-card" data-regio="enkel" onclick="filterFeatured('enkel')"><div class="regio-card-icon">🦶</div><div class="regio-card-label">Enkel &amp; Voet</div></div>
+        <div class="regio-card" data-regio="pols" onclick="filterFeatured('pols')"><div class="regio-card-icon">✋</div><div class="regio-card-label">Pols &amp; Hand</div></div>
       </div>
-      <div class="protocol-grid">
-        <div class="protocol-card" data-regio="knie" style="--card-color:var(--acl)" onclick="showProto('acl')"><div class="card-arrow">&#8599;</div><div class="card-icon">&#129463;</div><div class="card-title">ACL Reconstructie</div><div class="card-desc">Postoperatief VKB-protocol. Criterium-gebaseerd, 5 fasen.</div><div class="card-meta"><span class="card-tag col">9–12 mnd</span><span class="card-tag col">5 fasen</span></div></div>
-        <div class="protocol-card" data-regio="knie" style="--card-color:var(--tka)" onclick="showProto('tka')"><div class="card-arrow">&#8599;</div><div class="card-icon">&#129471;</div><div class="card-title">Totale Knieprothese</div><div class="card-desc">TKA revalidatie + ERAS + sporthervatting.</div><div class="card-meta"><span class="card-tag col">3–6 mnd</span><span class="card-tag col">5 fasen</span></div></div>
-        <div class="protocol-card" data-regio="knie" style="--card-color:var(--pfps)" onclick="showProto('pfps')"><div class="card-arrow">&#8599;</div><div class="card-icon">&#127919;</div><div class="card-title">Patellofemoraal Pijn</div><div class="card-desc">Multifactorieel: heupfocus + gait retraining.</div><div class="card-meta"><span class="card-tag col">6–14 wkn</span><span class="card-tag col">4 fasen</span></div></div>
-        <div class="protocol-card" data-regio="knie" style="--card-color:#fb923c" onclick="showProto('pt')"><div class="card-arrow">&#8599;</div><div class="card-icon">🦵</div><div class="card-title">Patellapees Tendinopathie</div><div class="card-desc">Jumper knee. HSR, isometrie, plyometrie, RTS.</div><div class="card-meta"><span class="card-tag col">4–20+ wkn</span><span class="card-tag col">5 fasen</span></div></div>
-        <div class="protocol-card" data-regio="knie" style="--card-color:var(--gmt)" onclick="showProto('gmt')"><div class="card-arrow">&#8599;</div><div class="card-icon">🦴</div><div class="card-title">Gluteus Med./Min. Tendinopathie</div><div class="card-desc">GTPS. Load management, isometrie, abductorkracht, RTS.</div><div class="card-meta"><span class="card-tag col">0–24+ wkn</span><span class="card-tag col">4 fasen</span></div></div>
-        <div class="protocol-card" data-regio="knie" style="--card-color:var(--hsi)" onclick="showProto('hsi')"><div class="card-arrow">&#8599;</div><div class="card-icon">🦵</div><div class="card-title">Hamstring Blessure</div><div class="card-desc">Graad I–III. Acute fase, Nordic Hamstring, sprinthervatting.</div><div class="card-meta"><span class="card-tag col">1–16+ wkn</span><span class="card-tag col">4 fasen</span></div></div>
-        <div class="protocol-card" data-regio="rug" style="--card-color:var(--lh)" onclick="showProto('lh')"><div class="card-arrow">&#8599;</div><div class="card-icon">&#129504;</div><div class="card-title">Lumbale Hernia</div><div class="card-desc">McKenzie, neurodynamica, return to work.</div><div class="card-meta"><span class="card-tag col">6–16 wkn</span><span class="card-tag col">5 fasen</span></div></div>
-        <div class="protocol-card" data-regio="rug" style="--card-color:#60a5fa" onclick="showProto('bureau')"><div class="card-arrow">&#8599;</div><div class="card-icon">💻</div><div class="card-title">Bureauhouding & Nekklachten</div><div class="card-desc">Trapezius syndroom, cervicogene HFK, lumbago.</div><div class="card-meta"><span class="card-tag col">6–12+ wkn</span><span class="card-tag col">4 fasen</span></div></div>
-        <div class="protocol-card" data-regio="schouder" style="--card-color:var(--rc)" onclick="showProto('rc')"><div class="card-arrow">&#8599;</div><div class="card-icon">&#128170;</div><div class="card-title">Rotatorenmanchet</div><div class="card-desc">Conservatief + post-OK. Scapulaire controle, RTS.</div><div class="card-meta"><span class="card-tag col">4–12 mnd</span><span class="card-tag col">6 fasen</span></div></div>
-        <div class="protocol-card" data-regio="schouder" style="--card-color:var(--si)" onclick="showProto('si')"><div class="card-arrow">&#8599;</div><div class="card-icon">💪</div><div class="card-title">Schouderinstabiliteit</div><div class="card-desc">Anterieure (TUBS/Bankart) & multidirectioneel (AMBRI). Conservatief + post-chirurgisch.</div><div class="card-meta"><span class="card-tag col">0–9 mnd</span><span class="card-tag col">5 fasen</span></div></div>
-        <div class="protocol-card" data-regio="schouder" style="--card-color:var(--elb)" onclick="showProto('elb')"><div class="card-arrow">&#8599;</div><div class="card-icon">🎾</div><div class="card-title">Laterale Epicondylalgie</div><div class="card-desc">Tennis Elbow. Isometrisch, Tyler Twist, HSR, kinetische keten.</div><div class="card-meta"><span class="card-tag col">4–20+ wkn</span><span class="card-tag col">3 fasen</span></div></div>
-        <div class="protocol-card" data-regio="enkel" style="--card-color:#e879f9" onclick="showProto('at')"><div class="card-arrow">&#8599;</div><div class="card-icon">🦶</div><div class="card-title">Achillespees Tendinopathie</div><div class="card-desc">Midportion vs insertioneel. Alfredson, HSR, loophervatting.</div><div class="card-meta"><span class="card-tag col">6–24+ wkn</span><span class="card-tag col">5 fasen</span></div></div>
-        <div class="protocol-card" data-regio="enkel" style="--card-color:#f59e0b" onclick="showProto('enkel')"><div class="card-arrow">&#8599;</div><div class="card-icon">🦶</div><div class="card-title">Enkeldistorsie</div><div class="card-desc">Graad I–III. PEACE &amp; LOVE, proprioceptie, RTS-criteria.</div><div class="card-meta"><span class="card-tag col">1–12 wkn</span><span class="card-tag col">5 fasen</span></div></div>
-        <div class="protocol-card" data-regio="enkel" style="--card-color:#10b981" onclick="showProto('over')"><div class="card-arrow">&#8599;</div><div class="card-icon">🦶</div><div class="card-title">Overpronatie Syndroom</div><div class="card-desc">Platvoet, short foot exercise, tibialis posterior, gait retraining.</div><div class="card-meta"><span class="card-tag col">8–18+ wkn</span><span class="card-tag col">4 fasen</span></div></div>
-        <div class="protocol-card" data-regio="enkel" style="--card-color:var(--mtss)" onclick="showProto('mtss')"><div class="card-arrow">&#8599;</div><div class="card-icon">🏃</div><div class="card-title">Shin Splints (MTSS)</div><div class="card-desc">Mediaal tibiale stressreactie. Relatieve rust, kuitkracht, graded loophervatting.</div><div class="card-meta"><span class="card-tag col">3–20+ wkn</span><span class="card-tag col">4 fasen</span></div></div>
-        <div class="protocol-card" data-regio="pols" style="--card-color:var(--orif)" onclick="showProto('orif')"><div class="card-arrow">&#8599;</div><div class="card-icon">🦴</div><div class="card-title">ORIF Distale Radius</div><div class="card-desc">Volaire plaatfixatie DRF. Oedeem, ROM, kracht, RTS & CRPS-screening.</div><div class="card-meta"><span class="card-tag col">0–5 mnd</span><span class="card-tag col">4 fasen</span></div></div>
-        <div class="protocol-card" data-regio="pols" style="--card-color:var(--dq)" onclick="showProto('dq')"><div class="card-arrow">&#8599;</div><div class="card-icon">👍</div><div class="card-title">De Quervain Tenosynovitis</div><div class="card-desc">Eerste dorsaal compartiment. Spalk, injectie, excentrisch, RTA.</div><div class="card-meta"><span class="card-tag col">0–20 wkn</span><span class="card-tag col">3 fasen</span></div></div>
-        <div class="protocol-card" data-regio="pols" style="--card-color:var(--cts)" onclick="showProto('cts')"><div class="card-arrow">&#8599;</div><div class="card-icon">🖐️</div><div class="card-title">Carpaaltunnelsyndroom</div><div class="card-desc">Conservatief & post-chirurgisch. Zenuwglijden, sensibiliteit, RTW.</div><div class="card-meta"><span class="card-tag col">0–16 wkn</span><span class="card-tag col">4 fasen</span></div></div>
-      </div>
+      <!-- Featured protocols -->
+      <div class="section-label">UITGELICHTE PROTOCOLLEN</div>
+      <div class="featured-list" id="featured-list"></div>
     </div>
     <!-- PROTOCOL VIEWER -->
     <div id="screen-proto" class="viewer" style="display:none;">
@@ -626,11 +645,11 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
 <!-- Bottom nav (5 fixed tabs) -->
 <div class="bottom-nav">
   <div class="bottom-nav-inner">
-    <button class="bnav-item active" id="bnav-home" onclick="showHome()"><div class="bnav-icon">🏠</div><div class="bnav-label">Home</div><div class="bnav-dot"></div></button>
-    <button class="bnav-item" id="bnav-protocollen" onclick="openProtoSheet()"><div class="bnav-icon">📋</div><div class="bnav-label">Protocollen</div><div class="bnav-dot"></div></button>
-    <button class="bnav-item" id="bnav-patients" onclick="showPatients()"><div class="bnav-icon">👥</div><div class="bnav-label">Patiënten</div><div class="bnav-dot" style="background:#4ade80"></div></button>
-    <button class="bnav-item" id="bnav-library" onclick="showLibrary()"><div class="bnav-icon">📚</div><div class="bnav-label">Bibliotheek</div><div class="bnav-dot" style="background:#facc15"></div></button>
-    <button class="bnav-item" id="bnav-more" onclick="openMoreSheet()"><div class="bnav-icon">☰</div><div class="bnav-label">Meer</div><div class="bnav-dot"></div></button>
+    <button class="bnav-item active" id="bnav-home" onclick="showHome()"><div class="bnav-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/><path d="M9 21V12h6v9"/></svg></div><div class="bnav-label">Home</div><div class="bnav-dot"></div></button>
+    <button class="bnav-item" id="bnav-protocollen" onclick="openProtoSheet()"><div class="bnav-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 7h6M9 11h6M9 15h4"/></svg></div><div class="bnav-label">Protocollen</div><div class="bnav-dot"></div></button>
+    <button class="bnav-item" id="bnav-patients" onclick="showPatients()"><div class="bnav-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M2 21v-2a7 7 0 0114 0v2"/><path d="M19 8v6M22 11h-6"/></svg></div><div class="bnav-label">Patiënten</div><div class="bnav-dot" style="background:#4ade80"></div></button>
+    <button class="bnav-item" id="bnav-library" onclick="showLibrary()"><div class="bnav-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div><div class="bnav-label">Bibliotheek</div><div class="bnav-dot" style="background:#facc15"></div></button>
+    <button class="bnav-item" id="bnav-more" onclick="openMoreSheet()"><div class="bnav-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="1.2" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"/><circle cx="12" cy="19" r="1.2" fill="currentColor" stroke="none"/></svg></div><div class="bnav-label">Meer</div><div class="bnav-dot"></div></button>
   </div>
 </div>
 

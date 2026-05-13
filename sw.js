@@ -1,7 +1,7 @@
 // KineProtocol — Service Worker
 // Cacht alle app-bestanden voor offline gebruik (cache-first strategie)
 
-const CACHE = 'kineprotocol-v3';
+const CACHE = 'kineprotocol-v4';
 
 const PRECACHE = [
   './',
@@ -11,6 +11,7 @@ const PRECACHE = [
   './patients.js',
   './protocols.js',
   './manifest.json',
+  './bg.webp',
   './icon-72x72.png',
   './icon-96x96.png',
   './icon-128x128.png',

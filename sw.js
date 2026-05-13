@@ -1,7 +1,7 @@
 // KineProtocol — Service Worker
 // Cacht alle app-bestanden voor offline gebruik (cache-first strategie)
 
-const CACHE = 'kineprotocol-v5';
+const CACHE = 'kineprotocol-v6';
 
 const PRECACHE = [
   './',
@@ -36,8 +36,8 @@ self.addEventListener('activate', event => {
     caches.keys()
       .then(keys => Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k))))
       .then(() => self.clients.claim())
-      .then(() => self.clients.matchAll({type: 'window'}))
-      .then(clients => clients.forEach(c => c.postMessage({type: 'SW_UPDATED'})))
+      .then(() => self.clients.matchAll({type: 'window', includeUncontrolled: true}))
+      .then(clients => clients.forEach(c => c.navigate(c.url)))
   );
 });
 

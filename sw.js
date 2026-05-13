@@ -1,7 +1,7 @@
 // KineProtocol — Service Worker
 // Cacht alle app-bestanden voor offline gebruik (cache-first strategie)
 
-const CACHE = 'kineprotocol-v10';
+const CACHE = 'kineprotocol-v11';
 
 const PRECACHE = [
   './',
@@ -41,35 +41,44 @@ self.addEventListener('activate', event => {
   );
 });
 
-// Fetch: cache-first, met network-fallback
-// Supabase API calls altijd naar netwerk (nooit cachen)
+// Fetch: network-first voor HTML/JS, cache-first voor de rest
 self.addEventListener('fetch', event => {
   const url = event.request.url;
 
   // Supabase + externe API's: altijd netwerk
   if (url.includes('supabase.co') || url.includes('googleapis.com/css')) {
-    event.respondWith(
-      fetch(event.request).catch(() => caches.match(event.request))
-    );
+    event.respondWith(fetch(event.request).catch(() => caches.match(event.request)));
     return;
   }
 
-  // YouTube iframes en andere externe content: netwerk only
+  // YouTube: netwerk only
   if (url.includes('youtube.com') || url.includes('youtu.be')) {
     return;
   }
 
-  // Alle app-bestanden: cache-first
+  // HTML en JS: network-first zodat updates direct zichtbaar zijn
+  const isAppFile = /\.(html|js)$/.test(url) || url.endsWith('/') || url.includes('?v=');
+  if (isAppFile) {
+    event.respondWith(
+      fetch(event.request).then(response => {
+        if (response.ok) {
+          const clone = response.clone();
+          caches.open(CACHE).then(c => c.put(event.request, clone));
+        }
+        return response;
+      }).catch(() => caches.match(event.request))
+    );
+    return;
+  }
+
+  // Afbeeldingen, fonts etc.: cache-first
   event.respondWith(
     caches.match(event.request).then(cached => {
       if (cached) return cached;
       return fetch(event.request).then(response => {
-        // Alleen geldige responses cachen
-        if (!response || response.status !== 200 || response.type === 'opaque') {
-          return response;
-        }
+        if (!response || response.status !== 200 || response.type === 'opaque') return response;
         const clone = response.clone();
-        caches.open(CACHE).then(cache => cache.put(event.request, clone));
+        caches.open(CACHE).then(c => c.put(event.request, clone));
         return response;
       });
     })

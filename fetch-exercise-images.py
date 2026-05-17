@@ -1,222 +1,204 @@
 #!/usr/bin/env python3
 """
-KineProtocol — Fetch Exercise Images via Wikimedia Commons
-Geen API-sleutel vereist. Zoekt Wikipedia/Commons voor elke oefening.
+KineProtocol — Fetch Exercise Images via Wikipedia
+Zoekt per oefening een exacte Wikipedia-pagina en haalt de bijbehorende afbeelding op.
+Geen API-sleutel vereist.
 
 Gebruik:
   python3 fetch-exercise-images.py
   python3 fetch-exercise-images.py --update   # enkel nieuwe toevoegen
-  python3 fetch-exercise-images.py --limit 20 # test met 20 oefeningen
+  python3 fetch-exercise-images.py --limit 20
 """
 
 import re, json, time, argparse, urllib.request, urllib.parse
 
 PROTOCOLS_FILE = 'protocols.js'
 OUTPUT_FILE    = 'exercise-images.json'
-DELAY          = 0.4   # seconden tussen requests
+DELAY          = 0.4
+WIKI_API       = 'https://en.wikipedia.org/w/api.php'
 
-WIKI_API   = 'https://en.wikipedia.org/w/api.php'
-COMMONS_API = 'https://commons.wikimedia.org/w/api.php'
-
-# Vertaling Nederlandse oefenterminologie → Engels voor Wikipedia/Commons zoeken
-NL_TO_EN = {
-    'kniebuiging':'squat','squat':'squat','deadlift':'deadlift','plank':'plank',
-    'bridge':'bridge exercise','lunge':'lunge exercise','uitval':'lunge',
-    'step-up':'step up exercise','step up':'step up exercise',
-    'knie-extensie':'knee extension','knieflexie':'knee flexion',
-    'heupflexie':'hip flexion','heupextensie':'hip extension',
-    'beenheffen':'leg raise','straight leg raise':'straight leg raise',
-    'cat-cow':'cat cow yoga','cat cow':'cat cow yoga',
-    'bird-dog':'bird dog exercise','dead bug':'dead bug exercise',
-    'pallof press':'pallof press','farmers carry':'farmers carry',
-    'nordic walk':'nordic walking','aquajogging':'aqua jogging',
-    'foam rol':'foam rolling','foam roller':'foam rolling',
-    'schouderpress':'shoulder press','bankdrukken':'bench press',
-    'rowing':'rowing exercise','roeien':'rowing',
-    'triceps':'triceps exercise','biceps curl':'biceps curl',
-    'calf raise':'calf raise','kuitheffen':'calf raise',
-    'romanian deadlift':'romanian deadlift','rdl':'romanian deadlift',
-    'glute bridge':'glute bridge','heupbrug':'glute bridge',
-    'side plank':'side plank','zijplank':'side plank',
-    'wall squat':'wall sit exercise','muurzit':'wall sit exercise',
-    'wandelen':'walking exercise','lopen':'running','fietsen':'cycling',
-    'zwemmen':'swimming','yoga':'yoga','pilates':'pilates',
-    'ademhaling':'breathing exercise diaphragm',
-    'hamstring':'hamstring stretch','quadriceps':'quadriceps exercise',
-    'gluteus':'gluteus exercise','heup':'hip exercise',
-    'schouder':'shoulder exercise','nek':'neck exercise',
-    'rug':'back exercise','core':'core exercise',
-    'pols':'wrist exercise','enkel':'ankle exercise',
-    'knie':'knee exercise','bekken':'pelvic exercise',
-    'mobilisatie':'joint mobilization','stretching':'stretching',
-    'massage':'massage therapy','tape':'kinesio taping',
-    'ergonomie':'ergonomics office posture',
-    'multifidus':'multifidus exercise spine',
-    'transversus':'transverse abdominis exercise',
+# Directe mapping: exacte oefeningnaam → Wikipedia paginatitel (Engels)
+# Enkel oefeningen met een echte, relevante Wikipedia-pagina
+EXACT_WIKI_TITLES = {
+    'Squat':                              'Squat (exercise)',
+    'Deadlift':                           'Deadlift',
+    'Romanian Deadlift (RDL)':            'Deadlift',
+    'Romanian deadlift':                  'Deadlift',
+    'Plank':                              'Plank (exercise)',
+    'Lunge':                              'Lunge (exercise)',
+    'Push-up':                            'Push-up',
+    'Pull-up':                            'Pull-up (exercise)',
+    'Chin-up':                            'Chin-up',
+    'Sit-up':                             'Sit-up',
+    'Burpee':                             'Burpee (exercise)',
+    'Nordic walking':                     'Nordic walking',
+    'Aquajogging (diep water)':           'Aqua jogging',
+    'Foam rolling':                       'Foam roller',
+    'Yoga':                               'Yoga as exercise',
+    'Pilates':                            'Pilates',
+    'Cat-Cow (felino)':                   'Cat–cow stretch',
+    'Bird-dog':                           'Bird dog (exercise)',
+    'Glute bridge':                       'Glute bridge',
+    'Heupbrug':                           'Glute bridge',
+    'Glute bridge (isometrisch)':         'Glute bridge',
+    'Wall squat (muurzit)':               'Wall sit',
+    'Wall squat':                         'Wall sit',
+    'Calf raise':                         'Calf raise',
+    'Single leg heel raise':              'Calf raise',
+    'Step-up':                            'Step aerobics',
+    'Straight Leg Raise (SLR)':           'Straight leg raise',
+    'Nordic Hamstring Exercise':          'Nordic hamstring exercise',
+    'Nordic Hamstring Curl':              'Nordic hamstring exercise',
+    'Foam rol lumbaal':                   'Foam roller',
+    'Foam rol thoracaal':                 'Foam roller',
+    'Wandelen':                           'Walking',
+    'Pijnvrij wandelen':                  'Walking',
+    'Wandelen met tempoprogressie':       'Walking',
+    'Fietsen':                            'Cycling',
+    'Zwemmen':                            'Swimming (sport)',
+    'Progressief fietsen of zwemmen':     'Cycling',
+    'Beenpers bilateraal':                'Leg press',
+    'Leg press':                          'Leg press',
+    'Kniebuiging':                        'Squat (exercise)',
+    'Single leg squat':                   'Squat (exercise)',
+    'Single leg squat (10–20 cm box)':    'Squat (exercise)',
+    'Uitvalspas':                         'Lunge (exercise)',
+    'Reverse lunge':                      'Lunge (exercise)',
+    'Shoulder press (standing)':          'Overhead press',
+    'Shoulder press':                     'Overhead press',
+    'Bench press':                        'Bench press',
+    'Bankdrukken':                        'Bench press',
+    'Biceps curl':                        'Biceps curl',
+    'Triceps extensie':                   'Triceps extension',
+    'Rowing machine':                     'Rowing machine',
+    'Elliptical':                         'Elliptical trainer',
+    'Treadmill':                          'Treadmill',
+    'HIIT':                               'High-intensity interval training',
+    'Stretching':                         'Stretching',
+    'Foam rolling thoracaal':             'Foam roller',
+    'Side plank':                         'Plank (exercise)',
+    'Zijplank':                           'Plank (exercise)',
+    'Dead bug':                           'Dead bug exercise',
+    'Hollow body hold':                   'Plank (exercise)',
+    'Diafragmatische ademhaling':         'Diaphragmatic breathing',
+    'Progressieve spierontspanning':      'Progressive muscle relaxation',
+    'Mindfulness':                        'Mindfulness',
+    'Tai chi':                            'Tai chi',
+    'Taichi':                             'Tai chi',
+    'Massage':                            'Massage',
+    'Kinesiotaping':                      'Kinesiology tape',
+    'Kinesio tape':                       'Kinesiology tape',
+    'TENS':                               'Transcutaneous electrical nerve stimulation',
+    'Ultrasound therapie':                'Therapeutic ultrasound',
+    'Manuele therapie':                   'Manual therapy',
+    'Ergonomie':                          'Ergonomics',
+    'Krachttraining':                     'Weight training',
+    'Weerstandstraining':                 'Resistance training',
+    'Intervaltraining':                   'Interval training',
+    'Plyometrie':                         'Plyometrics',
+    'Balance training':                   'Balance board',
+    'Proprioceptie':                      'Proprioception',
 }
 
-# Fallback zoektermen per categorie
-CAT_FALLBACK = {
-    'kracht':      'strength training exercise gym',
-    'mobiliteit':  'flexibility stretching exercise',
-    'stabiliteit': 'core stability balance exercise',
-    'cardio':      'cardio fitness exercise',
-    'neuromusculair': 'balance proprioception exercise',
-}
+# Sleutelwoord → Wikipedia titel (fallback als exacte match ontbreekt)
+KEYWORD_WIKI = [
+    (['squat','kniebuig'],                'Squat (exercise)'),
+    (['deadlift','rdl','deadlif'],        'Deadlift'),
+    (['lunge','uitval'],                  'Lunge (exercise)'),
+    (['plank','zijplank','side plank'],   'Plank (exercise)'),
+    (['push-up','pushup','push up'],      'Push-up'),
+    (['pull-up','pullup','pull up'],      'Pull-up (exercise)'),
+    (['bridge','brug','heupbrug'],        'Glute bridge'),
+    (['nordic walk'],                     'Nordic walking'),
+    (['foam rol','foam roll'],            'Foam roller'),
+    (['yoga'],                            'Yoga as exercise'),
+    (['pilates'],                         'Pilates'),
+    (['wandel','lopen','walk'],           'Walking'),
+    (['fiets','cycl'],                    'Cycling'),
+    (['zwem','swim'],                     'Swimming (sport)'),
+    (['leg press','beenpers'],            'Leg press'),
+    (['calf raise','kuitheffen'],         'Calf raise'),
+    (['step-up','step up','staptraining'],'Step aerobics'),
+    (['bird-dog','bird dog'],             'Bird dog (exercise)'),
+    (['dead bug'],                        'Dead bug exercise'),
+    (['cat-cow','cat cow'],               'Cat–cow stretch'),
+    (['shoulder press','schouderpress'],  'Overhead press'),
+    (['bench press','bankdruk'],          'Bench press'),
+    (['biceps curl'],                     'Biceps curl'),
+    (['triceps'],                         'Triceps extension'),
+    (['rowing','roei'],                   'Rowing machine'),
+    (['stretch','rek '],                  'Stretching'),
+    (['yoga'],                            'Yoga as exercise'),
+    (['plyometr'],                        'Plyometrics'),
+    (['balance','balans','propriocep'],   'Proprioception'),
+    (['ademhal','breath'],                'Diaphragmatic breathing'),
+    (['massage'],                         'Massage'),
+    (['kinesio','tape'],                  'Kinesiology tape'),
+    (['weerstand','resistance'],          'Resistance training'),
+    (['interval','hiit'],                 'Interval training'),
+    (['krachttraining','weight train'],   'Weight training'),
+]
 
 
-def to_english(name: str) -> str:
-    """Vertaal Nederlandse oefeningnaam naar Engelse zoekterm."""
-    clean = re.sub(r'\([^)]{1,15}\)', '', name)
-    clean = re.sub(r'[\/\-–—&+°\d]', ' ', clean).strip().lower()
-    words = clean.split()
-    result = []
-    skip = 0
-    for i, w in enumerate(words):
-        if skip:
-            skip -= 1
-            continue
-        # Probeer tweewoordcombinaties eerst
-        two = ' '.join(words[i:i+2]) if i+1 < len(words) else ''
-        if two in NL_TO_EN:
-            result.append(NL_TO_EN[two])
-            skip = 1
-        elif w in NL_TO_EN:
-            result.append(NL_TO_EN[w])
-        elif len(w) > 3:
-            result.append(w)
-    query = ' '.join(result[:5]) if result else name[:40]
-    return query
+def get_wiki_title(name: str) -> str | None:
+    """Zoek de beste Wikipedia-paginatitel voor een oefeningnaam."""
+    # 1. Exacte match
+    if name in EXACT_WIKI_TITLES:
+        return EXACT_WIKI_TITLES[name]
+
+    # 2. Partiële exacte match (naam begint met key)
+    name_lower = name.lower()
+    for key, title in EXACT_WIKI_TITLES.items():
+        if name_lower.startswith(key.lower()) or key.lower() in name_lower:
+            return title
+
+    # 3. Sleutelwoordmatch
+    for keywords, title in KEYWORD_WIKI:
+        if any(kw in name_lower for kw in keywords):
+            return title
+
+    return None
 
 
-def fetch_wiki_image(query: str) -> dict | None:
-    """Zoek een afbeelding op Wikipedia voor de gegeven zoekterm."""
+def fetch_wiki_image(wiki_title: str) -> dict | None:
+    """Haal thumbnail op van een Wikipedia-pagina op naam."""
     params = urllib.parse.urlencode({
         'action': 'query',
-        'list': 'search',
-        'srsearch': query,
-        'srnamespace': '0',
-        'srlimit': '3',
-        'format': 'json',
-        'origin': '*',
-    })
-    req = urllib.request.Request(
-        f'{WIKI_API}?{params}',
-        headers={'User-Agent': 'KineProtocol/1.0 (kinesitherapie app; educational use)'}
-    )
-    try:
-        with urllib.request.urlopen(req, timeout=8) as r:
-            data = json.loads(r.read())
-    except Exception:
-        return None
-
-    results = data.get('query', {}).get('search', [])
-    if not results:
-        return None
-
-    # Haal pagina-afbeelding op van eerste resultaat
-    title = results[0]['title']
-    params2 = urllib.parse.urlencode({
-        'action': 'query',
-        'titles': title,
+        'titles': wiki_title,
         'prop': 'pageimages',
         'piprop': 'thumbnail',
         'pithumbsize': '500',
         'format': 'json',
         'origin': '*',
     })
-    req2 = urllib.request.Request(
-        f'{WIKI_API}?{params2}',
-        headers={'User-Agent': 'KineProtocol/1.0 (kinesitherapie app; educational use)'}
-    )
-    try:
-        with urllib.request.urlopen(req2, timeout=8) as r2:
-            data2 = json.loads(r2.read())
-    except Exception:
-        return None
-
-    pages = data2.get('query', {}).get('pages', {})
-    for page in pages.values():
-        thumb = page.get('thumbnail')
-        if thumb:
-            return {
-                'url': thumb['source'],
-                'alt': title,
-                'credit': f'Wikipedia: {title}',
-                'wiki': f'https://en.wikipedia.org/wiki/{urllib.parse.quote(title)}',
-            }
-    return None
-
-
-def fetch_commons_image(query: str) -> dict | None:
-    """Zoek een afbeelding direct op Wikimedia Commons."""
-    params = urllib.parse.urlencode({
-        'action': 'query',
-        'generator': 'search',
-        'gsrsearch': f'filetype:bitmap {query}',
-        'gsrnamespace': '6',
-        'gsrlimit': '3',
-        'prop': 'imageinfo',
-        'iiprop': 'url|mime',
-        'iiurlwidth': '500',
-        'format': 'json',
-        'origin': '*',
-    })
     req = urllib.request.Request(
-        f'{COMMONS_API}?{params}',
-        headers={'User-Agent': 'KineProtocol/1.0 (kinesitherapie app; educational use)'}
+        f'{WIKI_API}?{params}',
+        headers={'User-Agent': 'KineProtocol/1.0 (educational physiotherapy app)'}
     )
     try:
-        with urllib.request.urlopen(req, timeout=8) as r:
+        with urllib.request.urlopen(req, timeout=10) as r:
             data = json.loads(r.read())
-    except Exception:
+    except Exception as e:
         return None
 
     pages = data.get('query', {}).get('pages', {})
     for page in pages.values():
-        info = page.get('imageinfo', [{}])[0]
-        url = info.get('thumburl') or info.get('url', '')
-        if url and not url.endswith('.svg') and not url.endswith('.ogg'):
-            title = page.get('title', query).replace('File:', '')
+        if page.get('pageid', -1) == -1:
+            return None  # Pagina bestaat niet
+        thumb = page.get('thumbnail')
+        if thumb:
             return {
-                'url': url,
-                'alt': query,
-                'credit': f'Wikimedia Commons: {title}',
-                'wiki': f'https://commons.wikimedia.org/wiki/{urllib.parse.quote(page.get("title",""))}',
+                'url': thumb['source'],
+                'alt': wiki_title,
+                'credit': f'Wikipedia: {wiki_title}',
+                'wiki': f'https://en.wikipedia.org/wiki/{urllib.parse.quote(wiki_title)}',
             }
     return None
 
 
-def get_image(name: str, cat: str = '') -> dict | None:
-    """Haal afbeelding op: Wikipedia eerst, dan Commons, dan cat-fallback."""
-    en_query = to_english(name)
-
-    # 1. Wikipedia
-    result = fetch_wiki_image(en_query)
-    if result:
-        return result
-    time.sleep(0.2)
-
-    # 2. Wikimedia Commons
-    result = fetch_commons_image(en_query)
-    if result:
-        return result
-    time.sleep(0.2)
-
-    # 3. Fallback op categorie
-    if cat and cat in CAT_FALLBACK:
-        result = fetch_wiki_image(CAT_FALLBACK[cat])
-        if result:
-            return result
-
-    return None
-
-
 def extract_exercises(js_file: str) -> list[dict]:
-    """Haal unieke oefeningen (naam + cat) op uit protocols.js."""
     with open(js_file, 'r') as f:
         content = f.read()
-    # Match {name:'...', ..., cat:'...'} blokken
     blocks = re.findall(r"\{name:'([^']+)'[^}]*?cat:'([^']*)'\}", content, re.DOTALL)
     seen, result = set(), []
     for name, cat in blocks:
@@ -228,8 +210,8 @@ def extract_exercises(js_file: str) -> list[dict]:
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--update', action='store_true', help='Sla bestaande over')
-    parser.add_argument('--limit',  type=int, default=0)
+    parser.add_argument('--update', action='store_true')
+    parser.add_argument('--limit', type=int, default=0)
     args = parser.parse_args()
 
     exercises = extract_exercises(PROTOCOLS_FILE)
@@ -249,15 +231,23 @@ def main():
     if args.limit:
         exercises = exercises[:args.limit]
 
-    total, done, failed = len(exercises), 0, []
+    total, done, skipped, failed = len(exercises), 0, 0, []
 
     for i, ex in enumerate(exercises, 1):
-        name, cat = ex['name'], ex['cat']
-        print(f'[{i}/{total}] {name[:55]:<55}', end=' ', flush=True)
-        result = get_image(name, cat)
+        name = ex['name']
+        wiki_title = get_wiki_title(name)
+
+        if not wiki_title:
+            skipped += 1
+            if i <= 20 or i % 50 == 0:
+                print(f'[{i}/{total}] {name[:50]:<50} — geen Wiki-titel')
+            continue
+
+        print(f'[{i}/{total}] {name[:45]:<45} → {wiki_title[:35]}', end=' ', flush=True)
+        result = fetch_wiki_image(wiki_title)
         if result:
             images[name] = result
-            print(f'✓  ({result["credit"][:50]})')
+            print('✓')
             done += 1
         else:
             failed.append(name)
@@ -266,7 +256,6 @@ def main():
         if i % 25 == 0:
             with open(OUTPUT_FILE, 'w') as f:
                 json.dump(images, f, ensure_ascii=False, indent=2)
-            print(f'  → Tussenstand opgeslagen ({len(images)} entries)')
 
         time.sleep(DELAY)
 
@@ -274,10 +263,9 @@ def main():
         json.dump(images, f, ensure_ascii=False, indent=2)
 
     print(f'\n─── Klaar ───────────────────')
-    print(f'Succesvol : {done}/{total}')
+    print(f'Succesvol : {done}')
+    print(f'Overgeslagen (geen mapping): {skipped}')
     print(f'Mislukt   : {len(failed)}')
-    if failed:
-        print('  ' + ', '.join(failed[:10]) + ('...' if len(failed) > 10 else ''))
     print(f'Output    : {OUTPUT_FILE} ({len(images)} totale entries)')
 
 

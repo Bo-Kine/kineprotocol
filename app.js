@@ -2,7 +2,7 @@
 
 // ── VERSION CHECK: forces hard reload when app is updated ──
 (function(){
-  const V = '18';
+  const V = '19';
   if(localStorage.getItem('kp_app_v') !== V) {
     localStorage.setItem('kp_app_v', V);
     window.location.replace(window.location.pathname + '?v=' + V + '&t=' + Date.now());
@@ -1137,8 +1137,7 @@ function renderPhase(i) {
     html += `<div class="slabel">Oefenprogramma</div><div class="ex-grid">`;
     ph.exercises.forEach(ex => {
       const cat = ex.cat ? CAT[ex.cat] : null;
-      const exImg = exerciseImages[ex.name];
-      html += `<div class="ex-card">${exImg ? `<img class="ex-card-img" src="${exImg.url}" alt="${exImg.alt||ex.name}" loading="lazy" onerror="this.style.display='none'">` : ''}<div class="ex-header"><div class="ex-name">${ex.name}</div>`;
+      html += `<div class="ex-card"><div class="ex-header"><div class="ex-name">${ex.name}</div>`;
       if(cat) html += `<span class="ex-cat" style="background:${cat.color}22;color:${cat.color};border-color:${cat.color}44">${cat.icon} ${cat.label}</span>`;
       html += `</div>`;
       if(ex.params?.length) html += `<div class="ex-params">${ex.params.map(([k,v])=>`<div class="ep">${k}: <span>${v}</span></div>`).join('')}</div>`;

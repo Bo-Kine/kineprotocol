@@ -2,7 +2,7 @@
 
 // ── VERSION CHECK: forces hard reload when app is updated ──
 (function(){
-  const V = '15';
+  const V = '16';
   if(localStorage.getItem('kp_app_v') !== V) {
     localStorage.setItem('kp_app_v', V);
     window.location.replace(window.location.pathname + '?v=' + V + '&t=' + Date.now());
@@ -12,6 +12,14 @@
 let currentProto = null;
 let deferredPrompt = null;
 let editingPatientId = null;
+let exerciseImages = {};
+
+async function loadExerciseImages() {
+  try {
+    const r = await fetch('./exercise-images.json?v=16');
+    if(r.ok) exerciseImages = await r.json();
+  } catch(e) {}
+}
 
 
 // ── PWA INSTALL ──
@@ -1047,6 +1055,8 @@ function renderLibrary(query) {
       const badges = libGroupBy === 'regio'
         ? ex.spieren.slice(0,2).map(s => `<span class="lib-ex-badge" style="background:${s.color}15;border-color:${s.color}33;color:${s.color};">${s.spier}</span>`).join('')
         : `<span class="lib-ex-badge" style="background:${ex.protoColor}15;border-color:${ex.protoColor}33;color:${ex.protoColor};">${ex.protoId.toUpperCase()}</span>`;
+      const imgData = exerciseImages[ex.name];
+      const imgThumb = imgData ? `<img class="lib-ex-img" src="${imgData.url}" alt="${imgData.alt||ex.name}" loading="lazy" onerror="this.style.display='none'">` : '';
       return `<div class="lib-ex" onclick="this.classList.toggle('expanded')">
         <div class="lib-ex-dot" style="background:${ex.protoColor}"></div>
         <div class="lib-ex-main">
@@ -1055,6 +1065,7 @@ function renderLibrary(query) {
             <span class="lib-ex-badge" style="background:var(--surface3);border-color:var(--border);color:var(--muted);">${ex.phaseLabel} · ${ex.protoTitle.split(' ').slice(0,2).join(' ')}</span>
           </div>
           ${paramsStr ? `<div class="lib-ex-params">${paramsStr}</div>` : ''}
+          ${imgThumb}
           ${ex.note ? `<div class="lib-ex-note">${ex.note}</div>` : ''}
         </div>
       </div>`;
@@ -1126,7 +1137,8 @@ function renderPhase(i) {
     html += `<div class="slabel">Oefenprogramma</div><div class="ex-grid">`;
     ph.exercises.forEach(ex => {
       const cat = ex.cat ? CAT[ex.cat] : null;
-      html += `<div class="ex-card"><div class="ex-header"><div class="ex-name">${ex.name}</div>`;
+      const exImg = exerciseImages[ex.name];
+      html += `<div class="ex-card">${exImg ? `<img class="ex-card-img" src="${exImg.url}" alt="${exImg.alt||ex.name}" loading="lazy" onerror="this.style.display='none'">` : ''}<div class="ex-header"><div class="ex-name">${ex.name}</div>`;
       if(cat) html += `<span class="ex-cat" style="background:${cat.color}22;color:${cat.color};border-color:${cat.color}44">${cat.icon} ${cat.label}</span>`;
       html += `</div>`;
       if(ex.params?.length) html += `<div class="ex-params">${ex.params.map(([k,v])=>`<div class="ep">${k}: <span>${v}</span></div>`).join('')}</div>`;
@@ -1184,6 +1196,8 @@ function handleSearch(q) {
 }
 
 // ── SERVICE WORKER ──
+loadExerciseImages();
+
 if('serviceWorker' in navigator) {
   window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(()=>{}));
   navigator.serviceWorker.addEventListener('message', e => {

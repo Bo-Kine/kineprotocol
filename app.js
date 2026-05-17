@@ -2,7 +2,7 @@
 
 // ── VERSION CHECK: forces hard reload when app is updated ──
 (function(){
-  const V = '13';
+  const V = '14';
   if(localStorage.getItem('kp_app_v') !== V) {
     localStorage.setItem('kp_app_v', V);
     window.location.replace(window.location.pathname + '?v=' + V + '&t=' + Date.now());
@@ -989,7 +989,8 @@ function setLibGroup(mode) {
 }
 
 function filterLibrary(query) {
-  renderLibrary(query);
+  clearTimeout(filterLibrary._t);
+  filterLibrary._t = setTimeout(() => renderLibrary(query), 200);
 }
 
 function renderLibrary(query) {

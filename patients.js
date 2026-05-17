@@ -1,5 +1,6 @@
 // KineProtocol — Patiënten: CRUD, UI, sessienotities
 
+const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 
 // ── PATIENTS (Supabase + localStorage fallback) ──
 function loadPatients() {
@@ -286,9 +287,9 @@ function renderPatientList() {
     return `<div class="dash-card" onclick="showPatientDetail('${pt.id}')"
         style="border-color:${isOverdue?'rgba(239,68,68,.28)':allCritDone?'rgba(34,197,94,.2)':'var(--border)'};background:${isOverdue?'rgba(239,68,68,.03)':allCritDone?'rgba(34,197,94,.02)':'var(--surface)'};">
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
-        <div style="width:38px;height:38px;border-radius:50%;background:${color}22;color:${color};display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;">${getInitials(pt.name)}</div>
+        <div style="width:38px;height:38px;border-radius:50%;background:${color}22;color:${color};display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;">${getInitials(esc(pt.name))}</div>
         <div style="flex:1;min-width:0;">
-          <div style="font-size:13.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${pt.name}</div>
+          <div style="font-size:13.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${esc(pt.name)}</div>
           <div style="font-size:10.5px;color:var(--muted);font-family:'Geist Mono',monospace;">${age ? age + 'j · ' : ''}${p.title.split(' ').slice(0,2).join(' ')}</div>
         </div>
         <div style="background:${color}18;color:${color};padding:2px 8px;border-radius:10px;font-size:10px;font-family:'Geist Mono',monospace;font-weight:700;flex-shrink:0;">${pt.protoId.toUpperCase()}</div>
@@ -506,9 +507,9 @@ function renderPatientDetail(pt, p) {
   const sessions = pt.sessions || [];
 
   let html = `<div class="pat-detail-header">
-    <div class="pat-detail-avatar" style="background:${color}22;color:${color}">${getInitials(pt.name)}</div>
+    <div class="pat-detail-avatar" style="background:${color}22;color:${color}">${getInitials(esc(pt.name))}</div>
     <div style="flex:1">
-      <div class="pat-detail-name">${pt.name}</div>
+      <div class="pat-detail-name">${esc(pt.name)}</div>
       <div class="pat-detail-meta">${age ? age + ' jaar · ' : ''}${pt.dob ? formatDate(pt.dob) + ' · ' : ''}Start: ${formatDate(pt.startDate) || '—'}</div>
     </div>
     <div class="pat-detail-actions">
@@ -789,8 +790,8 @@ function openPatLink() {
       const color = getProtoColor(pt.protoId);
       const ph = protocols[pt.protoId]?.phases[pt.phaseIndex||0];
       return `<div onclick="closePatLink();showPatientDetail('${pt.id}')" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:7px;border:1px solid var(--border);margin-bottom:8px;cursor:pointer;transition:border-color .12s;" onmouseover="this.style.borderColor='var(--border2)'" onmouseout="this.style.borderColor='var(--border)'">
-        <div style="width:34px;height:34px;border-radius:50%;background:${color}22;color:${color};display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700">${getInitials(pt.name)}</div>
-        <div style="flex:1"><div style="font-size:13px;font-weight:600">${pt.name}</div><div style="font-size:10.5px;color:var(--muted);font-family:Geist Mono,monospace">${ph?ph.label+' · ':''} Start: ${formatDate(pt.startDate)||'—'}</div></div>
+        <div style="width:34px;height:34px;border-radius:50%;background:${color}22;color:${color};display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700">${getInitials(esc(pt.name))}</div>
+        <div style="flex:1"><div style="font-size:13px;font-weight:600">${esc(pt.name)}</div><div style="font-size:10.5px;color:var(--muted);font-family:Geist Mono,monospace">${ph?ph.label+' · ':''} Start: ${formatDate(pt.startDate)||'—'}</div></div>
         <div style="font-size:11px;color:var(--muted)">→</div>
       </div>`;
     }).join('') +

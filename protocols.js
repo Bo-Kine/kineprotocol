@@ -1195,10 +1195,83 @@ protocols.mtss = {id:'mtss',title:'Shin Splints (MTSS)',subtitle:'Mediaal Tibiaa
   refs:'Moen MH et al. (2009) — Medial tibial stress syndrome: a critical review. Sports Med. | Winters M et al. (2013) — The medial tibial stress syndrome: a systematic review. Open Access J Sports Med. | Bhatt R et al. (2020) — Bone stress injury of the tibia. EFORT Open Rev. | Nielsen RO et al. (2012) — Training errors and running related injuries: a systematic review. Int J Sports Phys Ther. | Tenforde AS et al. (2016) — Identifying sex-specific risk factors for stress fractures in adolescent runners. Med Sci Sports Exerc. | Wille CM et al. (2014) — Ability of ultrasonographic findings to identify individuals with medial tibial stress syndrome. J Orthop Sports Phys Ther.'};
 
 
+
+protocols.faz = {id:'faz',title:'Facetartrose Lumbale Wervelzuil',subtitle:'Conservatief revalidatieprotocol voor lumbale facetgewricht artrose — pijnmanagement, stabilisatie en functionele krachtopbouw',color:'#d97706',icon:'🦴',
+  phases:[
+    {label:'Fase 0',title:'Diagnostiek & Pijnmanagement',weeks:'Week 1–3',
+     goals:['NRS pijn reduceren tot ≤ 5/10 in rust','Aggraverende en verlichtende factoren identificeren','Pijneducatie: neurowetenschappelijke benadering','Pathologische bewegingspatronen doorbreken','Rode vlaggen uitsluiten'],
+     exercises:[
+       {name:'Diafragmatische ademhaling',params:[['Reps','10'],['Sets','3'],['Freq','3×/dag']],note:'Rug in ruglig, handen op buik. Lumbopelvische ontspanning — verlaagt centrale sensitisatie.',cat:'neuromusculair'},
+       {name:'Knie-naar-borst stretch (unilateraal)',params:[['Hold','20–30 sec'],['Sets','2–3'],['Freq','2×/dag']],note:'Trekken tot aangenaam gevoel. Verlicht facetcompressie door lichte flexie. Stop bij uitstralende pijn.',cat:'mobiliteit'},
+       {name:'Supine pelvic tilt (achterwaarts)',params:[['Reps','10–15'],['Hold','3–5 sec'],['Sets','3'],['Freq','2×/dag']],note:'Rug plat drukken op onderlaag. Activeert TA passief — voorbereiding op stabilisatie.',cat:'stabiliteit'},
+       {name:'Pijnvrij wandelen',params:[['Duur','10–15 min'],['Freq','2×/dag']],note:'Rustig tempo op vlakke ondergrond. Wandelen is superieur aan rust (Malmivaara 1995). Stop bij NRS > 4/10.',cat:'cardio'},
+       {name:'Warmteapplicatie lumbaal',params:[['Duur','15–20 min'],['Freq','1–2×/dag']],note:'Heatpack of warmtekussen op lumbale regio. Verlaagt spierspasme + pijnperceptie bij chronische facetpijn.',cat:'mobiliteit'},
+       {name:'Zijlig lumbale rotatie (passief)',params:[['Reps','8–10'],['Hold','5 sec'],['Sets','2'],['Freq','1×/dag']],note:'Boven-knie naar vloer laten zakken. Segmentale mobilisatie. Stop bij radiculaire provocatie.',cat:'mobiliteit'}
+     ],
+     criteria_go:['NRS ≤ 5/10 in rust en bij basis-ADL','Rode vlaggen uitgesloten (fractuur, maligniteit, infectie)','Pijneducatie begrepen en geaccepteerd','Aggraverende houdingen geïdentificeerd (extensie > flexie typisch)'],
+     evidence:'<strong>Facetartrose</strong> is verantwoordelijk voor 15–45% van chronische lage rugpijn (Cohen & Raja, 2007). <strong>Pijneducatie</strong> vermindert catastroferen en verbetert functionele uitkomsten op lange termijn (Louw et al., 2011 — meta-analyse). <strong>Rust is contraproductief</strong>: vroege activering en wandelen zijn superieur (Malmivaara et al., 1995). <strong>Manuele therapie</strong> (manipulatie + mobilisatie) geeft kortetermijnverlichting bij facetpijn (Rubinstein et al., 2012 — Cochrane).'
+    },
+    {label:'Fase 1',title:'Mobiliteit & Belastingsnormalisatie',weeks:'Week 3–6',
+     goals:['Lumbale ROM verbeteren in pijnvrij bereik','Ochtendstijfheid verminderen tot < 30 min','Heupflexorlengte normaliseren','Normale loopkinematica herstellen','NRS ≤ 3/10 bij mobiliserende oefeningen'],
+     exercises:[
+       {name:'Cat-Cow (felino)',params:[['Reps','10–15'],['Sets','3'],['Freq','2×/dag']],note:'Viervoetsstand. Trage, gecontroleerde beweging. Facetsegmenten worden cyclisch geopend en gesloten. Extensie tot pijngrens.',cat:'mobiliteit'},
+       {name:'Heupflexor stretch (knieling)',params:[['Hold','30–45 sec'],['Sets','2–3 per zijde'],['Freq','2×/dag']],note:'Knieling lunge positie. Anterieure pelvis corrigeren door lichte posterieure tilt. Verlaagt lumbale hyperlordose.',cat:'mobiliteit'},
+       {name:'Prone press-up (McKenzie)',params:[['Reps','10'],['Sets','2–3'],['Freq','3×/dag']],note:'Buiklig, handpalmen naast borst. Druk op via ellebogen. Stop als uitstraling centralisatie vertoont. Enkel uitvoeren bij extensiebias-patiënten.',cat:'mobiliteit'},
+       {name:'Supine lumbar rotation stretch',params:[['Hold','20 sec'],['Sets','2–3 per zijde'],['Freq','2×/dag']],note:'Ruglig, knieën gebogen, laten zakken naar zijde. Segmentale facet gapping. Stop bij pijn > NRS 3.',cat:'mobiliteit'},
+       {name:'Seated hamstring stretch',params:[['Hold','30 sec'],['Sets','2–3 per zijde'],['Freq','2×/dag']],note:'Hamstram verkorting verhoogt posterieure pelvis tilt en lumbale belasting. Gebruik handdoek indien nodig.',cat:'mobiliteit'},
+       {name:'Wandelen met tempoprogressie',params:[['Duur','20–30 min'],['Tempo','gemiddeld'],['Freq','dagelijks']],note:'Opbouwen per 5 min/week. Target 30 min pijnvrij wandelen einde fase. Aerobe activiteit heeft directe pijnmodulerende werking.',cat:'cardio'}
+     ],
+     criteria_go:['NRS ≤ 3/10 in rust','Lumbale flexie tot 70° of minder dan 30% deficit vs. norm','Heupflexor length: Thomas test negatief of < 10° deficit','30 min wandelen pijnvrij','Ochtendstijfheid < 30 min'],
+     evidence:'<strong>Lumbale extensiemobilisatie</strong> geeft significante pijnreductie bij facetartrose vergeleken met sham (Hancock et al., 2007). <strong>Heupflexor verkorting</strong> correleert met verhoogde lumbale lordose en facetcompressie (Neumann, 2010). <strong>McKenzie-methode</strong> effectief bij extensiebias: 60% respondratio (Donelson et al., 1997). <strong>Progressief wandelen</strong> is de meest kosteneffectieve interventie voor chronische LBP (Hendrick et al., 2010 — meta-analyse n=2206).'
+    },
+    {label:'Fase 2',title:'Segmentale Stabilisatie',weeks:'Week 6–10',
+     goals:['Transversus abdominis en multifidus activeren (palpeerbaar)','Lumbopelvische stabiliteit opbouwen','Pijnvrij 30 min wandelen consolideren','Functionele zit-sta transfers normaliseren','NRS ≤ 2/10 bij stabilisatie-oefeningen'],
+     exercises:[
+       {name:'TA-activatie (drawing-in manoeuvre)',params:[['Hold','10 sec'],['Reps','10'],['Sets','3'],['Freq','3×/dag']],note:'Ruglig. Navel licht intrekken — geen ademinhouden. Palpeer 2 cm mediaal van SIAS. Basis van alle stabiliteitsoefeningen.',cat:'stabiliteit'},
+       {name:'Multifidus activatie prone',params:[['Hold','10 sec'],['Reps','10'],['Sets','3'],['Freq','2×/dag']],note:'Buiklig, kussens onder buik. Licht heffen van enkel been met gestrekte knie — segmentale multifidusactivatie. Progressie: gewicht aan enkel.',cat:'neuromusculair'},
+       {name:'Bird-dog',params:[['Reps','8–10 per zijde'],['Hold','5–8 sec'],['Sets','3'],['Freq','2×/dag']],note:'Viervoetsstand. Contralateraal arm + been heffen. Neutrale lumbale positie bewaren. Langzaam en gecontroleerd.',cat:'stabiliteit'},
+       {name:'Dead bug',params:[['Reps','8–10 per zijde'],['Sets','3'],['Freq','2×/dag']],note:'Ruglig, 90° heup + knie. Contralateraal arm + been uitstrekken. Rug blijft contact houden met mat. Hoge coactivatie TA + multifidus.',cat:'stabiliteit'},
+       {name:'Glute bridge (isometrisch)',params:[['Hold','10 sec'],['Reps','10'],['Sets','3'],['Freq','2×/dag']],note:'Ruglig, voeten plat. Bekken heffen tot neutrale lumbale positie. Activeert glutei en ontlast facetgewrichten via posterieure bekkenrotatie.',cat:'kracht'},
+       {name:'Standing balance (unilateraal)',params:[['Hold','30 sec'],['Sets','3 per zijde'],['Freq','2×/dag']],note:'Stabiel oppervlak eerst, dan onstabiel. Licht geknielde standbeen. Functionele transferoefening — proprioceptieve activering.',cat:'neuromusculair'}
+     ],
+     criteria_go:['TA + multifidus activatie palpeerbaar en willekeurig','Bird-dog 10 reps/zijde met correcte techniek en NRS ≤ 2/10','Glute bridge 10× hold 10 sec zonder compensatie','30 min wandelen pijnvrij en consistent','Zit-sta transfer vlot en pijnvrij'],
+     evidence:'<strong>Segmentale stabilisatieoefeningen</strong> zijn superieur aan algemene oefening bij chronische LBP met motorcontroldisfunctie (Hides et al., 2001 — RCT). <strong>Multifidus atrofie</strong> treedt op bij facet- en discuspathologie en normaliseert niet spontaan zonder gerichte oefening (Hides et al., 1994). <strong>Bird-dog en dead bug</strong> genereren hoge TA/multifidus-coactivatie bij lage lumbale compressiekrachten (McGill, 2007). <strong>Gluteus maximus activatie</strong> via bridge vermindert facetcompressie via posterieure pelvic tilt (Neumann, 2010).'
+    },
+    {label:'Fase 3',title:'Functionele Krachtopbouw',weeks:'Week 10–16',
+     goals:['Lumbale extensoren en heupstabilisatoren progressief belasten','Functionele kracht opbouwen voor ADL en werk','Sorensen test ≥ 60 sec','NRS ≤ 2/10 tijdens alle oefeningen','Terugkeer naar lichte sport of werkactiviteiten'],
+     exercises:[
+       {name:'Romanian Deadlift (RDL) — licht',params:[['Sets','3'],['Reps','10–12'],['Gewicht','licht: 40–60% 1RM'],['Freq','2×/week']],note:'Hinging pattern: neutrale rug, heupen naar achter. Begin zonder gewicht — perfect techniek. Fundament voor lumbale extensorkracht.',cat:'kracht'},
+       {name:'Squat aan muur (wall squat)',params:[['Hold','30–45 sec'],['Sets','3'],['Freq','2×/week']],note:'Rug aan muur, voeten 45 cm voor. 90° knie indien pijnvrij. Hoge quad + glute activatie bij minimale lumbale belasting.',cat:'kracht'},
+       {name:'Step-up (trap)',params:[['Reps','10–12 per been'],['Sets','3'],['Hoogte','20–30 cm'],['Freq','2×/week']],note:'Gewicht volledig op standbeen. Lumbopelvische stabiliteit bewaken. Progressie: hogere trede + gewicht.',cat:'kracht'},
+       {name:'Pallof press (weerstandsband)',params:[['Reps','10–12'],['Sets','3 per zijde'],['Freq','2×/week']],note:'Staand zij naar ankerplaats. Anti-rotatie patterning — hoge lumbale stabilisatoractivatie. Begin met lichte band.',cat:'stabiliteit'},
+       {name:'Sorensen test / rugextensie prone',params:[['Hold','tot max (doel ≥ 60 sec)'],['Sets','2–3'],['Freq','2×/week']],note:'Buiklig op tafelrand, benen gefixeerd. Houd torso horizontaal. Meet uithoudingsvermogen lumbale extensoren (Sorensen, 1984).',cat:'kracht'},
+       {name:'Farmers carry (boerenloop)',params:[['Afstand','20 m'],['Sets','4'],['Gewicht','licht → matig'],['Freq','2×/week']],note:'Kettlebells of dumbbells bilateraal. Lumbale stabilisatie onder axiale belasting — functionele transferoefening.',cat:'kracht'}
+     ],
+     criteria_go:['RDL pijnvrij met correct patroon (NRS ≤ 2/10)','Sorensen test ≥ 60 sec','Wall squat 45 sec zonder compensatie','Alle ADL pijnvrij uitvoerbaar','NRS ≤ 2/10 na oefensessies'],
+     evidence:'<strong>Progressieve krachttraining</strong> is superieur aan stretching en algemene oefening voor chronische LBP (Berglund et al., 2015). <strong>Romanian deadlift</strong> traint lumbale extensoren en hamstrings bij lage compressiekrachten indien technisch correct (Vigotsky et al., 2015). <strong>Anti-rotatie oefeningen</strong> (Pallof press) activeren oblique abdominale musculatuur zonder lumbale flectie-belasting (McGill, 2007). <strong>Sorensen test</strong> is de meest betrouwbare predictor van rugklachten recidief (Biering-Sørensen, 1984 — r=0.78).'
+    },
+    {label:'Fase 4',title:'Activiteitsopbouw & Langetermijnbeheer',weeks:'Maand 4–6+',
+     goals:['Terugkeer naar alle dagelijkse activiteiten en sport/werk','Zelfmanagementplan opstellen en actief toepassen','Ergonomisch bewustzijn verankeren','Recidief-preventieprotocol beheersen','Chronische pijnacceptatie indien nodig (ACT-principes)'],
+     exercises:[
+       {name:'Progressief fietsen of zwemmen',params:[['Duur','30–45 min'],['Intensiteit','matig (60–70% HFmax)'],['Freq','3–5×/week']],note:'Laagimpact aerobe training met aantoonbaar pijnmodulerend effect. Fiets: licht voorovergebogen — facetontlasting. Zwemmen: rugcrawl indien extensie-pijnvrij.',cat:'cardio'},
+       {name:'Yoga rugprogramma (selectief)',params:[['Duur','30–45 min'],['Freq','2–3×/week']],note:'Child's pose, cat-cow, twisted chair (voorzichtig), sphinx. Vermijd intense rugbuiging of Sarvangasana (schouderstand) — verhoogde compressie.',cat:'mobiliteit'},
+       {name:'Deadlift progressie',params:[['Sets','3–4'],['Reps','6–8'],['Freq','2×/week'],['Gewicht','60–75% 1RM progressief']],note:'Volledig hinge-patroon. Periodiseer: 3 weken opbouw, 1 week deload. Langetermijn fundament voor lumbale kracht en botdensiteit.',cat:'kracht'},
+       {name:'Ergonomie & postuuroefeningen werk',params:[['Duur','5–10 min'],['Freq','elk uur']],note:'Micro-pauzes: 30 sec staan + 5 cat-cow elke zittende werkdag. Stabureau indien beschikbaar. Bewustzijn is de sterkste preventieve factor.',cat:'neuromusculair'},
+       {name:'Loopprogressie (nordic walking opt.)',params:[['Duur','30–60 min'],['Freq','dagelijks'],['Variatie','helling, terrein']],note:'Nordic walking verlaagt lumbale compressie via polssteun. Terreinvariatie activeert propriocepsis. Doel: zelfstandig actief blijven.',cat:'cardio'},
+       {name:'Zelfmanagement-oefenblok (thuis)',params:[['Duur','20 min'],['Inhoud','TA-activatie + bird-dog + bridge + stretch'],['Freq','dagelijks']],note:'Condenseer het stabiliteitsprogramma naar 20 min. Dagelijkse uitvoering is de sterkste predictor van langetermijnpijncontrole.',cat:'stabiliteit'}
+     ],
+     criteria_go:['Alle ADL pijnvrij of NRS ≤ 2/10','Zelfmanagementplan begrepen en actief uitgevoerd','NRS ≤ 2/10 bij sport of werk','PCS-score (Pain Catastrophizing Scale) significant gedaald','Afhankelijkheid van passieve behandeling afgebouwd'],
+     evidence:'<strong>Aerobe training</strong> activeert centrale pijninhibitie via endogene opioïdroutes (Naugle et al., 2012 — meta-analyse). <strong>Langetermijn krachttraining</strong> (> 6 maanden) reduceert het recidief van chronische LBP met 47% (Steffens et al., 2016 — Cochrane, n=6133). <strong>Zelfmanagement</strong> programma's zijn minstens even effectief als passieve behandeling op lange termijn (Foster et al., 2018 — Lancet). <strong>ACT (Acceptance & Commitment Therapy)</strong> gecombineerd met fysiotherapie is effectiever dan behandeling alleen bij chronische LBP met catastroferen (Vowles & McCracken, 2010).'
+    }
+  ],
+  scores:[],
+  spiergroep:'Rug & Core'
+};
+
 // ── REGIO MAPPING (protocol → regio) ──
 const REGIO_MAP = {
   acl:'Knie & Heup', tka:'Knie & Heup', pfps:'Knie & Heup', pt:'Knie & Heup', gmt:'Knie & Heup', hsi:'Knie & Heup',
-  lh:'Lumbaal & Cervicaal', bureau:'Lumbaal & Cervicaal',
+  lh:'Lumbaal & Cervicaal', bureau:'Lumbaal & Cervicaal', faz:'Lumbaal & Cervicaal',
   rc:'Schouder & Arm', si:'Schouder & Arm', elb:'Schouder & Arm',
   at:'Enkel & Voet', enkel:'Enkel & Voet', over:'Enkel & Voet', mtss:'Enkel & Voet',
   orif:'Pols & Hand', dq:'Pols & Hand', cts:'Pols & Hand',

@@ -1268,11 +1268,131 @@ protocols.faz = {id:'faz',title:'Facetartrose Lumbale Wervelzuil',subtitle:'Cons
   spiergroep:'Rug & Core'
 };
 
+protocols.sup = {id:'sup',title:'Supraspinatus Tendinopathie & Bursitis',subtitle:'Conservatief revalidatieprotocol voor supraspinatus tendinopathie en bursitis subacromialis — load management, rotatorenmanchetkracht en scapulaire controle',color:'#7c3aed',icon:'💪',
+  phases:[
+    {
+      label:'Fase 1',
+      title:'Acute fase — pijncontrole & ontlasting',
+      weeks:'Week 0–2',
+      goals:[
+        'Pijn reduceren tot NRS ≤ 3/10 in rust en bij ADL',
+        'Subacromiale ruimte ontlasten via houdingscorrectie',
+        'Scapulaire depressie en retractie activeren',
+        'Pendelslagen en passieve ROM behouden',
+        'Patiënt informeren over belastingsbeheer en provocerende bewegingen'
+      ],
+      exercises:[
+        {name:'Pendel oefening (Codman)',params:[['Duur','2 min'],['Richting','cirkels + voor-achter'],['Freq','3×/dag']],note:'Ontlast subacromiale ruimte via gravitatietractie. Arm hangt volledig ontspannen — geen actieve elevatie. Stopzetten bij toename pijn.',cat:'mobiliteit'},
+        {name:'Scapula retractie & depressie',params:[['Sets','3'],['Reps','15'],['Hold','5 sec'],['Freq','2×/dag']],note:'Zittend of staand: trek schouderbladen naar elkaar en naar beneden. Corrigeert protractie en vermindert subacromiale compressie.',cat:'stabiliteit'},
+        {name:'Isometrische externe rotatie (0°)',params:[['Sets','3'],['Reps','10'],['Hold','30–45 sec'],['Intensiteit','≤ NRS 3/10'],['Freq','2×/dag']],note:'Pijninhiberende werking bij tendinopathie (Dye et al., 2017). Elleboog 90° gebogen, onderarm tegen deurkozijn. Geen beweging — puur isometrisch.',cat:'kracht'},
+        {name:'Isometrische abductie (0°)',params:[['Sets','3'],['Reps','10'],['Hold','30–45 sec'],['Intensiteit','≤ NRS 3/10'],['Freq','2×/dag']],note:'Arm langs het lichaam, druk zijwaarts tegen een muur. Activeert supraspinatus met minimale subacromiale compressie in lage hoek.',cat:'kracht'},
+        {name:'Cervicale retractie (chin tuck)',params:[['Sets','3'],['Reps','15'],['Hold','5 sec'],['Freq','2×/dag']],note:'Corrigeert voorwaartse hoofdhouding die scapulaire dyskinese versterkt. Uitvoeren zittend tegen een muur.',cat:'stabiliteit'},
+        {name:'Posterior capsule stretch (sleeper stretch)',params:[['Sets','3'],['Hold','30 sec'],['Zijde','aangedane zijde'],['Freq','2×/dag']],note:'Zijlig op aangedane zijde, elleboog 90°. Passief interne rotatie met contralaterale hand. Vermindert posterieure kapselspanning die impingement verergert.',cat:'mobiliteit'}
+      ],
+      criteria_go:[
+        'Rust-NRS ≤ 2/10 gedurende ≥ 3 dagen',
+        'Actieve abductie ≥ 90° met NRS ≤ 4/10',
+        'Isometrische kracht pijnvrij uitvoerbaar',
+        'Patiënt begrijpt belastingsprincipes en past ze toe',
+        'Geen nachtpijn meer die slaap verstoort'
+      ],
+      evidence:'<strong>Isometrische oefeningen</strong> hebben een onmiddellijk pijninhiberende werking bij tendinopathie via corticale inhibitie (Rio et al., 2015 — BJSM). <strong>Scapulaire dyskinese</strong> is aanwezig bij 68% van de patiënten met subacromiaal impingementsyndroom en dient vroeg gecorrigeerd (Kibler et al., 2013 — AJSM). <strong>Posterieure kapselstrakheid</strong> vergroot anterieure en superieure humerushoofdmigratie en verergert subacromiale compressie (Tyler et al., 2010).'
+    },
+    {
+      label:'Fase 2',
+      title:'Mobiliteits- & krachtherstel',
+      weeks:'Week 3–6',
+      goals:[
+        'Volledig actief bewogingsbereik (AROM) bereiken: elevatie ≥ 160°, ER ≥ 60°',
+        'Rotatorenmanchet isotone kracht opbouwen (lichte weerstand)',
+        'Scapulaire stabilisatoren versterken (serratus anterior, trapezius pars media & inferior)',
+        'Pijnvrij dagelijkse activiteiten uitvoeren tot schouderhoogte',
+        'Painful arc reduceren of elimineren (60–120° elevatieboog)'
+      ],
+      exercises:[
+        {name:'Externe rotatie met theraband (elleboog bij zij)',params:[['Sets','3'],['Reps','15–20'],['Weerstand','licht'],['Tempo','2-0-2'],['Freq','2×/dag']],note:'Elleboog 90° gefixeerd aan de romp. Theraband geeft isotone belasting zonder subacromiale compressie. Verhoog weerstand enkel bij NRS ≤ 3/10.',cat:'kracht'},
+        {name:'Interne rotatie met theraband',params:[['Sets','3'],['Reps','15–20'],['Weerstand','licht'],['Tempo','2-0-2'],['Freq','2×/dag']],note:'Antagonist van externe rotatoren — balans is essentieel voor centrering van humerushoofd. Uitvoeren bij NRS ≤ 3/10.',cat:'kracht'},
+        {name:'Side-lying external rotation (SLER)',params:[['Sets','3'],['Reps','12–15'],['Gewicht','0,5–1 kg'],['Freq','dagelijks']],note:'Meest geïsoleerde activering van infraspinatus en teres minor. Zijlig, elleboog 90°, lichte dumbbell. Essentieel voor posterieure manchetkracht.',cat:'kracht'},
+        {name:'Scapulaire wandglijdingen (wall slides)',params:[['Sets','3'],['Reps','12'],['Hoek','70° elevatie → progressief verhogen'],['Freq','dagelijks']],note:'Armen in W-positie tegen muur, glijden omhoog naar Y. Activeert serratus anterior en trapezius inferior — de primaire scapulastabilisatoren.',cat:'stabiliteit'},
+        {name:'Prone Y–T–W oefeningen',params:[['Sets','3'],['Reps','10'],['Positie','buiklig, geen gewicht'],['Freq','dagelijks']],note:'Y = elevatie 120°, T = horizontale abductie, W = externe rotatie in abductie. Progressieve activering van scapulastabilisatoren in gesloten keten.',cat:'stabiliteit'},
+        {name:'AROM elevatie in scapulaire vlak (scaption)',params:[['Sets','3'],['Reps','12–15'],['Hoek','30° voor frontaalvlak'],['Weerstand','geen → 0,5 kg'],['Freq','dagelijks']],note:'Scapulaire vlak minimaliseert subacromiale compressie ten opzichte van pure abductie. Start zonder gewicht, bouw op bij NRS ≤ 3/10 gedurende volledige boog.',cat:'kracht'}
+      ],
+      criteria_go:[
+        'AROM elevatie ≥ 150° met NRS ≤ 3/10',
+        'AROM externe rotatie ≥ 50° symmetrisch of ≤ 15° deficit',
+        'Isotone ER-kracht met lichte weerstand pijnvrij (3 sets × 15 reps)',
+        'Painful arc afwezig of NRS ≤ 2/10 bij actieve elevatie',
+        'Scapulaire retractie/depressie stabiel bij alle oefeningen'
+      ],
+      evidence:'<strong>Isotone progressie</strong> na isometrische fase versnelt tendinaire adaptatie via tenocyte-stimulatie (Cook & Purdam, 2009 — BJSM). <strong>Scaption</strong> (scapular plane elevation) genereert significant minder subacromiale contactdruk dan frontale of sagittale vlak-elevatie (Flatow et al., 1994 — CORR). <strong>Serratus anterior zwakte</strong> is de sterkste predictor van scapulaire dyskinese en subacromiale bursitis (Cools et al., 2007 — JOSPT).'
+    },
+    {
+      label:'Fase 3',
+      title:'Rotatorenmanchet krachtopbouw',
+      weeks:'Week 7–12',
+      goals:[
+        'Rotatorenmanchetkracht tot ≥ 80% van contralaterale zijde (handynamometer)',
+        'Overhead activiteiten pijnvrij uitvoeren (kammen, grijpen boven schouderhoogte)',
+        'Dynamische schoudercontrole verwerven bij functionele bewegingspatronen',
+        'ER/IR krachtbalans ≥ 0,66 ratio bereiken',
+        'NRS ≤ 2/10 bij alle dagelijkse activiteiten'
+      ],
+      exercises:[
+        {name:'Shoulder press (staand, lichte dumbbell)',params:[['Sets','3'],['Reps','10–12'],['Gewicht','progressief 1–4 kg'],['Tempo','2-1-2'],['Freq','3×/week']],note:'Start met dumbbells in scapulaire vlak. Verhoog gewicht enkel wanneer NRS ≤ 3/10 gedurende volledige range. Geen barbell — theraband of dumbbell is veiliger voor initiële overheadbelasting.',cat:'kracht'},
+        {name:'Kabeltrekken (lat pulldown)',params:[['Sets','3'],['Reps','10–12'],['Weerstand','matig'],['Greep','schouderbreedte'],['Freq','3×/week']],note:'Trekt humerushoofd naar caudaal — antagonist van subacromiale compressie. Verbetert rotatorenmanchet coactivatie in de sluiting van de kinetische keten.',cat:'kracht'},
+        {name:'Sidelying ER met progressief gewicht',params:[['Sets','3'],['Reps','10–12'],['Gewicht','1–3 kg'],['Freq','3×/week']],note:'Progressie van fase 2 SLER. Target: 3 × 12 met 3 kg zonder pijn als drempelwaarde voor overheadhervatting.',cat:'kracht'},
+        {name:'Diagonale PNF D2-patroon (theraband)',params:[['Sets','3'],['Reps','12'],['Weerstand','licht-matig'],['Richting','flexie-abductie-ER'],['Freq','3×/week']],note:'Functioneel bewegingspatroon dat meerdere rotatorenmanchetspieren simultaan activeert. Nabootsing van kammen, grijpen boven het hoofd en werpherstel.',cat:'neuromusculair'},
+        {name:'Plankoefening (stabilisatie)',params:[['Sets','3'],['Hold','30–45 sec'],['Positie','standaard + varianten'],['Freq','3×/week']],note:'Gesloten keten schouderstabilisatie. Vermindert scapulaire protractie onder belasting. Progressie: plank op handen → instabiel vlak (BOSU).',cat:'stabiliteit'},
+        {name:'Theraband cuban press',params:[['Sets','3'],['Reps','12'],['Weerstand','licht'],['Freq','3×/week']],note:'Gecombineerde beweging: ER in abductie → overhead press. Traint de functionele samenwerking van infraspinatus, teres minor en deltoideus in één beweging.',cat:'kracht'}
+      ],
+      criteria_go:[
+        'ER-kracht ≥ 80% van contralaterale zijde (handynamometer)',
+        'ER/IR ratio ≥ 0,66',
+        'Overhead press 3 × 10 met lichaamsgewicht-gerelateerd gewicht pijnvrij',
+        'NRS ≤ 2/10 bij alle dagelijkse activiteiten inclusief overhead',
+        'Volledige AROM in alle vlakken zonder compensatie',
+        'Scapulaire ritmesymmetrie bij actieve elevatie (klinische observatie)'
+      ],
+      evidence:'<strong>ER/IR krachtbalans</strong> ≥ 0,66 is de meest gebruikte klinische grenswaarde voor schouderstabiliteit en terugkeer naar overhead-activiteiten (Edouard et al., 2013 — IJES). <strong>Progressieve overbelasting</strong> (progressive overload) induceert tendinaire collageen-synthese en verbetert de stijfheid van het peesweefsel na 8–12 weken (Magnusson et al., 2010 — Nature Reviews). <strong>Scapulaire ritmesymmetrie</strong> correleert sterk met rotatorenmanchet herstel en recidiefpreventie (McClure et al., 2009 — JOSPT).'
+    },
+    {
+      label:'Fase 4',
+      title:'Functionele integratie & werkhervatting',
+      weeks:'Week 13–20',
+      goals:[
+        'Volledige werkhervatting inclusief overhead- en repetitieve schoudertaken',
+        'Sportspecifieke schouderkracht en uithoudingsvermogen opbouwen',
+        'Terugval-preventieplan opstellen (ergonomie, belastingsmonitoring)',
+        'Rotatorenmanchetkracht ≥ 90% contralateraal',
+        'Zelfstandig onderhoudsprogramma thuis uitvoeren'
+      ],
+      exercises:[
+        {name:'Overhead press (volledig bereik)',params:[['Sets','4'],['Reps','8–10'],['Gewicht','matig-zwaar'],['Freq','3×/week']],note:'Graduele overgang naar zwaarder gewicht en volledige overhead-range. Monitor scapulaire positie en lumbale hyperextensie. Verhoog weerstand 5–10% per 2 weken.',cat:'kracht'},
+        {name:'Rowing (cable of theraband)',params:[['Sets','3'],['Reps','12–15'],['Weerstand','matig'],['Variatie','hoog-, midden-, laag-row'],['Freq','3×/week']],note:'Driedimensionale scapulastabilisatie via trekbewegingen. Variatie in rijthoek belast verschillende delen van trapezius en rhomboïden.',cat:'kracht'},
+        {name:'Plyometrische wandgooien (lichte bal)',params:[['Sets','3'],['Reps','15'],['Gewicht','0,5–1 kg bal'],['Afstand','60–80 cm van muur'],['Freq','2×/week']],note:'Reactieve schouderbelasting om neuromusculaire controle en stijfheid in de kinetische keten te trainen. Essentieel voor sport- en werkhervatting bij overhead-activiteiten.',cat:'neuromusculair'},
+        {name:'Ergonomie & werkplaatsaanpassing',params:[['Sessies','2–3 consultaties'],['Focus','beeldschermhoogte, muispositie, stoelinstelling'],['Freq','eenmalig + follow-up']],note:'Werkgerelateerde supraspinatus tendinopathie recidiveert in 40% zonder werkplaatsaanpassing. Documenteer aanbevelingen schriftelijk voor werkgever.',cat:'mobiliteit'},
+        {name:'Uithoudings-circuit rotatorenmanchet',params:[['Sets','2'],['Reps','20–25'],['Weerstand','licht'],['Oefeningen','ER + scaption + row + press'],['Freq','2×/week']],note:'Uithoudingsvermogen is essentieel bij repetitieve overhead-arbeid. Circuit zonder rust tussen oefeningen, 2 minuten rust tussen rondes.',cat:'kracht'},
+        {name:'Thuis-onderhoudsprogramma (zelfstandig)',params:[['Duur','20 min'],['Inhoud','ER + scapulaire stabilisatie + stretch'],['Freq','3×/week']],note:'Condenseer het programma naar 4–5 kernoefeningeneen. Schrijf het op of geef een QR-code mee. Langetermijn-adherentie bepaalt recidiefrisico.',cat:'stabiliteit'}
+      ],
+      criteria_go:[
+        'Rotatorenmanchetkracht ≥ 90% contralateraal (handynamometer)',
+        'Werkhervatting zonder pijntoename (NRS ≤ 2/10 na werkdag)',
+        'Overhead-activiteiten ≥ 30 minuten pijnvrij uitvoerbaar',
+        'Zelfstandig onderhoudsprogramma correct uitgevoerd',
+        'QuickDASH-score ≤ 20/100'
+      ],
+      evidence:'<strong>Werkhervatting</strong> zonder aangepaste ergonomie verhoogt recidiefkans bij supraspinatus tendinopathie met factor 2,4 (Van Rijn et al., 2010 — OEM). <strong>Uithoudings-training</strong> van de rotatorenmanchet bij lage weerstand (20–25 reps) verbetert subacromiale coördinatie effectiever dan puur krachtsgeoriënteerde training bij chronische bursitis (Ainsworth et al., 2009 — Manual Therapy). <strong>QuickDASH ≤ 20</strong> correleert met subjectief volledig herstel bij schouderpathologie (Beaton et al., 2001 — CORR).'
+    }
+  ],
+  scores:[],
+  spiergroep:'Rotatorenmanchet'
+};
+
 // ── REGIO MAPPING (protocol → regio) ──
 const REGIO_MAP = {
   acl:'Knie & Heup', tka:'Knie & Heup', pfps:'Knie & Heup', pt:'Knie & Heup', gmt:'Knie & Heup', hsi:'Knie & Heup',
   lh:'Lumbaal & Cervicaal', bureau:'Lumbaal & Cervicaal', faz:'Lumbaal & Cervicaal',
-  rc:'Schouder & Arm', si:'Schouder & Arm', elb:'Schouder & Arm',
+  rc:'Schouder & Arm', si:'Schouder & Arm', elb:'Schouder & Arm', sup:'Schouder & Arm',
   at:'Enkel & Voet', enkel:'Enkel & Voet', over:'Enkel & Voet', mtss:'Enkel & Voet',
   orif:'Pols & Hand', dq:'Pols & Hand', cts:'Pols & Hand',
 };

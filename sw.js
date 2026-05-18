@@ -1,7 +1,7 @@
 // KineProtocol — Service Worker
 // Cacht alle app-bestanden voor offline gebruik (cache-first strategie)
 
-const CACHE = 'kineprotocol-v27';
+const CACHE = 'kineprotocol-v28';
 
 const PRECACHE = [
   './',

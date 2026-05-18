@@ -2,7 +2,7 @@
 
 // ── VERSION CHECK: forces hard reload when app is updated ──
 (function(){
-  const V = '19';
+  const V = '20';
   if(localStorage.getItem('kp_app_v') !== V) {
     localStorage.setItem('kp_app_v', V);
     window.location.replace(window.location.pathname + '?v=' + V + '&t=' + Date.now());

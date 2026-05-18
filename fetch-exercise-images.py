@@ -74,6 +74,17 @@ EXACT_WIKI_TITLES = {
     'Elliptical':                         'Elliptical trainer',
     'Treadmill':                          'Treadmill',
     'HIIT':                               'High-intensity interval training',
+    'PNF D2 flexie/extensie (elastiek)':         'Proprioceptive neuromuscular facilitation',
+    'PNF':                                        'Proprioceptive neuromuscular facilitation',
+    'Neurodynamische tensioner':                  'Peripheral nerve',
+    'Neurodynamische slider':                     'Peripheral nerve',
+    'OKC Knie-extensie (90–40°)':                 'Knee extension',
+    'OKC knie-extensie':                          'Knee extension',
+    'Passieve knie-extensie (handdoekrol)':       'Knee extension',
+    'Passieve knie-extensie':                     'Knee extension',
+    'Passieve extensie':                          'Knee extension',
+    'Elleboog AROM flexie/extensie':              'Elbow',
+    'Elleboog extensie':                          'Elbow',
     'Sorensen test / rugextensie prone':     'Back extension',
     'Sorensen test':                          'Back extension',
     'Rugextensie':                            'Back extension',
@@ -212,10 +223,15 @@ def get_wiki_title(name: str) -> str | None:
     if name in EXACT_WIKI_TITLES:
         return EXACT_WIKI_TITLES[name]
 
-    # 2. Partiële exacte match (naam begint met key)
+    # 2. Partiële exacte match — alleen als key een volledig woord is in de naam
+    import re as _re
     name_lower = name.lower()
     for key, title in EXACT_WIKI_TITLES.items():
-        if name_lower.startswith(key.lower()) or key.lower() in name_lower:
+        key_lower = key.lower()
+        if name_lower.startswith(key_lower):
+            return title
+        # Alleen matchen als key als heel woord voorkomt (geen substring van langere woorden)
+        if len(key_lower) >= 5 and _re.search(r'\b' + _re.escape(key_lower) + r'\b', name_lower):
             return title
 
     # 3. Sleutelwoordmatch

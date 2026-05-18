@@ -2,7 +2,7 @@
 
 // ── VERSION CHECK: forces hard reload when app is updated ──
 (function(){
-  const V = '21';
+  const V = '22';
   if(localStorage.getItem('kp_app_v') !== V) {
     localStorage.setItem('kp_app_v', V);
     window.location.replace(window.location.pathname + '?v=' + V + '&t=' + Date.now());
@@ -16,7 +16,7 @@ let exerciseImages = {};
 
 async function loadExerciseImages() {
   try {
-    const r = await fetch('./exercise-images.json?v=16');
+    const r = await fetch('./exercise-images.json?v=22');
     if(r.ok) exerciseImages = await r.json();
   } catch(e) {}
 }

@@ -2,7 +2,7 @@
 
 // ── VERSION CHECK: forces hard reload when app is updated ──
 (function(){
-  const V = '29';
+  const V = '30';
   if(localStorage.getItem('kp_app_v') !== V) {
     localStorage.setItem('kp_app_v', V);
     window.location.replace(window.location.pathname + '?v=' + V + '&t=' + Date.now());
@@ -16,7 +16,7 @@ let exerciseImages = {};
 
 async function loadExerciseImages() {
   try {
-    const r = await fetch('./exercise-images.json?v=29');
+    const r = await fetch('./exercise-images.json?v=30');
     if (r.ok) exerciseImages = await r.json();
   } catch(e) {}
 }
@@ -209,7 +209,7 @@ function showPhase(i) {
   document.querySelectorAll('.vtab').forEach((t,j) => t.classList.toggle('active', j===i));
   renderPhase(i);
   renderTimeline(i);
-  document.getElementById('proto-body').scrollTop = 0;
+  document.getElementById('viewer-scroll').scrollTop = 0;
 }
 function showRefs(id) {
   const p = protocols[id];
@@ -271,7 +271,7 @@ function showFormsTab(protoId) {
   html += '</div>';
   html += '<div style="font-size:12px;color:var(--muted);padding:10px 14px;background:var(--surface2);border-radius:6px;border:1px solid var(--border)">💡 Koppel een patiënt via de "👤 Koppel patiënt" knop om een ingevuld formulier automatisch aan hun dossier te koppelen.</div>';
   document.getElementById('proto-body').innerHTML = html;
-  document.getElementById('proto-body').scrollTop = 0;
+  document.getElementById('viewer-scroll').scrollTop = 0;
 }
 
 function showScores(id) {
@@ -305,7 +305,7 @@ function showScores(id) {
   });
   html += `</div>`;
   document.getElementById('proto-body').innerHTML = html;
-  document.getElementById('proto-body').scrollTop = 0;
+  document.getElementById('viewer-scroll').scrollTop = 0;
 }
 function calcScore(protoId, si) {
   const sc = SCORES[protoId][si];

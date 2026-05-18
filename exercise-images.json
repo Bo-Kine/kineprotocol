@@ -78,10 +78,8 @@
     "wiki": "https://en.wikipedia.org/wiki/Squat%20%28exercise%29"
   },
   "Single Leg Squat (provocatie)": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Squats.svg/500px-Squats.svg.png",
-    "alt": "Squat (exercise)",
-    "credit": "Wikipedia: Squat (exercise)",
-    "wiki": "https://en.wikipedia.org/wiki/Squat%20%28exercise%29"
+    "url": "./exercise-images/Single leg squat.PNG",
+    "alt": "Single Leg Squat (provocatie)"
   },
   "Split squat + single leg RDL": {
     "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Squats.svg/500px-Squats.svg.png",
@@ -160,5 +158,29 @@
     "alt": "Resistance band",
     "credit": "Wikipedia: Resistance band",
     "wiki": "https://en.wikipedia.org/wiki/Resistance%20band"
+  },
+  "Dead bug": {
+    "url": "./exercise-images/Dead bug.PNG",
+    "alt": "Dead bug"
+  },
+  "Glute bridge (isometrisch)": {
+    "url": "./exercise-images/Glute Bridge.PNG",
+    "alt": "Glute bridge (isometrisch)"
+  },
+  "Side plank": {
+    "url": "./exercise-images/Side-plank.PNG",
+    "alt": "Side plank"
+  },
+  "Squat (heupbreedte)": {
+    "url": "./exercise-images/Squat.PNG",
+    "alt": "Squat (heupbreedte)"
+  },
+  "Wall squat isometrisch": {
+    "url": "./exercise-images/Wall squat.PNG",
+    "alt": "Wall squat isometrisch"
+  },
+  "Zijwaartse uitval (lateral lunge)": {
+    "url": "./exercise-images/Lunge.PNG",
+    "alt": "Lunge"
   }
 }

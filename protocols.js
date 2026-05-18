@@ -1388,10 +1388,130 @@ protocols.sup = {id:'sup',title:'Supraspinatus Tendinopathie & Bursitis',subtitl
   spiergroep:'Rotatorenmanchet'
 };
 
+protocols.fbl = {id:'fbl',title:'Facettaire Blokkade Lumbaal',subtitle:'Post-interventie revalidatieprotocol na lumbale facetblokkade (injectie / radiofrequente denervatie) — optimalisatie van het pijnvrije venster via progressieve belasting en stabilisatie',color:'#db2777',icon:'💉',
+  phases:[
+    {
+      label:'Fase 1',
+      title:'Post-interventie — rust & monitoring',
+      weeks:'Dag 0–7',
+      goals:[
+        'Lokale reactie na injectie monitoren en beheersen (warmte, zwelling, tijdelijke pijntoename)',
+        'Bedrust vermijden — rustige mobiliteit behouden',
+        'Patiënt informeren over het verwachte verloop en het pijnvrije venster',
+        'Basale lumbale mobiliteit bewaren zonder provocatie',
+        'NRS documenteren als uitgangswaarde voor behandelingsrespons'
+      ],
+      exercises:[
+        {name:'Ruglig knie-naar-borst stretch (passief)',params:[['Sets','2'],['Hold','20–30 sec'],['Zijde','bilateraal beurtelings'],['Freq','2×/dag']],note:'Milde lumbale flexie ontlast de facetgewrichten. Stoppen bij uitstralende pijn. Niet forceren — puur zwaartekracht gebruiken.',cat:'mobiliteit'},
+        {name:'Enkel-pompen (circulatie)',params:[['Reps','20'],['Richting','pompen + cirkels'],['Freq','elk uur']],note:'Voorkomt veneuze stase bij beperkte activiteit. Circulatiebevordering is prioriteit in de eerste 24–48u na injectie.',cat:'mobiliteit'},
+        {name:'Diafragmatische ademhaling',params:[['Sets','3'],['Reps','10 diepe ademhalingen'],['Positie','ruglig, knieën gebogen'],['Freq','3×/dag']],note:'Activeert transversus abdominis passief via intra-abdominale drukregulatie. Centrale pijninhibitie via vagale activering. Geen lumbale belasting.',cat:'stabiliteit'},
+        {name:'Pijnvrij wandelen (kort)',params:[['Duur','5–10 min'],['Tempo','comfortabel'],['Freq','2–3×/dag']],note:'Beweging is de beste pijnmodulator. Vermijd lang stilzitten of -staan. Stop bij NRS > 4/10 of toename uitstralende pijn.',cat:'cardio'},
+        {name:'Cervicale & thoracale mobilisatie (zittend)',params:[['Sets','2'],['Reps','10'],['Bewegingen','rotatie + lateraalflexie'],['Freq','1×/dag']],note:'Globale mobiliteit bewaren zonder lumbale belasting. Correleert met ervaren welzijn en beperkt de neiging tot algehele inactiviteit.',cat:'mobiliteit'},
+        {name:'Patiënteducatie: facetinjectie & verwachtingen',params:[['Duur','15–20 min'],['Inhoud','werking, venster, doelstelling kine'],['Freq','eenmalig + herhaling']],note:'Patiënten met realistische verwachtingen over de duur van het pijnvrije venster tonen significant betere therapietrouw (Cohen et al., 2013). Leg uit dat de injectie een therapeutisch venster opent, geen definitieve behandeling is.',cat:'neuromusculair'}
+      ],
+      criteria_go:[
+        'Lokale reactie (warmte, zwelling) grotendeels geresorbeerd',
+        'NRS in rust ≤ 3/10 gedurende ≥ 3 achtereenvolgende dagen',
+        'Pijnvrij wandelen ≥ 15 min mogelijk',
+        'Geen koorts of tekenen van infectie',
+        'Patiënt akkoord met en begrip van revalidatiedoelstellingen'
+      ],
+      evidence:'<strong>Facetblokkade</strong> creëert een pijnvrij therapeutisch venster van gemiddeld 6–12 weken bij responders — fysiotherapie in dit venster maximaliseert de langetermijn uitkomst (Manchikanti et al., 2015 — Pain Physician). <strong>Vroege mobilisatie</strong> (dag 1–2) na interventionele procedures reduceert post-procedurele pijntoename en verbetert functionele uitkomst (Rubinstein & van Tulder, 2008 — Spine).'
+    },
+    {
+      label:'Fase 2',
+      title:'Core activatie & lumbale stabilisatie',
+      weeks:'Week 2–5',
+      goals:[
+        'Transversus abdominis en multifidus activeren als primaire lumbale stabilisatoren',
+        'NRS bij bewegen reduceren tot ≤ 3/10',
+        'Lumbale AROM in alle richtingen herstellen zonder compensatie',
+        'Sedentaire tijd verminderen tot < 45 min/uur aaneengesloten',
+        'Slaapkwaliteit verbeteren door nachtpijn te reduceren'
+      ],
+      exercises:[
+        {name:'Transversus abdominis (TA) activatie',params:[['Sets','3'],['Hold','10 sec'],['Reps','10'],['Freq','2×/dag']],note:'Ruglig, knieën gebogen. Trek navel licht naar wervelkolom zonder bekken te kantelen. Adem normaal door. Basis van alle stabiliteitsoefeningen — correct uitvoeren vóór progressie.',cat:'stabiliteit'},
+        {name:'Glute bridge (bilateraal)',params:[['Sets','3'],['Reps','12–15'],['Hold','2 sec boven'],['Freq','dagelijks']],note:'Activeert gluteus maximus en multifidus simultaan. Vermindert lumbale compressie door heupextensie-dominant patroon. Controleer geen lumbale hyperextensie bovenaan.',cat:'kracht'},
+        {name:'Bird-dog (contralateraal)',params:[['Sets','3'],['Reps','8–10 per zijde'],['Hold','3–5 sec'],['Freq','dagelijks']],note:'Traineert anti-rotatie stabiliteit van de lumbale wervelzuil. Neutrale ruggengraat bewaren gedurende volledige beweging. Stopzetten bij compensatie met lumbale rotatie.',cat:'stabiliteit'},
+        {name:'McKenzie extensie in buiklig (prone press-up)',params:[['Sets','3'],['Reps','10'],['Tempo','langzaam'],['Freq','2×/dag']],note:'Bij facetpathologie zorgvuldig dosagebeheer: stop bij toename pijn. Bij richtingsvoorkeur flexie — vervang door knie-naar-borst. Volg patiëntrespons.',cat:'mobiliteit'},
+        {name:'Wandelen met progressie',params:[['Duur','15–30 min'],['Tempo','comfortabel → matig'],['Freq','dagelijks']],note:'Beste evidence-based interventie voor chronische lage rugpijn. Verhoog duur met 5 min/week. Gebruik stappenteller als objectieve maat.',cat:'cardio'},
+        {name:'Zijlig heupabductie (clamshell)',params:[['Sets','3'],['Reps','15'],['Weerstand','geen → theraband'],['Freq','dagelijks']],note:'Gluteus medius-activering reduceert lumbopelvische instabiliteit. Zwakte van de heupabductoren is een consistente bevinding bij chronische lage rugpijn.',cat:'kracht'}
+      ],
+      criteria_go:[
+        'TA-activatie correct en consistent uitvoerbaar (beoordeeld door kinesitherapeut)',
+        'Bird-dog 3 × 10 per zijde met NRS ≤ 3/10',
+        'Glute bridge 3 × 15 zonder lumbale compensatie',
+        'Wandelen ≥ 30 min zonder significante pijntoename (NRS < 3/10 achteraf)',
+        'NRS gemiddeld overdag ≤ 3/10'
+      ],
+      evidence:'<strong>Multifidus atrofie</strong> is aanwezig bij 80% van de patiënten met chronische lumbale facetpijn en herstelt niet spontaan zonder gerichte oefentherapie (Hides et al., 2001 — Spine). <strong>Stabilisatieoefeningen</strong> (bird-dog, bridge, TA-activatie) reduceren pijn en beperkingen bij facet-gerelateerde lage rugpijn significant meer dan algemene oefentherapie (Saner et al., 2015 — Manual Therapy). <strong>Wandelen</strong> heeft het sterkste evidence-profiel van alle interventies bij niet-specifieke lage rugpijn (Sitthipornvorakul et al., 2018 — Spine).'
+    },
+    {
+      label:'Fase 3',
+      title:'Progressieve belasting & functionele kracht',
+      weeks:'Week 6–12',
+      goals:[
+        'Lumbale en heupkracht opbouwen tot functioneel niveau (squat, deadlift, step-up)',
+        'Werkgerelateerde en dagelijkse activiteiten pijnvrij hervatten',
+        'NRS bij alle activiteiten ≤ 2/10',
+        'Oswestry Disability Index (ODI) reduceren met ≥ 30% t.o.v. uitgangswaarde',
+        'Cardiovasculaire conditie verbeteren via progressieve cardiotraining'
+      ],
+      exercises:[
+        {name:'Squat bilateraal (bodyweight → gewicht)',params:[['Sets','3'],['Reps','10–12'],['Diepte','comfortabel → parallel'],['Freq','3×/week']],note:'Start met stoel-squat (squat to chair) voor veilige dosering. Controleer kniepositie over teen en neutrale lumbale curve. Verhoog diepte en gewicht gradueel.',cat:'kracht'},
+        {name:'Romanian Deadlift (RDL) licht',params:[['Sets','3'],['Reps','10'],['Gewicht','licht → matig'],['Freq','3×/week']],note:'Traineert heup-gedomineerd buigpatroon — essentieel voor ADL (voorover buigen, optillen). Neutrale ruggengraat bewaren. Facetgewrichten worden minder belast bij heup-dominant vs. rug-dominant optilpatroon.',cat:'kracht'},
+        {name:'Step-up anterieur (20–30 cm)',params:[['Sets','3'],['Reps','10 per been'],['Hoogte','20 → 30 cm'],['Freq','3×/week']],note:'Functionele unilaterale belasting — traptrap lopen, heuvel op. Activeert gluteus maximus en quadriceps in kinetische keten. Vermijdt direct axiaal gewicht op lumbale facetten.',cat:'kracht'},
+        {name:'Plank (voorwaarts)',params:[['Sets','3'],['Hold','20–45 sec'],['Progressie','knieën → tenen → instabiel'],['Freq','3×/week']],note:'Anti-extensie stabilisatie. Minder lumbale compressie dan sit-ups. Progressie naar volle plank enkel bij NRS ≤ 2/10 gedurende volledige hold.',cat:'stabiliteit'},
+        {name:'Fietsen (stationaire fiets of buiten)',params:[['Duur','20–40 min'],['Intensiteit','licht-matig (RPE 12–14)'],['Freq','3×/week']],note:'Lage lumbale compressie in fietshouding. Uitstekend voor cardiovasculaire conditie bij lage rugpijn. Pas zadelhoogte aan: heup licht hoger dan knie bij onderste stand.',cat:'cardio'},
+        {name:'Pallof press (weerstandsband)',params:[['Sets','3'],['Reps','12 per zijde'],['Weerstand','licht-matig'],['Freq','3×/week']],note:'Anti-rotatie core-oefening. Hoge activering van transversus abdominis en oblique spieren bij minimale lumbale shear. Essentieel voor rotationele stabiliteit in ADL.',cat:'stabiliteit'}
+      ],
+      criteria_go:[
+        'Squat 3 × 12 met eigen lichaamsgewicht pijnvrij (NRS ≤ 2/10)',
+        'RDL met ≥ 20% lichaamsgewicht pijnvrij uitvoerbaar',
+        'Plank ≥ 45 sec met NRS ≤ 2/10',
+        'Fietsen ≥ 30 min zonder pijntoename',
+        'ODI gereduceerd met ≥ 30% t.o.v. uitgangswaarde',
+        'Werkhervatting (licht/aangepast werk) zonder significante pijntoename'
+      ],
+      evidence:'<strong>Progressieve weerstandstraining</strong> bij chronische lage rugpijn toont superieure resultaten t.o.v. passieve behandeling op pijn, functie en werkhervatting (Steiger et al., 2012 — European Spine Journal, meta-analyse). <strong>Heup-dominant bewegingspatroon</strong> (RDL, hip hinge) reduceert lumbale facetbelasting met 40–60% t.o.v. rug-dominant optillen (McGill, 2016 — Low Back Disorders). <strong>Anti-rotatie oefeningen</strong> (Pallof press) activeren de lumbale stabilisatoren effectiever dan traditionele sit-ups bij lagere intrinsieke druk (Kibler et al., 2006 — AJSM).'
+    },
+    {
+      label:'Fase 4',
+      title:'Langetermijn onderhoud & terugvalpreventie',
+      weeks:'Week 13–24',
+      goals:[
+        'Zelfstandig onderhoudsprogramma 3×/week uitvoeren zonder kinesitherapeut',
+        'Volledige werkhervatting inclusief manuele arbeid of sport',
+        'Recidiefpreventie via belastingsmonitoring en ergonomie',
+        'ODI ≤ 20/100 (minimale functionele beperking)',
+        'Plan opgesteld voor eventuele nieuwe interventie bij recidief (criteria bepalen)'
+      ],
+      exercises:[
+        {name:'Krachttraining onderhoud (circuit)',params:[['Sets','3'],['Oefeningen','squat + RDL + plank + bridge'],['Freq','3×/week'],['Duur','30–40 min']],note:'Condenseer tot een efficiënt thuiscircuit. Lange termijn therapietrouw is de sterkste predictor van recidiefpreventie bij facetpathologie.',cat:'kracht'},
+        {name:'Looptraining of fietsen (conditie)',params:[['Duur','30–45 min'],['Intensiteit','matig (RPE 13–15)'],['Freq','3×/week']],note:'Aerobe conditie is onafhankelijke beschermende factor tegen recidief van lage rugpijn. Target ≥ 150 min/week matige intensiteit (WHO-richtlijnen).',cat:'cardio'},
+        {name:'Ergonomie & belastingsmanagement',params:[['Sessies','1–2 follow-up'],['Focus','tillen, werkhouding, autorijden'],['Freq','herhalend']],note:'Documenteer belastingsgrenzen en herstelstrategieën schriftelijk. Patiënten met ergonomisch plan hebben 35% minder recidief binnen 12 maanden.',cat:'mobiliteit'},
+        {name:'Yoga of Pilates (groepsles)',params:[['Freq','1–2×/week'],['Type','beginners of ruggerichte les']],note:'Sociale component verhoogt langetermijn adherentie. Yoga toont aanvullende evidence bij chronische lage rugpijn via mindfulness-component (Wieland et al., 2017 — Cochrane).',cat:'stabiliteit'},
+        {name:'Progressieve spierontspanning (Jacobson)',params:[['Duur','10–15 min'],['Freq','dagelijks of bij opflakkering']],note:'Pijnkatastrofering en centrale sensitisatie zijn risicofactoren voor recidief. Ontspanningstechnieken reduceren spierspanning en pijnbeleving bij opflakkering.',cat:'neuromusculair'},
+        {name:'Pijnmonitoringsplan (zelfbeheer)',params:[['Freq','wekelijks NRS-registratie'],['Actieplan','NRS ≥ 5 → contact kinesitherapeut'],['Tool','NRS dagboek of app']],note:'Vroege herkenning van opflakkering en geprotocolleerde reactie vermijdt onnodige ernst. Geeft patiënt controle en vermindert catastrofering.',cat:'neuromusculair'}
+      ],
+      criteria_go:[
+        'Zelfstandig onderhoudsprogramma ≥ 4 weken correct uitgevoerd',
+        'ODI ≤ 20/100',
+        'NRS gemiddeld ≤ 2/10 bij alle activiteiten',
+        'Volledige werkhervatting zonder aanpassingen',
+        'Patiënt kent criteria voor nieuwe interventie of kinesitherapie bij recidief'
+      ],
+      evidence:'<strong>Langetermijn oefentherapie</strong> (> 12 weken) na facetinterventie reduceert het recidiefpercentage met 45% t.o.v. injectie alleen (Datta et al., 2009 — Pain Physician). <strong>Zelfbeheer-programma\'s</strong> zijn even effectief als doorlopende kinesitherapie bij stabiele chronische lage rugpijn mits adequate educatie en opvolgstructuur (Foster et al., 2018 — Lancet). <strong>ODI ≤ 20</strong> correleert met subjectief volledig herstel en werkhervatting bij lumbale pathologie (Fritz & Irrgang, 2001 — Physical Therapy).'
+    }
+  ],
+  scores:[],
+  spiergroep:'Lumbale extensoren'
+};
+
 // ── REGIO MAPPING (protocol → regio) ──
 const REGIO_MAP = {
   acl:'Knie & Heup', tka:'Knie & Heup', pfps:'Knie & Heup', pt:'Knie & Heup', gmt:'Knie & Heup', hsi:'Knie & Heup',
-  lh:'Lumbaal & Cervicaal', bureau:'Lumbaal & Cervicaal', faz:'Lumbaal & Cervicaal',
+  lh:'Lumbaal & Cervicaal', bureau:'Lumbaal & Cervicaal', faz:'Lumbaal & Cervicaal', fbl:'Lumbaal & Cervicaal',
   rc:'Schouder & Arm', si:'Schouder & Arm', elb:'Schouder & Arm', sup:'Schouder & Arm',
   at:'Enkel & Voet', enkel:'Enkel & Voet', over:'Enkel & Voet', mtss:'Enkel & Voet',
   orif:'Pols & Hand', dq:'Pols & Hand', cts:'Pols & Hand',

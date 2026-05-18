@@ -2,7 +2,7 @@
 
 // ── VERSION CHECK: forces hard reload when app is updated ──
 (function(){
-  const V = '23';
+  const V = '24';
   if(localStorage.getItem('kp_app_v') !== V) {
     localStorage.setItem('kp_app_v', V);
     window.location.replace(window.location.pathname + '?v=' + V + '&t=' + Date.now());
@@ -12,6 +12,14 @@
 let currentProto = null;
 let deferredPrompt = null;
 let editingPatientId = null;
+let exerciseImages = {};
+
+async function loadExerciseImages() {
+  try {
+    const r = await fetch('./exercise-images.json?v=24');
+    if (r.ok) exerciseImages = await r.json();
+  } catch(e) {}
+}
 
 // ── PWA INSTALL ──
 window.addEventListener('beforeinstallprompt', e => {
@@ -1046,6 +1054,8 @@ function renderLibrary(query) {
       const badges = libGroupBy === 'regio'
         ? ex.spieren.slice(0,2).map(s => `<span class="lib-ex-badge" style="background:${s.color}15;border-color:${s.color}33;color:${s.color};">${s.spier}</span>`).join('')
         : `<span class="lib-ex-badge" style="background:${ex.protoColor}15;border-color:${ex.protoColor}33;color:${ex.protoColor};">${ex.protoId.toUpperCase()}</span>`;
+      const imgEntry = exerciseImages[ex.name];
+      const imgHtml  = imgEntry ? `<img class="lib-ex-img" src="${imgEntry.url}" alt="${imgEntry.alt || ex.name}" loading="lazy" onerror="this.style.display='none'">` : '';
       return `<div class="lib-ex" onclick="this.classList.toggle('expanded')">
         <div class="lib-ex-dot" style="background:${ex.protoColor}"></div>
         <div class="lib-ex-main">
@@ -1054,6 +1064,7 @@ function renderLibrary(query) {
             <span class="lib-ex-badge" style="background:var(--surface3);border-color:var(--border);color:var(--muted);">${ex.phaseLabel} · ${ex.protoTitle.split(' ').slice(0,2).join(' ')}</span>
           </div>
           ${paramsStr ? `<div class="lib-ex-params">${paramsStr}</div>` : ''}
+          ${imgHtml}
           ${ex.note ? `<div class="lib-ex-note">${ex.note}</div>` : ''}
         </div>
       </div>`;
@@ -1181,6 +1192,8 @@ function handleSearch(q) {
       ${r.detail ? `<div style="font-size:11px;color:var(--muted);margin-top:3px">${r.detail.substring(0,110)}${r.detail.length>110?'...':''}</div>` : ''}
     </div>`).join('');
 }
+
+loadExerciseImages();
 
 // ── SERVICE WORKER ──
 

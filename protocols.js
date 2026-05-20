@@ -1508,9 +1508,158 @@ protocols.fbl = {id:'fbl',title:'Facettaire Blokkade Lumbaal',subtitle:'Post-int
   spiergroep:'Lumbale extensoren'
 };
 
+protocols.mcl = {id:'mcl',title:'MCL Letsel Knie',subtitle:'Conservatief revalidatieprotocol voor mediaal collateraal ligamentletsel graad I–III — acute bescherming, progressieve stabilisatie en return to sport',color:'#2dd4bf',icon:'🦵',
+  phases:[
+    {
+      label:'Fase 1',
+      title:'Acute fase — bescherming & zwellingcontrole',
+      weeks:'Week 0–2',
+      goals:[
+        'Zwelling en hemartros reduceren via PRICE-protocol',
+        'Pijnvrij volledig gewicht dragen (graad I–II) of geassisteerd lopen (graad III)',
+        'Knieflexie ≥ 90° en volledige extensie behouden of herwinnen',
+        'Quadricepsinhibitie doorbreken via isometrische activatie',
+        'Patiënt informeren over belastingsgrenzen en bracegebruik'
+      ],
+      exercises:[
+        {name:'Quadriceps setting (isometrisch)',params:[['Sets','3'],['Hold','10 sec'],['Reps','15'],['Freq','3×/dag']],note:'Doorbreekt reflexieve quadricepsinhibitie door hemartros. Ruglig, knie gestrekt op rol. Essentieel vóór elke gewichtsdragende progressie.',cat:'kracht'},
+        {name:'Enkel-pompen & beencirkels',params:[['Reps','20–30'],['Richting','pompen + cirkels'],['Freq','elk uur']],note:'Voorkomt veneuze stase en diepe veneuze trombose. Actieve pomp van het onderbeen. Prioriteit in eerste 48u.',cat:'mobiliteit'},
+        {name:'Passieve knie-extensie (handdoekrol)',params:[['Hold','10–15 min'],['Positie','hiel op rol, geen kussen onder knie'],['Freq','3×/dag']],note:'Voorkomt flexiecontractuur. Handdoekrol onder hiel, knie hangt vrij. Zwaartekracht herstelt extensie. Kritisch bij graad III letsel.',cat:'mobiliteit'},
+        {name:'Actief-geassisteerde knieflexie (zittend)',params:[['Sets','3'],['Reps','10'],['Bereik','0–90° comfortabel'],['Freq','2×/dag']],note:'Gebruik niet-aangedane been om aangedane knie passief te flecteren. Stop bij NRS > 4/10 of mediale spanning. Doel: 90° tegen einde week 1.',cat:'mobiliteit'},
+        {name:'Stationaire fiets (laag verzet)',params:[['Duur','10–15 min'],['Weerstand','minimaal'],['Freq','dagelijks zodra 100° flexie']],note:'Beste vroege mobilisatiemodaliteit bij knieletsel. Vereist ≥ 100° flexie. Laag verzet, hoog zadel initieel. Bevordert synoviaalvloeistof circulatie.',cat:'cardio'},
+        {name:'Straight Leg Raise (SLR)',params:[['Sets','3'],['Reps','15'],['Positie','ruglig, contralaterale knie gebogen'],['Freq','2×/dag']],note:'Quadricepskracht zonder kniebelasting. Essentieel overbrugging totdat knie veilig belast kan worden. Stop bij uitstralende pijn in het bovenbeen.',cat:'kracht'}
+      ],
+      criteria_go:[
+        'Zwelling significant gereduceerd (knieodomtrek ≤ 1 cm meer dan contralateraal)',
+        'Knieflexie ≥ 100° en volledige extensie (0°)',
+        'Pijnvrij volledig gewicht dragen zonder hulpmiddelen (graad I–II) of met 1 kruk (graad III)',
+        'SLR 3 × 15 uitvoerbaar zonder quadricepslag',
+        'NRS in rust ≤ 2/10'
+      ],
+      evidence:'<strong>PRICE-protocol</strong> (Protection, Rest, Ice, Compression, Elevation) reduceert post-traumatische zwelling met 30–40% in de eerste 48u (van den Bekerom et al., 2012 — JOSPT). <strong>Vroege mobilisatie</strong> na MCL-letsel leidt tot sneller functioneel herstel dan immobilisatie, zonder verhoogd instabiliteitsrisico (Indelicato, 1995 — JBJS). <strong>Quadricepsinhibitie</strong> door hemartros reduceert quadricepskracht met 50–70% en moet actief worden tegengegaan via isometrische oefeningen (Young et al., 1987 — AJSM).'
+    },
+    {
+      label:'Fase 2',
+      title:'Vroeg herstel — kracht & proprioceptie',
+      weeks:'Week 3–6',
+      goals:[
+        'Volledig pijnvrij gewicht dragen zonder brace of hulpmiddelen',
+        'Knieflexie ≥ 120° en volledige extensie',
+        'Quadricepskracht ≥ 60% van contralaterale zijde',
+        'Normaal gangpatroon herstellen',
+        'Basis proprioceptie en enkelvoudige balans opbouwen'
+      ],
+      exercises:[
+        {name:'Mini-squat bilateraal (0–60°)',params:[['Sets','3'],['Reps','15'],['Diepte','0–60°'],['Freq','dagelijks']],note:'Gecontroleerde gesloten-keten kniestabilisatie. Kniepositie over teen bewaken. Geen valgusdruk. Start bij 0–45° en bouw op naar 60° bij NRS ≤ 3/10.',cat:'kracht'},
+        {name:'Beenpers bilateraal',params:[['Sets','3'],['Reps','12–15'],['Hoek','70–90°'],['Weerstand','licht-matig'],['Freq','3×/week']],note:'Gesloten-keten quadriceps en gluteustraining met gecontroleerde mediale kniestress. Voeten schouderbreedte, knieën recht boven tenen.',cat:'kracht'},
+        {name:'Step-up anterieur (10–15 cm)',params:[['Sets','3'],['Reps','12 per been'],['Hoogte','10 → 15 cm'],['Freq','3×/week']],note:'Unilaterale functionele belasting. Traint quadriceps en gluteus in kinetische keten. Controleer geen knieval binnenwaarts (valgus) bij afstap.',cat:'kracht'},
+        {name:'Enkel-been balans (stabiel vlak)',params:[['Sets','3'],['Hold','20–30 sec'],['Ogen','open → dicht'],['Freq','dagelijks']],note:'Herstelt mediale kniepropriocepie die door MCL-rek verloren gaat. Licht gebogen knie. Progressie: ogen open → dicht → instabiel vlak.',cat:'neuromusculair'},
+        {name:'Wandelen normaal gangpatroon',params:[['Duur','20–30 min'],['Tempo','comfortabel'],['Aandacht','hielstoot, kniestrekking, afzet'],['Freq','dagelijks']],note:'Gericht op herstel van normaal gangpatroon. Kinesitherapeut observeert en corrigeert antalgisch gangpatroon (valgus, flexiecontractuur).',cat:'cardio'},
+        {name:'Clamshell & heupabductie zijlig',params:[['Sets','3'],['Reps','15'],['Weerstand','geen → licht'],['Freq','dagelijks']],note:'Gluteus medius-zwakte verhoogt knievalgusstress op MCL. Essentieel bijdragende factor die vaak onderschat wordt bij mediaal knieletsel.',cat:'kracht'}
+      ],
+      criteria_go:[
+        'Volledig gewicht dragen pijnvrij, zonder brace',
+        'Knieflexie ≥ 120° en extensie 0°',
+        'Mini-squat 3 × 15 tot 60° pijnvrij (NRS ≤ 2/10)',
+        'Enkelbeen-balans ≥ 20 sec met ogen open',
+        'Normaal gangpatroon bij ganganalyse (geen antalgisch patroon)',
+        'Quadricepskracht ≥ 60% contralateraal (handynamometer of functionele test)'
+      ],
+      evidence:'<strong>Gesloten-keten oefeningen</strong> (squat, leg press, step-up) zijn superieur aan open-keten oefeningen voor MCL-herstel door gecontroleerde mediale valgusbelasting (Shelbourne & Nitz, 1990 — AJSM). <strong>Proprioceptief deficit</strong> na MCL-letsel persisteert zonder gerichte training en verhoogt recidiefrisico met factor 3,8 (Barrack et al., 1989 — AJSM). <strong>Gluteus medius-zwakte</strong> correleert sterk met knievalgusstress en MCL-herletsel (Dierks et al., 2008 — JOSPT).'
+    },
+    {
+      label:'Fase 3',
+      title:'Functionele krachtsopbouw',
+      weeks:'Week 7–12',
+      goals:[
+        'Quadricepskracht ≥ 80% van contralaterale zijde',
+        'Hamstring/quadriceps ratio ≥ 0,60 bereiken',
+        'Single leg squat gecontroleerd uitvoeren (10 herhalingen)',
+        'Joggen op vlak terrein zonder pijn of mank lopen',
+        'Zijwaartse en achterwaartse belastingen integreren'
+      ],
+      exercises:[
+        {name:'Squat diep bilateraal (0–90°)',params:[['Sets','4'],['Reps','10–12'],['Gewicht','progressief'],['Freq','3×/week']],note:'Progressie naar volledige squatdiepte. Bewaken: kniepositie over voet, geen mediaal inknikken, neutrale lumbale curve. Verhoog gewicht 5–10% per week.',cat:'kracht'},
+        {name:'Romanian Deadlift (RDL)',params:[['Sets','3'],['Reps','10'],['Gewicht','matig'],['Freq','3×/week']],note:'Hamstring eccentrische kracht opbouwen — verplicht voor H/Q ratio herstel. Neutrale ruggengraat, heup-dominant patroon. Essentieel voor kniestabiliteit.',cat:'kracht'},
+        {name:'Single leg squat (10–20 cm box)',params:[['Sets','3'],['Reps','8–10 per been'],['Hoogte','10 → 20 cm'],['Freq','3×/week']],note:'Meest veeleisende unilaterale kracht- en stabiliteitstest. Bewaken: knierichting, heupneutraliteit. Enkel doorgaan bij NRS ≤ 3/10 en zonder knieval.',cat:'kracht'},
+        {name:'Lateral band walk (theraband)',params:[['Sets','3'],['Reps','15 stappen per richting'],['Weerstand','licht-matig'],['Freq','3×/week']],note:'Targetgericht gluteus medius in functioneel zijwaarts bewegingspatroon. Licht gebogen knieën, band net boven enkels. Verhoog weerstand bij correcte uitvoering.',cat:'stabiliteit'},
+        {name:'Jog-walk protocol',params:[['Schema','1 min jog / 2 min walk × 10'],['Freq','3×/week'],['Progressie','verhoog joggingintervals wekelijks']],note:'Graduele terugkeer naar lopen. Start op vlak oppervlak. Kinesitherapeut observeert eerste sessie op kniemechanica. Stop bij NRS > 3/10 of antalgisch patroon.',cat:'cardio'},
+        {name:'Balans op instabiel vlak (BOSU / wiebelplank)',params:[['Sets','3'],['Hold','30 sec'],['Progressie','bipodiaal → unipodiaal'],['Freq','dagelijks']],note:'Verhoogde proprioceptieve en neuromusculaire uitdaging. Simuleert terrein-instabiliteit bij sport. Essentieel voor veilige sporthervatting.',cat:'neuromusculair'}
+      ],
+      criteria_go:[
+        'Quadricepskracht ≥ 80% contralateraal (isokinetisch of handynamometer)',
+        'H/Q ratio ≥ 0,60',
+        'Single leg squat 3 × 10 per been pijnvrij en gecontroleerd',
+        'Continu joggen ≥ 15 min zonder pijn of antalgisch patroon',
+        'Klinische valgus-stresstest: geen verhoogde laxiteit t.o.v. baseline',
+        'NRS ≤ 2/10 bij alle functionele activiteiten'
+      ],
+      evidence:'<strong>H/Q ratio ≥ 0,60</strong> is de minimale drempel voor veilige terugkeer naar belastende knie-activiteiten (Coombs & Garbutt, 2002 — JOSPT). <strong>Neuromusculaire training</strong> op instabiele ondergrond verbetert kniestabiliteit bij bandletsel significant meer dan krachtsgeoriënteerde training alleen (Myer et al., 2006 — AJSM). <strong>Progressief jogprotocol</strong> reduceert recidiefkans bij loophervatting na ligamentletsel (Creighton et al., 2010 — CJSM).'
+    },
+    {
+      label:'Fase 4',
+      title:'Sportspecifieke training & agiliteit',
+      weeks:'Week 13–18',
+      goals:[
+        'Richtingsverandering en pivotbewegingen pijnvrij uitvoeren',
+        'Quadricepskracht ≥ 90% contralateraal',
+        'Sportspecifieke drills zonder beschermingsbrace uitvoeren',
+        'Psychologische gereedheid voor sporthervatting (ACL-RSI ≥ 65)',
+        'Volledige loopsnelheid pijnvrij bereiken'
+      ],
+      exercises:[
+        {name:'Shuttle run & richtingsverandering',params:[['Sets','4–6'],['Afstand','10 m'],['Schema','heen en terug × 3'],['Freq','3×/week']],note:'Bouwt vermogen voor snelle richtingsverandering. Start bij 60% snelheid, progressief naar 100%. Monitor kniemechanica bij acceleratie en afremming.',cat:'neuromusculair'},
+        {name:'Zijwaartse sprongen (lateral hops)',params:[['Sets','3'],['Reps','10 per zijde'],['Breedte','30 → 60 cm'],['Freq','3×/week']],note:'Mediale kniestabiliteit testen en trainen onder plyometrische belasting. Zachte landing controleren: knie absorbeert, geen valgus. Progressieve sprongbreedte.',cat:'kracht'},
+        {name:'Continu hardlopen (progressief)',params:[['Duur','20–40 min'],['Intensiteit','70–85% max snelheid'],['Freq','3–4×/week']],note:'Volledige loophervatting met progressieve intensiteit. Varieer ondergrond (gras, tartan). Monitor kniepijn 24u na training.',cat:'cardio'},
+        {name:'Sportspecifieke techniektraining',params:[['Duur','30–45 min'],['Inhoud','sport-afhankelijk: traptechniek, vangtechniek, schermtechniek'],['Freq','2–3×/week']],note:'Overgang naar sportcontext. Kinesitherapeut of coach observeert kniemechanica. Pas aan op basis van specifieke sport en positie van patiënt.',cat:'neuromusculair'},
+        {name:'Nordic Hamstring Curl (preventie)',params:[['Sets','3'],['Reps','6–8'],['Tempo','eccentrisch 3–4 sec'],['Freq','2×/week']],note:'Sterkste evidence voor hamstringpees- en knieletselpreventie. Moeilijk — start met gedeeltelijke bewegingsrange. Essentieel vóór sporthervatting.',cat:'kracht'},
+        {name:'Proprioceptie challenge (reaktiebord / perturbatie)',params:[['Sets','3'],['Duur','30 sec per set'],['Type','reactieve perturbatie door kinesitherapeut'],['Freq','2×/week']],note:'Simuleert onverwachte kniebelasting zoals bij sport. Kinesitherapeut geeft onverwachte duw of trekt weerstandsband tijdens balansuitvoering.',cat:'neuromusculair'}
+      ],
+      criteria_go:[
+        'Quadricepskracht ≥ 90% contralateraal',
+        'Enkelvoudig been-hoptest ≥ 90% symmetrie-index (LSI)',
+        'Shuttle run zonder antalgisch patroon of kniepijn',
+        'ACL-RSI score ≥ 65 (psychologische gereedheid)',
+        'Klinisch: geen mediale kniepijn bij valgus-stresstest',
+        'Sportspecifieke drills volledig pijnvrij bij 90% intensiteit'
+      ],
+      evidence:'<strong>Limb Symmetry Index ≥ 90%</strong> bij de enkelbeen-hoptest is de sterkste functionele drempel voor veilige sporthervatting na knieligamentletsel (Noyes et al., 1991 — AJSM). <strong>Nordic Hamstring Exercise</strong> reduceert hamstring- en knieletselincidentie met 51% bij sporthervatting (Petersen et al., 2011 — AJSM, n=942). <strong>Psychologische gereedheid</strong> (ACL-RSI) is een onafhankelijke predictor van sporthervatting en recidief na knieligamentletsel (Webster & Feller, 2018 — OJSM).'
+    },
+    {
+      label:'Fase 5',
+      title:'Return to sport & recidiefpreventie',
+      weeks:'Week 19–24',
+      goals:[
+        'Volledige, onbeperkte sporthervatting',
+        'LSI ≥ 95% bij alle functionele tests',
+        'Onderhoudsprogramma implementeren (kracht + proprioceptie)',
+        'Recidiefpreventieplan met trainer/coach opstellen',
+        'ACL-RSI ≥ 80 (volledig psychologisch klaar)'
+      ],
+      exercises:[
+        {name:'Wedstrijdspecifieke training (volledig)',params:[['Freq','5×/week'],['Intensiteit','100%'],['Type','volledig trainingsdeelname']],note:'Volledige integratie in groepstraining. Kinesitherapeut geeft groen licht na doorstaan van alle criteria fase 4. Eerste 2 weken nog wekelijkse check-in.',cat:'cardio'},
+        {name:'Onderhoud krachtcircuit knie',params:[['Sets','3'],['Oefeningen','squat + RDL + lateral hop + nordic'],['Freq','2×/week']],note:'Langetermijn onderhoud van knie- en heupkracht als bescherming tegen herletsel. Condenseer tot 20–25 minuten circuit.',cat:'kracht'},
+        {name:'Nordic Hamstring onderhoud',params:[['Sets','2'],['Reps','6'],['Freq','1–2×/week (off-season)']],note:'FIFA 11+ protocol integreert Nordic als warm-up onderdeel. Aangetoond effectief als seizoensgebonden preventie bij ploegsporten.',cat:'kracht'},
+        {name:'Proprioceptie circuit (wekelijks)',params:[['Duur','10 min'],['Inhoud','BOSU + perturbatie + hinkelen'],['Freq','1–2×/week']],note:'Proprioceptief onderhoud om het verhoogde herletselrisico in het eerste seizoen na MCL-letsel te verlagen.',cat:'neuromusculair'},
+        {name:'Belastingsmonitoring (sRPE)',params:[['Tool','sessie RPE × duur'],['Freq','na elke training'],['Drempel','wekelijkse stijging ≤ 10%']],note:'Overbelasting is de belangrijkste risicofactor voor herletsel in eerste 3 maanden na sporthervatting. 10%-regel als harde grens.',cat:'stabiliteit'}
+      ],
+      criteria_go:[
+        'Volledige wedstrijddeelname gedurende ≥ 2 weken zonder klachten',
+        'LSI ≥ 95% bij enkelbeen-hoptest en drievoudige hoptest',
+        'ACL-RSI ≥ 80',
+        'Onderhoudsprogramma zelfstandig en correct uitgevoerd',
+        'Geen mediale kniepijn bij maximale sportbelasting'
+      ],
+      evidence:'<strong>Return-to-sport criteria</strong> gebaseerd op LSI ≥ 90% reduceren herletselkans na knieligamentletsel met 84% t.o.v. op tijd gebaseerde terugkeer (Grindem et al., 2016 — BJSM). <strong>Recidiefrisico</strong> na MCL-letsel bedraagt 12–18% zonder preventief onderhoudsprogramma (Lundblad et al., 2013 — KSSTA). <strong>Belastingsmonitoring</strong> via sRPE met ≤ 10% wekelijkse progressie reduceert overbelastingsletsel met 30% (Hulin et al., 2016 — BJSM).'
+    }
+  ],
+  scores:[],
+  spiergroep:'Quadriceps'
+};
+
 // ── REGIO MAPPING (protocol → regio) ──
 const REGIO_MAP = {
-  acl:'Knie & Heup', tka:'Knie & Heup', pfps:'Knie & Heup', pt:'Knie & Heup', gmt:'Knie & Heup', hsi:'Knie & Heup',
+  acl:'Knie & Heup', tka:'Knie & Heup', pfps:'Knie & Heup', pt:'Knie & Heup', gmt:'Knie & Heup', hsi:'Knie & Heup', mcl:'Knie & Heup',
   lh:'Lumbaal & Cervicaal', bureau:'Lumbaal & Cervicaal', faz:'Lumbaal & Cervicaal', fbl:'Lumbaal & Cervicaal',
   rc:'Schouder & Arm', si:'Schouder & Arm', elb:'Schouder & Arm', sup:'Schouder & Arm',
   at:'Enkel & Voet', enkel:'Enkel & Voet', over:'Enkel & Voet', mtss:'Enkel & Voet',

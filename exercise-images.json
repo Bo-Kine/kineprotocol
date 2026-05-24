@@ -26,5 +26,143 @@
   "Zijwaartse uitval (lateral lunge)": {
     "url": "./exercise-images/Lunge.webp",
     "alt": "Lunge"
+  },
+  "Activiteitsmodificatie & ergonomie-educatie": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Practical_Demonstrations_of_Ergonomic_Principles.webm/500px--Practical_Demonstrations_of_Ergonomic_Principles.webm.jpg",
+    "alt": "Ergonomics",
+    "credit": "Wikipedia: Ergonomics",
+    "wiki": "https://en.wikipedia.org/wiki/Ergonomics"
+  },
+  "Alphabet oefening (actieve ROM)": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Ankle.jpg/500px-Ankle.jpg",
+    "alt": "Ankle",
+    "credit": "Wikipedia: Ankle",
+    "wiki": "https://en.wikipedia.org/wiki/Ankle"
+  },
+  "Aquatherapie": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/An_attendant_administers_a_thermal_water_bath_to_a_patron_in_a_Hubbard_Tub_at_the_Libbey_Physical_Medical_Center._%28af2bed95-ca37-4484-9cee-98050cf513b5%29.jpg/500px-An_attendant_administers_a_thermal_water_bath_to_a_patron_in_a_Hubbard_Tub_at_the_Libbey_Physical_Medical_Center._%28af2bed95-ca37-4484-9cee-98050cf513b5%29.jpg",
+    "alt": "Aquatic therapy",
+    "credit": "Wikipedia: Aquatic therapy",
+    "wiki": "https://en.wikipedia.org/wiki/Aquatic%20therapy"
+  },
+  "Balans instabiel vlak": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Proprioception_image-01.jpg/500px-Proprioception_image-01.jpg",
+    "alt": "Proprioception",
+    "credit": "Wikipedia: Proprioception",
+    "wiki": "https://en.wikipedia.org/wiki/Proprioception"
+  },
+  "Balans op instabiel vlak (BOSU / wiebelplank)": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/A_U.S._Coast_Guard_recruit%2C_assigned_to_Company_Oscar_188%2C_performs_a_plank_during_incentive_training_at_Coast_Guard_Training_Center_Cape_May_in_Cape_May%2C_N.J.%2C_July_31%2C_2013_130731-G-WA946-943.jpg/500px-thumbnail.jpg",
+    "alt": "Plank (exercise)",
+    "credit": "Wikipedia: Plank (exercise)",
+    "wiki": "https://en.wikipedia.org/wiki/Plank%20%28exercise%29"
+  },
+  "Beenpers bilateraal": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Muscle_Strengthening_at_the_Gym_-_Seated_Leg_Press.webm/250px--Muscle_Strengthening_at_the_Gym_-_Seated_Leg_Press.webm.jpg",
+    "alt": "Leg press",
+    "credit": "Wikipedia: Leg press",
+    "wiki": "https://en.wikipedia.org/wiki/Leg%20press"
+  },
+  "Bulgaarse split squat": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Squats.svg/500px-Squats.svg.png",
+    "alt": "Squat (exercise)",
+    "credit": "Wikipedia: Squat (exercise)",
+    "wiki": "https://en.wikipedia.org/wiki/Squat%20%28exercise%29"
+  },
+  "Enkel-been balans": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Proprioception_image-01.jpg/500px-Proprioception_image-01.jpg",
+    "alt": "Proprioception",
+    "credit": "Wikipedia: Proprioception",
+    "wiki": "https://en.wikipedia.org/wiki/Proprioception"
+  },
+  "Enkel-been balans (stabiel vlak)": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Proprioception_image-01.jpg/500px-Proprioception_image-01.jpg",
+    "alt": "Proprioception",
+    "credit": "Wikipedia: Proprioception",
+    "wiki": "https://en.wikipedia.org/wiki/Proprioception"
+  },
+  "Enkel-been balans op schuimmat / BOSU": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Proprioception_image-01.jpg/500px-Proprioception_image-01.jpg",
+    "alt": "Proprioception",
+    "credit": "Wikipedia: Proprioception",
+    "wiki": "https://en.wikipedia.org/wiki/Proprioception"
+  },
+  "Enkel-been balans op stabiel vlak": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Proprioception_image-01.jpg/500px-Proprioception_image-01.jpg",
+    "alt": "Proprioception",
+    "credit": "Wikipedia: Proprioception",
+    "wiki": "https://en.wikipedia.org/wiki/Proprioception"
+  },
+  "Enkel-pompen": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Ankle.jpg/500px-Ankle.jpg",
+    "alt": "Ankle",
+    "credit": "Wikipedia: Ankle",
+    "wiki": "https://en.wikipedia.org/wiki/Ankle"
+  },
+  "Enkel-pompen & beencirkels": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Ankle.jpg/500px-Ankle.jpg",
+    "alt": "Ankle",
+    "credit": "Wikipedia: Ankle",
+    "wiki": "https://en.wikipedia.org/wiki/Ankle"
+  },
+  "Enkel-pompen (circulatie)": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Ankle.jpg/500px-Ankle.jpg",
+    "alt": "Ankle",
+    "credit": "Wikipedia: Ankle",
+    "wiki": "https://en.wikipedia.org/wiki/Ankle"
+  },
+  "Enkel-pompen (dag 0)": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Ankle.jpg/500px-Ankle.jpg",
+    "alt": "Ankle",
+    "credit": "Wikipedia: Ankle",
+    "wiki": "https://en.wikipedia.org/wiki/Ankle"
+  },
+  "Ergonomie & belastingsmanagement": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Practical_Demonstrations_of_Ergonomic_Principles.webm/500px--Practical_Demonstrations_of_Ergonomic_Principles.webm.jpg",
+    "alt": "Ergonomics",
+    "credit": "Wikipedia: Ergonomics",
+    "wiki": "https://en.wikipedia.org/wiki/Ergonomics"
+  },
+  "Ergonomie & postuuroefeningen werk": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Practical_Demonstrations_of_Ergonomic_Principles.webm/500px--Practical_Demonstrations_of_Ergonomic_Principles.webm.jpg",
+    "alt": "Ergonomics",
+    "credit": "Wikipedia: Ergonomics",
+    "wiki": "https://en.wikipedia.org/wiki/Ergonomics"
+  },
+  "Single leg squat (10–20 cm box)": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Squats.svg/500px-Squats.svg.png",
+    "alt": "Squat (exercise)",
+    "credit": "Wikipedia: Squat (exercise)",
+    "wiki": "https://en.wikipedia.org/wiki/Squat%20%28exercise%29"
+  },
+  "Split squat + single leg RDL": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Squats.svg/500px-Squats.svg.png",
+    "alt": "Squat (exercise)",
+    "credit": "Wikipedia: Squat (exercise)",
+    "wiki": "https://en.wikipedia.org/wiki/Squat%20%28exercise%29"
+  },
+  "Sportspecifieke looptraining met gait-cues": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Runners_JFK_Memorial_%28cropped%29.jpg/500px-Runners_JFK_Memorial_%28cropped%29.jpg",
+    "alt": "Running",
+    "credit": "Wikipedia: Running",
+    "wiki": "https://en.wikipedia.org/wiki/Running"
+  },
+  "Sprint progressie": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Usain_Bolt_2012_Olympics_1.jpg/500px-Usain_Bolt_2012_Olympics_1.jpg",
+    "alt": "Sprint (running)",
+    "credit": "Wikipedia: Sprint (running)",
+    "wiki": "https://en.wikipedia.org/wiki/Sprint%20%28running%29"
+  },
+  "Squat + calf raise combinatie": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Squats.svg/500px-Squats.svg.png",
+    "alt": "Squat (exercise)",
+    "credit": "Wikipedia: Squat (exercise)",
+    "wiki": "https://en.wikipedia.org/wiki/Squat%20%28exercise%29"
+  },
+  "Squat aan muur (wall squat)": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Squats.svg/500px-Squats.svg.png",
+    "alt": "Squat (exercise)",
+    "credit": "Wikipedia: Squat (exercise)",
+    "wiki": "https://en.wikipedia.org/wiki/Squat%20%28exercise%29"
   }
 }

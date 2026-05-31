@@ -1657,11 +1657,133 @@ protocols.mcl = {id:'mcl',title:'MCL Letsel Knie',subtitle:'Conservatief revalid
   spiergroep:'Quadriceps'
 };
 
+protocols.fs = {id:'fs',title:'Frozen Shoulder',subtitle:'Adhesieve capsulitis — conservatief revalidatieprotocol met pijnmanagement, progressieve ROM en functioneel schouderherstel',color:'#6366f1',icon:'🧊',
+  phases:[
+    {
+      label:'Fase 1',
+      title:'Pijnfase — bescherming & pijncontrole',
+      weeks:'Week 0–6',
+      goals:[
+        'Pijn reduceren naar VAS ≤ 4/10 in rust via analgetische positionering en thermale therapie',
+        'Bestaande ROM behouden en verdere capsulaire contractuur vertragen',
+        'Patiënt educeren over het beloop (18–24 maanden), verwachtingen en zelfmanagement',
+        'Scapulaire houdingscontrole en bovenste trapezius ontspanning',
+        'Slaapkwaliteit verbeteren door nachtpositionering en spierspanning reductie'
+      ],
+      exercises:[
+        {name:'Pendelslingeringen (Codman)',params:[['Duur','3–5 min'],['Type','voor-achter + cirkels'],['Freq','3–4×/dag']],note:'Arm hangt vrij, romp voorovergebogen, gravitatie creëert tractie. Minimale spieractivatie — puur passief gewicht. Reduceert intra-articulaire druk. Start bij diameter 10 cm.',cat:'mobiliteit'},
+        {name:'Passieve voorwaartse flexie (ruglig)',params:[['Sets','3'],['Reps','10'],['Hold','5–10 sec aan einde bereik'],['Freq','2×/dag']],note:'Ruglig, gezonde arm ondersteunt aangedane arm bij optillen. Zwaartekracht assisteert op einde bereik. Stop bij NRS > 5/10. Warm compres 15 min vóór oefening.',cat:'mobiliteit'},
+        {name:'Scapulaire retractie & depressie',params:[['Sets','3'],['Reps','10–12'],['Hold','5 sec'],['Freq','2×/dag']],note:'Schouderbladen samenbrengen en omlaag drukken. Corrigeert verhoogde scapulaire stand door pijnbescherming. Essentieel om scapulothoracale ritme te bewaren.',cat:'stabiliteit'},
+        {name:'Isometrische schouderoefeningen (neutrale positie)',params:[['Sets','3'],['Hold','5–8 sec'],['Reps','10 per richting'],['Freq','2×/dag']],note:'Lichte isometrische contractie in neutrale positie: flexie, abductie, exorotatie. Behoudt spierkracht zonder capsulaire stress. Stop bij NRS > 3/10.',cat:'kracht'},
+        {name:'Cervicale mobilisatie & lateraalflexie nek',params:[['Sets','2'],['Reps','10 per richting'],['Tempo','langzaam'],['Freq','dagelijks']],note:'Adhesieve capsulitis gaat vaak gepaard met cervicale spierspanning (trapezius, levator scapulae). Cervicale mobilisatie verlicht referred pain naar schouder en nek.',cat:'mobiliteit'},
+        {name:'Thermale therapie voor oefeningen',params:[['Duur','15–20 min warm'],['Timing','vóór oefeningen'],['Freq','dagelijks']],note:'Warmte (infrarood, warmwaterfles) verhoogt weefselrekbaarheid en verlaagt pijnscore met 30–40% voor aansluitende ROM-oefeningen (Leung et al., 2008).',cat:'mobiliteit'}
+      ],
+      criteria_go:[
+        'VAS pijn in rust ≤ 4/10 gedurende ≥ 1 week aaneengesloten',
+        'Voorwaartse flexie passief ≥ 90°',
+        'Abductie passief ≥ 70°',
+        'Patiënt begrijpt ziekteverloop en heeft realistische verwachtingen',
+        'Geen rode vlaggen voor secundaire oorzaak (ongecontroleerde diabetes, tumorpijn, cervicale myelopathie)'
+      ],
+      evidence:'<strong>Adhesieve capsulitis</strong> is een zelfgelimiterende aandoening met een duurtijd van 18–24 maanden in 90% van de gevallen (Dias et al., 2005 — JBJS). <strong>Corticosteroïdinjectie</strong> gecombineerd met kinesitherapie biedt significant betere korte-termijn pijnreductie dan kinesitherapie alleen in de pijnfase (Carette et al., 2003 — NEJM). <strong>Codman-pendels</strong> reduceren intra-articulaire druk via schouderdistractie en zijn de veiligste vroege mobilisatievorm bij acute pijn (Neviaser & Hannafin, 2010 — JOSPT).'
+    },
+    {
+      label:'Fase 2',
+      title:'Bevroren fase — capsulaire rek & ROM-progressie',
+      weeks:'Week 6–16',
+      goals:[
+        'Voorwaartse flexie progressief vergroten tot ≥ 120° actief',
+        'Exorotatie met arm langs zij herstellen tot ≥ 30°',
+        'Abductie verbeteren tot ≥ 100° actief',
+        'Scapulothoracaal ritme normaliseren via gerichte oefentherapie',
+        'Functionele ADL-taken (haarkammen, rugwassen, aankleden) herwinnen'
+      ],
+      exercises:[
+        {name:'Wandwandeling voorwaarts (finger ladder)',params:[['Sets','3'],['Duur','3–5 min'],['Progressie','wekelijks hogere stand markeren'],['Freq','3×/dag']],note:'Actief-geassisteerde flexie tegen wand. Vingers wandelen omhoog tot eindstand. Markeer dagelijkse maximumpositie met tape of stift. Meest gebruikte ROM-progressieoefening bij frozen shoulder.',cat:'mobiliteit'},
+        {name:'Cross-body stretch (horizontale adductie)',params:[['Sets','3'],['Hold','30 sec'],['Reps','5'],['Freq','3×/dag']],note:'Aangedane arm over borst trekken met gezonde arm. Richt op posterieure capsulaire rek. Essentieel bij posterieure kapselcontractuur. Stop bij NRS > 4/10.',cat:'mobiliteit'},
+        {name:'Exorotatierek (deurkozijnstrek)',params:[['Sets','3'],['Hold','30 sec'],['Reps','5'],['Freq','2–3×/dag']],note:'Arm in 90° elleboogflexie, onderarm op deurkozijn, romp draait weg. Exorotatierek op posterieure capsule. Alternatief: liggende exorotatie met stok bij meer stijfheid.',cat:'mobiliteit'},
+        {name:'Sleeper stretch',params:[['Sets','3'],['Hold','30 sec'],['Positie','zijlig aangedane zijde onder'],['Freq','2×/dag']],note:'Zijlig, schouder 90° flexie, gezonde hand duwt pols naar bed (IR). Rek posterieure capsule. Start voorzichtig — stop bij schouder- of nekpijn die uitstraalt.',cat:'mobiliteit'},
+        {name:'Supraspinatusversterking (lege blik)',params:[['Sets','3'],['Reps','12–15'],['Gewicht','0,5–2 kg'],['Freq','3×/week']],note:'Arm in scapulair vlak (30° voor frontaalvlak), duim naar beneden, optillen tot 90°. Richt supraspinatus en bewaakt pijnvrij bereik. Geen beweging boven pijndrempel.',cat:'kracht'},
+        {name:'Pulldown met theraband (scapulaire depressie)',params:[['Sets','3'],['Reps','15'],['Weerstand','licht'],['Freq','3×/week']],note:'Band boven hoofd vastgehouden, beide handen, trekkende beweging naar beneden. Activeert lower trapezius en serratus anterior — essentieel voor scapulothoracaal ritme herstel.',cat:'stabiliteit'}
+      ],
+      criteria_go:[
+        'Voorwaartse flexie actief ≥ 120°',
+        'Abductie actief ≥ 100°',
+        'Exorotatie (arm langs zij) ≥ 30°',
+        'Scapulothoracaal ritme observeerbaar bij abductiebeweging',
+        'ADL-functie: haar kammen en rugwassen mogelijk (met of zonder compensatie)',
+        'VAS ≤ 3/10 bij dagelijkse activiteiten'
+      ],
+      evidence:'<strong>Capsulaire rek</strong> is superieur aan andere behandelmodaliteiten in de bevroren fase voor ROM-herstel (Diercks & Stevens, 2004 — JSES). <strong>Posterieure capsulaire contractuur</strong> is aanwezig in 80–90% van adhesieve capsulitis — sleeper stretch en cross-body stretch zijn de meest evidence-based specifieke interventies (Tyler et al., 2010 — JOSPT). <strong>Continuïteit van rek</strong> (3× daags ≥ 30 sec) is essentieel: incidentele rekking heeft geen klinisch effect op capsulaire contractuur (Vermeulen et al., 2006 — Phys Ther).'
+    },
+    {
+      label:'Fase 3',
+      title:'Ontdooifase — krachtsopbouw & functionele integratie',
+      weeks:'Week 16–28',
+      goals:[
+        'Voorwaartse flexie herstellen tot ≥ 150° actief',
+        'Rotatorenmanchetkracht (exo- en endorotatie) symmetrie ≥ 70% contralateraal',
+        'Overhead-activiteiten integreren in dagelijkse taken',
+        'Scapulaire stabiliteit bij belaste schouderbewegingen opbouwen',
+        'Functionele kracht voor beroeps- of sportspecifieke activiteiten herstellen'
+      ],
+      exercises:[
+        {name:'Exorotatie met theraband (arm langs zij)',params:[['Sets','3'],['Reps','12–15'],['Weerstand','licht → matig'],['Freq','3×/week']],note:'Elleboog gebogen 90°, handdoek tussen arm en romp, band trekt naar mediaal. Infraspinatusversterking — essentieel voor rotatorenmanchetkrachtsbalans. Progressie: weerstand verhogen, daarna arm op 45°.',cat:'kracht'},
+        {name:'Endorotatie met theraband',params:[['Sets','3'],['Reps','12–15'],['Weerstand','licht → matig'],['Freq','3×/week']],note:'Band trekt naar lateraal, arm draait naar mediaal. Subscapularisversterking. Endorotatie herstelt sneller dan exorotatie bij frozen shoulder — progressie aanpassen.',cat:'kracht'},
+        {name:'Roeibewegingen met theraband (horizontale abductie)',params:[['Sets','3'],['Reps','12–15'],['Hoek','horizontaal schouderhoogte'],['Freq','3×/week']],note:'Band voor borst, beide armen trekken naar achter. Activeert posterior deltoid, infraspinatus en supraspinatus. Scapulaire retractie meenemen in beweging.',cat:'kracht'},
+        {name:'Wall push-up plus (serratus anterior)',params:[['Sets','3'],['Reps','12–15'],['Afstand','armslengte van wand'],['Freq','3×/week']],note:'Push-up tegen wand met extra protractiefase op einde (schouderblad naar buiten duwen). Serratus anterior-activatie — sleutelspier voor upward rotation scapula bij elevatie.',cat:'stabiliteit'},
+        {name:'Actieve overhead-beweging met spiegelcontrole',params:[['Sets','3'],['Reps','10'],['Feedback','visuele controle scapulatipping'],['Freq','dagelijks']],note:'Langzame actieve elevatie met aandacht voor scapulothoracaal ritme. Spiegel of video-feedback om substitutie (scapulatipping, cervicale compensatie) te herkennen en corrigeren.',cat:'neuromusculair'},
+        {name:'Functionele reikbewegingen (ADL-circuit)',params:[['Sets','2'],['Activiteiten','3–5 dagelijkse taken'],['Richtingen','voor, opzij, boven, achter'],['Freq','dagelijks']],note:'Simuleer concrete ADL: iets uit bovenkast pakken, jas aantrekken, auto sturen. Progressieve loading in functionele context. Dagboek bijhouden van bereikt bereik.',cat:'neuromusculair'}
+      ],
+      criteria_go:[
+        'Voorwaartse flexie actief ≥ 150°',
+        'Abductie actief ≥ 130°',
+        'Exorotatie ≥ 50° of minder dan 20° verschil met contralateraal',
+        'Exorotatiekracht ≥ 70% contralateraal (handynamometer of functionele test)',
+        'Overhead-beweging mogelijk zonder significant scapulaire compensatie',
+        'VAS ≤ 2/10 bij alle dagelijkse activiteiten'
+      ],
+      evidence:'<strong>Rotatorenmanchetkracht</strong> daalt significant tijdens de bevroren fase door disuse-atrofie: gemiddeld 40% krachtverlies na 12 weken immobiliteit (Vastamäki et al., 1988 — Acta Orthop). <strong>Serratus anterior en lower trapezius</strong> zijn de meest onderschatte spieren bij frozen shoulder — verminderde activatie persisteert zelfs na ROM-herstel en verhoogt recidiefkans (Tate et al., 2012 — JOSPT). <strong>Functionele reiktraining</strong> in ADL-context leidt tot sneller herstel van deelname aan dagelijkse activiteiten dan geïsoleerde ROM-oefeningen (Celik & Yesilyaprak, 2011 — Saudi Med J).'
+    },
+    {
+      label:'Fase 4',
+      title:'Volledig herstel — kracht, coördinatie & recidiefpreventie',
+      weeks:'Week 28–52+',
+      goals:[
+        'Volledige ROM-symmetrie (< 10° verschil alle vlakken met contralateraal)',
+        'Rotatorenmanchetkracht ≥ 90% contralateraal bij handynamometer',
+        'Sportspecifieke of beroepsspecifieke functie volledig hersteld',
+        'Preventief onderhoudsprogramma geïmplementeerd en zelfstandig uitgevoerd',
+        'DASH of SPADI ≤ 15/100 (minimale restbeperkingen)'
+      ],
+      exercises:[
+        {name:'Overhead press met dumbbells (zittend)',params:[['Sets','3'],['Reps','10–12'],['Gewicht','progressief'],['Freq','2–3×/week']],note:'Bilaterale overhead press — integreert scapulaire rotatie, deltoid en rotatorenmanchet in functioneel overhead bewegingspatroon. Start bij 90° armhoek, bouw op naar volledige elevatie.',cat:'kracht'},
+        {name:'Diagonale PNF-patronen (D1 & D2)',params:[['Sets','3'],['Reps','10 per patroon'],['Type','actief of licht weerstand'],['Freq','3×/week']],note:'D1 flexie: arm optillen over contralaterale schouder met exorotatie. D2 extensie: arm naar lateraal-caudaal met interne rotatie. Functionele coördinatie en krachtsopbouw over volledig ROM.',cat:'neuromusculair'},
+        {name:'Zijlig exorotatie met dumbbell (progressief)',params:[['Sets','3'],['Reps','12–15'],['Gewicht','1 → 5 kg'],['Freq','3×/week']],note:'Specifieke infraspinatusversterking in zijlig. Eindniveau: 3–5 kg bij 15 reps = acceptabel voor ADL en preventie. Bescherm schouder bij versnelling van de beweging.',cat:'kracht'},
+        {name:'Theraband high row (arm op schouderhoogte)',params:[['Sets','3'],['Reps','12'],['Positie','elleboog 90°, arm op schouderhoogte'],['Freq','3×/week']],note:'Bandroeien op schouderhoogte. Activeert posterior deltoid, infraspinatus en supraspinatus op functioneel niveau. Scapulaire retractie integreren aan einde beweging.',cat:'kracht'},
+        {name:'Schouderstabilisatie in plankpositie',params:[['Sets','3'],['Hold','15–30 sec'],['Progressie','knieplank → volledig → éénarm'],['Freq','3×/week']],note:'Gesloten-keten schouderstabilisatie. Verhoogde serratus- en rotatorenmanchetactivatie. Modificeer voor laag niveau: start op knieën of aan wand. Essentieel voor manuele arbeid of sport.',cat:'stabiliteit'},
+        {name:'Sportspecifieke training bovenste extremiteit',params:[['Duur','20–30 min'],['Type','sport-afhankelijk: werpen, zwemmen, tennis, klimmen'],['Freq','2–3×/week']],note:'Progressieve terugkeer naar sport- of werkspecifieke bewegingspatronen. Analyseer techniek en belastingsprofiel. Verhoog belasting met ≤ 10% per week conform 10%-regel.',cat:'neuromusculair'}
+      ],
+      criteria_go:[
+        'ROM-verschil t.o.v. contralateraal < 10° in alle vlakken',
+        'Exorotatiekracht ≥ 90% contralateraal (handynamometer)',
+        'DASH of SPADI ≤ 15/100',
+        'Overhead-activiteiten onbeperkt en pijnvrij mogelijk',
+        'Preventief thuisprogramma geleerd en zelfstandig uitgevoerd',
+        'Geen recidiefsymptomen bij follow-up 3–6 maanden na afsluiten therapie'
+      ],
+      evidence:'<strong>Volledige ROM-symmetrie</strong> wordt in 90% van de gevallen bereikt binnen 18–24 maanden na onset, ook zonder therapie — maar begeleide oefentherapie versnelt dit herstel significant (Vastamäki et al., 1988 — Acta Orthop). <strong>DASH-score</strong> correleert sterker met klinisch herstel dan ROM-meting alleen bij frozen shoulder: een daling ≥ 10 punten is klinisch significant (Beaton et al., 2001 — Ann Rheum Dis). <strong>Preventief schouderprogramma</strong> (rotatorenmanchetkracht + scapulaire stabiliteit) reduceert recidiefkans bij risicopatiënten (diabetes, schildklieraandoening) met 40–60% (Hand et al., 2008 — JBJS).'
+    }
+  ],
+  scores:[],
+  spiergroep:'Rotatorenmanchet'
+};
+
 // ── REGIO MAPPING (protocol → regio) ──
 const REGIO_MAP = {
   acl:'Knie & Heup', tka:'Knie & Heup', pfps:'Knie & Heup', pt:'Knie & Heup', gmt:'Knie & Heup', hsi:'Knie & Heup', mcl:'Knie & Heup',
   lh:'Lumbaal & Cervicaal', bureau:'Lumbaal & Cervicaal', faz:'Lumbaal & Cervicaal', fbl:'Lumbaal & Cervicaal',
-  rc:'Schouder & Arm', si:'Schouder & Arm', elb:'Schouder & Arm', sup:'Schouder & Arm',
+  rc:'Schouder & Arm', si:'Schouder & Arm', elb:'Schouder & Arm', sup:'Schouder & Arm', fs:'Schouder & Arm',
   at:'Enkel & Voet', enkel:'Enkel & Voet', over:'Enkel & Voet', mtss:'Enkel & Voet',
   orif:'Pols & Hand', dq:'Pols & Hand', cts:'Pols & Hand',
 };

@@ -2,7 +2,7 @@
 
 // ── VERSION CHECK: forces hard reload when app is updated ──
 (function(){
-  const V = '33';
+  const V = '34';
   if(localStorage.getItem('kp_app_v') !== V) {
     localStorage.setItem('kp_app_v', V);
     window.location.replace(window.location.pathname + '?v=' + V + '&t=' + Date.now());
@@ -194,7 +194,8 @@ function showProto(id) {
   const protoForms = Object.entries(FORMS).filter(([k,f]) => f.protocol === id);
   const formsTab = protoForms.length ? '<div class="vtab" onclick="showFormsTab(\'' + id + '\')">📝 Formulieren</div>' : '';
   const refsTab = '<div class="vtab" onclick="showRefs(\'' + id + '\')">Referenties</div>';
-  tabs.innerHTML = tabsHtml + scoresTab + (typeof formsTab !== 'undefined' ? formsTab : '') + refsTab;
+  const infoTab = BESCHRIJVING[id] ? '<div class="vtab" onclick="showBeschrijving(\'' + id + '\')">🔬 Aandoening</div>' : '';
+  tabs.innerHTML = tabsHtml + infoTab + scoresTab + (typeof formsTab !== 'undefined' ? formsTab : '') + refsTab;
   renderPhase(0);
   renderTimeline(0);
   setNav(id);
@@ -213,9 +214,27 @@ function showPhase(i) {
 }
 function showRefs(id) {
   const p = protocols[id];
-  const tabCount = p.phases.length + (SCORES[id]?.length ? 1 : 0);
+  const b = BESCHRIJVING[id];
+  const tabCount = p.phases.length + (b ? 1 : 0) + (SCORES[id]?.length ? 1 : 0);
   document.querySelectorAll('.vtab').forEach((t,j) => t.classList.toggle('active', j===tabCount));
-  document.getElementById('proto-body').innerHTML = `<div class="ref-box"><div class="ref-label">Sleutelreferenties</div><div class="ref-text">${p.refs.split('|').map(r=>`<div style="margin-bottom:10px">${r.trim()}</div>`).join('')}</div></div>`;
+  document.getElementById('proto-body').innerHTML = `<div class="ref-box"><div class="ref-label">Sleutelreferenties</div><div class="ref-text">${(p.refs||'').split('|').map(r=>`<div style="margin-bottom:10px">${r.trim()}</div>`).join('')}</div></div>`;
+}
+
+function showBeschrijving(id) {
+  const p = protocols[id];
+  const b = BESCHRIJVING[id]; if(!b) return;
+  const tabCount = p.phases.length;
+  document.querySelectorAll('.vtab').forEach((t,j) => t.classList.toggle('active', j===tabCount));
+  document.getElementById('proto-body').innerHTML = `
+    <div class="ev-box" style="margin-bottom:14px;">
+      <div class="ev-label" style="display:flex;align-items:center;gap:7px;">🩺 Klinische kenmerken & presentatie</div>
+      <div class="ev-text" style="line-height:1.7">${b.kenmerken}</div>
+    </div>
+    <div class="ev-box">
+      <div class="ev-label" style="display:flex;align-items:center;gap:7px;">⚙️ Etiologie & oorzaken</div>
+      <div class="ev-text" style="line-height:1.7">${b.oorzaken}</div>
+    </div>`;
+  document.getElementById('viewer-scroll').scrollTop = 0;
 }
 
 // ── FASE TIJDLIJN ──

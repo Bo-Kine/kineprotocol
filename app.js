@@ -89,7 +89,7 @@ function filterProtos(regio) {
 // ── FEATURED HOME ──
 const REGIO_PROTOS = {
   knie: ['acl','tka','pfps','pt','gmt','hsi'],
-  schouder: ['rc','si','elb'],
+  schouder: ['rc','si','elb','fs'],
   rug: ['lh','bureau'],
   enkel: ['at','enkel','over','mtss'],
   pols: ['orif','dq','cts'],

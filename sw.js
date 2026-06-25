@@ -1,7 +1,7 @@
 // KineProtocol — Service Worker
 // Cacht alle app-bestanden voor offline gebruik (cache-first strategie)
 
-const CACHE = 'kineprotocol-v34';
+const CACHE = 'kineprotocol-v35';
 
 const PRECACHE = [
   './',
@@ -30,14 +30,12 @@ self.addEventListener('install', event => {
   );
 });
 
-// Activate: verwijder oude caches, claim clients en stuur reload-signaal
+// Activate: verwijder oude caches en claim clients
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys()
       .then(keys => Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k))))
       .then(() => self.clients.claim())
-      .then(() => self.clients.matchAll({type: 'window', includeUncontrolled: true}))
-      .then(clients => clients.forEach(c => c.navigate(c.url)))
   );
 });
 
@@ -45,13 +43,18 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
   const url = event.request.url;
 
-  // Supabase + externe API's: altijd netwerk
+  // Supabase + externe API's: altijd netwerk, nooit cachen
+  // Als netwerk faalt → geef lege 503 terug (nooit null/undefined)
   if (url.includes('supabase.co') || url.includes('googleapis.com/css')) {
-    event.respondWith(fetch(event.request).catch(() => caches.match(event.request)));
+    event.respondWith(
+      fetch(event.request).catch(() =>
+        new Response('', { status: 503, statusText: 'Service Unavailable' })
+      )
+    );
     return;
   }
 
-  // YouTube: netwerk only
+  // YouTube: netwerk only, SW doet niets
   if (url.includes('youtube.com') || url.includes('youtu.be')) {
     return;
   }
@@ -66,7 +69,7 @@ self.addEventListener('fetch', event => {
           caches.open(CACHE).then(c => c.put(event.request, clone));
         }
         return response;
-      }).catch(() => caches.match(event.request))
+      }).catch(() => caches.match(event.request).then(r => r || new Response('', { status: 503 })))
     );
     return;
   }
@@ -80,7 +83,7 @@ self.addEventListener('fetch', event => {
         const clone = response.clone();
         caches.open(CACHE).then(c => c.put(event.request, clone));
         return response;
-      });
+      }).catch(() => new Response('', { status: 503 }));
     })
   );
 });

@@ -1779,9 +1779,131 @@ protocols.fs = {id:'fs',title:'Frozen Shoulder',subtitle:'Adhesieve capsulitis �
   spiergroep:'Rotatorenmanchet'
 };
 
+protocols.pa = {id:'pa',title:'Pes Anserinus Tendinopathie',subtitle:'Conservatief revalidatieprotocol voor tendinopathie en bursitis van de ganzenpoot-aanhechting — load management, hamstringkracht en mediaal kniebeleid',color:'#16a34a',icon:'🦵',
+  phases:[
+    {
+      label:'Fase 1',
+      title:'Acute fase — pijncontrole & weefselprotectie',
+      weeks:'Week 0–3',
+      goals:[
+        'Pijn reduceren naar VAS ≤ 3/10 bij dagelijkse activiteiten via relatieve rust en PRICE',
+        'Compressiebronnen elimineren: valgushouding corrigeren, gekruiste benen vermijden',
+        'Quadricepskracht en heupabductorkracht behouden zonder pees te irriteren',
+        'Patiënt educeren over diagnose, belastingsmanagement en activiteitenmodificatie',
+        'Zwelling en lokale bursitis reduceren via koeling en ontlasting'
+      ],
+      exercises:[
+        {name:'Quadriceps setting (isometrisch)',params:[['Sets','3'],['Hold','10 sec'],['Reps','15'],['Freq','3×/dag']],note:'Isometrische quadricepsactivatie zonder kniebuiging. Vermijdt directe belasting op pes anserinus-insertie. Essentieel om quadricepsinhibitie door pijn te doorbreken.',cat:'kracht'},
+        {name:'Heupabductie zijlig (licht)',params:[['Sets','3'],['Reps','15'],['Gewicht','geen'],['Freq','2×/dag']],note:'Gluteus medius activeren zonder mediale kniestress. Vermindert valgusmoment op knie bij belasting. Lichte versie — geen weerstand in fase 1.',cat:'kracht'},
+        {name:'Stationaire fiets (laag verzet)',params:[['Duur','10–15 min'],['Weerstand','minimaal'],['Zadel','hoog'],['Freq','dagelijks']],note:'Beste vroege cardiovasculaire optie: geen axiale belasting op pes anserinus. Hoog zadel vermindert knieflexiehoek en compressie aan insertie. Stop bij NRS > 3/10.',cat:'cardio'},
+        {name:'Passieve hamstringrek (ruglig)',params:[['Sets','3'],['Hold','30 sec'],['Positie','knie gestrekt, been optillen'],['Freq','2×/dag']],note:'Vermindert trekspanning van semitendinosus en gracilis op insertie. Voorzichtig — stop bij NRS > 3/10 mediaal knie. Niet aggressief in acute fase.',cat:'mobiliteit'},
+        {name:'Isometrische knieflexie (90°)',params:[['Sets','3'],['Hold','30 sec'],['Positie','zittend, voet tegen muur'],['Freq','2×/dag']],note:'Isometrische peesinhibitie vermindert tendinopathiepijn acuut (Rio et al., 2015). 70% MVC houden. Veilig bij acute pes anserinus-irritatie: geen excentrische component.',cat:'kracht'},
+        {name:'Éénbeensbalans (statisch)',params:[['Hold','20–30 sec'],['Sets','3 per been'],['Ogen','open'],['Freq','dagelijks']],note:'Neuromusculaire activatie heupstabilisatoren. Lichte kniebending toegestaan indien pijnvrij. Stop bij VAS > 3/10 mediaal knie. Progressie: verhoog duur.',cat:'stabiliteit'}
+      ],
+      criteria_go:[
+        'VAS ≤ 3/10 bij dagelijkse activiteiten gedurende ≥ 5 opeenvolgende dagen',
+        'Palpatiepijn pes anserinus-insertie gedaald (NRS ≤ 4/10 bij druk)',
+        'Stationaire fiets 15 min pijnvrij uitvoerbaar',
+        'Isometrische knieflexie 3 × 30 sec pijnvrij op 70% MVC',
+        'Traplopen mogelijk met VAS ≤ 4/10'
+      ],
+      evidence:'<strong>Pes anserinus bursitis/tendinopathie</strong> is geassocieerd met gonartrose (prevalentie 2,5–19%), obesitas en valgusknie — correctie van biomechanische risicofactoren is de eerste therapeutische prioriteit (Alvarez-Nemegyei & Canoso, 2004 — JCR). <strong>Isometrische oefeningen</strong> reduceren tendinopathiepijn acuut met gemiddeld 25–30% door corticale inhibitie en centrale pijnmodulatrie (Rio et al., 2015 — BJSM). <strong>Relatieve rust</strong> (activiteitenmodificatie, geen volledige immobilisatie) is superieur aan volledige rust in de acute tendinopathiefase (Docking & Cook, 2019 — JOSPT).'
+    },
+    {
+      label:'Fase 2',
+      title:'Subacuut — isotone belasting & krachtsopbouw',
+      weeks:'Week 3–8',
+      goals:[
+        'Hamstringkracht progressief opbouwen via isotone oefeningen zonder pijnprovocatie',
+        'Heupabductor- en exorotatorkracht versterken om valgusmoment te reduceren',
+        'Quadricepskracht opbouwen tot ≥ 70% contralateraal',
+        'Normaal gangpatroon herstellen zonder antalgisch patroon',
+        'Traplopen pijnvrij (VAS ≤ 2/10)'
+      ],
+      exercises:[
+        {name:'Liggende hamstringcurl (isotoon)',params:[['Sets','3'],['Reps','12–15'],['Gewicht','licht → matig'],['Freq','3×/week']],note:'Start met laag gewicht, focus op gecontroleerde excentrische fase (3 sec). Verhoog belasting wekelijks met 5–10% bij NRS ≤ 3/10. Vermijd forceren bij pijn aan mediale knie.',cat:'kracht'},
+        {name:'Beenpers bilateraal (0–70°)',params:[['Sets','3'],['Reps','12–15'],['Hoek','0–70° flexie'],['Freq','3×/week']],note:'Gesloten-keten quadricepstraining met beperkte flexie (vermijdt compressieve piekbelasting op pes anserinus bij diep buigen). Voeten schouderbreedte, knieën neutraal boven tenen.',cat:'kracht'},
+        {name:'Clamshell met weerstandsband',params:[['Sets','3'],['Reps','15–20'],['Band','licht → matig'],['Freq','3×/week']],note:'Gluteus medius versterking — essentieel voor valguskniereductie bij belasting. Heup in 60° flexie, voeten samen, bovenbeen optillen. Progressie: weerstand verhogen.',cat:'kracht'},
+        {name:'Wandelen progressief',params:[['Duur','15 → 30 min'],['Ondergrond','vlak'],['Tempo','comfortabel'],['Freq','5×/week']],note:'Functioneel herstel van belasting-tolerantie. Monitor pijn 24u na loopsessie. Verhoog duur met 5 min/week. Stop bij NRS > 3/10 tijdens of na het wandelen.',cat:'cardio'},
+        {name:'Step-up anterieur (10 cm)',params:[['Sets','3'],['Reps','12 per been'],['Hoogte','10 cm'],['Freq','3×/week']],note:'Functionele gesloten-keten knieoefening. Controleer kniepositie boven voet, geen mediaal inknikken. Verhoog naar 15 cm na 2 weken bij NRS ≤ 2/10.',cat:'kracht'},
+        {name:'Balans op instabiel vlak (bipodiaal)',params:[['Sets','3'],['Hold','30 sec'],['Vlak','schuimmat'],['Freq','dagelijks']],note:'Proprioceptieve training heup- en kniestabilisatoren. Bipodiaal start, progressie naar licht gewicht dragen op aangedane zijde. Ogen open → gesloten als progressie.',cat:'neuromusculair'}
+      ],
+      criteria_go:[
+        'Traplopen pijnvrij (NRS ≤ 2/10)',
+        'Hamstringcurl 3 × 15 op matig gewicht zonder pijn provocatie',
+        'Wandelen 30 min pijnvrij op vlakke ondergrond',
+        'Kniebending tot 90° pijnvrij (actief)',
+        'Éénbeen-stand ≥ 30 sec stabiel pijnvrij',
+        'NRS < 2/10 bij palpatie pes anserinus-insertie'
+      ],
+      evidence:'<strong>Heupabductorkrachttraining</strong> reduceert het adductiemoment aan de knie met 14% en vermindert daarmee de compressielast op de pes anserinus-insertie (Dierks et al., 2008 — JOSPT). <strong>Progressieve isotone belasting</strong> stimuleert collageensynthese in de pees via mechanotransductie — verhoog belasting niet sneller dan 10%/week om overbelasting te vermijden (Bohm et al., 2015 — J Physiol). <strong>Gewichtsreductie</strong> van 5% lichaamsgewicht vermindert mediale kniereactiekracht met 20% bij patiënten met gonartrose en pes anserinus-klachten (Messier et al., 2005 — Arthritis Rheum).'
+    },
+    {
+      label:'Fase 3',
+      title:'Functioneel herstel — excentrische kracht & sporthervatting',
+      weeks:'Week 8–16',
+      goals:[
+        'Hamstringkracht excentrisch opbouwen tot ≥ 80% van contralaterale zijde',
+        'Squat tot 90° pijnvrij uitvoeren (bilateraal en unilateraal)',
+        'Joggen en richtingsveranderingen integreren zonder pijnprovocatie',
+        'Functionele ADL volledig hersteld inclusief langdurig staan en traplopen',
+        'H/Q ratio ≥ 0,60 bereiken voor kniestabiliteit'
+      ],
+      exercises:[
+        {name:'Excentrische hamstringcurl (Nordic variatie)',params:[['Sets','3'],['Reps','8–10'],['Tempo','3 sec excentrisch'],['Freq','3×/week']],note:'Eccentrische peesstimulatie — bewezen effectief bij tendinopathie (Alfredson-principe). Verhoog volume geleidelijk. Stop bij NRS > 4/10 tijdens of na oefening.',cat:'kracht'},
+        {name:'Romanian Deadlift (bilateraal)',params:[['Sets','3'],['Reps','10'],['Gewicht','matig'],['Freq','3×/week']],note:'Heup-scharnier beweging met excentrische hamstringbelasting. Neutrale ruggengraat, heup-dominant. Essentieel voor H/Q ratio herstel. Pas gewicht aan op pijnrespons.',cat:'kracht'},
+        {name:'Unilaterale beenpers (70–90°)',params:[['Sets','3'],['Reps','10 per been'],['Hoek','70–90°'],['Freq','3×/week']],note:'Verhoogde unilaterale kniebelasting na bilaterale basis. Bewaakt mediale kniepijn bij diepere flexie. Vergelijk links-rechts belasting als LSI-indicatie.',cat:'kracht'},
+        {name:'Jog-walk protocol (vlak)',params:[['Schema','2 min jog / 1 min walk × 8'],['Freq','3×/week'],['Progressie','wekelijks jogginginterval verhogen']],note:'Graduele loophervatting. Start op vlak, zacht oppervlak. Monitor pijn tijdens én 24u na sessie. Stop bij NRS > 3/10. Helling en richtingsverandering pas in week 12+.',cat:'cardio'},
+        {name:'Lateral band walk (zwaar)',params:[['Sets','3'],['Reps','20 stappen/richting'],['Band','matig-zwaar'],['Freq','3×/week']],note:'Intensieve gluteus medius training voor valgus-controle bij functionele bewegingen. Licht gebogen knieën, band boven enkels. Verhoog weerstand als 20 stappen makkelijk worden.',cat:'stabiliteit'},
+        {name:'Éénbeen squat (10–20 cm box)',params:[['Sets','3'],['Reps','8–10 per been'],['Hoogte','10 → 20 cm'],['Freq','3×/week']],note:'Meest veeleisende kniebelasting — enkel introduceren bij NRS ≤ 2/10 bij alle vorige oefeningen. Bewaken: knierichting, heupneutraliteit. LSI-vergelijking links-rechts.',cat:'neuromusculair'}
+      ],
+      criteria_go:[
+        'Hamstringkracht ≥ 80% contralateraal (handynamometer of isokinetisch)',
+        'H/Q ratio ≥ 0,60',
+        'Continu joggen ≥ 20 min pijnvrij (NRS ≤ 2/10 tijdens én 24u na sessie)',
+        'Unilaterale beenpers 3 × 10 pijnvrij',
+        'Éénbeen-squat 3 × 10 pijnvrij per been zonder knieval',
+        'NRS ≤ 1/10 bij palpatie pes anserinus in rust'
+      ],
+      evidence:'<strong>Excentrische training</strong> stimuleert collageenremodeling en reduceert neovascularisatie in tendinopathisch weefsel — superieur aan concentrische training voor herstel van peesmechanische eigenschappen (Alfredson et al., 1998 — AJSM). <strong>H/Q ratio ≥ 0,60</strong> is de minimale krachtsverhouding voor veilige kniefunctie bij belasting en springactiviteiten (Coombs & Garbutt, 2002 — JOSPT). <strong>Loophervatting</strong> met progressieve intervalopbouw reduceert recidiefkans bij kniepees-pathologie significant t.o.v. ongestructureerde hervatting (Creighton et al., 2010 — CJSM).'
+    },
+    {
+      label:'Fase 4',
+      title:'Return to sport & recidiefpreventie',
+      weeks:'Week 16–24+',
+      goals:[
+        'Volledige sporthervatting zonder pijnprovocatie tijdens of na training',
+        'Hamstringkracht ≥ 90% contralateraal (LSI)',
+        'Preventief onderhoudsprogramma implementeren (hamstring + heupkracht)',
+        'Gewichtsbeheersing en biomechanische risicofactoren blijvend aanpakken',
+        'KOOS-score ≥ 85/100 of VISA-analoog < 5/100 pijn bij activiteit'
+      ],
+      exercises:[
+        {name:'Nordic Hamstring (onderhoud)',params:[['Sets','3'],['Reps','6–8'],['Freq','2×/week'],['Timing','na opwarming']],note:'Sterkste evidence voor hamstringpeespreventie. Moeilijk — start gedeeltelijke ROM indien nodig. Levenslang onderhoud bij sporters. Integreert in warm-up protocol.',cat:'kracht'},
+        {name:'Continu hardlopen (progressief)',params:[['Duur','20 → 45 min'],['Intensiteit','70 → 90%'],['Freq','3–4×/week'],['Progressie','10% /week']],note:'Volledige loophervatting met progressieve intensiteit. Varieer ondergrond. Monitor kniepijn 24u na training. 10%-regel strikt handhaven om recidief te vermijden.',cat:'cardio'},
+        {name:'Sportspecifiek krachtcircuit knie',params:[['Sets','3'],['Oefeningen','RDL + nordic + legpress + lateral hop'],['Duur','25 min'],['Freq','2×/week']],note:'Onderhoudscircuit dat alle relevante spiergroepen traint in functionele kniecontext. Condenseer tot efficiënte routine die sporters kunnen integreren in training.',cat:'kracht'},
+        {name:'Plyometrische progressie (hoptest)',params:[['Type','single hop → triple hop → 6m timed'],['LSI','≥ 90%'],['Freq','1×/week testen']],note:'Functionele kniestabiliteitstest én sportspecifieke peestraining. LSI ≥ 90% als RTS-criterium. Meting elke 2 weken voor objectieve progressiebewaking.',cat:'neuromusculair'},
+        {name:'Dynamische balans & agiliteit',params:[['Type','Y-balance + shuttle run + zijsprongen'],['Sets','3 rondes'],['Freq','2×/week']],note:'Sportspecifieke neuromusculaire uitdaging. Y-balance norm: composite > 94% voor laag recidiefrisico. Shuttle run: bewaken op kniemechanica bij richtingsverandering.',cat:'neuromusculair'},
+        {name:'Belastingsmonitoring (sRPE)',params:[['Tool','sessie-RPE × duur (AU)'],['Drempel','wekelijks ≤ 10% stijging'],['Freq','na elke training']],note:'Overbelasting is primaire trigger voor pes anserinus-recidief. Acute:chronische belastingsratio (ACWR) < 1,5 houden. Trainingslogboek bijhouden.',cat:'stabiliteit'}
+      ],
+      criteria_go:[
+        'Hamstringkracht LSI ≥ 90% contralateraal',
+        'Enkelbeen-hoptest LSI ≥ 90%',
+        'Continu hardlopen ≥ 30 min pijnvrij',
+        'Sportspecifieke training volledig pijnvrij bij 90% intensiteit',
+        'NRS 0/10 bij palpatie pes anserinus in rust én na training',
+        'Onderhoudsprogramma 2×/week zelfstandig uitgevoerd'
+      ],
+      evidence:'<strong>Recidiefpreventie</strong> bij tendinopathie vereist een langetermijn onderhoudsprogramma van excentrische kracht + belastingsmonitoring: stoppen na klachtenreductie verhoogt recidiefkans met 40–60% (Cook & Purdam, 2009 — BJSM). <strong>ACWR (acute:chronische workload ratio)</strong> van 1,5+ is de sterkste onafhankelijke predictor van musculoskeletal letsel in de eerste 3 maanden na sporthervatting (Hulin et al., 2016 — BJSM). <strong>Gewichtsreductie</strong> blijft de meest kosteneffectieve langetermijninterventie bij pes anserinus-klachten geassocieerd met obesitas en gonartrose — iedere 1 kg gewichtsverlies vermindert kniereactiekracht met 4 kg per stap (Messier et al., 2005 — Arthritis Rheum).'
+    }
+  ],
+  scores:[],
+  spiergroep:'Hamstrings'
+};
+
 // ── REGIO MAPPING (protocol → regio) ──
 const REGIO_MAP = {
-  acl:'Knie & Heup', tka:'Knie & Heup', pfps:'Knie & Heup', pt:'Knie & Heup', gmt:'Knie & Heup', hsi:'Knie & Heup', mcl:'Knie & Heup',
+  acl:'Knie & Heup', tka:'Knie & Heup', pfps:'Knie & Heup', pt:'Knie & Heup', gmt:'Knie & Heup', hsi:'Knie & Heup', mcl:'Knie & Heup', pa:'Knie & Heup',
   lh:'Lumbaal & Cervicaal', bureau:'Lumbaal & Cervicaal', faz:'Lumbaal & Cervicaal', fbl:'Lumbaal & Cervicaal',
   rc:'Schouder & Arm', si:'Schouder & Arm', elb:'Schouder & Arm', sup:'Schouder & Arm', fs:'Schouder & Arm',
   at:'Enkel & Voet', enkel:'Enkel & Voet', over:'Enkel & Voet', mtss:'Enkel & Voet',
@@ -3670,6 +3792,11 @@ const BESCHRIJVING = {
   mcl:{
     kenmerken:'<strong>Mediaal kniepijn en zwelling</strong> na valgus-trauma, drukpijn over het MCL-verloop (femurcondilair tot tibiale insertie). Graad I: lichte zwelling, stabiel bij valgus-stresstest in 30° flexie; Graad II: partieelscheuring, ≤ 5 mm laxiteit bij valgus in 30°; Graad III: complete ruptuur, > 5–10 mm laxiteit, positief ook in volledige extensie. <strong>Valgus-stresstest</strong> in 30° flexie: sensitiviteit 91% voor MCL-letsel (Malanga et al., 2003 — JOSPT). MRI bevestigt de graad en toont geassocieerde letsels (VKB, meniscus — "unhappy triad").',
     oorzaken:'<strong>Direct valgus-trauma</strong>: contact van laterale knie-zijde (American football tackles, ijshockey, skiletsel). Niet-contact valgus: abrupte richtingsverandering met knie in valgus + exorotatie tibia. <strong>Skiletsel</strong> is het meest voorkomende niet-contact MCL-letsel (verplicht stopfiguur in valgus = "pizza-positie"). Unhappy triad (O&#39;Donoghue, 1950): gecombineerd valgus + torsie → MCL + VKB + mediaal meniscus letsel. Risicofactoren: instabiel terrein, slechte proprioceptie, musculaire vermoeidheid laat in de wedstrijd. <strong>MCL heelt spontaan</strong> door goede bloedtoevoer: graad I in 2–4 weken, graad II in 6–8 weken, graad III in 12–16+ weken.'
+  },
+
+  pa:{
+    kenmerken:'<strong>Mediaal kniepijn</strong> gelokaliseerd 2–3 cm distaal van de mediale gewrichtsspleet, ter hoogte van de aanhechting van sartorius, gracilis en semitendinosus (de drie ganzenpoot-pezen). Kenmerkend: pijn bij traplopen, opstaan uit stoel, hurken en langdurig staan. <strong>Palpatiepijn</strong> op pes anserinus-insertie is pathognomonisch. Zwelling of warmte wijst op geassocieerde bursitis. Nachtpijn is frequent, met name bij liggen op aangedane zijde. Klinisch: <strong>valgusstand</strong> van de knie vergroot de compressielast op de insertie. Differentiaaldiagnose: MCL-letsel, mediale meniscuspathologie, gonartrose (frequent co-morbide).',
+    oorzaken:'<strong>Friction en compressie</strong> van de pes anserinus-bursa en -pezen door biomechanische overbelasting in het mediaal kniecompartiment. Sterkst geassocieerd met <strong>gonartrose</strong> (co-prevalentie 2,5–19%), <strong>obesitas</strong> (BMI > 30 verhoogt mediale kniereactiekracht) en <strong>diabetes mellitus</strong> (tendinopathische degeneratie door AGE-accumulatie). Atletische oorzaak: overmatig loopvolume, bergafwaarts lopen of zwemmen (borstslagstijl — herhaalde knie-IR compressie). Biomechanische risicofactoren: <strong>valgusknie</strong>, hamstring- en gracilis-stijfheid, gluteus medius-zwakte (verhoogt adductiemoment). Vrouwen > 50 jaar zijn disproportioneel aangedaan door combinatie van postmenopauzale peesveranderingen en valgusstand (Alvarez-Nemegyei & Canoso, 2004 — JCR).'
   },
 
   fs:{

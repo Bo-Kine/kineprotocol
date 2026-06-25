@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist+Mono:wght@300;400;500;600&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#020b18;--surface:#0b1824;--surface2:#11202e;--surface3:#172c3e;--border:#1c304a;--border2:#284868;--text:#fafafa;--muted:#71717a;--muted2:#52525b;--acl:#22d3ee;--tka:#a78bfa;--pfps:#f97316;--lh:#34d399;--rc:#f43f5e;--pt:#fb923c;--gmt:#14b8a6;--at:#e879f9;--bureau:#60a5fa;--enkel:#f59e0b;--over:#10b981;--si:#f472b6;--orif:#38bdf8;--dq:#84cc16;--cts:#818cf8;--new:#4ade80;--hsi:#facc15;--elb:#c084fc;--mtss:#0ea5e9;--faz:#d97706;--sup:#7c3aed;--fbl:#db2777;--mcl:#2dd4bf;--fs:#6366f1;--safe-top:env(safe-area-inset-top);--safe-bottom:env(safe-area-inset-bottom);}
+:root{--bg:#020b18;--surface:#0b1824;--surface2:#11202e;--surface3:#172c3e;--border:#1c304a;--border2:#284868;--text:#fafafa;--muted:#71717a;--muted2:#52525b;--acl:#22d3ee;--tka:#a78bfa;--pfps:#f97316;--lh:#34d399;--rc:#f43f5e;--pt:#fb923c;--gmt:#14b8a6;--at:#e879f9;--bureau:#60a5fa;--enkel:#f59e0b;--over:#10b981;--si:#f472b6;--orif:#38bdf8;--dq:#84cc16;--cts:#818cf8;--new:#4ade80;--hsi:#facc15;--elb:#c084fc;--mtss:#0ea5e9;--faz:#d97706;--sup:#7c3aed;--fbl:#db2777;--mcl:#2dd4bf;--fs:#6366f1;--pa:#16a34a;--safe-top:env(safe-area-inset-top);--safe-bottom:env(safe-area-inset-bottom);}
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
 html,body{height:100%;overflow:hidden;overscroll-behavior:none;}
 body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-size:14px;display:flex;flex-direction:column;}
@@ -457,7 +457,7 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
 <body>
 
 <!-- BACKGROUND CANVAS -->
-<div id="bg-canvas" style="position:fixed;inset:0;z-index:0;pointer-events:none;background:#020a18 url('./bg.webp?v=35') right center/cover no-repeat;"></div>
+<div id="bg-canvas" style="position:fixed;inset:0;z-index:0;pointer-events:none;background:#020a18 url('./bg.webp?v=36') right center/cover no-repeat;"></div>
 
 <!-- LOGIN SCREEN -->
 <div id="login-screen" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(2,11,24,0.55);backdrop-filter:blur(2px);flex-direction:column;align-items:center;justify-content:center;padding:24px;">
@@ -523,6 +523,7 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
     <div class="nav-item" id="nav-gmt" onclick="showProto('gmt')"><div class="nav-dot" style="background:var(--gmt)"></div><div style="flex:1"><div class="nav-title">Gluteus Med./Min. Tendinopathie</div><div class="nav-sub">4 fasen · 0–24+ wkn</div></div><span class="nav-badge" style="background:rgba(20,184,166,.1);color:var(--gmt)">GMT</span></div>
     <div class="nav-item" id="nav-hsi" onclick="showProto('hsi')"><div class="nav-dot" style="background:var(--hsi)"></div><div style="flex:1"><div class="nav-title">Hamstring Blessure</div><div class="nav-sub">4 fasen · 1–16+ wkn</div></div><span class="nav-badge" style="background:rgba(250,204,21,.1);color:var(--hsi)">HSI</span></div>
     <div class="nav-item" id="nav-mcl" onclick="showProto('mcl')"><div class="nav-dot" style="background:var(--mcl)"></div><div style="flex:1"><div class="nav-title">MCL Letsel Knie</div><div class="nav-sub">5 fasen · 0–24 wkn</div></div><span class="nav-badge" style="background:rgba(45,212,191,.1);color:var(--mcl)">MCL</span></div>
+    <div class="nav-item" id="nav-pa" onclick="showProto('pa')"><div class="nav-dot" style="background:var(--pa)"></div><div style="flex:1"><div class="nav-title">Pes Anserinus</div><div class="nav-sub">4 fasen · 0–24+ wkn</div></div><span class="nav-badge" style="background:rgba(22,163,74,.1);color:var(--pa)">PA</span></div>
     <div class="sidebar-divider"></div>
     <div class="sidebar-section">Lumbaal &amp; Cervicaal</div>
     <div class="nav-item" id="nav-lh" onclick="showProto('lh')"><div class="nav-dot" style="background:var(--lh)"></div><div style="flex:1"><div class="nav-title">Lumbale Hernia</div><div class="nav-sub">5 fasen · 6–16 wkn</div></div><span class="nav-badge" style="background:rgba(52,211,153,.1);color:var(--lh)">LHN</span></div>
@@ -683,6 +684,7 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
       <button class="bs-item" onclick="closeProtoSheet();showProto('gmt')"><div class="bs-item-dot" style="background:var(--gmt)"></div><span class="bs-item-name">Gluteus Med./Min. Tendinopathie</span><span class="bs-item-badge" style="background:rgba(20,184,166,.1);color:var(--gmt)">GMT</span></button>
       <button class="bs-item" onclick="closeProtoSheet();showProto('hsi')"><div class="bs-item-dot" style="background:var(--hsi)"></div><span class="bs-item-name">Hamstring Blessure</span><span class="bs-item-badge" style="background:rgba(250,204,21,.1);color:var(--hsi)">HSI</span></button>
       <button class="bs-item" onclick="closeProtoSheet();showProto('mcl')"><div class="bs-item-dot" style="background:var(--mcl)"></div><span class="bs-item-name">MCL Letsel Knie</span><span class="bs-item-badge" style="background:rgba(45,212,191,.1);color:var(--mcl)">MCL</span></button>
+      <button class="bs-item" onclick="closeProtoSheet();showProto('pa')"><div class="bs-item-dot" style="background:var(--pa)"></div><span class="bs-item-name">Pes Anserinus Tendinopathie</span><span class="bs-item-badge" style="background:rgba(22,163,74,.1);color:var(--pa)">PA</span></button>
       <div class="bs-section">Lumbaal &amp; Cervicaal</div>
       <button class="bs-item" onclick="closeProtoSheet();showProto('lh')"><div class="bs-item-dot" style="background:var(--lh)"></div><span class="bs-item-name">Lumbale Hernia</span><span class="bs-item-badge" style="background:rgba(52,211,153,.1);color:var(--lh)">LHN</span></button>
       <button class="bs-item" onclick="closeProtoSheet();showProto('bureau')"><div class="bs-item-dot" style="background:#60a5fa"></div><span class="bs-item-name">Bureauhouding &amp; Nekklachten</span><span class="bs-item-badge" style="background:rgba(96,165,250,.1);color:#60a5fa">BNK</span></button>

@@ -1,7 +1,9 @@
 {
   "Single Leg Squat (provocatie)": {
-    "url": "./exercise-images/Single leg squat.webp",
-    "alt": "Single Leg Squat (provocatie)"
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Squats.svg/500px-Squats.svg.png",
+    "alt": "Squat (exercise)",
+    "credit": "Wikipedia: Squat (exercise)",
+    "wiki": "https://en.wikipedia.org/wiki/Squat%20%28exercise%29"
   },
   "Dead bug": {
     "url": "./exercise-images/Dead bug.webp",
@@ -460,5 +462,41 @@
     "alt": "Plank (exercise)",
     "credit": "Wikipedia: Plank (exercise)",
     "wiki": "https://en.wikipedia.org/wiki/Plank%20%28exercise%29"
+  },
+  "Balans op instabiel vlak (bipodiaal)": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Proprioception_image-01.jpg/500px-Proprioception_image-01.jpg",
+    "alt": "Proprioception",
+    "credit": "Wikipedia: Proprioception",
+    "wiki": "https://en.wikipedia.org/wiki/Proprioception"
+  },
+  "Beenpers bilateraal (0–70°)": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Muscle_Strengthening_at_the_Gym_-_Seated_Leg_Press.webm/250px--Muscle_Strengthening_at_the_Gym_-_Seated_Leg_Press.webm.jpg",
+    "alt": "Leg press",
+    "credit": "Wikipedia: Leg press",
+    "wiki": "https://en.wikipedia.org/wiki/Leg%20press"
+  },
+  "Excentrische decline squat": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Squats.svg/500px-Squats.svg.png",
+    "alt": "Squat (exercise)",
+    "credit": "Wikipedia: Squat (exercise)",
+    "wiki": "https://en.wikipedia.org/wiki/Squat%20%28exercise%29"
+  },
+  "Exorotatie met theraband (arm langs zij)": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Trenirovachni_lastici_set.JPG/500px-Trenirovachni_lastici_set.JPG",
+    "alt": "Resistance band",
+    "credit": "Wikipedia: Resistance band",
+    "wiki": "https://en.wikipedia.org/wiki/Resistance%20band"
+  },
+  "Single Leg Decline Squat (SLDS) — provocatietest": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Squats.svg/500px-Squats.svg.png",
+    "alt": "Squat (exercise)",
+    "credit": "Wikipedia: Squat (exercise)",
+    "wiki": "https://en.wikipedia.org/wiki/Squat%20%28exercise%29"
+  },
+  "Sleeper stretch": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/%D0%A1%D0%B0%D0%BC%D0%B8%D1%80%D0%B0_%D0%9C%D1%83%D1%81%D1%82%D0%B0%D1%84%D0%B0%D0%B5%D0%B2%D0%B0_%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0.jpg/500px-%D0%A1%D0%B0%D0%BC%D0%B8%D1%80%D0%B0_%D0%9C%D1%83%D1%81%D1%82%D0%B0%D1%84%D0%B0%D0%B5%D0%B2%D0%B0_%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0.jpg",
+    "alt": "Stretching",
+    "credit": "Wikipedia: Stretching",
+    "wiki": "https://en.wikipedia.org/wiki/Stretching"
   }
 }

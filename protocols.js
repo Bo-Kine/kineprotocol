@@ -1901,9 +1901,131 @@ protocols.pa = {id:'pa',title:'Pes Anserinus Tendinopathie',subtitle:'Conservati
   spiergroep:'Hamstrings'
 };
 
+protocols.itb = {id:'itb',title:'Iliotibiale Bandsyndroom',subtitle:'Conservatief revalidatieprotocol voor ITBS — load management, heupabductorkracht en looptechniek-correctie',color:'#ea580c',icon:'🏃',
+  phases:[
+    {
+      label:'Fase 1',
+      title:'Acute fase — pijncontrole & belastingsreductie',
+      weeks:'Week 0–2',
+      goals:[
+        'Laterale kniepijn reduceren naar VAS ≤ 3/10 via relatieve rust en activiteitenmodificatie',
+        'Compressieprovocatie elimineren: vermijd hardlopen tot noble-test negatief',
+        'Loopvolume reduceren of tijdelijk vervangen door pijnvrije alternatieven',
+        'Patiënt educeren over compressiemechanisme en triggerfactoren',
+        'Flexibiliteit TFL en ITB voorzichtig beginnen mobiliseren'
+      ],
+      exercises:[
+        {name:'Stationaire fiets (laag verzet)',params:[['Duur','15–20 min'],['Weerstand','minimaal'],['Freq','dagelijks']],note:'Pijnvrij cardio-alternatief voor hardlopen. Vermijdt de 30°-impingementzone van het kniegewricht. Controleer: geen laterale kniepijn bij fietsen (zadelafstelling check).',cat:'cardio'},
+        {name:'TFL-rek staand (zijwaartse aanleunstrek)',params:[['Sets','3'],['Hold','30–45 sec'],['Freq','3×/dag']],note:'Klassieke ITB/TFL-rek: aangedane been achter gezonde, romp zijwaarts leunen weg van muur. Rek voelbaar lateraal heup. Niet agressief in acute fase — comfort is leidraad.',cat:'mobiliteit'},
+        {name:'Heupabductie zijlig (actief)',params:[['Sets','3'],['Reps','15'],['Tempo','gecontroleerd'],['Freq','2×/dag']],note:'Activeert gluteus medius zonder belasting op knie. Essentieel: zwakke heupabductoren verhogen ITB-spanning via heupadduktiestijging tijdens loopstance. Licht gewicht of geen weerstand.',cat:'kracht'},
+        {name:'Foam rolling ITB & TFL',params:[['Duur','60–90 sec per zijde'],['Druk','matig'],['Freq','1–2×/dag']],note:'Myofasciale release TFL en proximale ITB. Rol van lateral heup tot net boven knie — NIET over laterale epicondyl (pijnlijk, geen meerwaarde). Effectiever dan statische rek voor TFL-spanning (Fredericson et al., 2000).',cat:'mobiliteit'},
+        {name:'Clamshell (zijlig)',params:[['Sets','3'],['Reps','15–20'],['Weerstand','geen → licht band'],['Freq','2×/dag']],note:'Geïsoleerde gluteus medius-activatie zonder kniebelasting. Heup 60° flexie, voeten samen, bovenbeen optillen. Fundament van ITBS-behandeling: correctie heupabductorzwakte.',cat:'kracht'},
+        {name:'Zwemmen of aquajoggen',params:[['Duur','20–30 min'],['Type','vrije slag of aquajoggen'],['Freq','3–4×/week']],note:'Volledig onbelast cardio-alternatief voor hardlopers. Aquajoggen behoudt loopspecifieke motoriek zonder impact. Optioneel als fietsen ook pijn veroorzaakt.',cat:'cardio'}
+      ],
+      criteria_go:[
+        'Noble-compressietest negatief of VAS ≤ 2/10 bij palpatie laterale epicondyl',
+        'Traplopen pijnvrij (VAS ≤ 2/10)',
+        'Fietsen 20 min pijnvrij uitvoerbaar',
+        'TFL/ITB-rek 30 sec bilateraal pijnvrij uitvoerbaar',
+        'VAS in rust ≤ 1/10 gedurende ≥ 3 opeenvolgende dagen'
+      ],
+      evidence:'De <strong>compressietheoorie</strong> heeft de traditionele frictietheorie vervangen: ITBS ontstaat door compressie van een sterk geïnnerveerd vetlichaam onder de ITB ter hoogte van de laterale femurepicondyl bij 30° knieflexie — de "impingementzone" (Fairclough et al., 2006 — J Anat). <strong>Relatieve rust</strong> (activiteitenmodificatie, geen volledige immobilisatie) en eliminatie van de provocerende activiteit zijn de primaire acute interventies (Fredericson & Weir, 2006 — Clin J Sport Med). <strong>Foam rolling</strong> van TFL reduceert gepercipieerde spanning effectiever dan passieve rekking op korte termijn (Pearcey et al., 2015 — J Athl Train).'
+    },
+    {
+      label:'Fase 2',
+      title:'Risicofactoren aanpakken — heupkracht & flexibiliteit',
+      weeks:'Week 2–6',
+      goals:[
+        'Heupabductorkracht opbouwen tot ≥ 70% van contralaterale zijde',
+        'TFL-flexibiliteit en heupextensorflexibiliteit normaliseren',
+        'Kernstabiliteit verbeteren voor lumbopelvische controle bij belasting',
+        'Wandelen onbeperkt pijnvrij (> 45 min)',
+        'Zwemmen of fietsen als hoofdcardio consolideren'
+      ],
+      exercises:[
+        {name:'Side-lying hip abductie met weerstandsband',params:[['Sets','3'],['Reps','15–20'],['Band','licht → matig'],['Freq','3×/week']],note:'Progressie van clamshell: volledig been optillen met gestrekte knie. Verhoog weerstandsband wanneer 3×20 makkelijk worden. Kern van ITBS-krachtprogramma (Fredericson et al., 2000 — Clin J Sport Med).',cat:'kracht'},
+        {name:'Heupextensie op Alle-vieren (donkey kick)',params:[['Sets','3'],['Reps','15'],['Tempo','2-1-2'],['Freq','3×/week']],note:'Gluteus maximus versterking in niet-belaste positie. Neutrale wervelkolom, knie 90°, been omhoog. Vermijdt valguspatroon dat ITB-spanning vergroot bij loopstance.',cat:'kracht'},
+        {name:'Staande TFL/heupflexor rek (Thomas-positie)',params:[['Sets','3'],['Hold','45–60 sec'],['Freq','2×/dag']],note:'Rek iliopsoas en TFL in Thomas-testpositie: ruglig op tafeleinde, gezonde knie naar borst, aangedane been hangt omlaag. Diepere rek dan staande variant. Effectief bij hipflexorcontractuur.',cat:'mobiliteit'},
+        {name:'Plank met heupabductie',params:[['Sets','3'],['Reps','10 per been'],['Hold','2 sec'],['Freq','3×/week']],note:'Integreert kernstabiliteit met gluteus medius-activatie. Zijplank of frontplank met been optillen. Simuleert lumbopelvische stabiliteit vereist bij loopstance. Progressie: duur verhogen.',cat:'stabiliteit'},
+        {name:'Lateral band walk',params:[['Sets','3'],['Reps','20 stappen/richting'],['Band','matig'],['Freq','3×/week']],note:'Functionele gluteus medius-training in belaste positie. Band boven enkels, licht gebogen knieën. Bewaken: knie blijft boven voet, geen valgusinknikken. Meest functionele heupabductoroefening.',cat:'kracht'},
+        {name:'Fietsen progressief (duur + weerstand)',params:[['Duur','20 → 45 min'],['Weerstand','laag → matig'],['Freq','4–5×/week']],note:'Cardio-basis opbouwen terwijl looptraining nog beperkt is. Verhoog duur vóór weerstand. Monitor laterale kniepijn: stop bij VAS > 2/10. Zadelhoogte optimaliseren (knie 25–35° flexie onderaan).',cat:'cardio'}
+      ],
+      criteria_go:[
+        'Heupabductiekracht ≥ 70% contralateraal (handynamometer of functionele test)',
+        'Noble-test volledig negatief',
+        'Wandelen 45 min pijnvrij op vlak terrein',
+        'Eénbeen-stand 30 sec stabiel pijnvrij',
+        'TFL-rek 45 sec pijnvrij bilateraal uitvoerbaar',
+        'VAS 0/10 bij traplopen'
+      ],
+      evidence:'<strong>Gluteus medius-zwakte</strong> is de sterkste biomechanische risicofactor voor ITBS: lopers met ITBS tonen 24% minder heupabductorkracht contralateraal vergeleken met gezonde controlepersonen (Niemuth et al., 2005 — Clin J Sport Med). <strong>Heupgerichte krachttraining</strong> (abductoren + extensoren) resulteert in 92% symptoomresolutie bij runners na 6 weken in vergelijking met 67% bij enkel uitrekken (Fredericson et al., 2000 — Clin J Sport Med). <strong>TFL-flexibiliteitsbeperking</strong> correleert met verhoogde ITB-spanning en is een onafhankelijke predictor van ITBS bij hardlopers (Gajdosik et al., 2003 — J Orthop Sports Phys Ther).'
+    },
+    {
+      label:'Fase 3',
+      title:'Functioneel herstel — loophervatting & techniek',
+      weeks:'Week 6–12',
+      goals:[
+        'Hardlopen hervatten via progressief interval-protocol zonder pijnprovocatie',
+        'Heupabductorkracht ≥ 85% contralateraal',
+        'Looptechniek corrigeren: stapfrequentie verhogen, heupadduktiemoment reduceren',
+        'Heuveltraining en richtingsverandering pijnvrij integreren',
+        'Continu hardlopen ≥ 20 min pijnvrij bereiken'
+      ],
+      exercises:[
+        {name:'Jog-walk protocol (vlak, kort)',params:[['Schema','1 min jog / 2 min walk × 8'],['Freq','3×/week'],['Progressie','wekelijks jogginginterval +30 sec']],note:'Gestructureerde loophervatting. Start op vlak, zacht oppervlak (gras of tartan). Monitor laterale kniepijn tijdens én 24u na sessie. Stopcriterium: VAS > 3/10 tijdens lopen.',cat:'cardio'},
+        {name:'Stapfrequentietraining (metronoom)',params:[['Freq_stap','180 slagen/min (cadans)'],['Duur','10–15 min'],['Hulpmiddel','metronoom-app'],['Loop_freq','2×/week']],note:'Verhoogde stapfrequentie (+5–10%) vermindert heupadduktiemoment met 20% en ITB-spanning met 15% (Heiderscheit et al., 2011). Gebruik metronoom-app. Initieel oncomfortabel — adaptatie in 3–4 sessies.',cat:'neuromusculair'},
+        {name:'Single leg squat met gluteusactivatie',params:[['Sets','3'],['Reps','10–12 per been'],['Focus','knie boven voet, geen heupadduktieval'],['Freq','3×/week']],note:'Test én traint éénbeenlanding-mechanica. Spiegel of video-feedback: bewaken dat knie niet naar mediaal valt. Reproduceert loopstance-belasting. Stop bij VAS > 3/10 laterale knie.',cat:'kracht'},
+        {name:'Looptechniek-drills (korte passen)',params:[['Type','high knees, butt kicks, A-skip'],['Duur','10 min'],['Freq','vóór elke loopsessie']],note:'Neuromusculaire coördinatie en stappatroon-activatie. A-skips verbeteren heupextensiekracht en rompstabiliteit. Warm-up die tegelijk ITBS-preventieve biomechanica activeert.',cat:'neuromusculair'},
+        {name:'Hip thrust (bilateraal)',params:[['Sets','3'],['Reps','12–15'],['Gewicht','matig'],['Freq','3×/week']],note:'Maximale gluteus maximus-activatie in functionele positie. Schouders op bank, bekken omhoog, knieën 90°. Vermijdt kniebelasting. Bewaken: neutrale bekkenstand, niet hyperextensie lumbaal.',cat:'kracht'},
+        {name:'Zijdelingse sprongen & landing',params:[['Sets','3'],['Reps','8–10/zijde'],['Focus','zachte landing, knie over voet'],['Freq','2×/week']],note:'Functionele gluteus medius-belasting bij plyometrische activiteit. Eenbeenslanding controleren: knie absorbeert, geen valgus. Pas introduceren bij NRS ≤ 2/10 bij continu lopen.',cat:'neuromusculair'}
+      ],
+      criteria_go:[
+        'Continu hardlopen ≥ 20 min pijnvrij (VAS 0/10 tijdens én 24u na sessie)',
+        'Heupabductiekracht ≥ 85% contralateraal',
+        'Single leg squat 3 × 12 pijnvrij per been zonder knieval',
+        'Noble-test consistent negatief ook na looptraining',
+        'Cadansverhoging 5–10% succesvol aangeleerd (bevestigd door loopanalyse)',
+        'Heuveltraining 15 min pijnvrij'
+      ],
+      evidence:'<strong>Stapfrequentieverhoging</strong> met 5–10% is de meest evidence-based looptechniek-interventie bij ITBS: vermindert het piekheupadduktiemoment met 20% en de ITB-compressie ter hoogte van laterale epicondyl (Heiderscheit et al., 2011 — Med Sci Sports Exerc). <strong>Gait retraining</strong> gericht op heupadduktiereductie resulteert in significante klinische verbetering bij 79% van chronische ITBS-patiënten na 8 sessies (Noehren et al., 2011 — Br J Sports Med). <strong>Progressieve loophervatting</strong> met ≤ 10% volumestijging per week reduceert recidiefkans in vergelijking met ongestructureerde terugkeer (Nielsen et al., 2014 — JOSPT).'
+    },
+    {
+      label:'Fase 4',
+      title:'Return to running & recidiefpreventie',
+      weeks:'Week 12–20+',
+      goals:[
+        'Volledig loopvolume herstellen inclusief heuveltraining en lange duurlopen',
+        'Heupabductorkracht ≥ 90% contralateraal behouden via onderhoudsprogramma',
+        'Preventief trainingsprogramma integreren in wekelijkse routine',
+        'Trainingsbelastingsmonitoring implementeren (10%-regel strikt)',
+        'VAS 0/10 bij alle loopafstanden en terreintypen'
+      ],
+      exercises:[
+        {name:'Continu hardlopen progressief',params:[['Opbouw','20 → 60 min'],['10%-regel','ja'],['Terrein','vlak → heuvel → trail'],['Freq','3–5×/week']],note:'Geleidelijke opbouw naar wedstrijdvolume. Heuveltraining pas introduceren na 3 weken symptoomvrij vlak lopen. Trail running vraagt extra proprioceptieve stabiliteit: afbouwen bij VAS > 1/10.',cat:'cardio'},
+        {name:'Onderhoud heupkrachtcircuit',params:[['Sets','2–3'],['Oefeningen','clamshell + lateral walk + hip thrust + SLS'],['Duur','20 min'],['Freq','2×/week']],note:'Wekelijks onderhoud van gluteus medius en maximus. Belangrijkste langetermijnpreventie-strategie. Integreer in vaste trainingsroutine — vóór of na loopsessie.',cat:'kracht'},
+        {name:'Nordic Hamstring & RDL (preventie)',params:[['Sets','2'],['Reps','8 nordic + 10 RDL'],['Freq','1–2×/week']],note:'Hamstring- en heupextensiepeesbescherming aanvullend op gluteusprogramma. Nordic halvering bij pijn; anders levenslang onderhoud bij sprinters en langlopende afstanden.',cat:'kracht'},
+        {name:'Loopanalyse & cadansmonitoring',params:[['Tool','hardloophorloge (cadans)'],['Doel','170–180 stappen/min'],['Check','maandelijks video-analyse'],['Freq','elke loopsessie']],note:'Bewaken van aangeleerde biomechanische correcties. GPS-horloge met cadansmeting: alarm bij < 170 spm. Vermoeidheid laat in de loop veroorzaakt cadansdaling — bewust bewaken.',cat:'neuromusculair'},
+        {name:'Foam rolling onderhoud',params:[['Duur','5 min TFL + laterale dij'],['Timing','post-training'],['Freq','na elke loopsessie']],note:'Preventieve myofasciale mobilisatie na training. Verhoogde TFL-spanning na lange loopsessies — directe behandeling verkort herstelperiode. Niet boven laterale epicondyl rollen.',cat:'mobiliteit'},
+        {name:'Belastingsmonitoring sRPE',params:[['Tool','sessie-RPE × duur (AU)'],['ACWR','houden < 1,5'],['Freq','na elke training']],note:'Acute:chronische workload ratio (ACWR) < 1,5 is de sterkste preventieve maatregel voor overbelastingsletsel bij hardlopers (Hulin et al., 2016 — BJSM). Weeklog bijhouden.',cat:'stabiliteit'}
+      ],
+      criteria_go:[
+        'Volledig loopvolume hersteld pijnvrij (inclusief doelafstand of doeltempo)',
+        'Heupabductiekracht LSI ≥ 90%',
+        'Noble-test consistent negatief na lange loopsessie (> 45 min)',
+        'Onderhoudsprogramma 2×/week zelfstandig uitgevoerd',
+        'ACWR < 1,5 wekelijks bewaakt',
+        'VAS 0/10 tijdens én 24u na alle trainingen'
+      ],
+      evidence:'<strong>Recidiefpreventie</strong> bij ITBS vereist een langetermijn heupkrachtonderhoud: stopzetten van krachtprogramma na symptoomresolutie leidt in 30–40% van gevallen tot herval bij hervatting van hoog loopvolume (Fredericson & Weir, 2006 — Clin J Sport Med). <strong>Cadansmonitoring</strong> via GPS-horloge is de meest praktische methode voor langetermijn-biomechanische correctie in de looppraktijk: elke 5% cadansstijging vermindert kniestressparameters met 14–20% (Schubert et al., 2014 — Gait Posture). <strong>10%-trainingsregel</strong> (wekelijkse volumestijging ≤ 10%) is de sterkste evidence-based preventieve maatregel voor overbelastingsletsels bij hardlopers (Nielsen et al., 2014 — JOSPT).'
+    }
+  ],
+  scores:[],
+  spiergroep:'Gluteus medius'
+};
+
 // ── REGIO MAPPING (protocol → regio) ──
 const REGIO_MAP = {
-  acl:'Knie & Heup', tka:'Knie & Heup', pfps:'Knie & Heup', pt:'Knie & Heup', gmt:'Knie & Heup', hsi:'Knie & Heup', mcl:'Knie & Heup', pa:'Knie & Heup',
+  acl:'Knie & Heup', tka:'Knie & Heup', pfps:'Knie & Heup', pt:'Knie & Heup', gmt:'Knie & Heup', hsi:'Knie & Heup', mcl:'Knie & Heup', pa:'Knie & Heup', itb:'Knie & Heup',
   lh:'Lumbaal & Cervicaal', bureau:'Lumbaal & Cervicaal', faz:'Lumbaal & Cervicaal', fbl:'Lumbaal & Cervicaal',
   rc:'Schouder & Arm', si:'Schouder & Arm', elb:'Schouder & Arm', sup:'Schouder & Arm', fs:'Schouder & Arm',
   at:'Enkel & Voet', enkel:'Enkel & Voet', over:'Enkel & Voet', mtss:'Enkel & Voet',
@@ -3802,6 +3924,11 @@ const BESCHRIJVING = {
   fs:{
     kenmerken:'<strong>Progressieve pijn en ROM-beperking van het glenohumerale gewricht</strong> met eindgraadloos kapsulair patroon: exorotatie meest beperkt (> 50% verlies), gevolgd door abductie en endorotatie. Klinisch 3 stadia: <strong>bevriezend (6 wkn–9 mnd)</strong>: hevige pijn, toenemende ROM-afname; <strong>bevroren (4–12 mnd)</strong>: stijfheid dominant, pijn afnemend; <strong>ontdooiend (6–24 mnd)</strong>: spontaan ROM-herstel. Nachtpijn, passief kapsulair patroon positief. MRI toont verdikking van het kapsel en obliteratie van de axillaire recess. SPADI-score typisch > 60/100 in de bevriezende fase.',
     oorzaken:'<strong>Primaire (idiopathische) adhesieve capsulitis</strong>: inflammatoire fibrose van het glenohumerale kapsel en rotatorenmanchetinterval. <strong>Diabetes mellitus</strong> is de sterkste risicofactor: 10–20% prevalentie versus 2–5% in algemene bevolking, met bilateraal frozen shoulder in 40% van diabetespatiënten (Balci et al., 1999 — Endocrine Journal). <strong>Secundaire oorzaken</strong>: immobilisatie na trauma, rotatorenmanchetscheur, ORIF, neurologische aandoening (Parkinson, CVA, C5-radiculopathie). Systemische risicofactoren: hypothyreoïdie, hyperthyreoïdie, hypoadrenalisme. Pathomechanisme: type-1 collagenese door geactiveerde fibroblasten en mastcellen in het synoviaal kapsel, leidend tot progressieve capsulaire contractuur en obliteratie van de articulaire ruimte (Bunker & Anthony, 1995 — JBJS).'
+  },
+
+  itb:{
+    kenmerken:'<strong>Scherpe, brandende pijn aan de laterale zijde van de knie</strong> ter hoogte van het laterale femur epicondyl (Gerdy&#39;s tubercle), typisch optredend na een vaste loopafstand of -duur (het "impingement window": 30° knieflexie). <strong>Noble Compression Test</strong> is pathognomonisch: compressie van de IT-band 2–3 cm proximaal van het laterale gewrichtsspleet bij 30° flexie reproduceert de klacht. Pijn neemt toe bij heuvelaf lopen, trap afdalen en toename loopvolume. Diffuse warmte en zwelling boven het laterale epicondyl in acute stadia. <strong>Differentiaaldiagnose</strong>: laterale meniscuspathologie, popliteus tendinopathie, LCL-letsel, proximale tibiofibulaire instabiliteit. VISA-score en NPRS bij loopactiviteit zijn primaire uitkomstmaten.',
+    oorzaken:'<strong>Compressie van het vette weefsel</strong> onder de IT-band op het laterale femur epicondyl bij 30° knieflexie (Fairclough et al., 2006 — Journal of Anatomy). <strong>Biomechanische risicofactoren</strong>: contralaterale bekkendaling (Trendelenburg) bij zwakke gluteus medius, verhoogde heupinwaartse rotatie, knieewaartse adductie (dynamische valgus). <strong>Trainingsbelasting</strong>: acuut >10% loopvolume-ophoging, heuvelaf lopen en hardlopen op schuine oppervlakken zijn de primaire provocatiefactoren. <strong>Anatomisch</strong>: smalle IT-band, prominente laterale femurcondyl en beenlengteverschil > 1 cm verhogen risico. <strong>Looptechniek</strong>: verhoogde pasfrequentie (>170 spm) reduceert knie-adductiemoment en impingementtijd significant (Willy et al., 2012 — JOSPT). Vrouwen hebben 2× hogere ITBS-prevalentie door breder bekken en grotere Q-hoek.'
   }
 
 };

@@ -2,7 +2,7 @@
 
 // ── VERSION CHECK: forces hard reload when app is updated ──
 (function(){
-  const V = '36';
+  const V = '37';
   if(localStorage.getItem('kp_app_v') !== V) {
     localStorage.setItem('kp_app_v', V);
     window.location.replace(window.location.pathname + '?v=' + V + '&t=' + Date.now());
@@ -88,7 +88,7 @@ function filterProtos(regio) {
 
 // ── FEATURED HOME ──
 const REGIO_PROTOS = {
-  knie: ['acl','tka','pfps','pt','gmt','hsi','pa'],
+  knie: ['acl','tka','pfps','pt','gmt','hsi','pa','itb'],
   schouder: ['rc','si','elb','fs'],
   rug: ['lh','bureau'],
   enkel: ['at','enkel','over','mtss'],

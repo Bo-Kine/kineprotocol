@@ -1,0 +1,23 @@
+name: Checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: JS-syntax (node --check)
+        run: |
+          for f in *.js scripts/*.js; do
+            echo "check $f"
+            node --check "$f"
+          done
+      - name: Data-consistentie
+        run: node scripts/validate.js

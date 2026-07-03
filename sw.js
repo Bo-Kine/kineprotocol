@@ -1,11 +1,13 @@
 // KineProtocol — Service Worker
 // Cacht alle app-bestanden voor offline gebruik (cache-first strategie)
 
-const CACHE = 'kineprotocol-v38';
+importScripts('./version.js'); // definieert APP_VERSION — enige plek waar de versie staat
+const CACHE = 'kineprotocol-v' + APP_VERSION;
 
 const PRECACHE = [
   './',
   './index.html',
+  './version.js',
   './app.js',
   './auth.js',
   './patients.js',

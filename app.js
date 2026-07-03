@@ -1184,22 +1184,85 @@ function handleSearch(q) {
   }
   hideAllScreens();
   document.getElementById('screen-search').style.display = '';
-  const ql = q.toLowerCase(); let res = [];
+  const ql = q.toLowerCase();
+  const strip = s => (s || '').replace(/<[^>]*>/g, '').replace(/&#39;/g, '’').replace(/&amp;/g, '&');
+  // Fragment rond de eerste match, met wat context ervoor en erna
+  const excerpt = (txt, max) => {
+    const i = txt.toLowerCase().indexOf(ql);
+    if(i < 0) return txt.substring(0, max) + (txt.length > max ? '…' : '');
+    const start = Math.max(0, i - 50);
+    let s = (start > 0 ? '…' : '') + txt.substring(start, start + max);
+    if(start + max < txt.length) s += '…';
+    return s;
+  };
+
+  const protoRes = [], condRes = [], detailRes = [], patRes = [];
   Object.values(protocols).forEach(p => {
+    const info = NAV_INFO[p.id] || {};
+    const protoHay = [p.title, p.subtitle || '', strip(info.naam || ''), info.badge || ''].join(' ').toLowerCase();
+    if(protoHay.includes(ql)) protoRes.push(p);
+    const b = BESCHRIJVING[p.id];
+    if(b) {
+      const kt = strip(b.kenmerken), ot = strip(b.oorzaken);
+      if(kt.toLowerCase().includes(ql)) condRes.push({p, bron: 'Kenmerken', snippet: excerpt(kt, 140)});
+      else if(ot.toLowerCase().includes(ql)) condRes.push({p, bron: 'Oorzaken', snippet: excerpt(ot, 140)});
+    }
     p.phases.forEach((ph, pi) => {
       ph.exercises.forEach(ex => {
-        if([ex.name, ex.note||''].join(' ').toLowerCase().includes(ql))
-          res.push({p, ph, pi, match: ex.name, type: 'Oefening', detail: ex.note||''});
+        if([ex.name, ex.note || ''].join(' ').toLowerCase().includes(ql))
+          detailRes.push({p, ph, pi, match: ex.name, type: 'Oefening', detail: ex.note || ''});
       });
       ph.goals.forEach(g => {
-        if(g.toLowerCase().includes(ql)) res.push({p, ph, pi, match: g, type: 'Doel', detail: ''});
+        if(g.toLowerCase().includes(ql)) detailRes.push({p, ph, pi, match: g, type: 'Doel', detail: ''});
+      });
+      (ph.criteria_go || []).forEach(c => {
+        if(strip(c).toLowerCase().includes(ql)) detailRes.push({p, ph, pi, match: strip(c), type: 'Criterium', detail: ''});
       });
     });
   });
+  if(typeof loadPatients === 'function') {
+    loadPatients().forEach(pt => { if((pt.name || '').toLowerCase().includes(ql)) patRes.push(pt); });
+  }
+
   const el = document.getElementById('search-results');
-  if(!res.length) { el.innerHTML = `<div class="no-results">Geen resultaten voor "<strong style="color:var(--text)">${q}</strong>"</div>`; return; }
-  el.innerHTML = res.map(r => `
-    <div onclick="showProto('${r.p.id}');showPhase(${r.pi});" style="background:var(--surface);border:1px solid var(--border);border-radius:7px;padding:12px 14px;margin-bottom:8px;cursor:pointer;" onmouseover="this.style.borderColor='var(--border2)'" onmouseout="this.style.borderColor='var(--border)'">
+  const total = protoRes.length + condRes.length + detailRes.length + patRes.length;
+  if(!total) { el.innerHTML = `<div class="no-results">Geen resultaten voor "<strong style="color:var(--text)">${esc(q)}</strong>"</div>`; return; }
+
+  const card = (onclick, inner) => `<div onclick="${onclick}" style="background:var(--surface);border:1px solid var(--border);border-radius:7px;padding:12px 14px;margin-bottom:8px;cursor:pointer;" onmouseover="this.style.borderColor='var(--border2)'" onmouseout="this.style.borderColor='var(--border)'">${inner}</div>`;
+  const groupLabel = t => `<div class="slabel" style="margin:14px 0 8px;">${t}</div>`;
+  let html = '';
+
+  if(protoRes.length) {
+    html += groupLabel('Protocollen');
+    html += protoRes.map(p => card(`showProto('${p.id}')`, `
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="width:9px;height:9px;border-radius:50%;background:${p.color};flex-shrink:0"></div>
+        <span style="font-size:13.5px;font-weight:600">${p.title}</span>
+        <span style="font-size:10px;color:${p.color};background:${hexToRgba(p.color,.1)};padding:1px 7px;border-radius:8px;font-family:Geist Mono,monospace">${(NAV_INFO[p.id]||{}).badge || p.id.toUpperCase()}</span>
+      </div>
+      <div style="font-size:11.5px;color:var(--muted);margin-top:4px">${p.subtitle || ''}</div>`)).join('');
+  }
+  if(patRes.length) {
+    html += groupLabel('Patiënten');
+    html += patRes.map(pt => card(`showPatientDetail('${pt.id}')`, `
+      <div style="display:flex;align-items:center;gap:8px;">
+        <span style="font-size:13px;">👤</span><span style="font-size:13.5px;font-weight:600">${esc(pt.name)}</span>
+        <span style="font-size:11px;color:var(--muted)">${(protocols[pt.protoId]||{}).title || ''}</span>
+      </div>`)).join('');
+  }
+  if(condRes.length) {
+    html += groupLabel('Aandoeningen');
+    html += condRes.map(r => card(`showProto('${r.p.id}');showBeschrijving('${r.p.id}')`, `
+      <div style="display:flex;align-items:center;gap:7px;margin-bottom:5px;">
+        <div style="width:7px;height:7px;border-radius:50%;background:${r.p.color};flex-shrink:0"></div>
+        <span style="font-size:12px;font-weight:600">${r.p.title}</span>
+        <span style="font-size:10px;color:var(--muted2);font-family:Geist Mono,monospace">🔬 ${r.bron}</span>
+      </div>
+      <div style="font-size:11.5px;color:var(--muted);line-height:1.5">${esc(r.snippet)}</div>`)).join('');
+  }
+  if(detailRes.length) {
+    html += groupLabel(`In protocollen (${detailRes.length})`);
+    html += detailRes.slice(0, 40).map(r => card(`showProto('${r.p.id}');showPhase(${r.pi})`, `
       <div style="display:flex;align-items:center;gap:7px;margin-bottom:5px;">
         <div style="width:7px;height:7px;border-radius:50%;background:${r.p.color};flex-shrink:0"></div>
         <span style="font-size:12px;font-weight:600">${r.p.title}</span>
@@ -1207,8 +1270,10 @@ function handleSearch(q) {
         <span style="font-size:10px;color:var(--muted2);font-family:Geist Mono,monospace">${r.type}</span>
       </div>
       <div style="font-size:13px">${r.match}</div>
-      ${r.detail ? `<div style="font-size:11px;color:var(--muted);margin-top:3px">${r.detail.substring(0,110)}${r.detail.length>110?'...':''}</div>` : ''}
-    </div>`).join('');
+      ${r.detail ? `<div style="font-size:11px;color:var(--muted);margin-top:3px">${r.detail.substring(0,110)}${r.detail.length>110?'…':''}</div>` : ''}`)).join('');
+    if(detailRes.length > 40) html += `<div style="font-size:11px;color:var(--muted2);text-align:center;padding:6px;">${detailRes.length - 40} resultaten verborgen — verfijn je zoekopdracht</div>`;
+  }
+  el.innerHTML = html;
 }
 
 loadExerciseImages();

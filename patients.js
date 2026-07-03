@@ -530,7 +530,7 @@ function renderPatientDetail(pt, p) {
       <div style="width:10px;height:10px;border-radius:50%;background:${isCurrent?color:isDone?color:'var(--border2)'};flex-shrink:0;${isDone?'opacity:.6':''}"></div>
       <div>
         <div style="font-size:12px;font-weight:${isCurrent?700:500};color:${isCurrent?'var(--text)':'var(--muted)'}">${phase.label}</div>
-        <div style="font-size:10px;color:var(--muted2);font-family:Geist Mono,monospace">${phase.weeks}</div>
+        <div style="font-size:10px;color:var(--muted2);font-family:Geist Mono,monospace">${phase.weeks}${(pt.phaseHistory||{})[i] ? ' · ' + formatDate(pt.phaseHistory[i]) : ''}</div>
       </div>
       ${isCurrent ? `<div style="margin-left:4px;font-size:9px;background:${color};color:#000;padding:1px 6px;border-radius:8px;font-weight:700;font-family:Geist Mono,monospace">NU</div>` : ''}
       ${isDone ? `<div style="margin-left:4px;font-size:12px;opacity:.6">✓</div>` : ''}
@@ -571,6 +571,9 @@ function setPatientPhase(patId, phaseIdx) {
   const pt = pts.find(p => p.id === patId);
   if(!pt) return;
   pt.phaseIndex = phaseIdx;
+  // Datum van fase-overgang vastleggen (alleen bij eerste keer bereiken)
+  pt.phaseHistory = pt.phaseHistory || {};
+  if(!pt.phaseHistory[phaseIdx]) pt.phaseHistory[phaseIdx] = new Date().toISOString().slice(0, 10);
   savePatients(pts);
   const p = protocols[pt.protoId];
   renderPatientDetail(pt, p);
@@ -763,7 +766,8 @@ function savePatient() {
     const pt = pts.find(p => p.id === editingPatientId);
     if(pt) { pt.name = name; pt.dob = dob; pt.startDate = startDate; pt.protoId = protoId; pt.phaseIndex = phaseIndex; }
   } else {
-    const newPt = {id: genId(), name, dob, startDate, protoId, phaseIndex, sessions: []};
+    const newPt = {id: genId(), name, dob, startDate, protoId, phaseIndex, sessions: [],
+      phaseHistory: {[phaseIndex]: startDate || new Date().toISOString().slice(0,10)}};
     if(note) newPt.sessions.push({date: startDate || new Date().toISOString().slice(0,10), note, phaseIdx: phaseIndex});
     pts.push(newPt);
   }

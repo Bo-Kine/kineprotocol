@@ -885,20 +885,36 @@ function printOefenblad(patId) {
   const color = p.color;
   const exs = ph ? ph.exercises : [];
 
+  const dagen = ['ma','di','wo','do','vr','za','zo'];
+  const weekTrack = `<div class="week-track">
+    <span class="wt-label">Weekschema</span>
+    ${dagen.map(d => `<span class="wt-day"><span class="wt-box"></span>${d}</span>`).join('')}
+  </div>`;
+
   const exsHtml = exs.map((ex, i) => {
-    const params = ex.params ? ex.params.map(([k,v]) => `<span class="param"><strong>${k}:</strong> ${v}</span>`).join('') : '';
+    const params = ex.params ? ex.params.map(([k,v]) => `<span class="param"><strong>${k}</strong> ${v}</span>`).join('') : '';
     const catLabel = ex.cat ? `<span class="ex-cat">${ex.cat}</span>` : '';
+    // Afbeelding indien beschikbaar; relatieve paden absoluut maken (printvenster is about:blank)
+    const imgEntry = (typeof exerciseImages !== 'undefined') ? exerciseImages[ex.name] : null;
+    const imgHtml = imgEntry && imgEntry.url
+      ? `<div class="ex-img"><img src="${new URL(imgEntry.url, window.location.href).href}" alt="${esc(imgEntry.alt || ex.name)}" onerror="this.parentNode.style.display='none'"></div>`
+      : '';
     return `<div class="ex-card">
-      <div class="ex-header">
-        <div class="ex-num">${i + 1}</div>
-        <div class="ex-content">
-          <div class="ex-name">${ex.name}</div>
-          ${catLabel}
+      <div class="ex-row">
+        <div class="ex-main">
+          <div class="ex-header">
+            <div class="ex-num">${i + 1}</div>
+            <div class="ex-content">
+              <div class="ex-name">${ex.name}</div>
+              ${catLabel}
+            </div>
+          </div>
+          ${params ? `<div class="ex-params">${params}</div>` : ''}
+          ${ex.note ? `<div class="ex-note">${ex.note}</div>` : ''}
         </div>
+        ${imgHtml}
       </div>
-      ${params ? `<div class="ex-params">${params}</div>` : ''}
-      ${ex.note ? `<div class="ex-note">${ex.note}</div>` : ''}
-      <div class="ex-patient-notes"><div class="ex-notes-label">Eigen notities:</div><div class="ex-notes-line"></div></div>
+      ${weekTrack}
     </div>`;
   }).join('');
 
@@ -943,18 +959,26 @@ function printOefenblad(patId) {
   .ex-cat{font-size:10px;color:${color};font-family:'Geist Mono',monospace;text-transform:uppercase;letter-spacing:.08em;}
   .ex-params{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px;}
   .param{background:${color}12;border:1px solid ${color}30;border-radius:4px;padding:3px 9px;font-size:11.5px;font-family:'Geist Mono',monospace;}
-  .ex-note{font-size:11.5px;color:#666;line-height:1.55;margin-bottom:8px;font-style:italic;}
-  .ex-patient-notes{margin-top:8px;padding-top:8px;border-top:1px dashed #e8e8e8;}
-  .ex-notes-label{font-size:9px;color:#ccc;text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px;}
-  .ex-notes-line{height:1px;background:#e8e8e8;margin-bottom:5px;}
+  .ex-note{font-size:11.5px;color:#666;line-height:1.55;font-style:italic;}
+  .ex-row{display:flex;gap:14px;align-items:flex-start;}
+  .ex-main{flex:1;min-width:0;}
+  .ex-img{width:92px;flex-shrink:0;border:1px solid #eee;border-radius:6px;overflow:hidden;background:#fafafa;}
+  .ex-img img{width:100%;height:80px;object-fit:contain;display:block;padding:4px;box-sizing:border-box;}
+  .week-track{display:flex;align-items:center;gap:10px;margin-top:10px;padding-top:9px;border-top:1px dashed #e8e8e8;}
+  .wt-label{font-size:9px;color:#aaa;text-transform:uppercase;letter-spacing:.08em;margin-right:2px;}
+  .wt-day{display:inline-flex;align-items:center;gap:4px;font-size:10px;color:#888;font-family:'Geist Mono',monospace;}
+  .wt-box{width:13px;height:13px;border:1.5px solid #ccc;border-radius:3px;display:inline-block;}
   footer{margin-top:28px;padding-top:12px;border-top:1px solid #eee;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;}
   .footer-info{font-size:10px;color:#bbb;}
   .footer-info strong{color:#999;}
   .footer-warning{font-size:10.5px;color:#d97706;background:#fffbeb;border:1px solid #fde68a;border-radius:5px;padding:5px 10px;}
   @media print{
-    .page{padding:18px 22px;}
-    body{font-size:12px;}
-    @page{margin:1.2cm;}
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .page{padding:0;max-width:none;}
+    body{font-size:12px;padding-bottom:34px;}
+    @page{margin:1.4cm 1.6cm;}
+    .goals-box,.phase-banner{break-inside:avoid;page-break-inside:avoid;}
+    footer{position:fixed;bottom:0;left:0;right:0;background:#fff;margin:0;padding:6px 0;border-top:1px solid #eee;}
   }
 </style>
 </head>
@@ -984,7 +1008,6 @@ function printOefenblad(patId) {
         <div class="phase-title">${ph.title}</div>
         <div class="phase-weeks">${ph.weeks}</div>
       </div>
-      ${ph.evidence ? `<div style="font-size:11px;color:#666;margin-top:3px;">${ph.evidence.replace(/<[^>]+>/g,'')}</div>` : ''}
     </div>
   </div>` : ''}
 

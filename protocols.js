@@ -2032,6 +2032,36 @@ const REGIO_MAP = {
   orif:'Pols & Hand', dq:'Pols & Hand', cts:'Pols & Hand',
 };
 
+// ── NAV INFO (badge + duurlabel per protocol; naam valt terug op protocol.title) ──
+// Sidebar en bottom sheet worden hieruit gegenereerd door buildNav() in app.js.
+const NAV_INFO = {
+  acl:{naam:'ACL Reconstructie', badge:'VKB', duur:'9–12 mnd'},
+  tka:{naam:'Totale Knieprothese', badge:'TKA', duur:'3–6 mnd'},
+  pfps:{naam:'Patellofemoraal Pijn', badge:'PFPS', duur:'6–14 wkn'},
+  pt:{naam:'Patellapees Tendinopathie', badge:'PT', duur:'4–20+ wkn'},
+  gmt:{naam:'Gluteus Med./Min. Tendinopathie', badge:'GMT', duur:'0–24+ wkn'},
+  hsi:{naam:'Hamstring Blessure', badge:'HSI', duur:'1–16+ wkn'},
+  mcl:{naam:'MCL Letsel Knie', badge:'MCL', duur:'0–24 wkn'},
+  pa:{naam:'Pes Anserinus Tendinopathie', badge:'PA', duur:'0–24+ wkn'},
+  itb:{naam:'Iliotibiale Bandsyndroom', badge:'ITB', duur:'0–20+ wkn'},
+  lh:{naam:'Lumbale Hernia', badge:'LHN', duur:'6–16 wkn'},
+  bureau:{naam:'Bureauhouding &amp; Nekklachten', badge:'BNK', duur:'6–12+ wkn'},
+  fbl:{naam:'Facettaire Blokkade Lumbaal', badge:'FBL', duur:'0–24 wkn'},
+  faz:{naam:'Facetartrose Lumbaal', badge:'FAZ', duur:'0–10+ wkn'},
+  rc:{naam:'Rotatorenmanchet', badge:'RC', duur:'4–12 mnd'},
+  sup:{naam:'Supraspinatus &amp; Bursitis', badge:'SUP', duur:'0–20 wkn'},
+  si:{naam:'Schouderinstabiliteit', badge:'SI', duur:'0–9 mnd'},
+  elb:{naam:'Laterale Epicondylalgie', badge:'ELB', duur:'4–20+ wkn'},
+  fs:{naam:'Frozen Shoulder', badge:'FS', duur:'6–52+ wkn'},
+  at:{naam:'Achillespees Tendinopathie', badge:'AT', duur:'6–24+ wkn'},
+  enkel:{naam:'Enkeldistorsie', badge:'LAS', duur:'1–12 wkn'},
+  over:{naam:'Overpronatie Syndroom', badge:'OVP', duur:'8–18+ wkn'},
+  mtss:{naam:'Shin Splints (MTSS)', badge:'MTSS', duur:'3–20+ wkn'},
+  orif:{naam:'ORIF Distale Radius', badge:'DRF', duur:'0–5 mnd'},
+  dq:{naam:'De Quervain Tenosynovitis', badge:'DQ', duur:'0–20 wkn'},
+  cts:{naam:'Carpaaltunnelsyndroom', badge:'CTS', duur:'conservatief/post-OK'},
+};
+
 // ── SPIERGROEP KEYWORD MAPPING ──
 const SPIER_KEYWORDS = [
   {spier:'Quadriceps',               color:'#22d3ee',

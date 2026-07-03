@@ -2,7 +2,7 @@
 
 // ── VERSION CHECK: forces hard reload when app is updated ──
 (function(){
-  const V = '37';
+  const V = '38';
   if(localStorage.getItem('kp_app_v') !== V) {
     localStorage.setItem('kp_app_v', V);
     window.location.replace(window.location.pathname + '?v=' + V + '&t=' + Date.now());
@@ -87,13 +87,12 @@ function filterProtos(regio) {
 }
 
 // ── FEATURED HOME ──
-const REGIO_PROTOS = {
-  knie: ['acl','tka','pfps','pt','gmt','hsi','pa','itb'],
-  schouder: ['rc','si','elb','fs'],
-  rug: ['lh','bureau'],
-  enkel: ['at','enkel','over','mtss'],
-  pols: ['orif','dq','cts'],
-};
+// Afgeleid uit REGIO_MAP zodat nieuwe protocollen automatisch in de featured-sectie verschijnen
+const REGIO_LABELS = { knie:'Knie & Heup', schouder:'Schouder & Arm', rug:'Lumbaal & Cervicaal', enkel:'Enkel & Voet', pols:'Pols & Hand' };
+const REGIO_PROTOS = {};
+Object.keys(REGIO_LABELS).forEach(k => {
+  REGIO_PROTOS[k] = Object.keys(REGIO_MAP).filter(id => REGIO_MAP[id] === REGIO_LABELS[k] && protocols[id]);
+});
 
 function filterFeatured(regio) {
   document.querySelectorAll('.regio-card').forEach(c => c.classList.toggle('active', c.dataset.regio === regio));
@@ -1294,8 +1293,68 @@ window.showPhase = function(i) {
   _origShowPhase(i);
 };
 
+// ── NAVIGATIE GENEREREN (sidebar + bottom sheet) ──
+// Bron: protocols (title/color/phases), REGIO_MAP (groepering), NAV_INFO (badge/duur).
+// Een nieuw protocol is dus zichtbaar zodra het in protocols.js + REGIO_MAP staat.
+function hexToRgba(hex, a) {
+  const m = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex || '');
+  if(!m) return 'rgba(255,255,255,' + a + ')';
+  return 'rgba(' + parseInt(m[1],16) + ',' + parseInt(m[2],16) + ',' + parseInt(m[3],16) + ',' + a + ')';
+}
+
+function buildNav() {
+  const sections = [];
+  const byRegio = {};
+  const add = (id, regio) => {
+    if(!byRegio[regio]) { byRegio[regio] = []; sections.push(regio); }
+    byRegio[regio].push(id);
+  };
+  Object.keys(REGIO_MAP).forEach(id => { if(protocols[id]) add(id, REGIO_MAP[id]); });
+  // Vangnet: protocollen zonder REGIO_MAP-entry komen onder 'Overig' i.p.v. onzichtbaar te blijven
+  Object.keys(protocols).forEach(id => { if(!REGIO_MAP[id]) add(id, 'Overig'); });
+
+  let sideHtml = '', bsHtml = '';
+  sections.forEach((sec, si) => {
+    const secLabel = sec.replace(/&/g, '&amp;');
+    if(si > 0) sideHtml += '<div class="sidebar-divider"></div>';
+    sideHtml += '<div class="sidebar-section">' + secLabel + '</div>';
+    bsHtml += '<div class="bs-section">' + secLabel + '</div>';
+    byRegio[sec].forEach(id => {
+      const p = protocols[id];
+      const info = NAV_INFO[id] || {};
+      const naam = info.naam || p.title;
+      const badge = info.badge || id.toUpperCase();
+      const sub = p.phases.length + ' fasen' + (info.duur ? ' · ' + info.duur : '');
+      const bg = hexToRgba(p.color, .1);
+      sideHtml += '<div class="nav-item" id="nav-' + id + '" onclick="showProto(\'' + id + '\')">'
+        + '<div class="nav-dot" style="background:' + p.color + '"></div>'
+        + '<div style="flex:1"><div class="nav-title">' + naam + '</div><div class="nav-sub">' + sub + '</div></div>'
+        + '<span class="nav-badge" style="background:' + bg + ';color:' + p.color + '">' + badge + '</span></div>';
+      bsHtml += '<button class="bs-item" onclick="closeProtoSheet();showProto(\'' + id + '\')">'
+        + '<div class="bs-item-dot" style="background:' + p.color + '"></div>'
+        + '<span class="bs-item-name">' + naam + '</span>'
+        + '<span class="bs-item-badge" style="background:' + bg + ';color:' + p.color + '">' + badge + '</span></button>';
+    });
+  });
+  document.getElementById('nav-proto-sections').innerHTML = sideHtml;
+  document.getElementById('bs-proto-body').innerHTML = bsHtml;
+
+  // Home-statistieken uit de data berekenen
+  const ids = Object.keys(protocols);
+  let phases = 0, exercises = 0;
+  ids.forEach(id => {
+    phases += protocols[id].phases.length;
+    protocols[id].phases.forEach(f => { exercises += (f.exercises || []).length; });
+  });
+  const set = (elId, v) => { const el = document.getElementById(elId); if(el) el.textContent = v; };
+  set('stat-protocols', ids.length);
+  set('stat-phases', phases);
+  set('stat-exercises', exercises);
+}
+
 // ── INIT ──
 async function initApp() {
+  buildNav();
   initSwipe();
   renderRecent();
   filterFeatured('knie');

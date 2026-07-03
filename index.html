@@ -457,7 +457,7 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
 <body>
 
 <!-- BACKGROUND CANVAS -->
-<div id="bg-canvas" style="position:fixed;inset:0;z-index:0;pointer-events:none;background:#020a18 url('./bg.webp?v=37') right center/cover no-repeat;"></div>
+<div id="bg-canvas" style="position:fixed;inset:0;z-index:0;pointer-events:none;background:#020a18 url('./bg.webp?v=38') right center/cover no-repeat;"></div>
 
 <!-- LOGIN SCREEN -->
 <div id="login-screen" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(2,11,24,0.55);backdrop-filter:blur(2px);flex-direction:column;align-items:center;justify-content:center;padding:24px;">
@@ -515,39 +515,8 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
     <div class="sidebar-section">Protocollen</div>
     <div class="nav-item active" id="nav-home" onclick="showHome()"><span style="font-size:15px;">🏠</span><span class="nav-title">Overzicht</span></div>
     <div class="sidebar-divider"></div>
-    <div class="sidebar-section">Knie &amp; Heup</div>
-    <div class="nav-item" id="nav-acl" onclick="showProto('acl')"><div class="nav-dot" style="background:var(--acl)"></div><div style="flex:1"><div class="nav-title">ACL Reconstructie</div><div class="nav-sub">5 fasen · 9–12 mnd</div></div><span class="nav-badge" style="background:rgba(34,211,238,.1);color:var(--acl)">VKB</span></div>
-    <div class="nav-item" id="nav-tka" onclick="showProto('tka')"><div class="nav-dot" style="background:var(--tka)"></div><div style="flex:1"><div class="nav-title">Totale Knieprothese</div><div class="nav-sub">5 fasen · 3–6 mnd</div></div><span class="nav-badge" style="background:rgba(167,139,250,.1);color:var(--tka)">TKA</span></div>
-    <div class="nav-item" id="nav-pfps" onclick="showProto('pfps')"><div class="nav-dot" style="background:var(--pfps)"></div><div style="flex:1"><div class="nav-title">Patellofemoraal Pijn</div><div class="nav-sub">4 fasen · 6–14 wkn</div></div><span class="nav-badge" style="background:rgba(249,115,22,.1);color:var(--pfps)">PFPS</span></div>
-    <div class="nav-item" id="nav-pt" onclick="showProto('pt')"><div class="nav-dot" style="background:#fb923c"></div><div style="flex:1"><div class="nav-title">Patellapees Tendinopathie</div><div class="nav-sub">5 fasen · 4–20+ wkn</div></div><span class="nav-badge" style="background:rgba(251,146,60,.1);color:#fb923c">PT</span></div>
-    <div class="nav-item" id="nav-gmt" onclick="showProto('gmt')"><div class="nav-dot" style="background:var(--gmt)"></div><div style="flex:1"><div class="nav-title">Gluteus Med./Min. Tendinopathie</div><div class="nav-sub">4 fasen · 0–24+ wkn</div></div><span class="nav-badge" style="background:rgba(20,184,166,.1);color:var(--gmt)">GMT</span></div>
-    <div class="nav-item" id="nav-hsi" onclick="showProto('hsi')"><div class="nav-dot" style="background:var(--hsi)"></div><div style="flex:1"><div class="nav-title">Hamstring Blessure</div><div class="nav-sub">4 fasen · 1–16+ wkn</div></div><span class="nav-badge" style="background:rgba(250,204,21,.1);color:var(--hsi)">HSI</span></div>
-    <div class="nav-item" id="nav-mcl" onclick="showProto('mcl')"><div class="nav-dot" style="background:var(--mcl)"></div><div style="flex:1"><div class="nav-title">MCL Letsel Knie</div><div class="nav-sub">5 fasen · 0–24 wkn</div></div><span class="nav-badge" style="background:rgba(45,212,191,.1);color:var(--mcl)">MCL</span></div>
-    <div class="nav-item" id="nav-pa" onclick="showProto('pa')"><div class="nav-dot" style="background:var(--pa)"></div><div style="flex:1"><div class="nav-title">Pes Anserinus</div><div class="nav-sub">4 fasen · 0–24+ wkn</div></div><span class="nav-badge" style="background:rgba(22,163,74,.1);color:var(--pa)">PA</span></div>
-    <div class="nav-item" id="nav-itb" onclick="showProto('itb')"><div class="nav-dot" style="background:var(--itb)"></div><div style="flex:1"><div class="nav-title">Iliotibiale Bandsyndroom</div><div class="nav-sub">4 fasen · 0–20+ wkn</div></div><span class="nav-badge" style="background:rgba(234,88,12,.1);color:var(--itb)">ITB</span></div>
-    <div class="sidebar-divider"></div>
-    <div class="sidebar-section">Lumbaal &amp; Cervicaal</div>
-    <div class="nav-item" id="nav-lh" onclick="showProto('lh')"><div class="nav-dot" style="background:var(--lh)"></div><div style="flex:1"><div class="nav-title">Lumbale Hernia</div><div class="nav-sub">5 fasen · 6–16 wkn</div></div><span class="nav-badge" style="background:rgba(52,211,153,.1);color:var(--lh)">LHN</span></div>
-    <div class="nav-item" id="nav-bureau" onclick="showProto('bureau')"><div class="nav-dot" style="background:#60a5fa"></div><div style="flex:1"><div class="nav-title">Bureauhouding & Nekklachten</div><div class="nav-sub">4 fasen · 6–12+ wkn</div></div><span class="nav-badge" style="background:rgba(96,165,250,.1);color:#60a5fa">BNK</span></div>
-    <div class="nav-item" id="nav-fbl" onclick="showProto('fbl')"><div class="nav-dot" style="background:var(--fbl)"></div><div style="flex:1"><div class="nav-title">Facettaire Blokkade</div><div class="nav-sub">4 fasen · 0–24 wkn</div></div><span class="nav-badge" style="background:rgba(219,39,119,.1);color:var(--fbl)">FBL</span></div>
-    <div class="sidebar-divider"></div>
-    <div class="sidebar-section">Schouder &amp; Arm</div>
-    <div class="nav-item" id="nav-rc" onclick="showProto('rc')"><div class="nav-dot" style="background:var(--rc)"></div><div style="flex:1"><div class="nav-title">Rotatorenmanchet</div><div class="nav-sub">6 fasen · 4–12 mnd</div></div><span class="nav-badge" style="background:rgba(244,63,94,.1);color:var(--rc)">RC</span></div>
-    <div class="nav-item" id="nav-sup" onclick="showProto('sup')"><div class="nav-dot" style="background:var(--sup)"></div><div style="flex:1"><div class="nav-title">Supraspinatus & Bursitis</div><div class="nav-sub">4 fasen · 0–20 wkn</div></div><span class="nav-badge" style="background:rgba(124,58,237,.1);color:var(--sup)">SUP</span></div>
-    <div class="nav-item" id="nav-si" onclick="showProto('si')"><div class="nav-dot" style="background:var(--si)"></div><div style="flex:1"><div class="nav-title">Schouderinstabiliteit</div><div class="nav-sub">5 fasen · 0–9 mnd</div></div><span class="nav-badge" style="background:rgba(244,114,182,.1);color:var(--si)">SI</span></div>
-    <div class="nav-item" id="nav-elb" onclick="showProto('elb')"><div class="nav-dot" style="background:var(--elb)"></div><div style="flex:1"><div class="nav-title">Laterale Epicondylalgie</div><div class="nav-sub">3 fasen · 4–20+ wkn</div></div><span class="nav-badge" style="background:rgba(192,132,252,.1);color:var(--elb)">ELB</span></div>
-    <div class="nav-item" id="nav-fs" onclick="showProto('fs')"><div class="nav-dot" style="background:var(--fs)"></div><div style="flex:1"><div class="nav-title">Frozen Shoulder</div><div class="nav-sub">4 fasen · 6–52+ wkn</div></div><span class="nav-badge" style="background:rgba(99,102,241,.1);color:var(--fs)">FS</span></div>
-    <div class="sidebar-divider"></div>
-    <div class="sidebar-section">Enkel &amp; Voet</div>
-    <div class="nav-item" id="nav-at" onclick="showProto('at')"><div class="nav-dot" style="background:#e879f9"></div><div style="flex:1"><div class="nav-title">Achillespees Tendinopathie</div><div class="nav-sub">5 fasen · 6–24+ wkn</div></div><span class="nav-badge" style="background:rgba(232,121,249,.1);color:#e879f9">AT</span></div>
-    <div class="nav-item" id="nav-enkel" onclick="showProto('enkel')"><div class="nav-dot" style="background:#f59e0b"></div><div style="flex:1"><div class="nav-title">Enkeldistorsie</div><div class="nav-sub">5 fasen · 1–12 wkn</div></div><span class="nav-badge" style="background:rgba(245,158,11,.1);color:#f59e0b">LAS</span></div>
-    <div class="nav-item" id="nav-over" onclick="showProto('over')"><div class="nav-dot" style="background:#10b981"></div><div style="flex:1"><div class="nav-title">Overpronatie Syndroom</div><div class="nav-sub">4 fasen · 8–18+ wkn</div></div><span class="nav-badge" style="background:rgba(16,185,129,.1);color:#10b981">OVP</span></div>
-    <div class="nav-item" id="nav-mtss" onclick="showProto('mtss')"><div class="nav-dot" style="background:var(--mtss)"></div><div style="flex:1"><div class="nav-title">Shin Splints (MTSS)</div><div class="nav-sub">4 fasen · 3–20+ wkn</div></div><span class="nav-badge" style="background:rgba(14,165,233,.1);color:var(--mtss)">MTSS</span></div>
-    <div class="sidebar-divider"></div>
-    <div class="sidebar-section">Pols &amp; Hand</div>
-    <div class="nav-item" id="nav-orif" onclick="showProto('orif')"><div class="nav-dot" style="background:var(--orif)"></div><div style="flex:1"><div class="nav-title">ORIF Distale Radius</div><div class="nav-sub">4 fasen · 0–5 mnd</div></div><span class="nav-badge" style="background:rgba(56,189,248,.1);color:var(--orif)">DRF</span></div>
-    <div class="nav-item" id="nav-dq" onclick="showProto('dq')"><div class="nav-dot" style="background:var(--dq)"></div><div style="flex:1"><div class="nav-title">De Quervain</div><div class="nav-sub">3 fasen · 0–20 wkn</div></div><span class="nav-badge" style="background:rgba(132,204,22,.1);color:var(--dq)">APL</span></div>
-    <div class="nav-item" id="nav-cts" onclick="showProto('cts')"><div class="nav-dot" style="background:var(--cts)"></div><div style="flex:1"><div class="nav-title">Carpaaltunnelsyndroom</div><div class="nav-sub">4 fasen · conservatief/post-OK</div></div><span class="nav-badge" style="background:rgba(129,140,248,.1);color:var(--cts)">CTS</span></div>
+    <!-- Protocol-navigatie wordt gegenereerd door buildNav() uit protocols + REGIO_MAP + NAV_INFO -->
+    <div id="nav-proto-sections" style="display:contents;"></div>
     <div class="sidebar-divider"></div>
     <div class="sidebar-section">Evaluatieformulieren</div>
     <div class="nav-item" id="nav-eval-forms" onclick="showEvalFormsScreen()"><span style="font-size:15px;">🩺</span><span class="nav-title">Klinisch onderzoek</span><span style="font-size:10px;padding:2px 7px;border-radius:10px;background:rgba(248,113,113,.15);color:#f87171;font-family:'Geist Mono',monospace;">5 regio</span></div>
@@ -569,9 +538,9 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
       </div>
       <!-- Stats -->
       <div class="stats-row">
-        <div class="stat"><div class="stat-icon-box" style="background:rgba(34,211,238,.15)">📋</div><div class="stat-num">18</div><div class="stat-label">Protocollen</div></div>
-        <div class="stat"><div class="stat-icon-box" style="background:rgba(167,139,250,.15)">📊</div><div class="stat-num">82</div><div class="stat-label">Fasen</div></div>
-        <div class="stat"><div class="stat-icon-box" style="background:rgba(249,115,22,.15)">💪</div><div class="stat-num">453</div><div class="stat-label">Oefeningen</div></div>
+        <div class="stat"><div class="stat-icon-box" style="background:rgba(34,211,238,.15)">📋</div><div class="stat-num" id="stat-protocols">—</div><div class="stat-label">Protocollen</div></div>
+        <div class="stat"><div class="stat-icon-box" style="background:rgba(167,139,250,.15)">📊</div><div class="stat-num" id="stat-phases">—</div><div class="stat-label">Fasen</div></div>
+        <div class="stat"><div class="stat-icon-box" style="background:rgba(249,115,22,.15)">💪</div><div class="stat-num" id="stat-exercises">—</div><div class="stat-label">Oefeningen</div></div>
         <div class="stat"><div class="stat-icon-box" style="background:rgba(244,63,94,.15)">👥</div><div class="stat-num" id="stat-patients">0</div><div class="stat-label">Patiënten</div></div>
       </div>
       <!-- Recent -->
@@ -676,37 +645,8 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
   <div class="bottom-sheet-inner">
     <div class="bs-handle"></div>
     <div class="bs-title">Protocollen</div>
-    <div class="bs-body">
-      <div class="bs-section">Knie &amp; Heup</div>
-      <button class="bs-item" onclick="closeProtoSheet();showProto('acl')"><div class="bs-item-dot" style="background:var(--acl)"></div><span class="bs-item-name">ACL Reconstructie</span><span class="bs-item-badge" style="background:rgba(34,211,238,.1);color:var(--acl)">VKB</span></button>
-      <button class="bs-item" onclick="closeProtoSheet();showProto('tka')"><div class="bs-item-dot" style="background:var(--tka)"></div><span class="bs-item-name">Totale Knieprothese</span><span class="bs-item-badge" style="background:rgba(167,139,250,.1);color:var(--tka)">TKA</span></button>
-      <button class="bs-item" onclick="closeProtoSheet();showProto('pfps')"><div class="bs-item-dot" style="background:var(--pfps)"></div><span class="bs-item-name">Patellofemoraal Pijn</span><span class="bs-item-badge" style="background:rgba(249,115,22,.1);color:var(--pfps)">PFPS</span></button>
-      <button class="bs-item" onclick="closeProtoSheet();showProto('pt')"><div class="bs-item-dot" style="background:#fb923c"></div><span class="bs-item-name">Patellapees Tendinopathie</span><span class="bs-item-badge" style="background:rgba(251,146,60,.1);color:#fb923c">PT</span></button>
-      <button class="bs-item" onclick="closeProtoSheet();showProto('gmt')"><div class="bs-item-dot" style="background:var(--gmt)"></div><span class="bs-item-name">Gluteus Med./Min. Tendinopathie</span><span class="bs-item-badge" style="background:rgba(20,184,166,.1);color:var(--gmt)">GMT</span></button>
-      <button class="bs-item" onclick="closeProtoSheet();showProto('hsi')"><div class="bs-item-dot" style="background:var(--hsi)"></div><span class="bs-item-name">Hamstring Blessure</span><span class="bs-item-badge" style="background:rgba(250,204,21,.1);color:var(--hsi)">HSI</span></button>
-      <button class="bs-item" onclick="closeProtoSheet();showProto('mcl')"><div class="bs-item-dot" style="background:var(--mcl)"></div><span class="bs-item-name">MCL Letsel Knie</span><span class="bs-item-badge" style="background:rgba(45,212,191,.1);color:var(--mcl)">MCL</span></button>
-      <button class="bs-item" onclick="closeProtoSheet();showProto('pa')"><div class="bs-item-dot" style="background:var(--pa)"></div><span class="bs-item-name">Pes Anserinus Tendinopathie</span><span class="bs-item-badge" style="background:rgba(22,163,74,.1);color:var(--pa)">PA</span></button>
-      <button class="bs-item" onclick="closeProtoSheet();showProto('itb')"><div class="bs-item-dot" style="background:var(--itb)"></div><span class="bs-item-name">Iliotibiale Bandsyndroom</span><span class="bs-item-badge" style="background:rgba(234,88,12,.1);color:var(--itb)">ITB</span></button>
-      <div class="bs-section">Lumbaal &amp; Cervicaal</div>
-      <button class="bs-item" onclick="closeProtoSheet();showProto('lh')"><div class="bs-item-dot" style="background:var(--lh)"></div><span class="bs-item-name">Lumbale Hernia</span><span class="bs-item-badge" style="background:rgba(52,211,153,.1);color:var(--lh)">LHN</span></button>
-      <button class="bs-item" onclick="closeProtoSheet();showProto('bureau')"><div class="bs-item-dot" style="background:#60a5fa"></div><span class="bs-item-name">Bureauhouding &amp; Nekklachten</span><span class="bs-item-badge" style="background:rgba(96,165,250,.1);color:#60a5fa">BNK</span></button>
-      <button class="bs-item" onclick="closeProtoSheet();showProto('fbl')"><div class="bs-item-dot" style="background:var(--fbl)"></div><span class="bs-item-name">Facettaire Blokkade Lumbaal</span><span class="bs-item-badge" style="background:rgba(219,39,119,.1);color:var(--fbl)">FBL</span></button>
-      <div class="bs-section">Schouder &amp; Arm</div>
-      <button class="bs-item" onclick="closeProtoSheet();showProto('rc')"><div class="bs-item-dot" style="background:var(--rc)"></div><span class="bs-item-name">Rotatorenmanchet</span><span class="bs-item-badge" style="background:rgba(244,63,94,.1);color:var(--rc)">RC</span></button>
-      <button class="bs-item" onclick="closeProtoSheet();showProto('sup')"><div class="bs-item-dot" style="background:var(--sup)"></div><span class="bs-item-name">Supraspinatus & Bursitis</span><span class="bs-item-badge" style="background:rgba(124,58,237,.1);color:var(--sup)">SUP</span></button>
-      <button class="bs-item" onclick="closeProtoSheet();showProto('si')"><div class="bs-item-dot" style="background:var(--si)"></div><span class="bs-item-name">Schouderinstabiliteit</span><span class="bs-item-badge" style="background:rgba(244,114,182,.1);color:var(--si)">SI</span></button>
-      <button class="bs-item" onclick="closeProtoSheet();showProto('elb')"><div class="bs-item-dot" style="background:var(--elb)"></div><span class="bs-item-name">Laterale Epicondylalgie</span><span class="bs-item-badge" style="background:rgba(192,132,252,.1);color:var(--elb)">ELB</span></button>
-      <button class="bs-item" onclick="closeProtoSheet();showProto('fs')"><div class="bs-item-dot" style="background:var(--fs)"></div><span class="bs-item-name">Frozen Shoulder</span><span class="bs-item-badge" style="background:rgba(99,102,241,.1);color:var(--fs)">FS</span></button>
-      <div class="bs-section">Enkel &amp; Voet</div>
-      <button class="bs-item" onclick="closeProtoSheet();showProto('at')"><div class="bs-item-dot" style="background:#e879f9"></div><span class="bs-item-name">Achillespees Tendinopathie</span><span class="bs-item-badge" style="background:rgba(232,121,249,.1);color:#e879f9">AT</span></button>
-      <button class="bs-item" onclick="closeProtoSheet();showProto('enkel')"><div class="bs-item-dot" style="background:#f59e0b"></div><span class="bs-item-name">Enkeldistorsie</span><span class="bs-item-badge" style="background:rgba(245,158,11,.1);color:#f59e0b">LAS</span></button>
-      <button class="bs-item" onclick="closeProtoSheet();showProto('over')"><div class="bs-item-dot" style="background:#10b981"></div><span class="bs-item-name">Overpronatie Syndroom</span><span class="bs-item-badge" style="background:rgba(16,185,129,.1);color:#10b981">OVP</span></button>
-      <button class="bs-item" onclick="closeProtoSheet();showProto('mtss')"><div class="bs-item-dot" style="background:var(--mtss)"></div><span class="bs-item-name">Shin Splints (MTSS)</span><span class="bs-item-badge" style="background:rgba(14,165,233,.1);color:var(--mtss)">MTSS</span></button>
-      <div class="bs-section">Pols &amp; Hand</div>
-      <button class="bs-item" onclick="closeProtoSheet();showProto('orif')"><div class="bs-item-dot" style="background:var(--orif)"></div><span class="bs-item-name">ORIF Distale Radius</span><span class="bs-item-badge" style="background:rgba(56,189,248,.1);color:var(--orif)">DRF</span></button>
-      <button class="bs-item" onclick="closeProtoSheet();showProto('dq')"><div class="bs-item-dot" style="background:var(--dq)"></div><span class="bs-item-name">De Quervain Tenosynovitis</span><span class="bs-item-badge" style="background:rgba(132,204,22,.1);color:var(--dq)">DQ</span></button>
-      <button class="bs-item" onclick="closeProtoSheet();showProto('cts')"><div class="bs-item-dot" style="background:var(--cts)"></div><span class="bs-item-name">Carpaaltunnelsyndroom</span><span class="bs-item-badge" style="background:rgba(129,140,248,.1);color:var(--cts)">CTS</span></button>
-    </div>
+    <!-- Inhoud wordt gegenereerd door buildNav() uit protocols + REGIO_MAP + NAV_INFO -->
+    <div class="bs-body" id="bs-proto-body"></div>
   </div>
 </div>
 

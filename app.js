@@ -132,10 +132,23 @@ function hideAllScreens() {
     if(el) el.style.display = 'none';
   });
 }
+function toggleNavSec(el) {
+  const sec = el.dataset.sec;
+  const open = !el.classList.contains('open');
+  document.querySelectorAll('[data-sec="' + sec.replace(/"/g, '\\"') + '"]').forEach(e => e.classList.toggle('open', open));
+  const set = new Set(JSON.parse(localStorage.getItem('kp_nav_open') || '[]'));
+  open ? set.add(sec) : set.delete(sec);
+  localStorage.setItem('kp_nav_open', JSON.stringify([...set]));
+}
 function setNav(id) {
   document.querySelectorAll('[id^="nav-"],[id^="bnav-"]').forEach(n => n.classList.remove('active'));
   const s = document.getElementById('nav-'+id), b = document.getElementById('bnav-'+id);
-  if(s) s.classList.add('active');
+  if(s) {
+    s.classList.add('active');
+    // Sectie van het actieve protocol openklappen zodat het item zichtbaar is
+    const sec = s.closest('.nav-sec');
+    if(sec) sec.classList.add('open');
+  }
   if(b) {
     b.classList.add('active');
   } else {
@@ -960,41 +973,54 @@ function printBlankEvalForm(formId) {
 let libGroupBy = 'regio';
 let libCache = null;
 
+// Basisnaam voor variantengroepering: haakjes en specificaties na —/–/: strippen
+function libBaseKey(name) {
+  return name.toLowerCase()
+    .replace(/\(.*?\)/g, ' ')
+    .replace(/[—–:].*$/, ' ')
+    .replace(/\s+/g, ' ').trim();
+}
+
 function buildExerciseLibrary() {
   if(libCache) return libCache;
-  const seen = new Set();
-  const lib = [];
+  const byBase = new Map();
   Object.values(protocols).forEach(p => {
     const regio = REGIO_MAP[p.id] || 'Overig';
     p.phases.forEach(ph => {
       (ph.exercises || []).forEach(ex => {
-        if(seen.has(ex.name)) return;
-        seen.add(ex.name);
-        const nameLow = ex.name.toLowerCase();
-        const noteLow = (ex.note || '').toLowerCase();
-        const spieren = SPIER_KEYWORDS
+        const key = libBaseKey(ex.name) || ex.name.toLowerCase();
+        if(!byBase.has(key)) byBase.set(key, {key, name: ex.name, variants: [], regios: new Set(), spierMap: new Map(), cats: new Set()});
+        const g = byBase.get(key);
+        // Kortste variantnaam als weergavenaam (meestal de basisvorm)
+        if(ex.name.length < g.name.length) g.name = ex.name;
+        // Eén variant per naam+protocol (zelfde oefening in meerdere fasen telt niet dubbel)
+        if(!g.variants.find(v => v.name === ex.name && v.protoId === p.id)) {
+          g.variants.push({
+            name: ex.name, params: ex.params || [], note: ex.note || '', cat: ex.cat || '',
+            protoId: p.id, protoTitle: p.title, protoColor: p.color, phaseLabel: ph.label,
+          });
+        }
+        g.regios.add(regio);
+        if(ex.cat) g.cats.add(ex.cat);
+        const nameLow = ex.name.toLowerCase(), noteLow = (ex.note || '').toLowerCase();
+        SPIER_KEYWORDS
           .filter(s => s.kw.some(kw => nameLow.includes(kw.toLowerCase()) || noteLow.includes(kw.toLowerCase())))
-          .map(s => ({spier: s.spier, color: s.color}));
-        lib.push({
-          name: ex.name,
-          params: ex.params || [],
-          note: ex.note || '',
-          cat: ex.cat || '',
-          protoId: p.id,
-          protoTitle: p.title,
-          protoColor: p.color,
-          phaseLabel: ph.label,
-          regio,
-          spieren: spieren.length ? spieren : [{spier:'Overig', color:'#52525b'}],
-        });
+          .forEach(s => g.spierMap.set(s.spier, s.color));
       });
     });
   });
-  libCache = lib;
-  // Update badge
+  libCache = [...byBase.values()].map(g => ({
+    key: g.key,
+    name: g.name,
+    variants: g.variants,
+    regios: [...g.regios],
+    cats: [...g.cats],
+    protoIds: [...new Set(g.variants.map(v => v.protoId))],
+    spieren: g.spierMap.size ? [...g.spierMap].map(([spier, color]) => ({spier, color})) : [{spier:'Overig', color:'#52525b'}],
+  })).sort((a, b) => a.name.localeCompare(b.name, 'nl'));
   const badge = document.getElementById('lib-count-badge');
-  if(badge) badge.textContent = lib.length + ' oef.';
-  return lib;
+  if(badge) badge.textContent = libCache.length + ' oef.';
+  return libCache;
 }
 
 function showLibrary() {
@@ -1025,10 +1051,9 @@ function renderLibrary(query) {
   const q = (query || '').toLowerCase().trim();
   const filtered = q ? lib.filter(ex =>
     ex.name.toLowerCase().includes(q) ||
-    ex.regio.toLowerCase().includes(q) ||
+    ex.regios.some(r => r.toLowerCase().includes(q)) ||
     ex.spieren.some(s => s.spier.toLowerCase().includes(q)) ||
-    ex.protoTitle.toLowerCase().includes(q) ||
-    (ex.note && ex.note.toLowerCase().includes(q))
+    ex.variants.some(v => v.name.toLowerCase().includes(q) || v.protoTitle.toLowerCase().includes(q) || (v.note && v.note.toLowerCase().includes(q)))
   ) : lib;
 
   // Group
@@ -1036,13 +1061,13 @@ function renderLibrary(query) {
   filtered.forEach(ex => {
     const keys = libGroupBy === 'spier'
       ? ex.spieren.map(s => s.spier)
-      : [ex.regio];
+      : ex.regios;
     keys.forEach(key => {
       if(!groups[key]) groups[key] = {items:[], color: libGroupBy === 'spier'
         ? ex.spieren.find(s => s.spier === key)?.color || '#52525b'
         : '#71717a'};
       // Avoid duplicates within group
-      if(!groups[key].items.find(e => e.name === ex.name)) groups[key].items.push(ex);
+      if(!groups[key].items.find(e => e.key === ex.key)) groups[key].items.push(ex);
     });
   });
 
@@ -1064,26 +1089,35 @@ function renderLibrary(query) {
 
   body.innerHTML = sortedKeys.map((key, gi) => {
     const g = groups[key];
-    const isOpen = q || gi < 3; // auto-open first 3 groups or when searching
+    const isOpen = !!q || sortedKeys.length === 1; // dicht tenzij er gezocht wordt of er maar één groep is
     const exHtml = g.items.map(ex => {
-      const paramsStr = ex.params.slice(0,3).map(p => `<span>${p[0]}: <strong>${p[1]}</strong></span>`).join(' · ');
-      const catIcon = CAT_ICONS[ex.cat] || '';
-      // Spier badges (when grouped by regio show spieren, when by spier show protocol)
-      const badges = libGroupBy === 'regio'
-        ? ex.spieren.slice(0,2).map(s => `<span class="lib-ex-badge" style="background:${s.color}15;border-color:${s.color}33;color:${s.color};">${s.spier}</span>`).join('')
-        : `<span class="lib-ex-badge" style="background:${ex.protoColor}15;border-color:${ex.protoColor}33;color:${ex.protoColor};">${ex.protoId.toUpperCase()}</span>`;
-      const imgEntry = exerciseImages[ex.name];
-      const imgHtml  = imgEntry ? `<img class="lib-ex-img" src="${imgEntry.url}" alt="${imgEntry.alt || ex.name}" loading="lazy" onerror="this.style.display='none'">` : '';
-      return `<div class="lib-ex" onclick="this.classList.toggle('expanded')">
-        <div class="lib-ex-dot" style="background:${ex.protoColor}"></div>
-        <div class="lib-ex-main">
-          <div class="lib-ex-name">${ex.name} ${catIcon ? `<span style="font-size:10px;opacity:.6">${catIcon}</span>` : ''}</div>
-          <div class="lib-ex-badges">${badges}
-            <span class="lib-ex-badge" style="background:var(--surface3);border-color:var(--border);color:var(--muted);">${ex.phaseLabel} · ${ex.protoTitle.split(' ').slice(0,2).join(' ')}</span>
+      const first = ex.variants[0];
+      const catIcons = ex.cats.map(c => CAT_ICONS[c] || '').filter(Boolean).join('');
+      const badges = ex.spieren.slice(0,2).map(s => `<span class="lib-ex-badge" style="background:${s.color}15;border-color:${s.color}33;color:${s.color};">${s.spier}</span>`).join('');
+      const countBadge = ex.variants.length > 1
+        ? `<span class="lib-ex-varcount">${ex.variants.length} varianten · ${ex.protoIds.length} protocollen</span>`
+        : `<span class="lib-ex-varcount">${first.protoId.toUpperCase()} · ${first.phaseLabel}</span>`;
+      const imgEntry = exerciseImages[ex.name] || exerciseImages[first.name];
+      const imgHtml = imgEntry ? `<img class="lib-ex-img" src="${imgEntry.url}" alt="${imgEntry.alt || ex.name}" loading="lazy" onerror="this.style.display='none'">` : '';
+      const variantsHtml = ex.variants.map(v => {
+        const paramsStr = v.params.slice(0,4).map(p => `${p[0]}: ${p[1]}`).join(' · ');
+        return `<div class="lib-var">
+          <div class="lib-var-head">
+            <span class="lib-ex-badge" style="background:${v.protoColor}15;border-color:${v.protoColor}33;color:${v.protoColor};">${v.protoId.toUpperCase()}</span>
+            <span>${v.name}</span>
+            <span style="font-size:10px;color:var(--muted2);font-family:Geist Mono,monospace">${v.phaseLabel}</span>
           </div>
-          ${paramsStr ? `<div class="lib-ex-params">${paramsStr}</div>` : ''}
+          ${paramsStr ? `<div class="lib-var-params">${paramsStr}</div>` : ''}
+          ${v.note ? `<div class="lib-var-note">${v.note}</div>` : ''}
+        </div>`;
+      }).join('');
+      return `<div class="lib-ex" onclick="this.classList.toggle('expanded')">
+        <div class="lib-ex-dot" style="background:${first.protoColor}"></div>
+        <div class="lib-ex-main">
+          <div class="lib-ex-name" style="display:flex;align-items:center;gap:7px;flex-wrap:wrap;">${ex.name} ${catIcons ? `<span style="font-size:10px;opacity:.6">${catIcons}</span>` : ''} ${countBadge}</div>
+          <div class="lib-ex-badges">${badges}</div>
           ${imgHtml}
-          ${ex.note ? `<div class="lib-ex-note">${ex.note}</div>` : ''}
+          <div class="lib-ex-variants">${variantsHtml}</div>
         </div>
       </div>`;
     }).join('');
@@ -1148,18 +1182,22 @@ document.addEventListener('keydown', e => {
 function renderPhase(i) {
   const ph = currentProto.phases[i];
   let html = '';
-  html += `<div class="ev-box"><div class="ev-label">Evidence-basis</div><div class="ev-text">${ph.evidence}</div></div>`;
+  // Evidence standaard geklemd op 2 regels; klik om uit te vouwen
+  html += `<div class="ev-box clamp" onclick="this.classList.toggle('expanded')"><div class="ev-label">Evidence-basis</div><div class="ev-text">${ph.evidence}</div><div class="ev-hint">▸ lees volledige evidence</div></div>`;
   html += `<div class="goals-box"><div class="goals-label">Doelstellingen — ${ph.title}</div><ul class="glist">${ph.goals.map(g=>`<li>${g}</li>`).join('')}</ul></div>`;
   if(ph.exercises?.length) {
     html += `<div class="slabel">Oefenprogramma</div><div class="ex-grid">`;
     ph.exercises.forEach(ex => {
       const cat = ex.cat ? CAT[ex.cat] : null;
-      html += `<div class="ex-card"><div class="ex-header"><div class="ex-name">${ex.name}</div>`;
+      const hasMore = !!(ex.note || ex.yt);
+      // Compacte kaart: naam + dosering zichtbaar, toelichting/video achter een klik
+      html += `<div class="ex-card${hasMore ? ' compact" onclick="this.classList.toggle(\'expanded\')"' : '"'}><div class="ex-header"><div class="ex-name">${ex.name}</div>`;
       if(cat) html += `<span class="ex-cat" style="background:${cat.color}22;color:${cat.color};border-color:${cat.color}44">${cat.icon} ${cat.label}</span>`;
       html += `</div>`;
       if(ex.params?.length) html += `<div class="ex-params">${ex.params.map(([k,v])=>`<div class="ep">${k}: <span>${v}</span></div>`).join('')}</div>`;
       if(ex.note) html += `<div class="ex-note">${ex.note}</div>`;
-      if(ex.yt) html += `<button class="yt-btn" onclick="openYT('${ex.yt}','${ex.name.replace(/'/g,"'")}')">▶ Bekijk video</button>`;
+      if(ex.yt) html += `<button class="yt-btn" onclick="event.stopPropagation();openYT('${ex.yt}','${ex.name.replace(/'/g,"'")}')">▶ Bekijk video</button>`;
+      if(hasMore) html += `<div class="ex-more">▸ meer info${ex.yt ? ' · video' : ''}</div>`;
       html += `</div>`;
     });
     html += `</div>`;
@@ -1378,12 +1416,13 @@ function buildNav() {
   // Vangnet: protocollen zonder REGIO_MAP-entry komen onder 'Overig' i.p.v. onzichtbaar te blijven
   Object.keys(protocols).forEach(id => { if(!REGIO_MAP[id]) add(id, 'Overig'); });
 
+  // Secties zijn inklapbaar; open-status wordt onthouden en gedeeld tussen sidebar en bottom sheet
+  const openSecs = new Set(JSON.parse(localStorage.getItem('kp_nav_open') || '[]'));
   let sideHtml = '', bsHtml = '';
-  sections.forEach((sec, si) => {
+  sections.forEach(sec => {
     const secLabel = sec.replace(/&/g, '&amp;');
-    if(si > 0) sideHtml += '<div class="sidebar-divider"></div>';
-    sideHtml += '<div class="sidebar-section">' + secLabel + '</div>';
-    bsHtml += '<div class="bs-section">' + secLabel + '</div>';
+    const isOpen = openSecs.has(sec);
+    let itemsHtml = '', bsItemsHtml = '';
     byRegio[sec].forEach(id => {
       const p = protocols[id];
       const info = NAV_INFO[id] || {};
@@ -1391,15 +1430,22 @@ function buildNav() {
       const badge = info.badge || id.toUpperCase();
       const sub = p.phases.length + ' fasen' + (info.duur ? ' · ' + info.duur : '');
       const bg = hexToRgba(p.color, .1);
-      sideHtml += '<div class="nav-item" id="nav-' + id + '" onclick="showProto(\'' + id + '\')">'
+      itemsHtml += '<div class="nav-item" id="nav-' + id + '" onclick="showProto(\'' + id + '\')">'
         + '<div class="nav-dot" style="background:' + p.color + '"></div>'
         + '<div style="flex:1"><div class="nav-title">' + naam + '</div><div class="nav-sub">' + sub + '</div></div>'
         + '<span class="nav-badge" style="background:' + bg + ';color:' + p.color + '">' + badge + '</span></div>';
-      bsHtml += '<button class="bs-item" onclick="closeProtoSheet();showProto(\'' + id + '\')">'
+      bsItemsHtml += '<button class="bs-item" onclick="closeProtoSheet();showProto(\'' + id + '\')">'
         + '<div class="bs-item-dot" style="background:' + p.color + '"></div>'
         + '<span class="bs-item-name">' + naam + '</span>'
         + '<span class="bs-item-badge" style="background:' + bg + ';color:' + p.color + '">' + badge + '</span></button>';
     });
+    const head = '<span class="nav-sec-arrow">▶</span><span>' + secLabel + '</span><span class="nav-sec-count">' + byRegio[sec].length + '</span>';
+    sideHtml += '<div class="nav-sec' + (isOpen ? ' open' : '') + '" data-sec="' + secLabel + '">'
+      + '<div class="nav-sec-head" onclick="toggleNavSec(this.parentNode)">' + head + '</div>'
+      + '<div class="nav-sec-body">' + itemsHtml + '</div></div>';
+    bsHtml += '<div class="bs-sec nav-sec' + (isOpen ? ' open' : '') + '" data-sec="' + secLabel + '">'
+      + '<div class="bs-section nav-sec-head" style="display:flex;align-items:center;gap:7px;cursor:pointer;" onclick="toggleNavSec(this.parentNode)">' + head + '</div>'
+      + '<div class="bs-sec-body">' + bsItemsHtml + '</div></div>';
   });
   document.getElementById('nav-proto-sections').innerHTML = sideHtml;
   document.getElementById('bs-proto-body').innerHTML = bsHtml;

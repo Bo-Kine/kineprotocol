@@ -534,5 +534,17 @@
     "alt": "Deadlift",
     "credit": "Wikipedia: Deadlift",
     "wiki": "https://en.wikipedia.org/wiki/Deadlift"
+  },
+  "Nordic walking": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Nordic-Walking-naturale.jpg",
+    "alt": "Nordic walking",
+    "credit": "Wikipedia: Nordic walking",
+    "wiki": "https://en.wikipedia.org/wiki/Nordic%20walking"
+  },
+  "Pallof press (weerstandsband)": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Trenirovachni_lastici_set.JPG/500px-Trenirovachni_lastici_set.JPG",
+    "alt": "Resistance band",
+    "credit": "Wikipedia: Resistance band",
+    "wiki": "https://en.wikipedia.org/wiki/Resistance%20band"
   }
 }

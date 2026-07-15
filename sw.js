@@ -9,7 +9,6 @@ const PRECACHE = [
   './index.html',
   './version.js',
   './app.js',
-  './auth.js',
   './patients.js',
   './protocols.js',
   './manifest.json',
@@ -45,9 +44,9 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
   const url = event.request.url;
 
-  // Supabase + externe API's: altijd netwerk, nooit cachen
+  // Externe API's (fonts): altijd netwerk, nooit cachen
   // Als netwerk faalt → geef lege 503 terug (nooit null/undefined)
-  if (url.includes('supabase.co') || url.includes('googleapis.com/css')) {
+  if (url.includes('googleapis.com/css')) {
     event.respondWith(
       fetch(event.request).catch(() =>
         new Response('', { status: 503, statusText: 'Service Unavailable' })

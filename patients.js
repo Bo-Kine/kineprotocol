@@ -2,7 +2,7 @@
 
 const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 
-// ── PATIENTS (Supabase + localStorage fallback) ──
+// ── PATIËNTEN (volledig lokaal — localStorage; backup via exportBackup) ──
 function loadPatients() {
   try { return JSON.parse(localStorage.getItem('kp_patients') || '[]'); } catch(e) { return []; }
 }
@@ -10,69 +10,8 @@ function loadPatients() {
 function savePatients(pts) {
   try { localStorage.setItem('kp_patients', JSON.stringify(pts)); } catch(e) {}
   updatePatientBadge();
-  if(currentUser) syncToSupabase(pts);
 }
 
-async function syncToSupabase(pts) {
-  if(!currentUser) return;
-  setSyncStatus('syncing', 'Opslaan...');
-  try {
-    const uid = currentUser.id;
-    const headers = getAuthHeaders();
-    // Delete and re-insert patients row for this user
-    await fetch(SUPA_URL + '/rest/v1/patients?id=eq.all_' + uid, {method:'DELETE', headers});
-    await fetch(SUPA_URL + '/rest/v1/patients', {
-      method: 'POST',
-      headers: {...headers, 'Prefer':'return=minimal'},
-      body: JSON.stringify({id: 'all_' + uid, user_id: uid, data: pts})
-    });
-    // Sync scores
-    const scoreKeys = Object.keys(localStorage).filter(k => k.startsWith('kp_scores_'));
-    const scoresObj = {};
-    scoreKeys.forEach(k => { try { scoresObj[k] = JSON.parse(localStorage.getItem(k)); } catch(e) {} });
-    await fetch(SUPA_URL + '/rest/v1/patients?id=eq.scores_' + uid, {method:'DELETE', headers});
-    await fetch(SUPA_URL + '/rest/v1/patients', {
-      method: 'POST',
-      headers: {...headers, 'Prefer':'return=minimal'},
-      body: JSON.stringify({id: 'scores_' + uid, user_id: uid, data: scoresObj})
-    });
-    setSyncStatus('ok', 'Opgeslagen');
-  } catch(e) {
-    setSyncStatus('error', 'Sync mislukt');
-    console.error('Supabase sync error:', e);
-  }
-}
-
-async function loadFromSupabase() {
-  if(!currentUser) return;
-  setSyncStatus('syncing', 'Laden...');
-  const uid = currentUser.id;
-  const headers = getAuthHeaders();
-  try {
-    const res = await fetch(SUPA_URL + '/rest/v1/patients?id=eq.all_' + uid + '&select=data', {headers});
-    if(!res.ok) throw new Error('HTTP ' + res.status);
-    const rows = await res.json();
-    if(rows && rows.length > 0 && rows[0].data) {
-      localStorage.setItem('kp_patients', JSON.stringify(rows[0].data));
-    }
-    const sRes = await fetch(SUPA_URL + '/rest/v1/patients?id=eq.scores_' + uid + '&select=data', {headers});
-    if(sRes.ok) {
-      const sRows = await sRes.json();
-      if(sRows && sRows.length > 0 && sRows[0].data) {
-        Object.entries(sRows[0].data).forEach(([k,v]) => {
-          try { localStorage.setItem(k, JSON.stringify(v)); } catch(e) {}
-        });
-      }
-    }
-    setSyncStatus('ok', 'Gesynchroniseerd');
-    updatePatientBadge();
-    const ps = document.getElementById('screen-patients');
-    if(ps && ps.style.display !== 'none') renderPatientList();
-  } catch(e) {
-    setSyncStatus('error', 'Geen verbinding');
-    console.error('Supabase load error:', e);
-  }
-}
 function updatePatientBadge() {
   const pts = loadPatients();
   const count = pts.length;
@@ -705,8 +644,6 @@ function deletePatient(patId) {
   const pts = loadPatients().filter(p => p.id !== patId);
   savePatients(pts);
   try { localStorage.removeItem('kp_scores_' + patId); } catch(e) {}
-  // Sync deletion to Supabase
-  syncToSupabase(loadPatients());
   showPatients();
 }
 

@@ -1616,25 +1616,15 @@ function buildNav() {
 }
 
 // ── INIT ──
-async function initApp() {
+// Volledig lokale app: geen account of login — alle data staat in localStorage
+// (bewaar regelmatig een backup via het patiëntendashboard).
+function initApp() {
+  localStorage.removeItem('kp_session'); // restant van de vroegere accountversie opruimen
   buildNav();
   initSwipe();
   renderVandaag();
   renderRecent();
   filterFeatured('knie');
-  // Try to restore session
-  const stored = JSON.parse(localStorage.getItem('kp_session') || 'null');
-  if(stored && stored.refresh_token) {
-    const ok = await refreshSession();
-    if(ok) {
-      hideLoginScreen();
-      updatePatientBadge();
-      await loadFromSupabase();
-      return;
-    }
-  }
-  // No valid session — show login
-  showLoginScreen();
   updatePatientBadge();
 }
 initApp();

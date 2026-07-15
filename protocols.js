@@ -2025,10 +2025,10 @@ protocols.itb = {id:'itb',title:'Iliotibiale Bandsyndroom',subtitle:'Conservatie
 
 // ── REGIO MAPPING (protocol → regio) ──
 const REGIO_MAP = {
-  acl:'Knie & Heup', tka:'Knie & Heup', pfps:'Knie & Heup', pt:'Knie & Heup', gmt:'Knie & Heup', hsi:'Knie & Heup', mcl:'Knie & Heup', pa:'Knie & Heup', itb:'Knie & Heup',
+  acl:'Knie & Heup', tka:'Knie & Heup', pfps:'Knie & Heup', pt:'Knie & Heup', gmt:'Knie & Heup', hsi:'Knie & Heup', mcl:'Knie & Heup', pa:'Knie & Heup', itb:'Knie & Heup', thp:'Knie & Heup', men:'Knie & Heup', lies:'Knie & Heup',
   lh:'Lumbaal & Cervicaal', bureau:'Lumbaal & Cervicaal', faz:'Lumbaal & Cervicaal', fbl:'Lumbaal & Cervicaal',
   rc:'Schouder & Arm', si:'Schouder & Arm', elb:'Schouder & Arm', sup:'Schouder & Arm', fs:'Schouder & Arm',
-  at:'Enkel & Voet', enkel:'Enkel & Voet', over:'Enkel & Voet', mtss:'Enkel & Voet',
+  at:'Enkel & Voet', enkel:'Enkel & Voet', over:'Enkel & Voet', mtss:'Enkel & Voet', pfa:'Enkel & Voet',
   orif:'Pols & Hand', dq:'Pols & Hand', cts:'Pols & Hand',
 };
 
@@ -2060,6 +2060,10 @@ const NAV_INFO = {
   orif:{naam:'ORIF Distale Radius', badge:'DRF', duur:'0–5 mnd'},
   dq:{naam:'De Quervain Tenosynovitis', badge:'DQ', duur:'0–20 wkn'},
   cts:{naam:'Carpaaltunnelsyndroom', badge:'CTS', duur:'conservatief/post-OK'},
+  thp:{naam:'Totale Heupprothese', badge:'THP', duur:'0–12+ wkn'},
+  men:{naam:'Meniscusletsel', badge:'MEN', duur:'0–26+ wkn'},
+  lies:{naam:'Adductor Liespijn', badge:'ADD', duur:'0–14+ wkn'},
+  pfa:{naam:'Plantaire Fasciopathie', badge:'PFA', duur:'0–20+ wkn'},
 };
 
 // ── SPIERGROEP KEYWORD MAPPING ──
@@ -3964,3 +3968,604 @@ const BESCHRIJVING = {
 };
 
 
+
+// ── NIEUWE PROTOCOLLEN (v43) ──
+protocols.thp = {id:'thp',title:'Totale Heupprothese',subtitle:'Postoperatief revalidatieprotocol na totale heupartroplastiek — vroege mobilisatie, luxatiepreventie en progressieve abductorversterking',color:'#0891b2',icon:'🦴',
+  phases:[
+    {
+      label:'Fase 1',
+      title:'Pre-operatief & hospitalisatie — dag 0–1',
+      weeks:'Pre-op — Dag 0–1',
+      goals:[
+        'Patiënt pre-operatief educeren over ingreep, luxatiepreventie en verwacht revalidatieverloop',
+        'Vroege mobilisatie realiseren: eerste transfer en stappen binnen 24 uur postoperatief (bij voorkeur dag 0)',
+        'Circulatoire en respiratoire complicaties preventief aanpakken (DVT, atelectase)',
+        'Veilige transfers (bed–stoel–toilet) aanleren met correcte luxatievoorzorgen',
+        'Pijncontrole optimaliseren in samenwerking met het multidisciplinaire team (VAS ≤ 4/10 in rust)'
+      ],
+      exercises:[
+        {name:'Enkelpompen (circulatie-oefening)',params:[['Reps','20–30'],['Freq','elk wakker uur'],['Tempo','vlot ritmisch']],note:'Actieve dorsi- en plantairflexie in ruglig ter activatie van de kuitspierpomp. Eerste-lijnspreventie van diepe veneuze trombose vanaf de recovery. Combineren met farmacologische tromboprofylaxe volgens ziekenhuisprotocol.',cat:'cardio'},
+        {name:'Quadriceps setting (isometrisch)',params:[['Sets','3'],['Reps','10'],['Hold','5 sec'],['Freq','3×/dag']],note:'Knie actief in extensie duwen tegen matras. Behoudt quadricepsactivatie en beperkt artrogene inhibitie. Pijnvrij uitvoerbaar vanaf dag 0, geen luxatierisico.',cat:'kracht'},
+        {name:'Gluteal setting (isometrisch)',params:[['Sets','3'],['Reps','10'],['Hold','5 sec'],['Freq','3×/dag']],note:'Bilzen aanspannen in ruglig zonder heupbeweging. Vroege activatie van gluteus maximus zonder belasting op het kapsel. Fundament voor latere abductor- en extensortraining.',cat:'kracht'},
+        {name:'Transfertraining bed–stand',params:[['Reps','2–3 transfers'],['Freq','2×/dag'],['Hulpmiddel','looprek of 2 krukken']],note:'Uitstappen langs geopereerde zijde. Bij posterieure benadering: heupflexie &gt; 90°, adductie voorbij middellijn en endorotatie vermijden (klassieke luxatievoorzorgen). Bij anterieure benadering: geforceerde extensie met exorotatie vermijden.',cat:'neuromusculair'},
+        {name:'Stappen met loophulpmiddel',params:[['Afstand','10–50 m'],['Steun','volledige belasting tenzij anders voorgeschreven'],['Freq','2–3×/dag']],note:'Eerste gangrevalidatie binnen 24 uur, bij voorkeur op operatiedag zelf (dag 0-mobilisatie). Volledige steunname is standaard bij cementloze én gecementeerde primaire THP. Symmetrische staplengte en heup-kniestrekking bewaken.',cat:'cardio'},
+        {name:'Actieve heupflexie ruglig (hielslide)',params:[['Sets','2'],['Reps','10'],['ROM','tot max 90° flexie (posterieur)'],['Freq','2×/dag']],note:'Hiel over matras naar bil schuiven binnen veilige amplitude. Bij posterieure benadering strikt onder 90° flexie blijven in de eerste weken. Traag en gecontroleerd, geen combinatie met adductie of endorotatie.',cat:'mobiliteit'}
+      ],
+      redflags:[
+        'Acute hevige liespijn met beenverkorting en exorotatie/endorotatie-standafwijking — vermoeden van prothese-luxatie: onmiddellijk arts contacteren, niet mobiliseren',
+        'Unilaterale kuitzwelling, roodheid, warmte of drukpijn — vermoeden diepe veneuze trombose (DVT)',
+        'Acute dyspnoe, thoracale pijn of tachycardie — vermoeden longembolie: urgentie',
+        'Koorts &gt; 38,5 °C, toenemende wondroodheid, purulente wonddrainage — vermoeden prothese-infectie',
+        'Nieuw neurologisch deficit (voetheffersparese, sensibiliteitsverlies) — vermoeden n. ischiadicus- of n. femoralisletsel'
+      ],
+      criteria_stop:[
+        'Plotse mechanische pijn of hoorbare klik met bewegingsblokkade tijdens oefening — stop en screen op luxatie',
+        'VAS &gt; 7/10 tijdens mobilisatie ondanks analgesie',
+        'Orthostatische intolerantie: duizeligheid, bleekheid of syncope bij verticalisatie',
+        'Saturatiedaling of hemodynamische instabiliteit tijdens therapie',
+        'Toenemende wondlekkage na oefensessie'
+      ],
+      criteria_go:[
+        'Zelfstandige of onder supervisie veilige transfer bed–stoel–toilet',
+        'Stappen ≥ 30 m met looprek of krukken met correcte belasting',
+        'Luxatievoorzorgen correct verwoord en toegepast door patiënt',
+        'VAS ≤ 4/10 in rust en ≤ 6/10 bij mobilisatie',
+        'Geen tekenen van DVT, infectie of neurologisch deficit',
+        'Trap van 3–4 treden haalbaar met hulpmiddel (indien vereist voor thuissituatie)'
+      ],
+      evidence:'<strong>Enhanced recovery after surgery (ERAS)</strong>-programma&#39;s met multimodale analgesie en gestandaardiseerde vroege kinesitherapie verkorten de ligduur na THP naar 1–3 dagen zonder toename van complicaties of heropnames (Wainwright et al., 2020 — Acta Orthop, ERAS Society consensus). <strong>Mobilisatie binnen 24 uur</strong> — bij voorkeur op de operatiedag zelf — reduceert de incidentie van DVT, verkort de opnameduur en versnelt functioneel herstel (Guerra et al., 2015 — Clin Rehabil, systematische review). <strong>Pre-operatieve educatie</strong> vermindert angst en verbetert vroege postoperatieve functie en zelfredzaamheid (McDonald et al., 2014 — Cochrane Database Syst Rev). De <strong>luxatie-incidentie</strong> na primaire THP bedraagt 0,5–3% en is het hoogst in de eerste 6–12 weken, met een verhoogd risico bij de posterieure benadering — correcte kapselreconstructie en patiënteducatie reduceren dit risico substantieel (Kwon et al., 2006 — Clin Orthop Relat Res).'
+    },
+    {
+      label:'Fase 2',
+      title:'Beschermingsfase — wondheling & basisactivatie',
+      weeks:'Week 0–2',
+      goals:[
+        'Wondheling beschermen en luxatievoorzorgen consolideren in alle ADL-situaties',
+        'Zelfstandig en veilig stappen met 2 krukken binnenshuis en korte afstanden buitenshuis',
+        'Actieve heupmobiliteit binnen veilige amplitude herstellen (flexie tot 90°, abductie actief)',
+        'Isometrische en vroege dynamische activatie van gluteaal- en quadricepsmusculatuur',
+        'Oedeem en pijn controleren: VAS ≤ 3/10 in rust tegen einde week 2'
+      ],
+      exercises:[
+        {name:'Looptraining met 2 krukken',params:[['Afstand','progressief 50 → 300 m'],['Freq','3–4×/dag'],['Patroon','3-puntsgang, volledige belasting']],note:'Gangkwaliteit primeert op afstand: symmetrische staplengte, actieve heupextensie in terminal stance, geen Duchenne-compensatie. Buitenshuis pas bij veilige binnenhuisgang.',cat:'cardio'},
+        {name:'Heupabductie in ruglig (glijdend)',params:[['Sets','3'],['Reps','10–12'],['Tempo','traag gecontroleerd'],['Freq','2×/dag']],note:'Been over matras naar buiten glijden en terug tot neutraal — niet voorbij de middellijn adduceren (posterieure voorzorg). Vroege gluteus medius-activatie in onbelaste positie, essentieel tegen postoperatieve abductorinhibitie.',cat:'kracht'},
+        {name:'Staande heupextensie aan steun',params:[['Sets','3'],['Reps','10'],['ROM','beperkt, geen geforceerde extensie'],['Freq','2×/dag']],note:'Gestrekt been rustig naar achter bewegen met romp rechtop. Activeert gluteus maximus functioneel. Bij anterieure benadering amplitude beperken: geen eindstandige extensie met exorotatie in de eerste 2 weken.',cat:'kracht'},
+        {name:'Staande heupabductie aan steun',params:[['Sets','3'],['Reps','10–12'],['Focus','bekken horizontaal houden'],['Freq','2×/dag']],note:'Gestrekt been zijwaarts heffen zonder rompzwaai of bekkenkanteling. Compensatie via quadratus lumborum vermijden — kwaliteit boven amplitude. Voorbereiding op belaste abductortraining in fase 3.',cat:'kracht'},
+        {name:'Bruggetje (bilateraal)',params:[['Sets','3'],['Reps','10'],['Hold','3 sec'],['Freq','1–2×/dag']],note:'Bekken heffen vanuit kroksliggende positie, beide voeten steunend. Veilige gesloten-keten activatie van gluteus maximus en hamstrings zonder luxatierisico. Neutrale lumbale stand bewaken.',cat:'kracht'},
+        {name:'Traplopen met kruk en leuning',params:[['Treden','1 verdieping'],['Techniek','op: gezond been eerst; af: geopereerd been eerst'],['Freq','1–2×/dag']],note:'Klassiek trappatroon aanleren voor veilige thuisfunctie. Leuning vasthouden aan één zijde, kruk contralateraal. Controle op mediale kniecollaps en Trendelenburg-daling van het bekken.',cat:'neuromusculair'}
+      ],
+      criteria_go:[
+        'Wond gesloten en droog, geen infectietekens',
+        'Zelfstandig stappen ≥ 300 m met 2 krukken, vlot en veilig ganspatroon',
+        'Actieve heupflexie 80–90° pijnarm mogelijk',
+        'Staande abductie en extensie 3 × 10 correct uitvoerbaar zonder rompcompensatie',
+        'VAS ≤ 3/10 in rust en ≤ 5/10 bij activiteit',
+        'Luxatievoorzorgen foutloos toegepast in ADL (schoenen aantrekken, in/uit auto, toilet)'
+      ],
+      evidence:'<strong>Vroege therapeutische oefentherapie</strong> in de eerste twee weken na fast-track THP is veilig en haalbaar, maar de intensiteit moet worden afgestemd op wondheling en pijnrespons (Bandholm & Kehlet, 2012 — Arch Phys Med Rehabil). Strikte langdurige <strong>bewegingsrestricties</strong> worden toenemend gerelativeerd: bij een posterieure benadering met adequate kapselreconstructie verhoogt een minder restrictief regime de luxatie-incidentie niet, maar verbetert het de patiënttevredenheid en het hersteltempo (van der Weegen et al., 2016 — Clin Rehabil, RCT). De <strong>anterieure benadering</strong> toont een sneller vroeg functioneel herstel in de eerste 6 weken dan de posterieure benadering, zonder verschil in uitkomst op middellange termijn (Meermans et al., 2017 — Bone Joint J). <strong>Abductorinhibitie en -zwakte</strong> zijn in deze fase prominent aanwezig en vormen de belangrijkste determinant van gangasymmetrie en Trendelenburg-patroon (Rasch et al., 2010 — Acta Orthop).'
+    },
+    {
+      label:'Fase 3',
+      title:'Mobiliteit & krachtopbouw',
+      weeks:'Week 2–6',
+      goals:[
+        'Krukgebruik progressief afbouwen: van 2 krukken naar 1 kruk naar zelfstandig stappen zonder Trendelenburg',
+        'Heupmobiliteit functioneel herstellen: flexie ≥ 90–100°, volwaardige extensie voor gangcyclus',
+        'Progressieve krachttraining van heupabductoren, -extensoren en quadriceps opstarten',
+        'Statische en dynamische balans op één been ontwikkelen (≥ 10 sec eenbenige stand)',
+        'ADL volledig zelfstandig: wassen, aankleden, huishoudelijke taken, autorijden (vanaf ± week 4–6 na akkoord chirurg)'
+      ],
+      exercises:[
+        {name:'Stationaire fiets (hoog zadel)',params:[['Duur','10 → 25 min'],['Weerstand','licht → matig'],['Zadel','hoog (heupflexie &lt; 90°)'],['Freq','dagelijks']],note:'Vanaf ± week 2–3 wanneer wond het toelaat. Hoog zadel beperkt heupflexie en respecteert posterieure voorzorgen. Uitstekende pijnvrije mobilisatie en cardiovasculaire basistraining.',cat:'cardio'},
+        {name:'Heupabductie zijlig',params:[['Sets','3'],['Reps','10–15'],['Tempo','2-1-2'],['Freq','3×/week (om de dag)']],note:'Op de niet-geopereerde zijde liggen met kussen tussen de benen (voorkomt adductie voorbij middellijn bij het gaan liggen). Gestrekt bovenste been heffen in lichte extensie — geen heupflexie-compensatie via TFL. Kernoefening tegen abductorzwakte.',cat:'kracht'},
+        {name:'Mini squat (0–45°)',params:[['Sets','3'],['Reps','10–12'],['Diepte','max 45° knieflexie'],['Freq','3×/week']],note:'Gesloten-keten versterking van quadriceps en glutei met symmetrische gewichtsverdeling — weegschaal of spiegel als feedback tegen ontlastend patroon van het geopereerde been.',cat:'kracht'},
+        {name:'Step-up laag (10–15 cm)',params:[['Sets','3'],['Reps','8–10 per been'],['Focus','bekken horizontaal, knie boven voet'],['Freq','3×/week']],note:'Functionele unilaterale belasting. Geopereerd been stapt op, controleer Trendelenburg-daling van het contralaterale bekken als teken van gluteus medius-insufficiëntie. Steun in de buurt voor veiligheid.',cat:'kracht'},
+        {name:'Eenbenige stand (statisch)',params:[['Sets','3–5'],['Hold','10 → 30 sec'],['Steun','vingertopsteun → vrij'],['Freq','dagelijks']],note:'Proprioceptieve en abductortraining op het geopereerde been. Bekken horizontaal houden — spiegelfeedback. Progressie: ogen dicht of zachte ondergrond zodra 30 sec stabiel.',cat:'stabiliteit'},
+        {name:'Heupflexormobilisatie in schredestand',params:[['Sets','3'],['Hold','20–30 sec'],['Freq','2×/dag'],['Intensiteit','zacht, pijnvrij']],note:'Voorzichtige rek van iliopsoas ter herstel van heupextensie voor de terminal stance van de gangcyclus. Bij anterieure benadering pas na week 3–4 en steeds pijnvrij doseren (voorste kapsel en wond respecteren).',cat:'mobiliteit'}
+      ],
+      criteria_go:[
+        'Stappen zonder krukken ≥ 500 m zonder Trendelenburg of Duchenne-compensatie',
+        'Actieve heupflexie ≥ 90–100° en volledige heupextensie voor normale gangcyclus',
+        'Eenbenige stand ≥ 30 sec stabiel op geopereerd been met horizontaal bekken',
+        'Step-up 15 cm 3 × 10 correct zonder bekkendaling',
+        'Traplopen alternerend zonder steun van leuning',
+        'HOOS-subschaal ADL ≥ 70/100 of duidelijk stijgende trend'
+      ],
+      evidence:'<strong>Progressieve weerstandstraining</strong> is vanaf de vroege postoperatieve fase veilig en resulteert in significant grotere winst in heupabductorkracht, ganssnelheid en traplopen dan laag-gedoseerde standaardoefeningen (Husby et al., 2009 — Arch Phys Med Rehabil; Mikkelsen et al., 2014 — Osteoarthritis Cartilage). <strong>Persisterende abductorzwakte</strong> tot 20–25% krachtverlies blijft zonder gerichte training tot 2 jaar na THP meetbaar en correleert met gangasymmetrie, verminderde balans en valrisico (Judd et al., 2014 — Clin Biomech). Het <strong>Trendelenburg-patroon</strong> is de meest sensitieve klinische marker van gluteus medius-insufficiëntie en dient elke progressiebeslissing in deze fase te sturen (Hardcastle & Nade, 1985 — J Bone Joint Surg Br). <strong>Supervisie</strong> van de oefentherapie geeft bij risicopatiënten (comorbiditeit, angst, trage progressie) betere functionele uitkomsten dan louter zelfstandig oefenen (Coulter et al., 2013 — J Physiother, systematische review).'
+    },
+    {
+      label:'Fase 4',
+      title:'Functionele fase — kracht, gang & uithouding',
+      weeks:'Week 6–12',
+      goals:[
+        'Heupabductor- en extensorkracht opbouwen naar ≥ 80% van de contralaterale zijde',
+        'Volledig symmetrisch ganspatroon consolideren over lange afstand (&gt; 30 min wandelen)',
+        'Dynamische balans en gewichtsverplaatsing trainen voor valpreventie',
+        'Fysieke activiteitsniveau opbouwen: fietsen buitenshuis, zwemmen (crawl-beenslag) hervatten',
+        'Werk hervatten (zittend beroep vanaf ± week 4–6; fysiek belastend beroep voorbereiden richting week 12+)'
+      ],
+      exercises:[
+        {name:'Leg press (bilateraal → unilateraal)',params:[['Sets','3'],['Reps','10–12'],['Intensiteit','60–70% 1RM'],['Freq','2–3×/week']],note:'Gedoseerde gesloten-keten krachttraining voor quadriceps en glutei. Amplitude beperken tot 90° heupflexie. Progressie naar unilateraal wanneer bilateraal 3 × 12 vlot lukt — asymmetrie objectiveren.',cat:'kracht'},
+        {name:'Lateral band walk',params:[['Sets','3'],['Reps','15 stappen per richting'],['Band','licht → matig'],['Freq','2–3×/week']],note:'Belaste gluteus medius-training in functioneel patroon. Band boven de knieën starten (minder weerstand), later boven de enkels. Romp rechtop, kleine zijwaartse stappen, knieën licht gebogen.',cat:'kracht'},
+        {name:'Hip thrust / eenbenig bruggetje',params:[['Sets','3'],['Reps','8–12'],['Progressie','bilateraal → eenbenig → met gewicht'],['Freq','2–3×/week']],note:'Maximale gluteus maximus-belasting zonder hoge heupflexie. Eenbenige variant traint tegelijk bekkenstabiliteit. Neutrale lumbale stand — geen lumbale hyperextensie als compensatie.',cat:'kracht'},
+        {name:'Balanstraining op instabiele ondergrond',params:[['Sets','3'],['Hold','30–45 sec'],['Ondergrond','balanskussen of foam'],['Freq','3×/week']],note:'Eenbenige stand op zachte ondergrond met dynamische opdrachten (bal gooien, hoofdrotaties). Traint proprioceptie die na artroplastiek verminderd is — belangrijk voor valpreventie bij oudere patiënten.',cat:'stabiliteit'},
+        {name:'Lunges (statisch → dynamisch)',params:[['Sets','3'],['Reps','8–10 per been'],['Diepte','progressief'],['Freq','2×/week']],note:'Functionele unilaterale kracht- en stabiliteitstraining. Voorwaartse uitvalspas met rechte romp en horizontaal bekken. Pas introduceren wanneer step-up 15 cm foutloos lukt. Geen pijn in de lies toegestaan.',cat:'kracht'},
+        {name:'Wandelprogramma progressief',params:[['Duur','30 → 60 min'],['Tempo','stevig doorstappen'],['Terrein','vlak → licht heuvelachtig'],['Freq','5×/week']],note:'Cardiovasculaire opbouw en botbelasting ter bevordering van osseo-integratie bij cementloze prothese. Nordic walking is een uitstekende variant: verhoogt tempo en symmetrie met verminderde gewrichtspiekbelasting.',cat:'cardio'}
+      ],
+      criteria_go:[
+        'Heupabductiekracht ≥ 80% van contralaterale zijde (handdynamometer)',
+        'Wandelen ≥ 45–60 min zonder pijn, mank lopen of nadien toenemende klachten',
+        '30-seconden sta-op-test (30s CST) binnen leeftijdsnorm',
+        'Timed Up and Go (TUG) &lt; 10 sec',
+        'Eenbenige stand op instabiele ondergrond ≥ 30 sec stabiel',
+        'Harris Hip Score ≥ 80 of HOOS-subschalen ADL en pijn ≥ 80/100'
+      ],
+      evidence:'Gerichte <strong>abductorversterking na de posterieure benadering</strong> blijft ook na week 6 prioritair: de kracht van gluteus medius herstelt zonder specifieke training onvolledig en asymmetrie persisteert tot jaren postoperatief (Judd et al., 2014 — Clin Biomech; Winther et al., 2016 — Hip Int). Een <strong>laat gestart gestructureerd oefenprogramma</strong> met gewichtdragende weerstandstraining verbetert zelfs 4–12 maanden na THP nog significant de spierkracht, gangfunctie en zelfgerapporteerde functie (Trudelle-Jackson & Smith, 2004 — Arch Phys Med Rehabil). <strong>Taakgerichte gangtraining</strong> met focus op loopvaardigheden (tempo-variatie, richtingveranderingen, obstakels) geeft betere en langduriger functionele winst dan conventionele oefentherapie alleen (Heiberg et al., 2012 — Arthritis Care Res). <strong>Botbelastende activiteit</strong> ondersteunt de peri-prothetische botdensiteit en de osseo-integratie van cementloze steel- en cupcomponenten (Kohrt et al., 2004 — Med Sci Sports Exerc, ACSM position stand).'
+    },
+    {
+      label:'Fase 5',
+      title:'Return to activity — sport, werk & levenslange belasting',
+      weeks:'Week 12+',
+      goals:[
+        'Terugkeer naar recreatieve sport en volwaardige beroepsactiviteit volgens belastingsprofiel',
+        'Heupabductor- en extensorkracht ≥ 90% van contralaterale zijde (LSI ≥ 90%)',
+        'Low-impact sporten volwaardig hervatten: fietsen, zwemmen, wandelen, golf, doubles tennis',
+        'Levenslang onderhoudsprogramma voor kracht en botgezondheid verankeren (2×/week)',
+        'Patiënt educeren over prothese-levensduur, belastingskeuzes en alarmsymptomen op lange termijn'
+      ],
+      exercises:[
+        {name:'Progressieve krachttraining onderste lidmaat',params:[['Sets','3'],['Reps','8–12'],['Intensiteit','70–80% 1RM'],['Freq','2×/week']],note:'Leg press, hip thrust, step-up en abductie tegen weerstand als vast circuit. Zware diepe squats en eindstandige heupflexie onder belasting blijven af te raden. Levenslang onderhoud is de norm, niet een tijdelijk programma.',cat:'kracht'},
+        {name:'Fietsen buitenshuis / zwemmen',params:[['Duur','45–60 min'],['Intensiteit','matig (RPE 12–14)'],['Freq','3–4×/week']],note:'Aanbevolen low-impact cardiotraining na THP. Crawl-beenslag zonder beperking; schoolslag pas hervatten bij volledige pijnvrije mobiliteit en na akkoord van de chirurg (abductie-exorotatiecomponent).',cat:'cardio'},
+        {name:'Single leg squat (partieel)',params:[['Sets','3'],['Reps','8 per been'],['Diepte','tot 60° knieflexie'],['Freq','2×/week']],note:'Hoogste functionele niveau van unilaterale controle. Bekken horizontaal, knie boven voet. Objectiveert en traint restasymmetrie — video-feedback gebruiken. Alleen bij LSI abductoren ≥ 85%.',cat:'kracht'},
+        {name:'Dynamische balans- en agilitydrills',params:[['Type','tandemgang, zijwaartse passen, gecontroleerde richtingsveranderingen'],['Duur','10–15 min'],['Freq','2×/week']],note:'Voorbereiding op sporthervatting en valpreventie. Lichte impact (marcheren op plaats, lage skips) mag geïntroduceerd worden; herhaalde hoge impact (loopsport op verharding) enkel na expliciet akkoord van de chirurg.',cat:'neuromusculair'},
+        {name:'Sportspecifieke opbouw',params:[['Type','golf, doubles tennis, langlaufen, wandelen bergop'],['Opbouw','techniek → duur → intensiteit'],['Freq','volgens sport']],note:'Low-impact sporten worden algemeen toegelaten; intermediate-impact (doubles tennis, skiën voor ervaren skiërs) bij goede spierconditie en eerdere ervaring. High-impact sporten (contactsport, sprint, singles competitie) worden doorgaans ontraden wegens luxatie- en slijtagerisico.',cat:'neuromusculair'},
+        {name:'Onderhoudscircuit heup & romp',params:[['Sets','2–3'],['Oefeningen','abductie band + hip thrust + step-up + zijplank'],['Duur','20–25 min'],['Freq','2×/week levenslang']],note:'Structureel onderhoudsprogramma tegen sluipend krachtverlies en sarcopenie. Combineren met wandel- of fietsroutine. Jaarlijkse klinische en radiografische follow-up van de prothese aanbevelen.',cat:'kracht'}
+      ],
+      criteria_go:[
+        'LSI heupabductie en heupextensie ≥ 90% (handdynamometer)',
+        'Harris Hip Score ≥ 90 en HOOS-subschaal Sport/Vrije tijd ≥ 75/100',
+        'TUG &lt; 8 sec en eenbenige stand ≥ 45 sec bilateraal vergelijkbaar',
+        'Doelactiviteit (sport of fysiek beroep) 3 opeenvolgende sessies zonder pijn of reactieve zwelling',
+        'Zelfstandig onderhoudsprogramma 2×/week structureel ingepland',
+        'Patiënt kent alarmsymptomen (startpijn, liespijn bij belasting, beenlengtegevoel) en follow-up-schema'
+      ],
+      evidence:'<strong>Return to sport</strong> na THP is hoog voor low-impact activiteiten: gepoolde data tonen dat de meerderheid van de patiënten binnen 6 maanden naar het pre-operatieve recreatieve sportniveau terugkeert, met de hoogste hervattingspercentages voor fietsen, zwemmen en wandelen (Hoorntje et al., 2018 — Sports Med, systematische review). <strong>Expertconsensus</strong> laat low-impact sport zonder beperking toe, intermediate-impact bij voorgaande ervaring, en ontraadt herhaalde high-impact belasting wegens verhoogd risico op polyethyleenslijtage en periprothetische problematiek (Klein et al., 2007 — J Arthroplasty, survey Hip Society). Moderne <strong>highly cross-linked polyethyleen</strong> lagers en verbeterde fixatie geven 10-jaars-overleving van &gt; 95%, waardoor activiteitsrestricties minder streng worden dan historisch geadviseerd (Australian Orthopaedic Association NJRR, 2022 — jaarrapport). <strong>Levenslange spierkrachttraining</strong> en botbelastende activiteit beschermen tegen periprothetisch botverlies en sarcopenie-gerelateerd valrisico bij ouderen (Kohrt et al., 2004 — Med Sci Sports Exerc).'
+    }
+  ],
+  scores:['HOOS','HHS'],
+  refs:'ERAS-consensus heup- en knieartroplastiek (Wainwright et al., 2020 — Acta Orthopaedica) | Vroege mobilisatie na THP, systematische review (Guerra et al., 2015 — Clinical Rehabilitation) | Progressieve weerstandstraining na THP, RCT (Mikkelsen et al., 2014 — Osteoarthritis and Cartilage) | Return to sport na totale heupartroplastiek, systematische review (Hoorntje et al., 2018 — Sports Medicine)',
+  spiergroep:'gluteus maximus, gluteus medius, quadriceps'
+};
+
+BESCHRIJVING.thp = {
+  kenmerken:'Eindstadium <strong>coxartrose</strong> presenteert zich met liespijn (soms uitstralend naar dij en knie), <strong>startpijn en ochtendstijfheid</strong>, progressieve beperking van endorotatie en flexie (capsulair patroon) en toenemende beperking in stappen, trappen en schoenen aantrekken. Radiografisch: gewrichtsspleetversmalling, osteofyten, subchondrale sclerose en cysten (<strong>Kellgren-Lawrence graad III–IV</strong>). Indicatie voor THP: invaliderende pijn en functieverlies ondanks adequaat conservatief beleid (oefentherapie, gewichtsreductie, analgesie) conform de NICE- en KNGF-richtlijnen. Postoperatief beeld: onmiddellijke verdwijning van de artrosepijn maar tijdelijke <strong>abductorzwakte, gangasymmetrie en Trendelenburg-patroon</strong>, met verhoogd luxatierisico in de eerste 6–12 weken — het grootst na de <strong>posterieure benadering</strong> (flexie-adductie-endorotatie vermijden), terwijl de anterieure benadering een sneller vroeg herstel maar risico op meralgia paraesthetica en voorste instabiliteit bij geforceerde extensie-exorotatie kent (Meermans et al., 2017 — Bone Joint J). Uitkomsten worden gevolgd met <strong>HOOS en Harris Hip Score</strong>.',
+  oorzaken:'<strong>Primaire coxartrose</strong> ontstaat door multifactoriële degeneratie van het gewrichtskraakbeen met subchondrale botremodellering en synoviale laaggradige inflammatie; leeftijd, genetische predispositie, obesitas en zware fysieke arbeid zijn de belangrijkste risicofactoren (Murphy et al., 2010 — Osteoarthritis Cartilage: lifetime-risico symptomatische heupartrose ± 25%). <strong>Secundaire coxartrose</strong> volgt uit femoro-acetabulair impingement (cam/pincer), <strong>heupdysplasie</strong>, avasculaire femurkopnecrose, ziekte van Perthes, epifysiolyse, inflammatoire artritis of posttraumatische incongruentie (Ganz et al., 2008 — Clin Orthop Relat Res). Prothesetypes: <strong>cementloze fixatie</strong> (osseo-integratie via poreuze of hydroxyapatiet-coating, voorkeur bij goede botkwaliteit), <strong>gecementeerde fixatie</strong> (polymethylmethacrylaat, voorkeur bij osteoporotisch bot en hogere leeftijd) en hybride combinaties; lagerkoppels variëren van metaal- of keramiek-op-<strong>highly cross-linked polyethyleen</strong> (huidige standaard) tot keramiek-op-keramiek, en <strong>dual mobility-cups</strong> reduceren het luxatierisico bij hoogrisicopatiënten (registerdata: 10-jaars-prothese-overleving &gt; 95%; AOANJRR, 2022).'
+};
+
+protocols.men = {id:'men',title:'Meniscusletsel',subtitle:'Conservatief & postoperatief revalidatieprotocol (partiële meniscectomie APM en meniscushechting) — van acute fase tot return to sport',color:'#65a30d',icon:'🦵',
+  phases:[
+    {
+      label:'Fase 1',
+      title:'Acute / postoperatieve fase — bescherming, pijn- & zwellingcontrole',
+      weeks:'Week 0–2 (APM/conservatief) | Week 0–4 (hechting)',
+      goals:[
+        'Pijn en effusie reduceren: VAS ≤ 3/10 in rust en stroke-test ≤ graad 1+',
+        'Volledige actieve knie-extensie herstellen (0° — geen extensiedeficit tolereren)',
+        'Quadricepsactivatie herwinnen: actieve quadriceps-set met volledige patellabeweging, SLR zonder extension lag',
+        'Belastings- en ROM-restricties respecteren na hechting: flexie beperkt tot 90° gedurende 4 weken, partieel steunen met krukken volgens chirurgisch protocol',
+        'Patiënt educeren over natuurlijk herstel, zonering (rood-rood vs wit-wit) en gefaseerde belastingsopbouw'
+      ],
+      exercises:[
+        {name:'Quadriceps-setting (isometrisch)',params:[['Sets','3'],['Reps','15–20'],['Hold','5–10 sec'],['Freq','3–4×/dag']],note:'Handdoekrol onder de knie, quadriceps maximaal aanspannen met patellabeweging naar craniaal. Direct postoperatief starten: remt arthrogene spierinhibitie (AMI) en effusiegerelateerde quadricepsuitval. Ook conservatief eerste keuze bij pijnlijke, gezwollen knie.',cat:'kracht'},
+        {name:'Heel slides (actieve flexiemobilisatie)',params:[['Sets','3'],['Reps','10–15'],['Freq','3×/dag'],['Limiet','90° na hechting (eerste 4 wk)']],note:'Ruglig, hiel over onderlaag naar zitvlak schuiven binnen pijngrens. KRITIEK na meniscushechting: flexie > 90° verhoogt de compressie- en schuifkracht op het hechtingsgebied van de posterieure hoorn — strikt limiteren tot 90° gedurende 4 weken. Na APM en conservatief: pijngestuurd vrij mobiliseren.',cat:'mobiliteit'},
+        {name:'Straight leg raise (SLR)',params:[['Sets','3'],['Reps','10'],['Tempo','2-2-2'],['Freq','2–3×/dag']],note:'Gestrekt been heffen tot ± 45° zonder extension lag. Bij lag: eerst quadriceps-sets en NMES verderzetten. Veilig na zowel APM als hechting omdat de knie in extensie blijft (geen meniscale schuifbelasting).',cat:'kracht'},
+        {name:'Patellamobilisaties & extensiestretch',params:[['Duur','5 min'],['Richting','craniaal/caudaal/mediolateraal'],['Freq','2×/dag']],note:'Passieve patellamobilisatie plus hielprop-extensiestretch (hiel op rol, knie vrij hangend). Volledige extensie is de eerste prioriteit: een extensiedeficit > 5° na 2 weken voorspelt persisterende functiebeperking en artrofibrose.',cat:'mobiliteit'},
+        {name:'Gangrevalidatie met krukken',params:[['Belasting','APM: op geleide van pijn → vol | hechting: partieel volgens chirurg'],['Focus','symmetrisch afwikkelen, geen flexumgang'],['Freq','dagelijks']],note:'Na APM meestal onmiddellijk steunen zoals getolereerd; na hechting frequent 2–4 weken partieel steunen (protocolafhankelijk, zeker bij radiaire en wortelhechtingen strenger). Krukken pas afbouwen bij pijnvrij, symmetrisch gangpatroon zonder hinken.',cat:'neuromusculair'},
+        {name:'Enkelpompen & cryotherapie',params:[['Reps','20–30 pompen/uur'],['Ijs','15–20 min'],['Freq','4–6×/dag'],['Positie','elevatie']],note:'Oedeemdrainage en tromboseprofylaxe in de eerste postoperatieve week. Cryotherapie met compressie reduceert effusie en pijnmedicatiegebruik. Conservatief: idem bij acute hydrops na traumatische scheur.',cat:'cardio'}
+      ],
+      redflags:[
+        'Slotfenomeen (locked knee): knie kan niet volledig gestrekt worden door geluxeerd meniscusfragment — orthopedisch consult binnen enkele dagen (buckethandle-scheur)',
+        'Acute hemartros binnen 2 uur na trauma: wijst op perifere (vasculaire) meniscusscheur of geassocieerd VKB-letsel — beeldvorming vereist',
+        'Koorts, toenemende roodheid of warmte postoperatief: verdenking septische artritis — dringende verwijzing',
+        'Kuitpijn, unilateraal pittingoedeem of positieve Homans: diepe veneuze trombose uitsluiten',
+        'Progressief neurovasculair deficit (voetheffersparese, sensibiliteitsverlies) na chirurgie'
+      ],
+      criteria_stop:[
+        'Nieuw of recidiverend slotfenomeen tijdens oefentherapie — staak flexiebelasting en contacteer verwijzer',
+        'Toename effusie ≥ 1 graad op stroke-test die > 24 u aanhoudt na oefensessie — belasting één niveau terugschroeven',
+        'VAS > 5/10 tijdens of > 3/10 aanhoudend 24 u na oefening',
+        'Flexie > 90° of dieptekniebuigingen binnen 4 weken na meniscushechting',
+        'Scherpe gewrichtsspleetpijn met wegklap-gevoel (giving way) bij belaste oefeningen'
+      ],
+      criteria_go:[
+        'Volledige actieve extensie (0°, symmetrisch met contralateraal) bereikt',
+        'Flexie ≥ 90° pijnvrij (hechting: exact binnen de 90°-limiet blijvend)',
+        'SLR zonder extension lag, quadricepscontractie zichtbaar en palpabel',
+        'Effusie ≤ graad 1+ op stroke-test, VAS in rust ≤ 2/10',
+        'Pijnvrij stappatroon: APM zonder krukken, hechting correct partieel steunend volgens protocol',
+        'Geen slotklachten of pseudo-locking tijdens ADL-activiteiten'
+      ],
+      evidence:'Bij <strong>degeneratieve meniscusscheuren</strong> is oefentherapie de eerste keuze: de <strong>ESCAPE-trial</strong> toonde dat gesuperviseerde kinesitherapie niet-inferieur is aan artroscopische partiële meniscectomie op IKDC na 24 maanden (van de Graaf et al., 2018 — JAMA), en de <strong>FIDELITY-trial</strong> vond geen meerwaarde van APM boven sham-chirurgie (Sihvonen et al., 2013 — N Engl J Med). Vroege <strong>quadricepsactivatie</strong> en volledig extensieherstel zijn prioritair omdat effusie via arthrogene spierinhibitie de quadriceps reflexmatig uitschakelt (Rice & McNair, 2010 — Semin Arthritis Rheum). Na <strong>meniscushechting</strong> geldt een tragere progressie: flexiebeperking tot 90° en gedoseerde belasting gedurende de eerste 4 weken beschermen het genezende hechtingsgebied, omdat flexie > 90° de posterieure hoorn comprimeert en transleert (Cavanaugh & Killian, 2012 — Curr Rev Musculoskelet Med). Het <strong>Knee Meniscus Clinical Practice Guideline</strong> ondersteunt vroege gecontroleerde mobilisatie boven strikte immobilisatie (Logerstedt et al., 2018 — J Orthop Sports Phys Ther).'
+    },
+    {
+      label:'Fase 2',
+      title:'Vroege revalidatie — mobiliteit, normalisatie gang & basiskracht',
+      weeks:'Week 2–6 (APM/conservatief) | Week 4–8 (hechting)',
+      goals:[
+        'Flexie progressief herstellen: ≥ 120° (hechting: pas na week 4 voorbij 90° opbouwen)',
+        'Normaal, symmetrisch gangpatroon zonder krukken op vlak terrein en trappen',
+        'Quadriceps- en hamstringkracht opbouwen in gesloten keten binnen 0–60° flexie',
+        'Effusie volledig elimineren (stroke-test graad 0) bij toenemende belasting',
+        'Proprioceptieve basis leggen via steunname-oefeningen op stabiele ondergrond'
+      ],
+      exercises:[
+        {name:'Stationaire fiets (mobiliserend → licht belastend)',params:[['Duur','10 → 25 min'],['Weerstand','minimaal → licht'],['Freq','dagelijks'],['Voorwaarde','flexie ≥ 100–110°']],note:'Eerst halve omwentelingen (pendelen) tot volledige rotatie lukt. Uitstekende pijnvrije flexiemobilisator en cardio-onderhoud. Na hechting pas volledige omwentelingen vanaf week 4–6, zadel initieel hoog.',cat:'cardio'},
+        {name:'Mini squat (0–60°)',params:[['Sets','3'],['Reps','12–15'],['ROM','0–60°'],['Freq','1×/dag']],note:'Gesloten-keten quadricepstraining met beperkte meniscale compressie. Dieptebeperking tot 60° want tibiofemorale contactdruk op de menisci stijgt exponentieel voorbij 60–90° flexie. Na hechting: pas starten bij volledige steunname, geen gecombineerde flexie-rotatie.',cat:'kracht'},
+        {name:'Leg press (lichte belasting, 0–60°)',params:[['Sets','3'],['Reps','10–12'],['Gewicht','licht → matig'],['Freq','3×/week']],note:'Gedoseerde bilaterale krachtopbouw met controleerbare belasting. Progressie naar unilateraal wanneer bilateraal 3×12 pijnvrij en zonder effusiereactie lukt. Hechting: één week later starten dan APM en trager progresseren in gewicht.',cat:'kracht'},
+        {name:'Hamstring curl (buiklig of machine)',params:[['Sets','3'],['Reps','12'],['Weerstand','licht'],['Freq','3×/week']],note:'Geïsoleerde hamstringversterking. OPGELET na hechting van de posterieure hoorn: de semimembranosus trekt via het kapsel aan het mediale achterhoorncomplex — weerstandsflexie pas vanaf week 6 en aanvankelijk zonder gewicht.',cat:'kracht'},
+        {name:'Eénbenige stand op stabiele ondergrond',params:[['Sets','3'],['Hold','30 sec'],['Progressie','ogen dicht'],['Freq','2×/dag']],note:'Proprioceptieve heropbouw: meniscusletsel en artroscopie verstoren mechanoreceptorfunctie van kapsel en meniscusrand. Bekken horizontaal, knie licht gebogen, geen valgus. Basis voor latere balanstraining op instabiele ondergrond.',cat:'stabiliteit'},
+        {name:'Heup abductie & extensie met band',params:[['Sets','3'],['Reps','15'],['Band','licht → matig'],['Freq','3×/week']],note:'Gluteus medius en maximus versterken ter controle van het dynamisch valgusmoment — proximale controle vermindert de mediale compartimentsbelasting en beschermt het (genezende) mediale meniscusweefsel bij belaste taken.',cat:'kracht'}
+      ],
+      criteria_go:[
+        'Flexie ≥ 120° pijnvrij, extensie 0° behouden',
+        'Stroke-test graad 0 (geen effusie), ook 24 u na belaste oefensessies',
+        'Traplopen op- en afwaarts reciprook en pijnvrij',
+        'Mini squat 0–60° 3×15 zonder gewrichtsspleetpijn',
+        'Eénbenige stand 30 sec stabiel met gesloten ogen',
+        'Hechting: 6–8 weken postoperatief verstreken vóór start belaste flexie voorbij 90° (chirurgische goedkeuring)'
+      ],
+      evidence:'<strong>Gesloten-keten oefeningen binnen 0–60°</strong> genieten de voorkeur omdat de tibiofemorale contactdruk op de menisci sterk toeneemt bij diepere flexiehoeken; de posterieure hoorns dragen tot 85–90% van de compressielast bij 90° flexie (Walker & Erkman, 1975 — Clin Orthop Relat Res). Bij conservatief beleid toonde de studie van <strong>Kise et al.</strong> dat 12 weken progressieve oefentherapie bij degeneratieve scheuren gelijkwaardig is aan APM op KOOS na 2 jaar, met bovendien grotere krachtwinst in de oefengroep (Kise et al., 2016 — BMJ). Na <strong>meniscushechting</strong> blijft de progressie systematisch 2–4 weken trager dan na APM: gerandomiseerd onderzoek toont dat vroege gecontroleerde mobilisatie veilig is, maar belaste diepe flexie en rotatie pas na 6–8 weken worden geïntroduceerd om de <strong>faalkans van de hechting</strong> (10–25%) niet te verhogen (VanderHave et al., 2015 — Sports Health; Beaufils & Pujol, 2017 — Orthop Traumatol Surg Res). Volledige effusieresolutie vóór krachtprogressie voorkomt persisterende <strong>quadriceps-inhibitie</strong> (Rice & McNair, 2010 — Semin Arthritis Rheum).'
+    },
+    {
+      label:'Fase 3',
+      title:'Krachtopbouw & neuromusculaire controle',
+      weeks:'Week 6–12 (APM/conservatief) | Week 8–16 (hechting)',
+      goals:[
+        'Quadriceps- en hamstringkracht ≥ 75–80% van contralateraal (LSI, dynamometrie)',
+        'Volledige en pijnvrije ROM inclusief eindstandige flexie (hurken pas vrijgeven na hechting vanaf week 12–16)',
+        'Eénbenige gesloten-keten controle tot 90° flexie zonder dynamisch valgus',
+        'Neuromusculaire training op instabiele ondergrond integreren',
+        'Cardiovasculaire conditie herstellen via fietsen, crosstrainer en zwemmen'
+      ],
+      exercises:[
+        {name:'Squat progressief (0–90°)',params:[['Sets','3–4'],['Reps','8–12'],['Gewicht','lichaamsgewicht → extern belast'],['Freq','3×/week']],note:'ROM-uitbreiding naar 90° wanneer effusievrij en pijnvrij. Diepe squat (> 90°) en hurkzit pas in fase 4; na hechting ten vroegste vanaf week 12–16 wegens hoge posterieure hoorn-belasting bij diepe flexie.',cat:'kracht'},
+        {name:'Bulgaarse split squat',params:[['Sets','3'],['Reps','8–10 per been'],['Tempo','3-1-1'],['Freq','2–3×/week']],note:'Unilaterale kracht en frontale-vlakcontrole. Achterste voet op bank, romp rechtop, knie boven voet. Excellente overgang naar sportspecifieke unilaterale belasting. Bewaken: geen mediale knieval, geen gewrichtsspleetpijn.',cat:'kracht'},
+        {name:'Leg extension (open keten, 90–30°)',params:[['Sets','3'],['Reps','10–12'],['Gewicht','progressief'],['Freq','2–3×/week']],note:'Geïsoleerde quadricepshypertrofie — veilig voor de meniscus want open keten genereert geen relevante meniscale compressie. Effectiefste middel om persisterend quadricepsdeficit na meniscuschirurgie weg te werken.',cat:'kracht'},
+        {name:'Balanstraining op instabiele ondergrond',params:[['Sets','3'],['Duur','45 sec'],['Ondergrond','kussen → BOSU'],['Freq','3×/week']],note:'Progressie van fase 2: instabiele ondergrond, dubbeltaken (bal gooien), perturbaties door therapeut. Herstelt proprioceptieve reflexactiviteit en dynamische kniestabiliteit vereist voor wend- en keerbewegingen.',cat:'stabiliteit'},
+        {name:'Step-up & step-down (verhoogde box)',params:[['Sets','3'],['Reps','10 per been'],['Hoogte','15 → 25 cm'],['Freq','3×/week']],note:'Excentrische quadricepscontrole bij step-down is de sleutel tot pijnvrij trap aflopen en dalen. Video- of spiegelcontrole op bekkendaling en knievalgus. Hoogte pas verhogen bij foutloze uitvoering.',cat:'neuromusculair'},
+        {name:'Romanian deadlift (RDL)',params:[['Sets','3'],['Reps','10'],['Gewicht','licht → matig'],['Freq','2×/week']],note:'Posterieure keten (hamstrings, gluteï) versterken met minimale knieflexie — meniscusvriendelijke hamstringbelasting. Heupscharnier aanleren beschermt de knie bij tillen en landen. Neutrale rug bewaken.',cat:'kracht'}
+      ],
+      criteria_go:[
+        'Quadriceps- en hamstring-LSI ≥ 80% (handheld dynamometer of isokinetisch)',
+        'Volledige symmetrische ROM zonder eindstandige gewrichtsspleetpijn',
+        'Step-down 20–25 cm 3×10 foutloos zonder valgus of bekkendaling',
+        'Eénbenige squat tot 60° gecontroleerd en pijnvrij',
+        'Geen effusiereactie (stroke-test 0) na zware krachtsessies',
+        'Hechting: minimum week 12 postoperatief bereikt vóór introductie van loop- en impactbelasting'
+      ],
+      evidence:'Persisterende <strong>quadriceps-zwakte</strong> is de meest voorspellende restfactor voor functionele beperking en versnelde kraakbeendegeneratie na meniscectomie; patiënten tonen tot 20% krachtdeficit vier jaar na APM zonder gerichte krachttraining (Ericsson et al., 2006 — Scand J Med Sci Sports). <strong>Progressieve neuromusculaire en krachttraining</strong> verbetert kniefunctie en spierkracht significant meer dan APM bij middelbare patiënten met degeneratieve scheuren (Kise et al., 2016 — BMJ; Stensrud et al., 2012 — Am J Phys Med Rehabil). Na <strong>meniscushechting</strong> wordt loopbelasting doorgaans pas vanaf week 12–16 geïntroduceerd tegenover week 4–8 na APM, aangezien de biologische heling van de rood-witte zone 3–4 maanden vergt en vroege impactbelasting het <strong>herruptuurrisico</strong> verhoogt (Beaufils & Pujol, 2017 — Orthop Traumatol Surg Res). <strong>Excentrische step-down training</strong> met bewegingskwaliteitsfeedback reduceert dynamisch valgus, een risicofactor voor mediale compartimentoverbelasting (Logerstedt et al., 2018 — JOSPT).'
+    },
+    {
+      label:'Fase 4',
+      title:'Functionele & sportspecifieke training — loopheropbouw & plyometrie',
+      weeks:'Week 12–20 (APM/conservatief) | Week 16–24 (hechting)',
+      goals:[
+        'Progressief looprogramma volbrengen: continu 30 min pijnvrij zonder effusiereactie',
+        'Kracht-LSI ≥ 90% voor quadriceps en hamstrings',
+        'Plyometrische belasting opbouwen: bilateraal → unilateraal, verticaal → horizontaal',
+        'Wend-, keer- en versnellingspatronen sportspecifiek heraanleren',
+        'Vertrouwen en psychologische gereedheid opbouwen (angst voor herletsel adresseren)'
+      ],
+      exercises:[
+        {name:'Loopheropbouw (walk-jog protocol)',params:[['Schema','2 min jog / 2 min walk × 6 → continu 30 min'],['Progressie','≤ 10% volume/week'],['Freq','3×/week']],note:'Start bij LSI ≥ 80%, effusievrij en pijnvrij traplopen. Vlakke, zachte ondergrond. Na hechting pas vanaf week 16 en trager opbouwen. Monitor: gewrichtsspleetpijn of zwelling binnen 24 u = één stap terug.',cat:'cardio'},
+        {name:'Bilaterale sprongen (box & verticaal)',params:[['Sets','3'],['Reps','8–10'],['Focus','zachte, geluidloze landing'],['Freq','2×/week']],note:'Eerste plyometrische stap: landing met heup- en kniebuiging, knieën boven voeten. Landingskwaliteit primeert op hoogte. Pas starten bij LSI ≥ 85% en foutloze step-down. Hechting: 4 weken later dan APM.',cat:'neuromusculair'},
+        {name:'Unilaterale hop-progressie',params:[['Sets','3'],['Reps','6–8 per been'],['Volgorde','plaats → voorwaarts → lateraal → diagonaal'],['Freq','2×/week']],note:'Opbouw naar hoptest-batterij. Laterale en diagonale hops belasten de meniscusrand rotatoir — laatste in de progressie. Stopcriterium: gewrichtsspleetpijn, instabiliteitsgevoel of asymmetrische landing.',cat:'neuromusculair'},
+        {name:'Agility-ladder & richtingsveranderingen',params:[['Duur','15 min'],['Intensiteit','50% → 90% snelheid'],['Patroon','vooraf gepland → reactief'],['Freq','2×/week']],note:'Progressief snijwerk (cutting): eerst brede bochten aan lage snelheid, dan scherpe richtingsveranderingen op signaal. Rotatie onder axiale belasting is het typische meniscale letselmechanisme — geleidelijkheid is cruciaal, zeker na hechting.',cat:'neuromusculair'},
+        {name:'Zware krachttraining onderhoud',params:[['Sets','3–4'],['Reps','6–8'],['Oefeningen','squat, leg press, RDL, split squat'],['Freq','2×/week']],note:'Kracht consolideren richting LSI ≥ 90–100%. Volledige ROM nu toegestaan indien pijnvrij; diepe hurkzit na hechting pas na week 16–20 en zonder rotatiecomponent opbouwen.',cat:'kracht'},
+        {name:'Sportspecifieke drills',params:[['Duur','20–30 min'],['Inhoud','baltechniek, sprintopbouw, sprong-landing in context'],['Freq','2×/week']],note:'Gecontroleerde terugkeer naar teamtraining zonder contact/competitie. Chaotische, reactieve elementen geleidelijk toevoegen. sRPE-monitoring: acute belastingspieken vermijden bij heropstart.',cat:'neuromusculair'}
+      ],
+      criteria_go:[
+        'Continu 30 min hardlopen pijnvrij zonder effusiereactie binnen 24 u',
+        'Kracht-LSI ≥ 90% quadriceps en hamstrings',
+        'Hoptest-batterij (single, triple, crossover, 6m-timed) LSI ≥ 90%',
+        'Richtingsveranderingen op hoge snelheid pijnvrij en zonder aarzeling',
+        'IKDC-score ≥ 80 of KOOS-subschalen binnen normaalwaarden',
+        'Hechting: minimum 6 maanden postoperatief vóór vrijgave pivoterende sporten (chirurgische goedkeuring)'
+      ],
+      evidence:'<strong>Progressieve plyometrische opbouw</strong> van bilateraal naar unilateraal en van sagittaal naar rotatoir respecteert de toenemende meniscale schuif- en rotatiebelasting; combinatie van axiale compressie met rotatie is het klassieke letselmechanisme en wordt als laatste geherintroduceerd (Logerstedt et al., 2018 — JOSPT). Een <strong>hoptest-LSI ≥ 90%</strong> gecombineerd met kracht-LSI ≥ 90% vormt de best onderbouwde functionele testbatterij voor terugkeer naar impactsport na knieletsel (Grindem et al., 2016 — Br J Sports Med). Na <strong>meniscushechting</strong> keert de atleet gemiddeld pas na 5–6 maanden terug naar sport tegenover 7–9 weken na APM — het respecteren van deze langere tijdslijn verlaagt het herruptuurrisico van de hechting significant (Eberbach et al., 2018 — Knee Surg Sports Traumatol Arthrosc). <strong>Kinesiofobie</strong> en lage psychologische gereedheid voorspellen mislukte sporthervatting; screening met bijvoorbeeld de Tampa-schaal is aangewezen (Ardern et al., 2013 — Br J Sports Med).'
+    },
+    {
+      label:'Fase 5',
+      title:'Return to sport & langetermijnpreventie',
+      weeks:'Week 20–26+ (APM/conservatief) | Maand 6–9 (hechting)',
+      goals:[
+        'Volledige, onbeperkte sporthervatting inclusief contact- en pivotsporten',
+        'Kracht- en hop-LSI ≥ 95–100% behouden via onderhoudsprogramma',
+        'Preventief neuromusculair programma structureel integreren (2×/week)',
+        'Langetermijn kniegezondheid bewaken: gewichtsbeheer, belastingsmanagement, artrose-educatie',
+        'Zelfmanagement: patiënt herkent overbelastingssignalen (effusie, gewrichtsspleetpijn) en past belasting autonoom aan'
+      ],
+      exercises:[
+        {name:'Volledige teamtraining & competitieopbouw',params:[['Opbouw','beperkte speeltijd → volledig'],['Monitoring','effusie & pijn 24 u post'],['Freq','sportafhankelijk']],note:'Gefaseerde competitiehervatting: eerst volledige contacttraining, dan beperkte wedstrijdminuten. Na hechting pas volledig vrijgeven vanaf maand 6 (perifere longitudinale hechting) tot 9 (radiair/wortel). Effusie na sport = belastingssignaal.',cat:'neuromusculair'},
+        {name:'Preventief neuromusculair programma (FIFA 11+ type)',params:[['Duur','20 min'],['Inhoud','plyo, balans, kracht, landing'],['Freq','2–3×/week als warming-up']],note:'Gestructureerde neuromusculaire warming-up reduceert knieletsels bij pivotsporters. Levenslange integratie aanbevolen na meniscusletsel gezien verhoogd risico op nieuw knieletsel en artrose.',cat:'neuromusculair'},
+        {name:'Zware bilaterale & unilaterale kracht (onderhoud)',params:[['Sets','3–4'],['Reps','5–8'],['Intensiteit','75–85% 1RM'],['Freq','2×/week']],note:'Quadricepskracht op peil houden is de belangrijkste beïnvloedbare beschermfactor tegen posttraumatische artrose na meniscusletsel. Volledige ROM, inclusief diepe squat indien pijnvrij.',cat:'kracht'},
+        {name:'Reactieve agility onder vermoeidheid',params:[['Duur','10–15 min'],['Timing','einde training'],['Inhoud','reactief snijwerk, duelvormen'],['Freq','1–2×/week']],note:'Letsels treden vaak op onder vermoeidheid wanneer neuromusculaire controle daalt. Reactieve wend- en keerdrills op het einde van de training bouwen vermoeidheidsresistente kniecontrole op.',cat:'neuromusculair'},
+        {name:'Cardio-onderhoud met lage gewrichtsbelasting',params:[['Duur','30–45 min'],['Type','fietsen, zwemmen, crosstrainer'],['Freq','1–2×/week aanvullend']],note:'Aeroob onderhoud met minimale meniscale compressie als aanvulling op impactsport. Ondersteunt gewichtsbeheer — elke kg extra lichaamsgewicht verhoogt de kniecompartimentbelasting met factor 3–4 bij lopen.',cat:'cardio'},
+        {name:'Jaarlijkse functionele screening',params:[['Inhoud','kracht-LSI, hoptests, KOOS/IKDC'],['Freq','1×/jaar of bij klachten'],['Actie','bijsturen onderhoudsprogramma']],note:'Periodieke objectieve hertest detecteert sluipend krachtverlies of functiedaling vroegtijdig. KOOS-daling of recidiverende effusie zijn indicaties voor belastingsherziening en klinische herevaluatie.',cat:'stabiliteit'}
+      ],
+      criteria_go:[
+        'Kracht- en hoptest-LSI ≥ 95% bij herhaalde meting',
+        'Volledige trainings- en wedstrijdbelasting gedurende ≥ 4 weken zonder pijn, effusie of slotklachten',
+        'IKDC ≥ 90 en KOOS Sport/Rec ≥ 85',
+        'Preventief programma 2×/week zelfstandig geïntegreerd in trainingsroutine',
+        'Hechting: 6–9 maanden postoperatief verstreken én chirurgische vrijgave voor onbeperkte pivotbelasting',
+        'Patiënt hanteert zelfstandig belastingsmonitoring en herkent recidiefsignalen'
+      ],
+      evidence:'Meniscusletsel en zeker <strong>meniscectomie verhogen het artroserisico</strong> substantieel: 10–15 jaar na (sub)totale meniscectomie vertoont tot 50% van de patiënten radiografische gonartrose, wat maximaal meniscusbehoud en levenslange kwadricepskracht-optimalisatie verantwoordt (Lohmander et al., 2007 — Am J Sports Med). <strong>Meniscushechting</strong> geeft op lange termijn betere kniefunctie en minder artroseprogressie dan meniscectomie, ondanks de tragere revalidatie en het herruptuurrisico — de langere return-to-sport tijdslijn (6–9 maanden) is de prijs voor meniscusbehoud (Paxton et al., 2011 — Arthroscopy; Xu & Zhao, 2015 — Knee Surg Sports Traumatol Arthrosc). <strong>Criteriumgebaseerde return-to-sport beslissingen</strong> (kracht- en hop-LSI ≥ 90–95%, symmetrische bewegingskwaliteit) verlagen het risico op nieuw knieletsel aanzienlijk in vergelijking met louter tijdgebaseerde vrijgave (Grindem et al., 2016 — Br J Sports Med). Blijvende <strong>neuromusculaire preventieprogramma&#39;s</strong> van het FIFA 11+ type reduceren de incidentie van ernstige knieletsels bij pivotsporters met ongeveer 30–50% (Thorborg et al., 2017 — Br J Sports Med).'
+    }
+  ],
+  scores:['IKDC','KOOS'],
+  refs:'ESCAPE-trial: oefentherapie vs APM bij niet-obstructieve meniscusscheuren (van de Graaf et al., 2018 — JAMA) | FIDELITY: APM vs sham-chirurgie bij degeneratieve scheuren (Sihvonen et al., 2013 — N Engl J Med) | Oefentherapie vs APM bij degeneratieve meniscusscheuren, 2-jaars follow-up (Kise et al., 2016 — BMJ) | Knee Pain and Mobility Impairments: Meniscal and Articular Cartilage Lesions — Clinical Practice Guideline (Logerstedt et al., 2018 — J Orthop Sports Phys Ther)',
+  spiergroep:'quadriceps, hamstrings'
+};
+
+BESCHRIJVING.men = {
+  kenmerken:'<strong>Gewrichtsspleetpijn</strong> mediaal (± 75% van de letsels) of lateraal, provoceerbaar door palpatie van de gewrichtsspleet (joint line tenderness — sensitiviteit ± 83%). Typische anamnese: pijn bij diepe flexie, hurken en draaibewegingen op de belaste voet, <strong>slotklachten</strong> (locking bij buckethandle-scheur) of pseudo-locking, catching en giving way. Intermitterende <strong>hydrops</strong> die traag opkomt (uren) na belasting — een acute hemartros binnen 2 uur wijst eerder op een perifere vasculaire scheur of VKB-letsel. Provocatietests: <strong>McMurray</strong> (klik/pijn bij flexie-rotatie — hoge specificiteit ± 94%, lage sensitiviteit) en <strong>Thessaly-test</strong> op 20° flexie; clusterdiagnostiek verhoogt de accuraatheid boven individuele tests (Hegedus et al., 2007 — J Orthop Sports Phys Ther). Bij degeneratieve scheuren is de presentatie vaak sluipend zonder duidelijk trauma; MRI-bevindingen moeten klinisch gecorreleerd worden aangezien tot 35% van de asymptomatische 50-plussers meniscusscheuren vertoont (Englund et al., 2008 — N Engl J Med).',
+  oorzaken:'Twee etiologische patronen: <strong>traumatische scheuren</strong> bij jonge, actieve personen door gecombineerde axiale compressie en rotatie op de gefixeerde, gebogen knie (voetbal, ski, judo — vaak longitudinaal of buckethandle, frequent geassocieerd met VKB-ruptuur in ± 50%), versus <strong>degeneratieve scheuren</strong> (horizontaal, complex of flap) bij 40-plussers door cumulatieve slijtage van matrixkwaliteit, vaak zonder trauma. De helingscapaciteit wordt bepaald door de vasculaire zonering: de perifere <strong>rood-rode zone</strong> (buitenste 10–30%, doorbloed via de arteriae geniculares) heeft goede helingspotentie en is hechtbaar, de avasculaire <strong>wit-witte binnenzone</strong> heelt nauwelijks (Arnoczky & Warren, 1982 — Am J Sports Med) — dit stuurt de keuze tussen hechting, partiële meniscectomie en conservatief beleid. Risicofactoren: pivotsporten, diepe knielbelasting (beroepsmatig hurken/knielen), <strong>obesitas</strong>, varus/valgus-malalignement, VKB-insufficiëntie (chronische instabiliteit verdubbelt het meniscusrisico) en leeftijdsgebonden degeneratie. De mediale meniscus is kwetsbaarder door zijn stevigere kapselverankering en geringere mobiliteit ten opzichte van de laterale (Makris et al., 2011 — Biomaterials).'
+};
+
+protocols.pfa = {id:'pfa',title:'Plantaire Fasciopathie',subtitle:'Conservatief revalidatieprotocol voor plantaire fasciitis/hielspoor — load management, high-load krachttraining en progressieve return to running',color:'#b45309',icon:'🦶',
+  phases:[
+    {
+      label:'Fase 1',
+      title:'Pijnreductie & load management',
+      weeks:'Week 0–4',
+      goals:[
+        'Ochtendpijn (eerste stappen) reduceren naar NPRS ≤ 3/10',
+        'Provocerende belasting identificeren en tijdelijk moduleren (staand werk, loopvolume, hard schoeisel)',
+        'Patiënt educeren over degeneratief karakter en belastbaarheidsprincipe — geen rust maar dosering',
+        'Plantaire fascia en kuitcomplex dagelijks mobiliseren zonder pijnprovocatie',
+        'Ontlastende maatregelen installeren: low-Dye taping en/of hielcup, aangepast schoeisel'
+      ],
+      exercises:[
+        {name:'Plantaire fascia-specifieke stretch (zittend)',params:[['Sets','3'],['Hold','30 sec'],['Freq','3×/dag, eerste sessie vóór opstaan']],note:'Zittend, aangedane voet over contralaterale knie, tenen in dorsaalflexie trekken tot rek in voetzool voelbaar. Duim controleert spanning van de fascia. Uitvoeren vóór de eerste stappen (ochtend) en na langdurig zitten — reduceert startpijn (DiGiovanni et al., 2003).',cat:'mobiliteit'},
+        {name:'Kuitrek staand (gastrocnemius & soleus)',params:[['Sets','3 per variant'],['Hold','30–45 sec'],['Freq','2×/dag']],note:'Tegen muur: gestrekte knie (gastrocnemius) en gebogen knie (soleus). Beperkte enkeldorsaalflexie is de sterkste risicofactor (Riddle et al., 2003) — kuitflexibiliteit is prioritair behandeldoel. Hiel blijft op de grond.',cat:'mobiliteit'},
+        {name:'Voetzoolrol over bal of flesje',params:[['Duur','2–3 min'],['Druk','matig, geen scherpe pijn'],['Freq','1–2×/dag']],note:'Zelfmassage van de plantaire fascia met tennisbal of bevroren flesje (koude-analgesie optioneel). Rollen van hiel naar voorvoet. Symptoommodulerend, geen structureel effect — combineren met belastingsopbouw.',cat:'mobiliteit'},
+        {name:'Low-Dye taping',params:[['Duur','3–5 dagen per applicatie'],['Type','antipronatietape'],['Periode','eerste 2–4 weken']],note:'Ondersteunt de mediale longitudinale voetboog en dempt trekbelasting op de fascia-origo. Kortetermijn pijnreductie goed onderbouwd (van de Water & Speksnijder, 2010). Ideaal als brug tot de krachttraining effect geeft; huidcontrole bij elke hernieuwing.',cat:'stabiliteit'},
+        {name:'Short foot oefening (zittend)',params:[['Sets','3'],['Reps','10 × 5 sec hold'],['Freq','dagelijks']],note:'Voetboog actief verkorten zonder teenflexie: kop metatarsale 1 naar hiel trekken. Activeert de voetintrinsieke musculatuur (abductor hallucis) die de fascia dynamisch ontlast. Start zittend, progressie naar stand in fase 2.',cat:'neuromusculair'},
+        {name:'Fietsen of zwemmen (cardio-behoud)',params:[['Duur','20–30 min'],['Intensiteit','matig'],['Freq','3–4×/week']],note:'Impactvrij cardio-alternatief tijdens de belastingsreductie van hardlopen en lang staan. Fietsen belast de fascia minimaal. Volledige rust is gecontra-indiceerd: mechanotransductie vereist dosering, geen eliminatie van belasting.',cat:'cardio'}
+      ],
+      criteria_go:[
+        'Ochtendpijn bij eerste stappen NPRS ≤ 3/10 gedurende ≥ 5 opeenvolgende dagen',
+        'Palpatiepijn mediale calcaneusknobbel NPRS ≤ 4/10',
+        'Wandelen 30 min met dagelijks schoeisel zonder pijntoename nadien',
+        'Plantaire stretch en kuitrek correct en zelfstandig uitgevoerd',
+        'Patiënt begrijpt het load management-principe en houdt een belastingsdagboek bij'
+      ],
+      evidence:'<strong>Ochtendpijn bij de eerste stappen</strong> is de meest responsieve monitoringsparameter bij plantaire fasciopathie en stuurt de wekelijkse belastingsprogressie (Riel et al., 2019 — BJSM). <strong>Plantaire fascia-specifieke stretching</strong> is superieur aan louter achillespeesrek voor pijnreductie op korte termijn, met blijvend voordeel na 2 jaar (DiGiovanni et al., 2003 & 2006 — J Bone Joint Surg Am). <strong>Low-Dye taping</strong> geeft consistente kortetermijn pijnreductie (1–4 weken) en overbrugt de latentietijd van actieve therapie (van de Water & Speksnijder, 2010 — J Am Podiatr Med Assoc). De klinische praktijkrichtlijn beveelt de combinatie van <strong>educatie, stretching, taping en belastingsmodulatie</strong> aan als eerstelijnsaanpak (Martin et al., 2014 — JOSPT).'
+    },
+    {
+      label:'Fase 2',
+      title:'High-load krachttraining',
+      weeks:'Week 4–12',
+      goals:[
+        'Progressieve high-load heel raise-training opbouwen volgens het Rathleff-protocol',
+        'Belastbaarheid van fascia en kuit-achillescomplex structureel verhogen',
+        'Ochtendpijn verder reduceren naar NPRS ≤ 2/10',
+        'Voetintrinsieke kracht in belaste positie opbouwen',
+        'Dagelijkse activiteiten (staand werk, wandelen > 45 min) pijnvrij normaliseren'
+      ],
+      exercises:[
+        {name:'Heel raise met handdoek onder de tenen (Rathleff-protocol)',params:[['Sets','3 → 4–5'],['Reps','12RM → 10RM → 8RM'],['Tempo','3 sec op – 2 sec hold – 3 sec neer'],['Freq','om de dag']],note:'Kernoefening: unilaterale heel raise op traptrede met opgerolde handdoek onder de tenen. De teendorsaalflexie spant via het <strong>windlass-mechanisme</strong> de fascia maximaal aan tijdens de belasting. Progressie via rugzak met boeken/gewicht zodra 12 herhalingen vlot lukken. Pijn tot NPRS 5/10 tijdens de oefening is aanvaardbaar mits ochtendpijn de dag nadien niet toeneemt (Rathleff et al., 2015).',cat:'kracht'},
+        {name:'Short foot in stand → eenbenige stand',params:[['Sets','3'],['Reps','10 × 8 sec hold'],['Freq','dagelijks']],note:'Progressie van fase 1: voetboogactivatie in volledige belasting, daarna op één been. Traint abductor hallucis en flexor digitorum brevis als dynamische boogondersteuning. Bewaken: geen teenklauwen, neutrale kniestand.',cat:'neuromusculair'},
+        {name:'Teenflexie met handdoek (towel curls) met gewicht',params:[['Sets','3'],['Reps','15–20'],['Gewicht','0,5–1 kg op handdoek'],['Freq','dagelijks']],note:'Handdoek met de tenen naar zich toe schrapen, verzwaard met klein gewicht. Isoleert de lange en korte teenflexoren die met de fascia de mediale boog ondersteunen. Lage belasting — aanvulling op, geen vervanging van de heel raises.',cat:'kracht'},
+        {name:'Soleus squat (wall sit op voorvoet)',params:[['Sets','3'],['Hold','30–45 sec'],['Freq','3×/week']],note:'Wandzit met hielen los van de grond: isometrische soleusbelasting met gebogen knie. De soleus levert het grootste aandeel in de enkelplantairflexiekracht bij loopstance en ontlast indirect de fascia. Combineerbaar met de heel raise-dagen.',cat:'kracht'},
+        {name:'Excentrische kuitverlaging op trede (gestrekte knie)',params:[['Sets','3'],['Reps','12'],['Tempo','3 sec excentrisch'],['Freq','om de dag, alternerend met Rathleff']],note:'Gastrocnemiusgerichte aanvulling: opduwen met twee benen, verlagen op één been tot onder tredehoogte. Verbetert tegelijk dorsaalflexiemobiliteit onder belasting — het belangrijkste mobiliteitsdeficit bij deze populatie.',cat:'kracht'},
+        {name:'Wandelvolume progressief opbouwen',params:[['Opbouw','30 → 60 min'],['Progressie','≤ 10%/week'],['Monitor','ochtendpijn volgende dag']],note:'Gedoseerde herbelasting van dagelijkse gangfunctie. Ochtendpijn de volgende ochtend is het stopcriterium: stijging > 2 punten NPRS betekent één stap terug in volume. Taping afbouwen zodra 45 min wandelen pijnvrij lukt.',cat:'cardio'}
+      ],
+      criteria_go:[
+        'Unilaterale heel raise met handdoek: 3 × 8 met externe last (rugzak ≥ 10% lichaamsgewicht) uitvoerbaar',
+        'Ochtendpijn NPRS ≤ 2/10 gedurende ≥ 2 opeenvolgende weken',
+        'Wandelen 60 min pijnvrij, ook op harde ondergrond',
+        'Staand werk volledige werkdag zonder pijntoename nadien',
+        'FFI-pijnschaal ≥ 30% verbeterd t.o.v. baseline',
+        'Eenbenige stand met actieve voetboog 30 sec stabiel'
+      ],
+      evidence:'<strong>High-load strength training</strong> via heel raises met handdoek onder de tenen resulteert in een sneller en groter effect op de Foot Function Index na 3 maanden dan plantaire stretching alleen (FFI-verschil 29 punten; Rathleff et al., 2015 — Scand J Med Sci Sports). De handdoek onder de tenen benut het <strong>windlass-mechanisme</strong>: teendorsaalflexie spant de fascia op waardoor de zware belasting een gericht anabole prikkel op het fasciaweefsel geeft. <strong>Progressieve mechanische belasting</strong> stimuleert collageenremodellering in degeneratief peesachtig weefsel, analoog aan de evidentie bij tendinopathie (Rathleff & Thorborg, 2015 — BJSM). Dosering op geleide van <strong>ochtendpijn als monitoringsparameter</strong> laat zelfgedoseerde progressie toe zonder verlies van effectiviteit (Riel et al., 2019 — BJSM).'
+    },
+    {
+      label:'Fase 3',
+      title:'Functionele opbouw & dynamische belasting',
+      weeks:'Week 12–20',
+      goals:[
+        'Kuitkracht symmetrisch: heel raise-capaciteit ≥ 90% van contralaterale zijde',
+        'Elastische en plyometrische voetbelasting progressief introduceren',
+        'Snelwandelen en eerste jog-intervallen pijnvrij uitvoeren',
+        'Voet-enkelcontrole bij eenbenige dynamische taken normaliseren',
+        'FFI-totaalscore ≥ 60% verbeterd t.o.v. baseline'
+      ],
+      exercises:[
+        {name:'Heel raise onderhoud met externe last',params:[['Sets','4'],['Reps','8–10'],['Last','rugzak/dumbbell progressief'],['Freq','2–3×/week']],note:'Voortzetting Rathleff-protocol op onderhoudsfrequentie. Kracht is de basis waarop de plyometrische progressie rust — niet stoppen zodra de pijn daalt. Doel: unilateraal 8 herhalingen met ≥ 15% lichaamsgewicht extern.',cat:'kracht'},
+        {name:'Snelwandelen → jog-walk intervallen',params:[['Schema','1 min jog / 2 min walk × 6–8'],['Ondergrond','vlak, vlak-zacht'],['Freq','3×/week'],['Progressie','joginterval wekelijks +30 sec']],note:'Eerste loopimpact na de krachtfase. Start pas bij ochtendpijn ≤ 1/10 gedurende een week. Monitoring: ochtendpijn volgende dag ≤ 2/10 en binnen 24 u terug naar baseline, anders schema één stap terug.',cat:'cardio'},
+        {name:'Bilaterale pogo-sprongen (laag, elastisch)',params:[['Sets','3'],['Reps','20 contacten'],['Focus','korte grondcontacttijd, verende voet'],['Freq','2×/week']],note:'Eerste plyometrische prikkel: lage verticale huppels met stijve enkelveer. Traint de fascia en achillespees als elastisch opslagsysteem — de functie die bij hardlopen tot 8× lichaamsgewicht verwerkt. Progressie naar unilateraal in week 16–18.',cat:'neuromusculair'},
+        {name:'Eenbenige balanstaken op instabiele ondergrond',params:[['Sets','3'],['Duur','30–45 sec'],['Ondergrond','kussen/balanspad'],['Freq','3×/week']],note:'Proprioceptieve voet-enkeltraining met actieve voetboog (short foot geïntegreerd). Toevoegen van hoofdrotaties of balwerpen verhoogt de moeilijkheid. Ondersteunt schokdemping bij latere loopbelasting.',cat:'stabiliteit'},
+        {name:'Loopband snelwandelen met helling',params:[['Duur','15–20 min'],['Helling','4–8%'],['Tempo','stevig'],['Freq','2×/week']],note:'Hellingwandelen verhoogt de excentrisch-concentrische kuitbelasting en dorsaalflexie-excursie functioneel, als brug tussen vlak wandelen en joggen. Ochtendpijnmonitoring blijft leidend.',cat:'cardio'},
+        {name:'Squat- en lunge-patroon met voetboogcontrole',params:[['Sets','3'],['Reps','10–12'],['Gewicht','matig'],['Freq','2×/week']],note:'Integratie van short foot in meergewrichtspatronen: squat en voorwaartse lunge met behoud van actieve mediale boog en knie boven voet. Herstelt de kinetische keten heup-knie-voet voor sportbelasting.',cat:'kracht'}
+      ],
+      criteria_go:[
+        'Unilaterale heel raise-capaciteit LSI ≥ 90% (aantal herhalingen tot uitputting)',
+        'Jog-walk schema tot 15 min continu joggen pijnvrij (tijdens en 24 u nadien)',
+        'Ochtendpijn NPRS ≤ 1/10 gedurende ≥ 2 weken, ook na loopdagen',
+        'Unilaterale pogo-sprongen 3 × 15 pijnvrij met goede voetcontrole',
+        'FFI-totaalscore ≥ 60% verbeterd of < 20 punten',
+        'Windlass-test (passieve teendorsaalflexie in belasting) negatief of NPRS ≤ 2/10'
+      ],
+      evidence:'De plantaire fascia functioneert bij lopen als onderdeel van het <strong>elastische energieopslagsysteem</strong> van de voet en verwerkt piekkrachten tot 2–3× lichaamsgewicht per stap; graduele plyometrische progressie is nodig om deze capaciteit te herwinnen (Kirby, 2017 — Curr Sports Med Rep). <strong>Krachtbehoud tijdens de functionele fase</strong> is essentieel: het effect van high-load training treedt vooral op tussen 3 en 12 maanden en vereist continuering van het programma (Rathleff et al., 2015 — Scand J Med Sci Sports). <strong>Gestructureerde loophervatting</strong> met graduele volumeprogressie en 24-uurs symptoommonitoring reduceert het risico op herval bij overbelastingsletsels van de onderste ledematen (Nielsen et al., 2014 — JOSPT). De <strong>ochtendpijnscore</strong> blijft in deze fase de meest sensitieve indicator van overschrijding van de weefselbelastbaarheid (Riel et al., 2019 — BJSM).'
+    },
+    {
+      label:'Fase 4',
+      title:'Return to running & sport, recidiefpreventie',
+      weeks:'Week 20+',
+      goals:[
+        'Volledig loopvolume en/of sportspecifieke belasting pijnvrij hervatten',
+        'Sprint-, sprong- en richtingsveranderingsbelasting sportspecifiek opbouwen',
+        'Onderhoudsprogramma kuit- en voetkracht verankeren (≥ 1–2×/week, langdurig)',
+        'Belastingsmonitoring en risicofactormanagement (gewicht, schoeisel, volume) borgen',
+        'FFI < 10 punten en NPRS 0–1/10 bij alle activiteiten'
+      ],
+      exercises:[
+        {name:'Continu hardlopen progressief',params:[['Opbouw','15 → 45–60 min'],['Progressie','≤ 10%/week'],['Terrein','vlak → gevarieerd'],['Freq','3–4×/week']],note:'Opbouw naar doelvolume met de 10%-regel. Eerst frequentie en duur, daarna pas tempo en heuvels. Nieuwe of versleten loopschoenen geleidelijk inlopen — abrupte schoeiselwissel is een klassieke uitlokker van herval.',cat:'cardio'},
+        {name:'Sprint- en tempoloopprogressie',params:[['Sets','6–8'],['Afstand','60–80 m opbouwend naar 90% snelheid'],['Rust','volledig'],['Freq','1–2×/week']],note:'Hoogste fasciabelasting: voorvoetafzet bij hoge snelheid. Pas introduceren na 4 weken pijnvrij continu lopen. Start met opbouwlopen (progressieve acceleratie), daarna vlakke tempoherhalingen.',cat:'cardio'},
+        {name:'Unilaterale sprongmatrix (hinken, bounding, zijwaarts)',params:[['Sets','3 per richting'],['Reps','8–10 contacten'],['Focus','elastisch, stille landing'],['Freq','2×/week']],note:'Sportspecifieke plyometrie in drie richtingen. Hinken voor afstand test en traint de maximale fascia-achillescapaciteit. Voor balsporters: combineren met richtingsverandering en acceleratie-deceleratie.',cat:'neuromusculair'},
+        {name:'Onderhoud heel raise-programma',params:[['Sets','3'],['Reps','8–10 met last'],['Freq','1–2×/week, langdurig']],note:'Levenslange onderhoudsdosis van de Rathleff heel raise (handdoekvariant mag vereenvoudigd naar standaard heel raise met last). Detraining van de kuit-voetkracht is de meest beïnvloedbare hervalfactor bij lopers en staande beroepen.',cat:'kracht'},
+        {name:'Kuit- en fasciamobiliteit onderhoud',params:[['Duur','5 min'],['Timing','na training en bij stijfheidsgevoel'],['Freq','3×/week']],note:'Onderhoud van dorsaalflexiemobiliteit (kuitrek beide varianten) en plantaire stretch. Vooral relevant in periodes van volumestijging of na lange sta-dagen. Ochtendstijfheid > 2 dagen = vroegsignaal, dosering herzien.',cat:'mobiliteit'},
+        {name:'Belastingsmonitoring & risicofactorcheck',params:[['Tool','weeklog volume + ochtendpijnscore'],['Check','schoeisel elke 600–800 km'],['ACWR','< 1,5'],['Freq','wekelijks']],note:'Wekelijkse zelfmonitoring: loopvolume, ochtendpijn, staduur. Bij BMI > 27 blijft gewichtsmanagement een mede-behandeldoel. Terugkeer van startpijn ≥ 3 opeenvolgende ochtenden: volume 20–30% reduceren en heel raise-frequentie tijdelijk verhogen.',cat:'stabiliteit'}
+      ],
+      criteria_go:[
+        'Doelvolume lopen of sporthervatting op preblessureniveau, NPRS 0–1/10 tijdens en 24 u nadien',
+        'Ochtendpijn afwezig (NPRS 0/10) gedurende ≥ 4 opeenvolgende weken',
+        'Heel raise-capaciteit LSI ≥ 95% met externe last',
+        'Unilaterale sprongtesten (hinken voor afstand) LSI ≥ 90%',
+        'Onderhoudsprogramma zelfstandig geïntegreerd in weekroutine',
+        'FFI < 10 punten; patiënt kent vroegsignalen en zelfmanagementstrategie'
+      ],
+      evidence:'<strong>Langetermijnopvolging</strong> toont dat plantaire fasciopathie een traag herstellende aandoening is: 40–50% van patiënten heeft na 1 jaar nog restklachten bij ontoereikende belastingsopbouw, wat het belang van een volgehouden kracht- en monitoringsprogramma onderstreept (Hansen et al., 2018 — Orthop J Sports Med). Het effect van <strong>high-load strength training</strong> is het grootst bij therapietrouw voorbij de symptomatische fase; vroegtijdig stoppen na pijnreductie verhoogt de kans op herval (Rathleff et al., 2015 — Scand J Med Sci Sports). <strong>Graduele volumeprogressie</strong> volgens de 10%-regel en bewaking van de acute:chronische workload verhouding beperken het recidiefrisico bij loopsporten (Nielsen et al., 2014 — JOSPT). Blijvende aandacht voor <strong>modificeerbare risicofactoren</strong> — BMI, staduur, schoeisel en kuitflexibiliteit — vormt de kern van secundaire preventie (Riddle et al., 2003 — J Bone Joint Surg Am).'
+    }
+  ],
+  scores:['FFI','NPRS'],
+  refs:'Rathleff MS et al., 2015 — Scand J Med Sci Sports (high-load strength training) | DiGiovanni BF et al., 2003 & 2006 — J Bone Joint Surg Am (plantaire fascia-specifieke stretching) | Riel H et al., 2019 — BJSM (zelfgedoseerde belasting & ochtendpijnmonitoring) | Martin RL et al., 2014 — JOSPT (klinische praktijkrichtlijn hielpijn/plantaire fasciitis)',
+  spiergroep:'kuit, voetintrinsieke musculatuur'
+};
+
+BESCHRIJVING.pfa = {
+  kenmerken:'<strong>Startpijn bij de eerste stappen</strong> na het opstaan of na langdurig zitten is het pathognomonische symptoom: scherpe, stekende pijn onder de hiel die na enkele minuten stappen afneemt maar terugkeert na langdurige belasting. <strong>Palpatiepijn ter hoogte van de mediale calcaneusknobbel</strong> (origo van de plantaire fascia) bevestigt de klinische diagnose; de <strong>windlass-test</strong> (passieve dorsaalflexie van de grote teen, bij voorkeur in belasting) reproduceert de pijn door het opspannen van de fascia (sensitiviteit stijgt in gewichtdragende positie; De Garceau et al., 2003). Echografie toont een verdikte fascia > 4 mm met hypo-echogeniciteit aan de insertie (McMillan et al., 2009 — J Foot Ankle Res). Pijn is typisch erger op blote voeten, op harde ondergrond en na een sta- of loopdag. FFI en NPRS (ochtendpijnscore) zijn de aanbevolen uitkomstmaten. Differentiaaldiagnostisch uitsluiten: calcaneale stressfractuur (squeeze-test), Baxter-neuropathie (branderige mediale hielpijn) en S1-radiculopathie.',
+  oorzaken:'<strong>Degeneratieve fasciopathie, geen inflammatie</strong>: histologisch onderzoek toont myxoïde degeneratie, collageendisorganisatie en microrupturen zonder inflammatoire cellen — vandaar de correctere term fasciose of fasciopathie in plaats van fasciitis (Lemont et al., 2003 — J Am Podiatr Med Assoc). De pathologie ontstaat door <strong>cumulatieve trekbelasting</strong> op de fascia-origo die de adaptatiecapaciteit van het weefsel overschrijdt. Belangrijkste risicofactoren: <strong>BMI > 27</strong>, <strong>beperkte enkeldorsaalflexie</strong> (kuitstijfheid; sterkste onafhankelijke predictor met odds ratio tot 23 bij dorsaalflexie ≤ 0°) en <strong>langdurig staand beroep</strong> (Riddle et al., 2003 — J Bone Joint Surg Am). Zowel <strong>pes planus</strong> (verhoogde trekspanning via boogdaling) als <strong>pes cavus</strong> (verminderde schokabsorptie) verhogen het risico. De <strong>hielspoor-misvatting</strong>: een calcaneale spoor is bij 15–30% van de asymptomatische bevolking aanwezig, ligt meestal in de flexor digitorum brevis en niet in de fascia, en is geen oorzaak van de pijn noch een behandeldoel (Kirkpatrick et al., 2017 — J Anat). Bij lopers zijn trainingsfouten (plotse volumestijging, schoeiselwissel) de dominante uitlokkende factor.'
+};
+
+protocols.lies = {id:'lies',title:'Adductor-gerelateerde Liespijn',subtitle:'Conservatief revalidatieprotocol voor adductor-gerelateerde groin pain bij sporters — actieve oefentherapie volgens Hölmich met Copenhagen-progressie en criteriumgestuurde return to play',color:'#dc2626',icon:'⚽',
+  phases:[
+    {
+      label:'Fase 1',
+      title:'Acute fase — pijncontrole & belastingsmanagement',
+      weeks:'Week 0–2',
+      goals:[
+        'Liespijn reduceren naar NPRS ≤ 3/10 bij ADL en wandelen via relatieve rust en activiteitenmodificatie',
+        'Provocerende sportbelasting (sprint, kick, richtingsverandering) tijdelijk elimineren zonder volledige immobilisatie',
+        'Pijnvrije isometrische adductoractivatie opstarten als analgetische en belastbaarheidsopbouwende prikkel',
+        'Baseline vastleggen: adductor squeeze test (sfygmomanometer of handdynamometer) en HAGOS-score afnemen',
+        'Patiënt educeren over Doha-terminologie, belastingsprincipes en het verwachte tijdspad van revalidatie'
+      ],
+      exercises:[
+        {name:'Isometrische adductorsqueeze in ruglig (bal tussen knieën)',params:[['Sets','3–5'],['Hold','30–45 sec'],['Intensiteit','pijn ≤ 3/10 (NPRS)'],['Freq','dagelijks']],note:'Bal of vuist tussen de knieën, heupen 45° flexie. Isometrische belasting werkt analgetisch bij tendinopathie-achtige presentaties en behoudt adductorcapaciteit. Intensiteit opbouwen zodra pijn het toelaat.',cat:'kracht'},
+        {name:'Isometrische adductorsqueeze met gestrekte benen (0°)',params:[['Sets','3'],['Hold','30 sec'],['Positie','bal tussen enkels'],['Freq','dagelijks']],note:'Variant met lange hefboom in 0° heupflexie — identiek aan de squeeze-testpositie. Dient tegelijk als oefening én als dagelijkse monitor: dalende squeeze-waarde of stijgende pijn signaleert overbelasting.',cat:'kracht'},
+        {name:'Stationaire fiets (pijnvrij)',params:[['Duur','15–25 min'],['Weerstand','laag'],['Freq','dagelijks']],note:'Cardiovasculair onderhoud zonder adductorprovocatie. Zadel iets hoger instellen om extreme heupflexie-adductiecombinaties te vermijden. Stopcriterium: liespijn > 2/10 tijdens of na fietsen.',cat:'cardio'},
+        {name:'Actieve heupmobilisatie (pijnvrij bewegingsbereik)',params:[['Sets','2'],['Reps','10–15 per richting'],['Richtingen','flexie, abductie, circumductie'],['Freq','2×/dag']],note:'Actieve, onbelaste mobilisatie binnen pijnvrije grenzen. Geen agressieve passieve adductorrek in de acute fase — rekken van pijnlijke adductoren toonde geen meerwaarde in het onderzoek van Hölmich et al. (1999).',cat:'mobiliteit'},
+        {name:'Transversus abdominis / core-activatie in ruglig',params:[['Sets','3'],['Hold','10 sec'],['Reps','10'],['Freq','dagelijks']],note:'Abdominale drawing-in met neutrale lumbopelvische stand. De adductoren en abdominale musculatuur delen de aponeurotische aanhechting op het os pubis — vroege core-activatie ondersteunt de kracht-koppel rond het bekken.',cat:'stabiliteit'},
+        {name:'Gluteale bruggen (bilateraal)',params:[['Sets','3'],['Reps','12–15'],['Tempo','2-1-2'],['Freq','dagelijks']],note:'Heupextensoren activeren zonder adductorprovocatie. Bekken stabiel houden, geen rotatie. Bereidt de lumbopelvische regio voor op de krachtfase. Optioneel bal tussen knieën voor lichte co-activatie adductoren.',cat:'kracht'}
+      ],
+      criteria_go:[
+        'NPRS ≤ 2/10 bij wandelen en ADL gedurende ≥ 3 opeenvolgende dagen',
+        'Adductor squeeze test uitvoerbaar met pijn ≤ 3/10 en zonder krachtsverlies nadien',
+        'Palpatiepijn adductor longus-origo afgenomen (NPRS ≤ 4/10)',
+        'Isometrische squeeze 45 sec vol te houden zonder pijntoename achteraf (24u-regel)',
+        'Fietsen 20 min pijnvrij uitvoerbaar'
+      ],
+      evidence:'De <strong>Doha agreement</strong> classificeert liespijn bij sporters in vier klinische entiteiten (adductor-, iliopsoas-, inguinaal- en pubis-gerelateerd) en definieert adductor-gerelateerde liespijn als palpatiepijn ter hoogte van de adductoren plus pijn bij weerstandsadductie (Weir et al., 2015 — Br J Sports Med). <strong>Actieve oefentherapie</strong> is superieur aan passieve behandeling (massage, rek, fysische modaliteiten): 79% versus 14% succesvolle terugkeer naar sport in de landmark-RCT van Hölmich et al. (1999 — Lancet). De <strong>adductor squeeze test</strong> is een betrouwbare monitor van adductorbelastbaarheid; een daling van de squeeze-waarde of pijnstijging voorspelt dreigende overbelasting en stuurt de dagelijkse belastingsdosering (Delahunt et al., 2011 — J Sci Med Sport). Volledige rust is gecontra-indiceerd: <strong>gedoseerde isometrische belasting</strong> binnen pijngrenzen (≤ 3/10) behoudt spiercapaciteit en versnelt het herstel.'
+    },
+    {
+      label:'Fase 2',
+      title:'Progressieve adductorkracht — Copenhagen-progressie',
+      weeks:'Week 2–6',
+      goals:[
+        'Excentrische adductorkracht progressief opbouwen via de Copenhagen adduction-progressie (short lever → long lever)',
+        'Adductor squeeze-waarde ≥ 80% van baseline of contralaterale referentie bereiken',
+        'Lumbopelvische controle integreren met adductorbelasting in gesloten keten',
+        'Wandelen onbeperkt en joggen in rechte lijn pijnvrij hervatten (NPRS ≤ 2/10)',
+        'Trainingsrespons monitoren via 24-uurs pijnregel en wekelijkse squeeze-test'
+      ],
+      exercises:[
+        {name:'Copenhagen adduction — short lever (knie op bank)',params:[['Sets','2–3'],['Reps','6–10 per zijde'],['Tempo','3 sec excentrisch'],['Freq','3×/week']],note:'Zijlig steunend op onderarm, bovenste KNIE op de bank (korte hefboom): bekken optillen en gecontroleerd zakken. Instapniveau van de Copenhagen-progressie. Spierpijn (DOMS) in de adductoren is normaal; liespijn > 3/10 op de origo niet.',cat:'kracht'},
+        {name:'Copenhagen adduction — long lever (voet/enkel op bank)',params:[['Sets','3'],['Reps','8–12 per zijde'],['Tempo','3 sec excentrisch'],['Freq','3×/week']],note:'Progressie: bovenste ENKEL op de bank (lange hefboom) — sterk verhoogde adductorlast. Pas starten wanneer short lever 3×10 vlot en pijnvrij lukt. Hoogste geregistreerde adductoractiviteit van alle oefenvarianten (Serner et al., 2014).',cat:'kracht'},
+        {name:'Adductie in zijlig met gewicht (onderste been heffen)',params:[['Sets','3'],['Reps','12–15'],['Gewicht','0 → 2–4 kg enkelgewicht'],['Freq','3×/week']],note:'Geïsoleerde concentrische adductortraining uit het Hölmich-programma: onderste been heffen terwijl bovenste been steunt. Lagere instapdrempel dan Copenhagen — geschikt als tussenstap of op hersteldagen.',cat:'kracht'},
+        {name:'Slide-outs / sliding lateral lunge',params:[['Sets','3'],['Reps','8–10 per zijde'],['Hulpmiddel','glijdoek of slider'],['Freq','3×/week']],note:'Gesloten-keten excentrische adductorbelasting: standbeen gebogen, glijbeen zijwaarts uitschuiven en terugtrekken. Traint de adductoren in verlengde positie — functioneel relevant voor de reikwijdte bij tackles en zijwaartse acties.',cat:'kracht'},
+        {name:'Zijplank met adductie (onderste been op bank)',params:[['Sets','3'],['Hold','20–30 sec'],['Progressie','statisch → met heupdip'],['Freq','3×/week']],note:'Combineert laterale core-stabiliteit met isometrische adductorbelasting — de kinetische keten van romp naar adductoren als één functionele eenheid, cruciaal voor krachtoverdracht bij trapbewegingen.',cat:'stabiliteit'},
+        {name:'Joggen in rechte lijn (progressief)',params:[['Duur','10 → 25 min'],['Tempo','rustig, geen versnellingen'],['Progressie','+10% volume/week'],['Freq','2–3×/week']],note:'Loophervatting op vlak terrein zonder richtingsveranderingen of tempowissels. Monitor: NPRS ≤ 2/10 tijdens het lopen én de ochtend nadien; squeeze-waarde mag niet dalen na de loopsessie.',cat:'cardio'}
+      ],
+      criteria_go:[
+        'Copenhagen adduction long lever 3 × 10 per zijde pijnvrij uitvoerbaar',
+        'Adductor squeeze-waarde ≥ 80% van baseline of contralaterale zijde, pijnvrij',
+        'Joggen 25 min in rechte lijn met NPRS ≤ 2/10 tijdens én 24u na de sessie',
+        'Palpatie adductor longus-origo pijnvrij of NPRS ≤ 2/10',
+        'Weerstandsadductie in 0° en 45° heupflexie pijnvrij op maximale kracht',
+        'HAGOS-subschaal pijn en symptomen ≥ 70/100'
+      ],
+      evidence:'Het <strong>actieve oefenprogramma van Hölmich</strong> — progressieve adductorversterking gecombineerd met abdominale en lumbopelvische training — blijft de referentiebehandeling voor langdurige adductor-gerelateerde liespijn: 79% pijnvrije sporthervatting versus 14% met passieve therapie (Hölmich et al., 1999 — Lancet). De <strong>Copenhagen adduction</strong> genereert zeer hoge excentrische adductoractiviteit (EMG tot 108% MVC) en verhoogt de excentrische heupadductiekracht met 35,7% na 8 weken progressieve training (Serner et al., 2014 — Br J Sports Med; Ishøi et al., 2016 — Scand J Med Sci Sports). De progressie van <strong>short lever naar long lever</strong> laat gedoseerde belastingsopbouw toe binnen de pijngrens van 3/10. De <strong>excentrische component</strong> is essentieel: de adductor longus werkt excentrisch tijdens de zwaaifase van de trap en bij het afremmen van richtingsveranderingen — precies de blessuremechanismen die de revalidatie moet nabootsen (Serner et al., 2015 — Br J Sports Med).'
+    },
+    {
+      label:'Fase 3',
+      title:'Sportspecifieke belasting — change of direction & sprint',
+      weeks:'Week 6–10',
+      goals:[
+        'Richtingsveranderingen (change of direction) progressief opbouwen van submaximaal naar maximaal tempo',
+        'Sprintvermogen herstellen via progressief acceleratie- en snelheidswerk (60 → 100%)',
+        'Traptechniek (passing → kicking op kracht) pijnvrij heropbouwen',
+        'Adductorkracht verder verhogen naar ≥ 90% Limb Symmetry Index (LSI)',
+        'Chronische belasting opbouwen richting teamtrainingsvolume zonder pijnreactie (24u-regel)'
+      ],
+      exercises:[
+        {name:'Copenhagen adduction — long lever met verzwaring',params:[['Sets','3'],['Reps','10–12 per zijde'],['Progressie','tempo trager excentrisch / partner-variant'],['Freq','2–3×/week']],note:'Onderhoud en verdere opbouw van excentrische adductorkracht parallel aan het veldwerk. Op zware velddagen reduceren naar 2 sets om cumulatieve adductorlast te bewaken (squeeze-monitor).',cat:'kracht'},
+        {name:'Laterale skater jumps met stick-landing',params:[['Sets','3'],['Reps','8 per zijde'],['Focus','2 sec stabiele landing, knie boven voet'],['Freq','2×/week']],note:'Plyometrische zijwaartse afzet en landing — excentrische adductorbelasting van het afzetbeen bij frontale-vlak bewegingen. Voorbereiding op zijwaartse duels en cutting. Progressie: afstand vergroten, dan reactief zonder pauze.',cat:'neuromusculair'},
+        {name:'Change of direction-parcours (45° → 90° → 180°)',params:[['Sets','4–6 herhalingen per hoek'],['Intensiteit','60% → 100% over 3 weken'],['Rust','volledig herstel tussen reps'],['Freq','2×/week']],note:'Progressie in hoek én snelheid: eerst voorgeprogrammeerde cuts op submaximaal tempo, daarna scherpere hoeken en maximale intensiteit. De plant-fase van de cut belast de adductoren excentrisch — meest voorkomende provocatie, dus laatste progressiestap.',cat:'neuromusculair'},
+        {name:'Progressieve sprinttraining (acceleratie-opbouw)',params:[['Afstand','20–40 m'],['Intensiteit','60 → 80 → 100%'],['Sets','6–8 sprints'],['Freq','2×/week']],note:'Lineaire sprint vóór richtingsverandering hervatten. Geleidelijke intensiteitsopbouw per week; hoogsnelheidslopen is tevens beschermend voor de hamstrings. Volledige recuperatie tussen sprints — kwaliteit boven kwantiteit.',cat:'cardio'},
+        {name:'Traptechniek progressief (pass → wreeftrap op kracht)',params:[['Volume','20 → 60 baltoetsen'],['Progressie','binnenkantpass → halflange pass → schot'],['Freq','2–3×/week']],note:'De trapbeweging is het meest adductorspecifieke gebaar: start met korte binnenkantpasses (hoge adductorlast bij binnenkant!) pas na pijnvrije wreeftrap-opbouw. Monitor liespijn bij de zwaaifase en de follow-through.',cat:'neuromusculair'},
+        {name:'Reactieve agility-drills (onvoorspelbare cuts)',params:[['Duur','10–15 min'],['Type','spiegeldrill, licht- of audiosignaal'],['Intensiteit','oplopend naar wedstrijdtempo'],['Freq','1–2×/week']],note:'Niet-geanticipeerde richtingsveranderingen genereren hogere adductorpieken dan voorgeprogrammeerde cuts — laatste neuromusculaire stap vóór teamtraining. Alleen starten wanneer geplande COD op 100% pijnvrij lukt.',cat:'neuromusculair'}
+      ],
+      criteria_go:[
+        'Sprint 40 m op 100% pijnvrij (NPRS 0–1/10), inclusief acceleratie en deceleratie',
+        'Change of direction 90° en 180° op maximaal tempo pijnvrij uitvoerbaar',
+        'Wreeftrap en binnenkantpass op wedstrijdkracht pijnvrij (NPRS ≤ 1/10)',
+        'Adductorkracht LSI ≥ 90% (handdynamometer, excentrische squeeze)',
+        'Squeeze-waarde stabiel of stijgend na sportspecifieke sessies (24u-controle)',
+        'HAGOS-subschaal sport & recreatie ≥ 75/100'
+      ],
+      evidence:'<strong>Acute adductorletsels</strong> ontstaan vooral tijdens trappen en richtingsveranderingen: de adductor longus is betrokken in 91% van de acute liesletsels bij voetballers, met de kick en de reactieve cut als dominante mechanismen (Serner et al., 2015 — Br J Sports Med). Een <strong>criteriumgestuurde sportspecifieke opbouw</strong> — pas progressie bij pijnvrije uitvoering en stabiele squeeze-waarden — resulteert in veilige terugkeer met een mediaan van enkele weken voor acute letsels en lagere hervalcijfers (Serner et al., 2020 — Am J Sports Med). De <strong>adductor squeeze test</strong> blijft in deze fase de dagelijkse gatekeeper: pijnstijging of krachtdaling na veldtraining wijst op overschrijding van de weefselcapaciteit en vereist volumereductie (Delahunt et al., 2011 — J Sci Med Sport). <strong>Niet-geanticipeerde richtingsveranderingen</strong> produceren hogere adductorbelasting dan geplande cuts en horen daarom achteraan in de progressie.'
+    },
+    {
+      label:'Fase 4',
+      title:'Return to play & recidiefpreventie',
+      weeks:'Week 10–14+',
+      goals:[
+        'Volledige teamtraining hervatten en progressief opbouwen naar wedstrijdminuten (gedeeltelijk → volledig)',
+        'Adductorkracht LSI ≥ 95% behouden via preventief onderhoudsprogramma (Copenhagen)',
+        'Trainingsbelasting monitoren (sRPE/ACWR) om belastingspieken in de opbouwweken te vermijden',
+        'HAGOS-scores normaliseren (alle subschalen ≥ 80/100) en psychologische sporthervattingsbereidheid bevestigen',
+        'Levenslange integratie van adductorpreventie in de wekelijkse trainingsroutine (FIFA 11+ / Copenhagen)'
+      ],
+      exercises:[
+        {name:'Copenhagen adduction — onderhoudsdosis (preventie)',params:[['Sets','2'],['Reps','6–10 long lever per zijde'],['Timing','na training, niet vóór wedstrijd'],['Freq','1–2×/week']],note:'Preventieve onderhoudsdosis na return to play. Eén tot twee sessies per week volstaan om de verworven excentrische adductorkracht te behouden. In-season programmeren na de training om acute vermoeidheid vóór wedstrijden te vermijden.',cat:'kracht'},
+        {name:'Volledige teamtraining (progressieve blootstelling)',params:[['Opbouw','50% → 75% → 100% deelname'],['Duur','2–3 weken opbouw'],['Monitor','squeeze-test 2×/week']],note:'Gefaseerde herintrede: eerst afgebakende delen (rondo, positiespel), daarna volledige duels en wedstrijdvormen. Pas volledige wedstrijdselectie na ≥ 1 week volledige, klachtenvrije teamtraining.',cat:'cardio'},
+        {name:'Wedstrijdsimulatie / kleine partijvormen',params:[['Duur','2 × 15 → 2 × 30 min'],['Intensiteit','wedstrijdtempo met duelcontact'],['Freq','1–2×/week']],note:'Hoogste integrale belasting: onvoorspelbare cuts, tackles, trapacties en duels in vermoeide toestand. Vermoeidheid is een risicofactor — de laatste minuten van de simulatie zijn de meest relevante test.',cat:'neuromusculair'},
+        {name:'Hip thrust & rear foot elevated split squat',params:[['Sets','3'],['Reps','8–10'],['Gewicht','progressief zwaar'],['Freq','2×/week']],note:'Globale onderste-lidmaat kracht rond de heup: sterke heupextensoren en unilaterale beenkracht verminderen de relatieve last op de adductoren bij acceleratie en deceleratie. Onderdeel van het bredere preventiekader.',cat:'kracht'},
+        {name:'Belastingsmonitoring sRPE / ACWR',params:[['Tool','sessie-RPE × duur (AU)'],['ACWR','0,8–1,3 aanhouden'],['Freq','na elke training']],note:'Acute:chronische workload ratio binnen de "sweet spot" houden tijdens de kwetsbare herintredeweken. Plotse weekvolume-pieken zijn een gedocumenteerde risicofactor voor liesherval — geleidelijkheid is de kern van preventie.',cat:'stabiliteit'},
+        {name:'Squeeze-test zelfmonitoring (wekelijks)',params:[['Tool','sfygmomanometer of handdynamometer'],['Positie','45° heupflexie'],['Norm','stabiel t.o.v. individuele baseline'],['Freq','1–2×/week in-season']],note:'Structurele zelfmonitoring in-season: een significante daling van de squeeze-waarde of pijn > 2/10 is een vroeg waarschuwingssignaal — adductorvolume tijdelijk reduceren en Copenhagen-dosis aanpassen vóór klachten escaleren.',cat:'neuromusculair'}
+      ],
+      criteria_go:[
+        'Volledige teamtraining ≥ 1 week klachtenvrij doorlopen (NPRS 0/10, squeeze stabiel)',
+        'Adductorkracht LSI ≥ 95% en squeeze-waarde ≥ baseline van vóór de blessure',
+        'HAGOS alle subschalen ≥ 80/100, inclusief kwaliteit van leven',
+        'Wedstrijdsimulatie met duelcontact en onvoorspelbare cuts pijnvrij op wedstrijdtempo',
+        'Preventief Copenhagen-onderhoudsprogramma 1–2×/week structureel ingepland',
+        'Sporter rapporteert volledige psychologische bereidheid tot competitie (geen bewegingsangst)'
+      ],
+      evidence:'Het <strong>Copenhagen adduction-programma als preventie</strong> reduceert de prevalentie van liesklachten met 41% bij voetballers wanneer het in de warming-up van het FIFA 11+-kader wordt geïntegreerd (Harøy et al., 2019 — Br J Sports Med); een lage onderhoudsdosis van 1×/week volstaat om de verworven excentrische kracht te behouden. <strong>Eerdere liesblessure en verminderde adductorkracht</strong> zijn de sterkste risicofactoren voor herval — structurele krachtmonitoring na return to play is daarom geen luxe maar noodzaak (Whittaker et al., 2015 — Br J Sports Med). <strong>Criteriumgestuurde return to play</strong> op basis van kracht-LSI, pijnvrije sportspecifieke maximaaltests en stabiele squeeze-waarden geeft betere uitkomsten dan tijdgestuurde terugkeer (Serner et al., 2020 — Am J Sports Med). De <strong>HAGOS</strong> (Copenhagen Hip and Groin Outcome Score) is het aanbevolen patiëntgerapporteerde meetinstrument om restklachten en sportparticipatie longitudinaal op te volgen (Thorborg et al., 2011 — Br J Sports Med).'
+    }
+  ],
+  scores:['HAGOS','NPRS'],
+  refs:'Hölmich P et al., 1999 — Lancet (actieve oefentherapie RCT) | Weir A et al., 2015 — Br J Sports Med (Doha agreement) | Serner A et al., 2014 — Br J Sports Med (EMG Copenhagen adduction) | Harøy J et al., 2019 — Br J Sports Med (Adductor Strengthening Programme RCT)',
+  spiergroep:'adductoren, core / buikspieren'
+};
+
+BESCHRIJVING.lies = {
+  kenmerken:'<strong>Adductor-gerelateerde liespijn</strong> volgens de Doha agreement (Weir et al., 2015 — Br J Sports Med): pijn ter hoogte van de <strong>adductor longus-origo</strong> op het os pubis, gecombineerd met palpatiepijn van de adductoren én pijnprovocatie bij weerstandsadductie. De <strong>adductor squeeze test</strong> (isometrische adductie in 0° en 45° heupflexie, gemeten met sfygmomanometer of handdynamometer) reproduceert de herkenbare pijn en objectiveert het krachtsverlies — de test is betrouwbaar als diagnostisch hulpmiddel én als belastingsmonitor (Delahunt et al., 2011). Typische pijnprovocatie bij <strong>sprinten, trappen (kick) en richtingsveranderingen</strong>; in chronische gevallen ook stijfheid na training en pijn bij de eerste stappen &#39;s ochtends. De HAGOS brengt de impact op sport en levenskwaliteit in kaart. Beeldvorming is doorgaans niet vereist voor de klinische diagnose; MRI kan bij acute letsels de graad en exacte locatie bepalen (Serner et al., 2015).',
+  oorzaken:'<strong>Overbelasting of acuut letsel van het adductorcomplex</strong> — vooral de adductor longus (betrokken in 91% van acute liesletsels) — bij sporten met hoge adductorbelasting: voetbal, ijshockey, futsal en rugby, waar repetitief trappen, zijwaartse duels en explosieve richtingsveranderingen de adductoren excentrisch overvragen (Serner et al., 2015 — Br J Sports Med). Belangrijkste risicofactoren: <strong>eerdere liesblessure</strong>, <strong>verminderde adductorkracht</strong> en een lager niveau van sportspecifieke training; plotse pieken in trainingsbelasting (hoge acute:chronische workload) verhogen het risico bijkomend (Whittaker et al., 2015 — Br J Sports Med). Pathofysiologisch gaat het om een enthesopathie/tendinopathie van de gemeenschappelijke aponeurose van adductor longus en rectus abdominis op het os pubis. <strong>Differentiaaldiagnose volgens Doha</strong>: iliopsoas-gerelateerde liespijn (pijn bij weerstandsheupflexie en rek), inguinaal-gerelateerde liespijn (pijn in het lieskanaal, provocatie bij Valsalva/hoesten) en pubis-gerelateerde liespijn (drukpijn op de symfyse); daarnaast steeds heupgewricht (FAI-syndroom, labrum) en gerefereerde lumbale of viscerale pijn uitsluiten.'
+};

@@ -873,6 +873,50 @@ function printPatient(patId) {
 }
 
 // ── THUISOEFENBLAD ──
+// ── BACKUP & HERSTEL ──
+function exportBackup() {
+  const pts = loadPatients();
+  const scores = {};
+  pts.forEach(pt => { scores[pt.id] = getPatientScores(pt.id); });
+  const data = {
+    app: 'KineProtocol', backupVersion: 1, appVersion: (typeof APP_VERSION !== 'undefined' ? APP_VERSION : '?'),
+    date: new Date().toISOString(),
+    patients: pts, scores,
+    favs: JSON.parse(localStorage.getItem('kp_favs') || '[]'),
+  };
+  const blob = new Blob([JSON.stringify(data, null, 1)], {type: 'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'kineprotocol-backup-' + new Date().toISOString().slice(0,10) + '.json';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+}
+
+function importBackupFile(input) {
+  const file = input.files && input.files[0];
+  input.value = '';
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    let data;
+    try { data = JSON.parse(reader.result); } catch(e) { alert('Ongeldig backupbestand (geen geldige JSON).'); return; }
+    if(!data || data.app !== 'KineProtocol' || !Array.isArray(data.patients)) { alert('Dit is geen KineProtocol-backup.'); return; }
+    const huidige = loadPatients().length;
+    if(!confirm(`Backup van ${formatDate(data.date?.slice(0,10)) || '?'} met ${data.patients.length} patiënt(en) terugzetten?\n\nDit VERVANGT de huidige ${huidige} patiënt(en) op dit toestel.`)) return;
+    savePatients(data.patients);
+    Object.keys(localStorage).filter(k => k.startsWith('kp_scores_')).forEach(k => localStorage.removeItem(k));
+    Object.entries(data.scores || {}).forEach(([patId, sc]) => {
+      try { localStorage.setItem('kp_scores_' + patId, JSON.stringify(sc)); } catch(e) {}
+    });
+    if(Array.isArray(data.favs)) localStorage.setItem('kp_favs', JSON.stringify(data.favs));
+    updatePatientBadge();
+    if(typeof buildNav === 'function') buildNav();
+    renderPatientList(); renderDashSummary();
+    alert(`Backup teruggezet: ${data.patients.length} patiënt(en).`);
+  };
+  reader.readAsText(file);
+}
+
 function printOefenblad(patId) {
   const pts = loadPatients();
   const pt = pts.find(p => p.id === patId);

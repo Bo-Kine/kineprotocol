@@ -180,8 +180,60 @@ function showHome() {
   document.getElementById('screen-home').style.display = '';
   document.getElementById('searchInput').value = '';
   setNav('home'); currentProto = null;
+  renderVandaag();
   renderRecent();
   filterFeatured('knie');
+}
+
+// ── VANDAAG: patiënten die aandacht vragen ──
+function renderVandaag() {
+  const el = document.getElementById('vandaag-section');
+  if(!el || typeof loadPatients !== 'function') return;
+  const pts = loadPatients();
+  const alerts = [];
+  const now = Date.now();
+  pts.forEach(pt => {
+    const p = protocols[pt.protoId];
+    if(!p) return;
+    // 1. Geen sessie in > 7 dagen (of nog nooit, > 7 dagen na start)
+    const days = getDaysSinceLastSession(pt);
+    if(days !== null && days > 7) alerts.push({pt, prio: days, icon: '⏰', msg: `geen sessie sinds ${days} dagen`});
+    // 2. Faseduur verstreken → doorstroomcriteria evalueren
+    const phaseIdx = pt.phaseIndex || 0;
+    const ph = p.phases[phaseIdx];
+    const startISO = (pt.phaseHistory || {})[phaseIdx] || pt.startDate;
+    if(ph && startISO && phaseIdx < p.phases.length - 1) {
+      const m = (ph.weeks || '').match(/(\d+)\s*$/) || (ph.weeks || '').match(/(\d+)\+?\s*$/);
+      const maxWkn = m ? parseInt(m[1]) : null;
+      if(maxWkn && !(ph.weeks || '').includes('+')) {
+        const wknInFase = (now - new Date(startISO).getTime()) / 6048e5;
+        if(wknInFase > maxWkn) alerts.push({pt, prio: 5 + wknInFase - maxWkn, icon: '📈', msg: `${ph.label} (${ph.weeks}) verstreken — evalueer doorstroomcriteria`});
+      }
+    }
+    // 3. Laatste uitkomstmaat ouder dan 28 dagen
+    const scores = (typeof getPatientScores === 'function') ? getPatientScores(pt.id) : {};
+    const dates = Object.values(scores).flat().map(s => s.date).filter(Boolean).sort();
+    if(dates.length) {
+      const d = Math.floor((now - new Date(dates[dates.length-1]).getTime()) / 864e5);
+      if(d > 28) alerts.push({pt, prio: 3, icon: '📊', msg: `laatste score ${d} dagen oud — neem uitkomstmaat opnieuw af`});
+    }
+  });
+  if(!alerts.length) { el.style.display = 'none'; return; }
+  alerts.sort((a, b) => b.prio - a.prio);
+  el.style.display = '';
+  el.innerHTML = `<div class="section-label" style="margin:0 0 8px;padding:0;">VANDAAG · ${alerts.length} AANDACHTSPUNT${alerts.length > 1 ? 'EN' : ''}</div>`
+    + alerts.slice(0, 6).map(a => {
+      const color = getProtoColor(a.pt.protoId);
+      return `<div onclick="showPatientDetail('${a.pt.id}')" style="display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-left:3px solid ${color};border-radius:7px;padding:9px 12px;margin-bottom:6px;cursor:pointer;" onmouseover="this.style.borderColor='var(--border2)'" onmouseout="this.style.borderColor='var(--border)';this.style.borderLeftColor='${color}'">
+        <span style="font-size:14px;">${a.icon}</span>
+        <div style="flex:1;min-width:0;">
+          <span style="font-size:12.5px;font-weight:600;">${esc(a.pt.name)}</span>
+          <span style="font-size:11.5px;color:var(--muted);"> — ${a.msg}</span>
+        </div>
+        <span style="font-size:12px;color:var(--muted2);">→</span>
+      </div>`;
+    }).join('')
+    + (alerts.length > 6 ? `<div style="font-size:11px;color:var(--muted2);text-align:center;padding:2px;">+ ${alerts.length - 6} meer in het patiëntendashboard</div>` : '');
 }
 function showProto(id) {
   const p = protocols[id]; if(!p) return;
@@ -211,6 +263,7 @@ function showProto(id) {
   renderPhase(0);
   renderTimeline(0);
   setNav(id);
+  updateFavBtn(id);
   const totalFlags = p.phases.reduce((s,ph) => s + (ph.redflags ? ph.redflags.length : 0), 0);
   const rfCount = document.getElementById('rf-count');
   if(rfCount) rfCount.textContent = totalFlags;
@@ -973,12 +1026,66 @@ function printBlankEvalForm(formId) {
 let libGroupBy = 'regio';
 let libCache = null;
 
-// Basisnaam voor variantengroepering: haakjes en specificaties na —/–/: strippen
+// Gecureerde aliassen: varianten van dezelfde oefening bundelen (géén combo-oefeningen)
+const LIB_ALIAS = {
+  'belastingsmonitoring srpe':'belastingsmonitoring',
+  'clamshell met weerstandsband':'clamshell',
+  'clamshell & heupabductie zijlig':'clamshell',
+  'continu hardlopen progressief':'continu hardlopen',
+  'cryotherapie eerste dorsale compartiment':'cryotherapie',
+  'cryotherapie na activiteit':'cryotherapie',
+  'cryotherapie post-sessie':'cryotherapie',
+  'diafragmatische ademhaling + houdingscorrectie':'diafragmatische ademhaling',
+  'enkel-been balans op schuimmat / bosu':'enkel-been balans',
+  'enkel-been balans op stabiel vlak':'enkel-been balans',
+  'enkel-pompen & beencirkels':'enkel-pompen',
+  'fietsen buiten':'fietsen',
+  'fietsen progressief':'fietsen',
+  'interval throwing program compleet':'interval throwing program',
+  'interval throwing program stap 1':'interval throwing program',
+  'ruglig knie-naar-borst stretch':'knie-naar-borst stretch',
+  'kuitversterking bilateraal':'kuitversterking',
+  'mini-squat bilateraal':'mini-squat',
+  'nordic hamstring curl':'nordic hamstring',
+  'nordic hamstring exercise':'nordic hamstring',
+  'nordic hamstring onderhoud':'nordic hamstring',
+  'onderhoudsprogramma bureauwerker':'onderhoudsprogramma',
+  'onderhoudsprogramma rc':'onderhoudsprogramma',
+  'overhead press met dumbbells':'overhead press',
+  'pesglijden progressief':'pesglijden',
+  'pincetgreep kracht & fijnmotoriek':'pincetgreep kracht',
+  'pols arom flexie/extensie':'pols arom',
+  'pols arom radiale & ulnaire deviatie':'pols arom',
+  'prone er in 90/90 positie':'prone er',
+  'prone y-t-w-l':'prone y/t/w',
+  'prone y':'prone y/t/w',
+  'serratus push-up plus':'push-up plus',
+  'wall push-up plus':'push-up plus',
+  'rhythmic stabilization 90/90° abductie':'rhythmic stabilization',
+  'romanian deadlift licht':'romanian deadlift',
+  'scapulaire retractie & depressie':'scapulaire retractie',
+  'scapulaire retractie + depressie met elastiek':'scapulaire retractie',
+  'scapulaire retractie isometrisch':'scapulaire retractie',
+  'schouderstabilisatie in plankpositie':'schouderstabilisatie',
+  'single leg heel raise test':'single leg heel raise',
+  'single leg squat met gluteusactivatie':'single leg squat',
+  'sportspecifieke training bovenste extremiteit':'sportspecifieke training',
+  'step-up anterieur':'step-up',
+  'transversus abdominis activatie':'transversus abdominis',
+  'wandelen met progressie':'wandelen',
+  'wandelen met tempoprogressie':'wandelen',
+  'wandelen normaal gangpatroon':'wandelen',
+  'wandelen op oneffen terrein':'wandelen',
+  'wandelen progressief':'wandelen',
+};
+
+// Basisnaam voor variantengroepering: haakjes en specificaties na —/–/: strippen, dan aliassen toepassen
 function libBaseKey(name) {
-  return name.toLowerCase()
+  const k = name.toLowerCase()
     .replace(/\(.*?\)/g, ' ')
     .replace(/[—–:].*$/, ' ')
     .replace(/\s+/g, ' ').trim();
+  return LIB_ALIAS[k] || k;
 }
 
 function buildExerciseLibrary() {
@@ -1023,12 +1130,30 @@ function buildExerciseLibrary() {
   return libCache;
 }
 
+let libCatFilter = '';
+const LIB_CATS = [['','Alle'],['kracht','💪 Kracht'],['mobiliteit','🔄 Mobiliteit'],['stabiliteit','⚖ Stabiliteit'],['cardio','🏃 Cardio'],['neuromusculair','🧠 Neuromusculair']];
+
+function renderLibCatChips() {
+  const el = document.getElementById('lib-cat-chips');
+  if(!el) return;
+  el.innerHTML = LIB_CATS.map(([cat, label]) => {
+    const active = libCatFilter === cat;
+    return `<button onclick="setLibCat('${cat}')" style="padding:4px 12px;border-radius:12px;font-size:11px;cursor:pointer;font-family:Geist,sans-serif;border:1px solid ${active ? 'var(--border2)' : 'var(--border)'};background:${active ? 'var(--surface3)' : 'var(--surface2)'};color:${active ? 'var(--text)' : 'var(--muted)'};font-weight:${active ? 600 : 400};">${label}</button>`;
+  }).join('');
+}
+function setLibCat(cat) {
+  libCatFilter = cat;
+  renderLibCatChips();
+  renderLibrary(document.getElementById('lib-search')?.value || '');
+}
+
 function showLibrary() {
   hideAllScreens();
   const el = document.getElementById('screen-library');
   el.style.display = 'flex';
   setNav('library');
   buildExerciseLibrary();
+  renderLibCatChips();
   renderLibrary('');
 }
 
@@ -1049,12 +1174,13 @@ function renderLibrary(query) {
   if(!body) return;
   const lib = buildExerciseLibrary();
   const q = (query || '').toLowerCase().trim();
-  const filtered = q ? lib.filter(ex =>
+  let filtered = q ? lib.filter(ex =>
     ex.name.toLowerCase().includes(q) ||
     ex.regios.some(r => r.toLowerCase().includes(q)) ||
     ex.spieren.some(s => s.spier.toLowerCase().includes(q)) ||
     ex.variants.some(v => v.name.toLowerCase().includes(q) || v.protoTitle.toLowerCase().includes(q) || (v.note && v.note.toLowerCase().includes(q)))
   ) : lib;
+  if(libCatFilter) filtered = filtered.filter(ex => ex.cats.includes(libCatFilter));
 
   // Group
   const groups = {};
@@ -1396,6 +1522,27 @@ window.showPhase = function(i) {
   _origShowPhase(i);
 };
 
+// ── FAVORIETEN ──
+function getFavs() { return JSON.parse(localStorage.getItem('kp_favs') || '[]').filter(id => protocols[id]); }
+function toggleFav(id) {
+  id = id || (currentProto && currentProto.id);
+  if(!id) return;
+  const favs = getFavs();
+  const i = favs.indexOf(id);
+  i >= 0 ? favs.splice(i, 1) : favs.push(id);
+  localStorage.setItem('kp_favs', JSON.stringify(favs));
+  buildNav();
+  updateFavBtn(id);
+  if(currentProto) setNav(currentProto.id);
+}
+function updateFavBtn(id) {
+  const btn = document.getElementById('fav-btn');
+  if(!btn) return;
+  const isFav = getFavs().includes(id);
+  btn.textContent = isFav ? '★ Favoriet' : '☆ Favoriet';
+  btn.style.color = isFav ? '#facc15' : '';
+}
+
 // ── NAVIGATIE GENEREREN (sidebar + bottom sheet) ──
 // Bron: protocols (title/color/phases), REGIO_MAP (groepering), NAV_INFO (badge/duur).
 // Een nieuw protocol is dus zichtbaar zodra het in protocols.js + REGIO_MAP staat.
@@ -1412,6 +1559,9 @@ function buildNav() {
     if(!byRegio[regio]) { byRegio[regio] = []; sections.push(regio); }
     byRegio[regio].push(id);
   };
+  // Favorieten als vastgepinde eerste sectie (altijd open)
+  const favs = getFavs();
+  favs.forEach(id => add(id, '★ Favorieten'));
   Object.keys(REGIO_MAP).forEach(id => { if(protocols[id]) add(id, REGIO_MAP[id]); });
   // Vangnet: protocollen zonder REGIO_MAP-entry komen onder 'Overig' i.p.v. onzichtbaar te blijven
   Object.keys(protocols).forEach(id => { if(!REGIO_MAP[id]) add(id, 'Overig'); });
@@ -1420,8 +1570,9 @@ function buildNav() {
   const openSecs = new Set(JSON.parse(localStorage.getItem('kp_nav_open') || '[]'));
   let sideHtml = '', bsHtml = '';
   sections.forEach(sec => {
+    const isFavSec = sec === '★ Favorieten';
     const secLabel = sec.replace(/&/g, '&amp;');
-    const isOpen = openSecs.has(sec);
+    const isOpen = isFavSec || openSecs.has(sec);
     let itemsHtml = '', bsItemsHtml = '';
     byRegio[sec].forEach(id => {
       const p = protocols[id];
@@ -1430,7 +1581,8 @@ function buildNav() {
       const badge = info.badge || id.toUpperCase();
       const sub = p.phases.length + ' fasen' + (info.duur ? ' · ' + info.duur : '');
       const bg = hexToRgba(p.color, .1);
-      itemsHtml += '<div class="nav-item" id="nav-' + id + '" onclick="showProto(\'' + id + '\')">'
+      // Favorieten-items krijgen geen id (het protocol staat ook in zijn regiosectie; dubbele ids vermijden)
+      itemsHtml += '<div class="nav-item"' + (isFavSec ? '' : ' id="nav-' + id + '"') + ' onclick="showProto(\'' + id + '\')">'
         + '<div class="nav-dot" style="background:' + p.color + '"></div>'
         + '<div style="flex:1"><div class="nav-title">' + naam + '</div><div class="nav-sub">' + sub + '</div></div>'
         + '<span class="nav-badge" style="background:' + bg + ';color:' + p.color + '">' + badge + '</span></div>';
@@ -1467,6 +1619,7 @@ function buildNav() {
 async function initApp() {
   buildNav();
   initSwipe();
+  renderVandaag();
   renderRecent();
   filterFeatured('knie');
   // Try to restore session

@@ -63,7 +63,7 @@ const Physics = (() => {
       label: kind,
     });
     Body.setAngle(body, Math.random() * Math.PI * 2);
-    body.plugin = { tier: tierIdx, kind, sub };
+    body.plugin = { tier: tierIdx, kind, sub, born: performance.now() };
     coins.add(body);
     Composite.add(engine.world, body);
     return body;

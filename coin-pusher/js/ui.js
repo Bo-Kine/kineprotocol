@@ -3,7 +3,7 @@
 /* DOM-laag: HUD, muntkeuze, winkel-modal, toasts. */
 const UI = (() => {
   const ICONS = {
-    coin: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#f2c433"/><circle cx="12" cy="12" r="6.6" fill="none" stroke="#a97b0a" stroke-width="1.8"/><path d="M12 5.2v2M12 16.8v2M5.2 12h2M16.8 12h2" stroke="#a97b0a" stroke-width="1.4"/></svg>',
+    coin: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#d9a441"/><circle cx="12" cy="12" r="9.2" fill="none" stroke="#f4c95d" stroke-width="0.9"/><circle cx="12" cy="12" r="6.6" fill="none" stroke="#8a6420" stroke-width="1.8"/><path d="M12 5.2v2M12 16.8v2M5.2 12h2M16.8 12h2" stroke="#8a6420" stroke-width="1.4"/></svg>',
     bolt: '<svg viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6z" fill="currentColor"/></svg>',
     star: '<svg viewBox="0 0 24 24"><path d="m12 2 3 7 7 .6-5.3 4.6L18.5 21 12 17l-6.5 4 1.8-6.8L2 9.6 9 9z" fill="currentColor"/></svg>',
     shield: '<svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.3 8 11 4.6-1.7 8-6 8-11V5z" fill="currentColor"/></svg>',

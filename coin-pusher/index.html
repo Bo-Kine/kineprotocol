@@ -9,7 +9,11 @@
 </head>
 <body>
   <div id="app">
-    <header class="hud">
+    <header class="marquee">
+      <h1 class="marquee-title">COIN PUSHER <span class="amp">★</span> DELUXE</h1>
+    </header>
+
+    <div class="hud">
       <div class="hud-group">
         <div class="chip balance-chip" id="balance-chip">
           <span class="chip-icon" data-icon="coin"></span>
@@ -19,20 +23,19 @@
           <div class="level-row"><span id="level-label">Niveau 1</span><span id="xp-label"></span></div>
           <div class="xp-bar"><div id="xp-fill"></div></div>
         </div>
-      </div>
-      <h1 class="title">COIN PUSHER <span>DELUXE</span></h1>
-      <div class="hud-group">
         <div class="chip prestige-chip" title="Prestige-multiplier">
           <span class="chip-icon" data-icon="gem"></span>
           <span id="prestige-mult">×1.0</span>
         </div>
         <button class="icon-btn" id="btn-sound" aria-label="Geluid aan/uit"></button>
-        <button class="btn btn-gold" id="btn-shop">Winkel</button>
+        <button class="btn btn-gold" id="btn-shop">Prijzenkast</button>
       </div>
-    </header>
+    </div>
 
     <main class="stage" id="stage">
-      <canvas id="game" width="480" height="760"></canvas>
+      <div class="cabinet">
+        <canvas id="game" width="480" height="760"></canvas>
+      </div>
       <div class="boost-badge hidden" id="boost-badge">⚡ ×2 BOOST — <span id="boost-time">30</span>s</div>
     </main>
 

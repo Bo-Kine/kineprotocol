@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Coin Pusher Deluxe</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10' fill='%23f2c433'/%3E%3Ccircle cx='12' cy='12' r='6.6' fill='none' stroke='%23a97b0a' stroke-width='1.8'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+    <header class="hud">
+      <div class="hud-group">
+        <div class="chip balance-chip" id="balance-chip">
+          <span class="chip-icon" data-icon="coin"></span>
+          <span id="balance">0</span>
+        </div>
+        <div class="level-block">
+          <div class="level-row"><span id="level-label">Niveau 1</span><span id="xp-label"></span></div>
+          <div class="xp-bar"><div id="xp-fill"></div></div>
+        </div>
+      </div>
+      <h1 class="title">COIN PUSHER <span>DELUXE</span></h1>
+      <div class="hud-group">
+        <div class="chip prestige-chip" title="Prestige-multiplier">
+          <span class="chip-icon" data-icon="gem"></span>
+          <span id="prestige-mult">×1.0</span>
+        </div>
+        <button class="icon-btn" id="btn-sound" aria-label="Geluid aan/uit"></button>
+        <button class="btn btn-gold" id="btn-shop">Winkel</button>
+      </div>
+    </header>
+
+    <main class="stage" id="stage">
+      <canvas id="game" width="480" height="760"></canvas>
+      <div class="boost-badge hidden" id="boost-badge">⚡ ×2 BOOST — <span id="boost-time">30</span>s</div>
+    </main>
+
+    <footer class="dock">
+      <div class="tier-select" id="tier-select"></div>
+      <div class="hint" id="hint">Tik of klik op het veld om een munt te laten vallen</div>
+    </footer>
+  </div>
+
+  <div class="modal-overlay hidden" id="modal">
+    <div class="modal">
+      <div class="modal-head">
+        <nav class="tabs">
+          <button class="tab active" data-tab="upgrades">Upgrades</button>
+          <button class="tab" data-tab="achievements">Prestaties</button>
+          <button class="tab" data-tab="prestige">Prestige</button>
+        </nav>
+        <button class="icon-btn" id="btn-close" aria-label="Sluiten"></button>
+      </div>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <div class="toasts" id="toasts"></div>
+
+  <script src="js/vendor/matter.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/physics.js"></script>
+  <script src="js/upgrades.js"></script>
+  <script src="js/progress.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>

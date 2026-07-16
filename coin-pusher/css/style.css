@@ -1,0 +1,377 @@
+/* Coin Pusher Deluxe — donker casino-thema */
+:root {
+  --bg: #0d1220;
+  --panel: #161d31;
+  --panel-2: #1d2540;
+  --line: #2b3557;
+  --text: #e8ecf5;
+  --muted: #93a0bd;
+  --gold: #f2c433;
+  --gold-dark: #a97b0a;
+  --red: #ff5a6e;
+  --green: #7ee08a;
+  --radius: 12px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#app { display: flex; flex-direction: column; height: 100%; }
+
+/* ---------- HUD ---------- */
+.hud {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 14px;
+  background: linear-gradient(180deg, #131a2e, #0f1526);
+  border-bottom: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+.hud-group { display: flex; align-items: center; gap: 10px; }
+
+.title {
+  font-size: 17px;
+  letter-spacing: 2.5px;
+  font-weight: 900;
+  color: var(--text);
+  text-shadow: 0 2px 8px rgba(242, 196, 51, 0.25);
+}
+.title span { color: var(--gold); }
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px 14px 6px 8px;
+  font-weight: 800;
+  font-size: 16px;
+  font-variant-numeric: tabular-nums;
+}
+.chip-icon { width: 22px; height: 22px; display: inline-flex; }
+.chip-icon svg { width: 100%; height: 100%; }
+.prestige-chip { font-size: 13px; color: #b9a5ff; }
+.prestige-chip .chip-icon { width: 16px; height: 16px; color: #b9a5ff; }
+
+.balance-chip.flash-red { animation: flashred 0.5s; }
+@keyframes flashred {
+  0%, 100% { border-color: var(--line); }
+  40% { border-color: var(--red); box-shadow: 0 0 12px rgba(255, 90, 110, 0.5); }
+}
+
+.level-block { min-width: 150px; }
+.level-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 3px;
+}
+.level-row span:first-child { color: var(--text); font-weight: 700; }
+.xp-bar {
+  height: 7px;
+  background: var(--panel-2);
+  border-radius: 99px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+#xp-fill {
+  height: 100%;
+  width: 0;
+  border-radius: 99px;
+  background: linear-gradient(90deg, #7ee08a, #4fc46a);
+  transition: width 0.35s ease;
+}
+
+/* ---------- Knoppen ---------- */
+.btn {
+  border: 0;
+  border-radius: 10px;
+  padding: 9px 16px;
+  font-weight: 800;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.08s, filter 0.15s;
+}
+.btn:active { transform: scale(0.96); }
+.btn:disabled { opacity: 0.42; cursor: not-allowed; }
+
+.btn-gold {
+  background: linear-gradient(180deg, #ffd75e, var(--gold) 45%, #d9a51a);
+  color: #4a3403;
+  box-shadow: 0 2px 8px rgba(242, 196, 51, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+.btn-gold:hover:not(:disabled) { filter: brightness(1.08); }
+.btn-max { background: var(--panel-2); color: var(--green); border: 1px solid var(--line); }
+.btn-danger { background: linear-gradient(180deg, #ff7b8c, var(--red)); color: #4a0710; }
+.btn-ghost { background: transparent; color: var(--muted); border: 1px solid var(--line); }
+
+.icon-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+  color: var(--text);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+.icon-btn svg { width: 100%; height: 100%; }
+.icon-btn:hover { border-color: var(--gold-dark); }
+
+/* ---------- Speelveld ---------- */
+.stage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 0;
+  padding: 6px;
+}
+#game {
+  border-radius: 14px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.55), 0 0 0 1px var(--line);
+  touch-action: none;
+  cursor: pointer;
+}
+
+.boost-badge {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, #ffb35e, #ff8a2b);
+  color: #4a2503;
+  font-weight: 900;
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  box-shadow: 0 4px 16px rgba(255, 155, 61, 0.55);
+  animation: boostpulse 1s infinite alternate;
+  pointer-events: none;
+}
+@keyframes boostpulse { from { transform: translateX(-50%) scale(1); } to { transform: translateX(-50%) scale(1.06); } }
+
+/* ---------- Onderbalk ---------- */
+.dock {
+  padding: 8px 12px 12px;
+  background: linear-gradient(0deg, #131a2e, #0f1526);
+  border-top: 1px solid var(--line);
+}
+.tier-select {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.tier-btn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  background: var(--panel);
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--text);
+  padding: 8px 14px;
+  min-width: 78px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: border-color 0.15s, transform 0.08s;
+}
+.tier-btn:active { transform: scale(0.96); }
+.tier-btn.selected { border-color: var(--gold); box-shadow: 0 0 12px rgba(242, 196, 51, 0.3); }
+.tier-btn.locked { opacity: 0.65; }
+.coin-swatch {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  box-shadow: inset 0 -2px 3px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.4);
+  flex: none;
+}
+.tier-name { font-size: 12px; font-weight: 700; }
+.tier-value { font-size: 11px; color: var(--gold); font-weight: 800; }
+.tier-lock {
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  background: rgba(10, 14, 26, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--gold);
+}
+.tier-lock svg { width: 14px; height: 14px; color: var(--muted); }
+
+.hint {
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 7px;
+}
+
+/* ---------- Modal ---------- */
+.hidden { display: none !important; }
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 8, 16, 0.72);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: 16px;
+}
+.modal {
+  width: min(460px, 100%);
+  max-height: min(640px, 92vh);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6);
+  animation: modalin 0.18s ease;
+}
+@keyframes modalin { from { transform: translateY(14px); opacity: 0; } to { transform: none; opacity: 1; } }
+
+.modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 12px 0;
+}
+.tabs { display: flex; gap: 4px; }
+.tab {
+  background: transparent;
+  border: 0;
+  color: var(--muted);
+  font-weight: 800;
+  font-size: 14px;
+  font-family: inherit;
+  padding: 8px 12px;
+  border-radius: 9px;
+  cursor: pointer;
+}
+.tab.active { color: var(--gold); background: var(--panel-2); }
+
+.modal-body { padding: 12px; overflow-y: auto; }
+
+.shop-sub { font-size: 13px; color: var(--muted); margin: 14px 4px 8px; text-transform: uppercase; letter-spacing: 1px; }
+.shop-intro { font-size: 13px; color: var(--muted); margin: 4px 4px 10px; }
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  margin-bottom: 8px;
+}
+.row-icon { width: 30px; height: 30px; color: var(--gold); flex: none; }
+.row-icon svg { width: 100%; height: 100%; }
+.row-main { flex: 1; min-width: 0; }
+.row-main b { font-size: 14px; display: block; }
+.row-main small { color: var(--muted); font-size: 12px; display: block; margin-top: 1px; }
+
+.pips { display: inline-flex; gap: 3px; margin-top: 5px; }
+.pips i {
+  width: 14px;
+  height: 5px;
+  border-radius: 3px;
+  background: var(--line);
+}
+.pips i.on { background: var(--gold); }
+
+.mini-coin { width: 15px; height: 15px; display: inline-flex; }
+.mini-coin svg { width: 100%; height: 100%; }
+
+.row.ach { opacity: 0.55; }
+.row.ach.done { opacity: 1; border-color: rgba(242, 196, 51, 0.5); }
+.row.ach.done .row-icon { color: var(--gold); }
+.row.ach .row-icon { color: var(--muted); }
+.ach-reward { display: inline-flex; align-items: center; gap: 4px; font-weight: 800; font-size: 13px; color: var(--gold); }
+
+.prestige-panel { text-align: center; padding: 8px 6px; display: flex; flex-direction: column; gap: 12px; align-items: center; }
+.prestige-panel p { font-size: 13.5px; color: var(--muted); line-height: 1.5; max-width: 340px; }
+.prestige-panel p b { color: var(--text); }
+.prestige-gem { width: 44px; height: 44px; color: #b9a5ff; filter: drop-shadow(0 0 12px rgba(185, 165, 255, 0.6)); }
+.prestige-gem svg { width: 100%; height: 100%; }
+.prestige-stats { display: flex; gap: 10px; }
+.prestige-stats div {
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 8px 16px;
+  min-width: 86px;
+}
+.prestige-stats small { display: block; color: var(--muted); font-size: 11px; }
+.prestige-stats b { font-size: 17px; }
+
+/* ---------- Toasts ---------- */
+.toasts {
+  position: fixed;
+  top: 64px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 90;
+  align-items: center;
+  pointer-events: none;
+  width: min(400px, 92vw);
+}
+.toast {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--muted);
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: 13.5px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  animation: toastin 0.25s ease;
+  text-align: center;
+  max-width: 100%;
+}
+.toast-gold { border-left-color: var(--gold); }
+.toast-ach { border-left-color: #b9a5ff; }
+.toast-warn { border-left-color: var(--red); }
+.toast.out { transition: opacity 0.45s, transform 0.45s; opacity: 0; transform: translateY(-8px); }
+@keyframes toastin { from { transform: translateY(-10px); opacity: 0; } to { transform: none; opacity: 1; } }
+
+/* ---------- Klein scherm ---------- */
+@media (max-width: 720px) {
+  .title { display: none; }
+  .level-block { min-width: 110px; }
+  .tier-btn { min-width: 66px; padding: 7px 8px; }
+  .hud { padding: 8px 10px; }
+}

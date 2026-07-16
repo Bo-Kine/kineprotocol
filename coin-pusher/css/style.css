@@ -140,6 +140,7 @@ html, body {
 .level-row {
   display: flex;
   justify-content: space-between;
+  gap: 12px;
   font-size: 11px;
   color: var(--cream-dim);
   margin-bottom: 3px;

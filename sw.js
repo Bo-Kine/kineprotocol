@@ -11,6 +11,7 @@ const PRECACHE = [
   './app.js',
   './patients.js',
   './protocols.js',
+  './plugins.js',
   './manifest.json',
   './bg.webp',
   './icon-72x72.png',

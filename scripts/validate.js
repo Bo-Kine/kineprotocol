@@ -56,6 +56,22 @@ if (/const V = '\d/.test(read('app.js'))) fail('app.js: hardcoded versienummer g
 if (!/src="version\.js"/.test(read('index.html'))) fail('index.html: <script src="version.js"> ontbreekt');
 if (!/'\.\/version\.js'/.test(read('sw.js'))) fail('sw.js: version.js ontbreekt in PRECACHE');
 
+// ── plugin-systeem: correct bedraad zodat protocol-plugins blijven werken ──
+if (!/src="plugins\.js"/.test(read('index.html'))) fail('index.html: <script src="plugins.js"> ontbreekt');
+if (!/'\.\/plugins\.js'/.test(read('sw.js'))) fail('sw.js: plugins.js ontbreekt in PRECACHE');
+{
+  const pl = read('plugins.js');
+  if (!/function registerProtocol\(/.test(pl)) fail('plugins.js: registerProtocol() ontbreekt');
+  // plugins.js moet ná protocols.js geladen worden (het muteert de datamaps).
+  const html = read('index.html');
+  if (html.indexOf('src="plugins.js"') < html.indexOf('src="protocols.js"')) {
+    fail('index.html: plugins.js moet ná protocols.js geladen worden');
+  }
+  if (html.indexOf('src="plugins.js"') > html.indexOf('src="app.js"')) {
+    fail('index.html: plugins.js moet vóór app.js geladen worden');
+  }
+}
+
 // ── resultaat ──
 if (errors.length) {
   console.error(`❌ ${errors.length} probleem(en):`);

@@ -652,8 +652,20 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
     <div class="bs-title">Meer</div>
     <div class="bs-body">
       <button class="bs-action" onclick="closeMoreSheet();showEvalFormsScreen()"><span class="bs-action-icon">🩺</span><span>Klinische Evaluatieformulieren</span></button>
+      <button class="bs-action" onclick="openPluginManager()"><span class="bs-action-icon">🧩</span><span>Protocol-plugins</span></button>
       <button class="bs-action" onclick="closeMoreSheet();document.getElementById('searchInput').focus()"><span class="bs-action-icon">🔍</span><span>Zoeken</span></button>
     </div>
+  </div>
+</div>
+<!-- Protocol-plugins Modal -->
+<div class="kmodal" id="plugin-modal" onclick="if(event.target===this)closePluginManager()">
+  <div class="kmodal-inner" style="max-width:560px;max-height:90vh;">
+    <div class="kmodal-bar">
+      <span style="font-size:16px;">🧩</span>
+      <div class="kmodal-title">Protocol-plugins</div>
+      <button class="kmodal-close" onclick="closePluginManager()">✕</button>
+    </div>
+    <div class="kmodal-body" id="plugin-modal-body"></div>
   </div>
 </div>
 <!-- YouTube Modal -->
@@ -761,6 +773,7 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
 <script src="version.js"></script>
 <script src="protocols.js"></script>
 <script src="patients.js"></script>
+<script src="plugins.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

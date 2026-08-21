@@ -2027,7 +2027,7 @@ protocols.itb = {id:'itb',title:'Iliotibiale Bandsyndroom',subtitle:'Conservatie
 const REGIO_MAP = {
   acl:'Knie & Heup', tka:'Knie & Heup', pfps:'Knie & Heup', pt:'Knie & Heup', gmt:'Knie & Heup', hsi:'Knie & Heup', mcl:'Knie & Heup', pa:'Knie & Heup', itb:'Knie & Heup', thp:'Knie & Heup', men:'Knie & Heup', lies:'Knie & Heup',
   lh:'Lumbaal & Cervicaal', bureau:'Lumbaal & Cervicaal', faz:'Lumbaal & Cervicaal', fbl:'Lumbaal & Cervicaal',
-  rc:'Schouder & Arm', si:'Schouder & Arm', elb:'Schouder & Arm', sup:'Schouder & Arm', fs:'Schouder & Arm',
+  rc:'Schouder & Arm', si:'Schouder & Arm', elb:'Schouder & Arm', sup:'Schouder & Arm', fs:'Schouder & Arm', aslt:'Schouder & Arm',
   at:'Enkel & Voet', enkel:'Enkel & Voet', over:'Enkel & Voet', mtss:'Enkel & Voet', pfa:'Enkel & Voet',
   orif:'Pols & Hand', dq:'Pols & Hand', cts:'Pols & Hand',
 };
@@ -2064,6 +2064,7 @@ const NAV_INFO = {
   men:{naam:'Meniscusletsel', badge:'MEN', duur:'0–26+ wkn'},
   lies:{naam:'Adductor Liespijn', badge:'ADD', duur:'0–14+ wkn'},
   pfa:{naam:'Plantaire Fasciopathie', badge:'PFA', duur:'0–20+ wkn'},
+  aslt:{naam:'Anterosuperieure Labrumscheur', badge:'ASL', duur:'0–24 wkn'},
 };
 
 // ── SPIERGROEP KEYWORD MAPPING ──
@@ -4569,3 +4570,190 @@ BESCHRIJVING.lies = {
   kenmerken:'<strong>Adductor-gerelateerde liespijn</strong> volgens de Doha agreement (Weir et al., 2015 — Br J Sports Med): pijn ter hoogte van de <strong>adductor longus-origo</strong> op het os pubis, gecombineerd met palpatiepijn van de adductoren én pijnprovocatie bij weerstandsadductie. De <strong>adductor squeeze test</strong> (isometrische adductie in 0° en 45° heupflexie, gemeten met sfygmomanometer of handdynamometer) reproduceert de herkenbare pijn en objectiveert het krachtsverlies — de test is betrouwbaar als diagnostisch hulpmiddel én als belastingsmonitor (Delahunt et al., 2011). Typische pijnprovocatie bij <strong>sprinten, trappen (kick) en richtingsveranderingen</strong>; in chronische gevallen ook stijfheid na training en pijn bij de eerste stappen &#39;s ochtends. De HAGOS brengt de impact op sport en levenskwaliteit in kaart. Beeldvorming is doorgaans niet vereist voor de klinische diagnose; MRI kan bij acute letsels de graad en exacte locatie bepalen (Serner et al., 2015).',
   oorzaken:'<strong>Overbelasting of acuut letsel van het adductorcomplex</strong> — vooral de adductor longus (betrokken in 91% van acute liesletsels) — bij sporten met hoge adductorbelasting: voetbal, ijshockey, futsal en rugby, waar repetitief trappen, zijwaartse duels en explosieve richtingsveranderingen de adductoren excentrisch overvragen (Serner et al., 2015 — Br J Sports Med). Belangrijkste risicofactoren: <strong>eerdere liesblessure</strong>, <strong>verminderde adductorkracht</strong> en een lager niveau van sportspecifieke training; plotse pieken in trainingsbelasting (hoge acute:chronische workload) verhogen het risico bijkomend (Whittaker et al., 2015 — Br J Sports Med). Pathofysiologisch gaat het om een enthesopathie/tendinopathie van de gemeenschappelijke aponeurose van adductor longus en rectus abdominis op het os pubis. <strong>Differentiaaldiagnose volgens Doha</strong>: iliopsoas-gerelateerde liespijn (pijn bij weerstandsheupflexie en rek), inguinaal-gerelateerde liespijn (pijn in het lieskanaal, provocatie bij Valsalva/hoesten) en pubis-gerelateerde liespijn (drukpijn op de symfyse); daarnaast steeds heupgewricht (FAI-syndroom, labrum) en gerefereerde lumbale of viscerale pijn uitsluiten.'
 };
+
+// ── PROTOCOL: ANTEROSUPERIEURE LABRUMSCHEUR (v46) ──
+protocols.aslt = {id:'aslt',title:'Anterosuperieure Labrumscheur',subtitle:'Revalidatieprotocol voor anterosuperieur labrumletsel (SLAP-extensie, pulley-laesie) — conservatief met postoperatieve tijdslijnen',color:'#2563eb',icon:'🤾',
+  phases:[
+    {
+      label:'Fase 1',
+      title:'Beschermde fase — pijncontrole & ontlasting bicepsanker',
+      weeks:'Week 0–3',
+      goals:[
+        'NPRS ≤ 3 in rust en bij ADL onder schouderhoogte',
+        'Provocatieposities vermijden: maximale abductie-exorotatie en geforceerde flexie-adductie-endorotatie',
+        'Actieve scapulaire setting zonder compensatoire elevatie',
+        'Behoud van cervicale, elleboog- en polsmobiliteit',
+        'Educatie over belasting van het bicepsanker en slaaphouding'
+      ],
+      exercises:[
+        {name:'Pendulaire oefeningen (Codman)',params:[['Duur','60–90 sec'],['Sets','3'],['Freq','3×/dag']],note:'Passief slingeren met ontspannen arm. Geen actieve zwaai — de romp genereert de beweging.',cat:'mobiliteit'},
+        {name:'Scapulaire setting isometrisch',params:[['Reps','10'],['Hold','5 sec'],['Freq','3×/dag']],note:'Retractie en depressie zonder elevatie van de schoudergordel. Basis voor alle verdere revalidatie.',cat:'stabiliteit'},
+        {name:'Isometrische ER/IR in neutrale positie',params:[['Intensiteit','20–30% MVC'],['Hold','5 sec'],['Reps','10'],['Freq','2×/dag']],note:'Arm in 0° abductie met handdoekrol in de oksel. Strikt pijnvrij — bij pijn de intensiteit halveren.',cat:'kracht'},
+        {name:'Actief-geassisteerde flexie in scapulair vlak',params:[['ROM','tot 90°'],['Reps','10'],['Sets','2'],['Freq','2×/dag']],note:'Scapulair vlak (30° anteflexie) ontlast het anterosuperieure kwadrant. Niet forceren voorbij 90° in deze fase.',cat:'mobiliteit'},
+        {name:'Thoracale extensiemobilisatie over rol',params:[['Reps','10'],['Sets','2'],['Freq','1×/dag']],note:'Thoracale kyfose beperkt scapulaire posterieure kanteling en verhoogt de subacromiale en anterosuperieure belasting.',cat:'mobiliteit'},
+        {name:'Elleboog- en polsmobiliteit zonder bicepsbelasting',params:[['Reps','15'],['Sets','2'],['Freq','2×/dag']],note:'KRITIEK: géén weerstandsflexie van de elleboog of supinatie — beide trekken rechtstreeks aan het bicepsanker.',cat:'mobiliteit'}
+      ],
+      criteria_go:[
+        'NPRS ≤ 3 in rust en bij ADL onder schouderhoogte',
+        'Passieve flexie ≥ 120° pijnvrij',
+        'Exorotatie in neutrale positie ≥ 30°',
+        'Nachtpijn maximaal 1× per nacht',
+        'Scapulaire setting 10× correct uitgevoerd zonder compensatie'
+      ],
+      criteria_stop:[
+        'Pijntoename > 2 NPRS-punten die langer dan 24 uur aanhoudt na een sessie',
+        'Klik- of blokkadefenomeen met acuut functieverlies',
+        'Toenemende apprehensie bij abductie-exorotatie'
+      ],
+      redflags:[
+        'Acute krachtsuitval met distale spierbuik van de biceps (Popeye-teken) — ruptuur lange bicepspees',
+        'Progressieve neurologische uitval of paresthesieën in dermatoom C5–C6',
+        'Sperrende pijn met apprehensie en subluxatiegevoel — glenohumerale instabiliteit',
+        'Nachtpijn met koorts, gewichtsverlies of maligniteit in de voorgeschiedenis'
+      ],
+      evidence:'<strong>Ontlasting van het bicepsanker</strong> is in deze fase bepalend: de lange bicepspees hecht aan op het superieure labrum, waardoor weerstandsflexie van de elleboog en supinatie het letsel rechtstreeks belasten. <strong>Anterosuperieur impingement</strong> ontstaat bij flexie-adductie-endorotatie, waarbij de diepe zijde van de subscapularis en de reflectiepulley tegen de anterosuperieure glenoidrand aanschuren (Gerber &amp; Sebesta, 2000 — JSES). Bij een geassocieerde <strong>pulley-laesie</strong> (SGHL/CHL) is de bicepspees onstabiel in de sulcus; Habermeyer et al. (2004 — JSES) toonden dat deze laesies systematisch samengaan met anterosuperieure labrumpathologie. <strong>Postoperatief</strong> (SLAP-herstel of tenodese) geldt een sling gedurende 3–4 weken en verschuiven alle fasen ongeveer 2 weken; actieve elleboogflexie tegen weerstand blijft dan tot week 8 verboden.'
+    },
+    {
+      label:'Fase 2',
+      title:'ROM-herstel & scapulothoracale controle',
+      weeks:'Week 3–6',
+      goals:[
+        'Volledige pijnvrije actieve elevatie, exorotatie geleidelijk opbouwen',
+        'GIRD reduceren tot < 20° ten opzichte van contralateraal',
+        'Correct scapulohumeraal ritme tot 120° elevatie',
+        'Isometrische cuffbelasting op 70% MVC pijnvrij',
+        'Herstel van proprioceptie in het middenbereik'
+      ],
+      exercises:[
+        {name:'Sleeper stretch (posterieure kapsel)',params:[['Hold','30 sec'],['Reps','3'],['Freq','2×/dag']],note:'Zijlig op de aangedane zijde, scapula gefixeerd tegen de mat. Bij pijn vooraan overschakelen op cross-body adductie.',cat:'mobiliteit'},
+        {name:'Cross-body adductiestretch',params:[['Hold','30 sec'],['Reps','3'],['Freq','2×/dag']],note:'Alternatief voor de sleeper stretch en beter verdragen bij anterosuperieure klachten.',cat:'mobiliteit'},
+        {name:'Serratus anterior wall slide',params:[['Reps','12'],['Sets','3'],['Freq','1×/dag']],note:'Protractie aan het einde van de beweging. Serratuszwakte is een primaire oorzaak van scapulaire dyskinesie.',cat:'stabiliteit'},
+        {name:'Lage rij en scapulaire retractie met elastiek',params:[['Reps','12–15'],['Sets','3'],['Belasting','licht → matig']],note:'Elleboog naast de romp. Focus op middentrapezius en rhomboïden zonder bovenste trapezius-dominantie.',cat:'kracht'},
+        {name:'Exorotatie met elastiek in 0° abductie',params:[['Reps','15'],['Sets','3'],['Freq','5×/week']],note:'Handdoekrol in de oksel verhoogt de supraspinatus- en infraspinatusactivatie en beperkt compensatie.',cat:'kracht'},
+        {name:'Ritmische stabilisatie in scapulair vlak (45°)',params:[['Duur','30 sec'],['Sets','3'],['Freq','3×/week']],note:'Lichte alternerende perturbaties door de therapeut. Herstelt neuromusculaire controle vóór krachtopbouw.',cat:'neuromusculair'}
+      ],
+      criteria_go:[
+        'Actieve flexie ≥ 160° zonder pijnlijke boog',
+        'Exorotatie in 45° abductie ≥ 75% van contralateraal',
+        'GIRD < 20° en totale rotatiebeweging binnen 10° van contralateraal',
+        'Geen zichtbare scapulaire dyskinesie bij 3×10 elevatie',
+        'Exorotatiekracht ≥ 70% van contralateraal, pijnvrij getest',
+        'Negatieve O&#39;Brien-test bij ADL-belasting'
+      ],
+      evidence:'<strong>Scapulaire revalidatie vóór krachtopbouw</strong> is de kern van deze fase: Cools et al. (2014 — Br J Sports Med) beschrijven een gefaseerde aanpak waarbij bewuste scapulaire controle voorafgaat aan belaste oefeningen, met specifieke aandacht voor de verhouding bovenste versus onderste trapezius. <strong>GIRD</strong> (glenohumeral internal rotation deficit) is een modificeerbare risicofactor: Wilk et al. (2011 — Am J Sports Med) vonden bij professionele werpers dat een GIRD ≥ 20° gepaard gaat met een 1,9× hoger blessurerisico en een deficit in totale rotatiebeweging ≥ 5° met een 2,5× hoger risico. <strong>Posterieure kapselstijfheid</strong> verplaatst het glenohumerale rotatiecentrum posterosuperieur en verhoogt daarmee de shear op het superieure labrum.'
+    },
+    {
+      label:'Fase 3',
+      title:'Progressieve kracht & begeleide bicepsbelasting',
+      weeks:'Week 6–12',
+      goals:[
+        'ER/IR-krachtratio ≥ 0,66 herstellen',
+        'Symmetrische actieve ROM inclusief exorotatie in 90° abductie',
+        'Gecontroleerde herintroductie van bicepsbelasting',
+        'Gesloten-keten stabiliteit boven 90° elevatie',
+        'ASES-score ≥ 75'
+      ],
+      exercises:[
+        {name:'Exorotatie/endorotatie met elastiek in 45–90° abductie',params:[['Reps','12–15'],['Sets','3'],['Freq','4×/week']],note:'Progressie van 45° naar 90° abductie zodra de 90/90-positie pijnvrij is. Excentrische fase van 3 seconden.',cat:'kracht'},
+        {name:'Prone Y-T-W',params:[['Reps','10–12'],['Sets','3'],['Freq','3×/week']],note:'Y voor onderste trapezius, T voor middentrapezius, W voor retractie met exorotatie. Laag gewicht, hoge kwaliteit.',cat:'kracht'},
+        {name:'Push-up plus progressie',params:[['Reps','10–12'],['Sets','3'],['Freq','3×/week']],note:'Van muur naar schuine steun naar vlak. Gesloten keten geeft co-contractie en gewrichtscompressie — gunstig bij labrumletsel.',cat:'stabiliteit'},
+        {name:'Bicepscurl progressief',params:[['Start','isometrisch'],['Reps','10–12'],['Sets','3'],['Belasting','30 → 50% 1RM']],note:'Pas starten vanaf week 6 conservatief of week 8 postoperatief. Volgorde: isometrisch → concentrisch → excentrisch. Stop bij pijn > 3/10 in de sulcus.',cat:'kracht'},
+        {name:'Full can in scapulair vlak',params:[['ROM','tot 90°'],['Reps','12'],['Sets','3'],['Belasting','1–3 kg']],note:'Duim omhoog. Superieur aan de empty can-variant door lagere impingementbelasting bij gelijke supraspinatusactivatie.',cat:'kracht'},
+        {name:'Ritmische stabilisatie 90/90 met perturbaties',params:[['Duur','30–45 sec'],['Sets','3'],['Freq','3×/week']],note:'De 90/90-positie repliceert de late cocking-fase. Opbouwen van voorspelbare naar onvoorspelbare perturbaties.',cat:'neuromusculair'}
+      ],
+      criteria_go:[
+        'ER/IR-krachtratio ≥ 0,66 (handheld dynamometrie)',
+        'Exorotatiekracht ≥ 85% van contralateraal',
+        'Volledige symmetrische ROM inclusief exorotatie in 90° abductie',
+        'Pijnvrije bicepscurl 3×10 met 50% van contralaterale 1RM',
+        'ASES-score ≥ 75',
+        'Pijnvrije full can-test tegen weerstand'
+      ],
+      evidence:'De <strong>ER/IR-ratio van 0,66</strong> geldt als drempel voor evenwichtige rotatorenmanchetfunctie; een lagere ratio wijst op relatieve exorotatorzwakte en wordt geassocieerd met overbelasting van de passieve structuren, waaronder het labrum (Cools et al., 2014 — Br J Sports Med). <strong>Gesloten-ketenoefeningen</strong> genereren glenohumerale compressie en co-contractie van de cuff, wat de gewrichtsstabiliteit verhoogt zonder trekbelasting op het labrum. <strong>Herintroductie van bicepsbelasting</strong> gebeurt gefaseerd omdat de lange bicepspees via het anker rechtstreeks op de labrumletsel aangrijpt; postoperatief na SLAP-herstel wordt weerstandsbelasting van de biceps standaard uitgesteld tot week 8. Provencher et al. (2013 — Am J Sports Med) rapporteerden in een prospectieve reeks van 179 type II SLAP-herstellingen een <strong>faalpercentage van 37%</strong>, met leeftijd boven 36 jaar als sterkste voorspeller — bij oudere patiënten verdient tenodese de voorkeur boven herstel.'
+    },
+    {
+      label:'Fase 4',
+      title:'Dynamische stabiliteit, plyometrie & kinetische keten',
+      weeks:'Week 12–18',
+      goals:[
+        'Excentrische controle bij overhead-belasting',
+        'Plyometrische capaciteit boven schouderhoogte pijnvrij',
+        'Integratie van heup- en rompkracht in de kinetische keten',
+        'KJOC-score ≥ 80 bij overhead sporters',
+        'Symmetrische Y-balance upper quarter'
+      ],
+      exercises:[
+        {name:'Plyometrische medicijnbalworpen overhead',params:[['Reps','8–10'],['Sets','3'],['Gewicht','1–3 kg'],['Freq','2×/week']],note:'Progressie van tweehandig naar eenhandig. Korte contacttijd, focus op excentrisch opvangen.',cat:'neuromusculair'},
+        {name:'Excentrische exorotatie in 90/90',params:[['Reps','10'],['Sets','3'],['Tempo','3 sec excentrisch']],note:'Repliceert de deceleratiefase van het werpen — de fase met de hoogste distractiekracht op het labrum.',cat:'kracht'},
+        {name:'Pallof press en side plank met rotatie',params:[['Reps','10 per zijde'],['Sets','3'],['Freq','3×/week']],note:'Antirotatoire rompcontrole. Rompzwakte verhoogt compensatoire schouderbelasting bij overhead sporters.',cat:'stabiliteit'},
+        {name:'Éénbeens Romanian deadlift',params:[['Reps','8–10 per been'],['Sets','3']],note:'Heup- en rompkracht vormen de basis van de kinetische keten; het merendeel van de werpenergie komt uit onderste extremiteit en romp.',cat:'kracht'},
+        {name:'Landmine press',params:[['Reps','8–10'],['Sets','3'],['Belasting','progressief']],note:'Semi-verticale duwbeweging in het scapulair vlak — veiliger dan strikte overhead press bij anterosuperieure klachten.',cat:'kracht'},
+        {name:'Oscillerende stabilisatie boven schouderhoogte',params:[['Duur','30 sec'],['Sets','3'],['Freq','3×/week']],note:'Bodyblade of vergelijkbaar. Hoogfrequente perturbaties trainen reflexmatige cuff-activatie.',cat:'neuromusculair'}
+      ],
+      criteria_go:[
+        'KJOC-score ≥ 80 (overhead sporters)',
+        'Exorotatiekracht ≥ 90% en endorotatiekracht ≥ 95% van contralateraal',
+        'Pijnvrije plyometrie 3×10 boven schouderhoogte',
+        'Negatieve provocatietesten: O&#39;Brien, biceps load II en Speed',
+        'Y-balance upper quarter met asymmetrie ≤ 4 cm',
+        'Verschil in totale rotatiebeweging < 5° ten opzichte van contralateraal'
+      ],
+      evidence:'<strong>De deceleratiefase van het werpen</strong> genereert distractiekrachten tot circa 1,0–1,5× het lichaamsgewicht op het glenohumerale gewricht, waarbij de lange bicepspees het superieure labrum belast — daarom is excentrische exorotatietraining in 90/90 de sleutel van deze fase. <strong>Kinetische keten</strong>: bij een correcte werpbeweging komt de meerderheid van de energie uit de onderste extremiteit en de romp; tekorten in heup- en rompcontrole verschuiven de belasting naar de schouder en verhogen het recidiefrisico. <strong>Plyometrie</strong> herstelt de stretch-shortening capaciteit die nodig is voor overhead sport en vormt de brug tussen krachttraining en sportspecifieke belasting. Bij overhead sporters is de <strong>KJOC-score</strong> (Alberta et al., 2010 — Am J Sports Med) gevoeliger voor restklachten dan algemene schoudervragenlijsten, omdat die laatste bij sporters vaak een plafondeffect vertonen.'
+    },
+    {
+      label:'Fase 5',
+      title:'Return to sport & recidiefpreventie',
+      weeks:'Week 18–24',
+      goals:[
+        'Volledig interval throwing of interval serve programma pijnvrij doorlopen',
+        'Volledige sportspecifieke belasting hervatten',
+        'Onderhoudsprogramma cuff en scapula verankeren',
+        'KJOC ≥ 90 en ASES ≥ 90',
+        'Belastingsmonitoring geïmplementeerd'
+      ],
+      exercises:[
+        {name:'Interval throwing program',params:[['Freq','3×/week'],['Rust','minimaal 1 dag tussen sessies'],['Progressie','fasegebaseerd']],note:'Start op 45 voet en bouw afstand op vóór intensiteit. Bij pijn één stap terugvallen, niet doorzetten.',cat:'neuromusculair'},
+        {name:'Sportspecifieke techniekcorrectie',params:[['Duur','20–30 min'],['Freq','2×/week']],note:'Werp- of servemechanica met videofeedback. Hyperangulatie en late romprotatie verhogen de labrumbelasting.',cat:'neuromusculair'},
+        {name:'Onderhoudsprogramma cuff en scapula',params:[['Reps','15'],['Sets','2–3'],['Freq','2×/week']],note:'Levenslang aanhouden bij overhead sporters. Compliance is de sterkste voorspeller van recidiefpreventie.',cat:'kracht'},
+        {name:'Sleeper stretch onderhoud',params:[['Hold','30 sec'],['Reps','3'],['Freq','dagelijks']],note:'GIRD keert terug binnen enkele weken zonder onderhoud, zeker in het competitieseizoen.',cat:'mobiliteit'},
+        {name:'Belastingsmonitoring sRPE',params:[['Freq','elke sessie'],['Doel','ACWR 0,8–1,3']],note:'Sessie-RPE × duur. Een acute:chronische belastingsratio boven 1,5 verhoogt het blessurerisico aanzienlijk.',cat:'test'},
+        {name:'Plyometrie onderhoud',params:[['Reps','8–10'],['Sets','2'],['Freq','1–2×/week']],note:'Behoudt de excentrische capaciteit tijdens het seizoen zonder extra vermoeidheid te stapelen.',cat:'neuromusculair'}
+      ],
+      criteria_go:[
+        'KJOC-score ≥ 90 en ASES-score ≥ 90',
+        'ER/IR-ratio ≥ 0,66 met exorotatiekracht ≥ 95% van contralateraal',
+        'Volledig interval programma pijnvrij doorlopen',
+        'GIRD < 20° en verschil in totale rotatiebeweging < 5°',
+        'Geen apprehensie of pijn bij maximale abductie-exorotatie',
+        'Volledige sportspecifieke training zonder klachten de volgende dag'
+      ],
+      evidence:'<strong>Conservatief beleid slaagt bij een aanzienlijk deel van de patiënten</strong>: Edwards et al. (2010 — Am J Sports Med) behandelden SLAP-letsels niet-operatief en zagen bij ongeveer de helft van de patiënten voldoende verbetering om chirurgie te vermijden, waarvan 71% terugkeerde naar het vorige sportniveau — een niet-operatieve proefperiode van minstens drie maanden is dus verantwoord bij niet-mechanische klachten. <strong>Criteriumgebaseerde in plaats van tijdgebaseerde return to sport</strong> is de standaard: het interval throwing program bouwt eerst afstand op en pas daarna intensiteit. <strong>Onderhoud</strong> is essentieel omdat zowel GIRD als scapulaire dyskinesie binnen weken terugkeren zonder continue training. Bij aanhoudende mechanische klachten (blokkeren, haken, pijn bij elke worp) ondanks correcte revalidatie is heroverweging van beeldvorming en chirurgisch advies aangewezen.'
+    }
+  ],
+  scores:[],
+  refs:'Gerber C &amp; Sebesta A (2000). Impingement of the deep surface of the subscapularis tendon and the reflection pulley on the anterosuperior glenoid rim. J Shoulder Elbow Surg 9(6):483-90 | Habermeyer P et al. (2004). Anterosuperior impingement of the shoulder as a result of pulley lesions: a prospective arthroscopic study. J Shoulder Elbow Surg 13(1):5-12 | Rao AG et al. (2003). Anatomical variants in the anterosuperior aspect of the glenoid labrum. J Bone Joint Surg Am 85(4):653-9 | Edwards SL et al. (2010). Nonoperative treatment of superior labrum anterior posterior tears. Am J Sports Med 38(7):1456-61 | Wilk KE et al. (2011). Correlation of glenohumeral internal rotation deficit and total rotational motion to shoulder injuries in professional baseball pitchers. Am J Sports Med 39(2):329-35 | Cools AM et al. (2014). Rehabilitation of scapular dyskinesis: from the office worker to the elite overhead athlete. Br J Sports Med 48(8):692-7 | Provencher MT et al. (2013). A prospective analysis of 179 type 2 superior labrum anterior and posterior repairs. Am J Sports Med 41(4):880-6',
+  spiergroep:'Rotatorenmanchet'
+};
+
+BESCHRIJVING.aslt = {
+  kenmerken:'<strong>Diepe anterosuperieure schouderpijn</strong> die typisch optreedt bij flexie-adductie-endorotatie (reiken naar de tegenovergestelde schouder, achterin de wagen grijpen) en bij maximale abductie-exorotatie bij overhead sporters. Kenmerkend zijn <strong>mechanische klachten</strong>: klikken, haken of een kortstondig blokkadegevoel, vaak samen met pijn in de sulcus intertubercularis bij bicepsbelasting. Krachtsverlies en verlies van werpsnelheid of controle (het zogenaamde dead arm-gevoel) zijn frequent bij sporters. <strong>Klinisch testen</strong>: de O&#39;Brien actieve compressietest, biceps load II, Speed- en Yergason-test en de anterior slide test; geen enkele test is op zichzelf voldoende specifiek, waardoor een testcluster in combinatie met het klachtenpatroon noodzakelijk is. <strong>Beeldvorming</strong>: MR-artrografie, bij voorkeur met ABER-positionering, is de referentiestandaard, maar kent een hoog vals-positief risico in dit specifieke kwadrant. Nachtpijn bij liggen op de aangedane zijde en pijn bij bovenhands werken zijn de meest gerapporteerde functionele beperkingen.',
+  oorzaken:'<strong>Traumatisch</strong>: val op de uitgestrekte arm, plotse tractie aan de arm, geforceerde abductie-exorotatie of een onverwachte excentrische bicepscontractie. <strong>Overbelasting</strong>: repetitieve overhead-belasting bij werpers, tennissers, volleyballers en zwemmers, waarbij de distractiekrachten in de deceleratiefase het superieure labrum via het bicepsanker belasten. <strong>Anterosuperieur impingement</strong> ontstaat wanneer de diepe zijde van de subscapularispees en de reflectiepulley bij flexie-adductie-endorotatie tegen de anterosuperieure glenoidrand aanschuren (Gerber &amp; Sebesta, 2000 — JSES). Er bestaat een sterke associatie met <strong>pulley-laesies</strong> van het rotatorenmanchetinterval (SGHL/CHL) en met letsel van de bovenrand van de subscapularis; Habermeyer et al. (2004 — JSES) beschreven deze combinatie prospectief arthroscopisch. <strong>KRITIEKE VALKUIL</strong>: het anterosuperieure kwadrant is precies de zone van normale anatomische varianten — het sublabraal foramen en het Buford complex (cordvormig middelste glenohumeraal ligament met afwezig anterosuperieur labrum) komen samen bij ongeveer 13% van de schouders voor (Rao et al., 2003 — JBJS). Deze varianten worden regelmatig als scheur geïnterpreteerd, terwijl hechten of debrideren ervan een ernstige bewegingsbeperking veroorzaakt. <strong>Modificeerbare risicofactoren</strong>: GIRD, tekort in totale rotatiebeweging, scapulaire dyskinesie, verminderde exorotatorkracht en onvoldoende heup- en rompcontrole in de kinetische keten.'
+};
+
+SCORES.aslt = [
+  {name:'ASES', full:'American Shoulder and Elbow Surgeons Score', max:100, unit:'punten', ranges:[
+    {label:'Goed', min:90, max:100, color:'#22c55e'},
+    {label:'Matig', min:70, max:89, color:'#f59e0b'},
+    {label:'Slecht', min:0, max:69, color:'#ef4444'}
+  ], rts:'≥ 90 voor RTS', mcid:6.4},
+  {name:'KJOC', full:'Kerlan-Jobe Orthopaedic Clinic Score (overhead sporters)', max:100, unit:'punten', ranges:[
+    {label:'Klachtenvrij spelend', min:90, max:100, color:'#22c55e'},
+    {label:'Spelend met klachten', min:70, max:89, color:'#f59e0b'},
+    {label:'Beperkt / niet spelend', min:0, max:69, color:'#ef4444'}
+  ], rts:'≥ 90 voor RTS', mcid:null},
+  {name:'GIRD', full:'Glenohumeral Internal Rotation Deficit (verschil met contralateraal)', max:60, unit:'graden', invert:true, ranges:[
+    {label:'Normaal', min:0, max:15, color:'#22c55e'},
+    {label:'Aandachtspunt', min:16, max:20, color:'#f59e0b'},
+    {label:'Verhoogd risico', min:21, max:60, color:'#ef4444'}
+  ], rts:'< 20° voor RTS', mcid:null}
+];

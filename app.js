@@ -247,19 +247,22 @@ function showProto(id) {
   document.getElementById('proto-dot').style.background = p.color;
   document.documentElement.style.setProperty('--proto-color', p.color);
 
-  // Tabs: fasen + Scores + Referenties
+  // Tabs: fasen + Aandoening + Manuele therapie + Scores + Formulieren + Referenties.
+  // Elke tab draagt data-tab; activeren gebeurt op naam (setActiveTab) i.p.v. op
+  // een herberekende index — dat laatste liep uit de pas zodra er een tab bijkwam.
   const tabs = document.getElementById('proto-tabs');
   const hasScores = SCORES[id] && SCORES[id].length > 0;
   const tabsHtml = p.phases.map((ph,i) => {
     const cls = i===0 ? 'vtab active' : 'vtab';
-    return '<div class="' + cls + '" onclick="showPhase(' + i + ')">' + ph.label + '</div>';
+    return '<div class="' + cls + '" data-tab="fase-' + i + '" onclick="showPhase(' + i + ')">' + ph.label + '</div>';
   }).join('');
-  const scoresTab = hasScores ? '<div class="vtab" onclick="showScores(\'' + id + '\')"> Scores</div>' : '';
+  const scoresTab = hasScores ? '<div class="vtab" data-tab="scores" onclick="showScores(\'' + id + '\')"> Scores</div>' : '';
   const protoForms = Object.entries(FORMS).filter(([k,f]) => f.protocol === id);
-  const formsTab = protoForms.length ? '<div class="vtab" onclick="showFormsTab(\'' + id + '\')">📝 Formulieren</div>' : '';
-  const refsTab = '<div class="vtab" onclick="showRefs(\'' + id + '\')">Referenties</div>';
-  const infoTab = BESCHRIJVING[id] ? '<div class="vtab" onclick="showBeschrijving(\'' + id + '\')">🔬 Aandoening</div>' : '';
-  tabs.innerHTML = tabsHtml + infoTab + scoresTab + (typeof formsTab !== 'undefined' ? formsTab : '') + refsTab;
+  const formsTab = protoForms.length ? '<div class="vtab" data-tab="forms" onclick="showFormsTab(\'' + id + '\')">📝 Formulieren</div>' : '';
+  const refsTab = '<div class="vtab" data-tab="refs" onclick="showRefs(\'' + id + '\')">Referenties</div>';
+  const infoTab = BESCHRIJVING[id] ? '<div class="vtab" data-tab="info" onclick="showBeschrijving(\'' + id + '\')">🔬 Aandoening</div>' : '';
+  const manueelTab = MANUEEL[id] ? '<div class="vtab" data-tab="manueel" onclick="showManueel(\'' + id + '\')">🤲 Manuele therapie</div>' : '';
+  tabs.innerHTML = tabsHtml + infoTab + manueelTab + scoresTab + formsTab + refsTab;
   renderPhase(0);
   renderTimeline(0);
   setNav(id);
@@ -271,25 +274,25 @@ function showProto(id) {
   const bbBtn = document.getElementById('beslisboom-btn');
   if(bbBtn) bbBtn.style.display = BESLISBOOM[id] ? 'flex' : 'none';
 }
+// Markeert de tab met deze data-tab-naam als actief
+function setActiveTab(name) {
+  document.querySelectorAll('.vtab').forEach(t => t.classList.toggle('active', t.dataset.tab === name));
+}
 function showPhase(i) {
-  document.querySelectorAll('.vtab').forEach((t,j) => t.classList.toggle('active', j===i));
+  setActiveTab('fase-' + i);
   renderPhase(i);
   renderTimeline(i);
   document.getElementById('viewer-scroll').scrollTop = 0;
 }
 function showRefs(id) {
   const p = protocols[id];
-  const b = BESCHRIJVING[id];
-  const tabCount = p.phases.length + (b ? 1 : 0) + (SCORES[id]?.length ? 1 : 0);
-  document.querySelectorAll('.vtab').forEach((t,j) => t.classList.toggle('active', j===tabCount));
+  setActiveTab('refs');
   document.getElementById('proto-body').innerHTML = `<div class="ref-box"><div class="ref-label">Sleutelreferenties</div><div class="ref-text">${(p.refs||'').split('|').map(r=>`<div style="margin-bottom:10px">${r.trim()}</div>`).join('')}</div></div>`;
 }
 
 function showBeschrijving(id) {
-  const p = protocols[id];
   const b = BESCHRIJVING[id]; if(!b) return;
-  const tabCount = p.phases.length;
-  document.querySelectorAll('.vtab').forEach((t,j) => t.classList.toggle('active', j===tabCount));
+  setActiveTab('info');
   document.getElementById('proto-body').innerHTML = `
     <div class="ev-box" style="margin-bottom:14px;">
       <div class="ev-label" style="display:flex;align-items:center;gap:7px;">🩺 Klinische kenmerken & presentatie</div>
@@ -299,6 +302,42 @@ function showBeschrijving(id) {
       <div class="ev-label" style="display:flex;align-items:center;gap:7px;">⚙️ Etiologie & oorzaken</div>
       <div class="ev-text" style="line-height:1.7">${b.oorzaken}</div>
     </div>`;
+  document.getElementById('viewer-scroll').scrollTop = 0;
+}
+
+// ── MANUELE THERAPIE TAB ──
+function showManueel(id) {
+  const m = MANUEEL[id]; if(!m) return;
+  setActiveTab('manueel');
+  const color = (protocols[id] || {}).color || 'var(--muted)';
+
+  const technieken = (m.technieken || []).map(t => `
+    <div class="mt-card">
+      <div class="mt-head">
+        <div class="mt-naam">${t.naam}</div>
+        ${t.fase ? `<span class="mt-fase" style="background:${hexToRgba(color,.12)};color:${color};border-color:${hexToRgba(color,.28)}">${t.fase}</span>` : ''}
+      </div>
+      ${t.doel ? `<div class="mt-rij"><span class="mt-label">Doel</span><span class="mt-tekst">${t.doel}</span></div>` : ''}
+      ${t.uitvoering ? `<div class="mt-rij"><span class="mt-label">Uitvoering</span><span class="mt-tekst">${t.uitvoering}</span></div>` : ''}
+      ${t.dosering ? `<div class="mt-rij"><span class="mt-label">Dosering</span><span class="mt-tekst mt-dosering">${t.dosering}</span></div>` : ''}
+      ${t.let_op ? `<div class="mt-letop">⚠ ${t.let_op}</div>` : ''}
+    </div>`).join('');
+
+  document.getElementById('proto-body').innerHTML = `
+    ${m.intro ? `<div class="ev-box" style="margin-bottom:16px;">
+      <div class="ev-label" style="display:flex;align-items:center;gap:7px;">🤲 Rol van manuele therapie</div>
+      <div class="ev-text" style="line-height:1.7">${m.intro}</div>
+    </div>` : ''}
+    <div class="slabel">Technieken · ${(m.technieken || []).length}</div>
+    <div class="mt-grid">${technieken}</div>
+    ${(m.contraindicaties || []).length ? `<div class="rf-box" style="margin-top:18px;">
+      <div class="rf-label">Contra-indicaties & voorzorgen</div>
+      <ul class="rf-list">${m.contraindicaties.map(c => `<li>${c}</li>`).join('')}</ul>
+    </div>` : ''}
+    ${m.evidentie ? `<div class="ev-box" style="margin-top:16px;">
+      <div class="ev-label">Evidentie</div>
+      <div class="ev-text" style="line-height:1.7">${m.evidentie}</div>
+    </div>` : ''}`;
   document.getElementById('viewer-scroll').scrollTop = 0;
 }
 
@@ -338,8 +377,7 @@ function renderTimeline(activeIdx) {
 // ── SCORES TAB ──
 function showFormsTab(protoId) {
   const p = protocols[protoId];
-  const tabCount = p.phases.length + (SCORES[protoId]?.length ? 1 : 0);
-  document.querySelectorAll('.vtab').forEach((t,j) => t.classList.toggle('active', j===tabCount));
+  setActiveTab('forms');
   const protoForms = Object.entries(FORMS).filter(([k,f]) => f.protocol === protoId);
   const color = p.color;
   let html = '<div class="slabel">Testformulieren — ' + p.title + '</div>';
@@ -360,8 +398,7 @@ function showFormsTab(protoId) {
 
 function showScores(id) {
   const p = protocols[id];
-  const tabCount = p.phases.length;
-  document.querySelectorAll('.vtab').forEach((t,j) => t.classList.toggle('active', j===tabCount));
+  setActiveTab('scores');
   const scores = SCORES[id] || [];
   let html = `<div class="slabel">Uitkomstmaten — ${p.title}</div>`;
   html += `<div class="scores-grid">`;
@@ -1360,7 +1397,7 @@ function handleSearch(q) {
     return s;
   };
 
-  const protoRes = [], condRes = [], detailRes = [], patRes = [];
+  const protoRes = [], condRes = [], mtRes = [], detailRes = [], patRes = [];
   Object.values(protocols).forEach(p => {
     const info = NAV_INFO[p.id] || {};
     const protoHay = [p.title, p.subtitle || '', strip(info.naam || ''), info.badge || ''].join(' ').toLowerCase();
@@ -1370,6 +1407,15 @@ function handleSearch(q) {
       const kt = strip(b.kenmerken), ot = strip(b.oorzaken);
       if(kt.toLowerCase().includes(ql)) condRes.push({p, bron: 'Kenmerken', snippet: excerpt(kt, 140)});
       else if(ot.toLowerCase().includes(ql)) condRes.push({p, bron: 'Oorzaken', snippet: excerpt(ot, 140)});
+    }
+    const m = MANUEEL[p.id];
+    if(m) {
+      (m.technieken || []).forEach(t => {
+        const hay = [t.naam, t.doel || '', t.uitvoering || ''].join(' ');
+        if(strip(hay).toLowerCase().includes(ql)) mtRes.push({p, naam: t.naam, fase: t.fase || '', doel: strip(t.doel || '')});
+      });
+      if(!mtRes.some(r => r.p.id === p.id) && strip(m.intro || '').toLowerCase().includes(ql))
+        mtRes.push({p, naam: 'Rol van manuele therapie', fase: '', doel: excerpt(strip(m.intro), 140)});
     }
     p.phases.forEach((ph, pi) => {
       ph.exercises.forEach(ex => {
@@ -1389,7 +1435,7 @@ function handleSearch(q) {
   }
 
   const el = document.getElementById('search-results');
-  const total = protoRes.length + condRes.length + detailRes.length + patRes.length;
+  const total = protoRes.length + condRes.length + mtRes.length + detailRes.length + patRes.length;
   if(!total) { el.innerHTML = `<div class="no-results">Geen resultaten voor "<strong style="color:var(--text)">${esc(q)}</strong>"</div>`; return; }
 
   const card = (onclick, inner) => `<div onclick="${onclick}" style="background:var(--surface);border:1px solid var(--border);border-radius:7px;padding:12px 14px;margin-bottom:8px;cursor:pointer;" onmouseover="this.style.borderColor='var(--border2)'" onmouseout="this.style.borderColor='var(--border)'">${inner}</div>`;
@@ -1423,6 +1469,17 @@ function handleSearch(q) {
         <span style="font-size:10px;color:var(--muted2);font-family:Geist Mono,monospace">🔬 ${r.bron}</span>
       </div>
       <div style="font-size:11.5px;color:var(--muted);line-height:1.5">${esc(r.snippet)}</div>`)).join('');
+  }
+  if(mtRes.length) {
+    html += groupLabel('Manuele therapie');
+    html += mtRes.slice(0, 12).map(r => card(`showProto('${r.p.id}');showManueel('${r.p.id}')`, `
+      <div style="display:flex;align-items:center;gap:7px;margin-bottom:5px;flex-wrap:wrap;">
+        <div style="width:7px;height:7px;border-radius:50%;background:${r.p.color};flex-shrink:0"></div>
+        <span style="font-size:12px;font-weight:600">${r.p.title}</span>
+        <span style="font-size:10px;color:var(--muted2);font-family:Geist Mono,monospace">🤲 ${r.fase || 'Techniek'}</span>
+      </div>
+      <div style="font-size:13px">${r.naam}</div>
+      ${r.doel ? `<div style="font-size:11px;color:var(--muted);margin-top:3px">${esc(r.doel.substring(0,120))}${r.doel.length>120?'…':''}</div>` : ''}`)).join('');
   }
   if(detailRes.length) {
     html += groupLabel(`In protocollen (${detailRes.length})`);

@@ -14,7 +14,7 @@ const fail = msg => errors.push(msg);
 // ── protocols.js laden en de const-declaraties eruit halen ──
 let d;
 try {
-  const src = read('protocols.js') + ';({protocols, REGIO_MAP, NAV_INFO, BESCHRIJVING})';
+  const src = read('protocols.js') + ';({protocols, REGIO_MAP, NAV_INFO, BESCHRIJVING, MANUEEL})';
   d = vm.runInNewContext(src, { console }, { filename: 'protocols.js' });
 } catch (e) {
   console.error('❌ protocols.js kan niet geladen worden: ' + e.message);
@@ -37,10 +37,25 @@ ids.forEach(id => {
   });
   const b = d.BESCHRIJVING[id];
   if (b && (!b.kenmerken || !b.oorzaken)) fail(`${id}: BESCHRIJVING mist kenmerken of oorzaken`);
+
+  const m = d.MANUEEL[id];
+  if (!m) {
+    fail(`${id}: ontbreekt in MANUEEL (tab 🤲 Manuele therapie wordt niet getoond)`);
+  } else {
+    if (!m.intro) fail(`${id}: MANUEEL mist intro`);
+    if (!m.evidentie) fail(`${id}: MANUEEL mist evidentie`);
+    if (!Array.isArray(m.technieken) || m.technieken.length < 4) fail(`${id}: MANUEEL heeft minder dan 4 technieken`);
+    if (!Array.isArray(m.contraindicaties) || !m.contraindicaties.length) fail(`${id}: MANUEEL mist contra-indicaties`);
+    (m.technieken || []).forEach((t, i) => {
+      ['naam', 'fase', 'doel', 'uitvoering', 'dosering'].forEach(k => {
+        if (!t[k]) fail(`${id}: MANUEEL techniek ${i + 1} (${t.naam || '?'}) mist veld '${k}'`);
+      });
+    });
+  }
 });
 
 // ── omgekeerd: geen wees-entries in de mappen ──
-['REGIO_MAP', 'NAV_INFO', 'BESCHRIJVING'].forEach(map => {
+['REGIO_MAP', 'NAV_INFO', 'BESCHRIJVING', 'MANUEEL'].forEach(map => {
   Object.keys(d[map]).forEach(id => {
     if (!d.protocols[id]) fail(`${map}.${id}: verwijst naar een protocol dat niet bestaat`);
   });

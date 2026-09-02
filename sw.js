@@ -35,12 +35,18 @@ const OPTIONEEL = [
 // cache.addAll() is alles-of-niets: één mislukte request (bv. de externe
 // fonts-URL op een haperend netwerk) liet vroeger de hele installatie falen,
 // waardoor het toestel voor onbepaalde tijd op de oude versie bleef hangen.
+// cache:'reload' omzeilt de HTTP-cache van de browser. Zonder dat kan een nog
+// niet vervallen kopie uit die cache teruggegeven worden, waardoor een nieuwe
+// versie bestanden van verschillende releases mengt (bv. nieuwe app.js met
+// oude protocols.js) — de app draait dan half bijgewerkt.
+const versLaden = u => new Request(u, { cache: 'reload' });
+
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE)
       .then(async cache => {
-        await cache.addAll(ESSENTIEEL);
-        await Promise.allSettled(OPTIONEEL.map(u => cache.add(u).catch(() => {})));
+        await cache.addAll(ESSENTIEEL.map(versLaden));
+        await Promise.allSettled(OPTIONEEL.map(u => cache.add(versLaden(u)).catch(() => {})));
       })
       .then(() => self.skipWaiting())
   );
@@ -83,7 +89,9 @@ self.addEventListener('fetch', event => {
   const isAppFile = /\.(html|js)$/.test(url) || url.endsWith('/') || url.includes('?v=');
   if (isAppFile) {
     event.respondWith(
-      fetch(event.request).then(response => {
+      // Ook hier de HTTP-cache omzeilen: anders kan een oude kopie van
+      // protocols.js of app.js blijven terugkomen zolang die niet vervallen is.
+      fetch(event.request.mode === 'navigate' ? event.request : versLaden(url)).then(response => {
         if (response.ok) {
           const clone = response.clone();
           caches.open(CACHE).then(c => c.put(event.request, clone));

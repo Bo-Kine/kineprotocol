@@ -260,8 +260,13 @@ function showProto(id) {
   const protoForms = Object.entries(FORMS).filter(([k,f]) => f.protocol === id);
   const formsTab = protoForms.length ? '<div class="vtab" data-tab="forms" onclick="showFormsTab(\'' + id + '\')">📝 Formulieren</div>' : '';
   const refsTab = '<div class="vtab" data-tab="refs" onclick="showRefs(\'' + id + '\')">Referenties</div>';
-  const infoTab = BESCHRIJVING[id] ? '<div class="vtab" data-tab="info" onclick="showBeschrijving(\'' + id + '\')">🔬 Aandoening</div>' : '';
-  const manueelTab = MANUEEL[id] ? '<div class="vtab" data-tab="manueel" onclick="showManueel(\'' + id + '\')">🤲 Manuele therapie</div>' : '';
+  // typeof-controle: bij een half bijgewerkte cache kan protocols.js ouder zijn
+  // dan app.js. Zonder deze guard gooit dat een ReferenceError midden in
+  // showProto, waardoor tabs en inhoud van het vorige protocol blijven staan.
+  const heeftInfo = typeof BESCHRIJVING !== 'undefined' && BESCHRIJVING[id];
+  const heeftManueel = typeof MANUEEL !== 'undefined' && MANUEEL[id];
+  const infoTab = heeftInfo ? '<div class="vtab" data-tab="info" onclick="showBeschrijving(\'' + id + '\')">🔬 Aandoening</div>' : '';
+  const manueelTab = heeftManueel ? '<div class="vtab" data-tab="manueel" onclick="showManueel(\'' + id + '\')">🤲 Manuele therapie</div>' : '';
   tabs.innerHTML = tabsHtml + infoTab + manueelTab + scoresTab + formsTab + refsTab;
   renderPhase(0);
   renderTimeline(0);
@@ -1520,12 +1525,35 @@ if('serviceWorker' in navigator) {
   });
 }
 
+// Detecteert een half bijgewerkte installatie (app.js nieuwer dan protocols.js).
+// Herstelt zichzelf eenmalig; lukt dat niet, dan verschijnt een duidelijke melding
+// in plaats van stilzwijgend ontbrekende onderdelen.
+function controleerDataConsistentie() {
+  const ontbreekt = [];
+  if(typeof MANUEEL === 'undefined' || !Object.keys(MANUEEL).length) ontbreekt.push('manuele therapie');
+  if(typeof BESCHRIJVING === 'undefined' || !Object.keys(BESCHRIJVING).length) ontbreekt.push('aandoeningen');
+  if(!ontbreekt.length) { sessionStorage.removeItem('kp_herstelpoging'); return; }
+
+  if(!sessionStorage.getItem('kp_herstelpoging')) {
+    sessionStorage.setItem('kp_herstelpoging', '1');
+    forceerUpdate();
+    return;
+  }
+  const balk = document.createElement('div');
+  balk.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:10000;background:#b45309;color:#fff;padding:10px 14px;font-size:12.5px;font-family:Geist,sans-serif;display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;';
+  balk.innerHTML = '<span>App-bestanden zijn niet in sync (' + ontbreekt.join(' en ') + ' ontbreken). Sluit de app volledig af en open opnieuw met internet.</span>'
+    + '<button onclick="forceerUpdate()" style="background:#fff;color:#b45309;border:none;padding:4px 12px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;font-family:Geist,sans-serif;">↻ Opnieuw proberen</button>';
+  document.body.appendChild(balk);
+}
+
 // Handmatige noodrem: forceert een controle en herlaadt met cache-omzeiling.
 async function forceerUpdate() {
   try {
-    if(swRegistratie) await swRegistratie.update();
+    // Álle caches wissen, ook die van de huidige versie: bij een half
+    // bijgewerkte installatie zit de verouderde kopie juist daarin.
     const keys = await caches.keys();
-    await Promise.all(keys.filter(k => k !== 'kineprotocol-v' + APP_VERSION).map(k => caches.delete(k)));
+    await Promise.all(keys.map(k => caches.delete(k)));
+    if(swRegistratie) await swRegistratie.update();
   } catch(e) {}
   window.location.replace(window.location.pathname + '?u=' + Date.now());
 }
@@ -1703,6 +1731,7 @@ function initApp() {
     const el = document.getElementById(id);
     if(el) el.textContent = 'v' + APP_VERSION;
   });
+  controleerDataConsistentie();
   buildNav();
   initSwipe();
   renderVandaag();

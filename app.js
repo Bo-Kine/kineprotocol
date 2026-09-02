@@ -267,7 +267,10 @@ function showProto(id) {
   const heeftManueel = typeof MANUEEL !== 'undefined' && MANUEEL[id];
   const infoTab = heeftInfo ? '<div class="vtab" data-tab="info" onclick="showBeschrijving(\'' + id + '\')">🔬 Aandoening</div>' : '';
   const manueelTab = heeftManueel ? '<div class="vtab" data-tab="manueel" onclick="showManueel(\'' + id + '\')">🤲 Manuele therapie</div>' : '';
-  tabs.innerHTML = tabsHtml + infoTab + manueelTab + scoresTab + formsTab + refsTab;
+  // Regelafbreking tussen de fasetabs en de overige tabs, zodat die laatste
+  // altijd als eigen groep zichtbaar zijn en niet achter de fasen wegvallen.
+  const extraTabs = infoTab + manueelTab + scoresTab + formsTab + refsTab;
+  tabs.innerHTML = tabsHtml + (extraTabs ? '<div class="vtab-sep"></div>' + extraTabs : '');
   renderPhase(0);
   renderTimeline(0);
   setNav(id);

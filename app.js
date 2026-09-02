@@ -1501,11 +1501,33 @@ loadExerciseImages();
 
 // ── SERVICE WORKER ──
 
+let swRegistratie = null;
+
 if('serviceWorker' in navigator) {
-  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js')
+      .then(reg => { swRegistratie = reg; reg.update().catch(()=>{}); })
+      .catch(()=>{});
+  });
+  // Actief op updates controleren zodra de app weer op de voorgrond komt.
+  // Zonder dit checkt de browser sw.js soms pas na uren, waardoor een nieuwe
+  // versie lang onopgemerkt blijft op een geïnstalleerde PWA.
+  document.addEventListener('visibilitychange', () => {
+    if(document.visibilityState === 'visible' && swRegistratie) swRegistratie.update().catch(()=>{});
+  });
   navigator.serviceWorker.addEventListener('message', e => {
     if(e.data && e.data.type === 'SW_UPDATED') window.location.reload();
   });
+}
+
+// Handmatige noodrem: forceert een controle en herlaadt met cache-omzeiling.
+async function forceerUpdate() {
+  try {
+    if(swRegistratie) await swRegistratie.update();
+    const keys = await caches.keys();
+    await Promise.all(keys.filter(k => k !== 'kineprotocol-v' + APP_VERSION).map(k => caches.delete(k)));
+  } catch(e) {}
+  window.location.replace(window.location.pathname + '?u=' + Date.now());
 }
 
 // ── SWIPE NAVIGATIE ──
@@ -1677,6 +1699,10 @@ function buildNav() {
 // (bewaar regelmatig een backup via het patiëntendashboard).
 function initApp() {
   localStorage.removeItem('kp_session'); // restant van de vroegere accountversie opruimen
+  ['app-version-label', 'more-version-label'].forEach(id => {
+    const el = document.getElementById(id);
+    if(el) el.textContent = 'v' + APP_VERSION;
+  });
   buildNav();
   initSwipe();
   renderVandaag();

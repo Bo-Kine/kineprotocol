@@ -4,13 +4,20 @@
 importScripts('./version.js'); // definieert APP_VERSION — enige plek waar de versie staat
 const CACHE = 'kineprotocol-v' + APP_VERSION;
 
-const PRECACHE = [
+// Alleen wat de app écht nodig heeft om te draaien.
+const ESSENTIEEL = [
   './',
   './index.html',
   './version.js',
   './app.js',
   './patients.js',
   './protocols.js',
+];
+
+// Nice-to-have: iconen, achtergrond, lettertypes. Deze mogen falen zonder
+// de installatie te blokkeren — een externe font-URL of een ontbrekend icoon
+// mag nooit verhinderen dat een nieuwe versie geïnstalleerd wordt.
+const OPTIONEEL = [
   './manifest.json',
   './bg.webp',
   './icon-72x72.png',
@@ -24,10 +31,18 @@ const PRECACHE = [
   'https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist+Mono:wght@300;400;500;600&family=Geist:wght@300;400;500;600;700&display=swap',
 ];
 
-// Install: precache alles
+// Install: essentiële bestanden moeten slagen, de rest is best-effort.
+// cache.addAll() is alles-of-niets: één mislukte request (bv. de externe
+// fonts-URL op een haperend netwerk) liet vroeger de hele installatie falen,
+// waardoor het toestel voor onbepaalde tijd op de oude versie bleef hangen.
 self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open(CACHE).then(cache => cache.addAll(PRECACHE)).then(() => self.skipWaiting())
+    caches.open(CACHE)
+      .then(async cache => {
+        await cache.addAll(ESSENTIEEL);
+        await Promise.allSettled(OPTIONEEL.map(u => cache.add(u).catch(() => {})));
+      })
+      .then(() => self.skipWaiting())
   );
 });
 

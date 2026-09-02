@@ -520,6 +520,11 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
     <div class="sidebar-divider"></div>
     <div class="sidebar-section">Patiënten</div>
     <div class="nav-item" id="nav-patients" onclick="showPatients()"><span style="font-size:15px;">👥</span><span class="nav-title">Mijn patiënten</span><span id="pat-count-badge" style="display:none;font-size:10px;padding:1px 7px;border-radius:10px;background:rgba(74,222,128,.15);color:#4ade80;font-family:'Geist Mono',monospace;">0</span></div>
+    <div class="sidebar-divider"></div>
+    <div style="padding:8px 14px 16px;display:flex;align-items:center;gap:8px;">
+      <span id="app-version-label" style="font-size:9.5px;color:var(--muted2);font-family:'Geist Mono',monospace;"></span>
+      <button onclick="forceerUpdate()" title="Controleer op een nieuwe versie" style="font-size:9.5px;color:var(--muted2);background:none;border:1px solid var(--border);padding:2px 8px;border-radius:8px;cursor:pointer;font-family:'Geist Mono',monospace;">↻ update</button>
+    </div>
   </div>
   <div class="main" id="main">
     <!-- HOME -->
@@ -663,6 +668,7 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
     <div class="bs-body">
       <button class="bs-action" onclick="closeMoreSheet();showEvalFormsScreen()"><span class="bs-action-icon">🩺</span><span>Klinische Evaluatieformulieren</span></button>
       <button class="bs-action" onclick="closeMoreSheet();document.getElementById('searchInput').focus()"><span class="bs-action-icon">🔍</span><span>Zoeken</span></button>
+      <button class="bs-action" onclick="closeMoreSheet();forceerUpdate()"><span class="bs-action-icon">↻</span><span>Controleer op update<span id="more-version-label" style="color:var(--muted2);font-family:'Geist Mono',monospace;font-size:10px;margin-left:6px;"></span></span></button>
     </div>
   </div>
 </div>

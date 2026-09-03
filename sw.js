@@ -19,6 +19,7 @@ const ESSENTIEEL = [
 // mag nooit verhinderen dat een nieuwe versie geïnstalleerd wordt.
 const OPTIONEEL = [
   './manifest.json',
+  './exercise-images.json',
   './bg.webp',
   './icon-72x72.png',
   './icon-96x96.png',
@@ -65,53 +66,44 @@ self.addEventListener('activate', event => {
   );
 });
 
-// Fetch: network-first voor HTML/JS, cache-first voor de rest
+// Fetch: cache-first uit de versiegebonden cache.
+//
+// De cachenaam bevat de versie en wordt bij install in één keer volledig gevuld
+// met verse kopieën (cache:'reload'). Daardoor komt álles uit dezelfde release —
+// bestanden van verschillende versies kunnen niet meer gemengd worden — én hoeft
+// er bij het opstarten niets opnieuw over het netwerk (voorheen ~1 MB per start).
 self.addEventListener('fetch', event => {
-  const url = event.request.url;
+  const req = event.request;
+  if (req.method !== 'GET') return;
+  const url = req.url;
 
-  // Externe API's (fonts): altijd netwerk, nooit cachen
-  // Als netwerk faalt → geef lege 503 terug (nooit null/undefined)
-  if (url.includes('googleapis.com/css')) {
+  // YouTube: netwerk only, SW bemoeit zich er niet mee
+  if (url.includes('youtube.com') || url.includes('youtu.be')) return;
+
+  // Navigatie: altijd de gecachte index.html, ongeacht querystring.
+  // Zonder ignoreSearch matcht ?u=... of ?v=... niets en kreeg de gebruiker
+  // een leeg 503-antwoord — een wit scherm.
+  if (req.mode === 'navigate') {
     event.respondWith(
-      fetch(event.request).catch(() =>
-        new Response('', { status: 503, statusText: 'Service Unavailable' })
-      )
+      caches.match('./index.html', { ignoreSearch: true })
+        .then(hit => hit || fetch(req))
+        .catch(() => caches.match('./index.html', { ignoreSearch: true }))
     );
     return;
   }
 
-  // YouTube: netwerk only, SW doet niets
-  if (url.includes('youtube.com') || url.includes('youtu.be')) {
-    return;
-  }
-
-  // HTML en JS: network-first zodat updates direct zichtbaar zijn
-  const isAppFile = /\.(html|js)$/.test(url) || url.endsWith('/') || url.includes('?v=');
-  if (isAppFile) {
-    event.respondWith(
-      // Ook hier de HTTP-cache omzeilen: anders kan een oude kopie van
-      // protocols.js of app.js blijven terugkomen zolang die niet vervallen is.
-      fetch(event.request.mode === 'navigate' ? event.request : versLaden(url)).then(response => {
-        if (response.ok) {
-          const clone = response.clone();
-          caches.open(CACHE).then(c => c.put(event.request, clone));
-        }
-        return response;
-      }).catch(() => caches.match(event.request).then(r => r || new Response('', { status: 503 })))
-    );
-    return;
-  }
-
-  // Afbeeldingen, fonts etc.: cache-first
   event.respondWith(
-    caches.match(event.request).then(cached => {
-      if (cached) return cached;
-      return fetch(event.request).then(response => {
-        if (!response || response.status !== 200 || response.type === 'opaque') return response;
-        const clone = response.clone();
-        caches.open(CACHE).then(c => c.put(event.request, clone));
-        return response;
-      }).catch(() => new Response('', { status: 503 }));
+    caches.match(req, { ignoreSearch: true }).then(hit => {
+      if (hit) return hit;
+      // Niet in de cache: ophalen en bewaren, zodat het de volgende keer
+      // ook offline beschikbaar is (o.a. oefenafbeeldingen).
+      return fetch(req).then(res => {
+        if (res && res.status === 200 && res.type !== 'opaque') {
+          const clone = res.clone();
+          caches.open(CACHE).then(c => c.put(req, clone)).catch(() => {});
+        }
+        return res;
+      }).catch(() => new Response('', { status: 503, statusText: 'Offline' }));
     })
   );
 });

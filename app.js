@@ -1,22 +1,32 @@
 // KineProtocol — App: navigatie, rendering, formulieren, zoeken, swipe, init
 
-// ── VERSION CHECK: forces hard reload when app is updated ──
+// ── VERSIECONTROLE ──
+// Alles in try/catch: in privémodus of bij geblokkeerde opslag gooit localStorage,
+// en zonder afvangst stopte de app hier voordat er iets gerenderd was.
 (function(){
-  const V = APP_VERSION;
-  if(localStorage.getItem('kp_app_v') !== V) {
-    localStorage.setItem('kp_app_v', V);
-    window.location.replace(window.location.pathname + '?v=' + V + '&t=' + Date.now());
-  }
+  try {
+    const V = APP_VERSION;
+    if(localStorage.getItem('kp_app_v') !== V) {
+      localStorage.setItem('kp_app_v', V);
+      // Stabiele URL zonder tijdstempel: de service worker serveert index.html
+      // met ignoreSearch, dus een unieke querystring is niet nodig en zou de
+      // cachetreffer alleen maar bemoeilijken.
+      if(!/[?&]v=/.test(window.location.search)) {
+        window.location.replace(window.location.pathname + '?v=' + V);
+      }
+    }
+  } catch(e) { /* opslag niet beschikbaar — gewoon doorstarten */ }
 })();
 
 let currentProto = null;
+let currentPhaseIndex = 0;
 let deferredPrompt = null;
 let editingPatientId = null;
 let exerciseImages = {};
 
 async function loadExerciseImages() {
   try {
-    const r = await fetch('./exercise-images.json?v=32');
+    const r = await fetch('./exercise-images.json?v=' + APP_VERSION);
     if (r.ok) exerciseImages = await r.json();
   } catch(e) {}
 }
@@ -271,6 +281,7 @@ function showProto(id) {
   // altijd als eigen groep zichtbaar zijn en niet achter de fasen wegvallen.
   const extraTabs = infoTab + manueelTab + scoresTab + formsTab + refsTab;
   tabs.innerHTML = tabsHtml + (extraTabs ? '<div class="vtab-sep"></div>' + extraTabs : '');
+  currentPhaseIndex = 0;
   renderPhase(0);
   renderTimeline(0);
   setNav(id);
@@ -287,6 +298,7 @@ function setActiveTab(name) {
   document.querySelectorAll('.vtab').forEach(t => t.classList.toggle('active', t.dataset.tab === name));
 }
 function showPhase(i) {
+  currentPhaseIndex = i;
   setActiveTab('fase-' + i);
   renderPhase(i);
   renderTimeline(i);
@@ -499,10 +511,11 @@ let ficheScope = 'fase';
 let fichePhaseIndex = 0;
 function openFiche() {
   if(!currentProto) return;
-  const tabs = document.querySelectorAll('.vtab');
-  let activeIdx = 0;
-  tabs.forEach((t,i) => { if(t.classList.contains('active')) activeIdx = i; });
-  fichePhaseIndex = activeIdx < currentProto.phases.length ? activeIdx : 0;
+  // Fase-index uit de state, niet uit een telling van .vtab-elementen: sinds er
+  // tabs achter de fasen staan (Aandoening, Manuele therapie, ...) wees die
+  // telling bij zes fasen naar de verkeerde fase.
+  fichePhaseIndex = Math.min(currentPhaseIndex, currentProto.phases.length - 1);
+  if(!(fichePhaseIndex >= 0)) fichePhaseIndex = 0;
   ficheScope = 'fase';
   renderFicheModal();
   document.getElementById('fiche-modal').classList.add('open');
@@ -762,10 +775,13 @@ function renderFormBody(form, pt, datum) {
       html += '</div>';
     } else if(v.type === 'slider') {
       html += '<div style="padding:0 4px;">';
-      html += '<input type="range" min="' + v.min + '" max="' + v.max + '" value="' + Math.round(v.max/2) + '" style="width:100%;accent-color:' + color + '" oninput="updateSlider(\'' + v.id + '\',this.value,' + v.gewicht + ',\'' + color + '\')" id="slider-' + v.id + '">';
+      // Start op het minimum met een streepje als weergave: een schuifknop die
+      // vooringevuld op de middenwaarde staat, suggereert een antwoord dat
+      // niemand gegeven heeft en telde bovendien niet mee in de score.
+      html += '<input type="range" min="' + v.min + '" max="' + v.max + '" value="' + v.min + '" style="width:100%;accent-color:' + color + '" oninput="updateSlider(\'' + v.id + '\',this.value,' + v.gewicht + ',\'' + color + '\')" id="slider-' + v.id + '">';
       html += '<div style="display:flex;justify-content:space-between;margin-top:3px;">';
       html += '<span style="font-size:10px;color:var(--muted)">' + v.links + '</span>';
-      html += '<span id="slider-val-' + v.id + '" style="font-size:12px;font-weight:700;color:' + color + '">' + Math.round(v.max/2) + '</span>';
+      html += '<span id="slider-val-' + v.id + '" style="font-size:12px;font-weight:700;color:var(--muted)">—</span>';
       html += '<span style="font-size:10px;color:var(--muted)">' + v.rechts + '</span>';
       html += '</div></div>';
       // Initialize answer
@@ -788,34 +804,95 @@ function setFormAnswer(qId, optIdx, score) {
   updateFormScore();
 }
 function updateSlider(qId, val, gewicht, color) {
-  document.getElementById('slider-val-' + qId).textContent = val;
+  const el = document.getElementById('slider-val-' + qId);
+  el.textContent = val;
+  el.style.color = color;
   formAnswers[qId] = {score: parseFloat(val), rawScore: parseFloat(val)};
   updateFormScore();
 }
-function updateFormScore() {
-  const form = FORMS[activeForm];
-  if(!form) return;
-  const allAnswered = form.vragen.every(v => {
-    if(v.type === 'keuze' && v.opties.some(o => o.score === null)) return formAnswers[v.id] !== undefined; // optional
-    return formAnswers[v.id] !== undefined;
+// ── SCOREBEREKENING VRAGENLIJSTEN ──
+// Officiële maxima van de volledige instrumenten. Wijkt onze itemset hiervan af,
+// dan is het een ingekorte versie en mag de gepubliceerde afkapwaarde niet als
+// oordeel getoond worden — dat zou een klinische uitspraak suggereren die de
+// afgenomen vragenlijst niet kan dragen.
+const FORM_OFFICIEEL_MAX = {visa_p:100, visa_a:100, ikdc:100, ndi:50, faam:100, wosi:2100, prwe:150, bctq:5};
+
+// Bereikbaar bereik uit de vragen zelf berekenen; het gedeclareerde form.max
+// klopte bij vier van de acht instrumenten niet (BCTQ 5 vs 95, FAAM 100 vs 68,
+// VISA-A 100 vs 111), waardoor scores in de verkeerde interpretatieband vielen.
+function formSchaal(form) {
+  let min = 0, max = 0;
+  (form.vragen || []).forEach(v => {
+    if(v.type === 'slider') { min += v.min; max += v.max; }
+    else if(v.type === 'keuze') {
+      const sc = (v.opties || []).map(o => o.score).filter(s => typeof s === 'number');
+      if(sc.length) { min += Math.min.apply(null, sc); max += Math.max.apply(null, sc); }
+    }
   });
-  const total = Object.values(formAnswers).reduce((s, a) => s + (a.score !== null ? (a.score || 0) : 0), 0);
-  const maxPossible = form.max;
-  const pct = Math.min(100, Math.round((total / maxPossible) * 100));
-  const rtsVal = form.invert ? parseInt(form.rts) : parseInt(form.rts);
-  const isGood = form.invert ? total <= rtsVal : total >= rtsVal;
-  const scoreEl = document.getElementById('form-score-preview');
-  if(scoreEl) {
-    scoreEl.style.color = allAnswered ? (isGood ? '#22c55e' : '#f59e0b') : 'var(--muted)';
-    scoreEl.style.borderColor = allAnswered ? (isGood ? '#22c55e44' : '#f59e0b44') : 'var(--border)';
-    scoreEl.textContent = 'Huidige score: ' + total + ' / ' + maxPossible + (allAnswered ? (isGood ? ' ✓ ' + form.rts : ' — nog niet: ' + form.rts) : ' (niet volledig ingevuld)');
-  }
+  return {min: min, max: max};
 }
-function calcFormScore() {
+
+// Drempel uit de rts-tekst halen. parseInt() gaf hier NaN op alle acht de
+// instrumenten omdat elke string met ≥, ≤ of < begint — waardoor het oordeel
+// altijd "niet behaald" werd, ook bij een perfecte score.
+function formDrempel(form) {
+  const m = String(form.rts || '').match(/([≥≤<>])\s*([\d]+(?:[.,][\d]+)?)/);
+  if(!m) return null;
+  const waarde = parseFloat(m[2].replace(',', '.'));
+  if(!isFinite(waarde)) return null;
+  return {waarde: waarde, richting: (m[1] === '≥' || m[1] === '>') ? 'hoger' : 'lager'};
+}
+
+function formVolledigIngevuld(form) {
+  return (form.vragen || []).every(v => formAnswers[v.id] !== undefined);
+}
+
+// Eén bron van waarheid voor score, schaal en oordeel.
+function beoordeelFormulier() {
   const form = FORMS[activeForm];
-  if(!form) return {total:0, max:form?.max||100};
-  const total = Object.values(formAnswers).reduce((s, a) => s + (a.score !== null ? (a.score || 0) : 0), 0);
-  return {total, max: form.max};
+  if(!form) return null;
+  const schaal = formSchaal(form);
+  const totaal = Object.values(formAnswers).reduce((s, a) => s + (typeof a.score === 'number' ? a.score : 0), 0);
+  const volledig = formVolledigIngevuld(form);
+  const drempel = formDrempel(form);
+  const officieel = FORM_OFFICIEEL_MAX[activeForm];
+  // Alleen oordelen als de vragenlijst volledig is afgenomen én onze itemset
+  // overeenkomt met het volledige instrument waarvoor de afkapwaarde geldt.
+  const ingekort = typeof officieel === 'number' && schaal.max !== officieel;
+  const oordeelbaar = volledig && drempel !== null && !ingekort;
+  const behaald = oordeelbaar
+    ? (drempel.richting === 'hoger' ? totaal >= drempel.waarde : totaal <= drempel.waarde)
+    : null;
+  return {totaal: totaal, max: schaal.max, volledig: volledig, drempel: drempel,
+          ingekort: ingekort, oordeelbaar: oordeelbaar, behaald: behaald, rts: form.rts};
+}
+
+function updateFormScore() {
+  const b = beoordeelFormulier();
+  if(!b) return;
+  const scoreEl = document.getElementById('form-score-preview');
+  if(!scoreEl) return;
+  let tekst = 'Score: ' + b.totaal + ' / ' + b.max;
+  let kleur = 'var(--muted)', rand = 'var(--border)';
+  if(!b.volledig) {
+    tekst += ' · nog niet volledig ingevuld';
+  } else if(b.oordeelbaar) {
+    tekst += b.behaald
+      ? ' · op of boven de drempel (' + b.rts + ')'
+      : ' · onder de drempel (' + b.rts + ')';
+    kleur = b.behaald ? '#22c55e' : '#f59e0b';
+    rand = b.behaald ? '#22c55e44' : '#f59e0b44';
+  } else if(b.ingekort) {
+    tekst += ' · verkorte versie, gepubliceerde afkapwaarde niet van toepassing';
+  }
+  scoreEl.style.color = kleur;
+  scoreEl.style.borderColor = rand;
+  scoreEl.textContent = tekst;
+}
+
+function calcFormScore() {
+  const b = beoordeelFormulier();
+  return b ? {total: b.totaal, max: b.max} : {total: 0, max: 0};
 }
 function saveAndPrintForm() {
   const form = FORMS[activeForm];
@@ -840,10 +917,15 @@ function saveAndPrintForm() {
     }
     html += '<div class="pf-ex"><div class="pf-ex-name">' + (vi+1) + '. ' + v.tekst + '</div><div class="pf-ex-params">' + antwoord + '</div></div>';
   });
-  const rtsVal = parseInt(form.rts);
-  const isGood = form.invert ? total <= rtsVal : total >= rtsVal;
-  html += '<div style="margin-top:12px;padding:8px 12px;border-radius:4px;background:' + (isGood?'#dcfce7':'#fef3c7') + ';border:1px solid ' + (isGood?'#86efac':'#fcd34d') + ';">';
-  html += '<strong>Totaalscore: ' + total + '/' + max + '</strong> — ' + (isGood ? '✓ Drempel behaald (' + form.rts + ')' : '⚠ Drempel nog niet behaald (' + form.rts + ')') + '</div>';
+  const b = beoordeelFormulier();
+  const neutraal = !b || !b.oordeelbaar;
+  const goed = b && b.behaald;
+  html += '<div style="margin-top:12px;padding:8px 12px;border-radius:4px;background:' + (neutraal ? '#f1f5f9' : (goed ? '#dcfce7' : '#fef3c7')) + ';border:1px solid ' + (neutraal ? '#cbd5e1' : (goed ? '#86efac' : '#fcd34d')) + ';">';
+  html += '<strong>Totaalscore: ' + total + '/' + max + '</strong>';
+  if(b && !b.volledig) html += ' — niet volledig ingevuld, score onvolledig';
+  else if(b && b.ingekort) html += ' — verkorte versie; de gepubliceerde afkapwaarde (' + esc(String(form.rts)) + ') geldt voor het volledige instrument en is hier niet van toepassing';
+  else if(b && b.oordeelbaar) html += ' — ' + (goed ? 'op of boven' : 'onder') + ' de drempel van ' + esc(String(form.rts));
+  html += '</div>';
   html += '<div class="pf-footer">KineProtocol · ' + datum + '</div>';
   closeForm();
   triggerPrint(html);
@@ -1537,11 +1619,9 @@ function controleerDataConsistentie() {
   if(typeof BESCHRIJVING === 'undefined' || !Object.keys(BESCHRIJVING).length) ontbreekt.push('aandoeningen');
   if(!ontbreekt.length) { sessionStorage.removeItem('kp_herstelpoging'); return; }
 
-  if(!sessionStorage.getItem('kp_herstelpoging')) {
-    sessionStorage.setItem('kp_herstelpoging', '1');
-    forceerUpdate();
-    return;
-  }
+  // Nooit automatisch de cache wissen: als de app hier komt is de cache al
+  // onvolledig, en zonder netwerk maakt wissen de installatie onbruikbaar.
+  // De gebruiker beslist, met de knop hieronder.
   const balk = document.createElement('div');
   balk.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:10000;background:#b45309;color:#fff;padding:10px 14px;font-size:12.5px;font-family:Geist,sans-serif;display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;';
   balk.innerHTML = '<span>App-bestanden zijn niet in sync (' + ontbreekt.join(' en ') + ' ontbreken). Sluit de app volledig af en open opnieuw met internet.</span>'
@@ -1551,14 +1631,30 @@ function controleerDataConsistentie() {
 
 // Handmatige noodrem: forceert een controle en herlaadt met cache-omzeiling.
 async function forceerUpdate() {
+  // Zonder netwerk niets wissen: de cache is dan het enige wat de app nog heeft.
+  if(navigator.onLine === false) {
+    alert('Geen internetverbinding. Verbind eerst met internet en probeer opnieuw — de app blijft intussen offline werken.');
+    return;
+  }
   try {
-    // Álle caches wissen, ook die van de huidige versie: bij een half
-    // bijgewerkte installatie zit de verouderde kopie juist daarin.
+    // Eerst de nieuwe versie binnenhalen, pas daarna opruimen. Wissen vóór het
+    // ophalen liet de app zonder bestanden achter als het netwerk halverwege wegviel.
+    if(swRegistratie) {
+      await swRegistratie.update();
+      if(swRegistratie.installing || swRegistratie.waiting) {
+        await new Promise(res => {
+          const sw = swRegistratie.installing || swRegistratie.waiting;
+          if(!sw) return res();
+          sw.addEventListener('statechange', () => { if(sw.state === 'activated') res(); });
+          setTimeout(res, 8000);
+        });
+      }
+    }
+    // Alleen caches van ándere versies opruimen; de actuele blijft intact.
     const keys = await caches.keys();
-    await Promise.all(keys.map(k => caches.delete(k)));
-    if(swRegistratie) await swRegistratie.update();
+    await Promise.all(keys.filter(k => k !== 'kineprotocol-v' + APP_VERSION).map(k => caches.delete(k)));
   } catch(e) {}
-  window.location.replace(window.location.pathname + '?u=' + Date.now());
+  window.location.replace(window.location.pathname + '?v=' + APP_VERSION);
 }
 
 // ── SWIPE NAVIGATIE ──
@@ -1566,7 +1662,6 @@ let swipeStartX = 0;
 let swipeStartY = 0;
 let swipeStartTime = 0;
 let isSwiping = false;
-let currentPhaseIndex = 0;
 
 function initSwipe() {
   const body = document.getElementById('proto-body');
@@ -1626,11 +1721,7 @@ function showPhaseSwipe(i, direction) {
 }
 
 // Track huidige fase index voor swipe
-const _origShowPhase = showPhase;
-window.showPhase = function(i) {
-  currentPhaseIndex = i;
-  _origShowPhase(i);
-};
+// showPhase houdt currentPhaseIndex nu zelf bij; de vroegere monkeypatch is vervallen.
 
 // ── FAVORIETEN ──
 function getFavs() { return JSON.parse(localStorage.getItem('kp_favs') || '[]').filter(id => protocols[id]); }

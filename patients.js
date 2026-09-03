@@ -587,7 +587,7 @@ function renderSessionSection(pt, p) {
           <button class="session-del" onclick="deleteSession('${pt.id}',${idx})" title="Verwijder">✕</button>
         </div>
         ${s.exs && s.exs.length ? `<div class="session-exs">${s.exs.map(e => `<span class="session-ex-tag">${e}</span>`).join('')}</div>` : ''}
-        ${s.note ? `<div class="session-note">${s.note}</div>` : ''}
+        ${s.note ? `<div class="session-note">${esc(s.note)}</div>` : ''}
       </div>`;
     });
     html += `</div>`;
@@ -775,7 +775,7 @@ ${'-'.repeat(40)}
     pt.sessions.forEach(s => {
       const sPh = p.phases[s.phaseIdx];
       text += `${formatDate(s.date)} · ${sPh ? sPh.label : ''}
-${s.note}
+${esc(s.note)}
 
 `;
     });
@@ -795,13 +795,13 @@ function printPatient(patId) {
   const ph = p.phases[pt.phaseIndex||0];
   const age = pt.dob ? calcAge(pt.dob) : null;
   const datum = new Date().toLocaleDateString('nl-BE',{day:'2-digit',month:'2-digit',year:'numeric'});
-  let html = `<h1>Patiëntentraject — ${pt.name}</h1>`;
+  let html = `<h1>Patiëntentraject — ${esc(pt.name)}</h1>`;
   html += `<div class="pf-meta">Protocol: ${p.title} · Fase: ${ph?ph.label:'—'} · Start: ${formatDate(pt.startDate)||'—'} · ${age?age+' jaar · ':''}${datum}</div>`;
   if(pt.sessions?.length) {
     html += `<h2>Sessienotities</h2>`;
     pt.sessions.forEach(s => {
       const sPh = p.phases[s.phaseIdx];
-      html += `<div class="pf-ex"><div class="pf-ex-name">${formatDate(s.date)} · ${sPh?sPh.label:''}</div></div><div style="font-size:11px;color:#333;padding:2px 0 8px 8px">${s.note}</div>`;
+      html += `<div class="pf-ex"><div class="pf-ex-name">${formatDate(s.date)} · ${sPh?sPh.label:''}</div></div><div style="font-size:11px;color:#333;padding:2px 0 8px 8px">${esc(s.note)}</div>`;
     });
   }
   html += `<div class="pf-footer">KineProtocol · ${datum}</div>`;
@@ -908,7 +908,7 @@ function printOefenblad(patId) {
 <html lang="nl">
 <head>
 <meta charset="UTF-8">
-<title>Oefenblad — ${pt.name}</title>
+<title>Oefenblad — ${esc(pt.name)}</title>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist+Mono:wght@400;500&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   *{margin:0;padding:0;box-sizing:border-box;}
@@ -970,7 +970,7 @@ function printOefenblad(patId) {
       <div class="hdr-title">Thuisoefenprogramma</div>
       <div class="hdr-proto">${p.title}</div>
       <div class="hdr-meta">
-        <div>Patiënt: <strong>${pt.name}</strong>${age ? ' · ' + age + ' jaar' : ''}</div>
+        <div>Patiënt: <strong>${esc(pt.name)}</strong>${age ? ' · ' + age + ' jaar' : ''}</div>
         <div>Startdatum: <strong>${formatDate(pt.startDate) || '—'}</strong></div>
       </div>
     </div>
@@ -998,7 +998,7 @@ function printOefenblad(patId) {
   ${exsHtml}
 
   <footer>
-    <div class="footer-info">KineProtocol · ${datum} · <strong>${pt.name}</strong> · <strong>${p.title}</strong></div>
+    <div class="footer-info">KineProtocol · ${datum} · <strong>${esc(pt.name)}</strong> · <strong>${esc(p.title)}</strong></div>
     <div class="footer-warning">⚠ Stop bij toename van klachten en contacteer uw kinesitherapeut.</div>
   </footer>
 </div>

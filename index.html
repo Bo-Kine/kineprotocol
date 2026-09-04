@@ -94,8 +94,8 @@ body{background:var(--bg);color:var(--ink);font-family:'IBM Plex Sans',system-ui
 /* Layout */
 .layout{display:flex;flex:1;overflow:hidden;}
 .sidebar{width:252px;background:var(--chrome);border-right:1px solid var(--line);display:flex;flex-direction:column;flex-shrink:0;overflow-y:auto;}
-.sidebar-section{padding:14px 14px 5px;font-variant-numeric:tabular-nums;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);}
-.nav-sec-head{display:flex;align-items:center;gap:7px;padding:10px 14px 8px;cursor:pointer;font-variant-numeric:tabular-nums;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);user-select:none;transition:color .12s;}
+.sidebar-section{padding:14px 14px 5px;font-size:13px;font-weight:600;letter-spacing:.01em;color:var(--ink-3);}
+.nav-sec-head{display:flex;align-items:center;gap:7px;padding:10px 14px 8px;cursor:pointer;font-size:13px;font-weight:600;letter-spacing:.01em;color:var(--ink-3);user-select:none;transition:color .12s;}
 .nav-sec-head:hover{color:var(--ink-2);}
 .nav-sec-arrow{font-size:12px;transition:transform .15s;display:inline-block;}
 .nav-sec.open .nav-sec-arrow{transform:rotate(90deg);}
@@ -115,7 +115,7 @@ body{background:var(--bg);color:var(--ink);font-family:'IBM Plex Sans',system-ui
 .main{flex:1;overflow-y:auto;display:flex;flex-direction:column;-webkit-overflow-scrolling:touch;background:transparent;}
 /* Hero */
 .hero{padding:28px 20px 22px;position:relative;overflow:hidden;background:var(--surface-2);flex-shrink:0;}
-.hero-label{font-variant-numeric:tabular-nums;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px;}
+.hero-label{font-variant-numeric:tabular-nums;font-size:13px;letter-spacing:.01em;color:var(--ink-3);margin-bottom:10px;}
 .hero-heading{font-weight:600;font-size:clamp(26px,6vw,38px);font-weight:400;line-height:1.12;letter-spacing:-.02em;margin-bottom:8px;}
 .hero-heading em{font-style:italic;background:var(--surface-2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .hero-sub{font-size:12px;color:var(--ink-2);}
@@ -128,7 +128,7 @@ body{background:var(--bg);color:var(--ink);font-family:'IBM Plex Sans',system-ui
 .stat-num{font-weight:600;font-size:28px;font-weight:400;line-height:1;}
 .stat-label{font-size:12px;color:var(--ink-2);font-variant-numeric:tabular-nums;text-transform:uppercase;letter-spacing:.07em;}
 /* Section label */
-.section-label{font-variant-numeric:tabular-nums;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);padding:0 20px;margin-bottom:8px;display:block;}
+.section-label{font-variant-numeric:tabular-nums;font-size:13px;letter-spacing:.01em;color:var(--ink-3);padding:0 20px;margin-bottom:8px;display:block;}
 /* Regio scroll */
 .regio-scroll{display:flex;gap:8px;padding:0 20px 16px;overflow-x:auto;scrollbar-width:none;}
 .regio-scroll::-webkit-scrollbar{display:none;}
@@ -276,15 +276,15 @@ body{background:var(--bg);color:var(--ink);font-family:'IBM Plex Sans',system-ui
 .viewer-body{padding:20px 24px 40px;position:relative;}
 /* Evidence / goals / content boxes */
 .ev-box{background:var(--surface-2);border-left:3px solid var(--info);border-radius:0 8px 8px 0;padding:12px 16px;margin-bottom:18px;}
-.ev-label{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--info);margin-bottom:6px;font-variant-numeric:tabular-nums;font-weight:600;}
+.ev-label{font-size:13px;letter-spacing:.01em;color:var(--info);margin-bottom:6px;font-variant-numeric:tabular-nums;font-weight:600;}
 .ev-text{font-size:12px;color:var(--ink-2);line-height:1.6;}
 .ev-text strong{color:var(--ink);}
 .goals-box{background:var(--surface-2);border-radius:10px;padding:14px 18px;margin-bottom:18px;}
-.goals-label{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:8px;font-variant-numeric:tabular-nums;font-weight:600;}
+.goals-label{font-size:13px;letter-spacing:.01em;color:var(--ink-3);margin-bottom:8px;font-variant-numeric:tabular-nums;font-weight:600;}
 .glist{list-style:none;display:flex;flex-direction:column;gap:5px;}
 .glist li{display:flex;align-items:flex-start;gap:9px;font-size:12px;}
 .glist li::before{content:'\2022';color:var(--proto-color,var(--accent));flex-shrink:0;margin-top:1px;font-variant-numeric:tabular-nums;}
-.slabel{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:12px;font-variant-numeric:tabular-nums;font-weight:600;}
+.slabel{font-size:13px;letter-spacing:.01em;color:var(--ink-3);margin-bottom:12px;font-variant-numeric:tabular-nums;font-weight:600;}
 .ex-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;margin-bottom:20px;}
 .ex-card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px;transition:border-color .12s,box-shadow .12s;}
 .ex-card:hover{border-color:var(--line-strong);box-shadow:0 4px 12px rgba(0,0,0,.2);}
@@ -307,7 +307,7 @@ body{background:var(--bg);color:var(--ink);font-family:'IBM Plex Sans',system-ui
 .mt-naam{font-size:13px;font-weight:600;line-height:1.35;}
 .mt-fase{font-size:12px;padding:2px 8px;border-radius:10px;border:1px solid;font-variant-numeric:tabular-nums;white-space:nowrap;flex-shrink:0;}
 .mt-rij{display:flex;gap:9px;margin-bottom:6px;font-size:12px;line-height:1.55;}
-.mt-label{flex-shrink:0;width:92px;color:var(--ink-3);font-size:12px;text-transform:uppercase;letter-spacing:.04em;padding-top:2px;}
+.mt-label{flex-shrink:0;width:92px;color:var(--ink-3);font-size:13px;letter-spacing:.01em;padding-top:2px;}
 .mt-tekst{flex:1;color:var(--ink-2);}
 .mt-dosering{font-variant-numeric:tabular-nums;color:var(--ink);font-size:12px;}
 .mt-letop{margin-top:8px;padding-top:8px;border-top:1px dashed var(--line);font-size:12px;color:var(--warn);line-height:1.5;}
@@ -329,12 +329,12 @@ body{background:var(--bg);color:var(--ink);font-family:'IBM Plex Sans',system-ui
 .clist.go li::before{content:'\2022';color:var(--ok);flex-shrink:0;}
 .clist.stop li::before{content:'\2022';color:var(--warn);flex-shrink:0;}
 .rf-box{background:rgba(239,68,68,.05);border-left:3px solid rgba(239,68,68,.5);border-radius:0 8px 8px 0;padding:12px 16px;margin-bottom:20px;}
-.rf-label{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--stop);margin-bottom:6px;font-variant-numeric:tabular-nums;font-weight:600;}
+.rf-label{font-size:13px;letter-spacing:.01em;color:var(--stop);margin-bottom:6px;font-variant-numeric:tabular-nums;font-weight:600;}
 .rf-list{list-style:none;display:flex;flex-direction:column;gap:3px;}
 .rf-list li{font-size:12px;color:var(--ink-2);display:flex;gap:7px;}
 .rf-list li::before{content:'!';color:var(--stop);font-weight:700;flex-shrink:0;}
 .ref-box{background:var(--surface-2);border-radius:10px;padding:14px 18px;margin-bottom:20px;}
-.ref-label{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:7px;font-variant-numeric:tabular-nums;font-weight:600;}
+.ref-label{font-size:13px;letter-spacing:.01em;color:var(--ink-3);margin-bottom:7px;font-variant-numeric:tabular-nums;font-weight:600;}
 .ref-text{font-size:12px;color:var(--ink-2);line-height:1.7;}
 .ref-text strong{color:var(--ink);}
 /* Uitkomstmaten tab */
@@ -651,7 +651,7 @@ function icon(naam, klasse){
       <!-- Recent -->
       <div id="recent-section" style="display:none;padding:0 20px;margin-bottom:16px;"></div>
       <!-- Regio verkennen -->
-      <div class="section-label" style="margin-top:4px;">VERKEN PER REGIO</div>
+      <div class="section-label" style="margin-top:4px;">Verken per regio</div>
       <div class="regio-scroll">
         <div class="regio-card active" data-regio="knie" onclick="filterFeatured('knie')"><div class="regio-card-icon"></div><div class="regio-card-label">Knie &amp; Heup</div></div>
         <div class="regio-card" data-regio="schouder" onclick="filterFeatured('schouder')"><div class="regio-card-icon"><svg class="ic" aria-hidden="true"><use href="#i-kracht"></use></svg></div><div class="regio-card-label">Schouder</div></div>
@@ -660,7 +660,7 @@ function icon(naam, klasse){
         <div class="regio-card" data-regio="pols" onclick="filterFeatured('pols')"><div class="regio-card-icon"></div><div class="regio-card-label">Pols &amp; Hand</div></div>
       </div>
       <!-- Featured protocols -->
-      <div class="section-label">UITGELICHTE PROTOCOLLEN</div>
+      <div class="section-label">Uitgelichte protocollen</div>
       <div class="featured-list" id="featured-list"></div>
     </div>
     <!-- PROTOCOL VIEWER -->

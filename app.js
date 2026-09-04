@@ -76,7 +76,7 @@ function renderRecent() {
   const recent = JSON.parse(localStorage.getItem(RECENT_KEY) || '[]').filter(id => protocols[id]);
   if(!recent.length) { container.style.display = 'none'; return; }
   container.style.display = '';
-  let html = '<div class="section-label" style="padding:0;margin-bottom:10px;">RECENTELIJK BEKEKEN</div><div class="recent-row">';
+  let html = '<div class="section-label" style="padding:0;margin-bottom:10px;">Recent bekeken</div><div class="recent-row">';
   recent.forEach(id => {
     const p = protocols[id];
     html += `<div class="recent-chip" onclick="showProto('${id}')">
@@ -231,7 +231,7 @@ function renderVandaag() {
   if(!alerts.length) { el.style.display = 'none'; return; }
   alerts.sort((a, b) => b.prio - a.prio);
   el.style.display = '';
-  el.innerHTML = `<div class="section-label" style="margin:0 0 8px;padding:0;">VANDAAG · ${alerts.length} AANDACHTSPUNT${alerts.length > 1 ? 'EN' : ''}</div>`
+  el.innerHTML = `<div class="section-label" style="margin:0 0 8px;padding:0;">Vandaag · ${alerts.length} aandachtspunt${alerts.length > 1 ? 'en' : ''}</div>`
     + alerts.slice(0, 6).map(a => {
       const color = getProtoColor(a.pt.protoId);
       return `<div onclick="showPatientDetail('${a.pt.id}')" style="display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-left:3px solid ${color};border-radius:6px;padding:9px 12px;margin-bottom:6px;cursor:pointer;" onmouseover="this.style.borderColor='var(--line-strong)'" onmouseout="this.style.borderColor='var(--line)';this.style.borderLeftColor='${color}'">
@@ -1466,7 +1466,15 @@ function renderPhase(i) {
 }
 
 // ── SEARCH ──
+let _zoekTimer = null;
+// Wacht kort met zoeken tot het typen stilvalt; anders scant elke toetsaanslag
+// de volledige protocoldata.
 function handleSearch(q) {
+  clearTimeout(_zoekTimer);
+  if(!q.trim()) return voerZoekopdrachtUit(q);
+  _zoekTimer = setTimeout(() => voerZoekopdrachtUit(q), 180);
+}
+function voerZoekopdrachtUit(q) {
   if(!q.trim()) {
     document.getElementById('screen-search').style.display = 'none';
     if(currentProto) document.getElementById('screen-proto').style.display = 'flex';

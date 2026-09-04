@@ -46,8 +46,14 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE)
       .then(async cache => {
+        // Alleen de eigen app-bestanden houden de installatie op.
         await cache.addAll(ESSENTIEEL.map(versLaden));
-        await Promise.allSettled(OPTIONEEL.map(u => cache.add(versLaden(u)).catch(() => {})));
+        // De rest wordt op de achtergrond opgehaald en wordt NIET afgewacht.
+        // Een trage of geblokkeerde externe request (lettertypen) liet de
+        // installatie anders eindeloos hangen: de nieuwe versie activeerde dan
+        // nooit en het toestel bleef de oude bedienen. Wat hier misgaat, wordt
+        // later alsnog door de fetch-handler gecachet zodra het nodig is.
+        OPTIONEEL.forEach(u => { cache.add(versLaden(u)).catch(() => {}); });
       })
       .then(() => self.skipWaiting())
   );
@@ -80,22 +86,52 @@ self.addEventListener('fetch', event => {
   // YouTube: netwerk only, SW bemoeit zich er niet mee
   if (url.includes('youtube.com') || url.includes('youtu.be')) return;
 
-  // Navigatie: altijd de gecachte index.html, ongeacht querystring.
-  // Zonder ignoreSearch matcht ?u=... of ?v=... niets en kreeg de gebruiker
-  // een leeg 503-antwoord — een wit scherm.
+  // KRITIEK: altijd zoeken in de cache van DEZE versie, nooit met het globale
+  // caches.match(). Dat laatste doorzoekt álle caches, dus zolang de cache van
+  // de vorige versie nog bestond kwamen daar bestanden uit — de app bleef dan
+  // op de oude versie draaien terwijl de nieuwe al binnen was.
+  const uitEigenCache = verzoek =>
+    caches.open(CACHE).then(c => c.match(verzoek, { ignoreSearch: true }));
+
+  // Externe lettertypen mogen de weergave NOOIT ophouden. De stylesheet van
+  // Google is render-blokkerend: hangt dat verzoek (tracker-blokker, trage of
+  // afgesloten verbinding), dan blijft het scherm leeg tot de browser opgeeft —
+  // in de praktijk tientallen seconden. Uit de cache indien mogelijk, anders
+  // hooguit twee seconden op het netwerk wachten en daarna een lege stylesheet
+  // teruggeven, zodat de app meteen doorrendert met het systeemlettertype.
+  if (url.includes('fonts.googleapis.com') || url.includes('fonts.gstatic.com')) {
+    const legeStijl = () => new Response('', { status: 200, headers: { 'Content-Type': 'text/css' } });
+    event.respondWith(
+      uitEigenCache(req).then(hit => hit || Promise.race([
+        fetch(req).then(res => {
+          if (res && res.ok) {
+            const clone = res.clone();
+            caches.open(CACHE).then(c => c.put(req, clone)).catch(() => {});
+          }
+          return res;
+        }).catch(legeStijl),
+        new Promise(r => setTimeout(() => r(legeStijl()), 2000)),
+      ])).catch(legeStijl)
+    );
+    return;
+  }
+
+  // Navigatie: de gecachte index.html van deze versie, ongeacht querystring.
+  // Zonder ignoreSearch matcht ?v=... niets en volgde een leeg 503: wit scherm.
   if (req.mode === 'navigate') {
     event.respondWith(
-      caches.match('./index.html', { ignoreSearch: true })
+      uitEigenCache('./index.html')
         .then(hit => hit || fetch(req))
-        .catch(() => caches.match('./index.html', { ignoreSearch: true }))
+        .catch(() => uitEigenCache('./index.html')
+          .then(hit => hit || new Response('', { status: 503, statusText: 'Offline' })))
     );
     return;
   }
 
   event.respondWith(
-    caches.match(req, { ignoreSearch: true }).then(hit => {
+    uitEigenCache(req).then(hit => {
       if (hit) return hit;
-      // Niet in de cache: ophalen en bewaren, zodat het de volgende keer
+      // Niet in deze cache: ophalen en bewaren, zodat het de volgende keer
       // ook offline beschikbaar is (o.a. oefenafbeeldingen).
       return fetch(req).then(res => {
         if (res && res.status === 200 && res.type !== 'opaque') {

@@ -389,7 +389,7 @@ function renderTimeline(activeIdx) {
     </div>`;
   });
   if(linked) {
-    html += `<div style="margin-left:12px;font-size:12px;color:#4ade80;font-variant-numeric:tabular-nums;white-space:nowrap;align-self:flex-start;margin-top:2px">${icon('persoon')} ${linked.name.split(' ')[0]}</div>`;
+    html += `<div style="margin-left:12px;font-size:12px;color:var(--ok);font-variant-numeric:tabular-nums;white-space:nowrap;align-self:flex-start;margin-top:2px">${icon('persoon')} ${linked.name.split(' ')[0]}</div>`;
   }
   tl.innerHTML = html;
 }
@@ -465,7 +465,7 @@ function calcScore(protoId, si) {
     if(!matched) matched = sc.ranges[sc.ranges.length-1];
   }
   if(!matched) matched = sc.ranges[0];
-  const colorMap = {'#22c55e':'good','#f59e0b':'warn','#ef4444':'bad'};
+  const colorMap = {'var(--ok)':'good','var(--warn)':'warn','var(--stop)':'bad'};
   const cls = colorMap[matched.color] || 'warn';
   res.className = `score-result show ${cls}`;
   res.innerHTML = esc(String(val)) + ' ' + esc(sc.unit) + ' ' + icon('pijl-rechts') + ' ' + esc(matched.label);
@@ -495,7 +495,7 @@ function openRF() {
       }
       const urgent = flag.includes('SPOED') || flag.includes('spoed') || flag.includes('CAUDA');
       html += `<div style="display:flex;gap:10px;align-items:flex-start;padding:8px 12px;background:rgba(239,68,68,${urgent?.1:.05});border:1px solid rgba(239,68,68,${urgent?.25:.15});border-radius:6px;margin-bottom:6px;">
-        <span style="color:#ef4444;font-weight:700;flex-shrink:0;font-size:${urgent?16:13}px;">${urgent?icon('vlag') + '':'!'}</span>
+        <span style="color:var(--stop);font-weight:700;flex-shrink:0;font-size:${urgent?16:13}px;">${urgent?icon('vlag') + '':'!'}</span>
         <span style="font-size:12px;color:var(--ink);line-height:1.5;${urgent?'font-weight:600':''}">${flag}</span>
       </div>`;
     });
@@ -563,13 +563,13 @@ function renderFicheModal() {
 }
 
 const PRINT_CSS = `
-  body{font-family:Arial,Helvetica,sans-serif;color:#000;background:#fff;padding:20px;margin:0;font-size:13px;}
+  body{font-family:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:#000;background:#fff;padding:20px;margin:0;font-size:13px;font-variant-numeric:tabular-nums;}
   h1{font-size:21px;font-weight:700;margin:0 0 4px;}
   .pf-meta{font-size:12px;color:#555;margin-bottom:16px;border-bottom:1px solid #eee;padding-bottom:8px;}
   h2{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:#555;border-bottom:1px solid #ddd;padding-bottom:3px;margin:16px 0 6px;}
   .pf-ex{display:flex;gap:12px;padding:5px 0;border-bottom:1px solid #f0f0f0;align-items:baseline;}
   .pf-ex-name{font-weight:600;font-size:12px;flex:1;}
-  .pf-ex-params{font-size:12px;color:#555;font-family:monospace;white-space:nowrap;}
+  .pf-ex-params{font-size:12px;color:#444;font-variant-numeric:tabular-nums;white-space:nowrap;}
   .pf-goal{font-size:12px;color:#333;padding:2px 0 2px 8px;}
   .pf-notes{font-size:12px;border:1px solid #ccc;padding:8px;border-radius:4px;min-height:60px;margin-top:8px;white-space:pre-wrap;}
   .pf-footer{margin-top:20px;font-size:12px;color:#999;border-top:1px solid #ddd;padding-top:6px;}
@@ -745,7 +745,7 @@ function closeForm() {
   document.body.style.overflow = '';
 }
 function renderFormBody(form, pt, datum) {
-  const color = pt ? getProtoColor(pt.protoId) : '#a78bfa';
+  const color = pt ? getProtoColor(pt.protoId) : 'var(--accent)';
   let html = '';
   // Header
   html += '<div style="background:var(--surface-2);border:1px solid var(--line);border-radius:6px;padding:10px 14px;margin-bottom:16px;">';
@@ -880,8 +880,8 @@ function updateFormScore() {
     tekst += b.behaald
       ? ' · op of boven de drempel (' + b.rts + ')'
       : ' · onder de drempel (' + b.rts + ')';
-    kleur = b.behaald ? '#22c55e' : '#f59e0b';
-    rand = b.behaald ? '#22c55e44' : '#f59e0b44';
+    kleur = b.behaald ? 'var(--ok)' : 'var(--warn)';
+    rand = b.behaald ? 'var(--ok)44' : 'var(--warn)44';
   } else if(b.ingekort) {
     tekst += ' · verkorte versie, gepubliceerde afkapwaarde niet van toepassing';
   }
@@ -992,7 +992,7 @@ function renderEvalVeld(veld, formId) {
     ['Negatief','Positief','Niet getest'].forEach(opt => {
       const bg = opt === 'Positief' ? 'rgba(239,68,68,.1)' : opt === 'Negatief' ? 'rgba(34,197,94,.1)' : 'var(--surface-2)';
       const bc = opt === 'Positief' ? 'rgba(239,68,68,.3)' : opt === 'Negatief' ? 'rgba(34,197,94,.3)' : 'var(--line)';
-      const col = opt === 'Positief' ? '#ef4444' : opt === 'Negatief' ? '#22c55e' : 'var(--ink-2)';
+      const col = opt === 'Positief' ? 'var(--stop)' : opt === 'Negatief' ? 'var(--ok)' : 'var(--ink-2)';
       html += '<button onclick="setEvalAnswer(\'' + formId + '\',\'' + veld.id + '\',\'' + opt + '\')" id="evbtn-' + veld.id + '-' + opt.replace(/ /g,'_') + '" style="flex:1;padding:6px 4px;border-radius:6px;border:1px solid ' + bc + ';background:' + bg + ';color:' + col + ';font-size:12px;font-weight:600;cursor:pointer;transition:opacity .1s;">' + opt + '</button>';
     });
     html += '</div>';
@@ -1001,7 +1001,7 @@ function renderEvalVeld(veld, formId) {
     ['Negatief','Positief','Niet getest'].forEach(opt => {
       const bg = opt === 'Positief' ? 'rgba(239,68,68,.1)' : opt === 'Negatief' ? 'rgba(34,197,94,.1)' : 'var(--surface-2)';
       const bc = opt === 'Positief' ? 'rgba(239,68,68,.3)' : opt === 'Negatief' ? 'rgba(34,197,94,.3)' : 'var(--line)';
-      const col = opt === 'Positief' ? '#ef4444' : opt === 'Negatief' ? '#22c55e' : 'var(--ink-2)';
+      const col = opt === 'Positief' ? 'var(--stop)' : opt === 'Negatief' ? 'var(--ok)' : 'var(--ink-2)';
       html += '<button onclick="setEvalAnswer(\'' + formId + '\',\'' + veld.id + '\',\'' + opt + '\')" id="evbtn-' + veld.id + '-' + opt.replace(/ /g,'_') + '" style="flex:1;padding:6px 4px;border-radius:6px;border:1px solid ' + bc + ';background:' + bg + ';color:' + col + ';font-size:12px;font-weight:600;cursor:pointer;">' + opt + '</button>';
     });
     html += '</div>';
@@ -1011,7 +1011,7 @@ function renderEvalVeld(veld, formId) {
     ['Negatief','Positief','Niet getest'].forEach(opt => {
       const bg = opt === 'Positief' ? 'rgba(239,68,68,.1)' : opt === 'Negatief' ? 'rgba(34,197,94,.1)' : 'var(--surface-2)';
       const bc = opt === 'Positief' ? 'rgba(239,68,68,.3)' : opt === 'Negatief' ? 'rgba(34,197,94,.3)' : 'var(--line)';
-      const col = opt === 'Positief' ? '#ef4444' : opt === 'Negatief' ? '#22c55e' : 'var(--ink-2)';
+      const col = opt === 'Positief' ? 'var(--stop)' : opt === 'Negatief' ? 'var(--ok)' : 'var(--ink-2)';
       html += '<button onclick="setEvalAnswer(\'' + formId + '\',\'' + veld.id + '\',\'' + opt + '\')" id="evbtn-' + veld.id + '-' + opt.replace(/ /g,'_') + '" style="flex:1;padding:6px 4px;border-radius:6px;border:1px solid ' + bc + ';background:' + bg + ';color:' + col + ';font-size:12px;font-weight:600;cursor:pointer;">' + opt + '</button>';
     });
     html += '</div>';
@@ -1061,7 +1061,7 @@ function setEvalAnswer(formId, veldId, waarde) {
   document.querySelectorAll('[id^="' + prefix + '"]').forEach(btn => {
     const isActive = btn.id === prefix + waarde.replace(/ /g,'_').replace(/[^a-z0-9_]/gi,'_');
     btn.style.background = isActive ? (waarde==='Positief'?'rgba(239,68,68,.25)':waarde==='Negatief'?'rgba(34,197,94,.25)':'var(--surface-3)') : '';
-    btn.style.color = isActive ? (waarde==='Positief'?'#ef4444':waarde==='Negatief'?'#22c55e':'var(--ink)') : '';
+    btn.style.color = isActive ? (waarde==='Positief'?'var(--stop)':waarde==='Negatief'?'var(--ok)':'var(--ink)') : '';
     btn.style.borderColor = isActive ? (waarde==='Positief'?'rgba(239,68,68,.5)':waarde==='Negatief'?'rgba(34,197,94,.5)':'var(--line-strong)') : '';
   });
 }
@@ -1088,8 +1088,8 @@ function printEvalForm() {
       if(ansBev) antwoord += ' — ' + ansBev;
       if(ansDetail) antwoord += ' (' + ansDetail + '°)';
       if(ansKwal) antwoord += ' · ' + ansKwal;
-      const kleur = ans === 'Positief' ? '#dc2626' : ans === 'Negatief' ? '#16a34a' : '#374151';
-      html += '<div class="pf-ex" style="border-bottom:1px solid #e5e7eb;padding:5px 0;">';
+      const kleur = ans === 'Positief' ? '#dc2626' : ans === 'Negatief' ? 'var(--ok)' : '#374151';
+      html += '<div class="pf-ex" style="border-bottom:1px solid var(--line);padding:5px 0;">';
       html += '<div class="pf-ex-name" style="font-weight:600;font-size:12px;flex:1;">' + veld.label + '</div>';
       html += '<div style="font-size:12px;color:' + kleur + ';font-weight:' + (ans?'700':'400') + ';min-width:160px;text-align:right;">' + antwoord + '</div>';
       html += '</div>';
@@ -1109,7 +1109,7 @@ function printBlankEvalForm(formId) {
   form.secties.forEach(sectie => {
     html += '<h2>' + sectie.titel + '</h2>';
     sectie.velden.forEach(veld => {
-      html += '<div class="pf-ex" style="border-bottom:1px solid #e5e7eb;padding:5px 0;min-height:26px;">';
+      html += '<div class="pf-ex" style="border-bottom:1px solid var(--line);padding:5px 0;min-height:26px;">';
       html += '<div class="pf-ex-name" style="font-weight:600;font-size:12px;flex:1;">' + veld.label;
       if(veld.info) html += '<br><span style="font-weight:400;font-size:12px;color:#6b7280;font-style:italic">' + veld.info + '</span>';
       if(veld.norm) html += '<span style="font-weight:400;font-size:12px;color:#9ca3af;margin-left:6px">norm: ' + veld.norm + '</span>';
@@ -1119,7 +1119,7 @@ function printBlankEvalForm(formId) {
         html += '<label style="display:flex;align-items:center;gap:4px;"><input type="checkbox"> Negatief</label>';
         html += '<label style="display:flex;align-items:center;gap:4px;"><input type="checkbox"> Positief</label>';
         html += '<label style="display:flex;align-items:center;gap:4px;"><input type="checkbox"> Niet getest</label>';
-        html += '<span style="flex:1;border-bottom:1px solid #d1d5db;margin-left:8px;">&nbsp;</span>';
+        html += '<span style="flex:1;border-bottom:1px solid var(--line-strong);margin-left:8px;">&nbsp;</span>';
         html += '</div>';
       } else if(veld.type === 'rom') {
         html += '<div style="display:flex;gap:8px;align-items:center;font-size:12px;">';
@@ -1133,14 +1133,14 @@ function printBlankEvalForm(formId) {
         ['0','1','2','3','4','5'].forEach(s => html += '<label><input type="checkbox"> ' + s + '</label>');
         html += '</div>';
       } else if(veld.type === 'reflex') {
-        html += '<div style="font-size:12px;">0 &nbsp;/&nbsp; + &nbsp;/&nbsp; ++ &nbsp;/&nbsp; +++ &nbsp;/&nbsp; ++++ &nbsp; &nbsp;<span style="border-bottom:1px solid #d1d5db">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>';
+        html += '<div style="font-size:12px;">0 &nbsp;/&nbsp; + &nbsp;/&nbsp; ++ &nbsp;/&nbsp; +++ &nbsp;/&nbsp; ++++ &nbsp; &nbsp;<span style="border-bottom:1px solid var(--line-strong)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>';
       } else if(veld.type === 'keuze3') {
         html += '<div style="display:flex;flex-wrap:wrap;gap:8px;font-size:12px;">';
         veld.opties.forEach(o => html += '<label style="display:flex;align-items:center;gap:3px;"><input type="checkbox"> ' + o + '</label>');
         html += '</div>';
       } else if(veld.type === 'tekst' || veld.type === 'tekst_groot') {
         const lines = veld.type === 'tekst_groot' ? 3 : 1;
-        for(let i=0;i<lines;i++) html += '<div style="border-bottom:1px solid #d1d5db;min-height:18px;margin-top:2px;">&nbsp;</div>';
+        for(let i=0;i<lines;i++) html += '<div style="border-bottom:1px solid var(--line-strong);min-height:18px;margin-top:2px;">&nbsp;</div>';
       }
       html += '</div>';
     });
@@ -1250,7 +1250,7 @@ function buildExerciseLibrary() {
     regios: [...g.regios],
     cats: [...g.cats],
     protoIds: [...new Set(g.variants.map(v => v.protoId))],
-    spieren: g.spierMap.size ? [...g.spierMap].map(([spier, color]) => ({spier, color})) : [{spier:'Overig', color:'#52525b'}],
+    spieren: g.spierMap.size ? [...g.spierMap].map(([spier, color]) => ({spier, color})) : [{spier:'Overig', color:'var(--ink-3)'}],
   })).sort((a, b) => a.name.localeCompare(b.name, 'nl'));
   const badge = document.getElementById('lib-count-badge');
   if(badge) badge.textContent = libCache.length + ' oef.';
@@ -1317,8 +1317,8 @@ function renderLibrary(query) {
       : ex.regios;
     keys.forEach(key => {
       if(!groups[key]) groups[key] = {items:[], color: libGroupBy === 'spier'
-        ? ex.spieren.find(s => s.spier === key)?.color || '#52525b'
-        : '#71717a'};
+        ? ex.spieren.find(s => s.spier === key)?.color || 'var(--ink-3)'
+        : 'var(--ink-2)'};
       // Avoid duplicates within group
       if(!groups[key].items.find(e => e.key === ex.key)) groups[key].items.push(ex);
     });
@@ -1403,7 +1403,7 @@ function showEvalFormsScreen() {
   renderEvalFormsScreen();
 }
 function renderEvalFormsScreen() {
-  const color_map = {nek:'#60a5fa', lage_rug:'#34d399', knie:'#22d3ee', schouder:'#f43f5e', bekken:'#a78bfa'};
+  const color_map = {nek:'#60a5fa', lage_rug:'#34d399', knie:'#22d3ee', schouder:'#f43f5e', bekken:'var(--accent)'};
   let html = '';
   Object.values(EVAL_FORMS).forEach(form => {
     const c = form.color;
@@ -1623,9 +1623,9 @@ function controleerDataConsistentie() {
   // onvolledig, en zonder netwerk maakt wissen de installatie onbruikbaar.
   // De gebruiker beslist, met de knop hieronder.
   const balk = document.createElement('div');
-  balk.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:10000;background:#b45309;color:#fff;padding:10px 14px;font-size:12px;display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;';
+  balk.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:10000;background:var(--warn);color:#fff;padding:10px 14px;font-size:12px;display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;';
   balk.innerHTML = '<span>App-bestanden zijn niet in sync (' + ontbreekt.join(' en ') + ' ontbreken). Sluit de app volledig af en open opnieuw met internet.</span>'
-    + '<button onclick="forceerUpdate()" style="background:#fff;color:#b45309;border:none;padding:4px 12px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;">' + icon('ververs') + ' Opnieuw proberen</button>';
+    + '<button onclick="forceerUpdate()" style="background:#fff;color:var(--warn);border:none;padding:4px 12px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;">' + icon('ververs') + ' Opnieuw proberen</button>';
   document.body.appendChild(balk);
 }
 

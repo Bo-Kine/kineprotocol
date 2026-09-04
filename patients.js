@@ -25,7 +25,7 @@ function getInitials(name) {
   return name.split(' ').filter(Boolean).map(w=>w[0].toUpperCase()).slice(0,2).join('');
 }
 function getProtoColor(pid) {
-  return protocols[pid]?.color || '#71717a';
+  return protocols[pid]?.color || 'var(--ink-2)';
 }
 function formatDate(iso) {
   if(!iso) return '';
@@ -100,7 +100,7 @@ function renderCriteriaSection(pt, p) {
     html += `<div class="criteria-go-banner">
       <div class="leeg-ok">${icon('check')}</div>
       <div>
-        <div style="font-size:13px;font-weight:700;color:#22c55e;">Klaar voor volgende fase</div>
+        <div style="font-size:13px;font-weight:700;color:var(--ok);">Klaar voor volgende fase</div>
         <div style="font-size:12px;color:var(--ink-2);margin-top:2px;">Alle go-criteria gehaald — bespreek fase-overgang met patiënt.</div>
       </div>
     </div>`;
@@ -108,7 +108,7 @@ function renderCriteriaSection(pt, p) {
 
   if(criteriaGo.length) {
     html += `<div style="margin-bottom:14px;">`;
-    html += `<div class="criteria-sub-label" style="color:var(--ink-3)">Go-criteria <span style="color:${allDone?'#22c55e':'var(--ink-3)'}">${doneCnt}/${totalCnt}</span></div>`;
+    html += `<div class="criteria-sub-label" style="color:var(--ink-3)">Go-criteria <span style="color:${allDone?'var(--ok)':'var(--ink-3)'}">${doneCnt}/${totalCnt}</span></div>`;
     criteriaGo.forEach((c, i) => {
       const checked = state[i] === true;
       html += `<div class="criteria-item" onclick="toggleCriteria('${pt.id}',${phaseIdx},${i})" style="cursor:pointer;background:${checked?color+'12':'var(--surface-2)'};border:1px solid ${checked?color+'33':'var(--line)'};">
@@ -123,10 +123,10 @@ function renderCriteriaSection(pt, p) {
 
   if(criteriaStop.length) {
     html += `<div style="margin-bottom:12px;">`;
-    html += `<div class="criteria-sub-label" style="color:#f59e0b;">Stop-criteria</div>`;
+    html += `<div class="criteria-sub-label" style="color:var(--warn);">Stop-criteria</div>`;
     criteriaStop.forEach(c => {
       html += `<div class="criteria-stop-item">
-        <div style="color:#f59e0b;font-size:12px;flex-shrink:0;margin-top:2px;">${icon('let-op')}</div>
+        <div style="color:var(--warn);font-size:12px;flex-shrink:0;margin-top:2px;">${icon('let-op')}</div>
         <div style="font-size:12px;color:var(--ink-2);line-height:1.5;">${c}</div>
       </div>`;
     });
@@ -134,10 +134,10 @@ function renderCriteriaSection(pt, p) {
   }
 
   if(redFlags.length) {
-    html += `<div class="criteria-sub-label" style="color:#ef4444;">${icon('vlag')} Rode vlaggen</div>`;
+    html += `<div class="criteria-sub-label" style="color:var(--stop);">${icon('vlag')} Rode vlaggen</div>`;
     redFlags.forEach(f => {
       html += `<div class="criteria-rf-item">
-        <div style="color:#ef4444;font-size:12px;flex-shrink:0;margin-top:2px;">${icon('stop')}</div>
+        <div style="color:var(--stop);font-size:12px;flex-shrink:0;margin-top:2px;">${icon('stop')}</div>
         <div style="font-size:12px;color:var(--ink-2);line-height:1.5;">${f}</div>
       </div>`;
     });
@@ -166,8 +166,8 @@ function renderDashSummary() {
   bar.style.display = 'flex';
   bar.innerHTML = [
     {label:'Totaal', val: pts.length, color:'var(--ink-2)', bg:'var(--surface-2)'},
-    overdue > 0 ? {label:'Overdue', val: overdue, color:'#ef4444', bg:'rgba(239,68,68,.1)'} : null,
-    goReady > 0 ? {label:'Klaar voor upgrade', val: goReady, color:'#22c55e', bg:'rgba(34,197,94,.1)'} : null,
+    overdue > 0 ? {label:'Overdue', val: overdue, color:'var(--stop)', bg:'rgba(239,68,68,.1)'} : null,
+    goReady > 0 ? {label:'Klaar voor upgrade', val: goReady, color:'var(--ok)', bg:'rgba(34,197,94,.1)'} : null,
     noSession > 0 ? {label:'Geen sessie', val: noSession, color:'var(--ink-3)', bg:'var(--surface-3)'} : null,
   ].filter(Boolean).map(s =>
     `<div style="background:${s.bg};border:1px solid ${s.color}33;border-radius:6px;padding:8px 14px;display:flex;align-items:center;gap:8px;">
@@ -191,9 +191,9 @@ function renderPatientList() {
     return dB - dA;
   });
 
-  const trendIcon = t => t === 'up' ? '<span style="color:#22c55e;font-size:13px;" title="Score verbeterd">&#8593;</span>'
-    : t === 'down' ? '<span style="color:#ef4444;font-size:13px;" title="Score verslechterd">&#8595;</span>'
-    : t === 'stable' ? '<span style="color:#f59e0b;font-size:13px;" title="Score stabiel">' + icon('pijl-rechts') + '</span>' : '';
+  const trendIcon = t => t === 'up' ? '<span style="color:var(--ok);font-size:13px;" title="Score verbeterd">&#8593;</span>'
+    : t === 'down' ? '<span style="color:var(--stop);font-size:13px;" title="Score verslechterd">&#8595;</span>'
+    : t === 'stable' ? '<span style="color:var(--warn);font-size:13px;" title="Score stabiel">' + icon('pijl-rechts') + '</span>' : '';
 
   container.innerHTML = `<div class="dash-grid">${sorted.map(pt => {
     const p = protocols[pt.protoId];
@@ -219,8 +219,8 @@ function renderPatientList() {
     const critBlock = crit.total > 0
       ? `<div class="dash-crit" style="border-color:${allCritDone?'rgba(34,197,94,.3)':'var(--line)'};background:${allCritDone?'rgba(34,197,94,.07)':'var(--surface-2)'};">
           <div style="font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums;text-transform:uppercase;letter-spacing:.05em;">Criteria</div>
-          <div style="font-size:21px;font-weight:700;line-height:1;color:${allCritDone?'#22c55e':'var(--ink)'};">${crit.done}/${crit.total}</div>
-          ${allCritDone ? `<div style="font-size:12px;color:#22c55e;font-variant-numeric:tabular-nums;font-weight:700;">${icon('check')} GO</div>` : ''}
+          <div style="font-size:21px;font-weight:700;line-height:1;color:${allCritDone?'var(--ok)':'var(--ink)'};">${crit.done}/${crit.total}</div>
+          ${allCritDone ? `<div style="font-size:12px;color:var(--ok);font-variant-numeric:tabular-nums;font-weight:700;">${icon('check')} GO</div>` : ''}
          </div>` : '';
 
     return `<div class="dash-card" onclick="showPatientDetail('${pt.id}')"
@@ -332,7 +332,7 @@ function renderScoreSection(pt, p) {
       html += history.map((h, idx) => {
         const range = sc.ranges.slice().find(r => sc.invert ? h.value <= r.max && h.value >= r.min : h.value >= r.min && h.value <= r.max)
           || (sc.invert ? sc.ranges[0] : sc.ranges[sc.ranges.length-1]);
-        const dotColor = range ? range.color : '#71717a';
+        const dotColor = range ? range.color : 'var(--ink-2)';
         return '<div style="display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid var(--line);">' +
           '<div style="width:7px;height:7px;border-radius:50%;background:' + dotColor + ';flex-shrink:0"></div>' +
           '<div style="font-size:12px;color:var(--ink-2);font-variant-numeric:tabular-nums;width:80px;flex-shrink:0">' + formatDate(h.date) + '</div>' +
@@ -398,8 +398,8 @@ function renderScoreChart(history, sc, color) {
   const rtsVal = sc.invert ? sc.ranges[0].max : sc.ranges[sc.ranges.length - 1].min;
   const rtsY = toY(rtsVal);
   if(rtsY >= PT && rtsY <= PT + iH) {
-    svg += `<line x1="${PL}" y1="${rtsY}" x2="${W - PR}" y2="${rtsY}" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.7"/>`;
-    svg += `<text x="${W - PR - 3}" y="${rtsY - 4}" font-size="7.5" fill="#22c55e" text-anchor="end" font-weight="600" font-family="monospace">RTS</text>`;
+    svg += `<line x1="${PL}" y1="${rtsY}" x2="${W - PR}" y2="${rtsY}" stroke="var(--ok)" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.7"/>`;
+    svg += `<text x="${W - PR - 3}" y="${rtsY - 4}" font-size="7.5" fill="var(--ok)" text-anchor="end" font-weight="600" font-family="monospace">RTS</text>`;
   }
 
   const pts = history.map((h, i) => ({ x: toX(i), y: toY(h.value) }));
@@ -454,7 +454,7 @@ function renderPatientDetail(pt, p) {
     <div class="pat-detail-actions">
       <button onclick="showProto('${pt.protoId}')" style="background:${color}18;border:1px solid ${color}33;color:${color};padding:7px 12px;border-radius:6px;font-size:12px;cursor:pointer;font-weight:600;">${p.title.split(' ').slice(0,2).join(' ')} ${icon('pijl-rechts')}</button>
       <button onclick="openPatNew('${pt.id}')" style="background:var(--surface-2);border:1px solid var(--line);color:var(--ink-2);padding:7px 12px;border-radius:6px;font-size:12px;cursor:pointer;">${icon('bewerk')}️</button>
-      <button onclick="deletePatient('${pt.id}')" style="background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);color:#ef4444;padding:7px 12px;border-radius:6px;font-size:12px;cursor:pointer;">${icon('verwijder')}</button>
+      <button onclick="deletePatient('${pt.id}')" style="background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);color:var(--stop);padding:7px 12px;border-radius:6px;font-size:12px;cursor:pointer;">${icon('verwijder')}</button>
     </div>
   </div>
   <div style="margin-bottom:6px;cursor:pointer;font-size:12px;color:var(--ink-2)" onclick="showPatients()">&#8592; Terug naar patiënten</div>`;
@@ -492,7 +492,7 @@ function renderPatientDetail(pt, p) {
     html += '<div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--line);">';
     html += '<div class="slabel">Testformulieren</div><div style="display:flex;gap:8px;flex-wrap:wrap;">';
     ptProtoForms.forEach(([fId, frm]) => {
-      html += `<button onclick="openForm('${fId}','${pt.id}')" style="background:rgba(167,139,250,.08);border:1px solid rgba(167,139,250,.2);color:#a78bfa;padding:8px 14px;border-radius:6px;font-size:12px;cursor:pointer;font-weight:500;">${icon('fiche')} ${frm.name}</button>`;
+      html += `<button onclick="openForm('${fId}','${pt.id}')" style="background:rgba(167,139,250,.08);border:1px solid rgba(167,139,250,.2);color:var(--accent);padding:8px 14px;border-radius:6px;font-size:12px;cursor:pointer;font-weight:500;">${icon('fiche')} ${frm.name}</button>`;
     });
     html += '</div></div>';
   }
@@ -523,7 +523,7 @@ function renderSessionSection(pt, p) {
   const phaseIdx = pt.phaseIndex || 0;
   const ph = p.phases[phaseIdx];
   const exs = ph ? ph.exercises : [];
-  const color = protocols[pt.protoId]?.color || '#71717a';
+  const color = protocols[pt.protoId]?.color || 'var(--ink-2)';
   const today = new Date().toISOString().slice(0, 10);
 
   let html = `<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
@@ -544,8 +544,8 @@ function renderSessionSection(pt, p) {
           <div class="form-label">NRS Pijn (0–10)</div>
           <div style="display:flex;align-items:center;gap:10px;margin-top:8px;">
             <input type="range" id="sf-nrs-${pt.id}" min="0" max="10" value="3" style="flex:1;accent-color:${color};"
-              oninput="const v=this.value,el=document.getElementById('sf-nrsv-${pt.id}');el.textContent=v;el.style.color=v<=3?'#22c55e':v<=6?'#f59e0b':'#ef4444'">
-            <span id="sf-nrsv-${pt.id}" style="font-size:21px;font-weight:700;font-variant-numeric:tabular-nums;color:#22c55e;min-width:24px;text-align:right;">3</span>
+              oninput="const v=this.value,el=document.getElementById('sf-nrsv-${pt.id}');el.textContent=v;el.style.color=v<=3?'var(--ok)':v<=6?'var(--warn)':'var(--stop)'">
+            <span id="sf-nrsv-${pt.id}" style="font-size:21px;font-weight:700;font-variant-numeric:tabular-nums;color:var(--ok);min-width:24px;text-align:right;">3</span>
           </div>
         </div>
         <div>
@@ -577,7 +577,7 @@ function renderSessionSection(pt, p) {
       const idx = sessions.length - 1 - ri;
       const sPhLabel = p.phases[s.phaseIdx]?.label || '';
       const nrs = s.nrs != null ? parseInt(s.nrs) : null;
-      const nrsColor = nrs == null ? null : nrs <= 3 ? '#22c55e' : nrs <= 6 ? '#f59e0b' : '#ef4444';
+      const nrsColor = nrs == null ? null : nrs <= 3 ? 'var(--ok)' : nrs <= 6 ? 'var(--warn)' : 'var(--stop)';
       html += `<div class="session-card">
         <div class="session-card-header">
           <span class="session-date-badge">${formatDate(s.date)}</span>
@@ -724,7 +724,7 @@ function openPatLink() {
   const pts = loadPatients().filter(p => p.protoId === currentProto.id);
   const body = document.getElementById('pat-link-body');
   if(!pts.length) {
-    body.innerHTML = `<div style="color:var(--ink-2);font-size:13px;padding:12px 0;">Geen patiënten gekoppeld aan dit protocol.<br><br><button onclick="closePatLink();openPatNew()" style="background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.3);color:#4ade80;padding:8px 14px;border-radius:6px;font-size:12px;cursor:pointer;font-weight:600;">+ Nieuwe patiënt aanmaken</button></div>`;
+    body.innerHTML = `<div style="color:var(--ink-2);font-size:13px;padding:12px 0;">Geen patiënten gekoppeld aan dit protocol.<br><br><button onclick="closePatLink();openPatNew()" style="background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.3);color:var(--ok);padding:8px 14px;border-radius:6px;font-size:12px;cursor:pointer;font-weight:600;">+ Nieuwe patiënt aanmaken</button></div>`;
   } else {
     body.innerHTML = `<div style="color:var(--ink-2);font-size:12px;margin-bottom:12px;">Patiënten met ${currentProto.title} protocol:</div>` +
     pts.map(pt => {
@@ -736,7 +736,7 @@ function openPatLink() {
         <div style="font-size:12px;color:var(--ink-2)">${icon('pijl-rechts')}</div>
       </div>`;
     }).join('') +
-    `<button onclick="closePatLink();openPatNew()" style="width:100%;margin-top:6px;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.2);color:#4ade80;padding:8px;border-radius:6px;font-size:12px;cursor:pointer;font-weight:500;">+ Nieuwe patiënt toevoegen</button>`;
+    `<button onclick="closePatLink();openPatNew()" style="width:100%;margin-top:6px;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.2);color:var(--ok);padding:8px;border-radius:6px;font-size:12px;cursor:pointer;font-weight:500;">+ Nieuwe patiënt toevoegen</button>`;
   }
   document.getElementById('pat-link-modal').classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -912,7 +912,7 @@ function printOefenblad(patId) {
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   *{margin:0;padding:0;box-sizing:border-box;}
-  body{color:#111;background:#fff;font-size:13px;line-height:1.5;}
+  body{color:#111;background:#fff;font-size:13px;line-height:1.5;font-family:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;font-variant-numeric:tabular-nums;}
   .page{max-width:780px;margin:0 auto;padding:36px 44px;}
   header{display:flex;align-items:flex-start;justify-content:space-between;padding-bottom:16px;margin-bottom:20px;border-bottom:3px solid ${color};}
   .hdr-title{font-weight:600;letter-spacing:-.01em;font-size:28px;font-weight:400;color:${color};margin-bottom:4px;letter-spacing:-.02em;}

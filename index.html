@@ -619,11 +619,11 @@ function icon(naam, klasse){
     <div id="nav-proto-sections" style="display:contents;"></div>
     <div class="sidebar-divider"></div>
     <div class="sidebar-section">Evaluatieformulieren</div>
-    <div class="nav-item" id="nav-eval-forms" onclick="showEvalFormsScreen()"><span style="font-size:15px;"><svg class="ic" aria-hidden="true"><use href="#i-stethoscoop"></use></svg></span><span class="nav-title">Klinisch onderzoek</span><span style="font-size:12px;padding:2px 7px;border-radius:10px;background:rgba(248,113,113,.15);color:#f87171;font-variant-numeric:tabular-nums;">5 regio</span></div>
-    <div class="nav-item" id="nav-library" onclick="showLibrary()"><span style="font-size:15px;"><svg class="ic" aria-hidden="true"><use href="#i-boek"></use></svg></span><span class="nav-title">Oefenbibliotheek</span><span style="font-size:12px;padding:2px 7px;border-radius:10px;background:rgba(250,204,21,.12);color:#facc15;font-variant-numeric:tabular-nums;" id="lib-count-badge">—</span></div>
+    <div class="nav-item" id="nav-eval-forms" onclick="showEvalFormsScreen()"><span style="font-size:15px;"><svg class="ic" aria-hidden="true"><use href="#i-stethoscoop"></use></svg></span><span class="nav-title">Klinisch onderzoek</span><span style="font-size:12px;padding:2px 7px;border-radius:10px;background:var(--stop-bg);color:var(--stop);font-variant-numeric:tabular-nums;">5 regio</span></div>
+    <div class="nav-item" id="nav-library" onclick="showLibrary()"><span style="font-size:15px;"><svg class="ic" aria-hidden="true"><use href="#i-boek"></use></svg></span><span class="nav-title">Oefenbibliotheek</span><span style="font-size:12px;padding:2px 7px;border-radius:10px;background:var(--accent-soft);color:var(--accent);font-variant-numeric:tabular-nums;" id="lib-count-badge">—</span></div>
     <div class="sidebar-divider"></div>
     <div class="sidebar-section">Patiënten</div>
-    <div class="nav-item" id="nav-patients" onclick="showPatients()"><span style="font-size:15px;"><svg class="ic" aria-hidden="true"><use href="#i-personen"></use></svg></span><span class="nav-title">Mijn patiënten</span><span id="pat-count-badge" style="display:none;font-size:12px;padding:1px 7px;border-radius:10px;background:rgba(74,222,128,.15);color:#4ade80;font-variant-numeric:tabular-nums;">0</span></div>
+    <div class="nav-item" id="nav-patients" onclick="showPatients()"><span style="font-size:15px;"><svg class="ic" aria-hidden="true"><use href="#i-personen"></use></svg></span><span class="nav-title">Mijn patiënten</span><span id="pat-count-badge" style="display:none;font-size:12px;padding:1px 7px;border-radius:10px;background:var(--ok-bg);color:var(--ok);font-variant-numeric:tabular-nums;">0</span></div>
     <div class="sidebar-divider"></div>
     <div style="padding:8px 14px 16px;display:flex;align-items:center;gap:8px;">
       <span id="app-version-label" style="font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums;"></span>
@@ -746,8 +746,8 @@ function icon(naam, klasse){
   <div class="bottom-nav-inner">
     <button class="bnav-item active" id="bnav-home" onclick="showHome()"><div class="bnav-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/><path d="M9 21V12h6v9"/></svg></div><div class="bnav-label">Home</div><div class="bnav-dot"></div></button>
     <button class="bnav-item" id="bnav-protocollen" onclick="openProtoSheet()"><div class="bnav-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 7h6M9 11h6M9 15h4"/></svg></div><div class="bnav-label">Protocollen</div><div class="bnav-dot"></div></button>
-    <button class="bnav-item" id="bnav-patients" onclick="showPatients()"><div class="bnav-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M2 21v-2a7 7 0 0114 0v2"/><path d="M19 8v6M22 11h-6"/></svg></div><div class="bnav-label">Patiënten</div><div class="bnav-dot" style="background:#4ade80"></div></button>
-    <button class="bnav-item" id="bnav-library" onclick="showLibrary()"><div class="bnav-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div><div class="bnav-label">Bibliotheek</div><div class="bnav-dot" style="background:#facc15"></div></button>
+    <button class="bnav-item" id="bnav-patients" onclick="showPatients()"><div class="bnav-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M2 21v-2a7 7 0 0114 0v2"/><path d="M19 8v6M22 11h-6"/></svg></div><div class="bnav-label">Patiënten</div><div class="bnav-dot" style="background:var(--ok)"></div></button>
+    <button class="bnav-item" id="bnav-library" onclick="showLibrary()"><div class="bnav-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div><div class="bnav-label">Bibliotheek</div><div class="bnav-dot" style="background:var(--accent)"></div></button>
     <button class="bnav-item" id="bnav-more" onclick="openMoreSheet()"><div class="bnav-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="1.2" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"/><circle cx="12" cy="19" r="1.2" fill="currentColor" stroke="none"/></svg></div><div class="bnav-label">Meer</div><div class="bnav-dot"></div></button>
   </div>
 </div>
@@ -787,7 +787,7 @@ function icon(naam, klasse){
   <div class="kmodal-inner">
     <div class="kmodal-bar" style="background:rgba(239,68,68,.06);border-bottom-color:rgba(239,68,68,.2);">
       <span style="font-size:17px;"><svg class="ic" aria-hidden="true"><use href="#i-vlag"></use></svg></span>
-      <div class="kmodal-title" id="rf-modal-title" style="color:#ef4444;">Rode vlaggen</div>
+      <div class="kmodal-title" id="rf-modal-title" style="color:var(--stop);">Rode vlaggen</div>
       <button class="kmodal-close" onclick="closeRF()"><svg class="ic" aria-hidden="true"><use href="#i-sluit"></use></svg></button>
     </div>
     <div class="kmodal-body" id="rf-modal-body"></div>
@@ -852,7 +852,7 @@ function icon(naam, klasse){
   <div class="kmodal-inner" style="max-width:520px;">
     <div class="kmodal-bar" style="background:rgba(167,139,250,.06);border-bottom-color:rgba(167,139,250,.2);">
       
-      <div class="kmodal-title" id="bb-modal-title" style="color:#a78bfa;">Klinische beslisboom</div>
+      <div class="kmodal-title" id="bb-modal-title" style="color:var(--accent);">Klinische beslisboom</div>
       <button class="kmodal-close" onclick="closeBeslisboom()"><svg class="ic" aria-hidden="true"><use href="#i-sluit"></use></svg></button>
     </div>
     <div class="kmodal-body" id="bb-modal-body"></div>

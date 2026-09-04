@@ -68,6 +68,20 @@
     --e2:0 16px 48px rgba(0,0,0,.55);
   }
 }
+/* Handmatig gekozen donker thema — werkt onafhankelijk van de systeeminstelling */
+:root[data-theme="dark"]{
+  --bg:#14171A; --surface:#1C2024; --surface-2:#23282D; --surface-3:#2C3238; --chrome:#1C2024;
+    --line:#2E343A; --line-strong:#414951;
+    --ink:#E9EBED; --ink-2:#B0B7BF; --ink-3:#8B939C; --ink-on-accent:#0B1416;
+    --accent:#4FB3BC; --accent-hover:#68C4CC; --accent-soft:#17343A; --accent-line:#2A5057;
+    --stop:#F0857C; --stop-bg:#2A1D1C; --stop-line:#5A312D;
+    --warn:#E0AE4E; --warn-bg:#2A2418; --warn-line:#5A4A24;
+    --ok:#6FC08D;   --ok-bg:#16281D;   --ok-line:#2C5138;
+    --info:#7FAEE0; --info-bg:#172431; --info-line:#2C4560;
+    --e1:0 1px 2px rgba(20,24,29,.28), 0 4px 12px rgba(20,24,29,.20);
+    --e2:0 16px 48px rgba(0,0,0,.55);
+}
+
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
 /* Focus: een zichtbare ring, in plaats van veertien losse outline:none-regels */
 :where(a,button,input,select,textarea,summary,label,[tabindex]):focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
@@ -552,9 +566,51 @@ body{background:var(--bg);color:var(--ink);font-family:'IBM Plex Sans',system-ui
 .lib-ex-img{display:none;width:100%;max-height:160px;object-fit:cover;border-radius:10px;margin-top:8px;}
 .lib-ex.expanded .lib-ex-img{display:block;}
 
+
+/* ── ACHTERGROND ──────────────────────────────────────────────────
+   De anatomie-render is een donkere afbeelding. Ze is daarom gekoppeld aan
+   het donkere thema; in het lichte thema blijft ze verborgen omdat donkere
+   beeldvlakken onder lichte tekst het contrast onvoorspelbaar maken.
+   De inhoudspanelen blijven ondoorzichtig, zodat tekst nooit direct op de
+   foto staat — dat was eerder de oorzaak van contrast tot 1,01:1. */
+#bg-canvas{
+  position:fixed; inset:0; z-index:0; pointer-events:none; display:none;
+  background:#020a18 url('./bg.webp') right center/cover no-repeat;
+}
+:root[data-theme="dark"] #bg-canvas{ display:block; }
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) #bg-canvas{ display:block; }
+}
+/* Boven de achtergrond uit */
+.topbar,.layout,.bottom-nav{ position:relative; z-index:1; }
+/* In het donkere thema laten de doorlopende vlakken de afbeelding zien;
+   panelen, zijbalk en balken blijven dekkend voor de leesbaarheid. */
+:root[data-theme="dark"] body,
+:root[data-theme="dark"] .main{ background:transparent; }
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) body,
+  :root:not([data-theme="light"]) .main{ background:transparent; }
+}
+:root[data-theme="dark"] .topbar,
+:root[data-theme="dark"] .sidebar,
+:root[data-theme="dark"] .bottom-nav{ background:rgba(28,32,36,.92); }
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) .topbar,
+  :root:not([data-theme="light"]) .sidebar,
+  :root:not([data-theme="light"]) .bottom-nav{ background:rgba(28,32,36,.92); }
+}
+/* Themaschakelaar in de zijbalk */
+.thema-knop{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--ink-3);
+  background:none;border:1px solid var(--line);padding:3px 9px;border-radius:999px;cursor:pointer;}
+.thema-knop:hover{color:var(--ink-2);border-color:var(--line-strong);}
 </style>
 </head>
 <body>
+<!-- Achtergrond: zichtbaar in het donkere thema, waar de afbeelding voor
+     gemaakt is. In het lichte thema wordt hij verborgen (zie CSS). -->
+<div id="bg-canvas" aria-hidden="true"></div>
+<script>/* Thema meteen zetten, voor de eerste verf, om een flits te voorkomen. */
+try{document.documentElement.setAttribute("data-theme",localStorage.getItem("kp_thema")||"dark");}catch(e){document.documentElement.setAttribute("data-theme","dark");}</script>
 
 <!-- Icoonsprite: alle iconografie is inline SVG op currentColor. -->
 <svg style="display:none" aria-hidden="true" focusable="false"><defs>
@@ -627,6 +683,7 @@ function icon(naam, klasse){
     <div class="sidebar-divider"></div>
     <div style="padding:8px 14px 16px;display:flex;align-items:center;gap:8px;">
       <span id="app-version-label" style="font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums;"></span>
+      <button class="thema-knop" id="thema-knop" onclick="wisselThema()" title="Wissel tussen donker en licht">Thema</button>
       <button onclick="forceerUpdate()" title="Controleer op een nieuwe versie" style="font-size:12px;color:var(--ink-3);background:none;border:1px solid var(--line);padding:2px 8px;border-radius:10px;cursor:pointer;font-variant-numeric:tabular-nums;"><svg class="ic" aria-hidden="true"><use href="#i-ververs"></use></svg> update</button>
     </div>
   </div>

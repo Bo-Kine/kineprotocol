@@ -1868,6 +1868,31 @@ if(typeof MutationObserver === 'function') {
   }).observe(document.documentElement, { childList: true, subtree: true });
 }
 
+
+// ── THEMA ─────────────────────────────────────────────────────────
+// Donker is de standaard: de anatomie-achtergrond is een donkere afbeelding en
+// komt alleen daar tot zijn recht. Licht blijft beschikbaar voor wie aan een
+// verlichte behandeltafel werkt of het blad wil laten aansluiten op de afdruk.
+function huidigThema() {
+  try { return localStorage.getItem('kp_thema') || 'dark'; } catch(e) { return 'dark'; }
+}
+function pasThemaToe(thema) {
+  document.documentElement.setAttribute('data-theme', thema);
+  const meta = document.querySelector('meta[name="theme-color"]:not([media])')
+            || document.querySelector('meta[name="theme-color"]');
+  if(meta) meta.setAttribute('content', thema === 'dark' ? '#14171A' : '#F4F5F7');
+  const knop = document.getElementById('thema-knop');
+  if(knop) {
+    knop.innerHTML = icon(thema === 'dark' ? 'stethoscoop' : 'stethoscoop') + (thema === 'dark' ? 'Donker' : 'Licht');
+    knop.setAttribute('aria-label', 'Thema wisselen, nu ' + (thema === 'dark' ? 'donker' : 'licht'));
+  }
+}
+function wisselThema() {
+  const nieuw = huidigThema() === 'dark' ? 'light' : 'dark';
+  try { localStorage.setItem('kp_thema', nieuw); } catch(e) {}
+  pasThemaToe(nieuw);
+}
+
 // ── INIT ──
 // Volledig lokale app: geen account of login — alle data staat in localStorage
 // (bewaar regelmatig een backup via het patiëntendashboard).
@@ -1877,6 +1902,7 @@ function initApp() {
     const el = document.getElementById(id);
     if(el) el.textContent = 'v' + APP_VERSION;
   });
+  pasThemaToe(huidigThema());
   controleerDataConsistentie();
   buildNav();
   maakKlikbaarToegankelijk(document);

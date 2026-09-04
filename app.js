@@ -118,18 +118,18 @@ function renderFeatured(regio) {
     const phases = p.phases ? p.phases.length : 0;
     const exCount = p.phases ? p.phases.reduce((a,ph) => a + (ph.exercises ? ph.exercises.length : 0), 0) : 0;
     const color = p.color || '#888';
-    const bg = `linear-gradient(135deg,${color}2a 0%,${color}0f 100%)`;
+    const bg = `var(--surface-2)`;
     const border = `border:1px solid ${color}28;`;
     return `<div class="featured-card" style="background:${bg};${border}" onclick="showProto('${id}')">
       <div class="featured-card-top">
-        <span class="featured-card-icon">${p.icon||'📋'}</span>
+        <span class="featured-card-icon">${p.icon||icon('klembord') + ''}</span>
         <span class="featured-card-title">${p.title}</span>
         <span class="featured-card-badge" style="background:${color}1e;color:${color}">${id.toUpperCase()}</span>
       </div>
       <div class="featured-card-footer">
         ${phases ? `<span class="featured-card-tag">${phases} fasen</span>` : ''}
         ${exCount ? `<span class="featured-card-tag">${exCount} oefeningen</span>` : ''}
-        <span class="featured-card-arrow">→</span>
+        <span class="featured-card-arrow">${icon('pijl-rechts')}</span>
       </div>
     </div>`;
   }).join('');
@@ -207,8 +207,8 @@ function renderVandaag() {
     if(!p) return;
     // 1. Geen sessie in > 7 dagen (of nog nooit, > 7 dagen na start)
     const days = getDaysSinceLastSession(pt);
-    if(days !== null && days > 7) alerts.push({pt, prio: days, icon: '⏰', msg: `geen sessie sinds ${days} dagen`});
-    // 2. Faseduur verstreken → doorstroomcriteria evalueren
+    if(days !== null && days > 7) alerts.push({pt, prio: days, icon: icon('let-op') + '', msg: `geen sessie sinds ${days} dagen`});
+    // 2. Faseduur verstreken  doorstroomcriteria evalueren
     const phaseIdx = pt.phaseIndex || 0;
     const ph = p.phases[phaseIdx];
     const startISO = (pt.phaseHistory || {})[phaseIdx] || pt.startDate;
@@ -217,7 +217,7 @@ function renderVandaag() {
       const maxWkn = m ? parseInt(m[1]) : null;
       if(maxWkn && !(ph.weeks || '').includes('+')) {
         const wknInFase = (now - new Date(startISO).getTime()) / 6048e5;
-        if(wknInFase > maxWkn) alerts.push({pt, prio: 5 + wknInFase - maxWkn, icon: '📈', msg: `${ph.label} (${ph.weeks}) verstreken — evalueer doorstroomcriteria`});
+        if(wknInFase > maxWkn) alerts.push({pt, prio: 5 + wknInFase - maxWkn, icon: icon('meetlat') + '', msg: `${ph.label} (${ph.weeks}) verstreken — evalueer doorstroomcriteria`});
       }
     }
     // 3. Laatste uitkomstmaat ouder dan 28 dagen
@@ -225,7 +225,7 @@ function renderVandaag() {
     const dates = Object.values(scores).flat().map(s => s.date).filter(Boolean).sort();
     if(dates.length) {
       const d = Math.floor((now - new Date(dates[dates.length-1]).getTime()) / 864e5);
-      if(d > 28) alerts.push({pt, prio: 3, icon: '📊', msg: `laatste score ${d} dagen oud — neem uitkomstmaat opnieuw af`});
+      if(d > 28) alerts.push({pt, prio: 3, icon: icon('meetlat') + '', msg: `laatste score ${d} dagen oud — neem uitkomstmaat opnieuw af`});
     }
   });
   if(!alerts.length) { el.style.display = 'none'; return; }
@@ -234,16 +234,16 @@ function renderVandaag() {
   el.innerHTML = `<div class="section-label" style="margin:0 0 8px;padding:0;">VANDAAG · ${alerts.length} AANDACHTSPUNT${alerts.length > 1 ? 'EN' : ''}</div>`
     + alerts.slice(0, 6).map(a => {
       const color = getProtoColor(a.pt.protoId);
-      return `<div onclick="showPatientDetail('${a.pt.id}')" style="display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-left:3px solid ${color};border-radius:7px;padding:9px 12px;margin-bottom:6px;cursor:pointer;" onmouseover="this.style.borderColor='var(--border2)'" onmouseout="this.style.borderColor='var(--border)';this.style.borderLeftColor='${color}'">
-        <span style="font-size:14px;">${a.icon}</span>
+      return `<div onclick="showPatientDetail('${a.pt.id}')" style="display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-left:3px solid ${color};border-radius:6px;padding:9px 12px;margin-bottom:6px;cursor:pointer;" onmouseover="this.style.borderColor='var(--line-strong)'" onmouseout="this.style.borderColor='var(--line)';this.style.borderLeftColor='${color}'">
+        <span style="font-size:15px;">${a.icon}</span>
         <div style="flex:1;min-width:0;">
-          <span style="font-size:12.5px;font-weight:600;">${esc(a.pt.name)}</span>
-          <span style="font-size:11.5px;color:var(--muted);"> — ${a.msg}</span>
+          <span style="font-size:12px;font-weight:600;">${esc(a.pt.name)}</span>
+          <span style="font-size:12px;color:var(--ink-2);"> — ${a.msg}</span>
         </div>
-        <span style="font-size:12px;color:var(--muted2);">→</span>
+        <span style="font-size:12px;color:var(--ink-3);">${icon('pijl-rechts')}</span>
       </div>`;
     }).join('')
-    + (alerts.length > 6 ? `<div style="font-size:11px;color:var(--muted2);text-align:center;padding:2px;">+ ${alerts.length - 6} meer in het patiëntendashboard</div>` : '');
+    + (alerts.length > 6 ? `<div style="font-size:12px;color:var(--ink-3);text-align:center;padding:2px;">+ ${alerts.length - 6} meer in het patiëntendashboard</div>` : '');
 }
 function showProto(id) {
   const p = protocols[id]; if(!p) return;
@@ -268,15 +268,15 @@ function showProto(id) {
   }).join('');
   const scoresTab = hasScores ? '<div class="vtab" data-tab="scores" onclick="showScores(\'' + id + '\')"> Scores</div>' : '';
   const protoForms = Object.entries(FORMS).filter(([k,f]) => f.protocol === id);
-  const formsTab = protoForms.length ? '<div class="vtab" data-tab="forms" onclick="showFormsTab(\'' + id + '\')">📝 Formulieren</div>' : '';
+  const formsTab = protoForms.length ? '<div class="vtab" data-tab="forms" onclick="showFormsTab(\'' + id + '\')">' + icon('fiche') + ' Formulieren</div>' : '';
   const refsTab = '<div class="vtab" data-tab="refs" onclick="showRefs(\'' + id + '\')">Referenties</div>';
   // typeof-controle: bij een half bijgewerkte cache kan protocols.js ouder zijn
   // dan app.js. Zonder deze guard gooit dat een ReferenceError midden in
   // showProto, waardoor tabs en inhoud van het vorige protocol blijven staan.
   const heeftInfo = typeof BESCHRIJVING !== 'undefined' && BESCHRIJVING[id];
   const heeftManueel = typeof MANUEEL !== 'undefined' && MANUEEL[id];
-  const infoTab = heeftInfo ? '<div class="vtab" data-tab="info" onclick="showBeschrijving(\'' + id + '\')">🔬 Aandoening</div>' : '';
-  const manueelTab = heeftManueel ? '<div class="vtab" data-tab="manueel" onclick="showManueel(\'' + id + '\')">🤲 Manuele therapie</div>' : '';
+  const infoTab = heeftInfo ? '<div class="vtab" data-tab="info" onclick="showBeschrijving(\'' + id + '\')">' + icon('stethoscoop') + ' Aandoening</div>' : '';
+  const manueelTab = heeftManueel ? '<div class="vtab" data-tab="manueel" onclick="showManueel(\'' + id + '\')">' + icon('hand') + ' Manuele therapie</div>' : '';
   // Regelafbreking tussen de fasetabs en de overige tabs, zodat die laatste
   // altijd als eigen groep zichtbaar zijn en niet achter de fasen wegvallen.
   const extraTabs = infoTab + manueelTab + scoresTab + formsTab + refsTab;
@@ -315,11 +315,11 @@ function showBeschrijving(id) {
   setActiveTab('info');
   document.getElementById('proto-body').innerHTML = `
     <div class="ev-box" style="margin-bottom:14px;">
-      <div class="ev-label" style="display:flex;align-items:center;gap:7px;">🩺 Klinische kenmerken & presentatie</div>
+      <div class="ev-label" style="display:flex;align-items:center;gap:7px;">${icon('stethoscoop')} Klinische kenmerken & presentatie</div>
       <div class="ev-text" style="line-height:1.7">${b.kenmerken}</div>
     </div>
     <div class="ev-box">
-      <div class="ev-label" style="display:flex;align-items:center;gap:7px;">⚙️ Etiologie & oorzaken</div>
+      <div class="ev-label" style="display:flex;align-items:center;gap:7px;">️ Etiologie & oorzaken</div>
       <div class="ev-text" style="line-height:1.7">${b.oorzaken}</div>
     </div>`;
   document.getElementById('viewer-scroll').scrollTop = 0;
@@ -329,7 +329,7 @@ function showBeschrijving(id) {
 function showManueel(id) {
   const m = MANUEEL[id]; if(!m) return;
   setActiveTab('manueel');
-  const color = (protocols[id] || {}).color || 'var(--muted)';
+  const color = (protocols[id] || {}).color || 'var(--ink-2)';
 
   const technieken = (m.technieken || []).map(t => `
     <div class="mt-card">
@@ -340,12 +340,12 @@ function showManueel(id) {
       ${t.doel ? `<div class="mt-rij"><span class="mt-label">Doel</span><span class="mt-tekst">${t.doel}</span></div>` : ''}
       ${t.uitvoering ? `<div class="mt-rij"><span class="mt-label">Uitvoering</span><span class="mt-tekst">${t.uitvoering}</span></div>` : ''}
       ${t.dosering ? `<div class="mt-rij"><span class="mt-label">Dosering</span><span class="mt-tekst mt-dosering">${t.dosering}</span></div>` : ''}
-      ${t.let_op ? `<div class="mt-letop">⚠ ${t.let_op}</div>` : ''}
+      ${t.let_op ? `<div class="mt-letop">${icon('let-op')} ${t.let_op}</div>` : ''}
     </div>`).join('');
 
   document.getElementById('proto-body').innerHTML = `
     ${m.intro ? `<div class="ev-box" style="margin-bottom:16px;">
-      <div class="ev-label" style="display:flex;align-items:center;gap:7px;">🤲 Rol van manuele therapie</div>
+      <div class="ev-label" style="display:flex;align-items:center;gap:7px;">${icon('hand')} Rol van manuele therapie</div>
       <div class="ev-text" style="line-height:1.7">${m.intro}</div>
     </div>` : ''}
     <div class="slabel">Technieken · ${(m.technieken || []).length}</div>
@@ -389,7 +389,7 @@ function renderTimeline(activeIdx) {
     </div>`;
   });
   if(linked) {
-    html += `<div style="margin-left:12px;font-size:10px;color:#4ade80;font-family:Geist Mono,monospace;white-space:nowrap;align-self:flex-start;margin-top:2px">👤 ${linked.name.split(' ')[0]}</div>`;
+    html += `<div style="margin-left:12px;font-size:12px;color:#4ade80;font-variant-numeric:tabular-nums;white-space:nowrap;align-self:flex-start;margin-top:2px">${icon('persoon')} ${linked.name.split(' ')[0]}</div>`;
   }
   tl.innerHTML = html;
 }
@@ -403,15 +403,15 @@ function showFormsTab(protoId) {
   let html = '<div class="slabel">Testformulieren — ' + p.title + '</div>';
   html += '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-bottom:20px;">';
   protoForms.forEach(([formId, form]) => {
-    html += '<div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px 16px;cursor:pointer;" onclick="openForm(\''+formId+'\',null)" onmouseover="this.style.borderColor=\'var(--border2)\'" onmouseout="this.style.borderColor=\'var(--border)\'">';
-    html += '<div style="font-size:14px;font-weight:600;margin-bottom:4px;">' + form.name + '</div>';
-    html += '<div style="font-size:11px;color:var(--muted);margin-bottom:10px;line-height:1.4">' + form.full + '</div>';
-    html += '<div style="font-size:10.5px;color:var(--muted2);font-family:Geist Mono,monospace;margin-bottom:10px">Max: ' + form.max + ' · RTS: ' + form.rts + '</div>';
-    html += '<div style="background:' + color + '22;color:' + color + ';border:1px solid ' + color + '44;padding:6px 12px;border-radius:5px;font-size:11.5px;font-weight:600;text-align:center;">📝 Formulier invullen</div>';
+    html += '<div style="background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;cursor:pointer;" onclick="openForm(\''+formId+'\',null)" onmouseover="this.style.borderColor=\'var(--line-strong)\'" onmouseout="this.style.borderColor=\'var(--line)\'">';
+    html += '<div style="font-size:15px;font-weight:600;margin-bottom:4px;">' + form.name + '</div>';
+    html += '<div style="font-size:12px;color:var(--ink-2);margin-bottom:10px;line-height:1.4">' + form.full + '</div>';
+    html += '<div style="font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums;margin-bottom:10px">Max: ' + form.max + ' · RTS: ' + form.rts + '</div>';
+    html += '<div style="background:' + color + '22;color:' + color + ';border:1px solid ' + color + '44;padding:6px 12px;border-radius:6px;font-size:12px;font-weight:600;text-align:center;">' + icon('fiche') + ' Formulier invullen</div>';
     html += '</div>';
   });
   html += '</div>';
-  html += '<div style="font-size:12px;color:var(--muted);padding:10px 14px;background:var(--surface2);border-radius:6px;border:1px solid var(--border)">💡 Koppel een patiënt via de "👤 Koppel patiënt" knop om een ingevuld formulier automatisch aan hun dossier te koppelen.</div>';
+  html += '<div style="font-size:12px;color:var(--ink-2);padding:10px 14px;background:var(--surface-2);border-radius:6px;border:1px solid var(--line)"> Koppel een patiënt via de "' + icon('persoon') + ' Koppel patiënt" knop om een ingevuld formulier automatisch aan hun dossier te koppelen.</div>';
   document.getElementById('proto-body').innerHTML = html;
   document.getElementById('viewer-scroll').scrollTop = 0;
 }
@@ -435,8 +435,8 @@ function showScores(id) {
       </div>`;
     });
     html += `</div>`;
-    if(sc.rts) html += `<div style="font-size:10.5px;color:var(--muted);margin-bottom:10px;padding:5px 8px;background:var(--surface2);border-radius:4px;font-family:Geist Mono,monospace">RTS: ${sc.rts}</div>`;
-    if(sc.mcid) html += `<div style="font-size:10px;color:var(--muted2);margin-bottom:10px;font-family:Geist Mono,monospace">MCID: ${sc.mcid} ${sc.unit}</div>`;
+    if(sc.rts) html += `<div style="font-size:12px;color:var(--ink-2);margin-bottom:10px;padding:5px 8px;background:var(--surface-2);border-radius:4px;font-variant-numeric:tabular-nums">RTS: ${sc.rts}</div>`;
+    if(sc.mcid) html += `<div style="font-size:12px;color:var(--ink-3);margin-bottom:10px;font-variant-numeric:tabular-nums">MCID: ${sc.mcid} ${sc.unit}</div>`;
     html += `<div class="score-input-row">
       <input class="score-input" id="score-input-${si}" type="number" min="0" max="${sc.max}" placeholder="Score (0–${sc.max})">
       <button class="score-btn" onclick="calcScore('${id}',${si})">Interpreteer</button>
@@ -468,7 +468,7 @@ function calcScore(protoId, si) {
   const colorMap = {'#22c55e':'good','#f59e0b':'warn','#ef4444':'bad'};
   const cls = colorMap[matched.color] || 'warn';
   res.className = `score-result show ${cls}`;
-  res.textContent = `${val} ${sc.unit} → ${matched.label}`;
+  res.innerHTML = esc(String(val)) + ' ' + esc(sc.unit) + ' ' + icon('pijl-rechts') + ' ' + esc(matched.label);
   if(sc.mcid) {
     res.textContent += ` · MCID: ${sc.mcid}`;
   }
@@ -483,20 +483,20 @@ function openRF() {
     if(ph.redflags && ph.redflags.length)
       ph.redflags.forEach(f => allFlags.push({fase: ph.label + ' — ' + ph.title, flag: f}));
   });
-  document.getElementById('rf-modal-title').textContent = '🚨 Rode vlaggen — ' + p.title;
+  document.getElementById('rf-modal-title').innerHTML = icon('vlag') + ' Rode vlaggen: ' + esc(p.title);
   if(!allFlags.length) {
-    document.getElementById('rf-modal-body').innerHTML = '<div style="color:var(--muted);font-size:13px;padding:20px 0;text-align:center;">Geen rode vlaggen geregistreerd.</div>';
+    document.getElementById('rf-modal-body').innerHTML = '<div style="color:var(--ink-2);font-size:13px;padding:20px 0;text-align:center;">Geen rode vlaggen geregistreerd.</div>';
   } else {
     let html = ''; let lastFase = '';
     allFlags.forEach(({fase, flag}) => {
       if(fase !== lastFase) {
-        html += `<div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);font-family:Geist Mono,monospace;margin:${lastFase?'16px':0} 0 6px">${fase}</div>`;
+        html += `<div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);font-variant-numeric:tabular-nums;margin:${lastFase?'16px':0} 0 6px">${fase}</div>`;
         lastFase = fase;
       }
       const urgent = flag.includes('SPOED') || flag.includes('spoed') || flag.includes('CAUDA');
-      html += `<div style="display:flex;gap:10px;align-items:flex-start;padding:8px 12px;background:rgba(239,68,68,${urgent?.1:.05});border:1px solid rgba(239,68,68,${urgent?.25:.15});border-radius:5px;margin-bottom:6px;">
-        <span style="color:#ef4444;font-weight:700;flex-shrink:0;font-size:${urgent?16:13}px;">${urgent?'🚨':'!'}</span>
-        <span style="font-size:12.5px;color:var(--text);line-height:1.5;${urgent?'font-weight:600':''}">${flag}</span>
+      html += `<div style="display:flex;gap:10px;align-items:flex-start;padding:8px 12px;background:rgba(239,68,68,${urgent?.1:.05});border:1px solid rgba(239,68,68,${urgent?.25:.15});border-radius:6px;margin-bottom:6px;">
+        <span style="color:#ef4444;font-weight:700;flex-shrink:0;font-size:${urgent?16:13}px;">${urgent?icon('vlag') + '':'!'}</span>
+        <span style="font-size:12px;color:var(--ink);line-height:1.5;${urgent?'font-weight:600':''}">${flag}</span>
       </div>`;
     });
     document.getElementById('rf-modal-body').innerHTML = html;
@@ -526,53 +526,53 @@ function setFicheScope(scope) { ficheScope = scope; renderFicheModal(); }
 function renderFicheModal() {
   const p = currentProto;
   const phases = ficheScope === 'all' ? p.phases : [p.phases[fichePhaseIndex]];
-  document.getElementById('fiche-modal-title').textContent = '📋 ' + p.title;
+  document.getElementById('fiche-modal-title').innerHTML = icon('klembord') + ' ' + esc(p.title);
   let html = `<div style="display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap;">`;
-  html += `<button onclick="setFicheScope('fase')" style="flex:1;padding:7px 10px;border-radius:6px;font-size:11.5px;font-family:Geist,sans-serif;cursor:pointer;font-weight:600;border:1px solid ${ficheScope==='fase'?'var(--proto-color)':'var(--border)'};background:${ficheScope==='fase'?'var(--surface3)':'var(--surface2)'};color:${ficheScope==='fase'?'var(--proto-color)':'var(--muted)'};">Huidige fase</button>`;
-  html += `<button onclick="setFicheScope('all')" style="flex:1;padding:7px 10px;border-radius:6px;font-size:11.5px;font-family:Geist,sans-serif;cursor:pointer;font-weight:600;border:1px solid ${ficheScope==='all'?'var(--proto-color)':'var(--border)'};background:${ficheScope==='all'?'var(--surface3)':'var(--surface2)'};color:${ficheScope==='all'?'var(--proto-color)':'var(--muted)'};">Volledig protocol</button>`;
+  html += `<button onclick="setFicheScope('fase')" style="flex:1;padding:7px 10px;border-radius:6px;font-size:12px;cursor:pointer;font-weight:600;border:1px solid ${ficheScope==='fase'?'var(--proto-color)':'var(--line)'};background:${ficheScope==='fase'?'var(--surface-3)':'var(--surface-2)'};color:${ficheScope==='fase'?'var(--proto-color)':'var(--ink-2)'};">Huidige fase</button>`;
+  html += `<button onclick="setFicheScope('all')" style="flex:1;padding:7px 10px;border-radius:6px;font-size:12px;cursor:pointer;font-weight:600;border:1px solid ${ficheScope==='all'?'var(--proto-color)':'var(--line)'};background:${ficheScope==='all'?'var(--surface-3)':'var(--surface-2)'};color:${ficheScope==='all'?'var(--proto-color)':'var(--ink-2)'};">Volledig protocol</button>`;
   html += `</div>`;
   if(ficheScope === 'fase') {
     html += `<div style="display:flex;gap:4px;margin-bottom:14px;overflow-x:auto;scrollbar-width:none;">`;
     p.phases.forEach((ph,i) => {
-      html += `<button onclick="fichePhaseIndex=${i};renderFicheModal()" style="flex-shrink:0;padding:4px 10px;border-radius:5px;font-size:10.5px;font-family:Geist Mono,monospace;cursor:pointer;border:1px solid ${i===fichePhaseIndex?'var(--proto-color)':'var(--border)'};background:${i===fichePhaseIndex?'var(--surface3)':'var(--surface2)'};color:${i===fichePhaseIndex?'var(--text)':'var(--muted)'};">${ph.label}</button>`;
+      html += `<button onclick="fichePhaseIndex=${i};renderFicheModal()" style="flex-shrink:0;padding:4px 10px;border-radius:6px;font-size:12px;font-variant-numeric:tabular-nums;cursor:pointer;border:1px solid ${i===fichePhaseIndex?'var(--proto-color)':'var(--line)'};background:${i===fichePhaseIndex?'var(--surface-3)':'var(--surface-2)'};color:${i===fichePhaseIndex?'var(--ink)':'var(--ink-2)'};">${ph.label}</button>`;
     });
     html += `</div>`;
   }
   phases.forEach(ph => {
     html += `<div style="margin-bottom:18px;">`;
-    html += `<div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid var(--proto-color);border-radius:4px;padding:10px 14px;margin-bottom:10px;"><div style="font-size:12px;font-weight:700;">${ph.label} — ${ph.title}</div><div style="font-size:10.5px;color:var(--muted);font-family:Geist Mono,monospace;margin-top:2px">${ph.weeks}</div></div>`;
+    html += `<div style="background:var(--surface-2);border:1px solid var(--line);border-left:3px solid var(--proto-color);border-radius:4px;padding:10px 14px;margin-bottom:10px;"><div style="font-size:12px;font-weight:700;">${ph.label} — ${ph.title}</div><div style="font-size:12px;color:var(--ink-2);font-variant-numeric:tabular-nums;margin-top:2px">${ph.weeks}</div></div>`;
     if(ph.goals?.length) {
-      html += `<div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);font-family:Geist Mono,monospace;margin-bottom:6px;">Doelstellingen</div><ul style="list-style:none;margin-bottom:12px;">`;
+      html += `<div style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);font-variant-numeric:tabular-nums;margin-bottom:6px;">Doelstellingen</div><ul style="list-style:none;margin-bottom:12px;">`;
       ph.goals.forEach(g => html += `<li class="fiche-goal-item">${g}</li>`);
       html += `</ul>`;
     }
     if(ph.exercises?.length) {
-      html += `<div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);font-family:Geist Mono,monospace;margin-bottom:6px;">Oefeningen</div>`;
+      html += `<div style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);font-variant-numeric:tabular-nums;margin-bottom:6px;">Oefeningen</div>`;
       ph.exercises.forEach(ex => {
         html += `<div class="fiche-ex-row"><div style="flex:1"><div class="fiche-ex-name">${ex.name}</div>`;
         if(ex.params?.length) html += `<div class="fiche-ex-params">${ex.params.map(([k,v])=>`${k}: ${v}`).join(' · ')}</div>`;
-        if(ex.note) html += `<div style="font-size:11px;color:var(--muted);margin-top:3px;line-height:1.5">${ex.note}</div>`;
+        if(ex.note) html += `<div style="font-size:12px;color:var(--ink-2);margin-top:3px;line-height:1.5">${ex.note}</div>`;
         html += `</div></div>`;
       });
     }
     html += `</div>`;
   });
-  html += `<div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);font-family:Geist Mono,monospace;margin-bottom:6px;">Notities voor patiënt</div>`;
+  html += `<div style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);font-variant-numeric:tabular-nums;margin-bottom:6px;">Notities voor patiënt</div>`;
   html += `<textarea class="fiche-notes-area" id="fiche-notes" placeholder="Voeg persoonlijke notities toe..."></textarea>`;
   document.getElementById('fiche-modal-body').innerHTML = html;
 }
 
 const PRINT_CSS = `
   body{font-family:Arial,Helvetica,sans-serif;color:#000;background:#fff;padding:20px;margin:0;font-size:13px;}
-  h1{font-size:20px;font-weight:700;margin:0 0 4px;}
+  h1{font-size:21px;font-weight:700;margin:0 0 4px;}
   .pf-meta{font-size:12px;color:#555;margin-bottom:16px;border-bottom:1px solid #eee;padding-bottom:8px;}
-  h2{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#555;border-bottom:1px solid #ddd;padding-bottom:3px;margin:16px 0 6px;}
+  h2{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:#555;border-bottom:1px solid #ddd;padding-bottom:3px;margin:16px 0 6px;}
   .pf-ex{display:flex;gap:12px;padding:5px 0;border-bottom:1px solid #f0f0f0;align-items:baseline;}
   .pf-ex-name{font-weight:600;font-size:12px;flex:1;}
-  .pf-ex-params{font-size:11px;color:#555;font-family:monospace;white-space:nowrap;}
-  .pf-goal{font-size:11px;color:#333;padding:2px 0 2px 8px;}
-  .pf-notes{font-size:11px;border:1px solid #ccc;padding:8px;border-radius:4px;min-height:60px;margin-top:8px;white-space:pre-wrap;}
-  .pf-footer{margin-top:20px;font-size:10px;color:#999;border-top:1px solid #ddd;padding-top:6px;}
+  .pf-ex-params{font-size:12px;color:#555;font-family:monospace;white-space:nowrap;}
+  .pf-goal{font-size:12px;color:#333;padding:2px 0 2px 8px;}
+  .pf-notes{font-size:12px;border:1px solid #ccc;padding:8px;border-radius:4px;min-height:60px;margin-top:8px;white-space:pre-wrap;}
+  .pf-footer{margin-top:20px;font-size:12px;color:#999;border-top:1px solid #ddd;padding-top:6px;}
   @media print{body{padding:0;}}
 `;
 
@@ -601,13 +601,13 @@ function printFiche() {
   const datum = new Date().toLocaleDateString('nl-BE',{day:'2-digit',month:'2-digit',year:'numeric'});
   let html = `<h1>${p.title}</h1><div class="pf-meta">Patiëntenfiche · ${ficheScope==='all'?'Volledig protocol':phases[0].label} · ${datum}</div>`;
   phases.forEach(ph => {
-    html += `<h2>${ph.label} — ${ph.title} <span style="font-weight:400;font-size:11px;color:#888">${ph.weeks}</span></h2>`;
-    if(ph.goals?.length) { html += `<div style="font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#888;margin-bottom:4px">Doelstellingen</div>`; ph.goals.forEach(g => html += `<div class="pf-goal">→ ${g}</div>`); }
+    html += `<h2>${ph.label} — ${ph.title} <span style="font-weight:400;font-size:12px;color:#888">${ph.weeks}</span></h2>`;
+    if(ph.goals?.length) { html += `<div style="font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#888;margin-bottom:4px">Doelstellingen</div>`; ph.goals.forEach(g => html += `<div class="pf-goal">${icon('pijl-rechts')} ${g}</div>`); }
     if(ph.exercises?.length) {
-      html += `<div style="font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#888;margin:10px 0 4px">Oefeningen</div>`;
+      html += `<div style="font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#888;margin:10px 0 4px">Oefeningen</div>`;
       ph.exercises.forEach(ex => {
         html += `<div class="pf-ex"><div class="pf-ex-name">${ex.name}</div><div class="pf-ex-params">${ex.params?ex.params.map(([k,v])=>`${k}: ${v}`).join(' · '):''}</div></div>`;
-        if(ex.note) html += `<div style="font-size:10px;color:#666;padding:2px 0 4px 8px;font-style:italic">${ex.note}</div>`;
+        if(ex.note) html += `<div style="font-size:12px;color:#666;padding:2px 0 4px 8px;font-style:italic">${ex.note}</div>`;
       });
     }
   });
@@ -626,7 +626,7 @@ function copyFiche() {
     text += ph.label + ' — ' + ph.title + ' (' + ph.weeks + ')\n' + '-'.repeat(40) + '\n';
     if(ph.goals && ph.goals.length) {
       text += '\nDoelstellingen:\n';
-      ph.goals.forEach(function(g) { text += '  → ' + g + '\n'; });
+      ph.goals.forEach(function(g) { text += '  ' + icon('pijl-rechts') + ' ' + g + '\n'; });
     }
     if(ph.exercises && ph.exercises.length) {
       text += '\nOefeningen:\n';
@@ -642,12 +642,12 @@ function copyFiche() {
   text += 'KineProtocol · ' + datum;
   navigator.clipboard.writeText(text).then(function() {
     var btn = document.querySelector('.kmodal-action.secondary');
-    if(btn) { btn.textContent = '✓ Gekopieerd!'; setTimeout(function(){ btn.textContent = '📋 Kopieer tekst'; }, 2000); }
+    if(btn) { btn.innerHTML = icon('check') + ' Gekopieerd'; setTimeout(function(){ btn.innerHTML = icon('klembord') + ' Kopieer tekst'; }, 2000); }
   }).catch(function() {
     var ta = document.createElement('textarea'); ta.value = text; ta.style.position='fixed'; ta.style.opacity='0';
     document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
     var btn = document.querySelector('.kmodal-action.secondary');
-    if(btn) { btn.textContent = '✓ Gekopieerd!'; setTimeout(function(){ btn.textContent = '📋 Kopieer tekst'; }, 2000); }
+    if(btn) { btn.innerHTML = icon('check') + ' Gekopieerd'; setTimeout(function(){ btn.innerHTML = icon('klembord') + ' Kopieer tekst'; }, 2000); }
   });
 }
 
@@ -682,22 +682,22 @@ function renderBeslisboomStap(protoId, stapId) {
   let html = '';
   // Breadcrumb
   if(beslisboomStack.length > 1) {
-    html += '<button onclick="beslisboomTerug(\'' + protoId + '\')" style="background:var(--surface2);border:1px solid var(--border);color:var(--muted);padding:5px 10px;border-radius:6px;font-size:11px;cursor:pointer;font-family:Geist,sans-serif;margin-bottom:12px;">← Terug</button>';
+    html += '<button onclick="beslisboomTerug(\'' + protoId + '\')" style="background:var(--surface-2);border:1px solid var(--line);color:var(--ink-2);padding:5px 10px;border-radius:6px;font-size:12px;cursor:pointer;margin-bottom:12px;"'+icon('chevron','ic-terug')+' Terug</button>';
   }
   // Vraag
-  html += '<div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid ' + color + ';border-radius:6px;padding:14px 16px;margin-bottom:14px;">';
-  html += '<div style="font-size:14px;font-weight:600;margin-bottom:6px;">' + stap.vraag + '</div>';
-  if(stap.info) html += '<div style="font-size:12px;color:var(--muted);line-height:1.5">' + stap.info + '</div>';
+  html += '<div style="background:var(--surface-2);border:1px solid var(--line);border-left:3px solid ' + color + ';border-radius:6px;padding:14px 16px;margin-bottom:14px;">';
+  html += '<div style="font-size:15px;font-weight:600;margin-bottom:6px;">' + stap.vraag + '</div>';
+  if(stap.info) html += '<div style="font-size:12px;color:var(--ink-2);line-height:1.5">' + stap.info + '</div>';
   html += '</div>';
   // Opties
   stap.opties.forEach(opt => {
     if(opt.advies) {
       // Terminal node
-      html += '<div onclick="renderBeslisboomAdvies(\'' + protoId + '\',this)" data-advies="' + opt.advies.replace(/"/g,'&quot;') + '" data-color="' + opt.color + '" style="cursor:pointer;padding:12px 14px;border-radius:7px;border:2px solid ' + opt.color + '33;background:' + opt.color + '11;margin-bottom:8px;transition:all .15s;" onmouseover="this.style.background=\'' + opt.color + '22\'" onmouseout="this.style.background=\'' + opt.color + '11\'">';
+      html += '<div onclick="renderBeslisboomAdvies(\'' + protoId + '\',this)" data-advies="' + opt.advies.replace(/"/g,'&quot;') + '" data-color="' + opt.color + '" style="cursor:pointer;padding:12px 14px;border-radius:6px;border:2px solid ' + opt.color + '33;background:' + opt.color + '11;margin-bottom:8px;transition:all .15s;" onmouseover="this.style.background=\'' + opt.color + '22\'" onmouseout="this.style.background=\'' + opt.color + '11\'">';
       html += '<div style="display:flex;align-items:center;gap:8px;"><div style="width:10px;height:10px;border-radius:50%;background:' + opt.color + ';flex-shrink:0"></div><div style="font-size:13px;font-weight:500">' + opt.label + '</div></div></div>';
     } else if(opt.next) {
-      html += '<div onclick="renderBeslisboomStap(\'' + protoId + '\',\'' + opt.next + '\')" style="cursor:pointer;padding:12px 14px;border-radius:7px;border:2px solid ' + opt.color + '33;background:' + opt.color + '11;margin-bottom:8px;transition:all .15s;" onmouseover="this.style.background=\'' + opt.color + '22\'" onmouseout="this.style.background=\'' + opt.color + '11\'">';
-      html += '<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;"><div style="display:flex;align-items:center;gap:8px;"><div style="width:10px;height:10px;border-radius:50%;background:' + opt.color + ';flex-shrink:0"></div><div style="font-size:13px;font-weight:500">' + opt.label + '</div></div><span style="color:var(--muted);font-size:12px;">→</span></div></div>';
+      html += '<div onclick="renderBeslisboomStap(\'' + protoId + '\',\'' + opt.next + '\')" style="cursor:pointer;padding:12px 14px;border-radius:6px;border:2px solid ' + opt.color + '33;background:' + opt.color + '11;margin-bottom:8px;transition:all .15s;" onmouseover="this.style.background=\'' + opt.color + '22\'" onmouseout="this.style.background=\'' + opt.color + '11\'">';
+      html += '<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;"><div style="display:flex;align-items:center;gap:8px;"><div style="width:10px;height:10px;border-radius:50%;background:' + opt.color + ';flex-shrink:0"></div><div style="font-size:13px;font-weight:500">' + opt.label + '</div></div><span style="color:var(--ink-2);font-size:12px;">' + icon('pijl-rechts') + '</span></div></div>';
     }
   });
   document.getElementById('bb-modal-body').innerHTML = html;
@@ -706,12 +706,12 @@ function renderBeslisboomAdvies(protoId, el) {
   const advies = el.dataset.advies;
   const color = el.dataset.color;
   const p = protocols[protoId];
-  let html = '<button onclick="beslisboomTerug(\'' + protoId + '\')" style="background:var(--surface2);border:1px solid var(--border);color:var(--muted);padding:5px 10px;border-radius:6px;font-size:11px;cursor:pointer;font-family:Geist,sans-serif;margin-bottom:12px;">← Terug</button>';
-  html += '<div style="background:' + color + '15;border:2px solid ' + color + '44;border-radius:8px;padding:16px 18px;">';
-  html += '<div style="font-size:12px;font-weight:700;color:' + color + ';text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;font-family:Geist Mono,monospace">Klinisch advies</div>';
-  html += '<div style="font-size:13px;color:var(--text);line-height:1.6">' + advies + '</div>';
+  let html = '<button onclick="beslisboomTerug(\'' + protoId + '\')" style="background:var(--surface-2);border:1px solid var(--line);color:var(--ink-2);padding:5px 10px;border-radius:6px;font-size:12px;cursor:pointer;margin-bottom:12px;"'+icon('chevron','ic-terug')+' Terug</button>';
+  html += '<div style="background:' + color + '15;border:2px solid ' + color + '44;border-radius:10px;padding:16px 18px;">';
+  html += '<div style="font-size:12px;font-weight:700;color:' + color + ';text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;font-variant-numeric:tabular-nums">Klinisch advies</div>';
+  html += '<div style="font-size:13px;color:var(--ink);line-height:1.6">' + advies + '</div>';
   html += '</div>';
-  html += '<button onclick="closeBeslisboom()" style="width:100%;margin-top:12px;background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:9px;border-radius:6px;font-size:12px;cursor:pointer;font-family:Geist,sans-serif;">Sluiten</button>';
+  html += '<button onclick="closeBeslisboom()" style="width:100%;margin-top:12px;background:var(--surface-2);border:1px solid var(--line);color:var(--ink);padding:9px;border-radius:6px;font-size:12px;cursor:pointer;">Sluiten</button>';
   document.getElementById('bb-modal-body').innerHTML = html;
 }
 function beslisboomTerug(protoId) {
@@ -748,26 +748,26 @@ function renderFormBody(form, pt, datum) {
   const color = pt ? getProtoColor(pt.protoId) : '#a78bfa';
   let html = '';
   // Header
-  html += '<div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:10px 14px;margin-bottom:16px;">';
+  html += '<div style="background:var(--surface-2);border:1px solid var(--line);border-radius:6px;padding:10px 14px;margin-bottom:16px;">';
   html += '<div style="font-size:13px;font-weight:600">' + form.full + '</div>';
-  html += '<div style="font-size:11px;color:var(--muted);font-family:Geist Mono,monospace;margin-top:2px">Max: ' + form.max + ' punten · RTS: ' + form.rts + '</div>';
-  if(pt) html += '<div style="font-size:11px;color:var(--muted);margin-top:2px">Patiënt: <strong style="color:var(--text)">' + pt.name + '</strong> · ' + datum + '</div>';
+  html += '<div style="font-size:12px;color:var(--ink-2);font-variant-numeric:tabular-nums;margin-top:2px">Max: ' + form.max + ' punten · RTS: ' + form.rts + '</div>';
+  if(pt) html += '<div style="font-size:12px;color:var(--ink-2);margin-top:2px">Patiënt: <strong style="color:var(--ink)">' + pt.name + '</strong> · ' + datum + '</div>';
   html += '</div>';
-  html += '<div style="font-size:12px;color:var(--muted);margin-bottom:14px;line-height:1.5">' + form.intro + '</div>';
+  html += '<div style="font-size:12px;color:var(--ink-2);margin-bottom:14px;line-height:1.5">' + form.intro + '</div>';
   // Questions
   let sportSection = false;
   form.vragen.forEach((v, vi) => {
     if(v.sport && !sportSection) {
       sportSection = true;
-      html += '<div style="font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted2);font-family:Geist Mono,monospace;margin:14px 0 8px;padding-bottom:4px;border-bottom:1px solid var(--border)">Sportspecifieke activiteiten</div>';
+      html += '<div style="font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-3);font-variant-numeric:tabular-nums;margin:14px 0 8px;padding-bottom:4px;border-bottom:1px solid var(--line)">Sportspecifieke activiteiten</div>';
     }
     html += '<div style="margin-bottom:14px;" id="q-' + v.id + '">';
-    html += '<div style="font-size:12.5px;font-weight:600;margin-bottom:7px;color:var(--text)">' + (vi+1) + '. ' + v.tekst + '</div>';
+    html += '<div style="font-size:12px;font-weight:600;margin-bottom:7px;color:var(--ink)">' + (vi+1) + '. ' + v.tekst + '</div>';
     if(v.type === 'keuze') {
       html += '<div style="display:flex;flex-direction:column;gap:4px;">';
       v.opties.forEach((opt, oi) => {
         const inputId = 'inp-' + v.id + '-' + oi;
-        html += '<label style="display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:5px;border:1px solid var(--border);cursor:pointer;transition:all .1s;" onmouseover="this.style.borderColor=\'var(--border2)\'" onmouseout="this.style.borderColor=\'var(--border)\'">';
+        html += '<label style="display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:6px;border:1px solid var(--line);cursor:pointer;transition:all .1s;" onmouseover="this.style.borderColor=\'var(--line-strong)\'" onmouseout="this.style.borderColor=\'var(--line)\'">';
         html += '<input type="radio" name="' + v.id + '" id="' + inputId + '" value="' + oi + '" onchange="setFormAnswer(\'' + v.id + '\',' + oi + ',' + JSON.stringify(opt.score) + ')" style="flex-shrink:0">';
         html += '<span style="font-size:12px">' + opt.label + '</span>';
         html += '</label>';
@@ -780,9 +780,9 @@ function renderFormBody(form, pt, datum) {
       // niemand gegeven heeft en telde bovendien niet mee in de score.
       html += '<input type="range" min="' + v.min + '" max="' + v.max + '" value="' + v.min + '" style="width:100%;accent-color:' + color + '" oninput="updateSlider(\'' + v.id + '\',this.value,' + v.gewicht + ',\'' + color + '\')" id="slider-' + v.id + '">';
       html += '<div style="display:flex;justify-content:space-between;margin-top:3px;">';
-      html += '<span style="font-size:10px;color:var(--muted)">' + v.links + '</span>';
-      html += '<span id="slider-val-' + v.id + '" style="font-size:12px;font-weight:700;color:var(--muted)">—</span>';
-      html += '<span style="font-size:10px;color:var(--muted)">' + v.rechts + '</span>';
+      html += '<span style="font-size:12px;color:var(--ink-2)">' + v.links + '</span>';
+      html += '<span id="slider-val-' + v.id + '" style="font-size:12px;font-weight:700;color:var(--ink-2)">—</span>';
+      html += '<span style="font-size:12px;color:var(--ink-2)">' + v.rechts + '</span>';
       html += '</div></div>';
       // Initialize answer
       formAnswers[v.id] = {score: Math.round(v.max/2), rawScore: Math.round(v.max/2)};
@@ -790,7 +790,7 @@ function renderFormBody(form, pt, datum) {
     html += '</div>';
   });
   // Score preview
-  html += '<div id="form-score-preview" style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:10px 14px;margin-top:8px;text-align:center;font-family:Geist Mono,monospace;font-size:13px;color:var(--muted)">Score: vul alle vragen in</div>';
+  html += '<div id="form-score-preview" style="background:var(--surface-2);border:1px solid var(--line);border-radius:6px;padding:10px 14px;margin-top:8px;text-align:center;font-variant-numeric:tabular-nums;font-size:13px;color:var(--ink-2)">Score: vul alle vragen in</div>';
   document.getElementById('form-modal-body').innerHTML = html;
 }
 function setFormAnswer(qId, optIdx, score) {
@@ -800,7 +800,7 @@ function setFormAnswer(qId, optIdx, score) {
   document.querySelectorAll('input[name="' + qId + '"]').forEach(inp => {
     if(inp.parentElement) inp.parentElement.style.background = 'transparent';
   });
-  if(label) label.style.background = 'var(--surface3)';
+  if(label) label.style.background = 'var(--surface-3)';
   updateFormScore();
 }
 function updateSlider(qId, val, gewicht, color) {
@@ -873,7 +873,7 @@ function updateFormScore() {
   const scoreEl = document.getElementById('form-score-preview');
   if(!scoreEl) return;
   let tekst = 'Score: ' + b.totaal + ' / ' + b.max;
-  let kleur = 'var(--muted)', rand = 'var(--border)';
+  let kleur = 'var(--ink-2)', rand = 'var(--line)';
   if(!b.volledig) {
     tekst += ' · nog niet volledig ingevuld';
   } else if(b.oordeelbaar) {
@@ -962,15 +962,15 @@ function renderEvalFormBody(form, pt, datum) {
   const color = form.color;
   let html = '';
   // Header
-  html += '<div style="background:' + color + '15;border:1px solid ' + color + '33;border-radius:8px;padding:12px 16px;margin-bottom:16px;">';
+  html += '<div style="background:' + color + '15;border:1px solid ' + color + '33;border-radius:10px;padding:12px 16px;margin-bottom:16px;">';
   html += '<div style="font-size:13px;font-weight:700;color:' + color + '">' + form.regio + '</div>';
-  if(pt) html += '<div style="font-size:11px;color:var(--muted);font-family:Geist Mono,monospace;margin-top:2px">Patiënt: <strong style="color:var(--text)">' + pt.name + '</strong> · ' + datum + '</div>';
-  else html += '<div style="font-size:11px;color:var(--muted);font-family:Geist Mono,monospace;margin-top:2px">' + datum + '</div>';
+  if(pt) html += '<div style="font-size:12px;color:var(--ink-2);font-variant-numeric:tabular-nums;margin-top:2px">Patiënt: <strong style="color:var(--ink)">' + pt.name + '</strong> · ' + datum + '</div>';
+  else html += '<div style="font-size:12px;color:var(--ink-2);font-variant-numeric:tabular-nums;margin-top:2px">' + datum + '</div>';
   html += '</div>';
   // Sections
   form.secties.forEach(sectie => {
     html += '<div style="margin-bottom:18px;">';
-    html += '<div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);font-family:Geist Mono,monospace;font-weight:700;margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid var(--border)">' + sectie.titel + '</div>';
+    html += '<div style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);font-variant-numeric:tabular-nums;font-weight:700;margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid var(--line)">' + sectie.titel + '</div>';
     sectie.velden.forEach(veld => {
       html += renderEvalVeld(veld, form.id);
     });
@@ -981,74 +981,74 @@ function renderEvalFormBody(form, pt, datum) {
 
 function renderEvalVeld(veld, formId) {
   let html = '<div style="margin-bottom:10px;" id="evalveld-' + veld.id + '">';
-  html += '<div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:4px;">' + veld.label;
-  if(veld.info) html += ' <span style="font-size:10px;color:var(--muted);font-weight:400;font-style:italic">— ' + veld.info + '</span>';
-  if(veld.norm) html += ' <span style="font-size:10px;color:var(--muted2);font-family:Geist Mono,monospace;margin-left:4px">norm: ' + veld.norm + '</span>';
+  html += '<div style="font-size:12px;font-weight:600;color:var(--ink);margin-bottom:4px;">' + veld.label;
+  if(veld.info) html += ' <span style="font-size:12px;color:var(--ink-2);font-weight:400;font-style:italic">— ' + veld.info + '</span>';
+  if(veld.norm) html += ' <span style="font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums;margin-left:4px">norm: ' + veld.norm + '</span>';
   html += '</div>';
 
   if(veld.type === 'pn') {
     // Positief / Negatief / Niet getest
     html += '<div style="display:flex;gap:6px;">';
     ['Negatief','Positief','Niet getest'].forEach(opt => {
-      const bg = opt === 'Positief' ? 'rgba(239,68,68,.1)' : opt === 'Negatief' ? 'rgba(34,197,94,.1)' : 'var(--surface2)';
-      const bc = opt === 'Positief' ? 'rgba(239,68,68,.3)' : opt === 'Negatief' ? 'rgba(34,197,94,.3)' : 'var(--border)';
-      const col = opt === 'Positief' ? '#ef4444' : opt === 'Negatief' ? '#22c55e' : 'var(--muted)';
-      html += '<button onclick="setEvalAnswer(\'' + formId + '\',\'' + veld.id + '\',\'' + opt + '\')" id="evbtn-' + veld.id + '-' + opt.replace(/ /g,'_') + '" style="flex:1;padding:6px 4px;border-radius:5px;border:1px solid ' + bc + ';background:' + bg + ';color:' + col + ';font-size:11px;font-weight:600;cursor:pointer;font-family:Geist,sans-serif;transition:opacity .1s;">' + opt + '</button>';
+      const bg = opt === 'Positief' ? 'rgba(239,68,68,.1)' : opt === 'Negatief' ? 'rgba(34,197,94,.1)' : 'var(--surface-2)';
+      const bc = opt === 'Positief' ? 'rgba(239,68,68,.3)' : opt === 'Negatief' ? 'rgba(34,197,94,.3)' : 'var(--line)';
+      const col = opt === 'Positief' ? '#ef4444' : opt === 'Negatief' ? '#22c55e' : 'var(--ink-2)';
+      html += '<button onclick="setEvalAnswer(\'' + formId + '\',\'' + veld.id + '\',\'' + opt + '\')" id="evbtn-' + veld.id + '-' + opt.replace(/ /g,'_') + '" style="flex:1;padding:6px 4px;border-radius:6px;border:1px solid ' + bc + ';background:' + bg + ';color:' + col + ';font-size:12px;font-weight:600;cursor:pointer;transition:opacity .1s;">' + opt + '</button>';
     });
     html += '</div>';
   } else if(veld.type === 'pn_bevinding') {
     html += '<div style="display:flex;gap:6px;margin-bottom:5px;">';
     ['Negatief','Positief','Niet getest'].forEach(opt => {
-      const bg = opt === 'Positief' ? 'rgba(239,68,68,.1)' : opt === 'Negatief' ? 'rgba(34,197,94,.1)' : 'var(--surface2)';
-      const bc = opt === 'Positief' ? 'rgba(239,68,68,.3)' : opt === 'Negatief' ? 'rgba(34,197,94,.3)' : 'var(--border)';
-      const col = opt === 'Positief' ? '#ef4444' : opt === 'Negatief' ? '#22c55e' : 'var(--muted)';
-      html += '<button onclick="setEvalAnswer(\'' + formId + '\',\'' + veld.id + '\',\'' + opt + '\')" id="evbtn-' + veld.id + '-' + opt.replace(/ /g,'_') + '" style="flex:1;padding:6px 4px;border-radius:5px;border:1px solid ' + bc + ';background:' + bg + ';color:' + col + ';font-size:11px;font-weight:600;cursor:pointer;font-family:Geist,sans-serif;">' + opt + '</button>';
+      const bg = opt === 'Positief' ? 'rgba(239,68,68,.1)' : opt === 'Negatief' ? 'rgba(34,197,94,.1)' : 'var(--surface-2)';
+      const bc = opt === 'Positief' ? 'rgba(239,68,68,.3)' : opt === 'Negatief' ? 'rgba(34,197,94,.3)' : 'var(--line)';
+      const col = opt === 'Positief' ? '#ef4444' : opt === 'Negatief' ? '#22c55e' : 'var(--ink-2)';
+      html += '<button onclick="setEvalAnswer(\'' + formId + '\',\'' + veld.id + '\',\'' + opt + '\')" id="evbtn-' + veld.id + '-' + opt.replace(/ /g,'_') + '" style="flex:1;padding:6px 4px;border-radius:6px;border:1px solid ' + bc + ';background:' + bg + ';color:' + col + ';font-size:12px;font-weight:600;cursor:pointer;">' + opt + '</button>';
     });
     html += '</div>';
-    html += '<input type="text" id="evtxt-' + veld.id + '" placeholder="Bevinding / opmerking..." onchange="setEvalAnswerTxt(\'' + formId + '\',\'' + veld.id + '_bevinding\',this.value)" style="width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:5px 10px;color:var(--text);font-family:Geist,sans-serif;font-size:12px;outline:none;">';
+    html += '<input type="text" id="evtxt-' + veld.id + '" placeholder="Bevinding / opmerking..." onchange="setEvalAnswerTxt(\'' + formId + '\',\'' + veld.id + '_bevinding\',this.value)" style="width:100%;background:var(--surface-2);border:1px solid var(--line);border-radius:6px;padding:5px 10px;color:var(--ink);font-size:16px;outline:none;">';
   } else if(veld.type === 'pn_graden') {
     html += '<div style="display:flex;gap:6px;margin-bottom:5px;">';
     ['Negatief','Positief','Niet getest'].forEach(opt => {
-      const bg = opt === 'Positief' ? 'rgba(239,68,68,.1)' : opt === 'Negatief' ? 'rgba(34,197,94,.1)' : 'var(--surface2)';
-      const bc = opt === 'Positief' ? 'rgba(239,68,68,.3)' : opt === 'Negatief' ? 'rgba(34,197,94,.3)' : 'var(--border)';
-      const col = opt === 'Positief' ? '#ef4444' : opt === 'Negatief' ? '#22c55e' : 'var(--muted)';
-      html += '<button onclick="setEvalAnswer(\'' + formId + '\',\'' + veld.id + '\',\'' + opt + '\')" id="evbtn-' + veld.id + '-' + opt.replace(/ /g,'_') + '" style="flex:1;padding:6px 4px;border-radius:5px;border:1px solid ' + bc + ';background:' + bg + ';color:' + col + ';font-size:11px;font-weight:600;cursor:pointer;font-family:Geist,sans-serif;">' + opt + '</button>';
+      const bg = opt === 'Positief' ? 'rgba(239,68,68,.1)' : opt === 'Negatief' ? 'rgba(34,197,94,.1)' : 'var(--surface-2)';
+      const bc = opt === 'Positief' ? 'rgba(239,68,68,.3)' : opt === 'Negatief' ? 'rgba(34,197,94,.3)' : 'var(--line)';
+      const col = opt === 'Positief' ? '#ef4444' : opt === 'Negatief' ? '#22c55e' : 'var(--ink-2)';
+      html += '<button onclick="setEvalAnswer(\'' + formId + '\',\'' + veld.id + '\',\'' + opt + '\')" id="evbtn-' + veld.id + '-' + opt.replace(/ /g,'_') + '" style="flex:1;padding:6px 4px;border-radius:6px;border:1px solid ' + bc + ';background:' + bg + ';color:' + col + ';font-size:12px;font-weight:600;cursor:pointer;">' + opt + '</button>';
     });
     html += '</div>';
-    html += '<input type="text" id="evtxt-' + veld.id + '" placeholder="° graden / details..." onchange="setEvalAnswerTxt(\'' + formId + '\',\'' + veld.id + '_detail\',this.value)" style="width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:5px 10px;color:var(--text);font-family:Geist,sans-serif;font-size:12px;outline:none;">';
+    html += '<input type="text" id="evtxt-' + veld.id + '" placeholder="° graden / details..." onchange="setEvalAnswerTxt(\'' + formId + '\',\'' + veld.id + '_detail\',this.value)" style="width:100%;background:var(--surface-2);border:1px solid var(--line);border-radius:6px;padding:5px 10px;color:var(--ink);font-size:16px;outline:none;">';
   } else if(veld.type === 'rom') {
     html += '<div style="display:flex;gap:8px;align-items:center;">';
-    html += '<input type="number" min="0" max="360" placeholder="°" onchange="setEvalAnswerTxt(\'' + formId + '\',\'' + veld.id + '\',this.value+\'°\')" style="width:80px;background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:5px 10px;color:var(--text);font-family:Geist Mono,sans-serif;font-size:12px;outline:none;">';
-    html += '<span style="font-size:11px;color:var(--muted)">graden</span>';
+    html += '<input type="number" min="0" max="360" placeholder="°" onchange="setEvalAnswerTxt(\'' + formId + '\',\'' + veld.id + '\',this.value+\'°\')" style="width:80px;background:var(--surface-2);border:1px solid var(--line);border-radius:6px;padding:5px 10px;color:var(--ink);font-variant-numeric:tabular-nums;font-size:16px;outline:none;">';
+    html += '<span style="font-size:12px;color:var(--ink-2)">graden</span>';
     ['Pijnvrij','Pijn bij eindstand','Pijn in traject','Beperkt'].forEach(opt => {
-      html += '<button onclick="setEvalAnswer(\'' + formId + '\',\'' + veld.id + '_kwal\',\'' + opt + '\')" id="evbtn-' + veld.id + '-' + opt.replace(/ /g,'_') + '" style="flex:1;padding:4px 6px;border-radius:5px;border:1px solid var(--border);background:var(--surface2);color:var(--muted);font-size:10px;cursor:pointer;font-family:Geist,sans-serif;">' + opt + '</button>';
+      html += '<button onclick="setEvalAnswer(\'' + formId + '\',\'' + veld.id + '_kwal\',\'' + opt + '\')" id="evbtn-' + veld.id + '-' + opt.replace(/ /g,'_') + '" style="flex:1;padding:4px 6px;border-radius:6px;border:1px solid var(--line);background:var(--surface-2);color:var(--ink-2);font-size:12px;cursor:pointer;">' + opt + '</button>';
     });
     html += '</div>';
   } else if(veld.type === 'mrc') {
     html += '<div style="display:flex;gap:4px;">';
     ['0','1','2','3','4','5'].forEach(score => {
       const labels = {0:'0\nGeen',1:'1\nTrace',2:'2\nGrav',3:'3\nAnti-grav',4:'4\nWeerstand',5:'5\nNormaal'};
-      html += '<button onclick="setEvalAnswer(\'' + formId + '\',\'' + veld.id + '\',\'' + score + '\')" id="evbtn-' + veld.id + '-' + score + '" style="flex:1;padding:4px 2px;border-radius:5px;border:1px solid var(--border);background:var(--surface2);color:var(--muted);font-size:10px;cursor:pointer;font-family:Geist Mono,monospace;line-height:1.2;white-space:pre;">' + labels[score] + '</button>';
+      html += '<button onclick="setEvalAnswer(\'' + formId + '\',\'' + veld.id + '\',\'' + score + '\')" id="evbtn-' + veld.id + '-' + score + '" style="flex:1;padding:4px 2px;border-radius:6px;border:1px solid var(--line);background:var(--surface-2);color:var(--ink-2);font-size:12px;cursor:pointer;font-variant-numeric:tabular-nums;line-height:1.2;white-space:pre;">' + labels[score] + '</button>';
     });
     html += '</div>';
   } else if(veld.type === 'reflex') {
     html += '<div style="display:flex;gap:6px;">';
     ['Normaal (++)','Versterkt (+++/++++)','Verminderd (+)','Afwezig (0)','Niet getest'].forEach(opt => {
       const key = opt.replace(/[^a-z0-9]/gi,'_');
-      html += '<button onclick="setEvalAnswer(\'' + formId + '\',\'' + veld.id + '\',\'' + opt + '\')" id="evbtn-' + veld.id + '-' + key + '" style="flex:1;padding:5px 3px;border-radius:5px;border:1px solid var(--border);background:var(--surface2);color:var(--muted);font-size:10px;cursor:pointer;font-family:Geist,sans-serif;">' + opt + '</button>';
+      html += '<button onclick="setEvalAnswer(\'' + formId + '\',\'' + veld.id + '\',\'' + opt + '\')" id="evbtn-' + veld.id + '-' + key + '" style="flex:1;padding:5px 3px;border-radius:6px;border:1px solid var(--line);background:var(--surface-2);color:var(--ink-2);font-size:12px;cursor:pointer;">' + opt + '</button>';
     });
     html += '</div>';
   } else if(veld.type === 'keuze3') {
     html += '<div style="display:flex;flex-wrap:wrap;gap:5px;">';
     veld.opties.forEach(opt => {
       const key = opt.replace(/[^a-z0-9]/gi,'_');
-      html += '<button onclick="setEvalAnswer(\'' + formId + '\',\'' + veld.id + '\',\'' + opt + '\')" id="evbtn-' + veld.id + '-' + key + '" style="padding:5px 10px;border-radius:5px;border:1px solid var(--border);background:var(--surface2);color:var(--muted);font-size:11px;cursor:pointer;font-family:Geist,sans-serif;">' + opt + '</button>';
+      html += '<button onclick="setEvalAnswer(\'' + formId + '\',\'' + veld.id + '\',\'' + opt + '\')" id="evbtn-' + veld.id + '-' + key + '" style="padding:5px 10px;border-radius:6px;border:1px solid var(--line);background:var(--surface-2);color:var(--ink-2);font-size:12px;cursor:pointer;">' + opt + '</button>';
     });
     html += '</div>';
   } else if(veld.type === 'tekst') {
-    html += '<input type="text" placeholder="' + (veld.placeholder||'') + '" onchange="setEvalAnswerTxt(\'' + formId + '\',\'' + veld.id + '\',this.value)" style="width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:7px 10px;color:var(--text);font-family:Geist,sans-serif;font-size:12px;outline:none;">';
+    html += '<input type="text" placeholder="' + (veld.placeholder||'') + '" onchange="setEvalAnswerTxt(\'' + formId + '\',\'' + veld.id + '\',this.value)" style="width:100%;background:var(--surface-2);border:1px solid var(--line);border-radius:6px;padding:7px 10px;color:var(--ink);font-size:16px;outline:none;">';
   } else if(veld.type === 'tekst_groot') {
-    html += '<textarea placeholder="' + (veld.placeholder||'') + '" onchange="setEvalAnswerTxt(\'' + formId + '\',\'' + veld.id + '\',this.value)" style="width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:7px 10px;color:var(--text);font-family:Geist,sans-serif;font-size:12px;outline:none;min-height:70px;resize:vertical;"></textarea>';
+    html += '<textarea placeholder="' + (veld.placeholder||'') + '" onchange="setEvalAnswerTxt(\'' + formId + '\',\'' + veld.id + '\',this.value)" style="width:100%;background:var(--surface-2);border:1px solid var(--line);border-radius:6px;padding:7px 10px;color:var(--ink);font-size:16px;outline:none;min-height:70px;resize:vertical;"></textarea>';
   }
   html += '</div>';
   return html;
@@ -1060,9 +1060,9 @@ function setEvalAnswer(formId, veldId, waarde) {
   const prefix = 'evbtn-' + veldId + '-';
   document.querySelectorAll('[id^="' + prefix + '"]').forEach(btn => {
     const isActive = btn.id === prefix + waarde.replace(/ /g,'_').replace(/[^a-z0-9_]/gi,'_');
-    btn.style.background = isActive ? (waarde==='Positief'?'rgba(239,68,68,.25)':waarde==='Negatief'?'rgba(34,197,94,.25)':'var(--surface3)') : '';
-    btn.style.color = isActive ? (waarde==='Positief'?'#ef4444':waarde==='Negatief'?'#22c55e':'var(--text)') : '';
-    btn.style.borderColor = isActive ? (waarde==='Positief'?'rgba(239,68,68,.5)':waarde==='Negatief'?'rgba(34,197,94,.5)':'var(--border2)') : '';
+    btn.style.background = isActive ? (waarde==='Positief'?'rgba(239,68,68,.25)':waarde==='Negatief'?'rgba(34,197,94,.25)':'var(--surface-3)') : '';
+    btn.style.color = isActive ? (waarde==='Positief'?'#ef4444':waarde==='Negatief'?'#22c55e':'var(--ink)') : '';
+    btn.style.borderColor = isActive ? (waarde==='Positief'?'rgba(239,68,68,.5)':waarde==='Negatief'?'rgba(34,197,94,.5)':'var(--line-strong)') : '';
   });
 }
 function setEvalAnswerTxt(formId, veldId, waarde) {
@@ -1091,7 +1091,7 @@ function printEvalForm() {
       const kleur = ans === 'Positief' ? '#dc2626' : ans === 'Negatief' ? '#16a34a' : '#374151';
       html += '<div class="pf-ex" style="border-bottom:1px solid #e5e7eb;padding:5px 0;">';
       html += '<div class="pf-ex-name" style="font-weight:600;font-size:12px;flex:1;">' + veld.label + '</div>';
-      html += '<div style="font-size:11px;color:' + kleur + ';font-weight:' + (ans?'700':'400') + ';min-width:160px;text-align:right;">' + antwoord + '</div>';
+      html += '<div style="font-size:12px;color:' + kleur + ';font-weight:' + (ans?'700':'400') + ';min-width:160px;text-align:right;">' + antwoord + '</div>';
       html += '</div>';
     });
   });
@@ -1111,31 +1111,31 @@ function printBlankEvalForm(formId) {
     sectie.velden.forEach(veld => {
       html += '<div class="pf-ex" style="border-bottom:1px solid #e5e7eb;padding:5px 0;min-height:26px;">';
       html += '<div class="pf-ex-name" style="font-weight:600;font-size:12px;flex:1;">' + veld.label;
-      if(veld.info) html += '<br><span style="font-weight:400;font-size:10px;color:#6b7280;font-style:italic">' + veld.info + '</span>';
-      if(veld.norm) html += '<span style="font-weight:400;font-size:10px;color:#9ca3af;margin-left:6px">norm: ' + veld.norm + '</span>';
+      if(veld.info) html += '<br><span style="font-weight:400;font-size:12px;color:#6b7280;font-style:italic">' + veld.info + '</span>';
+      if(veld.norm) html += '<span style="font-weight:400;font-size:12px;color:#9ca3af;margin-left:6px">norm: ' + veld.norm + '</span>';
       html += '</div>';
       if(veld.type === 'pn' || veld.type === 'pn_bevinding' || veld.type === 'pn_graden') {
-        html += '<div style="display:flex;gap:12px;align-items:center;font-size:11px;">';
+        html += '<div style="display:flex;gap:12px;align-items:center;font-size:12px;">';
         html += '<label style="display:flex;align-items:center;gap:4px;"><input type="checkbox"> Negatief</label>';
         html += '<label style="display:flex;align-items:center;gap:4px;"><input type="checkbox"> Positief</label>';
         html += '<label style="display:flex;align-items:center;gap:4px;"><input type="checkbox"> Niet getest</label>';
         html += '<span style="flex:1;border-bottom:1px solid #d1d5db;margin-left:8px;">&nbsp;</span>';
         html += '</div>';
       } else if(veld.type === 'rom') {
-        html += '<div style="display:flex;gap:8px;align-items:center;font-size:11px;">';
+        html += '<div style="display:flex;gap:8px;align-items:center;font-size:12px;">';
         html += '<span>_____° &nbsp;</span>';
         ['Pijnvrij','Pijn bij eindstand','Pijn in traject','Beperkt'].forEach(o => {
           html += '<label style="display:flex;align-items:center;gap:3px;"><input type="checkbox"> ' + o + '</label>';
         });
         html += '</div>';
       } else if(veld.type === 'mrc') {
-        html += '<div style="display:flex;gap:8px;font-size:11px;">';
+        html += '<div style="display:flex;gap:8px;font-size:12px;">';
         ['0','1','2','3','4','5'].forEach(s => html += '<label><input type="checkbox"> ' + s + '</label>');
         html += '</div>';
       } else if(veld.type === 'reflex') {
-        html += '<div style="font-size:11px;">0 &nbsp;/&nbsp; + &nbsp;/&nbsp; ++ &nbsp;/&nbsp; +++ &nbsp;/&nbsp; ++++ &nbsp; &nbsp;<span style="border-bottom:1px solid #d1d5db">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>';
+        html += '<div style="font-size:12px;">0 &nbsp;/&nbsp; + &nbsp;/&nbsp; ++ &nbsp;/&nbsp; +++ &nbsp;/&nbsp; ++++ &nbsp; &nbsp;<span style="border-bottom:1px solid #d1d5db">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>';
       } else if(veld.type === 'keuze3') {
-        html += '<div style="display:flex;flex-wrap:wrap;gap:8px;font-size:11px;">';
+        html += '<div style="display:flex;flex-wrap:wrap;gap:8px;font-size:12px;">';
         veld.opties.forEach(o => html += '<label style="display:flex;align-items:center;gap:3px;"><input type="checkbox"> ' + o + '</label>');
         html += '</div>';
       } else if(veld.type === 'tekst' || veld.type === 'tekst_groot') {
@@ -1258,14 +1258,14 @@ function buildExerciseLibrary() {
 }
 
 let libCatFilter = '';
-const LIB_CATS = [['','Alle'],['kracht','💪 Kracht'],['mobiliteit','🔄 Mobiliteit'],['stabiliteit','⚖ Stabiliteit'],['cardio','🏃 Cardio'],['neuromusculair','🧠 Neuromusculair']];
+const LIB_CATS = [['','Alle'],['kracht',icon('kracht') + ' Kracht'],['mobiliteit',icon('mobiliteit') + ' Mobiliteit'],['stabiliteit',icon('stabiliteit') + ' Stabiliteit'],['cardio',icon('cardio') + ' Cardio'],['neuromusculair',icon('neuro') + ' Neuromusculair']];
 
 function renderLibCatChips() {
   const el = document.getElementById('lib-cat-chips');
   if(!el) return;
   el.innerHTML = LIB_CATS.map(([cat, label]) => {
     const active = libCatFilter === cat;
-    return `<button onclick="setLibCat('${cat}')" style="padding:4px 12px;border-radius:12px;font-size:11px;cursor:pointer;font-family:Geist,sans-serif;border:1px solid ${active ? 'var(--border2)' : 'var(--border)'};background:${active ? 'var(--surface3)' : 'var(--surface2)'};color:${active ? 'var(--text)' : 'var(--muted)'};font-weight:${active ? 600 : 400};">${label}</button>`;
+    return `<button onclick="setLibCat('${cat}')" style="padding:4px 12px;border-radius:16px;font-size:12px;cursor:pointer;border:1px solid ${active ? 'var(--line-strong)' : 'var(--line)'};background:${active ? 'var(--surface-3)' : 'var(--surface-2)'};color:${active ? 'var(--ink)' : 'var(--ink-2)'};font-weight:${active ? 600 : 400};">${label}</button>`;
   }).join('');
 }
 function setLibCat(cat) {
@@ -1334,11 +1334,11 @@ function renderLibrary(query) {
   });
 
   if(!sortedKeys.length) {
-    body.innerHTML = `<div style="color:var(--muted);font-size:13px;padding:24px 0;text-align:center;">Geen oefeningen gevonden voor "${q}"</div>`;
+    body.innerHTML = `<div style="color:var(--ink-2);font-size:13px;padding:24px 0;text-align:center;">Geen oefeningen gevonden voor "${q}"</div>`;
     return;
   }
 
-  const CAT_ICONS = {kracht:'💪',mobiliteit:'🔄',stabiliteit:'⚖',neuro:'🧠',cardio:'🏃',manueel:'🤲',test:'📏'};
+  const CAT_ICONS = {kracht:icon('kracht') + '',mobiliteit:icon('mobiliteit') + '',stabiliteit:icon('stabiliteit') + '',neuro:icon('neuro') + '',cardio:icon('cardio') + '',manueel:icon('hand') + '',test:icon('meetlat') + ''};
 
   body.innerHTML = sortedKeys.map((key, gi) => {
     const g = groups[key];
@@ -1358,7 +1358,7 @@ function renderLibrary(query) {
           <div class="lib-var-head">
             <span class="lib-ex-badge" style="background:${v.protoColor}15;border-color:${v.protoColor}33;color:${v.protoColor};">${v.protoId.toUpperCase()}</span>
             <span>${v.name}</span>
-            <span style="font-size:10px;color:var(--muted2);font-family:Geist Mono,monospace">${v.phaseLabel}</span>
+            <span style="font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums">${v.phaseLabel}</span>
           </div>
           ${paramsStr ? `<div class="lib-var-params">${paramsStr}</div>` : ''}
           ${v.note ? `<div class="lib-var-note">${v.note}</div>` : ''}
@@ -1367,7 +1367,7 @@ function renderLibrary(query) {
       return `<div class="lib-ex" onclick="this.classList.toggle('expanded')">
         <div class="lib-ex-dot" style="background:${first.protoColor}"></div>
         <div class="lib-ex-main">
-          <div class="lib-ex-name" style="display:flex;align-items:center;gap:7px;flex-wrap:wrap;">${ex.name} ${catIcons ? `<span style="font-size:10px;opacity:.6">${catIcons}</span>` : ''} ${countBadge}</div>
+          <div class="lib-ex-name" style="display:flex;align-items:center;gap:7px;flex-wrap:wrap;">${ex.name} ${catIcons ? `<span style="font-size:12px;opacity:.6">${catIcons}</span>` : ''} ${countBadge}</div>
           <div class="lib-ex-badges">${badges}</div>
           ${imgHtml}
           <div class="lib-ex-variants">${variantsHtml}</div>
@@ -1380,7 +1380,7 @@ function renderLibrary(query) {
         <div class="lib-group-dot" style="background:${g.color}"></div>
         <div class="lib-group-name">${key}</div>
         <div class="lib-group-count">${g.items.length} oefeningen</div>
-        <div class="lib-group-arrow ${isOpen?'open':''}" id="lib-arr-${gi}">▶</div>
+        <div class="lib-group-arrow ${isOpen?'open':''}" id="lib-arr-${gi}">${icon('video')}</div>
       </div>
       <div class="lib-group-body ${isOpen?'open':''}" id="lib-grp-${gi}">${exHtml}</div>
     </div>`;
@@ -1409,17 +1409,17 @@ function renderEvalFormsScreen() {
     const c = form.color;
     const telVelden = form.secties.reduce((s,sec) => s + sec.velden.length, 0);
     const telTesten = form.secties.find(s => s.id === 's_ortho')?.velden.length || 0;
-    html += '<div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:12px;">';
+    html += '<div style="background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:12px;">';
     html += '<div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:10px;">';
     html += '<div>';
-    html += '<div style="font-family:Instrument Serif,serif;font-size:17px;font-weight:400;">' + form.titel + '</div>';
-    html += '<div style="font-size:11px;color:var(--muted);font-family:Geist Mono,monospace;margin-top:2px">' + form.secties.length + ' secties · ' + telVelden + ' velden · ' + telTesten + ' testen</div>';
+    html += '<div style="font-weight:600;font-size:17px;font-weight:400;">' + form.titel + '</div>';
+    html += '<div style="font-size:12px;color:var(--ink-2);font-variant-numeric:tabular-nums;margin-top:2px">' + form.secties.length + ' secties · ' + telVelden + ' velden · ' + telTesten + ' testen</div>';
     html += '</div>';
-    html += '<div style="font-size:10px;padding:3px 10px;border-radius:10px;background:' + c + '15;color:' + c + ';border:1px solid ' + c + '33;font-family:Geist Mono,monospace;font-weight:600;">' + form.regio + '</div>';
+    html += '<div style="font-size:12px;padding:3px 10px;border-radius:10px;background:' + c + '15;color:' + c + ';border:1px solid ' + c + '33;font-variant-numeric:tabular-nums;font-weight:600;">' + form.regio + '</div>';
     html += '</div>';
     html += '<div style="display:flex;gap:8px;flex-wrap:wrap;">';
-    html += '<button onclick="openEvalForm(\'' + form.id + '\',null)" style="flex:1;min-width:140px;padding:8px 14px;background:' + c + '18;border:1px solid ' + c + '33;color:' + c + ';border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;font-family:Geist,sans-serif;">📝 Digitaal invullen</button>';
-    html += '<button onclick="printBlankEvalForm(\'' + form.id + '\')" style="flex:1;min-width:140px;padding:8px 14px;background:var(--surface2);border:1px solid var(--border);color:var(--muted);border-radius:6px;font-size:12px;cursor:pointer;font-family:Geist,sans-serif;">🖨 Leeg afdrukken</button>';
+    html += '<button onclick="openEvalForm(\'' + form.id + '\',null)" style="flex:1;min-width:140px;padding:8px 14px;background:' + c + '18;border:1px solid ' + c + '33;color:' + c + ';border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;">' + icon('fiche') + ' Digitaal invullen</button>';
+    html += '<button onclick="printBlankEvalForm(\'' + form.id + '\')" style="flex:1;min-width:140px;padding:8px 14px;background:var(--surface-2);border:1px solid var(--line);color:var(--ink-2);border-radius:6px;font-size:12px;cursor:pointer;"'+icon('print')+' Leeg afdrukken</button>';
     html += '</div></div>';
   });
   document.getElementById('eval-forms-list').innerHTML = html;
@@ -1436,7 +1436,7 @@ function renderPhase(i) {
   const ph = currentProto.phases[i];
   let html = '';
   // Evidence standaard geklemd op 2 regels; klik om uit te vouwen
-  html += `<div class="ev-box clamp" onclick="this.classList.toggle('expanded')"><div class="ev-label">Evidence-basis</div><div class="ev-text">${ph.evidence}</div><div class="ev-hint">▸ lees volledige evidence</div></div>`;
+  html += `<div class="ev-box clamp" onclick="this.classList.toggle('expanded')"><div class="ev-label">Evidence-basis</div><div class="ev-text">${ph.evidence}</div><div class="ev-hint"> lees volledige evidence</div></div>`;
   html += `<div class="goals-box"><div class="goals-label">Doelstellingen — ${ph.title}</div><ul class="glist">${ph.goals.map(g=>`<li>${g}</li>`).join('')}</ul></div>`;
   if(ph.exercises?.length) {
     html += `<div class="slabel">Oefenprogramma</div><div class="ex-grid">`;
@@ -1449,16 +1449,16 @@ function renderPhase(i) {
       html += `</div>`;
       if(ex.params?.length) html += `<div class="ex-params">${ex.params.map(([k,v])=>`<div class="ep">${k}: <span>${v}</span></div>`).join('')}</div>`;
       if(ex.note) html += `<div class="ex-note">${ex.note}</div>`;
-      if(ex.yt) html += `<button class="yt-btn" onclick="event.stopPropagation();openYT('${ex.yt}','${ex.name.replace(/'/g,"'")}')">▶ Bekijk video</button>`;
-      if(hasMore) html += `<div class="ex-more">▸ meer info${ex.yt ? ' · video' : ''}</div>`;
+      if(ex.yt) html += `<button class="yt-btn" onclick="event.stopPropagation();openYT('${ex.yt}','${ex.name.replace(/'/g,"'")}')">${icon('video')} Bekijk video</button>`;
+      if(hasMore) html += `<div class="ex-more"> meer info${ex.yt ? ' · video' : ''}</div>`;
       html += `</div>`;
     });
     html += `</div>`;
   }
   if(ph.criteria_go?.length || ph.criteria_stop?.length) {
     html += `<div class="slabel">Doorstroomcriteria</div><div class="criteria-grid">`;
-    if(ph.criteria_go?.length) html += `<div class="cbox go"><div class="ctitle go">Vereist ✓</div><ul class="clist go">${ph.criteria_go.map(c=>`<li>${c}</li>`).join('')}</ul></div>`;
-    if(ph.criteria_stop?.length) html += `<div class="cbox stop"><div class="ctitle stop">Vertraag ⚠</div><ul class="clist stop">${ph.criteria_stop.map(c=>`<li>${c}</li>`).join('')}</ul></div>`;
+    if(ph.criteria_go?.length) html += `<div class="cbox go"><div class="ctitle go">Vereist ${icon('check')}</div><ul class="clist go">${ph.criteria_go.map(c=>`<li>${c}</li>`).join('')}</ul></div>`;
+    if(ph.criteria_stop?.length) html += `<div class="cbox stop"><div class="ctitle stop">Vertraag ${icon('let-op')}</div><ul class="clist stop">${ph.criteria_stop.map(c=>`<li>${c}</li>`).join('')}</ul></div>`;
     html += `</div>`;
   }
   if(ph.redflags?.length) html += `<div class="rf-box"><div class="rf-label">Rode vlaggen</div><ul class="rf-list">${ph.redflags.map(r=>`<li>${r}</li>`).join('')}</ul></div>`;
@@ -1526,9 +1526,9 @@ function handleSearch(q) {
 
   const el = document.getElementById('search-results');
   const total = protoRes.length + condRes.length + mtRes.length + detailRes.length + patRes.length;
-  if(!total) { el.innerHTML = `<div class="no-results">Geen resultaten voor "<strong style="color:var(--text)">${esc(q)}</strong>"</div>`; return; }
+  if(!total) { el.innerHTML = `<div class="no-results">Geen resultaten voor "<strong style="color:var(--ink)">${esc(q)}</strong>"</div>`; return; }
 
-  const card = (onclick, inner) => `<div onclick="${onclick}" style="background:var(--surface);border:1px solid var(--border);border-radius:7px;padding:12px 14px;margin-bottom:8px;cursor:pointer;" onmouseover="this.style.borderColor='var(--border2)'" onmouseout="this.style.borderColor='var(--border)'">${inner}</div>`;
+  const card = (onclick, inner) => `<div onclick="${onclick}" style="background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:12px 14px;margin-bottom:8px;cursor:pointer;" onmouseover="this.style.borderColor='var(--line-strong)'" onmouseout="this.style.borderColor='var(--line)'">${inner}</div>`;
   const groupLabel = t => `<div class="slabel" style="margin:14px 0 8px;">${t}</div>`;
   let html = '';
 
@@ -1537,17 +1537,17 @@ function handleSearch(q) {
     html += protoRes.map(p => card(`showProto('${p.id}')`, `
       <div style="display:flex;align-items:center;gap:8px;">
         <div style="width:9px;height:9px;border-radius:50%;background:${p.color};flex-shrink:0"></div>
-        <span style="font-size:13.5px;font-weight:600">${p.title}</span>
-        <span style="font-size:10px;color:${p.color};background:${hexToRgba(p.color,.1)};padding:1px 7px;border-radius:8px;font-family:Geist Mono,monospace">${(NAV_INFO[p.id]||{}).badge || p.id.toUpperCase()}</span>
+        <span style="font-size:13px;font-weight:600">${p.title}</span>
+        <span style="font-size:12px;color:${p.color};background:${hexToRgba(p.color,.1)};padding:1px 7px;border-radius:10px;font-variant-numeric:tabular-nums">${(NAV_INFO[p.id]||{}).badge || p.id.toUpperCase()}</span>
       </div>
-      <div style="font-size:11.5px;color:var(--muted);margin-top:4px">${p.subtitle || ''}</div>`)).join('');
+      <div style="font-size:12px;color:var(--ink-2);margin-top:4px">${p.subtitle || ''}</div>`)).join('');
   }
   if(patRes.length) {
     html += groupLabel('Patiënten');
     html += patRes.map(pt => card(`showPatientDetail('${pt.id}')`, `
       <div style="display:flex;align-items:center;gap:8px;">
-        <span style="font-size:13px;">👤</span><span style="font-size:13.5px;font-weight:600">${esc(pt.name)}</span>
-        <span style="font-size:11px;color:var(--muted)">${(protocols[pt.protoId]||{}).title || ''}</span>
+        <span style="font-size:13px;">${icon('persoon')}</span><span style="font-size:13px;font-weight:600">${esc(pt.name)}</span>
+        <span style="font-size:12px;color:var(--ink-2)">${(protocols[pt.protoId]||{}).title || ''}</span>
       </div>`)).join('');
   }
   if(condRes.length) {
@@ -1556,9 +1556,9 @@ function handleSearch(q) {
       <div style="display:flex;align-items:center;gap:7px;margin-bottom:5px;">
         <div style="width:7px;height:7px;border-radius:50%;background:${r.p.color};flex-shrink:0"></div>
         <span style="font-size:12px;font-weight:600">${r.p.title}</span>
-        <span style="font-size:10px;color:var(--muted2);font-family:Geist Mono,monospace">🔬 ${r.bron}</span>
+        <span style="font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums">${icon('stethoscoop')} ${r.bron}</span>
       </div>
-      <div style="font-size:11.5px;color:var(--muted);line-height:1.5">${esc(r.snippet)}</div>`)).join('');
+      <div style="font-size:12px;color:var(--ink-2);line-height:1.5">${esc(r.snippet)}</div>`)).join('');
   }
   if(mtRes.length) {
     html += groupLabel('Manuele therapie');
@@ -1566,10 +1566,10 @@ function handleSearch(q) {
       <div style="display:flex;align-items:center;gap:7px;margin-bottom:5px;flex-wrap:wrap;">
         <div style="width:7px;height:7px;border-radius:50%;background:${r.p.color};flex-shrink:0"></div>
         <span style="font-size:12px;font-weight:600">${r.p.title}</span>
-        <span style="font-size:10px;color:var(--muted2);font-family:Geist Mono,monospace">🤲 ${r.fase || 'Techniek'}</span>
+        <span style="font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums">${icon('hand')} ${r.fase || 'Techniek'}</span>
       </div>
       <div style="font-size:13px">${r.naam}</div>
-      ${r.doel ? `<div style="font-size:11px;color:var(--muted);margin-top:3px">${esc(r.doel.substring(0,120))}${r.doel.length>120?'…':''}</div>` : ''}`)).join('');
+      ${r.doel ? `<div style="font-size:12px;color:var(--ink-2);margin-top:3px">${esc(r.doel.substring(0,120))}${r.doel.length>120?'…':''}</div>` : ''}`)).join('');
   }
   if(detailRes.length) {
     html += groupLabel(`In protocollen (${detailRes.length})`);
@@ -1577,12 +1577,12 @@ function handleSearch(q) {
       <div style="display:flex;align-items:center;gap:7px;margin-bottom:5px;">
         <div style="width:7px;height:7px;border-radius:50%;background:${r.p.color};flex-shrink:0"></div>
         <span style="font-size:12px;font-weight:600">${r.p.title}</span>
-        <span style="font-size:10px;color:var(--muted);font-family:Geist Mono,monospace;background:var(--surface2);padding:1px 6px;border-radius:3px">${r.ph.label}</span>
-        <span style="font-size:10px;color:var(--muted2);font-family:Geist Mono,monospace">${r.type}</span>
+        <span style="font-size:12px;color:var(--ink-2);font-variant-numeric:tabular-nums;background:var(--surface-2);padding:1px 6px;border-radius:4px">${r.ph.label}</span>
+        <span style="font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums">${r.type}</span>
       </div>
       <div style="font-size:13px">${r.match}</div>
-      ${r.detail ? `<div style="font-size:11px;color:var(--muted);margin-top:3px">${r.detail.substring(0,110)}${r.detail.length>110?'…':''}</div>` : ''}`)).join('');
-    if(detailRes.length > 40) html += `<div style="font-size:11px;color:var(--muted2);text-align:center;padding:6px;">${detailRes.length - 40} resultaten verborgen — verfijn je zoekopdracht</div>`;
+      ${r.detail ? `<div style="font-size:12px;color:var(--ink-2);margin-top:3px">${r.detail.substring(0,110)}${r.detail.length>110?'…':''}</div>` : ''}`)).join('');
+    if(detailRes.length > 40) html += `<div style="font-size:12px;color:var(--ink-3);text-align:center;padding:6px;">${detailRes.length - 40} resultaten verborgen — verfijn je zoekopdracht</div>`;
   }
   el.innerHTML = html;
 }
@@ -1623,9 +1623,9 @@ function controleerDataConsistentie() {
   // onvolledig, en zonder netwerk maakt wissen de installatie onbruikbaar.
   // De gebruiker beslist, met de knop hieronder.
   const balk = document.createElement('div');
-  balk.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:10000;background:#b45309;color:#fff;padding:10px 14px;font-size:12.5px;font-family:Geist,sans-serif;display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;';
+  balk.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:10000;background:#b45309;color:#fff;padding:10px 14px;font-size:12px;display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;';
   balk.innerHTML = '<span>App-bestanden zijn niet in sync (' + ontbreekt.join(' en ') + ' ontbreken). Sluit de app volledig af en open opnieuw met internet.</span>'
-    + '<button onclick="forceerUpdate()" style="background:#fff;color:#b45309;border:none;padding:4px 12px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;font-family:Geist,sans-serif;">↻ Opnieuw proberen</button>';
+    + '<button onclick="forceerUpdate()" style="background:#fff;color:#b45309;border:none;padding:4px 12px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;">' + icon('ververs') + ' Opnieuw proberen</button>';
   document.body.appendChild(balk);
 }
 
@@ -1740,8 +1740,8 @@ function updateFavBtn(id) {
   const btn = document.getElementById('fav-btn');
   if(!btn) return;
   const isFav = getFavs().includes(id);
-  btn.textContent = isFav ? '★ Favoriet' : '☆ Favoriet';
-  btn.style.color = isFav ? '#facc15' : '';
+  btn.innerHTML = icon('ster', isFav ? 'is-on' : '') + ' Favoriet';
+  btn.style.color = isFav ? 'var(--accent)' : '';
 }
 
 // ── NAVIGATIE GENEREREN (sidebar + bottom sheet) ──
@@ -1762,7 +1762,7 @@ function buildNav() {
   };
   // Favorieten als vastgepinde eerste sectie (altijd open)
   const favs = getFavs();
-  favs.forEach(id => add(id, '★ Favorieten'));
+  favs.forEach(id => add(id, 'Favorieten'));
   Object.keys(REGIO_MAP).forEach(id => { if(protocols[id]) add(id, REGIO_MAP[id]); });
   // Vangnet: protocollen zonder REGIO_MAP-entry komen onder 'Overig' i.p.v. onzichtbaar te blijven
   Object.keys(protocols).forEach(id => { if(!REGIO_MAP[id]) add(id, 'Overig'); });
@@ -1771,7 +1771,7 @@ function buildNav() {
   const openSecs = new Set(JSON.parse(localStorage.getItem('kp_nav_open') || '[]'));
   let sideHtml = '', bsHtml = '';
   sections.forEach(sec => {
-    const isFavSec = sec === '★ Favorieten';
+    const isFavSec = sec === 'Favorieten';
     const secLabel = sec.replace(/&/g, '&amp;');
     const isOpen = isFavSec || openSecs.has(sec);
     let itemsHtml = '', bsItemsHtml = '';
@@ -1792,7 +1792,7 @@ function buildNav() {
         + '<span class="bs-item-name">' + naam + '</span>'
         + '<span class="bs-item-badge" style="background:' + bg + ';color:' + p.color + '">' + badge + '</span></button>';
     });
-    const head = '<span class="nav-sec-arrow">▶</span><span>' + secLabel + '</span><span class="nav-sec-count">' + byRegio[sec].length + '</span>';
+    const head = '<span class="nav-sec-arrow">' + icon('video') + '</span><span>' + secLabel + '</span><span class="nav-sec-count">' + byRegio[sec].length + '</span>';
     sideHtml += '<div class="nav-sec' + (isOpen ? ' open' : '') + '" data-sec="' + secLabel + '">'
       + '<div class="nav-sec-head" onclick="toggleNavSec(this.parentNode)">' + head + '</div>'
       + '<div class="nav-sec-body">' + itemsHtml + '</div></div>';
@@ -1816,6 +1816,50 @@ function buildNav() {
   set('stat-exercises', exercises);
 }
 
+
+// ── TOEGANKELIJKHEID ──────────────────────────────────────────────
+// De app genereert honderden klikbare elementen die geen <button> zijn. In
+// plaats van elk generatiepunt aan te passen, krijgen ze hier centraal een rol
+// en toetsenbordbediening. Een observer vangt ook alles op wat later gerenderd wordt.
+function maakKlikbaarToegankelijk(root) {
+  const scope = root && root.querySelectorAll ? root : document;
+  scope.querySelectorAll('[onclick]:not(button):not(a):not(input):not([role])').forEach(el => {
+    el.setAttribute('role', 'button');
+    if(!el.hasAttribute('tabindex')) el.setAttribute('tabindex', '0');
+  });
+}
+
+document.addEventListener('keydown', e => {
+  // Enter en spatie bedienen elementen die als knop fungeren
+  if(e.key === 'Enter' || e.key === ' ') {
+    const el = document.activeElement;
+    if(el && el.tagName !== 'BUTTON' && el.getAttribute && el.getAttribute('role') === 'button') {
+      e.preventDefault();
+      el.click();
+    }
+    return;
+  }
+  // Escape sluit de bovenste overlay
+  if(e.key === 'Escape') {
+    const open = [...document.querySelectorAll('.kmodal.open, .bottom-sheet.open')].pop();
+    if(!open) return;
+    e.preventDefault();
+    const sluit = {'proto-sheet': closeProtoSheet, 'more-sheet': closeMoreSheet,
+                   'yt-modal': closeYT, 'rf-modal': closeRF, 'fiche-modal': closeFiche};
+    const fn = sluit[open.id];
+    if(typeof fn === 'function') fn();
+    else { open.classList.remove('open'); document.body.style.overflow = ''; }
+  }
+});
+
+if(typeof MutationObserver === 'function') {
+  new MutationObserver(muts => {
+    muts.forEach(mut => mut.addedNodes.forEach(n => {
+      if(n.nodeType === 1) maakKlikbaarToegankelijk(n);
+    }));
+  }).observe(document.documentElement, { childList: true, subtree: true });
+}
+
 // ── INIT ──
 // Volledig lokale app: geen account of login — alle data staat in localStorage
 // (bewaar regelmatig een backup via het patiëntendashboard).
@@ -1827,6 +1871,7 @@ function initApp() {
   });
   controleerDataConsistentie();
   buildNav();
+  maakKlikbaarToegankelijk(document);
   initSwipe();
   renderVandaag();
   renderRecent();

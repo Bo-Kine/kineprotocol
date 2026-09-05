@@ -74,22 +74,6 @@ references:
     geverifieerd_op: 2026-09-05
     geverifieerd_door: PubMed MCP (search_articles + get_article_metadata)
 
-  - key: hughes_2019_bfr_pijn
-    auteurs: [Hughes L, Patterson SD, Haddad F, Rosenblatt B, Gissane C, McCarthy D, Clarke T, Ferris G, Dawes J, Paton B]
-    titel: >-
-      Examination of the comfort and pain experienced with blood flow
-      restriction training during post-surgery rehabilitation of anterior
-      cruciate ligament reconstruction patients: a UK National Health Service
-      trial
-    bron: Physical Therapy in Sport
-    jaar: 2019
-    volume_paginas: 39:90-98
-    doi: 10.1016/j.ptsp.2019.06.014
-    pmid: '31288213'
-    url: https://doi.org/10.1016/j.ptsp.2019.06.014
-    type: RCT
-    geverifieerd_op: 2026-09-05
-    geverifieerd_door: PubMed MCP (search_articles + get_article_metadata)
 
   - key: rice_2010_ami
     auteurs: [Rice DA, McNair PJ]
@@ -97,33 +81,38 @@ references:
       Quadriceps arthrogenic muscle inhibition: neural mechanisms and treatment
       perspectives
     bron: Seminars in Arthritis and Rheumatism
-    jaar: 2009
+    jaar: 2010
     volume_paginas: 40(3):250-66
     doi: 10.1016/j.semarthrit.2009.10.001
     pmid: '19954822'
     url: https://doi.org/10.1016/j.semarthrit.2009.10.001
-    type: SR
+    type: expert
     opmerking: >-
-      PubMed geeft publicatiedatum 2009-12-02 (elektronisch vooraf); het
-      tijdschriftnummer 40(3):250-66 hoort bij het gedrukte nummer.
-      TE VERIFIEREN: welk jaartal de kinesitherapeut in de weergave wil.
+      Narratieve review (PubMed article_type "Review"), geen systematische
+      review: brede literatuurzoektocht zonder in- en exclusiecriteria of
+      kwaliteitsbeoordeling. Volgens de hierarchie in CLAUDE.md 2 hoort dit
+      op het niveau expert opinion. PubMed geeft 2009-12-02 als elektronische
+      publicatiedatum; het gedrukte nummer 40(3):250-66 is van 2010, dat is
+      het Vancouver-jaar.
+      TE VERIFIEREN: CLAUDE.md 4 kent geen type "review"; toevoegen of niet?
     geverifieerd_op: 2026-09-05
     geverifieerd_door: PubMed MCP (search_articles + get_article_metadata)
 
-  - key: webster_2022_aclrsi_adolescent
-    auteurs: [Webster KE, Feller JA]
-    titel: >-
-      Psychological readiness to return to sport after anterior cruciate
-      ligament reconstruction in the adolescent athlete
-    bron: Journal of Athletic Training
-    jaar: 2022
-    volume_paginas: 57(9-10):955-960
-    doi: 10.4085/1062-6050-0543.21
-    pmid: '36638341'
-    url: https://doi.org/10.4085/1062-6050-0543.21
-    type: cohort
+  - key: buckthorpe_2021_plyometrie
+    auteurs: [Buckthorpe M, Della Villa F]
+    titel: Recommendations for plyometric training after ACL reconstruction - a clinical commentary
+    bron: International Journal of Sports Physical Therapy
+    jaar: 2021
+    volume_paginas: 16(3):879-895
+    doi: 10.26603/001c.23549
+    pmid: '34123540'
+    url: https://doi.org/10.26603/001c.23549
+    type: expert
     opmerking: >-
-      Adolescenten (<=17 jaar). NIET zomaar te veralgemenen naar volwassenen
-      (CLAUDE.md 1.5). Levert geen afkapwaarde voor RTS.
+      Clinical commentary, geen studie: expert opinion volgens de hierarchie
+      in CLAUDE.md 2 en als zodanig te labelen bij gebruik. Het abstract
+      beschrijft letterlijk "a four-stage plyometric program" als onderdeel
+      van criteriumgebaseerde revalidatie na ACL-reconstructie.
+      TE VERIFIEREN: CLAUDE.md 4 kent geen type "commentary".
     geverifieerd_op: 2026-09-05
-    geverifieerd_door: PubMed MCP (search_articles + get_article_metadata)
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 34123540)

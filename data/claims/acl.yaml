@@ -5,7 +5,10 @@ protocol: acl
 laatst_gecontroleerd: 2026-09-05
 versie: 1
 fase_a_door: hoofdagent (PubMed MCP, eerstehands opgehaald)
-fase_b_door: nog uit te voeren
+fase_b_door: >-
+  onafhankelijke verificator-agent met schone context, 2026-09-05. Heeft alle
+  PMID's en DOI's opnieuw opgelost en de claimdekking gecontroleerd. Zeven
+  correcties op fase A doorgevoerd, hieronder verwerkt.
 
 claims:
 
@@ -39,10 +42,15 @@ claims:
     tekst: LSI >= 90% op krachttests en hoptests voor return to sport
     plaats: protocols.acl fase 4 en 5 criteria_go
     bronnen: [grindem_2016_rtscriteria]
-    gedekt: ja
+    gedekt: nee
     opmerking: >-
-      Abstract: slaagcriteria gedefinieerd als scores >90 op alle tests;
-      5,6% herletsel bij slagen versus 38,2% bij falen.
+      NIET GEDEKT ZOALS GEFORMULEERD (bijgesteld na fase B). De bron hanteert
+      strikt ">90" en niet ">=90", en meet op VIER tests: quadricepskracht,
+      hoptests, Knee Outcome Survey ADL Scale en global rating scale of
+      function - dus niet uitsluitend de symmetrie-index op kracht en hop.
+      Bovendien was het verschil tussen slagen en falen niet significant
+      (5,6% versus 38,2%, HR 0,16, p=0,075). VOORSTEL: criterium herformuleren
+      naar de volledige testbatterij van de bron, of een andere bron zoeken.
 
   - id: acl_c05
     tekst: RTS voor 9 maanden verhoogt het herletselrisico met factor 4-6
@@ -66,8 +74,10 @@ claims:
       revalidatie na knieletsel en -chirurgie, en behandelt de neurale
       mechanismen. De superlatief "grootste limiterende factor" en de
       specifieke toepassing op ACL-reconstructie staan niet als zodanig in
-      de bron. Het jaartal in de app (2019) klopt niet: PubMed geeft
-      publicatiedatum 2009, nummer 40(3):250-66.
+      de bron. Bovendien is de populatie knieartritis, knieletsel en
+      kniechirurgie in het algemeen, niet specifiek ACL-reconstructie.
+      Het jaartal in de app (2019) klopt niet: het gedrukte nummer
+      40(3):250-66 is van 2010.
 
   - id: acl_c07
     tekst: OKC knie-extensie veilig vanaf week 4-6 in bereik 90-40 graden
@@ -77,9 +87,12 @@ claims:
     opmerking: >-
       GETAL WIJKT AF VAN DE BRON. De studie startte OKC in week 4 (niet 4-6)
       in een bereik van 45 tot 90 graden (niet 90 tot 40). Uitkomst: geen
-      verschil in anterieure knielaxiteit versus late start, wel sneller
-      quadricepsherstel. VOORSTEL: bereik en tijdstip overnemen zoals in de
-      bron, of een andere bron zoeken die 90-40 graden onderbouwt.
+      verschil in anterieure knielaxiteit versus late start. LET OP: tussen de
+      groepen was er GEEN significant verschil in kracht; het verschil bedroeg
+      circa 5% en wordt door de auteurs zelf klinisch niet-significant genoemd.
+      De formulering "sneller quadricepsherstel" is dus sterker dan de bron
+      toelaat. VOORSTEL: bereik en tijdstip overnemen zoals in de bron, of een
+      andere bron zoeken die 90-40 graden onderbouwt.
 
   - id: acl_c08
     tekst: BFR-training bij quadricepshypotrofie na ACL-reconstructie
@@ -87,22 +100,29 @@ claims:
     bronnen: [hughes_2019_bfr_rct]
     gedekt: ja
     opmerking: >-
-      RCT (n=28, hamstringgraft, 8 weken): vergelijkbare toename spierdikte
-      en kracht als zware weerstandstraining, met grotere afname van kniepijn
-      en effusie. LET OP: de app verwees naar Phys Ther Sport; die publicatie
-      (hughes_2019_bfr_pijn) gaat over comfort en pijn, niet over hypertrofie.
-      De juiste bron voor deze claim is Sports Medicine 2019.
+      RCT: 28 gerandomiseerd, 24 geanalyseerd (12 per groep), 8 weken,
+      UITSLUITEND hamstring-autograft. Vergelijkbare toename van spierdikte
+      (v. lateralis) en 10RM-kracht als zware weerstandstraining, met grotere
+      afname van kniepijn en effusie; BFR remde het isokinetische krachtverlies
+      sterker bij 150 en 300 graden per seconde. Niet zonder meer te
+      veralgemenen naar patellapeesgraft (CLAUDE.md 1.5). LET OP: de app
+      verwees naar Phys Ther Sport; die publicatie gaat over comfort en pijn,
+      niet over hypertrofie. De juiste bron is Sports Medicine 2019.
 
   - id: acl_c09
     tekst: Plyometrie opgebouwd in 4 stadia (Buckthorpe & Roi, 2017)
     plaats: protocols.acl fase 4 evidence
-    bronnen: []
-    gedekt: nee
+    bronnen: [buckthorpe_2021_plyometrie]
+    gedekt: ja
     opmerking: >-
-      BRON NIET GEVONDEN. Twee gerichte PubMed-zoekopdrachten leverden nul
-      resultaten voor deze titel/auteurscombinatie. Volgens CLAUDE.md 1.2
-      moet bron en claim geschrapt worden, tenzij de kinesitherapeut de
-      publicatie kan aanwijzen. TE VERIFIEREN.
+      GECORRIGEERD NA FASE B. De claim klopt, maar stond onder de verkeerde
+      bron. Het vierstadia-programma staat in Buckthorpe & Della Villa,
+      Int J Sports Phys Ther 2021;16(3):879-895 - abstract letterlijk:
+      "a four-stage plyometric program". Buckthorpe & Roi 2017 bestaat wel
+      (Muscles Ligaments Tendons J 7(3):435-441) maar gaat over rate of force
+      development, niet over plyometriestadia. Het betreft een clinical
+      commentary: bij weergave labelen als expert opinion, niet als evidentie.
+      VOORSTEL: bronvermelding in de app corrigeren.
 
   - id: acl_c10
     tekst: Isometrische quadriceps aan 60 graden veilig (Heijne & Werner, 2021)
@@ -110,9 +130,12 @@ claims:
     bronnen: []
     gedekt: nee
     opmerking: >-
-      BRON NIET GEVONDEN. Auteur Heijne A heeft acht ACL-publicaties in
-      PubMed, geen daarvan uit 2021 met deze inhoud. Volgens CLAUDE.md 1.2
-      schrappen tenzij aangewezen. TE VERIFIEREN.
+      GEEN DEKKENDE BRON (motivering bijgesteld na fase B). Heijne A heeft
+      wel een ACL-publicatie uit 2021 (Knee Surg Sports Traumatol Arthrosc
+      30(7):2244-2250, PMID 34661692), maar dat is een kwalitatieve
+      interviewstudie over herletsel - niet over isometrie bij 60 graden.
+      Geen bron gevonden die de claim dekt. Volgens CLAUDE.md 1.2 schrappen
+      tenzij de kinesitherapeut een bron kan aanwijzen. TE VERIFIEREN.
 
   - id: acl_c11
     tekst: ACL-RSI drempel >= 56 (fase 3) en >= 65 (fase 5) voor doorstroom
@@ -120,9 +143,12 @@ claims:
     bronnen: []
     gedekt: nee
     opmerking: >-
-      GEEN BRON GEVERIFIEERD. De geraadpleegde ACL-RSI-publicatie
-      (webster_2022_aclrsi_adolescent) betreft adolescenten en levert geen
-      afkapwaarde. Drempels 56 en 65 zijn niet onderbouwd. TE VERIFIEREN.
+      GEEN BRON GEVERIFIEERD. De geraadpleegde ACL-RSI-publicatie (Webster &
+      Feller, J Athl Train 2022;57(9-10):955-960, PMID 36638341) is een case
+      series bij adolescenten tot en met 17 jaar en levert geen afkapwaarde:
+      gerapporteerd worden ACL-RSI 55 naar 71 tussen 6 en 12 maanden en een
+      AUC van 0,7. Die publicatie is daarom niet in references.yaml opgenomen.
+      De drempels 56 en 65 blijven ONonderbouwd. TE VERIFIEREN.
 
   - id: acl_c12
     tekst: IKDC MCID 11,5 punten en drempel >= 85 voor RTS

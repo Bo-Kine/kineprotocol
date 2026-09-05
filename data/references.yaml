@@ -1333,3 +1333,194 @@ references:
       deze bron tegenspreekt.
     geverifieerd_op: 2026-09-05
     geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  # --- Plantaire fasciopathie ---
+
+  - key: rathleff_2015_highload
+    auteurs: [Rathleff MS, Molgaard CM, Fredberg U, Kaalund S, Andersen KB, Jensen TT, Aaskov S, Olesen JL]
+    titel: 'High-load strength training improves outcome in patients with plantar fasciitis: a randomized controlled trial with 12-month follow-up'
+    bron: Scandinavian Journal of Medicine and Science in Sports
+    jaar: 2015
+    volume_paginas: 25(3):e292-300
+    doi: 10.1111/sms.12313
+    pmid: '25145882'
+    url: https://doi.org/10.1111/sms.12313
+    type: RCT
+    opmerking: >-
+      48 patienten met echografisch bevestigde plantaire fasciopathie. BEIDE armen
+      kregen inlegzolen; de vergelijking is dus inlegzolen plus dagelijkse
+      fascia-rek tegenover inlegzolen plus tweedaagse zware krachttraining
+      (unilaterale heel raises met handdoek onder de tenen). Op het primaire
+      eindpunt na 3 maanden lag de Foot Function Index 29 punten lager in de
+      krachtgroep (95% BI 6-52; p = 0,016). NA 1, 6 EN 12 MAANDEN WAS ER GEEN
+      VERSCHIL MEER tussen de groepen (p groter dan 0,34); na 12 maanden 22 punten
+      in de krachtgroep tegenover 16 in de rekgroep. Geen verschillen in enige
+      secundaire uitkomstmaat. De winst is dus SNELLER herstel, geen groter
+      eindresultaat.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (search_articles + get_article_metadata)
+
+  - key: digiovanni_2006_fasciarek
+    auteurs: [DiGiovanni BF, Nawoczenski DA, Malay DP, Graci PA, Williams TT, Wilding GE, Baumhauer JF]
+    titel: >-
+      Plantar fascia-specific stretching exercise improves outcomes in patients with
+      chronic plantar fasciitis: a prospective clinical trial with two-year follow-up
+    bron: Journal of Bone and Joint Surgery (American volume)
+    jaar: 2006
+    volume_paginas: 88(8):1775-81
+    doi: 10.2106/JBJS.E.01281
+    pmid: '16882901'
+    url: https://doi.org/10.2106/JBJS.E.01281
+    type: RCT
+    opmerking: >-
+      Tweejaarsopvolging van 66 van de oorspronkelijke 82 patienten. BELANGRIJK:
+      na de eerste acht weken kregen ALLE patienten het fascia-rekprotocol, dus de
+      groepen zijn na dat punt niet meer gescheiden. Na twee jaar was er GEEN
+      significant verschil meer tussen de groepen voor ergste pijn of pijn bij de
+      eerste stappen; wel meldde 92% tevredenheid, 94% pijnafname en 77% geen
+      beperking in recreatieve activiteiten. Het kortetermijnvoordeel na acht
+      weken is dus reeel, een blijvend groepsverschil na twee jaar niet.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: martin_2014_hielpijn_cpg
+    auteurs: [Martin RL, Davenport TE, Reischl SF, McPoil TG, Matheson JW, Wukich DK, McDonough CM]
+    titel: 'Heel pain-plantar fasciitis: revision 2014'
+    bron: Journal of Orthopaedic and Sports Physical Therapy
+    jaar: 2014
+    volume_paginas: 44(11):A1-33
+    doi: 10.2519/jospt.2014.0303
+    pmid: '25361863'
+    url: https://doi.org/10.2519/jospt.2014.0303
+    type: richtlijn
+    opmerking: >-
+      Klinische praktijkrichtlijn van de Orthopaedic Section (APTA), herziening
+      2014, hoogste niveau in de hierarchie van CLAUDE.md 2. LET OP: het
+      PubMed-abstract bevat enkel de scope, niet de afzonderlijke aanbevelingen;
+      de specifieke combinatie die in de app aan deze richtlijn wordt
+      toegeschreven is hier niet tegen de volledige tekst gelegd.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (get_article_metadata)
+
+  - key: hansen_2018_prognose
+    auteurs: [Hansen L, Krogh TP, Ellingsen T, Bolvig L, Fredberg U]
+    titel: 'Long-term prognosis of plantar fasciitis: a 5- to 15-year follow-up study of 174 patients with ultrasound examination'
+    bron: Orthopaedic Journal of Sports Medicine
+    jaar: 2018
+    volume_paginas: 6(3):2325967118757983
+    doi: 10.1177/2325967118757983
+    pmid: '29536022'
+    url: https://doi.org/10.1177/2325967118757983
+    type: cohort
+    opmerking: >-
+      174 patienten, gemiddeld 9,7 jaar na het begin van de klachten. Het risico om
+      nog klachten te hebben bedroeg 80,5% NA EEN JAAR, 50,0% na vijf jaar, 45,6%
+      na tien jaar en 44,0% na vijftien jaar. Bij de follow-up was 54% klachtenvrij
+      (gemiddelde klachtenduur 725 dagen) en 46% niet. De prognose was significant
+      slechter voor vrouwen en bij bilaterale pijn. Fasciadikte en de aanwezigheid
+      van een hielspoor bij aanvang hadden GEEN invloed op de prognose. De auteurs
+      stellen uitdrukkelijk dat hun observationele opzet GEEN uitspraak toelaat
+      over de doeltreffendheid van behandelstrategieen.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: riddle_2003_risicofactoren
+    auteurs: [Riddle DL, Pulisic M, Pidcoe P, Johnson RE]
+    titel: 'Risk factors for plantar fasciitis: a matched case-control study'
+    bron: Journal of Bone and Joint Surgery (American volume)
+    jaar: 2003
+    volume_paginas: 85(5):872-7
+    doi: 10.2106/00004623-200305000-00015
+    pmid: '12728038'
+    url: https://doi.org/10.2106/00004623-200305000-00015
+    type: cohort
+    opmerking: >-
+      Gematchte case-controlstudie, 50 patienten en 100 controles. Dorsaalflexie
+      van 0 graden of minder gaf een odds ratio van 23,3 (95% BI 4,3-124,4) ten
+      opzichte van meer dan 10 graden. BMI BOVEN 30 kg/m2 gaf OR 5,6 (1,9-16,6)
+      ten opzichte van 25 of minder — de drempel is dus 30, niet 27. Het merendeel
+      van de werkdag staand gaf OR 3,6 (1,3-10,1). De auteurs besluiten dat
+      verminderde enkeldorsaalflexie de belangrijkste risicofactor lijkt.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: degarceau_2003_windlass
+    auteurs: [De Garceau D, Dean D, Requejo SM, Thordarson DB]
+    titel: The association between diagnosis of plantar fasciitis and Windlass test results
+    bron: Foot and Ankle International
+    jaar: 2003
+    volume_paginas: 24(3):251-5
+    doi: 10.1177/107110070302400309
+    pmid: '12793489'
+    url: https://doi.org/10.1177/107110070302400309
+    type: cohort
+    opmerking: >-
+      22 patienten met plantaire fasciopathie, 23 met andere voetpijn en 30
+      controles. Van de 22 patienten had 31,8% een positieve windlass-test in
+      belasting en 13,6% zonder belasting; geen enkele controle of andere
+      voetpijnpatient testte positief. De auteurs besluiten dat de test WEL zeer
+      specifiek is maar dat de LAGE SENSITIVITEIT de klinische bruikbaarheid
+      beperkt — een negatieve test sluit de aandoening dus niet uit.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: mcmillan_2009_beeldvorming
+    auteurs: [McMillan AM, Landorf KB, Barrett JT, Menz HB, Bird AR]
+    titel: 'Diagnostic imaging for chronic plantar heel pain: a systematic review and meta-analysis'
+    bron: Journal of Foot and Ankle Research
+    jaar: 2009
+    volume_paginas: 2:32
+    doi: 10.1186/1757-1146-2-32
+    pmid: '19912628'
+    url: https://doi.org/10.1186/1757-1146-2-32
+    type: SR
+    opmerking: >-
+      Systematische review met meta-analyse, 23 studies. De plantaire fascie was
+      bij patienten 2,16 mm dikker dan bij controles (95% BI 1,60-2,71;
+      p kleiner dan 0,001) en een dikte boven 4,0 mm was diagnostisch (OR 105,11;
+      95% BI 3,09-3577,28 — een zeer breed interval). TEGENSTRIJDIGE EVIDENTIE
+      voor de hielspoorpassage elders in het protocol: deze review vond juist een
+      STERKE associatie tussen een subcalcaneale spoor en hielpijn (OR 8,52;
+      95% BI 4,08-17,77; p kleiner dan 0,001).
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: lemont_2003_fasciose
+    auteurs: [Lemont H, Ammirati KM, Usen N]
+    titel: 'Plantar fasciitis: a degenerative process (fasciosis) without inflammation'
+    bron: Journal of the American Podiatric Medical Association
+    jaar: 2003
+    volume_paginas: 93(3):234-7
+    doi: 10.7547/87507315-93-3-234
+    pmid: '12756315'
+    url: https://doi.org/10.7547/87507315-93-3-234
+    type: cohort
+    opmerking: >-
+      Histologisch onderzoek van 50 gevallen van hielspoorchirurgie bij chronische
+      plantaire fasciitis: myxoide degeneratie, fragmentatie en degeneratie van de
+      fascie en vasculaire ectasie van het beenmerg, ZONDER ontstekingscellen. De
+      auteurs pleiten daarom voor de term fasciose en waarschuwen dat herhaalde
+      corticosteroidinjecties heroverwogen moeten worden wegens risico op ruptuur.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: kirkpatrick_2017_hielspoor
+    auteurs: [Kirkpatrick J, Yassaie O, Mirjalili SA]
+    titel: 'The plantar calcaneal spur: a review of anatomy, histology, etiology and key associations'
+    bron: Journal of Anatomy
+    jaar: 2017
+    volume_paginas: 230(6):743-751
+    doi: 10.1111/joa.12607
+    pmid: '28369929'
+    url: https://doi.org/10.1111/joa.12607
+    type: review
+    opmerking: >-
+      Narratieve review over anatomie, histologie en etiologie van de plantaire
+      calcaneale spoor. De auteurs benoemen discrepanties in de literatuur over de
+      anatomische relaties en identificeren associaties met leeftijd, gewicht,
+      geslacht, artritiden, plantaire fasciopathie en voetstand. Het abstract
+      bevat GEEN prevalentiecijfer van 15 tot 30% bij asymptomatische personen en
+      stelt niet vast dat de spoor in de flexor digitorum brevis ligt in plaats
+      van in de fascie.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)

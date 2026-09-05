@@ -1,0 +1,214 @@
+protocol: pfa
+laatst_gecontroleerd: 2026-09-05
+versie: 1
+fase_a_door: hoofdagent, alle metadata eerstehands opgehaald via PubMed MCP
+fase_b_door: nog uit te voeren
+
+claims:
+  - id: pfa_c01
+    tekst: Ochtendpijn bij de eerste stappen is de meest responsieve monitoringsparameter
+    plaats: protocols.pfa fase 1, 2 en 3 evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      VERKEERDE TOESCHRIJVING, DRIE KEER HERHAALD. De citatie Riel et al. 2019 -
+      BJSM verwijst naar een REDACTIONEEL COMMENTAAR met als titel "Elephant in
+      the room: how much pain is ok?" (eerste auteur Smith, Riel tweede auteur),
+      over het rapporteren van pijn in oefentherapie-trials. Het onderbouwt geen
+      status als meest responsieve monitoringsparameter en gaat niet specifiek
+      over plantaire fasciopathie.
+    verwerkt: >-
+      citatie geschrapt op alle drie de plaatsen, ochtendpijn behouden als
+      monitoringsparameter met label klinische redenering
+
+  - id: pfa_c02
+    tekst: >-
+      Plantaire fascia-specifieke rek is superieur aan achillespeesrek, met blijvend
+      voordeel na 2 jaar
+    plaats: protocols.pfa fase 1 evidence
+    bronnen: [digiovanni_2006_fasciarek]
+    gedekt: nee
+    opmerking: >-
+      HET BLIJVENDE VOORDEEL WORDT DOOR DE BRON TEGENGESPROKEN. Na de eerste acht
+      weken kregen ALLE deelnemers het fascia-rekprotocol, dus de groepen zijn
+      daarna niet meer gescheiden. Na twee jaar was er GEEN significant verschil
+      tussen de groepen voor ergste pijn of pijn bij de eerste stappen. Wel
+      gedekt: 92% tevredenheid, 94% pijnafname en 77% zonder beperking in
+      recreatieve activiteiten bij 66 van de 82 patienten.
+    verwerkt: >-
+      opzet en het ontbreken van een groepsverschil na twee jaar expliciet
+      opgenomen, het kortetermijnvoordeel behouden
+
+  - id: pfa_c03
+    tekst: Low-Dye taping geeft consistente kortetermijn pijnreductie
+    plaats: protocols.pfa fase 1 evidence + oefennotitie
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      NIET GEVERIFIEERD. De citatie van de Water en Speksnijder 2010 kon in deze
+      auditronde niet opgehaald worden en mag dus niet als geverifieerd overkomen
+      (CLAUDE.md 1.2).
+    verwerkt: gelabeld als klinische redenering in zowel evidencetekst als notitie
+
+  - id: pfa_c04
+    tekst: De praktijkrichtlijn beveelt educatie, stretching, taping en belastingsmodulatie aan
+    plaats: protocols.pfa fase 1 evidence
+    bronnen: [martin_2014_hielpijn_cpg]
+    gedekt: nee
+    opmerking: >-
+      BRON BESTAAT EN IS VAN HET HOOGSTE NIVEAU, CLAIM NIET GECONTROLEERD. Het
+      PubMed-abstract van deze praktijkrichtlijn bevat enkel de scope, niet de
+      afzonderlijke aanbevelingen.
+    verwerkt: >-
+      richtlijn behouden met vermelding dat de aanbevelingen niet tegen de
+      volledige tekst zijn gelegd
+
+  - id: pfa_c05
+    tekst: >-
+      Zware krachttraining geeft een sneller en groter effect op de Foot Function
+      Index na 3 maanden dan stretching alleen (verschil 29 punten)
+    plaats: protocols.pfa fase 2 evidence
+    bronnen: [rathleff_2015_highload]
+    gedekt: deels
+    opmerking: >-
+      HET CIJFER KLOPT, "GROTER EFFECT" NIET. Het verschil van 29 punten
+      (95% BI 6-52; p = 0,016) geldt uitsluitend op het primaire eindpunt na drie
+      maanden. NA 1, 6 EN 12 MAANDEN WAS ER GEEN VERSCHIL MEER (p groter dan
+      0,34), en er waren geen verschillen in enige secundaire uitkomstmaat. De
+      winst is dus SNELLER herstel, geen beter eindresultaat. Bovendien kregen
+      BEIDE groepen inlegzolen, wat de app niet vermeldde: de vergelijking is niet
+      krachttraining tegenover rek, maar inlegzolen plus het een tegenover
+      inlegzolen plus het ander.
+    verwerkt: >-
+      termijnbeperking, verdwijnen van het verschil en de inlegzolen in beide
+      armen opgenomen
+
+  - id: pfa_c06
+    tekst: Het effect van zware krachttraining treedt vooral op tussen 3 en 12 maanden
+    plaats: protocols.pfa fase 3 evidence
+    bronnen: [rathleff_2015_highload]
+    gedekt: nee
+    opmerking: >-
+      RECHTSTREEKS IN STRIJD MET DE BRON. Het voordeel bestond ALLEEN op drie
+      maanden en was op 6 en 12 maanden verdwenen. De app beweerde precies het
+      omgekeerde van wat de trial laat zien.
+    verwerkt: claim geschrapt, de werkelijke tijdslijn expliciet vermeld
+
+  - id: pfa_c07
+    tekst: >-
+      Het effect is het grootst bij therapietrouw voorbij de symptomatische fase;
+      vroegtijdig stoppen verhoogt de kans op herval
+    plaats: protocols.pfa fase 4 evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      NIET IN DE BRON. De trial analyseerde therapietrouw niet en had herval geen
+      uitkomstmaat. De uitspraak is aannemelijk maar niet onderbouwd.
+    verwerkt: gelabeld als klinische redenering
+
+  - id: pfa_c08
+    tekst: 40-50% van de patienten heeft na 1 jaar nog restklachten bij ontoereikende belastingsopbouw
+    plaats: protocols.pfa fase 4 evidence
+    bronnen: [hansen_2018_prognose]
+    gedekt: nee
+    opmerking: >-
+      CIJFER FORS TE GUNSTIG EN VERKEERD TIJDSTIP. Het risico om nog klachten te
+      hebben bedroeg 80,5% NA EEN JAAR; de 45,6% geldt pas na TIEN jaar. De
+      werkelijke prognose is dus ongunstiger dan de app suggereerde — een fout in
+      de richting die de verwachtingen van de patient scheeftrekt. Bovendien is
+      "bij ontoereikende belastingsopbouw" geen variabele in deze observationele
+      studie; de auteurs stellen uitdrukkelijk dat hun opzet geen uitspraak
+      toelaat over de doeltreffendheid van behandelstrategieen.
+    verwerkt: >-
+      volledige prognosecurve opgenomen, de koppeling aan belastingsopbouw
+      geschrapt
+
+  - id: pfa_c09
+    tekst: Risicofactoren zijn BMI boven 27, beperkte dorsaalflexie en staand beroep
+    plaats: protocols.pfa fase 4 evidence + BESCHRIJVING.pfa + oefennotitie
+    bronnen: [riddle_2003_risicofactoren]
+    gedekt: deels
+    opmerking: >-
+      DORSAALFLEXIE GEDEKT, BMI-DREMPEL NIET. Dorsaalflexie van 0 graden of minder
+      gaf OR 23,3 (95% BI 4,3-124,4) en is volgens de auteurs de belangrijkste
+      risicofactor. Maar de onderzochte BMI-drempel is 30 kg/m2 (OR 5,6;
+      1,9-16,6), niet 27. Staand werk OR 3,6 (1,3-10,1).
+    verwerkt: >-
+      alle drie de odds ratio's opgenomen, BMI-drempel gecorrigeerd naar 30 op
+      alle drie de plaatsen
+
+  - id: pfa_c10
+    tekst: De windlass-test reproduceert de pijn en wordt sensitiever in belasting
+    plaats: BESCHRIJVING.pfa
+    bronnen: [degarceau_2003_windlass]
+    gedekt: deels
+    opmerking: >-
+      DE RICHTING KLOPT, DE KERNBOODSCHAP ONTBRAK. De sensitiviteit stijgt
+      inderdaad van 13,6% naar 31,8% in belasting, maar BEIDE waarden zijn laag.
+      De auteurs besluiten dat de lage sensitiviteit de klinische bruikbaarheid
+      beperkt: een negatieve test sluit de aandoening niet uit. De app
+      presenteerde de test als bevestigend.
+    verwerkt: beide percentages en de conclusie van de auteurs opgenomen
+
+  - id: pfa_c11
+    tekst: Echografie toont een verdikte fascia boven 4 mm
+    plaats: BESCHRIJVING.pfa
+    bronnen: [mcmillan_2009_beeldvorming]
+    gedekt: ja
+    opmerking: >-
+      GEDEKT. De fascie was 2,16 mm dikker dan bij controles (95% BI 1,60-2,71) en
+      een dikte boven 4,0 mm was diagnostisch (OR 105,11), zij het met een zeer
+      breed betrouwbaarheidsinterval (3,09-3577,28) dat de precisie sterk
+      relativeert.
+    verwerkt: cijfers en het brede interval toegevoegd
+
+  - id: pfa_c12
+    tekst: Plantaire fasciopathie is een degeneratief proces zonder ontsteking
+    plaats: BESCHRIJVING.pfa
+    bronnen: [lemont_2003_fasciose]
+    gedekt: ja
+    opmerking: >-
+      GEDEKT. Histologisch onderzoek van 50 gevallen toonde myxoide degeneratie,
+      fragmentatie en vasculaire ectasie van het beenmerg, zonder
+      ontstekingscellen. De auteurs waarschuwen daarnaast dat herhaalde
+      corticosteroidinjecties heroverwogen moeten worden wegens risico op ruptuur.
+    verwerkt: ongewijzigd behouden
+
+  - id: pfa_c13
+    tekst: >-
+      De hielspoor is een misvatting: aanwezig bij 15-30% van de asymptomatische
+      bevolking, ligt in de flexor digitorum brevis en is geen oorzaak van pijn
+    plaats: BESCHRIJVING.pfa
+    bronnen: [kirkpatrick_2017_hielspoor, hansen_2018_prognose, mcmillan_2009_beeldvorming]
+    gedekt: nee
+    opmerking: >-
+      TE STELLIG EN TEGENSTRIJDIGE EVIDENTIE VERZWEGEN (CLAUDE.md 1.9). Het
+      prevalentiecijfer van 15 tot 30% en de uitspraak over de aanhechting staan
+      niet in het abstract van de aangehaalde review, die juist de discrepanties
+      in de literatuur benoemt. Voor de app pleit dat een hielspoor bij aanvang
+      geen invloed had op de prognose in het langetermijncohort. Maar de
+      meta-analyse van 23 studies vond juist een STERKE associatie tussen een
+      subcalcaneale spoor en hielpijn (OR 8,52; 95% BI 4,08-17,77). Beide
+      standpunten horen in de tekst.
+    verwerkt: >-
+      cijfer geschrapt, beide standpunten opgenomen met hun bewijskracht, de term
+      misvatting vervangen
+
+  - id: pfa_c14
+    tekst: >-
+      Ongebronde uitspraken in oefennotities en het refs-veld: piekkrachten 2-3x en
+      8x lichaamsgewicht, pijndrempel NPRS 5/10 toegeschreven aan Rathleff,
+      detraining als meest beinvloedbare hervalfactor, en het refs-veld met
+      Riel 2019 en DiGiovanni 2003
+    plaats: oefennotities pfa fase 1 tot 4 + refs-veld
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      De twee belastingsveelvouden spraken elkaar bovendien tegen binnen hetzelfde
+      protocol (2-3x in fase 3, 8x in een notitie van dezelfde fase). Het
+      refs-veld vermeldde het redactionele commentaar en de niet-geverifieerde
+      publicatie uit 2003.
+    verwerkt: >-
+      veelvouden geschrapt, pijndrempel gelabeld als praktijkafspraak,
+      superlatief verwijderd, refs-veld vervangen door zes eerstehands
+      geverifieerde bronnen met volledige vindplaats

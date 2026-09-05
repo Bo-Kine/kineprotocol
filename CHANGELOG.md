@@ -3,6 +3,18 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-09-05 — bronaudit plantaire fasciopathie
+
+- 14 claims beoordeeld, 9 bronnen eerstehands opgehaald en geverifieerd via PubMed · dit protocol oogde het meest verzorgd van alle tot nu toe geauditeerde, maar bevatte vier zware fouten
+- PROGNOSE FORS TE GUNSTIG VOORGESTELD · de app stelde dat 40-50% na een jaar nog restklachten heeft · in het cohort van `hansen_2018_prognose` was dat 80,5% NA EEN JAAR; de 45,6% geldt pas na tien jaar · dit is een fout in de richting die patiëntverwachtingen scheeftrekt
+- EFFECT OP ÉÉN MEETMOMENT GEPRESENTEERD ALS DUURZAAM · `rathleff_2015_highload` toont een voordeel van 29 punten op de Foot Function Index uitsluitend op 3 maanden; na 1, 6 en 12 maanden was er GEEN verschil meer (p > 0,34) · de app beweerde in fase 3 juist dat het effect "vooral optreedt tussen 3 en 12 maanden" — het omgekeerde van wat de trial laat zien · bovendien kregen BEIDE armen inlegzolen, wat de vergelijking anders maakt dan de app suggereerde
+- Zelfde patroon bij de rekoefening · `digiovanni_2006_fasciarek` toont na twee jaar GEEN significant groepsverschil meer, mede doordat na acht weken alle deelnemers hetzelfde protocol kregen · het "blijvend voordeel na 2 jaar" is geschrapt
+- Redactioneel commentaar geciteerd als onderzoeksbron, drie keer · "Riel et al., 2019 - BJSM" verwijst naar een editorial over pijnrapportage in oefentherapie-trials, niet naar onderzoek dat ochtendpijn als meest responsieve parameter vaststelt
+- Tegenstrijdige evidentie toegevoegd over de hielspoor (CLAUDE.md 1.9) · de app noemde hem een misvatting · `hansen_2018_prognose` vond inderdaad geen invloed op de prognose, maar `mcmillan_2009_beeldvorming` vond juist een sterke associatie met hielpijn (OR 8,52; 95% BI 4,08-17,77) · beide standpunten staan nu in de tekst
+- Diagnostische nuance hersteld · de windlass-test was slechts bij 31,8% van de patiënten positief in belasting en 13,6% zonder; de auteurs waarschuwen dat de lage sensitiviteit de bruikbaarheid beperkt · de app presenteerde de test als bevestigend
+- BMI-drempel gecorrigeerd van 27 naar 30 kg/m2 op drie plaatsen · `riddle_2003_risicofactoren` onderzocht 30 (OR 5,6), niet 27 · de odds ratio's voor dorsaalflexie (23,3) en staand werk (3,6) zijn wel correct
+- Twee belastingsveelvouden spraken elkaar tegen binnen hetzelfde protocol · 2-3x lichaamsgewicht in de fasetekst tegenover 8x in een oefennotitie van diezelfde fase · beide geschrapt wegens ontbrekende bron
+
 ## 2026-09-05 — bronaudit totale heupprothese
 
 - 16 claims beoordeeld, 15 bronnen eerstehands opgehaald en geverifieerd via PubMed · dit protocol was inhoudelijk beter opgebouwd dan de vorige twee: drie claims hielden volledig stand (`vanderweegen_2016_restricties`, `meermans_2017_anterieur`, en het levenslange artroserisico uit `murphy_2010_levenslangrisico`)

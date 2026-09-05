@@ -319,3 +319,98 @@ references:
       was wel geassocieerd (OR 5,2; 95% BI 1,1-25,5).
     geverifieerd_op: 2026-09-05
     geverifieerd_door: PubMed MCP (get_article_metadata, PMID 17414530)
+
+  - key: rio_2015_isometrie
+    auteurs: [Rio E, Kidgell D, Purdam C, Gaida J, Moseley GL, Pearce AJ, Cook J]
+    titel: Isometric exercise induces analgesia and reduces inhibition in patellar tendinopathy
+    bron: British Journal of Sports Medicine
+    jaar: 2015
+    volume_paginas: 49(19):1277-83
+    doi: 10.1136/bjsports-2014-094386
+    pmid: '25979840'
+    url: https://doi.org/10.1136/bjsports-2014-094386
+    type: RCT
+    opmerking: >-
+      Gerandomiseerde cross-overstudie bij 6 volleyballers met patellatendinopathie.
+      Pijn op de single-leg decline squat daalde na isometrie van 7,0 naar 0,17
+      (gemiddelde daling 6,8/10), tegenover 2,6/10 na isotone contracties; effect
+      hield 45 minuten aan. Corticale inhibitie daalde van 27,5% naar 55,0%.
+      Zeer kleine steekproef; niet onderzocht bij de pes anserinus.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: messier_2005_knielast
+    auteurs: [Messier SP, Gutekunst DJ, Davis C, DeVita P]
+    titel: Weight loss reduces knee-joint loads in overweight and obese older adults with knee osteoarthritis
+    bron: Arthritis and Rheumatism
+    jaar: 2005
+    volume_paginas: 52(7):2026-32
+    doi: 10.1002/art.21139
+    pmid: '15986358'
+    url: https://doi.org/10.1002/art.21139
+    type: RCT
+    opmerking: >-
+      142 zittende, overgewichtige oudere volwassenen met gonartrose, ganganalyse
+      na 18 maanden dieet en beweging. 1 kg (9,8 N) gewichtsverlies ging samen met
+      40,6 N minder compressiekracht en 38,7 N minder resultante kracht per stap —
+      ongeveer een viervoudige reductie per eenheid gewichtsverlies. Geen uitspraak
+      over 5% gewichtsverlies of over de pes anserinus.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: fredericson_2006_itbfs
+    auteurs: [Fredericson M, Weir A]
+    titel: Practical management of iliotibial band friction syndrome in runners
+    bron: Clinical Journal of Sport Medicine
+    jaar: 2006
+    volume_paginas: 16(3):261-8
+    doi: 10.1097/00042752-200605000-00013
+    pmid: '16778549'
+    url: https://doi.org/10.1097/00042752-200605000-00013
+    type: review
+    opmerking: >-
+      Narratieve praktijkbeschrijving, geen systematische review. Beschrijft
+      activiteitenmodificatie in de acute fase, heupabductorversterking in de
+      herstelfase en een gefaseerde loophervatting om de andere dag met vermijden
+      van heuveltraining. Bevat geen hervalcijfers.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: schubert_2014_stapfrequentie
+    auteurs: [Schubert AG, Kempf J, Heiderscheit BC]
+    titel: 'Influence of stride frequency and length on running mechanics: a systematic review'
+    bron: Sports Health
+    jaar: 2014
+    volume_paginas: 6(3):210-7
+    doi: 10.1177/1941738113508544
+    pmid: '24790690'
+    url: https://doi.org/10.1177/1941738113508544
+    type: SR
+    opmerking: >-
+      Systematische review van 10 studies. Consistente bevinding: een hogere
+      staplengtefrequentie verlaagt de verticale verplaatsing van het
+      massamiddelpunt, de grondreactiekracht, de schokdemping en de opgenomen
+      energie in heup, knie en enkel. Geen percentages per 5% cadansstijging,
+      geen ITBS-populatie. Verscheen in Sports Health, niet in Gait & Posture.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (search_articles + get_article_metadata)
+
+  - key: nielsen_2014_loopvolume
+    auteurs: [Nielsen RO, Parner ET, Nohr EA, Sorensen H, Lind M, Rasmussen S]
+    titel: 'Excessive progression in weekly running distance and risk of running-related injuries: an association which varies according to type of injury'
+    bron: Journal of Orthopaedic and Sports Physical Therapy
+    jaar: 2014
+    volume_paginas: 44(10):739-47
+    doi: 10.2519/jospt.2014.5164
+    pmid: '25155475'
+    url: https://doi.org/10.2519/jospt.2014.5164
+    type: cohort
+    opmerking: >-
+      Exploratief prospectief cohort, 874 beginnende lopers, 202 letsels. Over de
+      drie blootstellingsgroepen samen waren er GEEN statistisch significante
+      verschillen in letselcijfers. Enkel voor afstandsgebonden letsels (waaronder
+      ITBS) lag het cijfer hoger bij een progressie van meer dan 30% over twee
+      weken tegenover minder dan 10% (HR 1,59; 95% BI 0,96-2,66; p = 0,07 — niet
+      significant). De auteurs adviseren minder dan 30% per week, niet 10%.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)

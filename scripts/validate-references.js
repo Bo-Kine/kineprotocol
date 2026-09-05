@@ -63,7 +63,7 @@ claimBestanden.forEach(bestand => {
     if (c.gedekt === 'ja' && !(c.bronnen || []).length) {
       fouten.push(`${bestand} claim ${c.id}: gemarkeerd als gedekt maar zonder bron`);
     }
-    if (c.gedekt !== 'ja') {
+    if (c.gedekt !== 'ja' && !c.verwerkt) {
       waarschuwingen.push(`${bestand} claim ${c.id}: gedekt=${c.gedekt} — niet opleverbaar zonder aanpassing`);
     }
   });

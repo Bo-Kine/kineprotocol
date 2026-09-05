@@ -3,6 +3,19 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-09-05 — tweede auditronde en toepassing route B op MCL, pes anserinus en ITB
+
+- Auditomvang uitgebreid van 24 naar 61 claims · de eerste ronde dekte ongeveer veertien van de vijfendertig citaties in deze drie protocollen; de overige circa eenentwintig zijn nu eveneens tegen de primaire bron gecontroleerd
+- Vijf nieuwe bronnen live opgehaald en geverifieerd via PubMed · `rio_2015_isometrie`, `messier_2005_knielast`, `fredericson_2006_itbfs`, `schubert_2014_stapfrequentie`, `nielsen_2014_loopvolume`
+- Route B toegepast op de volledige evidencetekst van MCL, pes anserinus en ITB · niet-gedekte klinische uitspraken blijven staan maar zijn expliciet gelabeld als klinische redenering; ongebronde cijfers zijn verwijderd, omdat een percentage geen vakinhoudelijk oordeel is maar een empirische bewering
+- Verwijderde ongebronde cijfers · zwellingsreductie 30-40%, quadricepsverlies 50-70%, recidieffactor 3,8, MCL-recidief 12-18%, letselreductie 30% via sRPE, knieadductiemoment -14%, pijnreductie 25-30%, gewichtsverlies 5% → -20%, recidiefkans 40-60%, ACWR-drempel 1,5, symptoomresolutie 92% versus 67%, gait retraining 79%, herval 30-40%, cadans 5% → 14-20%, pasfrequentiedrempel 170 spm
+- Gecorrigeerde cijfers · Nordic hamstring 51% → 71% (RR 0,293) en uitsluitend voor hamstringletsel · stapfrequentie 5-10% → uitsluitend 10% bij gezonde lopers · pes anserinus 2,5-19% → 20% van 170 artroseknieen, met de tegenstrijdige case-controlstudie ernaast · `rio_2015_isometrie`, `heiderscheit_2011_stapfrequentie`, `uysal_2014_pab`, `alvareznemegyei_2007_risicofactoren`, `vandyk_2019_nordic`
+- Geschrapte citaties wegens verkeerde toeschrijving of populatie · foam rollen TFL (studie over spierpijn bij gezonde mannen), TFL-flexibiliteit als predictor (Ober-test bij gezonden), gait retraining bij ITBS (studie over patellofemorale pijn), pasfrequentie 170 spm (casusrapport over de achillespees), relatieve rust Docking & Cook 2019 (publicatie niet terug te vinden in PubMed)
+- Tegenstrijdige evidentie nu zichtbaar in de app · `nielsen_2014_loopvolume` spreekt de 10%-regel tegen: over de groepen heen geen significante verschillen, en het verschil voor afstandsgebonden letsels was niet significant (HR 1,59; 95% BI 0,96-2,66; p = 0,07)
+- Bewijsniveau expliciet vermeld waar het laag is · `fredericson_2000_heupabductoren` is een case series zonder controlegroep, `fredericson_2006_itbfs` een narratieve praktijkbeschrijving op expertniveau
+- Elke claim heeft nu een veld `verwerkt` dat vastlegt hoe hij in `protocols.js` is opgelost · `scripts/validate-references.js` waarschuwt enkel nog voor claims zonder die verwerking
+- Openstaand · drie ACL-claims (`acl_c10`, `acl_c11`, `acl_c12`) wachten op bronaanwijzing door de kinesitherapeut · de resterende zesentwintig protocollen zijn nog niet geauditeerd
+
 ## 2026-09-05 — bronaudit knieprotocollen: MCL, pes anserinus, ITB
 
 - `data/claims/mcl.yaml`, `pa.yaml`, `itb.yaml` aangelegd · audit-trail per claim · 24 claims beoordeeld, elf nieuwe bronnen live opgehaald via PubMed

@@ -13,6 +13,8 @@ claims:
     opmerking: >-
       GEEN BRON GEVONDEN voor dit cijfer. De toegeschreven publicatie is niet
       teruggevonden. Volgens CLAUDE.md 1.2 schrappen.
+    verwerkt: >-
+      cijfer of citatie geschrapt uit protocols.js; klinische lijn behouden als redenering (route B, 2026-09-05)
 
   - id: mcl_c02
     tekst: Vroege functionele mobilisatie na MCL-letsel geeft herstel vergelijkbaar met chirurgie of immobilisatie, met snellere sporthervatting
@@ -24,6 +26,8 @@ claims:
       een prospectieve serie van 35 patienten ZONDER gerandomiseerde
       vergelijkingsgroep; de vergelijking met chirurgie berust op historische
       cijfers van eerdere onderzoekers. Formulering moet dat weerspiegelen.
+    verwerkt: >-
+      herlabeld als klinische redenering in protocols.js (route B, 2026-09-05)
 
   - id: mcl_c03
     tekst: Gesloten-keten oefeningen zijn superieur aan open-keten voor MCL-herstel
@@ -35,6 +39,8 @@ claims:
       vergelijkt. De toegeschreven publicatie is niet teruggevonden voor deze
       inhoud. Volgens CLAUDE.md 1.2 schrappen of herschrijven als klinische
       redenering.
+    verwerkt: >-
+      cijfer of citatie geschrapt uit protocols.js; klinische lijn behouden als redenering (route B, 2026-09-05)
 
   - id: mcl_c04
     tekst: Proprioceptief deficit na MCL-letsel persisteert langdurig
@@ -42,6 +48,8 @@ claims:
     bronnen: []
     gedekt: nee
     opmerking: GEEN BRON GEVONDEN bij mensen. Schrappen of als redenering labelen.
+    verwerkt: >-
+      cijfer of citatie geschrapt uit protocols.js; klinische lijn behouden als redenering (route B, 2026-09-05)
 
   - id: mcl_c05
     tekst: Hamstring/quadriceps-ratio >= 0,60 als minimale drempel voor terugkeer naar belastende knieactiviteit
@@ -51,6 +59,8 @@ claims:
     opmerking: >-
       GEEN BRON GEVONDEN voor deze drempel. Betreft een doorstroomcriterium,
       dus klinisch dragend. Schrappen of onderbouwen.
+    verwerkt: >-
+      cijfer of citatie geschrapt uit protocols.js; klinische lijn behouden als redenering (route B, 2026-09-05)
 
   - id: mcl_c06
     tekst: Neuromusculaire training op instabiele ondergrond verbetert kniestabiliteit meer dan conventionele training
@@ -58,6 +68,8 @@ claims:
     bronnen: []
     gedekt: nee
     opmerking: GEEN BRON GEVONDEN bij kniebandletsel.
+    verwerkt: >-
+      herlabeld als klinische redenering in protocols.js (route B, 2026-09-05)
 
   - id: mcl_c07
     tekst: Symmetrie-index >= 90% op de enkelbeen-hoptest als drempel voor sporthervatting
@@ -69,6 +81,8 @@ claims:
       van de NORMALE populatie, niet een drempel van 90%. En de patientenpopulatie
       is ACL-deficiente knieen, niet MCL-letsel: toepassing op MCL is
       extrapolatie buiten de onderzochte indicatie (CLAUDE.md 1.5).
+    verwerkt: >-
+      herlabeld als klinische redenering in protocols.js (route B, 2026-09-05)
 
   - id: mcl_c08
     tekst: Nordic Hamstring Exercise reduceert hamstring- en knieletselincidentie
@@ -79,6 +93,8 @@ claims:
       Alleen het hamstringdeel is gedekt: risicoratio 0,49, tot 51% reductie
       over 15 studies en 8459 sporters. KNIELETSELINCIDENTIE is in de bron niet
       onderzocht en moet uit de claim.
+    verwerkt: >-
+      herlabeld als klinische redenering in protocols.js (route B, 2026-09-05)
 
   - id: mcl_c09
     tekst: Op symmetrie-index gebaseerde return-to-sport-criteria reduceren herletselkans met 84% na knieligamentletsel
@@ -89,6 +105,8 @@ claims:
       EXTRAPOLATIE (CLAUDE.md 1.5). De 84% komt uit een cohort van patienten na
       ACL-RECONSTRUCTIE. MCL-letsel zat niet in de populatie. De claim mag zo
       niet op een MCL-protocol staan.
+    verwerkt: >-
+      herlabeld als klinische redenering in protocols.js (route B, 2026-09-05)
 
   - id: mcl_c10
     tekst: Recidiefrisico na MCL-letsel bedraagt 12-18% zonder preventief onderhoudsprogramma
@@ -96,6 +114,8 @@ claims:
     bronnen: []
     gedekt: nee
     opmerking: GEEN BRON GEVONDEN voor dit cijfer. Schrappen.
+    verwerkt: >-
+      cijfer of citatie geschrapt uit protocols.js; klinische lijn behouden als redenering (route B, 2026-09-05)
 
   - id: mcl_c11
     tekst: ACL-RSI drempels 65 en 80 als doorstroomcriterium bij MCL-letsel
@@ -106,3 +126,136 @@ claims:
       EXTRAPOLATIE (CLAUDE.md 1.5). De ACL-RSI is ontwikkeld en gevalideerd voor
       ACL-letsel. Er is geen validatie bij MCL-letsel gevonden. Betreft een
       doorstroomcriterium voor sporthervatting, dus klinisch dragend.
+
+  # --- Tweede auditronde: restcitaties die in ronde 1 niet gecontroleerd waren.
+  # Uitgevoerd door een zoekagent met schone context; de PMID's hieronder zijn
+  # identificatiegegevens uit die controle en zijn NIET als referentie opgenomen,
+  # omdat geen enkele claim volledig gedekt bleek. Bibliografische gegevens zijn
+  # daarom ook nergens overgenomen (CLAUDE.md 1.3).
+    verwerkt: >-
+      herlabeld als klinische redenering in protocols.js (route B, 2026-09-05)
+
+  - id: mcl_c12
+    tekst: PRICE reduceert post-traumatische zwelling met 30-40% in de eerste 48 uur
+    plaats: protocols.mcl fase 1 evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: GEEN BRON MET DIT CIJFER. Percentage schrappen; PRICE blijft als klinische redenering.
+    verwerkt: >-
+      cijfer of citatie geschrapt uit protocols.js; klinische lijn behouden als redenering (route B, 2026-09-05)
+
+  - id: mcl_c13
+    tekst: Vroege mobilisatie na MCL-letsel leidt tot sneller herstel dan immobilisatie zonder verhoogd instabiliteitsrisico
+    plaats: protocols.mcl fase 1 evidence
+    bronnen: []
+    gedekt: deels
+    opmerking: >-
+      De gecontroleerde publicatie (PMID 2364606) beschrijft vroege beweging bij
+      volledige MCL-scheur, maar bevat geen vergelijking met immobilisatie en geen
+      instabiliteitsdata. De vergelijkende uitspraak is dus niet gedekt.
+    verwerkt: >-
+      herlabeld als klinische redenering in protocols.js (route B, 2026-09-05)
+
+  - id: mcl_c14
+    tekst: Quadricepsinhibitie door hemartros reduceert quadricepskracht met 50-70%
+    plaats: protocols.mcl fase 1 evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Quadricepsinhibitie bij effusie is bevestigd (PMID 3581573), maar het cijfer
+      50 tot 70% staat er niet in en de studie gaat niet specifiek over hemartros.
+      Cijfer schrappen, mechanisme behouden.
+    verwerkt: >-
+      cijfer of citatie geschrapt uit protocols.js; klinische lijn behouden als redenering (route B, 2026-09-05)
+
+  - id: mcl_c15
+    tekst: Proprioceptief deficit verhoogt het recidiefrisico met factor 3,8
+    plaats: protocols.mcl fase 2 evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      GEEN DEKKENDE BRON. De toegeschreven publicatie betreft proprioceptie na
+      VKB-letsel en bevat geen factor 3,8 en geen MCL. Schrappen.
+    verwerkt: >-
+      cijfer of citatie geschrapt uit protocols.js; klinische lijn behouden als redenering (route B, 2026-09-05)
+
+  - id: mcl_c16
+    tekst: Gluteus medius-zwakte correleert sterk met knievalgusstress en MCL-herletsel
+    plaats: protocols.mcl fase 2 evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      De toegeschreven publicatie (PMID 18678957) betreft patellofemorale pijn bij
+      lopers; geen valgus, geen MCL-herletsel. Citatie schrappen, klinische lijn
+      behouden als redenering.
+    verwerkt: >-
+      cijfer of citatie geschrapt uit protocols.js; klinische lijn behouden als redenering (route B, 2026-09-05)
+
+  - id: mcl_c17
+    tekst: Neuromusculaire training op instabiele ondergrond verbetert kniestabiliteit meer dan krachttraining alleen
+    plaats: protocols.mcl fase 3 evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      De toegeschreven publicatie (PMID 16282579) onderzocht gezonde atletes en
+      vergeleek balans- met plyometrietraining, niet met krachttraining, en niet
+      bij bandletsel. Citatie schrappen.
+    verwerkt: >-
+      cijfer of citatie geschrapt uit protocols.js; klinische lijn behouden als redenering (route B, 2026-09-05)
+
+  - id: mcl_c18
+    tekst: Progressief jogprotocol reduceert de recidiefkans bij loophervatting na ligamentletsel
+    plaats: protocols.mcl fase 3 evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      De toegeschreven publicatie (PMID 20818198) is een besliskundig
+      return-to-play-model zonder jogprotocol en zonder recidiefcijfers.
+    verwerkt: >-
+      herlabeld als klinische redenering in protocols.js (route B, 2026-09-05)
+
+  - id: mcl_c19
+    tekst: Nordic Hamstring Exercise reduceert hamstring- en knieletselincidentie met 51%
+    plaats: protocols.mcl fase 4 evidence
+    bronnen: [vandyk_2019_nordic]
+    gedekt: deels
+    opmerking: >-
+      De omvang n = 942 klopt, maar de gerapporteerde reductie bedraagt 71%
+      (RR 0,293) en betreft uitsluitend HAMSTRINGletsel, niet knieletsel. Cijfer
+      corrigeren en de uitkomstmaat beperken tot hamstringletsel.
+    verwerkt: >-
+      tekst gecorrigeerd naar de bevinding in de bron, met vermelding van populatie en bewijsniveau (route B, 2026-09-05)
+
+  - id: mcl_c20
+    tekst: ACL-RSI is een onafhankelijke predictor van sporthervatting en recidief na knieligamentletsel
+    plaats: protocols.mcl fase 4 evidence
+    bronnen: []
+    gedekt: deels
+    opmerking: >-
+      De onderliggende publicatie (PMID 30753794) betreft uitsluitend
+      VKB-RECONSTRUCTIE. Veralgemening naar knieligamentletsel in het algemeen en
+      naar MCL is niet gedekt (CLAUDE.md 1.5). Beperken tot VKB of schrappen.
+    verwerkt: >-
+      cijfer of citatie geschrapt uit protocols.js; klinische lijn behouden als redenering (route B, 2026-09-05)
+
+  - id: mcl_c21
+    tekst: Recidiefrisico na MCL-letsel bedraagt 12-18% zonder preventief onderhoudsprogramma
+    plaats: protocols.mcl fase 5 evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      De toegeschreven publicatie (PMID 23624324) rapporteert MCL-incidentie en
+      gemiddeld 23 dagen uitval, geen recidiefcijfer van 12 tot 18%. Schrappen.
+    verwerkt: >-
+      cijfer of citatie geschrapt uit protocols.js; klinische lijn behouden als redenering (route B, 2026-09-05)
+
+  - id: mcl_c22
+    tekst: Belastingsmonitoring via sRPE met maximaal 10% wekelijkse progressie reduceert overbelastingsletsel met 30%
+    plaats: protocols.mcl fase 5 evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      De toegeschreven publicatie (PMID 26511006) gebruikt afstandsgebaseerde
+      ratio's, geen sRPE, geen 10%-regel en geen 30%. Schrappen.
+    verwerkt: >-
+      cijfer of citatie geschrapt uit protocols.js; klinische lijn behouden als redenering (route B, 2026-09-05)

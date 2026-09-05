@@ -18,6 +18,8 @@ claims:
       obesitas tussen patienten en controles; wel was valgusstand van de knie
       geassocieerd (OR 5,2; 95% BI 1,1-25,5). Beide standpunten horen in de
       tekst, met vermelding van de bewijskracht.
+    verwerkt: >-
+      herlabeld als klinische redenering in protocols.js (route B, 2026-09-05)
 
   - id: pa_c02
     tekst: Heupabductorkrachttraining reduceert het knieadductiemoment met 14%
@@ -29,6 +31,8 @@ claims:
       heupabductorkracht en heupadductiehoek bij lopers; er was geen
       trainingsinterventie, geen knieadductiemoment als uitkomst en geen
       percentage van 14%. Schrappen.
+    verwerkt: >-
+      cijfer of citatie geschrapt uit protocols.js; klinische lijn behouden als redenering (route B, 2026-09-05)
 
   - id: pa_c03
     tekst: Progressieve isotone belasting stimuleert collageensynthese in peesweefsel
@@ -40,6 +44,8 @@ claims:
       collageensynthese in de PATELLAPEES van gezonde mannen na eenmalige
       inspanning, niet progressieve isotone opbouw en niet de pes anserinus.
       Als de claim blijft, expliciet labelen als klinische redenering.
+    verwerkt: >-
+      herlabeld als klinische redenering in protocols.js (route B, 2026-09-05)
 
   - id: pa_c04
     tekst: Excentrische training is superieur aan concentrische training en reduceert neovascularisatie
@@ -51,6 +57,8 @@ claims:
       landmarkstudie betreft de ACHILLESPEES, had geen concentrische
       vergelijkingsarm en onderzocht neovascularisatie niet als uitkomst.
       Toepassing op de pes anserinus is niet onderbouwd.
+    verwerkt: >-
+      herlabeld als klinische redenering in protocols.js (route B, 2026-09-05)
 
   - id: pa_c05
     tekst: Hamstring/quadriceps-ratio >= 0,60 als drempel voor kniestabiliteit
@@ -58,6 +66,8 @@ claims:
     bronnen: []
     gedekt: nee
     opmerking: GEEN BRON GEVONDEN. Zelfde ongedekte drempel als in het MCL-protocol.
+    verwerkt: >-
+      herlabeld als klinische redenering in protocols.js (route B, 2026-09-05)
 
   - id: pa_c06
     tekst: Stoppen na klachtenreductie verhoogt de recidiefkans met 40-60%
@@ -65,6 +75,8 @@ claims:
     bronnen: []
     gedekt: nee
     opmerking: GEEN BRON GEVONDEN voor dit cijfer. Schrappen.
+    verwerkt: >-
+      cijfer of citatie geschrapt uit protocols.js; klinische lijn behouden als redenering (route B, 2026-09-05)
 
   - id: pa_c07
     tekst: Acute-chronische belastingsratio als monitoringsinstrument bij tendinopathie
@@ -74,3 +86,85 @@ claims:
     opmerking: >-
       NIET GEDEKT voor tendinopathie. De gevonden studie betreft schouderpijn
       bij jeugdzwemmers. Als de claim blijft, labelen als klinische redenering.
+
+  # --- Tweede auditronde: restcitaties die in ronde 1 niet gecontroleerd waren ---
+    verwerkt: >-
+      herlabeld als klinische redenering in protocols.js (route B, 2026-09-05)
+
+  - id: pa_c08
+    tekst: Isometrische oefeningen reduceren tendinopathiepijn acuut met gemiddeld 25-30% door corticale inhibitie
+    plaats: protocols.pa fase 1 evidence
+    bronnen: [rio_2015_isometrie]
+    gedekt: deels
+    opmerking: >-
+      MECHANISME GEDEKT, CIJFER NIET. De bron toont acute analgesie na isometrie
+      en een gelijktijdige daling van corticale inhibitie, maar rapporteert een
+      gemiddelde pijndaling van 6,8 op 10 op de single-leg decline squat, geen
+      25 tot 30%. Populatie: 6 volleyballers met PATELLAtendinopathie. Toepassing
+      op de pes anserinus is extrapolatie (CLAUDE.md 1.5) en de steekproef is zeer
+      klein. Cijfer vervangen door de werkelijke bevinding, populatie benoemd.
+    verwerkt: >-
+      tekst gecorrigeerd naar de bevinding in de bron, met vermelding van populatie en bewijsniveau (route B, 2026-09-05)
+
+  - id: pa_c09
+    tekst: Relatieve rust is superieur aan volledige rust in de acute tendinopathiefase (Docking & Cook, 2019 - JOSPT)
+    plaats: protocols.pa fase 1 evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      CITATIE NIET TERUGGEVONDEN. Twee gerichte PubMed-zoekopdrachten op auteur,
+      tijdschrift en jaar leverden geen publicatie op die aan deze beschrijving
+      voldoet. Volgens CLAUDE.md 1.2 wordt een niet-verifieerbare bron geschrapt,
+      niet voorlopig laten staan. De klinische lijn blijft als redenering.
+    verwerkt: >-
+      cijfer of citatie geschrapt uit protocols.js; klinische lijn behouden als redenering (route B, 2026-09-05)
+
+  - id: pa_c10
+    tekst: Gewichtsreductie van 5% lichaamsgewicht vermindert de mediale kniereactiekracht met 20%
+    plaats: protocols.pa fase 2 evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      NIET GEDEKT. De toegeschreven studie rapporteert geen effect van 5%
+      gewichtsverlies en geen 20%. Schrappen.
+    verwerkt: >-
+      cijfer of citatie geschrapt uit protocols.js; klinische lijn behouden als redenering (route B, 2026-09-05)
+
+  - id: pa_c11
+    tekst: Iedere 1 kg gewichtsverlies vermindert de kniereactiekracht met ongeveer 4 kg per stap
+    plaats: protocols.pa fase 4 evidence
+    bronnen: [messier_2005_knielast]
+    gedekt: ja
+    opmerking: >-
+      GEDEKT. 9,8 N (1 kg) gewichtsverlies ging samen met 40,6 N minder
+      compressiekracht en 38,7 N minder resultante kracht per stap; de auteurs
+      besluiten tot een viervoudige reductie van de kniebelasting per stap.
+      Populatie: overgewichtige oudere volwassenen met gonartrose, niet
+      pes anserinus-patienten. Populatie vermelden bij de claim.
+    verwerkt: >-
+      tekst gecorrigeerd naar de bevinding in de bron, met vermelding van populatie en bewijsniveau (route B, 2026-09-05)
+
+  - id: pa_c12
+    tekst: Creighton et al. 2010 onderbouwt een progressief intervalloopprotocol dat de recidiefkans reduceert
+    plaats: protocols.pa fase 3 evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      NIET GEDEKT (zelfde bevinding als in het MCL-protocol). De publicatie is een
+      besliskundig model voor return-to-play, zonder loopprotocol en zonder
+      recidiefcijfers. Citatie schrappen.
+    verwerkt: >-
+      cijfer of citatie geschrapt uit protocols.js; klinische lijn behouden als redenering (route B, 2026-09-05)
+
+  - id: pa_c13
+    tekst: ACWR van 1,5+ is de sterkste onafhankelijke predictor van musculoskeletaal letsel na sporthervatting
+    plaats: protocols.pa fase 4 evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      NIET GEDEKT (zelfde bevinding als in het MCL-protocol). De toegeschreven
+      publicatie werkt met afstandsgebaseerde ratio's bij rugbyspelers, niet met
+      een drempel van 1,5 als sterkste predictor, en niet bij tendinopathie.
+      Citatie en drempel schrappen; belastingsmonitoring blijft als redenering.
+    verwerkt: >-
+      cijfer of citatie geschrapt uit protocols.js; klinische lijn behouden als redenering (route B, 2026-09-05)

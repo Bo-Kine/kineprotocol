@@ -1536,7 +1536,7 @@ protocols.mcl = {id:'mcl',title:'MCL Letsel Knie',subtitle:'Conservatief revalid
         'SLR 3 × 15 uitvoerbaar zonder quadricepslag',
         'NRS in rust ≤ 2/10'
       ],
-      evidence:'<strong>PRICE-protocol</strong> (Protection, Rest, Ice, Compression, Elevation) reduceert post-traumatische zwelling met 30–40% in de eerste 48u (van den Bekerom et al., 2012 — JOSPT). <strong>Vroege mobilisatie</strong> na MCL-letsel leidt tot sneller functioneel herstel dan immobilisatie, zonder verhoogd instabiliteitsrisico (Indelicato, 1995 — JBJS). <strong>Quadricepsinhibitie</strong> door hemartros reduceert quadricepskracht met 50–70% en moet actief worden tegengegaan via isometrische oefeningen (Young et al., 1987 — AJSM).'
+      evidence:'<strong>PRICE</strong> (bescherming, relatieve rust, ijs, compressie, elevatie) in de eerste 48 uur — <em>klinische redenering; er is geen bron gevonden die een effectcijfer op zwelling onderbouwt, het eerder vermelde 30–40% is geschrapt</em>. Vroege mobilisatie na MCL-letsel is gangbaar; de gecontroleerde publicatie beschrijft vroege beweging bij een volledige scheur maar vergelijkt niet met immobilisatie en rapporteert geen instabiliteitsdata — de superioriteitsuitspraak blijft dus <em>klinische redenering</em>. <strong>Quadricepsinhibitie bij gewrichtseffusie</strong> is een aangetoond mechanisme en wordt tegengegaan met isometrische oefeningen; <em>het percentage krachtverlies van 50–70% stond niet in de bron en is geschrapt</em>.',
     },
     {
       label:'Fase 2',
@@ -1565,7 +1565,7 @@ protocols.mcl = {id:'mcl',title:'MCL Letsel Knie',subtitle:'Conservatief revalid
         'Normaal gangpatroon bij ganganalyse (geen antalgisch patroon)',
         'Quadricepskracht ≥ 60% contralateraal (handynamometer of functionele test)'
       ],
-      evidence:'<strong>Gesloten-keten oefeningen</strong> (squat, leg press, step-up) zijn superieur aan open-keten oefeningen voor MCL-herstel door gecontroleerde mediale valgusbelasting (Shelbourne & Nitz, 1990 — AJSM). <strong>Proprioceptief deficit</strong> na MCL-letsel persisteert zonder gerichte training en verhoogt recidiefrisico met factor 3,8 (Barrack et al., 1989 — AJSM). <strong>Gluteus medius-zwakte</strong> correleert sterk met knievalgusstress en MCL-herletsel (Dierks et al., 2008 — JOSPT).'
+      evidence:'<strong>Gesloten-keten oefeningen</strong> (squat, leg press, step-up) laten de valgusbelasting beter doseren dan open-keten oefeningen — <em>klinische redenering</em>. Proprioceptieve training na bandletsel is standaardpraktijk; <em>de eerder vermelde risicoverhoging met factor 3,8 berustte op onderzoek naar VKB-proprioceptie en is geschrapt</em>. Gluteus medius-zwakte en dynamische valgus worden in de praktijk samen aangepakt — <em>klinische redenering; de aangehaalde publicatie betrof patellofemorale pijn bij lopers, niet MCL-herletsel</em>.',
     },
     {
       label:'Fase 3',
@@ -1594,7 +1594,7 @@ protocols.mcl = {id:'mcl',title:'MCL Letsel Knie',subtitle:'Conservatief revalid
         'Klinische valgus-stresstest: geen verhoogde laxiteit t.o.v. baseline',
         'NRS ≤ 2/10 bij alle functionele activiteiten'
       ],
-      evidence:'<strong>H/Q ratio ≥ 0,60</strong> is de minimale drempel voor veilige terugkeer naar belastende knie-activiteiten (Coombs & Garbutt, 2002 — JOSPT). <strong>Neuromusculaire training</strong> op instabiele ondergrond verbetert kniestabiliteit bij bandletsel significant meer dan krachtsgeoriënteerde training alleen (Myer et al., 2006 — AJSM). <strong>Progressief jogprotocol</strong> reduceert recidiefkans bij loophervatting na ligamentletsel (Creighton et al., 2010 — CJSM).'
+      evidence:'<strong>H/Q-ratio ≥ 0,60</strong> is een <em>praktijkdrempel</em>: er is geen bron gevonden die deze waarde onderbouwt. Neuromusculaire training op instabiele ondergrond wordt toegepast om de kniestabiliteit te verbeteren — <em>klinische redenering</em>; de eerder aangehaalde studie vergeleek balans- met plyometrietraining bij gezonde atletes, niet bij bandletsel. Een <strong>progressief jogprotocol</strong> bij loophervatting is eveneens <em>klinische redenering</em>, niet gedekt door recidiefcijfers.',
     },
     {
       label:'Fase 4',
@@ -1623,7 +1623,7 @@ protocols.mcl = {id:'mcl',title:'MCL Letsel Knie',subtitle:'Conservatief revalid
         'Klinisch: geen mediale kniepijn bij valgus-stresstest',
         'Sportspecifieke drills volledig pijnvrij bij 90% intensiteit'
       ],
-      evidence:'<strong>Limb Symmetry Index ≥ 90%</strong> bij de enkelbeen-hoptest is de sterkste functionele drempel voor veilige sporthervatting na knieligamentletsel (Noyes et al., 1991 — AJSM). <strong>Nordic Hamstring Exercise</strong> reduceert hamstring- en knieletselincidentie met 51% bij sporthervatting (Petersen et al., 2011 — AJSM, n=942). <strong>Psychologische gereedheid</strong> (ACL-RSI) is een onafhankelijke predictor van sporthervatting en recidief na knieligamentletsel (Webster & Feller, 2018 — OJSM).'
+      evidence:'Een <strong>Limb Symmetry Index ≥ 90%</strong> op de hoptestbatterij is een breed gebruikte <em>praktijkdrempel</em> (hoptestbatterij: Barber et al., 1990). Het <strong>Nordic hamstringprogramma</strong> verlaagde in een meta-analyse van 942 sporters het aantal <strong>hamstringletsels</strong> met 71% (RR 0,293) — <em>dat cijfer geldt uitsluitend voor hamstringletsel, niet voor knieletsel</em> (van Dyk et al., 2019 — BJSM). Psychologische gereedheid is onderzocht na <strong>VKB-reconstructie</strong>, niet bij MCL; toepassing hier is <em>klinische redenering</em>.',
     },
     {
       label:'Fase 5',
@@ -1650,7 +1650,7 @@ protocols.mcl = {id:'mcl',title:'MCL Letsel Knie',subtitle:'Conservatief revalid
         'Onderhoudsprogramma zelfstandig en correct uitgevoerd',
         'Geen mediale kniepijn bij maximale sportbelasting'
       ],
-      evidence:'<strong>Return-to-sport criteria</strong> gebaseerd op LSI ≥ 90% reduceren herletselkans na knieligamentletsel met 84% t.o.v. op tijd gebaseerde terugkeer (Grindem et al., 2016 — BJSM). <strong>Recidiefrisico</strong> na MCL-letsel bedraagt 12–18% zonder preventief onderhoudsprogramma (Lundblad et al., 2013 — KSSTA). <strong>Belastingsmonitoring</strong> via sRPE met ≤ 10% wekelijkse progressie reduceert overbelastingsletsel met 30% (Hulin et al., 2016 — BJSM).'
+      evidence:'In de Delaware-Oslo-cohortstudie verlaagde uitstel van sporthervatting tot negen maanden, gecombineerd met het halen van krachtcriteria, het herletselrisico met <strong>84%</strong> — <em>dat onderzoek betreft VKB-reconstructie; overdracht naar MCL is klinische redenering</em> (Grindem et al., 2016 — BJSM). <em>Er is geen bron gevonden voor een MCL-recidiefcijfer van 12–18%; dat cijfer is geschrapt.</em> Belastingsmonitoring met geleidelijke wekelijkse opbouw blijft <em>klinische redenering</em>; het eerder vermelde effect van 30% en de sRPE-drempel waren niet gedekt.',
     }
   ],
   scores:[],
@@ -1807,7 +1807,7 @@ protocols.pa = {id:'pa',title:'Pes Anserinus Tendinopathie',subtitle:'Conservati
         'Isometrische knieflexie 3 × 30 sec pijnvrij op 70% MVC',
         'Traplopen mogelijk met VAS ≤ 4/10'
       ],
-      evidence:'<strong>Pes anserinus bursitis/tendinopathie</strong> is geassocieerd met gonartrose (prevalentie 2,5–19%), obesitas en valgusknie — correctie van biomechanische risicofactoren is de eerste therapeutische prioriteit (Alvarez-Nemegyei & Canoso, 2004 — JCR). <strong>Isometrische oefeningen</strong> reduceren tendinopathiepijn acuut met gemiddeld 25–30% door corticale inhibitie en centrale pijnmodulatrie (Rio et al., 2015 — BJSM). <strong>Relatieve rust</strong> (activiteitenmodificatie, geen volledige immobilisatie) is superieur aan volledige rust in de acute tendinopathiefase (Docking & Cook, 2019 — JOSPT).'
+      evidence:'Pes anserinus-klachten komen vaak samen met gonartrose voor: in een echografische studie had <strong>20% van 170 knieën met symptomatische gonartrose</strong> een pes anserinus-bursitis (Uysal et al., 2014). <strong>Tegenstrijdige evidentie:</strong> een case-controlstudie vond géén verschil in gonartrose, diabetes of obesitas tussen patiënten en controles, wél een verband met <strong>valgusstand</strong> (OR 5,2; 95% BI 1,1–25,5) (Alvarez-Nemegyei et al., 2007). Isometrische oefening gaf bij <strong>patellatendinopathie</strong> een acute pijndaling van gemiddeld 6,8/10 die 45 minuten aanhield, samen met minder corticale inhibitie (Rio et al., 2015 — BJSM; n = 6); toepassing op de pes anserinus is <em>klinische redenering</em>. Relatieve rust in plaats van volledige rust is eveneens <em>klinische redenering</em>.',
     },
     {
       label:'Fase 2',
@@ -1836,7 +1836,7 @@ protocols.pa = {id:'pa',title:'Pes Anserinus Tendinopathie',subtitle:'Conservati
         'Éénbeen-stand ≥ 30 sec stabiel pijnvrij',
         'NRS < 2/10 bij palpatie pes anserinus-insertie'
       ],
-      evidence:'<strong>Heupabductorkrachttraining</strong> reduceert het adductiemoment aan de knie met 14% en vermindert daarmee de compressielast op de pes anserinus-insertie (Dierks et al., 2008 — JOSPT). <strong>Progressieve isotone belasting</strong> stimuleert collageensynthese in de pees via mechanotransductie — verhoog belasting niet sneller dan 10%/week om overbelasting te vermijden (Bohm et al., 2015 — J Physiol). <strong>Gewichtsreductie</strong> van 5% lichaamsgewicht vermindert mediale kniereactiekracht met 20% bij patiënten met gonartrose en pes anserinus-klachten (Messier et al., 2005 — Arthritis Rheum).'
+      evidence:'<strong>Heupabductorkrachttraining</strong> wordt ingezet om de mediale kniebelasting te verlagen — <em>klinische redenering; het eerder vermelde effect van 14% op het knieadductiemoment was niet gedekt en is geschrapt</em>. Progressieve isotone opbouw met een geleidelijke belastingstoename is <em>klinische redenering</em>. <strong>Gewichtsreductie</strong> verlaagt de kniebelasting aantoonbaar: bij overgewichtige ouderen met gonartrose ging 1 kg gewichtsverlies samen met ongeveer <strong>40 N minder compressiekracht per stap</strong>, een viervoudige reductie per eenheid gewicht (Messier et al., 2005 — Arthritis Rheum). <em>Het effect van 5% gewichtsverlies op de mediale kniekracht staat niet in die bron en is geschrapt.</em>',
     },
     {
       label:'Fase 3',
@@ -1865,7 +1865,7 @@ protocols.pa = {id:'pa',title:'Pes Anserinus Tendinopathie',subtitle:'Conservati
         'Éénbeen-squat 3 × 10 pijnvrij per been zonder knieval',
         'NRS ≤ 1/10 bij palpatie pes anserinus in rust'
       ],
-      evidence:'<strong>Excentrische training</strong> stimuleert collageenremodeling en reduceert neovascularisatie in tendinopathisch weefsel — superieur aan concentrische training voor herstel van peesmechanische eigenschappen (Alfredson et al., 1998 — AJSM). <strong>H/Q ratio ≥ 0,60</strong> is de minimale krachtsverhouding voor veilige kniefunctie bij belasting en springactiviteiten (Coombs & Garbutt, 2002 — JOSPT). <strong>Loophervatting</strong> met progressieve intervalopbouw reduceert recidiefkans bij kniepees-pathologie significant t.o.v. ongestructureerde hervatting (Creighton et al., 2010 — CJSM).'
+      evidence:'Zwaardere <strong>excentrische belasting</strong> wordt bij tendinopathie toegepast om de peesbelastbaarheid op te bouwen — <em>klinische redenering</em>: de klassieke achillespeesstudie had geen concentrische vergelijkingsarm, onderzocht neovascularisatie niet en betrof een andere pees. <strong>H/Q-ratio ≥ 0,60</strong> is een <em>praktijkdrempel zonder gevonden bron</em>. Een gestructureerde intervalopbouw bij loophervatting is <em>klinische redenering</em>; de eerder aangehaalde publicatie is een besliskundig return-to-play-model zonder loopprotocol.',
     },
     {
       label:'Fase 4',
@@ -1894,7 +1894,7 @@ protocols.pa = {id:'pa',title:'Pes Anserinus Tendinopathie',subtitle:'Conservati
         'NRS 0/10 bij palpatie pes anserinus in rust én na training',
         'Onderhoudsprogramma 2×/week zelfstandig uitgevoerd'
       ],
-      evidence:'<strong>Recidiefpreventie</strong> bij tendinopathie vereist een langetermijn onderhoudsprogramma van excentrische kracht + belastingsmonitoring: stoppen na klachtenreductie verhoogt recidiefkans met 40–60% (Cook & Purdam, 2009 — BJSM). <strong>ACWR (acute:chronische workload ratio)</strong> van 1,5+ is de sterkste onafhankelijke predictor van musculoskeletal letsel in de eerste 3 maanden na sporthervatting (Hulin et al., 2016 — BJSM). <strong>Gewichtsreductie</strong> blijft de meest kosteneffectieve langetermijninterventie bij pes anserinus-klachten geassocieerd met obesitas en gonartrose — iedere 1 kg gewichtsverlies vermindert kniereactiekracht met 4 kg per stap (Messier et al., 2005 — Arthritis Rheum).'
+      evidence:'<strong>Recidiefpreventie</strong> vraagt onderhoudsbelasting op lange termijn — <em>klinische redenering; het cijfer 40–60% extra recidiefkans bij stoppen is niet onderbouwd en is geschrapt</em>. Belastingsmonitoring met geleidelijke opbouw is eveneens <em>klinische redenering</em>; de eerder vermelde ACWR-drempel van 1,5 was niet gedekt. <strong>Gewichtsreductie</strong> blijft bij obesitas met gonartrose een kernmaatregel: 1 kg gewichtsverlies gaat samen met ongeveer een viervoudige daling van de kniebelasting per stap (Messier et al., 2005 — Arthritis Rheum).',
     }
   ],
   scores:[],
@@ -1929,7 +1929,7 @@ protocols.itb = {id:'itb',title:'Iliotibiale Bandsyndroom',subtitle:'Conservatie
         'TFL/ITB-rek 30 sec bilateraal pijnvrij uitvoerbaar',
         'VAS in rust ≤ 1/10 gedurende ≥ 3 opeenvolgende dagen'
       ],
-      evidence:'De <strong>compressietheoorie</strong> heeft de traditionele frictietheorie vervangen: ITBS ontstaat door compressie van een sterk geïnnerveerd vetlichaam onder de ITB ter hoogte van de laterale femurepicondyl bij 30° knieflexie — de "impingementzone" (Fairclough et al., 2006 — J Anat). <strong>Relatieve rust</strong> (activiteitenmodificatie, geen volledige immobilisatie) en eliminatie van de provocerende activiteit zijn de primaire acute interventies (Fredericson & Weir, 2006 — Clin J Sport Med). <strong>Foam rolling</strong> van TFL reduceert gepercipieerde spanning effectiever dan passieve rekking op korte termijn (Pearcey et al., 2015 — J Athl Train).'
+      evidence:'Fairclough et al. (2006 — J Anat) toonden anatomisch aan dat de tractus bij circa <strong>30° knieflexie</strong> tegen de laterale femurepicondyl wordt gedrukt, dat het onderliggende vetweefsel sterk geïnnerveerd en gevasculariseerd is, en dat er in geen enkel preparaat een bursa aanwezig was. <em>De auteurs formuleren het oorzakelijke verband uitdrukkelijk als hypothese</em>, niet als vastgesteld feit. Relatieve rust en het uitschakelen van de provocerende activiteit worden aanbevolen in een <em>narratieve praktijkbeschrijving (expertniveau)</em> (Fredericson &amp; Weir, 2006 — CJSM). <em>De claim over foam rollen van de TFL berustte op onderzoek naar spierpijn bij gezonde mannen en is geschrapt.</em>',
     },
     {
       label:'Fase 2',
@@ -1958,7 +1958,7 @@ protocols.itb = {id:'itb',title:'Iliotibiale Bandsyndroom',subtitle:'Conservatie
         'TFL-rek 45 sec pijnvrij bilateraal uitvoerbaar',
         'VAS 0/10 bij traplopen'
       ],
-      evidence:'<strong>Gluteus medius-zwakte</strong> is de sterkste biomechanische risicofactor voor ITBS: lopers met ITBS tonen 24% minder heupabductorkracht contralateraal vergeleken met gezonde controlepersonen (Niemuth et al., 2005 — Clin J Sport Med). <strong>Heupgerichte krachttraining</strong> (abductoren + extensoren) resulteert in 92% symptoomresolutie bij runners na 6 weken in vergelijking met 67% bij enkel uitrekken (Fredericson et al., 2000 — Clin J Sport Med). <strong>TFL-flexibiliteitsbeperking</strong> correleert met verhoogde ITB-spanning en is een onafhankelijke predictor van ITBS bij hardlopers (Gajdosik et al., 2003 — J Orthop Sports Phys Ther).'
+      evidence:'In een <strong>case series</strong> van 24 lopers met ITBS lag het heupabductorkoppel aan de aangedane zijde lager dan aan de niet-aangedane zijde en dan bij gezonde lopers (vrouwen 7,82 versus 10,19 %BWh; mannen 6,86 versus 9,73 %BWh); na zes weken heupgerichte revalidatie waren <strong>22 van de 24 lopers pijnvrij</strong> (Fredericson et al., 2000 — CJSM). <em>Zonder controlegroep is oorzaak niet van gevolg te scheiden, en er was geen rekgroep — de eerder vermelde vergelijking 92% versus 67% is geschrapt.</em> Een systematische review van 13 studies (201 deelnemers) besluit dat een aanpak mét heupabductorversterking effectief is, met grote heterogeniteit en zonder meta-analyse (Sánchez-Alvarado et al., 2024). <em>De claim over TFL-flexibiliteit als predictor berustte op een Ober-teststudie bij gezonden en is geschrapt.</em>',
     },
     {
       label:'Fase 3',
@@ -1987,7 +1987,7 @@ protocols.itb = {id:'itb',title:'Iliotibiale Bandsyndroom',subtitle:'Conservatie
         'Cadansverhoging 5–10% succesvol aangeleerd (bevestigd door loopanalyse)',
         'Heuveltraining 15 min pijnvrij'
       ],
-      evidence:'<strong>Stapfrequentieverhoging</strong> met 5–10% is de meest evidence-based looptechniek-interventie bij ITBS: vermindert het piekheupadduktiemoment met 20% en de ITB-compressie ter hoogte van laterale epicondyl (Heiderscheit et al., 2011 — Med Sci Sports Exerc). <strong>Gait retraining</strong> gericht op heupadduktiereductie resulteert in significante klinische verbetering bij 79% van chronische ITBS-patiënten na 8 sessies (Noehren et al., 2011 — Br J Sports Med). <strong>Progressieve loophervatting</strong> met ≤ 10% volumestijging per week reduceert recidiefkans in vergelijking met ongestructureerde terugkeer (Nielsen et al., 2014 — JOSPT).'
+      evidence:'Bij 45 <strong>gezonde</strong> recreatieve lopers verlaagde een stapfrequentieverhoging van <strong>10%</strong> — niet van 5% — de piekheupadductiehoek en het bijbehorende moment (Heiderscheit et al., 2011 — MSSE); toepassing bij ITBS is <em>klinische redenering</em>. Gait retraining met feedback op heupadductie is onderzocht bij <strong>patellofemorale pijn</strong>, niet bij ITBS; <em>het eerder vermelde responspercentage van 79% is geschrapt</em>. In een cohort van 874 beginnende lopers waren er over de blootstellingsgroepen heen géén significante verschillen in letselcijfers; enkel voor afstandsgebonden letsels (waaronder ITBS) lag het risico hoger bij een opbouw van meer dan 30% over twee weken tegenover minder dan 10% (HR 1,59; 95% BI 0,96–2,66; p = 0,07 — <em>niet significant</em>) (Nielsen et al., 2014 — JOSPT).',
     },
     {
       label:'Fase 4',
@@ -2016,7 +2016,7 @@ protocols.itb = {id:'itb',title:'Iliotibiale Bandsyndroom',subtitle:'Conservatie
         'ACWR < 1,5 wekelijks bewaakt',
         'VAS 0/10 tijdens én 24u na alle trainingen'
       ],
-      evidence:'<strong>Recidiefpreventie</strong> bij ITBS vereist een langetermijn heupkrachtonderhoud: stopzetten van krachtprogramma na symptoomresolutie leidt in 30–40% van gevallen tot herval bij hervatting van hoog loopvolume (Fredericson & Weir, 2006 — Clin J Sport Med). <strong>Cadansmonitoring</strong> via GPS-horloge is de meest praktische methode voor langetermijn-biomechanische correctie in de looppraktijk: elke 5% cadansstijging vermindert kniestressparameters met 14–20% (Schubert et al., 2014 — Gait Posture). <strong>10%-trainingsregel</strong> (wekelijkse volumestijging ≤ 10%) is de sterkste evidence-based preventieve maatregel voor overbelastingsletsels bij hardlopers (Nielsen et al., 2014 — JOSPT).'
+      evidence:'<strong>Recidiefpreventie</strong> vraagt onderhoud van heupkracht op lange termijn — <em>klinische redenering; het hervalcijfer van 30–40% is niet onderbouwd en is geschrapt</em>. Een hogere stapfrequentie verlaagt volgens een systematische review van 10 studies consistent de verticale verplaatsing van het massamiddelpunt, de grondreactiekracht en de energie-opname in heup, knie en enkel (Schubert et al., 2014 — Sports Health); <em>een effect per 5% cadansstijging wordt daar niet gegeven, het cijfer 14–20% is geschrapt</em>. Een geleidelijke wekelijkse volumeopbouw blijft de kernmaatregel: de bron adviseert minder dan 30% per twee weken en toont de 10%-regel niet als bewezen sterkste maatregel (Nielsen et al., 2014 — JOSPT).',
     }
   ],
   scores:[],
@@ -3953,7 +3953,7 @@ const BESCHRIJVING = {
 
   pa:{
     kenmerken:'<strong>Mediaal kniepijn</strong> gelokaliseerd 2–3 cm distaal van de mediale gewrichtsspleet, ter hoogte van de aanhechting van sartorius, gracilis en semitendinosus (de drie ganzenpoot-pezen). Kenmerkend: pijn bij traplopen, opstaan uit stoel, hurken en langdurig staan. <strong>Palpatiepijn</strong> op pes anserinus-insertie is pathognomonisch. Zwelling of warmte wijst op geassocieerde bursitis. Nachtpijn is frequent, met name bij liggen op aangedane zijde. Klinisch: <strong>valgusstand</strong> van de knie vergroot de compressielast op de insertie. Differentiaaldiagnose: MCL-letsel, mediale meniscuspathologie, gonartrose (frequent co-morbide).',
-    oorzaken:'<strong>Friction en compressie</strong> van de pes anserinus-bursa en -pezen door biomechanische overbelasting in het mediaal kniecompartiment. Sterkst geassocieerd met <strong>gonartrose</strong> (co-prevalentie 2,5–19%), <strong>obesitas</strong> (BMI > 30 verhoogt mediale kniereactiekracht) en <strong>diabetes mellitus</strong> (tendinopathische degeneratie door AGE-accumulatie). Atletische oorzaak: overmatig loopvolume, bergafwaarts lopen of zwemmen (borstslagstijl — herhaalde knie-IR compressie). Biomechanische risicofactoren: <strong>valgusknie</strong>, hamstring- en gracilis-stijfheid, gluteus medius-zwakte (verhoogt adductiemoment). Vrouwen > 50 jaar zijn disproportioneel aangedaan door combinatie van postmenopauzale peesveranderingen en valgusstand (Alvarez-Nemegyei & Canoso, 2004 — JCR).'
+    oorzaken:'<strong>Friction en compressie</strong> van de pes anserinus-bursa en -pezen door biomechanische overbelasting in het mediaal kniecompartiment. Vaak samen gezien met <strong>gonartrose</strong> (in een echografische studie 20% van 170 artroseknieën; een case-controlstudie vond echter geen verschil met controles), <strong>obesitas</strong> (BMI > 30 verhoogt mediale kniereactiekracht) en <strong>diabetes mellitus</strong> (tendinopathische degeneratie door AGE-accumulatie). Atletische oorzaak: overmatig loopvolume, bergafwaarts lopen of zwemmen (borstslagstijl — herhaalde knie-IR compressie). Biomechanische risicofactoren: <strong>valgusknie</strong>, hamstring- en gracilis-stijfheid, gluteus medius-zwakte (verhoogt adductiemoment). Valgusstand van de knie was in een case-controlstudie geassocieerd met pes anserinus-klachten (OR 5,2; 95% BI 1,1–25,5) (Alvarez-Nemegyei et al., 2007). Dat vrouwen boven de 50 disproportioneel aangedaan zijn door postmenopauzale peesveranderingen is klinische redenering, niet uit die bron.'
   },
 
   fs:{
@@ -3963,7 +3963,7 @@ const BESCHRIJVING = {
 
   itb:{
     kenmerken:'<strong>Scherpe, brandende pijn aan de laterale zijde van de knie</strong> ter hoogte van het laterale femur epicondyl (Gerdy&#39;s tubercle), typisch optredend na een vaste loopafstand of -duur (het "impingement window": 30° knieflexie). <strong>Noble Compression Test</strong> is pathognomonisch: compressie van de IT-band 2–3 cm proximaal van het laterale gewrichtsspleet bij 30° flexie reproduceert de klacht. Pijn neemt toe bij heuvelaf lopen, trap afdalen en toename loopvolume. Diffuse warmte en zwelling boven het laterale epicondyl in acute stadia. <strong>Differentiaaldiagnose</strong>: laterale meniscuspathologie, popliteus tendinopathie, LCL-letsel, proximale tibiofibulaire instabiliteit. VISA-score en NPRS bij loopactiviteit zijn primaire uitkomstmaten.',
-    oorzaken:'<strong>Compressie van het vette weefsel</strong> onder de IT-band op het laterale femur epicondyl bij 30° knieflexie (Fairclough et al., 2006 — Journal of Anatomy). <strong>Biomechanische risicofactoren</strong>: contralaterale bekkendaling (Trendelenburg) bij zwakke gluteus medius, verhoogde heupinwaartse rotatie, knieewaartse adductie (dynamische valgus). <strong>Trainingsbelasting</strong>: acuut >10% loopvolume-ophoging, heuvelaf lopen en hardlopen op schuine oppervlakken zijn de primaire provocatiefactoren. <strong>Anatomisch</strong>: smalle IT-band, prominente laterale femurcondyl en beenlengteverschil > 1 cm verhogen risico. <strong>Looptechniek</strong>: verhoogde pasfrequentie (>170 spm) reduceert knie-adductiemoment en impingementtijd significant (Willy et al., 2012 — JOSPT). Vrouwen hebben 2× hogere ITBS-prevalentie door breder bekken en grotere Q-hoek.'
+    oorzaken:'<strong>Compressie van het vette weefsel</strong> onder de IT-band op het laterale femur epicondyl bij 30° knieflexie (Fairclough et al., 2006 — Journal of Anatomy). <strong>Biomechanische risicofactoren</strong>: contralaterale bekkendaling (Trendelenburg) bij zwakke gluteus medius, verhoogde heupinwaartse rotatie, knieewaartse adductie (dynamische valgus). <strong>Trainingsbelasting</strong>: acuut >10% loopvolume-ophoging, heuvelaf lopen en hardlopen op schuine oppervlakken zijn de primaire provocatiefactoren. <strong>Anatomisch</strong>: smalle IT-band, prominente laterale femurcondyl en beenlengteverschil > 1 cm verhogen risico. <strong>Looptechniek</strong>: een hogere pasfrequentie verlaagt de belasting op knie en heup (Schubert et al., 2014 — Sports Health); een drempel van 170 spm is klinische redenering, geen bronwaarde. Vrouwen hebben 2× hogere ITBS-prevalentie door breder bekken en grotere Q-hoek.'
   }
 
 };

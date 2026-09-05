@@ -3,6 +3,17 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-09-05 — bronaudit facettaire blokkade lumbaal
+
+- 13 claims beoordeeld, 4 nieuwe bronnen eerstehands opgehaald en geverifieerd via PubMed · zeven van de twaalf citaties konden niet eenduidig opgehaald worden, waaronder BEIDE bronnen onder de kernaanname van dit protocol: het pijnarme venster van 6-12 weken na de blokkade
+- EFFECTRICHTING OMGEKEERD · `saner_2015_motorcontrole` besluit letterlijk dat er GEEN meerwaarde is van specifieke oefeningen gericht op bewegingscontrole boven algemene oefentherapie, op geen enkel meetmoment tot een jaar · de app claimde het tegendeel · beide groepen verbeterden wel significant, wat de klinische keuze verdedigbaar houdt maar niet de superioriteitsclaim
+- Verkeerde toeschrijving met genegeerde relativering · `steiger_2012_oefentherapie` vergelijkt oefentherapie niet met passieve behandeling, maar onderzoekt of klinische verbetering samenhangt met verbetering van de getrainde eigenschap — en vindt daarvoor weinig bewijs · de auteurs stellen bovendien dat de effectgrootte van oefentherapie bij chronische aspecifieke lage rugpijn slechts BESCHEIDEN is
+- Cijfer en populatie klopten niet · "multifidusatrofie bij 80% van de patiënten met chronische facetpijn" · geen van beide Hides-publicaties bevat dat percentage, en beide gaan over ACUTE rugpijn, niet over chronische facetpijn
+- Drempelwaarde verzonnen · "ODI ≤ 20 correleert met volledig herstel" · `fritz_2001_oswestry` rapporteert een minimaal klinisch relevant VERSCHIL van circa 6 punten, geen absolute drempel van 20
+- VEILIGHEIDSBEVINDING TOEGEVOEGD (CLAUDE.md 1.9) · `wieland_2017_yoga` vond dat de pijnwinst van yoga de vooraf bepaalde drempel van klinische relevantie NIET haalde, en dat het risico op ongewenste voorvallen — vooral TOENAME VAN RUGPIJN — hoger lag dan bij niet-oefencontroles (risicoverschil 5%; 95% BI 2-8%) · de app noemde alleen de gunstige kant
+- Verzonnen cijfers geschrapt · recidiefreductie 45%, facetbelastingsreductie 40-60%, 35% minder recidief met ergonomisch plan, RFD-duur 9-18 maanden
+- Dit protocol had als enige helemaal GEEN literatuurlijst, terwijl de evidenceteksten twaalf citaties bevatten · refs-veld aangelegd met de zeven geverifieerde bronnen
+
 ## 2026-09-05 — bronaudit bureauhouding en nekklachten
 
 - 14 claims beoordeeld, 9 bronnen eerstehands opgehaald en geverifieerd via PubMed · dit is het slechtst onderbouwde protocol tot nu toe: van de gecontroleerde citaties hield er één volledig stand

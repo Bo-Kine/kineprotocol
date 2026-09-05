@@ -23,6 +23,13 @@ const BRONSTATUS = {
     "open": 0,
     "datum": "2026-09-05"
   },
+  "fbl": {
+    "gecontroleerd": 13,
+    "gedekt": 0,
+    "deels": 1,
+    "open": 0,
+    "datum": "2026-09-05"
+  },
   "itb": {
     "gecontroleerd": 14,
     "gedekt": 1,

@@ -1710,3 +1710,93 @@ references:
       beschrijving van een C1-C3-pijnreferentiepatroon.
     geverifieerd_op: 2026-09-05
     geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  # --- Facettaire blokkade lumbaal ---
+
+  - key: saner_2015_motorcontrole
+    auteurs: [Saner J, Kool J, Sieben JM, Luomajoki H, Bastiaenen CHG, de Bie RA]
+    titel: >-
+      A tailored exercise program versus general exercise for a subgroup of patients
+      with low back pain and movement control impairment: a randomised controlled
+      trial with one-year follow-up
+    bron: Manual Therapy
+    jaar: 2015
+    volume_paginas: 20(5):672-9
+    doi: 10.1016/j.math.2015.02.005
+    pmid: '25770419'
+    url: https://doi.org/10.1016/j.math.2015.02.005
+    type: RCT
+    opmerking: >-
+      Multicentrische RCT, 106 patienten met aspecifieke lage rugpijn en
+      bewegingscontrolestoornis, een jaar opgevolgd. CONCLUSIE VAN DE AUTEURS:
+      "This study found no additional benefit of specific exercises targeting
+      MCI." Op de primaire uitkomstmaat was er geen verschil na behandeling, na
+      zes maanden of na twaalf maanden. Beide groepen verbeterden wel significant.
+      Dit spreekt de claim in de app rechtstreeks tegen.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: steiger_2012_oefentherapie
+    auteurs: [Steiger F, Wirth B, de Bruin ED, Mannion AF]
+    titel: >-
+      Is a positive clinical outcome after exercise therapy for chronic non-specific
+      low back pain contingent upon a corresponding improvement in the targeted
+      aspect(s) of performance? A systematic review
+    bron: European Spine Journal
+    jaar: 2012
+    volume_paginas: 21(4):575-98
+    doi: 10.1007/s00586-011-2045-6
+    pmid: '22072093'
+    url: https://doi.org/10.1007/s00586-011-2045-6
+    type: SR
+    opmerking: >-
+      Systematische review van 16 studies, 1476 deelnemers. De review onderzoekt
+      NIET of oefentherapie superieur is aan passieve behandeling, maar of
+      klinische verbetering samenhangt met verbetering van de getrainde
+      eigenschap. Bevinding: er is weinig bewijs voor zo'n samenhang, voor
+      mobiliteit, rompkracht noch rugspieruithouding. De auteurs openen bovendien
+      met de vaststelling dat de effectgrootte van oefentherapie bij chronische
+      aspecifieke lage rugpijn SLECHTS BESCHEIDEN is.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: fritz_2001_oswestry
+    auteurs: [Fritz JM, Irrgang JJ]
+    titel: A comparison of a modified Oswestry Low Back Pain Disability Questionnaire and the Quebec Back Pain Disability Scale
+    bron: Physical Therapy
+    jaar: 2001
+    volume_paginas: 81(2):776-88
+    doi: 10.1093/ptj/81.2.776
+    pmid: '11175676'
+    url: https://doi.org/10.1093/ptj/81.2.776
+    type: cohort
+    opmerking: >-
+      67 patienten met acute werkgerelateerde lage rugpijn. De studie vergelijkt
+      twee vragenlijsten en rapporteert een minimaal klinisch relevant verschil
+      van ongeveer 6 punten voor de aangepaste Oswestry en ongeveer 15 punten voor
+      de Quebec-schaal. Er staat GEEN drempelwaarde van 20 die zou samenhangen met
+      volledig herstel of werkhervatting.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: wieland_2017_yoga
+    auteurs: [Wieland LS, Skoetz N, Pilkington K, Vempati R, D'Adamo CR, Berman BM]
+    titel: Yoga treatment for chronic non-specific low back pain
+    bron: Cochrane Database of Systematic Reviews
+    jaar: 2017
+    volume_paginas: 1(1):CD010671
+    doi: 10.1002/14651858.CD010671.pub2
+    pmid: '28076926'
+    url: https://doi.org/10.1002/14651858.CD010671.pub2
+    type: SR
+    opmerking: >-
+      12 trials, 1080 deelnemers. Ten opzichte van niet-oefencontroles gaf yoga
+      kleine tot matige verbetering van de rugfunctie na drie tot zes maanden
+      (SMD -0,44 op zes maanden). De pijnverbetering haalde de vooraf bepaalde
+      drempel van klinische relevantie (15 punten) NIET. Ten opzichte van ANDERE
+      OEFENVORMEN is het onzeker of er verschil is. VEILIGHEIDSBEVINDING die in de
+      app ontbrak: het risico op ongewenste voorvallen, vooral TOENAME VAN
+      RUGPIJN, was hoger dan bij niet-oefencontroles (risicoverschil 5%; 95% BI
+      2-8%); ernstige voorvallen kwamen niet voor.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)

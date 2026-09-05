@@ -1,0 +1,187 @@
+protocol: fbl
+laatst_gecontroleerd: 2026-09-05
+versie: 1
+fase_a_door: hoofdagent, alle metadata eerstehands opgehaald via PubMed MCP
+fase_b_door: nog uit te voeren
+
+claims:
+  - id: fbl_c01
+    tekst: Een facetblokkade creeert een pijnvrij therapeutisch venster van gemiddeld 6-12 weken
+    plaats: protocols.fbl fase 1 evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      NIET GEVERIFIEERD. De citaties Manchikanti 2015 en Rubinstein en van Tulder
+      2008 konden in deze ronde niet eenduidig opgehaald worden. De duur van 6 tot
+      12 weken is daarmee onbevestigd, terwijl het hele protocol op dat venster is
+      gebouwd.
+    verwerkt: >-
+      duur geschrapt, het venster behouden als klinisch uitgangspunt met de
+      vermelding dat de bronnen niet geverifieerd zijn
+
+  - id: fbl_c02
+    tekst: Multifidusatrofie is aanwezig bij 80% van de patienten met chronische lumbale facetpijn
+    plaats: protocols.fbl fase 2 evidence
+    bronnen: [hides_1994_multifidus, hides_2001_stabilisatie]
+    gedekt: nee
+    opmerking: >-
+      CIJFER EN POPULATIE KLOPPEN NIET. Geen van beide Hides-publicaties bevat een
+      percentage van 80%. De publicatie uit 1994 documenteert een verschil van
+      31 plus of min 8% in spierdoorsnede bij ACUTE unilaterale rugpijn; de trial
+      uit 2001 betrof een EERSTE, acute episode en vergeleek specifieke
+      oefentherapie met normale activiteit, niet met algemene oefentherapie. Geen
+      van beide gaat over chronische facetpijn.
+    verwerkt: percentage geschrapt, werkelijke bevinding en populatie opgenomen
+
+  - id: fbl_c03
+    tekst: >-
+      Stabilisatieoefeningen reduceren pijn en beperkingen bij facet-gerelateerde lage
+      rugpijn significant meer dan algemene oefentherapie
+    plaats: protocols.fbl fase 2 evidence
+    bronnen: [saner_2015_motorcontrole]
+    gedekt: nee
+    opmerking: >-
+      DE CONCLUSIE VAN DE BRON IS OMGEKEERD (CLAUDE.md 1.9). De RCT bij 106
+      patienten besluit letterlijk dat er GEEN meerwaarde is van specifieke
+      oefeningen gericht op bewegingscontrole. Op de primaire uitkomstmaat was er
+      geen verschil na behandeling, na zes maanden of na twaalf maanden. Beide
+      groepen verbeterden wel significant, wat de klinische keuze verdedigbaar
+      houdt — maar niet de superioriteitsclaim.
+    verwerkt: >-
+      claim vervangen door de conclusie van de bron, expliciet als tegenstrijdige
+      evidentie gepresenteerd
+
+  - id: fbl_c04
+    tekst: Wandelen heeft het sterkste evidence-profiel van alle interventies bij aspecifieke lage rugpijn
+    plaats: protocols.fbl fase 2 evidence + oefennotitie
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      SUPERLATIEF ZONDER GEVERIFIEERDE BRON. De toegeschreven publicatie kon niet
+      opgehaald worden. In het facetartroseprotocol is bovendien vastgesteld dat
+      de systematische review over wandelen bij lage rugpijn slechts vier studies
+      bevatte, met laag tot matig bewijs en zonder effect in de methodologisch
+      sterkste studie.
+    verwerkt: superlatief geschrapt op beide plaatsen
+
+  - id: fbl_c05
+    tekst: >-
+      Progressieve weerstandstraining toont superieure resultaten ten opzichte van
+      passieve behandeling op pijn, functie en werkhervatting
+    plaats: protocols.fbl fase 3 evidence
+    bronnen: [steiger_2012_oefentherapie]
+    gedekt: nee
+    opmerking: >-
+      VERKEERDE TOESCHRIJVING EN RELATIVERENDE BEVINDING GENEGEERD. De review
+      onderzoekt of klinische verbetering na oefentherapie samenhangt met
+      verbetering van de getrainde eigenschap, en vindt daarvoor weinig bewijs.
+      Zij vergelijkt oefentherapie NIET met passieve behandeling. De auteurs
+      openen bovendien met de vaststelling dat de effectgrootte van oefentherapie
+      bij chronische aspecifieke lage rugpijn slechts BESCHEIDEN is.
+    verwerkt: >-
+      claim vervangen door wat de review werkelijk onderzocht en vond, inclusief
+      de bescheiden effectgrootte
+
+  - id: fbl_c06
+    tekst: >-
+      Een heup-dominant bewegingspatroon reduceert de lumbale facetbelasting met 40-60%;
+      anti-rotatieoefeningen activeren stabilisatoren effectiever dan sit-ups
+    plaats: protocols.fbl fase 3 evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      GEEN VAN BEIDE GEVERIFIEERD. De ene citatie verwijst naar een handboek zonder
+      DOI of PMID, de andere kon niet eenduidig opgehaald worden. Het bereik van
+      40 tot 60% is daarmee onbevestigd.
+    verwerkt: percentage geschrapt, beide uitspraken gelabeld als klinische redenering
+
+  - id: fbl_c07
+    tekst: Langetermijn oefentherapie reduceert het recidiefpercentage met 45% ten opzichte van injectie alleen
+    plaats: protocols.fbl fase 4 evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      NIET GEVERIFIEERD. De citatie kon niet eenduidig opgehaald worden en het
+      cijfer is daarmee onbevestigd.
+    verwerkt: percentage geschrapt, de aanbeveling behouden als klinische redenering
+
+  - id: fbl_c08
+    tekst: Zelfbeheer-programma's zijn even effectief als doorlopende kinesitherapie
+    plaats: protocols.fbl fase 4 evidence
+    bronnen: [foster_2018_lagerugpijn]
+    gedekt: nee
+    opmerking: >-
+      ZELFDE OVERREKKING ALS IN HET FACETARTROSEPROTOCOL. Het overzichtsartikel
+      beveelt educatie die zelfmanagement ondersteunt aan als eerstelijnsbenadering,
+      maar bevat geen vergelijkende effectuitspraak tegenover doorlopende
+      kinesitherapie.
+    verwerkt: vergelijkende claim geschrapt, aanbeveling behouden
+
+  - id: fbl_c09
+    tekst: Een ODI van 20 of lager correleert met subjectief volledig herstel en werkhervatting
+    plaats: protocols.fbl fase 4 evidence
+    bronnen: [fritz_2001_oswestry]
+    gedekt: nee
+    opmerking: >-
+      DREMPELWAARDE STAAT NIET IN DE BRON. De studie bij 67 patienten met acute
+      werkgerelateerde rugpijn vergelijkt twee vragenlijsten en rapporteert een
+      minimaal klinisch relevant VERSCHIL van ongeveer 6 punten voor de aangepaste
+      Oswestry. Een absolute drempel van 20 komt er niet in voor.
+    verwerkt: drempel vervangen door het wel gedekte minimaal relevante verschil
+
+  - id: fbl_c10
+    tekst: Yoga toont aanvullende evidentie bij chronische lage rugpijn via de mindfulness-component
+    plaats: oefennotitie fbl fase 4
+    bronnen: [wieland_2017_yoga]
+    gedekt: deels
+    opmerking: >-
+      RICHTING GEDEKT, VEILIGHEIDSBEVINDING VERZWEGEN (CLAUDE.md 1.9). De
+      Cochrane-review van 12 trials vond kleine tot matige functieverbetering
+      tegenover niet-oefencontroles, maar de PIJNWINST HAALDE DE VOORAF BEPAALDE
+      DREMPEL VAN KLINISCHE RELEVANTIE NIET, en ten opzichte van andere
+      oefenvormen is onzeker of er verschil is. Bovendien lag het risico op
+      ongewenste voorvallen — vooral TOENAME VAN RUGPIJN — hoger dan bij
+      niet-oefencontroles (risicoverschil 5%; 95% BI 2-8%). Dat is relevant om met
+      de patient te bespreken.
+    verwerkt: >-
+      volledige bevinding inclusief het verhoogde risico op toename van rugpijn
+      opgenomen in zowel de evidencetekst als de oefennotitie
+
+  - id: fbl_c11
+    tekst: >-
+      Ongebronde cijfers en superlatieven: 35% minder recidief met ergonomisch plan,
+      RFD-duur van 9-18 maanden, aerobe conditie als onafhankelijke beschermende
+      factor, therapietrouw als sterkste voorspeller, beweging als beste pijnmodulator
+    plaats: oefennotities en BESCHRIJVING.fbl
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Vijf ongebronde uitspraken, waarvan drie met een superlatief. De
+      RFD-duurindicatie staat in de beschrijving en stuurt de verwachtingen van
+      de patient.
+    verwerkt: cijfers geschrapt, alle uitspraken gelabeld als klinische redenering
+
+  - id: fbl_c12
+    tekst: Het protocol had geen refs-veld
+    plaats: protocols.fbl
+    bronnen: [cohen_2007_facetpijn, saner_2015_motorcontrole, steiger_2012_oefentherapie, hides_1994_multifidus, fritz_2001_oswestry, wieland_2017_yoga, foster_2018_lagerugpijn]
+    gedekt: nee
+    opmerking: >-
+      Anders dan de meeste protocollen had dit protocol helemaal geen
+      literatuurlijst, terwijl de evidenceteksten wel twaalf citaties bevatten.
+    verwerkt: >-
+      refs-veld aangelegd met de zeven eerstehands geverifieerde bronnen en hun
+      volledige vindplaats
+
+  - id: fbl_c13
+    tekst: >-
+      Niet geverifieerde citaties: Manchikanti 2015, Rubinstein en van Tulder 2008,
+      Sitthipornvorakul 2018, McGill 2016, Kibler 2006, Datta 2009, Cohen 2013
+    plaats: protocols.fbl fase 1 tot 4 evidence + oefennotities
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      ZEVEN VAN DE TWAALF CITATIES konden niet eenduidig opgehaald worden,
+      waaronder beide bronnen onder de kernaanname van dit protocol (het pijnarme
+      venster na de blokkade).
+    verwerkt: alle zeven in de tekst gemarkeerd als niet geverifieerd

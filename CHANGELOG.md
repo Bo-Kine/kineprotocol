@@ -14,6 +14,12 @@ Formaat per regel: wat · waarom · bron.
 - Tegenstrijdige evidentie toegevoegd (CLAUDE.md 1.9) · `murphy_2010_levenslangrisico` vond GEEN verband tussen BMI en heupartrose, terwijl de app obesitas als belangrijke risicofactor bij die bron vermeldde · en de ERAS-consensus stelt dat er onvoldoende bewijs is dat de chirurgische techniek op zich de ontslagcriteria beinvloedt
 - Zeven citaties konden niet eenduidig geverifieerd worden en zijn als zodanig in de tekst gemarkeerd · Bandholm & Kehlet 2012, Mikkelsen 2014, Winther 2016, Heiberg 2012, Klein 2007, Ganz 2008 en het registerjaarrapport
 
+- Fase B op de heupprothese · ALLE 14 citaties in de evidenceteksten bevestigd als correct — de eerste keer dat een protocol die toets volledig doorstaat · de 15 gevonden problemen zaten allemaal daarbuiten
+- STRUCTURELE OPLOSSING voor doorstroomcriteria · in drie protocollen op rij bleken de numerieke doorstroomcriteria (VAS-drempels, afstanden, ROM, LSI, TUG, vragenlijstscores, percentages van 1RM) ongebrond en ongelabeld · per criterium een label toevoegen maakt de tekst onleesbaar en lost het alleen lokaal op · daarom staat er nu onder elk blok doorstroomcriteria een vaste voetnoot dat deze drempels praktijkafspraken zijn tenzij er een bron bij vermeld staat — geldig voor alle 30 protocollen, ook de nog niet geauditeerde
+- Twee claims die ik in de evidencetekst had gecorrigeerd, bleken te herleven in de oefennotities · de tromboseclaim bij enkelpompen en de osseo-integratieclaim bij het wandelprogramma · dat bevestigt dat notities een aparte controleronde nodig hebben
+- Timing gecorrigeerd · "gangrevalidatie bij voorkeur op operatiedag zelf" · in `guerra_2015_vroegemobilisatie` zat de interventiegroep in 4 van de 5 trials binnen 24 uur uit bed en liep zij in 4 van de 5 pas binnen 48 uur; dag 0 komt er niet in voor
+- Het refs-veld onderaan het protocol was niet meegenomen in de audit · het vermeldde nog het onjuiste jaartal 2020 en een niet-geverifieerde citatie · vervangen door de vijf eerstehands geverifieerde bronnen met volledige vindplaats · dit veld wordt vanaf nu standaard meegenomen
+
 ## 2026-09-05 — bronaudit facetartrose lumbaal
 
 - 18 claims beoordeeld, 13 bronnen eerstehands opgehaald en geverifieerd via PubMed · dit protocol bleek er aanzienlijk slechter aan toe dan het meniscusprotocol: geen enkele claim was volledig gedekt

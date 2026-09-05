@@ -1471,6 +1471,7 @@ function renderPhase(i) {
     html += `<div class="slabel">Doorstroomcriteria</div><div class="criteria-grid">`;
     if(ph.criteria_go?.length) html += `<div class="cbox go"><div class="ctitle go">Vereist ✓</div><ul class="clist go">${ph.criteria_go.map(c=>`<li>${c}</li>`).join('')}</ul></div>`;
     if(ph.criteria_stop?.length) html += `<div class="cbox stop"><div class="ctitle stop">Vertraag ⚠</div><ul class="clist stop">${ph.criteria_stop.map(c=>`<li>${c}</li>`).join('')}</ul></div>`;
+    html += `<div class="crit-noot">Doorstroomcriteria zijn <strong>praktijkafspraken</strong> tenzij er in de tekst een bron bij staat. Getallen zoals afstanden, hoeken, tijden, LSI- en vragenlijstdrempels zijn in dit dossier niet met literatuur onderbouwd en dienen als houvast, niet als bewijs.</div>`;
     html += `</div>`;
   }
   if(ph.redflags?.length) html += `<div class="rf-box"><div class="rf-label">Rode vlaggen</div><ul class="rf-list">${ph.redflags.map(r=>`<li>${r}</li>`).join('')}</ul></div>`;

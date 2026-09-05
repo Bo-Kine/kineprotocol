@@ -2,7 +2,10 @@ protocol: thp
 laatst_gecontroleerd: 2026-09-05
 versie: 1
 fase_a_door: hoofdagent, alle metadata eerstehands opgehaald via PubMed MCP
-fase_b_door: nog uit te voeren
+fase_b_door: >-
+  onafhankelijke verificator met schone context, 2026-09-05; alle 14 citaties in
+  de evidenceteksten bevestigd als correct, 15 problemen daarbuiten gevonden
+  (oefennotities, doelen, doorstroomcriteria en het refs-veld), alle verwerkt
 
 claims:
   - id: thp_c01
@@ -256,3 +259,81 @@ claims:
     verwerkt: >-
       alle zeven in de tekst gemarkeerd als niet geverifieerd in dit dossier,
       de bijbehorende uitspraken gelabeld als klinische redenering
+
+  # --- Bevindingen uit fase B ---
+
+  - id: thp_c17
+    tekst: Eerste gangrevalidatie binnen 24 uur, bij voorkeur op de operatiedag zelf
+    plaats: oefennotitie thp fase 1 + doelstelling fase 1
+    bronnen: [guerra_2015_vroegemobilisatie]
+    gedekt: nee
+    opmerking: >-
+      TIMING NIET GEDEKT. In de meta-analyse zat de interventiegroep in 4 van de 5
+      trials binnen 24 uur uit bed en LIEP zij in 4 van de 5 pas binnen 48 uur.
+      Mobilisatie op de operatiedag zelf komt in de bron niet voor. Ik had die
+      claim in de evidencetekst wel gecorrigeerd, maar hij bleef in de
+      oefennotitie en de fasedoelstelling staan.
+    verwerkt: >-
+      timing in de notitie gecorrigeerd naar wat de bron zegt, "dag 0" gelabeld
+      als praktijkafspraak
+
+  - id: thp_c18
+    tekst: Enkelpompen als eerstelijnspreventie van diepveneuze trombose
+    plaats: oefennotitie thp fase 1
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      DEZELFDE CLAIM DIE IK IN DE EVIDENCETEKST HAD GESCHRAPT, HERLEEFDE IN EEN
+      OEFENNOTITIE. Dit is precies waarom de notities apart nagelopen moeten
+      worden: het corrigeren van een evidencetekst haalt de claim niet weg uit de
+      rest van het protocol.
+    verwerkt: tromboseclaim uit de notitie verwijderd
+
+  - id: thp_c19
+    tekst: >-
+      Ongelabelde veiligheids- en belastingsuitspraken in oefennotities:
+      luxatievoorzorgen met drempel 90 graden, volledige steunname als standaard,
+      afraden van zware diepe squats, osseo-integratie door botbelasting
+    plaats: oefennotities thp fase 1 tot 5
+    bronnen: [kohrt_2004_botgezondheid]
+    gedekt: nee
+    opmerking: >-
+      VEILIGHEIDSUITSPRAKEN ZONDER BRON OF LABEL (CLAUDE.md 3). De
+      osseo-integratieclaim was in de evidencetekst wel als extrapolatie
+      gelabeld maar in de oefennotitie niet — hetzelfde patroon als bij de
+      tromboseclaim.
+    verwerkt: >-
+      alle vier gelabeld als klinische redenering, expertredenering of
+      extrapolatie, met verwijzing naar overleg met de operateur waar relevant
+
+  - id: thp_c20
+    tekst: >-
+      Alle numerieke doorstroomcriteria, doelstellingen en doseringsintensiteiten
+      (VAS-drempels, afstanden, ROM, LSI, TUG, Harris Hip Score, HOOS, percentages
+      van 1RM, tijdvensters per oefening)
+    plaats: goals, criteria_go, criteria_stop en oefenparameters thp
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      DERDE PROTOCOL OP RIJ WAAR DE DOORSTROOMCRITERIA HET LEK ZIJN. Per criterium
+      een label toevoegen levert onleesbare tekst op en lost het probleem alleen
+      in dit protocol op. Daarom structureel opgelost in de app in plaats van per
+      regel: onder elk blok doorstroomcriteria staat nu een vaste voetnoot dat
+      deze drempels praktijkafspraken zijn tenzij er een bron bij vermeld staat.
+      Die voetnoot geldt voor alle 30 protocollen, ook de nog niet geauditeerde.
+    verwerkt: >-
+      vaste voetnoot toegevoegd onder elk blok doorstroomcriteria in app.js
+
+  - id: thp_c21
+    tekst: Het refs-veld vermeldde Wainwright 2020 en Mikkelsen 2014
+    plaats: protocols.thp refs
+    bronnen: [wainwright_2019_eras, guerra_2015_vroegemobilisatie, kwon_2006_luxatie, coulter_2013_oefentherapie, hoorntje_2018_sporthervatting]
+    gedekt: nee
+    opmerking: >-
+      HET REFS-VELD WAS NIET MEEGENOMEN IN MIJN AUDIT. Het bevatte nog het
+      onjuiste jaartal 2020 en een citatie die in dit dossier niet geverifieerd
+      kon worden. Een literatuurlijst onderaan een protocol wekt bij uitstek de
+      indruk dat de bronnen nagekeken zijn.
+    verwerkt: >-
+      refs-veld vervangen door de vijf eerstehands geverifieerde bronnen met
+      volledige vindplaats

@@ -14,6 +14,12 @@ Formaat per regel: wat · waarom · bron.
 - Verzonnen cijfers geschrapt · recidiefreductie 45%, facetbelastingsreductie 40-60%, 35% minder recidief met ergonomisch plan, RFD-duur 9-18 maanden
 - Dit protocol had als enige helemaal GEEN literatuurlijst, terwijl de evidenceteksten twaalf citaties bevatten · refs-veld aangelegd met de zeven geverifieerde bronnen
 
+- Fase B op de facettaire blokkade · alle 9 citaties en het volledige refs-veld bevestigd als correct · 21 ongelabelde uitspraken daarbuiten
+- TWEEDE STRUCTURELE OPLOSSING · in vijf protocollen op rij bleken de oefennotities het lek: mechanisme-, effect- en veiligheidsuitspraken zonder bron · per notitie labelen lost het alleen lokaal op en herhaalt zich bij elk protocol · onder elk oefenprogramma staat nu een vaste voetnoot dat de toelichting bij een oefening klinische richtlijn is tenzij er een bron bij vermeld staat — geldig voor alle 30 protocollen, ook de nog niet geauditeerde
+- Twee onnauwkeurigheden van mijzelf gecorrigeerd · "op geen enkel meetmoment tot een jaar" betreft de PRIMAIRE uitkomstmaat van `saner_2015_motorcontrole`, niet alle uitkomsten · en bij `wieland_2017_yoga` berust de vergelijking met niet-oefencontroles op negen van de twaalf trials, de bijwerkingenanalyse op zes
+- Vier cijfers apart gelabeld · de ODI-drempel van 20 die uit de evidencetekst was geschrapt maar in de doelstellingen bleef staan, de RFD-hersteltermijn, de indicatietermijn van drie maanden en de timing van circulatieoefeningen na injectie
+- Bij de indicatiestelling toegevoegd dat klinisch onderzoek, de Kemp-test inbegrepen, de diagnose facetpijn volgens `cohen_2007_facetpijn` niet kan stellen
+
 ## 2026-09-05 — bronaudit bureauhouding en nekklachten
 
 - 14 claims beoordeeld, 9 bronnen eerstehands opgehaald en geverifieerd via PubMed · dit is het slechtst onderbouwde protocol tot nu toe: van de gecontroleerde citaties hield er één volledig stand

@@ -2,7 +2,10 @@ protocol: fbl
 laatst_gecontroleerd: 2026-09-05
 versie: 1
 fase_a_door: hoofdagent, alle metadata eerstehands opgehaald via PubMed MCP
-fase_b_door: nog uit te voeren
+fase_b_door: >-
+  onafhankelijke verificator met schone context, 2026-09-05; alle 9 citaties en
+  het volledige refs-veld bevestigd als correct, 21 ongelabelde uitspraken
+  gevonden, verwerkt via een structurele oplossing plus gerichte correcties
 
 claims:
   - id: fbl_c01
@@ -185,3 +188,41 @@ claims:
       waaronder beide bronnen onder de kernaanname van dit protocol (het pijnarme
       venster na de blokkade).
     verwerkt: alle zeven in de tekst gemarkeerd als niet geverifieerd
+
+  # --- Bevindingen uit fase B ---
+
+  - id: fbl_c14
+    tekst: Twee onnauwkeurigheden in mijn eigen herschrijving
+    plaats: protocols.fbl fase 2 en 4 evidence
+    bronnen: [saner_2015_motorcontrole, wieland_2017_yoga]
+    gedekt: nee
+    opmerking: >-
+      FOUTEN VAN MIJZELF. Ten eerste schreef ik "op geen enkel meetmoment tot een
+      jaar", terwijl dat de PRIMAIRE uitkomstmaat betreft; de secundaire uitkomsten
+      toonden vlak na de behandeling een kleine verbetering die daarna vervlakte.
+      Ten tweede schreef ik "een review van 12 trials vond ... tegenover
+      niet-oefencontroles", terwijl 12 het totaal is: de vergelijking met
+      niet-oefencontroles berust op negen trials en de bijwerkingenanalyse op zes.
+    verwerkt: beide preciseringen doorgevoerd
+
+  - id: fbl_c15
+    tekst: >-
+      Negentien ongebronde uitspraken in oefennotities, doelstellingen en de
+      beschrijving, waaronder de ODI-drempel van 20 die uit de evidencetekst was
+      geschrapt maar in de doelstellingen bleef staan
+    plaats: oefennotities, goals, criteria_go en BESCHRIJVING.fbl
+    bronnen: [cohen_2007_facetpijn, fritz_2001_oswestry]
+    gedekt: nee
+    opmerking: >-
+      VIJFDE PROTOCOL OP RIJ WAAR DE OEFENNOTITIES HET LEK ZIJN. Per notitie een
+      label toevoegen lost het alleen lokaal op en ik herhaal dat werk bij elk
+      protocol. Daarom structureel opgelost, net als eerder bij de
+      doorstroomcriteria: onder elk oefenprogramma staat nu een vaste voetnoot dat
+      de toelichting bij een oefening klinische richtlijn is tenzij er een bron bij
+      vermeld staat. Die geldt voor alle 30 protocollen, ook de nog niet
+      geauditeerde. Daarnaast zijn vier specifieke cijfers apart gelabeld: de
+      ODI-drempel, de RFD-hersteltermijn, de indicatietermijn van drie maanden en
+      de timing van circulatieoefeningen.
+    verwerkt: >-
+      vaste voetnoot toegevoegd onder elk oefenprogramma in app.js, plus vier
+      gerichte correcties in protocols.js

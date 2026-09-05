@@ -1466,6 +1466,7 @@ function renderPhase(i) {
       html += `</div>`;
     });
     html += `</div>`;
+    html += `<div class="crit-noot">De toelichting bij een oefening is <strong>klinische richtlijn</strong> tenzij er een bron bij vermeld staat. Doseringen, hoeken, herhalingen en uitspraken over werkingsmechanismen zijn praktijkkeuzes; alleen wat expliciet naar een bron verwijst, is tegen de primaire literatuur gecontroleerd.</div>`;
   }
   if(ph.criteria_go?.length || ph.criteria_stop?.length) {
     html += `<div class="slabel">Doorstroomcriteria</div><div class="criteria-grid">`;

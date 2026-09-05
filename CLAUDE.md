@@ -76,7 +76,7 @@ Regels die niet volledig gedekt zijn, worden aangepast of geschrapt vóór oplev
 - Alle referenties staan centraal in `data/references.yaml` (of `.bib`). **Nergens anders.**
 - Inhoudelijke bestanden verwijzen enkel naar sleutels, bv. `bronnen: [kngf_knie_2023, cook2016_tendinopathy]`.
 - Sleutelformaat: `eersteauteur_jaar_kernwoord`, uniek, nooit hergebruikt.
-- Verplichte velden per referentie: `key`, `auteurs`, `titel`, `bron` (tijdschrift/uitgever), `jaar`, `volume_paginas`, `doi`, `pmid`, `url`, `type` (richtlijn / SR / RCT / cohort / expert), `geverifieerd_op` (datum), `geverifieerd_door` (tool/agent).
+- Verplichte velden per referentie: `key`, `auteurs`, `titel`, `bron` (tijdschrift/uitgever), `jaar`, `volume_paginas`, `doi`, `pmid`, `url`, `type` (richtlijn / SR / RCT / cohort / review / commentary / expert), `geverifieerd_op` (datum), `geverifieerd_door` (tool/agent).
 - Weergaveformaat naar de gebruiker: **Vancouver**, met klikbare DOI.
 - Er draait een validatiescript dat faalt bij: een citatie in de tekst zonder bestaande sleutel, een referentie zonder DOI/PMID, een referentie die nergens gebruikt wordt, of een dubbele sleutel. **Dit script draait vóór elke oplevering.**
 

@@ -28,7 +28,7 @@ const referenties = (leesYaml(refPad) || {}).references || [];
 
 const VERPLICHT = ['key', 'auteurs', 'titel', 'bron', 'jaar', 'volume_paginas',
                    'doi', 'pmid', 'url', 'type', 'geverifieerd_op', 'geverifieerd_door'];
-const TYPES = ['richtlijn', 'SR', 'RCT', 'cohort', 'expert'];
+const TYPES = ['richtlijn', 'SR', 'RCT', 'cohort', 'review', 'commentary', 'expert'];
 
 const gezien = new Set();
 referenties.forEach(r => {

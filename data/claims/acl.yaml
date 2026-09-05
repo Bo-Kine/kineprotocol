@@ -3,7 +3,11 @@
 # en de conclusie werkelijk bevat.
 protocol: acl
 laatst_gecontroleerd: 2026-09-05
-versie: 1
+protocol_aangepast: >-
+  2026-09-05, na beslissing van de kinesitherapeut: bronwaarden overnemen (1),
+  testbatterij van Grindem overnemen (2), ontbrekende bronnen worden aangeleverd
+  (3), typelijst uitgebreid met review en commentary (4).
+versie: 2
 fase_a_door: hoofdagent (PubMed MCP, eerstehands opgehaald)
 fase_b_door: >-
   onafhankelijke verificator-agent met schone context, 2026-09-05. Heeft alle
@@ -42,57 +46,48 @@ claims:
     tekst: LSI >= 90% op krachttests en hoptests voor return to sport
     plaats: protocols.acl fase 4 en 5 criteria_go
     bronnen: [grindem_2016_rtscriteria]
-    gedekt: nee
+    gedekt: ja
     opmerking: >-
-      NIET GEDEKT ZOALS GEFORMULEERD (bijgesteld na fase B). De bron hanteert
-      strikt ">90" en niet ">=90", en meet op VIER tests: quadricepskracht,
+      OPGELOST 2026-09-05. Doorstroomcriteria fase 4 en 5 herschreven naar de
+      volledige testbatterij van de bron: scores boven 90 op quadricepskracht,
       hoptests, Knee Outcome Survey ADL Scale en global rating scale of
-      function - dus niet uitsluitend de symmetrie-index op kracht en hop.
-      Bovendien was het verschil tussen slagen en falen niet significant
-      (5,6% versus 38,2%, HR 0,16, p=0,075). VOORSTEL: criterium herformuleren
-      naar de volledige testbatterij van de bron, of een andere bron zoeken.
+      function. Let op bij interpretatie: het verschil tussen slagen en falen
+      was in de bron niet significant (5,6% versus 38,2%, HR 0,16, p=0,075).
 
   - id: acl_c05
     tekst: RTS voor 9 maanden verhoogt het herletselrisico met factor 4-6
     plaats: protocols.acl fase 5 evidence
     bronnen: [grindem_2016_rtscriteria]
-    gedekt: nee
+    gedekt: ja
     opmerking: >-
-      NIET GEDEKT. De bron rapporteert 4,32x hoger herletselpercentage voor
-      terugkeer naar niveau I-sport versus niet terugkeren - niet voor RTS
-      voor 9 maanden. Voor timing rapporteert de bron 51% risicoreductie per
-      maand uitstel tot 9 maanden. "Factor 4-6" staat nergens in de bron.
-      VOORSTEL: herformuleren naar de twee cijfers die er wel in staan.
+      OPGELOST 2026-09-05. "Factor 4-6" verwijderd. De evidencetekst van fase 5
+      geeft nu de twee cijfers die werkelijk in de bron staan: 4,32x hoger
+      herletselpercentage bij terugkeer naar niveau I-sport, en 51%
+      risicoreductie per maand uitstel tot 9 maanden. Populatie (106
+      pivoting-sporters) staat er expliciet bij.
 
   - id: acl_c06
     tekst: Quadriceps arthrogene spierinhibitie (AMI) is de grootste beperkende factor vroeg postoperatief
     plaats: protocols.acl fase 1 evidence
     bronnen: [rice_2010_ami]
-    gedekt: deels
+    gedekt: ja
     opmerking: >-
-      De bron beschrijft AMI als een belangrijke barriere voor effectieve
-      revalidatie na knieletsel en -chirurgie, en behandelt de neurale
-      mechanismen. De superlatief "grootste limiterende factor" en de
-      specifieke toepassing op ACL-reconstructie staan niet als zodanig in
-      de bron. Bovendien is de populatie knieartritis, knieletsel en
-      kniechirurgie in het algemeen, niet specifiek ACL-reconstructie.
-      Het jaartal in de app (2019) klopt niet: het gedrukte nummer
-      40(3):250-66 is van 2010.
+      OPGELOST 2026-09-05. Superlatief "grootste limiterende factor" vervangen
+      door "een belangrijke barriere", zoals de bron formuleert. Jaartal
+      gecorrigeerd naar 2010 en de populatiebeperking (knieletsel en
+      kniechirurgie in het algemeen, niet ACL-specifiek) staat nu expliciet
+      in de evidencetekst.
 
   - id: acl_c07
     tekst: OKC knie-extensie veilig vanaf week 4-6 in bereik 90-40 graden
     plaats: protocols.acl fase 3 evidence + oefening "OKC Knie-extensie (90-40 graden)"
     bronnen: [fukuda_2013_okc]
-    gedekt: nee
+    gedekt: ja
     opmerking: >-
-      GETAL WIJKT AF VAN DE BRON. De studie startte OKC in week 4 (niet 4-6)
-      in een bereik van 45 tot 90 graden (niet 90 tot 40). Uitkomst: geen
-      verschil in anterieure knielaxiteit versus late start. LET OP: tussen de
-      groepen was er GEEN significant verschil in kracht; het verschil bedroeg
-      circa 5% en wordt door de auteurs zelf klinisch niet-significant genoemd.
-      De formulering "sneller quadricepsherstel" is dus sterker dan de bron
-      toelaat. VOORSTEL: bereik en tijdstip overnemen zoals in de bron, of een
-      andere bron zoeken die 90-40 graden onderbouwt.
+      OPGELOST 2026-09-05. Oefening hernoemd naar "OKC Knie-extensie (45-90
+      graden)" met parameter "Start: vanaf week 4", exact zoals onderzocht.
+      Evidencetekst meldt nu dat het krachtverschil tussen de groepen niet
+      significant was, en dat de populatie uitsluitend hamstringgraft betrof.
 
   - id: acl_c08
     tekst: BFR-training bij quadricepshypotrofie na ACL-reconstructie
@@ -134,8 +129,10 @@ claims:
       wel een ACL-publicatie uit 2021 (Knee Surg Sports Traumatol Arthrosc
       30(7):2244-2250, PMID 34661692), maar dat is een kwalitatieve
       interviewstudie over herletsel - niet over isometrie bij 60 graden.
-      Geen bron gevonden die de claim dekt. Volgens CLAUDE.md 1.2 schrappen
-      tenzij de kinesitherapeut een bron kan aanwijzen. TE VERIFIEREN.
+      Geen bron gevonden die de claim dekt. BESLISSING 2026-09-05: de
+      kinesitherapeut levert een bron aan. De onjuiste bronvermelding is uit
+      protocols.js verwijderd; de klinische uitspraak blijft staan met de
+      notitie dat de bron nog aangeleverd wordt. WACHT OP BRON.
 
   - id: acl_c11
     tekst: ACL-RSI drempel >= 56 (fase 3) en >= 65 (fase 5) voor doorstroom
@@ -148,7 +145,9 @@ claims:
       series bij adolescenten tot en met 17 jaar en levert geen afkapwaarde:
       gerapporteerd worden ACL-RSI 55 naar 71 tussen 6 en 12 maanden en een
       AUC van 0,7. Die publicatie is daarom niet in references.yaml opgenomen.
-      De drempels 56 en 65 blijven ONonderbouwd. TE VERIFIEREN.
+      De drempels 56 en 65 blijven onderbouwd noch weerlegd. BESLISSING
+      2026-09-05: de kinesitherapeut levert een bron aan. In protocols.js staat
+      nu bij het criterium "(bron nog aan te leveren)". WACHT OP BRON.
 
   - id: acl_c12
     tekst: IKDC MCID 11,5 punten en drempel >= 85 voor RTS
@@ -156,4 +155,6 @@ claims:
     bronnen: []
     gedekt: nee
     opmerking: >-
-      GEEN BRON GEVERIFIEERD. TE VERIFIEREN.
+      GEEN BRON GEVERIFIEERD. BESLISSING 2026-09-05: de kinesitherapeut levert
+      een bron aan. In protocols.js staat nu bij het criterium
+      "(bron nog aan te leveren)". WACHT OP BRON.

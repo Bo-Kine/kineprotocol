@@ -1,0 +1,25 @@
+# Vaste terminologie (CLAUDE.md §5.3). Gebruik overal de voorkeursterm.
+termen:
+  - voorkeur: herhalingen
+    vermijd: [reps, hh, rep]
+  - voorkeur: reeksen
+    vermijd: [sets, series]
+    opmerking: >-
+      TE VERIFIEREN: de app gebruikt nu "Sets". Vlaamse praktijk gebruikt zowel
+      "reeksen" als "sets". Keuze door de kinesitherapeut.
+  - voorkeur: kinesitherapeut
+    vermijd: [fysiotherapeut, therapeut, PT]
+  - voorkeur: oefentherapie
+    vermijd: [exercise therapy, oefenprogramma als synoniem]
+  - voorkeur: belasting
+    vermijd: [load, weerstand als synoniem voor intensiteit]
+  - voorkeur: frequentie
+    vermijd: [freq, aantal keer per week]
+  - voorkeur: doorstroomcriteria
+    vermijd: [criteria go, progressiecriteria, exit criteria]
+  - voorkeur: rode vlaggen
+    vermijd: [red flags, alarmsymptomen]
+  - voorkeur: uitkomstmaat
+    vermijd: [score, PROM als losse term]
+  - voorkeur: symmetrie-index (LSI)
+    vermijd: [limb symmetry index, LSI zonder uitleg bij eerste gebruik]

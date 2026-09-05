@@ -1,0 +1,129 @@
+# KineProtocol — centrale bronnenlijst (CLAUDE.md §4)
+# Enige bron van waarheid voor referenties. Inhoudelijke bestanden verwijzen
+# alleen naar `key`. Elke entry is live opgehaald via PubMed; DOI, PMID,
+# auteurs, jaar, tijdschrift, volume en pagina's zijn letterlijk overgenomen
+# uit het opgehaalde record en niet gereconstrueerd.
+
+references:
+
+  - key: grindem_2016_rtscriteria
+    auteurs: [Grindem H, Snyder-Mackler L, Moksnes H, Engebretsen L, Risberg MA]
+    titel: >-
+      Simple decision rules can reduce reinjury risk by 84% after ACL
+      reconstruction: the Delaware-Oslo ACL cohort study
+    bron: British Journal of Sports Medicine
+    jaar: 2016
+    volume_paginas: 50(13):804-8
+    doi: 10.1136/bjsports-2016-096031
+    pmid: '27162233'
+    url: https://doi.org/10.1136/bjsports-2016-096031
+    type: cohort
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (search_articles + get_article_metadata)
+
+  - key: vanmelick_2016_aclrichtlijn
+    auteurs: [van Melick N, van Cingel REH, Brooijmans F, Neeter C, van Tienen T, Hullegie W, Nijhuis-van der Sanden MWG]
+    titel: >-
+      Evidence-based clinical practice update: practice guidelines for anterior
+      cruciate ligament rehabilitation based on a systematic review and
+      multidisciplinary consensus
+    bron: British Journal of Sports Medicine
+    jaar: 2016
+    volume_paginas: 50(24):1506-1515
+    doi: 10.1136/bjsports-2015-095898
+    pmid: '27539507'
+    url: https://doi.org/10.1136/bjsports-2015-095898
+    type: richtlijn
+    opmerking: >-
+      KNGF-richtlijn (Koninklijk Nederlands Genootschap voor Fysiotherapie),
+      opgesteld door een multidisciplinaire werkgroep op basis van een
+      systematische review. Eerste ingang voor dit protocol.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (search_articles + get_article_metadata)
+
+  - key: fukuda_2013_okc
+    auteurs: [Fukuda TY, Fingerhut D, Moreira VC, Camarini PMF, Scodeller NF, Duarte A, Martinelli M, Bryk FF]
+    titel: >-
+      Open kinetic chain exercises in a restricted range of motion after
+      anterior cruciate ligament reconstruction: a randomized controlled
+      clinical trial
+    bron: The American Journal of Sports Medicine
+    jaar: 2013
+    volume_paginas: 41(4):788-94
+    doi: 10.1177/0363546513476482
+    pmid: '23423316'
+    url: https://doi.org/10.1177/0363546513476482
+    type: RCT
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (search_articles + get_article_metadata)
+
+  - key: hughes_2019_bfr_rct
+    auteurs: [Hughes L, Rosenblatt B, Haddad F, Gissane C, McCarthy D, Clarke T, Ferris G, Dawes J, Paton B, Patterson SD]
+    titel: >-
+      Comparing the effectiveness of blood flow restriction and traditional
+      heavy load resistance training in the post-surgery rehabilitation of
+      anterior cruciate ligament reconstruction patients: a UK National Health
+      Service randomised controlled trial
+    bron: Sports Medicine
+    jaar: 2019
+    volume_paginas: 49(11):1787-1805
+    doi: 10.1007/s40279-019-01137-2
+    pmid: '31301034'
+    url: https://doi.org/10.1007/s40279-019-01137-2
+    type: RCT
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (search_articles + get_article_metadata)
+
+  - key: hughes_2019_bfr_pijn
+    auteurs: [Hughes L, Patterson SD, Haddad F, Rosenblatt B, Gissane C, McCarthy D, Clarke T, Ferris G, Dawes J, Paton B]
+    titel: >-
+      Examination of the comfort and pain experienced with blood flow
+      restriction training during post-surgery rehabilitation of anterior
+      cruciate ligament reconstruction patients: a UK National Health Service
+      trial
+    bron: Physical Therapy in Sport
+    jaar: 2019
+    volume_paginas: 39:90-98
+    doi: 10.1016/j.ptsp.2019.06.014
+    pmid: '31288213'
+    url: https://doi.org/10.1016/j.ptsp.2019.06.014
+    type: RCT
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (search_articles + get_article_metadata)
+
+  - key: rice_2010_ami
+    auteurs: [Rice DA, McNair PJ]
+    titel: >-
+      Quadriceps arthrogenic muscle inhibition: neural mechanisms and treatment
+      perspectives
+    bron: Seminars in Arthritis and Rheumatism
+    jaar: 2009
+    volume_paginas: 40(3):250-66
+    doi: 10.1016/j.semarthrit.2009.10.001
+    pmid: '19954822'
+    url: https://doi.org/10.1016/j.semarthrit.2009.10.001
+    type: SR
+    opmerking: >-
+      PubMed geeft publicatiedatum 2009-12-02 (elektronisch vooraf); het
+      tijdschriftnummer 40(3):250-66 hoort bij het gedrukte nummer.
+      TE VERIFIEREN: welk jaartal de kinesitherapeut in de weergave wil.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (search_articles + get_article_metadata)
+
+  - key: webster_2022_aclrsi_adolescent
+    auteurs: [Webster KE, Feller JA]
+    titel: >-
+      Psychological readiness to return to sport after anterior cruciate
+      ligament reconstruction in the adolescent athlete
+    bron: Journal of Athletic Training
+    jaar: 2022
+    volume_paginas: 57(9-10):955-960
+    doi: 10.4085/1062-6050-0543.21
+    pmid: '36638341'
+    url: https://doi.org/10.4085/1062-6050-0543.21
+    type: cohort
+    opmerking: >-
+      Adolescenten (<=17 jaar). NIET zomaar te veralgemenen naar volwassenen
+      (CLAUDE.md 1.5). Levert geen afkapwaarde voor RTS.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (search_articles + get_article_metadata)

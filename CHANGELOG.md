@@ -15,6 +15,10 @@ Formaat per regel: wat · waarom · bron.
 - Bewijsniveau expliciet vermeld waar het laag is · `fredericson_2000_heupabductoren` is een case series zonder controlegroep, `fredericson_2006_itbfs` een narratieve praktijkbeschrijving op expertniveau
 - Elke claim heeft nu een veld `verwerkt` dat vastlegt hoe hij in `protocols.js` is opgelost · `scripts/validate-references.js` waarschuwt enkel nog voor claims zonder die verwerking
 - Openstaand · drie ACL-claims (`acl_c10`, `acl_c11`, `acl_c12`) wachten op bronaanwijzing door de kinesitherapeut · de resterende zesentwintig protocollen zijn nog niet geauditeerd
+- Fase B uitgevoerd op de herschreven tekst door een onafhankelijke verificator met schone context · 20 citaties gecontroleerd, 7 problemen gevonden, alle opgelost
+- FOUT IN MIJN EIGEN HERSCHRIJVING GECORRIGEERD · `vandyk_2019_nordic` kreeg de cijfers van een andere studie toegeschreven (n = 942, RR 0,293, 71%) · de meta-analyse omvat 15 studies en 8459 sporters, RR 0,49 (95% BI 0,32-0,74), reductie tot 51% · eerstehands nagekeken via PubMed
+- Zes resterende ongebronde cijfers alsnog gelabeld of verwijderd · BMI-drempel 30 en het AGE-mechanisme bij diabetes (pes anserinus), loopvolumedrempel 10%, beenlengteverschil 1 cm en de verhouding 2x bij vrouwen (ITB), en de oefennoot in MCL fase 5 die de 10%-regel als harde grens presenteerde
+
 
 ## 2026-09-05 — bronaudit knieprotocollen: MCL, pes anserinus, ITB
 

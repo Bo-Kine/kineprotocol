@@ -220,9 +220,13 @@ claims:
     bronnen: [vandyk_2019_nordic]
     gedekt: deels
     opmerking: >-
-      De omvang n = 942 klopt, maar de gerapporteerde reductie bedraagt 71%
-      (RR 0,293) en betreft uitsluitend HAMSTRINGletsel, niet knieletsel. Cijfer
-      corrigeren en de uitkomstmaat beperken tot hamstringletsel.
+      GECORRIGEERD NA FASE B. De zoekagent gaf n = 942 en RR 0,293 door; die
+      getallen horen bij de RCT van Petersen (2011) en niet bij van Dyk (2019),
+      en ik heb ze in de eerste herschrijving foutief aan van Dyk toegeschreven.
+      De meta-analyse omvat 15 studies en 8459 sporters, met een risicoratio van
+      0,49 (95% BI 0,32-0,74) en een reductie tot 51%. De uitkomstmaat is
+      uitsluitend HAMSTRINGletsel, niet knieletsel; toepassing binnen een
+      MCL-protocol blijft dus klinische redenering.
     verwerkt: >-
       tekst gecorrigeerd naar de bevinding in de bron, met vermelding van populatie en bewijsniveau (route B, 2026-09-05)
 

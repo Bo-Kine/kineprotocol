@@ -1,0 +1,212 @@
+protocol: bureau
+laatst_gecontroleerd: 2026-09-05
+versie: 1
+fase_a_door: hoofdagent, alle metadata eerstehands opgehaald via PubMed MCP
+fase_b_door: nog uit te voeren
+
+claims:
+  - id: bur_c01
+    tekst: Werkgerelateerde nekklachten zijn de tweede meest voorkomende musculoskeletale aandoening na lagerugpijn
+    plaats: protocols.bureau fase 1 evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      NIET GEVERIFIEERD. De citatie "WHO, 2021" is geen traceerbare publicatie met
+      DOI of PMID en kon in deze auditronde niet opgehaald worden.
+    verwerkt: rangschikking geschrapt, algemene vaststelling behouden
+
+  - id: bur_c02
+    tekst: Zwakte van de diepe nekflexoren is aanwezig bij 96% van de chronische nekpijnpatienten
+    plaats: protocols.bureau fase 1 evidence
+    bronnen: [watson_1993_hoofdhouding]
+    gedekt: nee
+    opmerking: >-
+      CIJFER NIET ONDERBOUWD. De toegeschreven publicatie (Jull et al., 2008) kon
+      niet eenduidig geidentificeerd worden. Wel geverifieerd en inhoudelijk
+      verwant: bij vrouwen met cervicogene hoofdpijn zijn een voorwaartse
+      hoofdhouding en minder kracht en uithouding van de bovenste cervicale
+      flexoren aangetoond, maar zonder prevalentiepercentage.
+    verwerkt: >-
+      percentage geschrapt, vervangen door de wel geverifieerde bevinding uit
+      watson_1993_hoofdhouding
+
+  - id: bur_c03
+    tekst: Warmte is effectiever dan koude voor spiergebonden nekpijn
+    plaats: protocols.bureau fase 2 evidence
+    bronnen: [french_2006_warmte_koude]
+    gedekt: nee
+    opmerking: >-
+      DUBBEL ONGEDEKT. De review gaat over LAGE RUGPIJN, niet over nekpijn. En zij
+      besluit dat er onvoldoende bewijs is over koude en TEGENSTRIJDIG bewijs over
+      het verschil tussen warmte en koude — de conclusie in de app is dus niet
+      alleen op de verkeerde populatie toegepast maar ook inhoudelijk omgekeerd.
+      Het refs-veld van het protocol vermeldde de bron zelf al als "Superficial
+      heat for LBP", wat de fout zichtbaar maakte.
+    verwerkt: >-
+      claim geschrapt, populatie en werkelijke conclusie van de bron opgenomen,
+      warmte behouden als symptoomverlichting op klinische gronden
+
+  - id: bur_c04
+    tekst: Manuele therapie gecombineerd met oefentherapie is superieur aan elk afzonderlijk
+    plaats: protocols.bureau fase 2 evidence
+    bronnen: [jull_2002_cervicogene_hoofdpijn]
+    gedekt: nee
+    opmerking: >-
+      DE BRON ZEGT HET TEGENOVERGESTELDE. In deze RCT met 200 deelnemers waren
+      manuele therapie en oefentherapie beide effectief na 12 maanden, maar de
+      COMBINATIE was NIET significant superieur aan elk afzonderlijk; wel had 10%
+      meer patienten baat bij de combinatie.
+    verwerkt: claim vervangen door de conclusie van de bron
+
+  - id: bur_c05
+    tekst: Ergonomische interventie alleen is onvoldoende zonder actieve oefentherapie
+    plaats: protocols.bureau fase 2 evidence
+    bronnen: [hoe_2012_ergonomie]
+    gedekt: nee
+    opmerking: >-
+      DE BRON VERGELIJKT DIT NIET. De Cochrane-review onderzoekt ergonomie ter
+      PREVENTIE en vergelijkt niet met oefentherapie. Wel gedekt: alleen armsteun
+      met een alternatieve muis verlaagde de incidentie van nek- en
+      schouderklachten (RR 0,52; 95% BI 0,27-0,99); voor de overige ergonomische
+      maatregelen was er laag tot zeer laag bewijs van GEEN effect.
+    verwerkt: >-
+      vergelijkende claim geschrapt, de werkelijke bevindingen van de review
+      opgenomen
+
+  - id: bur_c06
+    tekst: Bewegingspauzes elke 30-45 minuten reduceren nekpijn bij bureauwerkers met 38%
+    plaats: protocols.bureau fase 2 evidence
+    bronnen: [galinsky_2007_pauzes]
+    gedekt: nee
+    opmerking: >-
+      CIJFER, INTERVAL EN UITKOMSTMAAT KLOPPEN GEEN VAN DRIE. De studie bij 51
+      data-invoerders voegde vier pauzes van 5 minuten toe aan twee pauzes van 15
+      minuten en vond significant minder ongemak en vermoeide ogen zonder
+      productiviteitsverlies. Er is geen percentage van 38%, geen interval van 30
+      tot 45 minuten en de uitkomstmaat is algemeen ongemak, niet specifiek
+      nekpijn. BIJKOMEND: rekoefeningen tijdens die pauzes gaven GEEN significant
+      effect, mede door lage therapietrouw — relevant voor een protocol dat
+      pauze-oefeningen voorschrijft.
+    verwerkt: >-
+      percentage en interval geschrapt, de werkelijke bevinding inclusief het
+      uitblijven van effect van rekoefeningen opgenomen
+
+  - id: bur_c07
+    tekst: Verminderde activatie van de onderste trapezius bij 78% van de bureauwerkers met nekpijn
+    plaats: protocols.bureau fase 3 evidence
+    bronnen: [cools_2007_scapulaoefeningen]
+    gedekt: nee
+    opmerking: >-
+      VOLLEDIG ONJUISTE TOESCHRIJVING. De publicatie is een EMG-studie bij 45
+      GEZONDE proefpersonen die 12 scapulaoefeningen vergelijkt op de verhouding
+      tussen bovenste en onderste trapezius. Er is geen populatie van bureauwerkers
+      met nekpijn en geen percentage van 78%.
+    verwerkt: >-
+      percentage geschrapt, de werkelijke bevinding over oefenselectie opgenomen
+      met vermelding van de gezonde populatie
+
+  - id: bur_c08
+    tekst: Oog-hoofdcoordinatietraining verbetert de cervicale proprioceptie bij chronische nekpijn
+    plaats: protocols.bureau fase 3 evidence
+    bronnen: [revel_1994_proprioceptie]
+    gedekt: ja
+    opmerking: >-
+      GEDEKT. Bij 60 patienten met nekpijn verbeterde de nauwkeurigheid van het
+      terugvinden van de hoofdpositie meer in de interventiegroep dan in de
+      controlegroep (2,0 tegenover 0 graden; p = 0,005), met ook winst op pijn,
+      medicatiegebruik, bewegingsuitslag en zelfgerapporteerde verbetering.
+    verwerkt: cijfers toegevoegd aan de evidencetekst
+
+  - id: bur_c09
+    tekst: >-
+      Nek-specifieke training gedurende 6 weken geeft 75% pijnreductie en is superieur
+      aan algemene fitness (n = 198)
+    plaats: protocols.bureau fase 4 evidence
+    bronnen: [andersen_2008_nekschoudertraining]
+    gedekt: nee
+    opmerking: >-
+      VIER AFWIJKINGEN IN EEN ZIN. De trial duurde EEN JAAR, niet zes weken. Er
+      waren 549 deelnemers verdeeld over drie armen (180, 187 en 182), niet 198.
+      De pijnintensiteit daalde van 5,0 naar 3,4, wat neerkomt op ongeveer 32% en
+      niet op 75%. En specifieke training was NIET superieur aan algemene fysieke
+      training: die gaf een daling van 5,0 naar 3,6, terwijl enkel de
+      referentiegroep met gezondheidsadvies niet veranderde.
+    verwerkt: >-
+      alle vier gecorrigeerd, met vermelding van de dalende therapietrouw
+      (54% naar 35% over het jaar)
+
+  - id: bur_c10
+    tekst: Multimodale aanpak is significant superieur aan enkelvoudige interventies op 1 jaar
+    plaats: protocols.bureau fase 5 evidence
+    bronnen: [verhagen_2013_werkgerelateerd]
+    gedekt: nee
+    opmerking: >-
+      STAAT NIET IN DE BRON, EN DE BRON IS VEEL NEGATIEVER (CLAUDE.md 1.9). De
+      Cochrane-review van 44 studies en 6580 deelnemers vond ZEER LAAG bewijs dat
+      oefeningen de pijn NIET verbeterden ten opzichte van geen behandeling
+      (SMD -0,52; 95% BI -1,08 tot 0,03), en specifieke oefeningen gaven op korte
+      termijn zelfs MEER pijn dan algemene (SMD 0,45; 95% BI 0,14-0,75).
+      Ergonomische interventies hielpen niet op korte maar wel op lange termijn.
+      Voor gedragsmatige en overige interventies was er geen consistent effect.
+      Dit raakt de onderbouwing van het protocol als geheel.
+    verwerkt: >-
+      claim geschrapt en vervangen door de werkelijke bevindingen, met de
+      expliciete vermelding dat dit protocol in belangrijke mate op klinische
+      redenering berust
+
+  - id: bur_c11
+    tekst: >-
+      Mindfulness reduceert werkgerelateerde nekpijn met 42%; micro-pauzes verminderen
+      recidief met 55%
+    plaats: protocols.bureau fase 5 evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      GEEN VAN BEIDE ONDERBOUWD. De citatie Lauche 2016 kon niet opgehaald worden
+      en voor de 55% is geen bron vermeld.
+    verwerkt: beide percentages geschrapt, de maatregelen behouden als redenering
+
+  - id: bur_c12
+    tekst: Cervicocraniaal syndroom met C1-C3 pijnreferentie
+    plaats: BESCHRIJVING.bureau
+    bronnen: [watson_1993_hoofdhouding]
+    gedekt: nee
+    opmerking: >-
+      HET REFERENTIEPATROON STAAT NIET IN DE BRON. Wel gedekt zijn de voorwaartse
+      hoofdhouding en de verminderde kracht en uithouding van de bovenste
+      cervicale flexoren bij vrouwen met hoofdpijn.
+    verwerkt: vervangen door de wel gedekte bevindingen
+
+  - id: bur_c13
+    tekst: >-
+      Niet geverifieerde citaties: WHO 2021, Jull 2008, Linton 2001, Jull 2009,
+      Cleland 2007, Lauche 2016
+    plaats: protocols.bureau fase 1, 2, 3 en 5 evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      ZES CITATIES KONDEN IN DEZE RONDE NIET EENDUIDIG OPGEHAALD WORDEN, waaronder
+      de twee waarop de kernoefening van dit protocol berust (training van de
+      diepe nekflexoren, Jull 2009) en de thoracale mobilisatie (Cleland 2007).
+    verwerkt: >-
+      alle zes in de tekst gemarkeerd als niet geverifieerd, de bijbehorende
+      uitspraken gelabeld als klinische redenering
+
+  - id: bur_c14
+    tekst: >-
+      Ongebronde uitspraken in oefennotities en het refs-veld: goudstandaard-status van
+      de CCFT, "meest impactvolle oefening", psychosociale factoren als sterkste
+      predictor, 20 min 3x per week als preventieve dosis
+    plaats: oefennotities bureau + refs-veld
+    bronnen: [andersen_2008_nekschoudertraining]
+    gedekt: nee
+    opmerking: >-
+      Vier ongebronde uitspraken, waarvan drie met een superlatief. Het refs-veld
+      vermeldde bovendien nog Cleland en Linton, die niet geverifieerd konden
+      worden, en beschreef French correct als studie over lage rugpijn terwijl de
+      evidencetekst hem voor nekpijn gebruikte — de inconsistentie stond dus in
+      het protocol zelf.
+    verwerkt: >-
+      superlatieven verwijderd, dosis gelabeld als praktijkafspraak met vermelding
+      van de dalende therapietrouw, refs-veld vervangen door negen eerstehands
+      geverifieerde bronnen met volledige vindplaats

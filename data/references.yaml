@@ -1524,3 +1524,189 @@ references:
       van in de fascie.
     geverifieerd_op: 2026-09-05
     geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  # --- Bureauhouding en nekklachten ---
+
+  - key: french_2006_warmte_koude
+    auteurs: [French SD, Cameron M, Walker BF, Reggars JW, Esterman AJ]
+    titel: Superficial heat or cold for low back pain
+    bron: Cochrane Database of Systematic Reviews
+    jaar: 2006
+    volume_paginas: 2006(1):CD004750
+    doi: 10.1002/14651858.CD004750.pub2
+    pmid: '16437495'
+    url: https://doi.org/10.1002/14651858.CD004750.pub2
+    type: SR
+    opmerking: >-
+      DEZE REVIEW GAAT OVER LAGE RUGPIJN, NIET OVER NEKPIJN. 9 trials, 1117
+      deelnemers. Matig bewijs dat warmtewikkels een kleine kortetermijnreductie
+      geven van pijn en beperking bij acute en subacute lage rugpijn. Over koude
+      is er ONVOLDOENDE bewijs, en er is TEGENSTRIJDIG bewijs over verschillen
+      tussen warmte en koude — de conclusie dat warmte effectiever is dan koude
+      staat er dus niet in.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: jull_2002_cervicogene_hoofdpijn
+    auteurs: [Jull G, Trott P, Potter H, Zito G, Niere K, Shirley D, Emberson J, Marschner I, Richardson C]
+    titel: A randomized controlled trial of exercise and manipulative therapy for cervicogenic headache
+    bron: Spine
+    jaar: 2002
+    volume_paginas: 27(17):1835-43
+    doi: 10.1097/00007632-200209010-00004
+    pmid: '12221344'
+    url: https://doi.org/10.1097/00007632-200209010-00004
+    type: RCT
+    opmerking: >-
+      200 deelnemers, vier armen: manuele therapie, oefentherapie, combinatie en
+      controle. Na 12 maanden hadden zowel manuele therapie als specifieke
+      oefentherapie de hoofdpijnfrequentie en -intensiteit significant verlaagd
+      (p kleiner dan 0,05), met behoud van effect. KERNPUNT DAT DE APP OMKEERDE:
+      de COMBINATIE was NIET significant superieur aan elk van beide afzonderlijk;
+      wel had 10% meer patienten baat bij de combinatie.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: hoe_2012_ergonomie
+    auteurs: [Hoe VCW, Urquhart DM, Kelsall HL, Sim MR]
+    titel: Ergonomic design and training for preventing work-related musculoskeletal disorders of the upper limb and neck in adults
+    bron: Cochrane Database of Systematic Reviews
+    jaar: 2012
+    volume_paginas: 2012(8):CD008570
+    doi: 10.1002/14651858.CD008570.pub2
+    pmid: '22895977'
+    url: https://doi.org/10.1002/14651858.CD008570.pub2
+    type: SR
+    opmerking: >-
+      13 RCT's, 2397 werknemers, gericht op PREVENTIE bij een uitgangsprevalentie
+      onder 25%. Matig bewijs dat armsteun in combinatie met een alternatieve muis
+      de incidentie van nek- en schouderaandoeningen verlaagt (RR 0,52; 95% BI
+      0,27-0,99), maar niet die van de rechterarm. Voor de overige ergonomische
+      interventies is er laag tot zeer laag bewijs van GEEN effect. De review
+      vergelijkt ergonomie NIET met oefentherapie en doet daarover geen uitspraak.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: galinsky_2007_pauzes
+    auteurs: [Galinsky T, Swanson N, Sauter S, Dunkin R, Hurrell J, Schleifer L]
+    titel: 'Supplementary breaks and stretching exercises for data entry operators: a follow-up field study'
+    bron: American Journal of Industrial Medicine
+    jaar: 2007
+    volume_paginas: 50(7):519-27
+    doi: 10.1002/ajim.20472
+    pmid: '17514726'
+    url: https://doi.org/10.1002/ajim.20472
+    type: RCT
+    opmerking: >-
+      51 data-invoerders. Vier extra pauzes van 5 minuten bovenop twee pauzes van
+      15 minuten verminderden ONGEMAK EN VERMOEIDE OGEN significant, zonder verlies
+      van productiviteit. Er staat GEEN percentage van 38% in, de uitkomstmaat is
+      algemeen ongemak en niet specifiek nekpijn, en het pauze-interval van 30 tot
+      45 minuten komt er niet in voor. Rekoefeningen tijdens de pauzes gaven GEEN
+      significant effect, mede door lage therapietrouw (25 tot 39%).
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: cools_2007_scapulaoefeningen
+    auteurs: [Cools AM, Dewitte V, Lanszweert F, Notebaert D, Roets A, Soetens B, Cagnie B, Witvrouw EE]
+    titel: 'Rehabilitation of scapular muscle balance: which exercises to prescribe?'
+    bron: American Journal of Sports Medicine
+    jaar: 2007
+    volume_paginas: 35(10):1744-51
+    doi: 10.1177/0363546507303560
+    pmid: '17606671'
+    url: https://doi.org/10.1177/0363546507303560
+    type: cohort
+    opmerking: >-
+      EMG-studie bij 45 GEZONDE proefpersonen die 12 gangbare scapulaoefeningen
+      uitvoerden. Doel: oefeningen selecteren met een gunstige verhouding tussen
+      bovenste en onderste trapezius. Zijlig exorotatie, zijlig anteflexie, buiklig
+      horizontale abductie met exorotatie en buiklig extensie kwamen daar het beste
+      uit. Er is GEEN populatie van bureauwerkers met nekpijn en GEEN percentage
+      van 78%.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: revel_1994_proprioceptie
+    auteurs: [Revel M, Minguet M, Gregoy P, Vaillant J, Manuel JL]
+    titel: 'Changes in cervicocephalic kinesthesia after a proprioceptive rehabilitation program in patients with neck pain: a randomized controlled study'
+    bron: Archives of Physical Medicine and Rehabilitation
+    jaar: 1994
+    volume_paginas: 75(8):895-9
+    doi: 10.1016/0003-9993(94)90115-5
+    pmid: '8053797'
+    url: https://doi.org/10.1016/0003-9993(94)90115-5
+    type: RCT
+    opmerking: >-
+      60 patienten met nekpijn; de gemiddelde hoekfout bij het terugvinden van de
+      hoofdpositie bedroeg 7,7 graden en 82% lag boven de drempel van 4,5 graden.
+      Na tien weken was de winst groter in de groep met oog-hoofdkoppeling
+      (2,0 tegenover 0 graden; p = 0,005), evenals de winst op pijn,
+      medicatiegebruik, bewegingsuitslag en zelfgerapporteerde verbetering.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: andersen_2008_nekschoudertraining
+    auteurs: [Andersen LL, Jorgensen MB, Blangsted AK, Pedersen MT, Hansen EA, Sjogaard G]
+    titel: A randomized controlled intervention trial to relieve and prevent neck/shoulder pain
+    bron: Medicine and Science in Sports and Exercise
+    jaar: 2008
+    volume_paginas: 40(6):983-90
+    doi: 10.1249/MSS.0b013e3181676640
+    pmid: '18461010'
+    url: https://doi.org/10.1249/MSS.0b013e3181676640
+    type: RCT
+    opmerking: >-
+      EEN JAAR durende trial met drie armen: specifieke weerstandstraining
+      (n = 180), algemene fysieke training (n = 187) en gezondheidsadvies als
+      referentie (n = 182) — dus 549 deelnemers, niet 198, en geen zes weken. Bij
+      deelnemers met nekpijn bij aanvang daalde de pijnintensiteit van 5,0 naar
+      3,4 met specifieke training en van 5,0 naar 3,6 met ALGEMENE training; de
+      referentiegroep veranderde niet. Specifieke training was dus NIET superieur
+      aan algemene fitness — beide werkten. Er staat geen pijnreductie van 75% in.
+      Therapietrouw daalde van 54% naar 35% over het jaar.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: verhagen_2013_werkgerelateerd
+    auteurs: [Verhagen AP, Bierma-Zeinstra SMA, Burdorf A, Stynes SM, de Vet HCW, Koes BW]
+    titel: Conservative interventions for treating work-related complaints of the arm, neck or shoulder in adults
+    bron: Cochrane Database of Systematic Reviews
+    jaar: 2013
+    volume_paginas: 2013(12):CD008742
+    doi: 10.1002/14651858.CD008742.pub2
+    pmid: '24338903'
+    url: https://doi.org/10.1002/14651858.CD008742.pub2
+    type: SR
+    opmerking: >-
+      44 studies, 6580 deelnemers, 25 interventies; 35 studies met hoog risico op
+      bias. ZEER LAAG bewijs dat oefeningen de pijn NIET verbeterden ten opzichte
+      van geen behandeling (SMD -0,52; 95% BI -1,08 tot 0,03) of van een minimale
+      controle-interventie. Specifieke oefeningen gaven op korte termijn zelfs MEER
+      pijn dan algemene oefeningen (SMD 0,45; 95% BI 0,14-0,75). Ergonomische
+      interventies verlaagden de pijn niet op korte maar wel op lange termijn
+      (SMD -0,76; 95% BI -1,35 tot -0,16). Voor gedragsmatige en overige
+      interventies was er geen consistent effect. Een uitspraak dat een
+      multimodale aanpak significant superieur is, staat er NIET in.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: watson_1993_hoofdhouding
+    auteurs: [Watson DH, Trott PH]
+    titel: 'Cervical headache: an investigation of natural head posture and upper cervical flexor muscle performance'
+    bron: Cephalalgia
+    jaar: 1993
+    volume_paginas: 13(4):272-84
+    doi: 10.1046/j.1468-2982.1993.1304272.x
+    pmid: '8374943'
+    url: https://doi.org/10.1046/j.1468-2982.1993.1304272.x
+    type: cohort
+    opmerking: >-
+      60 vrouwen tussen 25 en 40 jaar, met en zonder hoofdpijn. De hoofdpijngroep
+      had significant meer voorwaartse hoofdhouding (p kleiner dan 0,00005),
+      minder isometrische kracht (p kleiner dan 0,001) en minder uithouding
+      (p kleiner dan 0,0005) van de bovenste cervicale flexoren, en een voorwaartse
+      hoofdhouding hing samen met lage uithouding. Het abstract bevat GEEN
+      beschrijving van een C1-C3-pijnreferentiepatroon.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)

@@ -3,6 +3,18 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-09-05 — bronaudit bureauhouding en nekklachten
+
+- 14 claims beoordeeld, 9 bronnen eerstehands opgehaald en geverifieerd via PubMed · dit is het slechtst onderbouwde protocol tot nu toe: van de gecontroleerde citaties hield er één volledig stand
+- WARMTE-CLAIM DUBBEL ONGEDEKT · `french_2006_warmte_koude` gaat over LAGE RUGPIJN, niet over nekpijn, en besluit dat er tegenstrijdig bewijs is over het verschil tussen warmte en koude · het refs-veld van het protocol beschreef de bron zelf al correct als "Superficial heat for LBP", terwijl de evidencetekst hem voor nekpijn gebruikte — de inconsistentie stond dus al in het protocol
+- COMBINATIE-CLAIM OMGEKEERD · `jull_2002_cervicogene_hoofdpijn` besluit dat de combinatie van manuele therapie en oefentherapie NIET significant superieur was aan elk afzonderlijk, terwijl de app het tegendeel stelde
+- VIER FOUTEN IN ÉÉN ZIN · "neck-specifieke training (6 weken, 3x/week) resulteert in 75% pijnreductie, superieur aan algemene fitness (n=198)" · `andersen_2008_nekschoudertraining` duurde EEN JAAR, had 549 deelnemers, gaf een daling van 5,0 naar 3,4 (circa 32%), en algemene fysieke training werkte even goed (5,0 naar 3,6)
+- Volledig onjuiste toeschrijving · "verminderde lower trap-activatie bij 78% van bureauwerkers met nekpijn" verwijst naar `cools_2007_scapulaoefeningen`, een EMG-studie bij 45 GEZONDE proefpersonen over oefenselectie — geen bureauwerkers, geen nekpijn, geen 78%
+- Verzonnen cijfers geschrapt · 96% zwakke diepe nekflexoren, 38% pijnreductie door pauzes, 42% door mindfulness, 55% recidiefreductie door micro-pauzes
+- Tegenstrijdige evidentie toegevoegd die de onderbouwing van het hele protocol raakt (CLAUDE.md 1.9) · `verhagen_2013_werkgerelateerd` vond ZEER LAAG bewijs dat oefeningen de pijn NIET verbeterden ten opzichte van geen behandeling, en specifieke oefeningen gaven op korte termijn zelfs meer pijn dan algemene · dat staat nu in de tekst, met de vermelding dat dit protocol in belangrijke mate op klinische redenering berust
+- Ook relevant voor de praktijk · in `galinsky_2007_pauzes` gaven rekoefeningen tijdens de pauzes GEEN significant effect, mede door lage therapietrouw (25 tot 39%), en in `andersen_2008_nekschoudertraining` daalde de therapietrouw over een jaar van 54% naar 35%
+- Zes citaties konden niet eenduidig opgehaald worden, waaronder de twee waarop de kernoefeningen berusten (Jull 2009 voor de diepe nekflexoren, Cleland 2007 voor thoracale mobilisatie) · alle zes als zodanig gemarkeerd
+
 ## 2026-09-05 — bronaudit plantaire fasciopathie
 
 - 14 claims beoordeeld, 9 bronnen eerstehands opgehaald en geverifieerd via PubMed · dit protocol oogde het meest verzorgd van alle tot nu toe geauditeerde, maar bevatte vier zware fouten

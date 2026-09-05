@@ -1800,3 +1800,132 @@ references:
       2-8%); ernstige voorvallen kwamen niet voor.
     geverifieerd_op: 2026-09-05
     geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  # --- Patellofemoraal pijnsyndroom ---
+
+  - key: lack_2015_proximale_revalidatie
+    auteurs: [Lack S, Barton C, Sohan O, Crossley K, Morrissey D]
+    titel: 'Proximal muscle rehabilitation is effective for patellofemoral pain: a systematic review with meta-analysis'
+    bron: British Journal of Sports Medicine
+    jaar: 2015
+    volume_paginas: 49(21):1365-76
+    doi: 10.1136/bjsports-2015-094723
+    pmid: '26175019'
+    url: https://doi.org/10.1136/bjsports-2015-094723
+    type: SR
+    opmerking: >-
+      14 studies, waarvan 7 van hoge kwaliteit. STERK bewijs dat proximale
+      revalidatie GECOMBINEERD met quadricepstraining op korte termijn de pijn
+      verlaagt en de functie verbetert, met matig bewijs op middellange termijn.
+      MATIG bewijs dat proximale training vergeleken MET quadricepstraining de
+      pijn verlaagt op korte en middellange termijn. Beperkt bewijs voor grotere
+      pijnreductie van de combinatie op lange termijn. Het abstract vermeldt geen
+      totaal aantal deelnemers; het getal 690 uit de app is niet gedekt.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: rathleff_2014_heupkracht
+    auteurs: [Rathleff MS, Rathleff CR, Crossley KM, Barton CJ]
+    titel: 'Is hip strength a risk factor for patellofemoral pain? A systematic review and meta-analysis'
+    bron: British Journal of Sports Medicine
+    jaar: 2014
+    volume_paginas: 48(14):1088
+    doi: 10.1136/bjsports-2013-093305
+    pmid: '24687010'
+    url: https://doi.org/10.1136/bjsports-2013-093305
+    type: SR
+    opmerking: >-
+      KERNBEVINDING DIE DE OORZAKELIJKE REDENERING VAN HET PROTOCOL OMKEERT:
+      matig tot sterk bewijs uit PROSPECTIEVE studies toont GEEN verband tussen
+      isometrische heupkracht en het risico op het ontwikkelen van patellofemorale
+      pijn. Cross-sectioneel hebben volwassen mannen en vrouwen MET de klacht wel
+      minder heupkracht dan pijnvrije personen. De auteurs besluiten daaruit dat
+      verminderde heupkracht eerder een GEVOLG dan een oorzaak van de klacht kan
+      zijn. Bij adolescenten werd hetzelfde krachttekort niet gevonden.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: neal_2016_looptechniek
+    auteurs: [Neal BS, Barton CJ, Gallie R, O'Halloran P, Morrissey D]
+    titel: 'Runners with patellofemoral pain have altered biomechanics which targeted interventions can modify: a systematic review and meta-analysis'
+    bron: Gait and Posture
+    jaar: 2016
+    volume_paginas: 45:69-82
+    doi: 10.1016/j.gaitpost.2015.11.018
+    pmid: '26979886'
+    url: https://doi.org/10.1016/j.gaitpost.2015.11.018
+    type: SR
+    opmerking: >-
+      28 studies. BEPERKT bewijs uit interventiestudies dat zowel looptraining als
+      proximale krachttraining gunstige uitkomsten geeft op pijn en functie, maar
+      dat alleen looptraining de piekheupadductie significant verlaagt. Matig
+      bewijs voor een verband tussen de klacht en toegenomen heupadductie,
+      endorotatie en contralaterale bekkendaling. De review noemt GEEN
+      stapfrequentieverhoging van 10% en presenteert niets als de meest bewezen
+      interventie.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: collins_2008_voetorthesen
+    auteurs: [Collins N, Crossley K, Beller E, Darnell R, McPoil T, Vicenzino B]
+    titel: 'Foot orthoses and physiotherapy in the treatment of patellofemoral pain syndrome: randomised clinical trial'
+    bron: BMJ
+    jaar: 2008
+    volume_paginas: 337:a1735
+    doi: 10.1136/bmj.a1735
+    pmid: '18952682'
+    url: https://doi.org/10.1136/bmj.a1735
+    type: RCT
+    opmerking: >-
+      179 deelnemers van 18 tot 40 jaar, vier armen: voetorthesen, vlakke inlegzool,
+      multimodale kinesitherapie, en orthesen plus kinesitherapie. Voetorthesen
+      gaven op korte termijn (zes weken) meer verbetering dan vlakke inlegzolen
+      (NNT 4). MAAR: er was GEEN significant verschil tussen orthesen en
+      kinesitherapie, en orthesen bovenop kinesitherapie voegden NIETS toe. Alle
+      groepen verbeterden klinisch relevant over 52 weken. Deelnemers werden niet
+      geselecteerd op pronatie.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: witvrouw_2000_risicofactoren
+    auteurs: [Witvrouw E, Lysens R, Bellemans J, Cambier D, Vanderstraeten G]
+    titel: 'Intrinsic risk factors for the development of anterior knee pain in an athletic population: a two-year prospective study'
+    bron: American Journal of Sports Medicine
+    jaar: 2000
+    volume_paginas: 28(4):480-9
+    doi: 10.1177/03635465000280040701
+    pmid: '10921638'
+    url: https://doi.org/10.1177/03635465000280040701
+    type: cohort
+    opmerking: >-
+      282 studenten lichamelijke opvoeding, twee jaar prospectief gevolgd; 24
+      ontwikkelden patellofemorale pijn. Slechts VIER factoren hingen significant
+      samen met de incidentie: een verkorte quadriceps, een veranderde
+      REFLEXRESPONSTIJD van de vastus medialis obliquus, verminderde explosieve
+      kracht en een hypermobiele patella. Het gaat dus om reflextiming, NIET om
+      hypotrofie van de VMO. De Q-hoek kwam niet als significante risicofactor
+      naar voren.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: crossley_2016_consensus
+    auteurs: [Crossley KM, Stefanik JJ, Selfe J, Collins NJ, Davis IS, Powers CM, McConnell J, Vicenzino B, Bazett-Jones DM, Esculier JF, Morrissey D, Callaghan MJ]
+    titel: >-
+      2016 Patellofemoral pain consensus statement from the 4th International
+      Patellofemoral Pain Research Retreat, Manchester. Part 1: terminology,
+      definitions, clinical examination, natural history, patellofemoral
+      osteoarthritis and patient-reported outcome measures
+    bron: British Journal of Sports Medicine
+    jaar: 2016
+    volume_paginas: 50(14):839-43
+    doi: 10.1136/bjsports-2016-096384
+    pmid: '27343241'
+    url: https://doi.org/10.1136/bjsports-2016-096384
+    type: expert
+    opmerking: >-
+      Consensusverklaring van een internationaal onderzoeksretraite. PubMed geeft
+      geen abstract, dus de afzonderlijke aanbevelingen zijn in dit dossier niet
+      tegen de volledige tekst gelegd. Bewijsniveau: consensus (CLAUDE.md 2,
+      niveau 5).
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (get_article_metadata)

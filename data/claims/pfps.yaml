@@ -1,0 +1,138 @@
+protocol: pfps
+laatst_gecontroleerd: 2026-09-05
+versie: 1
+fase_a_door: hoofdagent, alle metadata eerstehands opgehaald via PubMed MCP
+fase_b_door: nog uit te voeren
+
+claims:
+  - id: pfps_c01
+    tekst: Patellofemorale pijn is een klinische diagnose, beeldvorming is niet vereist in de eerste lijn
+    plaats: protocols.pfps fase 1 evidence
+    bronnen: [crossley_2016_consensus]
+    gedekt: nee
+    opmerking: >-
+      AANNEMELIJK MAAR NIET GECONTROLEERD. De toegeschreven citatie (Witvrouw
+      2014) kon niet eenduidig opgehaald worden. De consensusverklaring uit 2016
+      behandelt wel terminologie, definities en klinisch onderzoek, maar PubMed
+      geeft er geen abstract van, dus de afzonderlijke aanbevelingen zijn hier
+      niet gecontroleerd.
+    verwerkt: >-
+      uitspraak behouden als klinische redenering, met verwijzing naar de
+      consensusverklaring en de beperking dat die niet inhoudelijk is nagekeken
+
+  - id: pfps_c02
+    tekst: Voetorthesen bij pronatie
+    plaats: protocols.pfps fase 2 evidence
+    bronnen: [collins_2008_voetorthesen]
+    gedekt: nee
+    opmerking: >-
+      DE BELANGRIJKSTE BEVINDING ONTBRAK. De RCT bij 179 deelnemers toont wel dat
+      orthesen na zes weken beter waren dan vlakke inlegzolen (NNT 4), maar er was
+      GEEN verschil met kinesitherapie en orthesen bovenop kinesitherapie voegden
+      NIETS toe. Na 52 weken verbeterden alle groepen klinisch relevant. Bovendien
+      werden deelnemers niet geselecteerd op pronatie, terwijl de app dat als
+      indicatie presenteerde.
+    verwerkt: volledige bevinding opgenomen inclusief de vergelijking met kinesitherapie
+
+  - id: pfps_c03
+    tekst: Heup- en quadricepstraining gecombineerd is superieur (meta-analyse, n = 690)
+    plaats: protocols.pfps fase 3 evidence
+    bronnen: [lack_2015_proximale_revalidatie]
+    gedekt: deels
+    opmerking: >-
+      RICHTING GEDEKT, DEELNEMERSAANTAL NIET. Sterk bewijs voor pijnvermindering
+      en functieverbetering op korte termijn met de combinatie, matig bewijs op
+      middellange termijn, en matig bewijs dat proximale training vergeleken met
+      quadricepstraining de pijn verlaagt. Het abstract vermeldt 14 studies maar
+      geen totaal aantal deelnemers; het getal 690 is niet gedekt.
+    verwerkt: aantal geschrapt, bewijskracht per termijn opgenomen
+
+  - id: pfps_c04
+    tekst: Zwakke heupabductoren en exorotatoren leiden tot femuradductie en zijn een oorzakelijke factor
+    plaats: protocols.pfps fase 3 evidence + BESCHRIJVING.pfps
+    bronnen: [rathleff_2014_heupkracht]
+    gedekt: nee
+    opmerking: >-
+      DE OORZAKELIJKE REDENERING VAN HET PROTOCOL WORDT OMGEKEERD. Matig tot sterk
+      bewijs uit PROSPECTIEVE studies toont GEEN verband tussen isometrische
+      heupkracht en het risico op het ontwikkelen van deze klacht. Cross-sectioneel
+      is de kracht wel lager bij wie de klacht heeft. De auteurs besluiten dat het
+      krachttekort eerder een GEVOLG dan een oorzaak kan zijn. Heuptraining blijft
+      als behandeling onderbouwd (zie pfps_c03), maar niet als correctie van een
+      oorzaak — dat onderscheid ontbrak volledig.
+    verwerkt: >-
+      onderscheid tussen behandeleffect en oorzaak expliciet opgenomen in zowel de
+      evidencetekst als de beschrijving
+
+  - id: pfps_c05
+    tekst: Stapfrequentieverhoging van 10% is de meest bewezen interventie voor lopers
+    plaats: protocols.pfps fase 4 evidence
+    bronnen: [neal_2016_looptechniek]
+    gedekt: nee
+    opmerking: >-
+      SUPERLATIEF EN CIJFER NIET GEDEKT. De systematische review van 28 studies
+      spreekt van BEPERKT bewijs dat zowel looptraining als proximale
+      krachttraining gunstige uitkomsten geeft, en dat alleen looptraining de
+      piekheupadductie significant verlaagt. Een stapfrequentieverhoging van 10%
+      wordt niet genoemd en niets wordt als meest bewezen gepresenteerd.
+    verwerkt: superlatief en percentage geschrapt, bewijskracht correct benoemd
+
+  - id: pfps_c06
+    tekst: Gait retraining reduceert de patellofemorale compressie met 20-30%
+    plaats: protocols.pfps fase 4 evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      NIET GEVERIFIEERD. De toegeschreven publicatie kon niet opgehaald worden en
+      het bereik is daarmee onbevestigd.
+    verwerkt: percentage geschrapt
+
+  - id: pfps_c07
+    tekst: VMO-hypotrofie vertraagt de mediale patellaretentie bij extensie
+    plaats: BESCHRIJVING.pfps
+    bronnen: [witvrouw_2000_risicofactoren]
+    gedekt: nee
+    opmerking: >-
+      MECHANISME VERKEERD WEERGEGEVEN. De prospectieve studie bij 282 studenten
+      vond een veranderde REFLEXRESPONSTIJD van de vastus medialis obliquus als
+      risicofactor, niet hypotrofie. De andere drie significante factoren waren
+      een verkorte quadriceps, verminderde explosieve kracht en een hypermobiele
+      patella.
+    verwerkt: alle vier de werkelijke risicofactoren opgenomen
+
+  - id: pfps_c08
+    tekst: Een Q-hoek boven 20 graden verhoogt het risico; vrouwen zijn 2x vaker aangedaan door de Q-hoek
+    plaats: BESCHRIJVING.pfps
+    bronnen: [witvrouw_2000_risicofactoren]
+    gedekt: nee
+    opmerking: >-
+      DE EIGEN GECITEERDE BRON SPREEKT DIT TEGEN. In de prospectieve studie kwam de
+      Q-hoek NIET als significante risicofactor naar voren. De drempel van 20
+      graden en de verklaring van een hogere prevalentie bij vrouwen via
+      bekkenbreedte en Q-hoek zijn niet onderbouwd.
+    verwerkt: drempel en verklaring geschrapt
+
+  - id: pfps_c09
+    tekst: De subgroepindeling support, pronation, flexibility, movement stuurt de behandelkeuze
+    plaats: BESCHRIJVING.pfps
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      VERKEERDE TOESCHRIJVING. De aangehaalde publicatie van Rathleff (2014) gaat
+      over heupkracht als risicofactor, niet over subgroepindeling.
+    verwerkt: citatie geschrapt, indeling behouden als klinische redenering
+
+  - id: pfps_c10
+    tekst: >-
+      Niet geverifieerde citaties: Witvrouw 2014, Barton 2017, Rathleff 2015,
+      Willy 2012
+    plaats: protocols.pfps fase 1 tot 4 evidence + refs-veld
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Vier citaties konden niet eenduidig opgehaald worden. Het refs-veld vermeldde
+      bovendien Barton 2014 en Willy 2012 als onderbouwing terwijl beide hier niet
+      te verifieren waren.
+    verwerkt: >-
+      alle vier in de tekst gemarkeerd als niet geverifieerd, refs-veld vervangen
+      door zes eerstehands geverifieerde bronnen met volledige vindplaats

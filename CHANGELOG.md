@@ -3,6 +3,15 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-09-05 — bronaudit patellofemoraal pijnsyndroom
+
+- 10 claims beoordeeld, 6 bronnen eerstehands opgehaald en geverifieerd via PubMed
+- DE OORZAKELIJKE REDENERING VAN HET PROTOCOL OMGEKEERD · `rathleff_2014_heupkracht` toont matig tot sterk bewijs uit PROSPECTIEVE studies dat er GEEN verband is tussen isometrische heupkracht en het risico op het ontwikkelen van patellofemorale pijn · cross-sectioneel is de kracht wel lager, waaruit de auteurs besluiten dat het krachttekort eerder een GEVOLG dan een oorzaak kan zijn · heuptraining blijft als behandeling goed onderbouwd (`lack_2015_proximale_revalidatie`), maar niet als correctie van een oorzaak — dat onderscheid ontbrak volledig
+- De eigen geciteerde bron sprak een risicofactor tegen · `witvrouw_2000_risicofactoren` vond de Q-hoek NIET als significante risicofactor, terwijl de app een drempel van 20 graden noemde en daarmee de hogere prevalentie bij vrouwen verklaarde
+- Mechanisme verkeerd weergegeven · niet VMO-hypotrofie maar een veranderde REFLEXRESPONSTIJD van de vastus medialis obliquus was in die prospectieve studie de risicofactor, naast een verkorte quadriceps, verminderde explosieve kracht en een hypermobiele patella
+- Belangrijkste bevinding over voetorthesen ontbrak · `collins_2008_voetorthesen` toont wel meerwaarde boven vlakke inlegzolen (NNT 4), maar GEEN verschil met kinesitherapie, en orthesen bovenop kinesitherapie voegden niets toe · bovendien werden deelnemers niet geselecteerd op pronatie, terwijl de app dat als indicatie presenteerde
+- Superlatief en cijfers geschrapt · stapfrequentie +10% als "meest bewezen interventie" (`neal_2016_looptechniek` spreekt van BEPERKT bewijs en noemt die 10% niet), compressiereductie 20-30%, en het deelnemersaantal 690 dat niet in de meta-analyse staat
+
 ## 2026-09-05 — bronaudit facettaire blokkade lumbaal
 
 - 13 claims beoordeeld, 4 nieuwe bronnen eerstehands opgehaald en geverifieerd via PubMed · zeven van de twaalf citaties konden niet eenduidig opgehaald worden, waaronder BEIDE bronnen onder de kernaanname van dit protocol: het pijnarme venster van 6-12 weken na de blokkade

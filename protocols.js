@@ -125,7 +125,7 @@ const protocols = {
   pfps:{id:'pfps',title:'Patellofemoraal Pijnsyndroom',subtitle:'Multifactorieel protocol met subclassificatie, heupfocus en gait retraining',color:'#f97316',
     phases:[
       {label:'Diagnostiek',title:'Diagnostiek & Subclassificatie',weeks:'Vóór behandelstart',
-       evidence:'PFPS is een <strong>klinische diagnose</strong> (Witvrouw et al., 2014). Geen beeldvorming vereist in eerste lijn.',
+       evidence:'Patellofemorale pijn is een <strong>klinische diagnose</strong>; beeldvorming is in de eerste lijn niet vereist — <em>klinische redenering, ondersteund door de internationale consensusverklaring (Crossley et al., 2016 — BJSM), waarvan de afzonderlijke aanbevelingen hier niet tegen de volledige tekst zijn gelegd.</em>',
        goals:["Clarke's, patellar grind, SLS uitvoeren",'Differentiaaldiagnose uitsluiten','Subtype bepalen: heup / quad / biomechanisch / loper','Baseline Kujala + VISA-P afnemen'],
        exercises:[
          {name:"Clarke's test",params:[['Sens','matig'],['Spec','laag']],note:'Nooit als enige test.'},
@@ -136,7 +136,7 @@ const protocols = {
        criteria_stop:['Nachtpijn → RX','Ochtendstijfheid > 45 min → SpA'],
        redflags:['Nachtpijn + rustpijn: tumoraal uitsluiten','Koorts + warmte + zwelling: septische artritis → spoed']},
       {label:'Fase 1',title:'Pijnmanagement & Load',weeks:'Week 1–3',
-       evidence:'<strong>Patellataping</strong> onmiddellijke pijnreductie (Barton et al., 2017). <strong>Voetorthesen</strong> bij pronatie (Collins et al., 2008). Load management centraal.',
+       evidence:'<strong>Patellataping</strong> voor onmiddellijke pijnverlichting is <em>klinische redenering; de toegeschreven publicatie is in dit dossier niet geverifieerd.</em> <strong>Voetorthesen:</strong> in een RCT bij 179 deelnemers gaven kant-en-klare orthesen na zes weken meer verbetering dan vlakke inlegzolen (NNT 4), maar er was <strong>géén verschil met kinesitherapie</strong>, en orthesen bovenop kinesitherapie voegden <strong>niets toe</strong>; na 52 weken verbeterden alle groepen klinisch relevant (Collins et al., 2008 — BMJ). <em>Deelnemers werden daarbij niet geselecteerd op pronatie.</em> Belastingsmanagement blijft centraal — <em>klinische redenering.</em>',
        goals:['VAS ≤ 3/10','2-uursregel begrijpen','Activiteiten aanpassen','Eerste heup + quad activering'],
        exercises:[
          {name:'McConnell taping',params:[['Test','≥ 50% VAS-reductie']],note:'Test altijd pijneffect.',cat:'manueel'},
@@ -146,7 +146,7 @@ const protocols = {
        criteria_go:['VAS ≤ 3/10','Begrip belastingsprincipes'],
        criteria_stop:['Pijn neemt toe → dosering halveren'],redflags:[]},
       {label:'Fase 2',title:'Krachtopbouw Heup + Quad',weeks:'Week 3–8',
-       evidence:'<strong>Heup + quad gecombineerd</strong> superieur (Lack et al., 2015 — meta-analyse n=690). Progressieve overload noodzakelijk (Rathleff et al., 2015).',
+       evidence:'<strong>Proximale training gecombineerd met quadricepstraining:</strong> sterk bewijs voor pijnvermindering en functieverbetering op korte termijn, matig bewijs op middellange termijn; proximale training vergeleken mét quadricepstraining verlaagde de pijn op korte en middellange termijn (Lack et al., 2015 — BJSM; 14 studies, 7 van hoge kwaliteit). <em>Het eerder vermelde aantal van 690 deelnemers staat niet in die bron en is geschrapt.</em> <strong>Belangrijke nuance over het waarom:</strong> prospectieve studies vinden <strong>géén verband</strong> tussen isometrische heupkracht en het risico op het ontstaan van deze klacht; cross-sectioneel is de kracht wél lager. De auteurs besluiten dat verminderde heupkracht eerder een <strong>gevolg</strong> dan een oorzaak kan zijn (Rathleff et al., 2014 — BJSM). <em>Heuptraining blijft dus verdedigbaar als behandeling, maar niet als correctie van een oorzaak.</em>',
        goals:['Heup LSI ≥ 85%','Quad LSI ≥ 75%','SLS 30° zonder valgus','VAS ≤ 2/10','Kujala ≥ 70/100'],
        exercises:[
          {name:'Lateral band walk + hip thrust',params:[['Sets','3–4'],['Belasting','progressief']],note:'Hoeksteen heuptraining PFPS.',cat:'kracht'},
@@ -157,7 +157,7 @@ const protocols = {
        criteria_go:['SLS 30° zonder valgus','Heup LSI ≥ 85%','VAS ≤ 2/10','Kujala ≥ 70/100'],
        criteria_stop:['Pijn stijgt → dosering reduceren'],redflags:[]},
       {label:'Fase 3',title:'Functioneel & Gait',weeks:'Week 6–12',
-       evidence:'<strong>Gait retraining</strong> reduceert PF-compressie met 20–30% (Willy et al., 2012). <strong>Stapfrequentie +10%</strong> meest bewezen interventie voor lopers (Neal et al., 2016).',
+       evidence:'<strong>Looptraining:</strong> een systematische review van 28 studies vond <strong>beperkt</strong> bewijs dat zowel looptraining als proximale krachttraining gunstige uitkomsten geeft op pijn en functie, en dat alleen looptraining de piekheupadductie significant verlaagt (Neal et al., 2016 — Gait Posture). <em>De review noemt geen stapfrequentieverhoging van 10% en presenteert niets als de meest bewezen interventie; die formulering is geschrapt.</em> <em>De eerder vermelde reductie van de patellofemorale compressie met 20 tot 30% is niet geverifieerd en is eveneens geschrapt.</em>',
        goals:['Jogging 30 min VAS ≤ 2/10','Plyometrisch stadium 1+2 voltooid','Quad LSI ≥ 85%','Kujala ≥ 80/100'],
        exercises:[
          {name:'Stapfrequentie verhogen (+10%)',params:[['Tool','metronoom-app'],['Target','+5–10%']],note:'170 → 185 stap/min typisch.',cat:'neuro'},
@@ -168,7 +168,7 @@ const protocols = {
        criteria_stop:['Pijn > VAS 3 bij sport → fase 2 consolideren'],
        redflags:['Recidief na RTS → loopvolume-monitoring activeren']}
     ],
-    refs:'Lack et al. (2015) — Hip-targeted physiotherapy superior for PFPS: meta-analysis. BJSM. | Crossley et al. (2016) — Patellofemoral pain consensus statement from the 4th International Research Retreat. BJSM. | Barton et al. (2014) — Patellar taping for patellofemoral pain: systematic review. BJSM. | Willy et al. (2012) — Gait retraining reduces patellofemoral joint stress. Clin Biomech.'},
+    refs:'Lack S et al., 2015 — Br J Sports Med 49(21):1365-76 (proximale revalidatie, systematische review) | Rathleff MS et al., 2014 — Br J Sports Med 48(14):1088 (heupkracht: geen prospectief verband met het ontstaan) | Neal BS et al., 2016 — Gait Posture 45:69-82 (looptraining en biomechanica) | Collins N et al., 2008 — BMJ 337:a1735 (voetorthesen versus kinesitherapie) | Witvrouw E et al., 2000 — Am J Sports Med 28(4):480-9 (prospectieve risicofactoren) | Crossley KM et al., 2016 — Br J Sports Med 50(14):839-43 (consensusverklaring)'},
 
   lh:{id:'lh',title:'Lumbale Hernia',subtitle:'Conservatief en postoperatief revalidatieprotocol voor lumbale discushernia met radiculopathie',color:'#34d399',
     phases:[
@@ -3853,8 +3853,8 @@ const BESCHRIJVING = {
   },
 
   pfps:{
-    kenmerken:'<strong>Anterieure kniepijn</strong> bij activiteit (trap, hurken, fietsen, langdurig zitten — "cinema sign"), reproduceerbaar bij compressietest patella. Klinisch zijn het <strong>J-teken</strong> (laterale patelladeviatrie bij extensie), verminderde mediale patellaire glide en crepitaties frequent aanwezig. Pijnscore stijgt typisch na 20 minuten belasten. <strong>Subgroepindeling</strong> (support, pronation, flexibility, movement) stuurt de behandelkeuze (Rathleff et al., 2014 — BJSM). Radiologisch zelden afwijkend in vroege stadia; MRI toont soms subchondraal oedeem bij patella of trochlea.',
-    oorzaken:'PFPS is <strong>multifactorieel</strong>: lokale factoren (laterale patellacompressie door strakke IT-band en MPFL), proximale factoren (<strong>zwakke heupabductoren en exorotatoren</strong> leiden tot femuradductie en IR bij belasting), en distale factoren (overpronatie). <strong>VMO-hypotrofie</strong> vertraagt mediale patellaretentie bij extensie (Witvrouw et al., 2000 — AJSM). Trainingsfouten (plotse volumestijging), harde loopoppervlak, inadequaat schoeisel en biologische factoren (hypermobiliteit, Q-hoek > 20°) verhogen het risico. Vrouwen zijn <strong>2× vaker aangedaan</strong> door bredere pelvis en grotere Q-hoek.'
+    kenmerken:'<strong>Anterieure kniepijn</strong> bij activiteit (trap, hurken, fietsen, langdurig zitten — "cinema sign"), reproduceerbaar bij compressietest patella. Klinisch zijn het <strong>J-teken</strong> (laterale patelladeviatrie bij extensie), verminderde mediale patellaire glide en crepitaties frequent aanwezig. Pijnscore stijgt typisch na 20 minuten belasten. <strong>Subgroepindeling</strong> (support, pronation, flexibility, movement) wordt gebruikt om de behandelkeuze te sturen — <em>klinische redenering; de toegeschreven publicatie gaat over heupkracht als risicofactor, niet over subgroepindeling</em>. Radiologisch zelden afwijkend in vroege stadia; MRI toont soms subchondraal oedeem bij patella of trochlea.',
+    oorzaken:'PFPS is <strong>multifactorieel</strong>: lokale factoren (laterale patellacompressie door strakke IT-band en MPFL), proximale factoren (<strong>verminderde kracht van heupabductoren en exorotatoren</strong> gaat samen met femuradductie en endorotatie bij belasting — <strong>let op:</strong> prospectief onderzoek vindt géén verband tussen heupkracht en het ontstaan van de klacht, zodat het krachttekort eerder gevolg dan oorzaak kan zijn; Rathleff et al., 2014), en distale factoren (overpronatie). In een prospectieve studie bij 282 studenten waren slechts vier factoren significant geassocieerd met het ontstaan: een verkorte quadriceps, een veranderde <strong>reflexresponstijd</strong> van de vastus medialis obliquus, verminderde explosieve kracht en een hypermobiele patella (Witvrouw et al., 2000 — AJSM). <em>Het gaat dus om reflextiming, niet om hypotrofie.</em> Trainingsfouten (plotse volumestijging), harde loopoppervlak, inadequaat schoeisel en biologische factoren zoals hypermobiliteit verhogen het risico. <em>De Q-hoek kwam in de hierboven genoemde prospectieve studie NIET als significante risicofactor naar voren; de drempel van 20° en de verklaring van een hogere prevalentie bij vrouwen via bekkenbreedte en Q-hoek zijn in dit dossier niet onderbouwd.</em>'
   },
 
   lh:{

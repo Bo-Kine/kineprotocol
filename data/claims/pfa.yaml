@@ -2,7 +2,10 @@ protocol: pfa
 laatst_gecontroleerd: 2026-09-05
 versie: 1
 fase_a_door: hoofdagent, alle metadata eerstehands opgehaald via PubMed MCP
-fase_b_door: nog uit te voeren
+fase_b_door: >-
+  onafhankelijke verificator met schone context, 2026-09-05; alle 18 citaties in
+  de teksten bevestigd als correct, 11 problemen daarbuiten gevonden
+  (refs-veld, oefennotities, doelstellingen), alle verwerkt
 
 claims:
   - id: pfa_c01
@@ -212,3 +215,61 @@ claims:
       veelvouden geschrapt, pijndrempel gelabeld als praktijkafspraak,
       superlatief verwijderd, refs-veld vervangen door zes eerstehands
       geverifieerde bronnen met volledige vindplaats
+
+  # --- Bevindingen uit fase B ---
+
+  - id: pfa_c15
+    tekst: Loopvolume opbouwen volgens de 10%-regel
+    plaats: oefennotities pfa fase 2 en 4 + doelstelling fase 4
+    bronnen: [nielsen_2014_loopvolume]
+    gedekt: nee
+    opmerking: >-
+      INTERNE TEGENSPRAAK BINNEN HETZELFDE PROTOCOL, GEVONDEN IN FASE B. De
+      evidencetekst van fase 3 vermeldt na deze audit correct dat Nielsen (2014)
+      geen significante verschillen tussen opbouwsnelheden vond en minder dan 30%
+      over twee weken adviseert, terwijl de oefennotities de 10%-regel als vaste
+      regel bleven presenteren. Dezelfde bron werd dus in hetzelfde protocol voor
+      en tegen zichzelf gebruikt.
+    verwerkt: >-
+      10%-regel gelabeld als praktijkafspraak met expliciete verwijzing naar wat
+      de geciteerde bron werkelijk adviseert
+
+  - id: pfa_c16
+    tekst: Nielsen 2014 ontbrak in het refs-veld
+    plaats: protocols.pfa refs
+    bronnen: [nielsen_2014_loopvolume]
+    gedekt: nee
+    opmerking: >-
+      De bron wordt in de evidencetekst van fase 3 geciteerd maar stond niet in
+      de literatuurlijst onderaan het protocol.
+    verwerkt: toegevoegd aan het refs-veld met volledige vindplaats
+
+  - id: pfa_c17
+    tekst: >-
+      Ongebronde cijfers en superlatieven in notities en beschrijving: schoeisel
+      600-800 km, volumereductie 20-30%, "belangrijkste mobiliteitsdeficit",
+      "grootste aandeel in plantairflexiekracht", "hoogste fasciabelasting",
+      "pathognomonisch symptoom", "volledige rust is gecontra-indiceerd"
+    plaats: oefennotities en BESCHRIJVING.pfa
+    bronnen: [riddle_2003_risicofactoren]
+    gedekt: nee
+    opmerking: >-
+      Zeven ongebronde uitspraken, waarvan vier met een superlatief. De uitspraak
+      over dorsaalflexie kon wel aan een geverifieerde bron gekoppeld worden, zij
+      het als risicofactor voor het ONTSTAAN en niet als grootste deficit.
+    verwerkt: >-
+      cijfers geschrapt of als praktijkafspraak gelabeld, superlatieven verwijderd,
+      dorsaalflexie gekoppeld aan riddle_2003_risicofactoren
+
+  - id: pfa_c18
+    tekst: Numerieke drempels in fasedoelstellingen (FFI-verbetering, LSI, rugzakgewicht)
+    plaats: goals pfa
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      De vaste voetnoot die ik na het heupprotocol toevoegde dekte alleen de
+      doorstroomcriteria, niet de fasedoelstellingen, terwijl daar dezelfde
+      ongebronde drempels staan.
+    verwerkt: >-
+      voetnoot in app.js uitgebreid zodat ze ook de fasedoelstellingen dekt, voor
+      alle 30 protocollen

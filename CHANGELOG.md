@@ -15,6 +15,12 @@ Formaat per regel: wat · waarom · bron.
 - BMI-drempel gecorrigeerd van 27 naar 30 kg/m2 op drie plaatsen · `riddle_2003_risicofactoren` onderzocht 30 (OR 5,6), niet 27 · de odds ratio's voor dorsaalflexie (23,3) en staand werk (3,6) zijn wel correct
 - Twee belastingsveelvouden spraken elkaar tegen binnen hetzelfde protocol · 2-3x lichaamsgewicht in de fasetekst tegenover 8x in een oefennotitie van diezelfde fase · beide geschrapt wegens ontbrekende bron
 
+- Fase B op plantaire fasciopathie · ALLE 18 citaties bevestigd als correct, het tweede protocol dat die toets schoon doorstaat · 11 problemen daarbuiten
+- INTERNE TEGENSPRAAK GEVONDEN · de evidencetekst van fase 3 vermeldt na deze audit correct dat `nielsen_2014_loopvolume` geen significante verschillen tussen opbouwsnelheden vond en minder dan 30% per twee weken adviseert, terwijl de oefennotities van fase 2 en 4 de 10%-regel als vaste regel bleven presenteren · dezelfde bron werd in hetzelfde protocol voor en tegen zichzelf gebruikt
+- Vaste voetnoot uitgebreid · zij dekte alleen de doorstroomcriteria, niet de fasedoelstellingen, waar dezelfde ongebronde drempels staan · nu gelden beide, voor alle 30 protocollen
+- Zeven ongebronde uitspraken in notities en beschrijving aangepakt, waarvan vier superlatieven · schoeisel 600-800 km, volumereductie 20-30%, "belangrijkste mobiliteitsdeficit", "grootste aandeel in plantairflexiekracht", "hoogste fasciabelasting", "pathognomonisch symptoom" en "volledige rust is gecontra-indiceerd"
+- `nielsen_2014_loopvolume` ontbrak in het refs-veld van dit protocol hoewel het in fase 3 geciteerd wordt · toegevoegd
+
 ## 2026-09-05 — bronaudit totale heupprothese
 
 - 16 claims beoordeeld, 15 bronnen eerstehands opgehaald en geverifieerd via PubMed · dit protocol was inhoudelijk beter opgebouwd dan de vorige twee: drie claims hielden volledig stand (`vanderweegen_2016_restricties`, `meermans_2017_anterieur`, en het levenslange artroserisico uit `murphy_2010_levenslangrisico`)

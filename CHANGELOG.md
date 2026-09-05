@@ -3,6 +3,20 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-09-05 — bronaudit meniscusprotocol + zichtbare auditstatus in de app
+
+- Omvang van het probleem gemeten · 320 citatie-instanties over 30 protocollen, 305 uniek — er is nauwelijks overlap tussen protocollen, dus geen snelkoppeling via ontdubbeling
+- Auditstatus zichtbaar gemaakt in de app · elke fase toont nu of de citaties tegen de primaire bron zijn gelegd · `bronstatus.js` wordt gegenereerd uit `data/claims/*.yaml` door `scripts/build-bronstatus.js`, zodat de YAML de enige bron van waarheid blijft
+- Meniscusprotocol geauditeerd · 18 claims, 15 bronnen eerstehands opgehaald en geverifieerd via PubMed
+- Vier claims volledig gedekt · ESCAPE (`vandegraaf_2018_escape`), FIDELITY (`sihvonen_2013_fidelity`), Kise (`kise_2016_oefentherapie`) en Paxton (`paxton_2011_hechting`)
+- Diagnostische testwaarden gecorrigeerd — klinisch het zwaarst · gewrichtsspleetpijn 83% → gepoolde sensitiviteit 63% en specificiteit 77%, McMurray 94% specificiteit → 70% en 71% · en de conclusie omgekeerd: de bron stelt dat geen enkele afzonderlijke test accuraat diagnosticeert en dat de waarde van anamnese plus onderzoek onbekend is, terwijl de app het tegenovergestelde beweerde · `hegedus_2007_meniscustests`
+- Verwijderde ongebronde cijfers · 85-90% compressielast posterieure hoorns, 20% krachtdeficit na vier jaar, faalkans hechting 10-25%, 35% asymptomatische scheuren, aandeel 75% mediale letsels
+- Gecorrigeerde cijfers · artrose 10-15 jaar → 10-20 jaar en gemiddeld 50% na VKB- OF meniscusscheur, niet specifiek na meniscectomie · rood-rode zone 10-30% → 10-25% · FIFA 11+ 30-50% ernstige knieletsels → 39% totale letselincidentie in het voetbal (IRR 0,61) · sporthervatting na hechting 5-6 maanden → 4,3-6,5 maanden met 21% gepoolde faalkans
+- Overschatting teruggebracht · Kise toont een GELIJKWAARDIGE kniefunctie en enkel betere spierkracht op korte termijn, niet een betere kniefunctie
+- Tegenstrijdige evidentie toegevoegd (CLAUDE.md 1.9) · Lohmander stelt uitdrukkelijk dat bescherming tegen artrose door hechting of reconstructie niet aangetoond is, naast de claim dat hechting beter is · en de review over belasten na hechting vindt geen meerwaarde van belastingsbeperking (70-94% tegenover 64-96% goede resultaten)
+- Twee citaties geschrapt wegens verkeerde toeschrijving · Ardern 2013 (de vindbare publicatie gaat over houdingscontrole na VKB-reconstructie) en Makris 2011 (review over weefselengineering, bevat de anatomische vergelijking niet) · Stensrud 2012 en Beaufils & Pujol 2017 waren niet eenduidig terug te vinden
+- Twee bronnen vermeld met de beperking dat enkel het abstract gecontroleerd is · de JOSPT-praktijkrichtlijn en de narratieve review over revalidatie na hechting bevatten in hun abstract niet de uitspraken die eraan werden toegeschreven
+
 ## 2026-09-05 — tweede auditronde en toepassing route B op MCL, pes anserinus en ITB
 
 - Auditomvang uitgebreid van 24 naar 61 claims · de eerste ronde dekte ongeveer veertien van de vijfendertig citaties in deze drie protocollen; de overige circa eenentwintig zijn nu eveneens tegen de primaire bron gecontroleerd

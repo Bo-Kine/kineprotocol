@@ -414,3 +414,312 @@ references:
       significant). De auteurs adviseren minder dan 30% per week, niet 10%.
     geverifieerd_op: 2026-09-05
     geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  # --- Meniscusletsel ---
+
+  - key: vandegraaf_2018_escape
+    auteurs: [van de Graaf VA, Noorduyn JCA, Willigenburg NW, Butter IK, de Gast A, Mol BW, Saris DBF, Twisk JWR, Poolman RW]
+    titel: >-
+      Effect of early surgery vs physical therapy on knee function among patients
+      with nonobstructive meniscal tears: the ESCAPE randomized clinical trial
+    bron: JAMA
+    jaar: 2018
+    volume_paginas: 320(13):1328-1337
+    doi: 10.1001/jama.2018.13308
+    pmid: '30285177'
+    url: https://doi.org/10.1001/jama.2018.13308
+    type: RCT
+    opmerking: >-
+      Non-inferioriteitstrial, 9 Nederlandse ziekenhuizen, 321 deelnemers van 45
+      tot 70 jaar met NIET-OBSTRUCTIEVE scheuren (geen slotklachten). Uitgesloten:
+      instabiliteit, ernstige artrose, BMI boven 35. Kinesitherapie (16 sessies
+      over 8 weken) was niet-inferieur aan artroscopische partiele meniscectomie
+      op de IKDC over 24 maanden; verschil 3,6 punten (97,5% BI tot 6,5).
+      29% van de oefengroep onderging alsnog een meniscectomie.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: sihvonen_2013_fidelity
+    auteurs: [Sihvonen R, Paavola M, Malmivaara A, Itala A, Joukainen A, Nurmi H, Kalske J, Jarvinen TLN]
+    titel: Arthroscopic partial meniscectomy versus sham surgery for a degenerative meniscal tear
+    bron: New England Journal of Medicine
+    jaar: 2013
+    volume_paginas: 369(26):2515-24
+    doi: 10.1056/NEJMoa1305189
+    pmid: '24369076'
+    url: https://doi.org/10.1056/NEJMoa1305189
+    type: RCT
+    opmerking: >-
+      Multicentrische, dubbelblinde, sham-gecontroleerde trial bij 146 patienten
+      van 35 tot 65 jaar met een degeneratieve mediale meniscusscheur EN ZONDER
+      gonartrose. Na 12 maanden geen significante verschillen op Lysholm, WOMET
+      of pijn na inspanning. Geldt uitdrukkelijk niet voor patienten met artrose.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: kise_2016_oefentherapie
+    auteurs: [Kise NJ, Risberg MA, Stensrud S, Ranstam J, Engebretsen L, Roos EM]
+    titel: >-
+      Exercise therapy versus arthroscopic partial meniscectomy for degenerative
+      meniscal tear in middle aged patients: randomised controlled trial with two
+      year follow-up
+    bron: BMJ
+    jaar: 2016
+    volume_paginas: 354:i3740
+    doi: 10.1136/bmj.i3740
+    pmid: '27440192'
+    url: https://doi.org/10.1136/bmj.i3740
+    type: RCT
+    opmerking: >-
+      140 volwassenen, gemiddeld 49,5 jaar, degeneratieve mediale scheur; 96%
+      zonder duidelijke radiografische artrose. Geen klinisch relevant verschil
+      op KOOS4 na twee jaar (0,9 punten; 95% BI -4,3 tot 6,1). Wel BETERE
+      SPIERKRACHT in de oefengroep na drie maanden (p kleiner of gelijk aan
+      0,004) — de auteurs beperken dat voordeel expliciet tot de korte termijn.
+      Kniefunctie was dus GELIJKWAARDIG, niet beter.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: logerstedt_2018_meniscus_cpg
+    auteurs: [Logerstedt DS, Scalzitti DA, Bennell KL, Hinman RS, Silvers-Granelli H, Ebert J, Hambly K, Carey JL, Snyder-Mackler L, Axe MJ, McDonough CM]
+    titel: 'Knee pain and mobility impairments: meniscal and articular cartilage lesions revision 2018'
+    bron: Journal of Orthopaedic and Sports Physical Therapy
+    jaar: 2018
+    volume_paginas: 48(2):A1-A50
+    doi: 10.2519/jospt.2018.0301
+    pmid: '29385940'
+    url: https://doi.org/10.2519/jospt.2018.0301
+    type: richtlijn
+    opmerking: >-
+      Klinische praktijkrichtlijn van de Orthopaedic Section (APTA), herziening
+      2018. Hoogste niveau in de hierarchie van CLAUDE.md 2. LET OP: het
+      PubMed-abstract bevat enkel de scope, niet de afzonderlijke aanbevelingen;
+      specifieke uitspraken die aan deze richtlijn worden toegeschreven zijn in
+      dit dossier niet tegen de volledige tekst gelegd.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: walker_1975_krachtoverdracht
+    auteurs: [Walker PS, Erkman MJ]
+    titel: The role of the menisci in force transmission across the knee
+    bron: Clinical Orthopaedics and Related Research
+    jaar: 1975
+    volume_paginas: (109):184-92
+    doi: 10.1097/00003086-197506000-00027
+    pmid: '1173360'
+    url: https://doi.org/10.1097/00003086-197506000-00027
+    type: cohort
+    opmerking: >-
+      Kadaveronderzoek op 14 knieen. Contact verplaatst zich van lateraal bij 0
+      graden naar POSTEROLATERAAL bij 90 graden flexie. Onder belasting tot 150 kg
+      draagt de laterale meniscus het grootste deel van de last aan die zijde;
+      mediaal wordt de last ongeveer gelijk verdeeld tussen meniscus en
+      blootliggend kraakbeen. Er staat GEEN percentage van 85 tot 90 procent in.
+      TE VERIFIEREN op het type: CLAUDE.md 4 kent geen categorie voor
+      kadaveronderzoek, 'cohort' is hier te sterk.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (search_articles + get_article_metadata)
+
+  - key: vanderhave_2015_belasten
+    auteurs: [VanderHave KL, Perkins C, Le M]
+    titel: Weightbearing versus nonweightbearing after meniscus repair
+    bron: Sports Health
+    jaar: 2015
+    volume_paginas: 7(5):399-402
+    doi: 10.1177/1941738115576898
+    pmid: '26502413'
+    url: https://doi.org/10.1177/1941738115576898
+    type: SR
+    opmerking: >-
+      Systematische review van studies met bewijsniveau 1 tot 4, geen
+      gerandomiseerd onderzoek op zich. Conservatieve protocollen met beperkte
+      belasting gaven 70 tot 94% goede resultaten, versnelde protocollen met
+      onmiddellijke belasting en vroege mobilisatie 64 tot 96%. De review vindt
+      dus GEEN meerwaarde van belastingsbeperking en bevat geen faalcijfer van
+      10 tot 25%.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: cavanaugh_2012_hechtingrevalidatie
+    auteurs: [Cavanaugh JT, Killian SE]
+    titel: Rehabilitation following meniscal repair
+    bron: Current Reviews in Musculoskeletal Medicine
+    jaar: 2012
+    volume_paginas: 5(1):46-58
+    doi: 10.1007/s12178-011-9110-y
+    pmid: '22442106'
+    url: https://doi.org/10.1007/s12178-011-9110-y
+    type: review
+    opmerking: >-
+      Narratieve review over revalidatie na meniscushechting, zonder
+      systematische zoekstrategie. Het abstract beschrijft enkel de opzet;
+      de specifieke doseringsuitspraken die in de app aan deze bron werden
+      toegeschreven (flexiebeperking tot 90 graden, vier weken) zijn in dit
+      dossier NIET tegen de volledige tekst gelegd.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: ericsson_2006_quadriceps
+    auteurs: [Ericsson YB, Roos EM, Dahlberg L]
+    titel: >-
+      Muscle strength, functional performance, and self-reported outcomes four
+      years after arthroscopic partial meniscectomy in middle-aged patients
+    bron: Arthritis and Rheumatism
+    jaar: 2006
+    volume_paginas: 55(6):946-52
+    doi: 10.1002/art.22346
+    pmid: '17139641'
+    url: https://doi.org/10.1002/art.22346
+    type: cohort
+    opmerking: >-
+      45 patienten, gemiddeld 46,7 jaar, gemiddeld vier jaar na artroscopische
+      partiele meniscectomie. Lagere knie-extensorkracht aan de geopereerde zijde
+      (p kleiner of gelijk aan 0,004), geen verschil voor de flexoren. Een
+      sterkere quadriceps hing samen met minder pijn en betere functie en
+      levenskwaliteit (r = 0,4 tot 0,6). Er staat GEEN krachtdeficit van 20% in.
+      Het artikel verscheen in Arthritis and Rheumatism, niet in Scandinavian
+      Journal of Medicine and Science in Sports zoals de app vermeldde.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (search_articles + get_article_metadata)
+
+  - key: lohmander_2007_artrose
+    auteurs: [Lohmander LS, Englund PM, Dahl LL, Roos EM]
+    titel: 'The long-term consequence of anterior cruciate ligament and meniscus injuries: osteoarthritis'
+    bron: American Journal of Sports Medicine
+    jaar: 2007
+    volume_paginas: 35(10):1756-69
+    doi: 10.1177/0363546507307396
+    pmid: '17761605'
+    url: https://doi.org/10.1177/0363546507307396
+    type: review
+    opmerking: >-
+      Narratieve review. Kerncijfer: 10 tot 20 jaar na de diagnose heeft
+      GEMIDDELD 50% van de mensen met een vastgestelde VKB- OF meniscusscheur
+      artrose met pijn en functiebeperking. Dat geldt dus voor de diagnose, niet
+      specifiek voor (sub)totale meniscectomie. TEGENSTRIJDIGE EVIDENTIE
+      (CLAUDE.md 1.9): de auteurs stellen uitdrukkelijk dat er GEEN bewijs is dat
+      hechting of reconstructie beschermt tegen het ontstaan van artrose.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: hegedus_2007_meniscustests
+    auteurs: [Hegedus EJ, Cook C, Hasselblad V, Goode A, McCrory DC]
+    titel: 'Physical examination tests for assessing a torn meniscus in the knee: a systematic review with meta-analysis'
+    bron: Journal of Orthopaedic and Sports Physical Therapy
+    jaar: 2007
+    volume_paginas: 37(9):541-50
+    doi: 10.2519/jospt.2007.2560
+    pmid: '17939613'
+    url: https://doi.org/10.2519/jospt.2007.2560
+    type: SR
+    opmerking: >-
+      Systematische review met meta-analyse, 18 studies. Gepoolde sensitiviteit en
+      specificiteit: McMurray 70% en 71%, Apley 60% en 70%, gewrichtsspleetpijn
+      63% en 77%. De auteurs besluiten dat GEEN ENKELE afzonderlijke test een
+      meniscusscheur accuraat diagnosticeert en dat de waarde van anamnese plus
+      klinisch onderzoek ONBEKEND is; zij pleiten voor het ontwikkelen van een
+      klinische predictieregel. De cijfers 83% en 94% uit de app staan er niet in.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: englund_2008_toevalsbevindingen
+    auteurs: [Englund M, Guermazi A, Gale D, Hunter DJ, Aliabadi P, Clancy M, Felson DT]
+    titel: Incidental meniscal findings on knee MRI in middle-aged and elderly persons
+    bron: New England Journal of Medicine
+    jaar: 2008
+    volume_paginas: 359(11):1108-15
+    doi: 10.1056/NEJMoa0800777
+    pmid: '18784100'
+    url: https://doi.org/10.1056/NEJMoa0800777
+    type: cohort
+    opmerking: >-
+      Framingham-cohort, 991 deelnemers van 50 tot 90 jaar, MRI van de rechterknie.
+      Prevalentie van een meniscusscheur of -destructie liep van 19% (vrouwen 50
+      tot 59 jaar) tot 56% (mannen 70 tot 90 jaar). Bij mensen ZONDER radiografische
+      artrose: 32% met klachten tegenover 23% zonder klachten. 61% van wie een
+      scheur had, had de voorbije maand geen pijn, stijfheid of hinder. Het cijfer
+      35% uit de app komt in de bron niet voor.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: arnoczky_1982_vascularisatie
+    auteurs: [Arnoczky SP, Warren RF]
+    titel: Microvasculature of the human meniscus
+    bron: American Journal of Sports Medicine
+    jaar: 1982
+    volume_paginas: 10(2):90-5
+    doi: 10.1177/036354658201000205
+    pmid: '7081532'
+    url: https://doi.org/10.1177/036354658201000205
+    type: cohort
+    opmerking: >-
+      Kadaveronderzoek op 20 preparaten. De perimeniscale capillaire plexus,
+      afkomstig uit kapsel en synovium, voorziet de perifere 10 tot 25% van de
+      menisci — niet 10 tot 30% zoals de app vermeldde. Het posterolaterale deel
+      van de laterale meniscus bij de popliteuspees heeft geen doordringende
+      perifere vaten. TE VERIFIEREN op het type: kadaveronderzoek past niet in de
+      typelijst van CLAUDE.md 4.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: eberbach_2018_sporthervatting
+    auteurs: [Eberbach H, Zwingmann J, Hohloch L, Bode G, Maier D, Niemeyer P, Sudkamp NP, Feucht MJ]
+    titel: 'Sport-specific outcomes after isolated meniscal repair: a systematic review'
+    bron: Knee Surgery, Sports Traumatology, Arthroscopy
+    jaar: 2018
+    volume_paginas: 26(3):762-771
+    doi: 10.1007/s00167-017-4463-4
+    pmid: '28243702'
+    url: https://doi.org/10.1007/s00167-017-4463-4
+    type: SR
+    opmerking: >-
+      28 studies, 664 patienten, gemiddelde leeftijd 26 jaar, geisoleerde
+      meniscushechting. Terugkeer naar het niveau van voor het letsel bij 89%.
+      Gemiddelde vertraging tot sporthervatting 4,3 tot 6,5 maanden. GEPOOLDE
+      FAALKANS 21% (9% bij professionals, 22% bij gemengde niveaus). De bron
+      bevat geen vergelijkende tijdslijn voor meniscectomie. TE VERIFIEREN op het
+      jaartal: PubMed geeft 2017 als publicatiedatum terwijl het tijdschriftnummer
+      26(3) uit 2018 stamt.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (search_articles + get_article_metadata)
+
+  - key: paxton_2011_hechting
+    auteurs: [Paxton ES, Stock MV, Brophy RH]
+    titel: 'Meniscal repair versus partial meniscectomy: a systematic review comparing reoperation rates and clinical outcomes'
+    bron: Arthroscopy
+    jaar: 2011
+    volume_paginas: 27(9):1275-88
+    doi: 10.1016/j.arthro.2011.03.088
+    pmid: '21820843'
+    url: https://doi.org/10.1016/j.arthro.2011.03.088
+    type: SR
+    opmerking: >-
+      Systematische review van studies met bewijsniveau 1 tot 4 (zelf niveau 4).
+      Heroperatie na partiele meniscectomie 1,4% op korte en 3,9% op lange termijn,
+      tegenover 16,5% en 20,7% na geisoleerde hechting. In het beperkte aantal
+      studies met langetermijnuitkomsten gaf hechting hogere Lysholm-scores en
+      minder radiologische degeneratie.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: thorborg_2017_fifa11
+    auteurs: [Thorborg K, Krommes KK, Esteve E, Clausen MB, Bartels EM, Rathleff MS]
+    titel: >-
+      Effect of specific exercise-based football injury prevention programmes on
+      the overall injury rate in football: a systematic review and meta-analysis
+      of the FIFA 11 and 11+ programmes
+    bron: British Journal of Sports Medicine
+    jaar: 2017
+    volume_paginas: 51(7):562-571
+    doi: 10.1136/bjsports-2016-097066
+    pmid: '28087568'
+    url: https://doi.org/10.1136/bjsports-2016-097066
+    type: SR
+    opmerking: >-
+      Zes cluster-gerandomiseerde trials bij recreatieve en subelite voetballers.
+      Uitkomstmaat is de TOTALE letselincidentie in het voetbal, niet ernstige
+      knieletsels. FIFA 11+ verlaagde het totale letselrisico met 39% (IRR 0,61;
+      95% BI 0,48-0,77). Voor FIFA 11 werd GEEN effect aangetoond (IRR 0,99;
+      95% BI 0,80-1,23). Het bereik 30 tot 50% uit de app staat er niet in.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (search_articles + get_article_metadata)

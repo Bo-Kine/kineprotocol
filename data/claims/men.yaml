@@ -1,0 +1,285 @@
+protocol: men
+laatst_gecontroleerd: 2026-09-05
+versie: 1
+fase_a_door: hoofdagent, alle metadata eerstehands opgehaald via PubMed MCP
+fase_b_door: nog uit te voeren
+
+claims:
+  - id: men_c01
+    tekst: >-
+      Bij niet-obstructieve meniscusscheuren is gesuperviseerde kinesitherapie
+      niet-inferieur aan artroscopische partiele meniscectomie op de IKDC na 24 maanden
+    plaats: protocols.men fase 1 evidence
+    bronnen: [vandegraaf_2018_escape]
+    gedekt: ja
+    opmerking: >-
+      GEDEKT. 321 deelnemers van 45 tot 70 jaar, verschil 3,6 punten
+      (97,5% BI tot 6,5; p voor non-inferioriteit = 0,001). De app sprak van
+      "degeneratieve" scheuren; het inclusiecriterium was NIET-OBSTRUCTIEF
+      (geen slotklachten). Term aangescherpt, en vermeld dat 29% van de
+      oefengroep alsnog geopereerd werd.
+    verwerkt: >-
+      populatie en overstappercentage toegevoegd aan de evidencetekst
+
+  - id: men_c02
+    tekst: Artroscopische partiele meniscectomie is niet beter dan sham-chirurgie bij een degeneratieve scheur
+    plaats: protocols.men fase 1 evidence
+    bronnen: [sihvonen_2013_fidelity]
+    gedekt: ja
+    opmerking: >-
+      GEDEKT. 146 patienten van 35 tot 65 jaar, dubbelblind, sham-gecontroleerd.
+      Geen significante verschillen op Lysholm, WOMET of pijn na inspanning na
+      12 maanden. Belangrijke inperking die in de app ontbrak: de deelnemers
+      hadden GEEN gonartrose.
+    verwerkt: >-
+      inperking "zonder gonartrose" toegevoegd aan de evidencetekst
+
+  - id: men_c03
+    tekst: >-
+      Na meniscushechting beschermt flexiebeperking tot 90 graden gedurende vier weken
+      het hechtingsgebied, omdat flexie boven 90 graden de posterieure hoorn comprimeert
+    plaats: protocols.men fase 1 evidence
+    bronnen: [cavanaugh_2012_hechtingrevalidatie]
+    gedekt: nee
+    opmerking: >-
+      NIET TE BEVESTIGEN. De bron is een narratieve review zonder systematische
+      zoekstrategie; het abstract beschrijft enkel de opzet en bevat de
+      doseringsuitspraak niet. De volledige tekst is in dit dossier niet
+      geraadpleegd, dus de claim mag niet als gedekt gelden (CLAUDE.md 1.4).
+    verwerkt: >-
+      dosering behouden als praktijkprotocol, bron gelabeld als narratieve
+      review, mechanismeclaim niet langer als bronbevinding gepresenteerd
+
+  - id: men_c04
+    tekst: De richtlijn ondersteunt vroege gecontroleerde mobilisatie boven strikte immobilisatie
+    plaats: protocols.men fase 1 evidence
+    bronnen: [logerstedt_2018_meniscus_cpg]
+    gedekt: nee
+    opmerking: >-
+      BRON BESTAAT EN IS VAN HET JUISTE NIVEAU, CLAIM NIET GECONTROLEERD. Het
+      PubMed-abstract van deze praktijkrichtlijn bevat enkel de scope, niet de
+      afzonderlijke aanbevelingen. Hetzelfde geldt voor de twee andere uitspraken
+      die in fase 3 en 4 aan deze richtlijn worden toegeschreven (step-down met
+      bewegingskwaliteitsfeedback, plyometrische opbouw).
+    verwerkt: >-
+      richtlijn blijft vermeld als richtlijn, de afzonderlijke uitspraken zijn
+      gelabeld als niet tegen de volledige tekst gelegd
+
+  - id: men_c05
+    tekst: De posterieure hoorns dragen tot 85-90% van de compressielast bij 90 graden flexie
+    plaats: protocols.men fase 2 evidence
+    bronnen: [walker_1975_krachtoverdracht]
+    gedekt: nee
+    opmerking: >-
+      CIJFER STAAT NIET IN DE BRON. Het kadaveronderzoek toont wel dat het
+      contactgebied bij 90 graden flexie naar POSTEROLATERAAL verschuift, en dat
+      onder belasting de laterale meniscus het grootste deel van de last aan die
+      zijde draagt terwijl mediaal de last ongeveer gelijk verdeeld wordt tussen
+      meniscus en blootliggend kraakbeen. Geen percentage van 85 tot 90.
+    verwerkt: >-
+      percentage geschrapt, de wel gedekte verschuiving naar posterieur behouden
+
+  - id: men_c06
+    tekst: >-
+      Twaalf weken progressieve oefentherapie is gelijkwaardig aan meniscectomie op de KOOS
+      na twee jaar, met grotere krachtwinst in de oefengroep
+    plaats: protocols.men fase 2 evidence
+    bronnen: [kise_2016_oefentherapie]
+    gedekt: ja
+    opmerking: >-
+      GEDEKT. 140 volwassenen, gemiddeld 49,5 jaar; verschil op KOOS4 na twee
+      jaar 0,9 punten (95% BI -4,3 tot 6,1; p = 0,72). Krachtwinst in de
+      oefengroep na drie maanden (p kleiner of gelijk aan 0,004), door de auteurs
+      uitdrukkelijk beperkt tot de korte termijn. 19% stapte over naar chirurgie,
+      zonder extra winst.
+    verwerkt: >-
+      termijn van de krachtwinst en overstappercentage toegevoegd
+
+  - id: men_c07
+    tekst: >-
+      Progressieve training verbetert kniefunctie EN spierkracht significant meer
+      dan meniscectomie bij middelbare patienten
+    plaats: protocols.men fase 3 evidence
+    bronnen: [kise_2016_oefentherapie]
+    gedekt: nee
+    opmerking: >-
+      OVERSCHATTING VAN DE BRON. De kniefunctie was GELIJKWAARDIG, niet beter;
+      enkel de spierkracht verbeterde meer, en enkel op korte termijn. De
+      toegevoegde citatie Stensrud et al. 2012 is met gerichte zoekopdrachten
+      niet teruggevonden.
+    verwerkt: >-
+      claim teruggebracht tot wat de bron zegt, niet-vindbare citatie geschrapt
+
+  - id: men_c08
+    tekst: >-
+      Na meniscushechting worden belaste diepe flexie en rotatie pas na 6-8 weken
+      geintroduceerd om de faalkans van de hechting (10-25%) niet te verhogen
+    plaats: protocols.men fase 2 evidence
+    bronnen: [vanderhave_2015_belasten, eberbach_2018_sporthervatting]
+    gedekt: nee
+    opmerking: >-
+      DE BRON NEIGT NAAR HET TEGENDEEL (CLAUDE.md 1.9). De systematische review
+      over belasten na meniscushechting vond met beperkte belasting 70 tot 94%
+      goede resultaten en met onmiddellijke belasting en vroege mobilisatie 64
+      tot 96% — dus geen aantoonbare meerwaarde van belastingsbeperking. Zij is
+      bovendien geen gerandomiseerd onderzoek maar een review van niveau 1 tot 4,
+      en bevat geen faalcijfer. Een gepoolde faalkans van 21% staat wel in de
+      systematische review over sporthervatting. Beaufils en Pujol 2017 kon niet
+      eenduidig geidentificeerd worden.
+    verwerkt: >-
+      faalcijfer vervangen door de gedekte 21%, de tegenstrijdige bevinding over
+      belasten expliciet in de tekst opgenomen, tijdslijn gelabeld als
+      praktijkprotocol
+
+  - id: men_c09
+    tekst: Patienten tonen tot 20% krachtdeficit vier jaar na meniscectomie
+    plaats: protocols.men fase 3 evidence
+    bronnen: [ericsson_2006_quadriceps]
+    gedekt: nee
+    opmerking: >-
+      CIJFER EN TIJDSCHRIFT KLOPPEN NIET. De bron toont wel significant lagere
+      knie-extensorkracht aan de geopereerde zijde vier jaar na de ingreep
+      (p kleiner of gelijk aan 0,004) en een samenhang tussen quadricepskracht en
+      pijn, functie en levenskwaliteit (r = 0,4 tot 0,6), maar geeft geen
+      percentage van 20%. Het artikel verscheen in Arthritis and Rheumatism, niet
+      in Scandinavian Journal of Medicine and Science in Sports.
+    verwerkt: >-
+      percentage geschrapt, bevinding en tijdschrift gecorrigeerd
+
+  - id: men_c10
+    tekst: >-
+      Na meniscushechting keert de atleet gemiddeld pas na 5-6 maanden terug naar sport
+      tegenover 7-9 weken na meniscectomie
+    plaats: protocols.men fase 4 evidence
+    bronnen: [eberbach_2018_sporthervatting]
+    gedekt: deels
+    opmerking: >-
+      HELFT GEDEKT. De systematische review van 28 studies en 664 patienten geeft
+      een gemiddelde vertraging tot sporthervatting van 4,3 tot 6,5 maanden en
+      terugkeer naar het niveau van voor het letsel bij 89%. De vergelijkende
+      tijdslijn van 7 tot 9 weken na meniscectomie staat NIET in deze bron.
+    verwerkt: >-
+      bronwaarde 4,3 tot 6,5 maanden overgenomen, vergelijkende tijdslijn
+      gelabeld als praktijkprotocol
+
+  - id: men_c11
+    tekst: Kinesiofobie en lage psychologische gereedheid voorspellen mislukte sporthervatting
+    plaats: protocols.men fase 4 evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      VERKEERDE TOESCHRIJVING. De citatie Ardern et al. 2013 - Br J Sports Med
+      is niet eenduidig te herleiden; de publicatie die de zoekopdracht oplevert
+      gaat over houdingscontrole met een Wii-balansbord na VKB-reconstructie en
+      dekt de claim niet. Het onderliggende onderzoeksveld betreft bovendien
+      VKB-reconstructie, niet meniscusletsel.
+    verwerkt: >-
+      citatie geschrapt, klinische lijn behouden als redenering
+
+  - id: men_c12
+    tekst: 10-15 jaar na (sub)totale meniscectomie vertoont tot 50% radiografische gonartrose
+    plaats: protocols.men fase 5 evidence
+    bronnen: [lohmander_2007_artrose]
+    gedekt: nee
+    opmerking: >-
+      DRIE AFWIJKINGEN. De bron zegt 10 tot 20 jaar (niet 10 tot 15), na een
+      vastgestelde VKB- OF meniscusscheur (niet specifiek na (sub)totale
+      meniscectomie), en GEMIDDELD 50% (niet "tot 50%"). TEGENSTRIJDIGE
+      EVIDENTIE die in de app ontbrak: dezelfde bron stelt uitdrukkelijk dat er
+      geen bewijs is dat hechting of reconstructie beschermt tegen artrose.
+    verwerkt: >-
+      cijfers en populatie gecorrigeerd, tegenstrijdige bevinding toegevoegd
+
+  - id: men_c13
+    tekst: >-
+      Meniscushechting geeft op lange termijn betere kniefunctie en minder
+      artroseprogressie dan meniscectomie, ondanks het herruptuurrisico
+    plaats: protocols.men fase 5 evidence
+    bronnen: [paxton_2011_hechting]
+    gedekt: ja
+    opmerking: >-
+      GEDEKT, met beperking. In het beperkte aantal studies met
+      langetermijnuitkomsten gaf hechting hogere Lysholm-scores en minder
+      radiologische degeneratie. Concrete heroperatiecijfers: 1,4% en 3,9% na
+      meniscectomie tegenover 16,5% en 20,7% na hechting. Zelf bewijsniveau 4.
+      LET OP de spanning met lohmander_2007_artrose, die stelt dat bescherming
+      tegen artrose door chirurgie niet aangetoond is.
+    verwerkt: >-
+      heroperatiecijfers en bewijsniveau toegevoegd, spanning met de andere bron
+      expliciet benoemd
+
+  - id: men_c14
+    tekst: >-
+      Neuromusculaire preventieprogramma's van het FIFA 11+ type reduceren ernstige
+      knieletsels bij pivotsporters met 30-50%
+    plaats: protocols.men fase 5 evidence
+    bronnen: [thorborg_2017_fifa11]
+    gedekt: nee
+    opmerking: >-
+      UITKOMSTMAAT, CIJFER EN POPULATIE KLOPPEN NIET. De meta-analyse van zes
+      cluster-gerandomiseerde trials meet de TOTALE letselincidentie in het
+      voetbal bij recreatieve en subelite spelers, niet ernstige knieletsels bij
+      pivotsporters. FIFA 11+ gaf een reductie van 39% (IRR 0,61; 95% BI
+      0,48-0,77). Voor FIFA 11 werd geen effect aangetoond (IRR 0,99).
+    verwerkt: >-
+      uitkomstmaat, cijfer en populatie gecorrigeerd, en het ontbrekende effect
+      van FIFA 11 vermeld
+
+  - id: men_c15
+    tekst: >-
+      Gewrichtsspleetpijn heeft een sensitiviteit van circa 83% en de McMurray-test
+      een specificiteit van circa 94%; clusterdiagnostiek verhoogt de accuraatheid
+    plaats: BESCHRIJVING.men
+    bronnen: [hegedus_2007_meniscustests]
+    gedekt: nee
+    opmerking: >-
+      BEIDE CIJFERS ONJUIST EN DE CONCLUSIE OMGEKEERD. De meta-analyse van 18
+      studies geeft gepoolde waarden van 70% sensitiviteit en 71% specificiteit
+      voor McMurray, 60% en 70% voor Apley, en 63% en 77% voor gewrichtsspleetpijn.
+      De auteurs besluiten dat GEEN ENKELE afzonderlijke test accuraat
+      diagnosticeert en dat de waarde van anamnese plus klinisch onderzoek
+      ONBEKEND is. De claim over clusterdiagnostiek keert die conclusie om.
+      Dit is diagnostische inhoud en dus klinisch zwaarwegend.
+    verwerkt: >-
+      alle testwaarden vervangen door de gepoolde cijfers uit de bron en de
+      conclusie van de auteurs letterlijk overgenomen
+
+  - id: men_c16
+    tekst: Tot 35% van de asymptomatische 50-plussers vertoont meniscusscheuren op MRI
+    plaats: BESCHRIJVING.men
+    bronnen: [englund_2008_toevalsbevindingen]
+    gedekt: nee
+    opmerking: >-
+      CIJFER STAAT NIET IN DE BRON. Het Framingham-cohort (991 deelnemers van 50
+      tot 90 jaar) geeft een prevalentie van 19% bij vrouwen van 50 tot 59 jaar
+      tot 56% bij mannen van 70 tot 90 jaar. Bij mensen zonder radiografische
+      artrose: 23% van wie geen klachten had. En 61% van wie een scheur had, had
+      de voorbije maand geen klachten. De boodschap van de app klopt, de
+      onderbouwing niet.
+    verwerkt: >-
+      cijfer vervangen door de leeftijds- en geslachtsgebonden bereiken uit de bron
+
+  - id: men_c17
+    tekst: De perifere rood-rode zone beslaat de buitenste 10-30% en is doorbloed
+    plaats: BESCHRIJVING.men
+    bronnen: [arnoczky_1982_vascularisatie]
+    gedekt: nee
+    opmerking: >-
+      BEREIK KLOPT NIET. Het kadaveronderzoek op 20 preparaten geeft de perifere
+      10 tot 25%, niet 10 tot 30%. Een klein verschil, maar CLAUDE.md 1.6 laat
+      geen bijstelling van getallen toe.
+    verwerkt: >-
+      bereik gecorrigeerd naar 10 tot 25%
+
+  - id: men_c18
+    tekst: De mediale meniscus is kwetsbaarder door stevigere kapselverankering en geringere mobiliteit
+    plaats: BESCHRIJVING.men
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      NIET TE BEVESTIGEN UIT DE TOEGESCHREVEN BRON. Makris et al. 2011 is een
+      review over structuur, functie en weefselengineering van de meniscus; het
+      abstract bevat deze anatomische vergelijking niet en de volledige tekst is
+      niet geraadpleegd.
+    verwerkt: >-
+      citatie geschrapt, uitspraak behouden als klinische redenering

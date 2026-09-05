@@ -2,19 +2,24 @@ protocol: itb
 laatst_gecontroleerd: 2026-09-05
 versie: 1
 fase_a_door: zoekagent (PubMed) + hoofdagent, metadata eerstehands opgehaald
-fase_b_door: nog uit te voeren
+fase_b_door: onafhankelijke verificator met schone context, 2026-09-05; twee dekkingsoordelen bijgesteld
 
 claims:
   - id: itb_c01
     tekst: ITBS ontstaat door compressie van een sterk geinnerveerd vetlichaam onder de tractus bij circa 30 graden knieflexie; de compressietheorie verving de frictietheorie
     plaats: protocols.itb fase 1 evidence + BESCHRIJVING.itb
     bronnen: [fairclough_2006_anatomie, fairclough_2006_frictie]
-    gedekt: ja
+    gedekt: deels
     opmerking: >-
-      Kadaver- en MRI-onderzoek: compressie tegen de epicondyl bij 30 graden
-      flexie door tibiale endorotatie, richly innervated and vascularized fat,
-      in geen enkel preparaat een bursa. Het tweede artikel is een commentary
-      dat het frictiemodel expliciet verwerpt.
+      BIJGESTELD NA FASE B: eerst op ja gezet, dat was te soepel. De anatomische
+      bevindingen zijn hard: compressie tegen de epicondyl bij 30 graden flexie
+      door tibiale endorotatie, sterk geinnerveerd en gevasculariseerd vetweefsel,
+      in geen enkel preparaat een bursa. Maar de bron formuleert het oorzakelijk
+      verband als HYPOTHESE ("may be more likely to be associated with fat
+      compression"), niet als vastgesteld feit. En dat de compressietheorie de
+      frictietheorie heeft "vervangen" volgt niet uit twee publicaties van
+      dezelfde auteursgroep. De formulering in de app moet die voorzichtigheid
+      overnemen.
 
   - id: itb_c02
     tekst: Lopers met ITBS tonen 24% minder heupabductorkracht dan gezonde controlepersonen; gluteus medius-zwakte is de sterkste biomechanische risicofactor
@@ -57,9 +62,11 @@ claims:
     gedekt: ja
     opmerking: >-
       Systematische review, 13 studies, 201 deelnemers: heupabductorversterking
-      komt naar voren als gemeenschappelijke effectieve strategie, met
-      pijnreductie 27 tot 100% en functieverbetering 10 tot 57% over 2 tot 8
-      weken. Grote heterogeniteit, geen meta-analyse mogelijk.
+      komt naar voren als gemeenschappelijke strategie en de review besluit dat
+      een aanpak MET die oefeningen effectief is. LET OP (bijgesteld na fase B):
+      de bereiken pijnreductie 27 tot 100% en functieverbetering 10 tot 57% over
+      2 tot 8 weken gelden voor ALLE onderzochte interventies samen, niet voor
+      heupabductorversterking alleen. Grote heterogeniteit, geen meta-analyse.
 
   - id: itb_c06
     tekst: De klassieke ITB-stretch is conceptueel achterhaald omdat de tractus nauwelijks rekbaar is

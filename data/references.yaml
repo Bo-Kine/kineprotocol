@@ -185,8 +185,9 @@ references:
     type: cohort
     opmerking: >-
       Kadaverstudie (15) plus MRI bij 6 asymptomatische vrijwilligers en 2
-      patienten. Compressie tegen de epicondyl bij 30 graden knieflexie; in
-      geen enkel preparaat werd een bursa gezien.
+      patienten; geen klinisch cohort. Compressie tegen de epicondyl bij 30
+      graden knieflexie; in geen enkel preparaat werd een bursa gezien.
+      TE VERIFIEREN: zelfde typeprobleem als bij falvey_2009_itb.
     geverifieerd_op: 2026-09-05
     geverifieerd_door: PubMed MCP (get_article_metadata, PMID 16533314)
 
@@ -195,11 +196,15 @@ references:
     titel: Is iliotibial band syndrome really a friction syndrome?
     bron: Journal of Science and Medicine in Sport
     jaar: 2006
-    volume_paginas: 10(2):74-6
+    volume_paginas: 10(2):74-6; discussion 77-8
     doi: 10.1016/j.jsams.2006.05.017
     pmid: '16996312'
     url: https://doi.org/10.1016/j.jsams.2006.05.017
     type: commentary
+    opmerking: >-
+      TE VERIFIEREN: PubMed geeft 2006-09-22 als elektronische publicatiedatum,
+      maar nummer 10(2) van dit tijdschrift lijkt bij 2007 te horen. Het
+      Vancouver-jaar is daarmee onzeker. Niet zelf ingevuld.
     geverifieerd_op: 2026-09-05
     geverifieerd_door: PubMed MCP (get_article_metadata, PMID 16996312)
 
@@ -276,7 +281,7 @@ references:
     geverifieerd_door: PubMed MCP (get_article_metadata, PMID 39247485)
 
   - key: uysal_2014_pab
-    auteurs: [Uysal F, Akbal A, Gokmen F, Adam G, Resorlu M]
+    auteurs: [Uysal F, Akbal A, Gökmen F, Adam G, Reşorlu M]
     titel: >-
       Prevalence of pes anserine bursitis in symptomatic osteoarthritis
       patients: an ultrasonographic prospective study
@@ -290,6 +295,8 @@ references:
     opmerking: >-
       85 patienten, 170 knieen met symptomatische gonartrose. Echografische
       prevalentie van pes anserinus-bursitis 20% (34/170), niet 2,5 tot 19%.
+      TE VERIFIEREN: PubMed geeft 2014-05-06 als elektronische publicatiedatum,
+      maar nummer 34(3) lijkt bij 2015 te horen.
     geverifieerd_op: 2026-09-05
     geverifieerd_door: PubMed MCP (get_article_metadata, PMID 24797774)
 

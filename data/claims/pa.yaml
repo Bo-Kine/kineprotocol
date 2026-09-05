@@ -2,7 +2,7 @@ protocol: pa
 laatst_gecontroleerd: 2026-09-05
 versie: 1
 fase_a_door: zoekagent (PubMed) + hoofdagent, metadata eerstehands opgehaald
-fase_b_door: nog uit te voeren
+fase_b_door: onafhankelijke verificator met schone context, 2026-09-05; alle oordelen bevestigd
 
 claims:
   - id: pa_c01

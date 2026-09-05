@@ -10,6 +10,13 @@ Formaat per regel: wat · waarom · bron.
 - Pes anserinus · 0 van 7 claims gedekt · het cijfer 2,5-19% klopt niet en er is tegenstrijdige evidentie: één case-controlstudie vond juist geen associatie met gonartrose · uysal_2014_pab, alvareznemegyei_2007_risicofactoren
 - ITB · 2 van 6 gedekt · de compressietheorie en het effect van heupabductorversterking zijn goed onderbouwd; het cijfer 24% krachtverschil en de 20% momentdaling staan niet in de bronnen · fairclough_2006_anatomie, fairclough_2006_frictie, sanchezalvarado_2024_itbs
 - Validator aangepast · een referentie zonder DOI maar mét PMID is nu geldig · §4 laat falen bij ontbreken van DOI/PMID, dus van beide · barber_1990_hoptest heeft geen DOI in PubMed
+- Fase B uitgevoerd door een onafhankelijke verificator met schone context · alle elf PMID's wijzen naar het vermelde artikel en elk geciteerd cijfer staat letterlijk in de bron · vijf correcties op fase A doorgevoerd
+- `itb_c01` bijgesteld van gedekt naar deels · de bron formuleert compressie als hypothese, niet als vastgesteld oorzakelijk verband, en "de compressietheorie verving de frictietheorie" volgt niet uit twee publicaties van dezelfde auteursgroep
+- `itb_c05` opmerking gecorrigeerd · de effectbereiken 27-100% en 10-57% gelden voor alle onderzochte interventies samen, niet voor heupabductorversterking alleen
+- `fairclough_2006_frictie` paginering aangevuld met het discussiegedeelte · letterlijk zoals PubMed die geeft
+- `uysal_2014_pab` auteursnamen met diakritische tekens hersteld · Gökmen en Reşorlu
+- Drie referenties gemarkeerd met TE VERIFIEREN op het jaartal · PubMed geeft de elektronische publicatiedatum terwijl het tijdschriftnummer bij het jaar erna hoort · niet zelf ingevuld
+- Twee kadaverstudies gemarkeerd met TE VERIFIEREN op het type · de typelijst in §4 kent geen categorie voor kadaver- of laboratoriumonderzoek, nu als cohort gelabeld wat te sterk is
 - `protocols.js` nog niet aangepast · de omvang van de niet-gedekte claims vraagt een beslissing van de kinesitherapeut
 
 

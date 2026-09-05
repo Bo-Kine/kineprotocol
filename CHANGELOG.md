@@ -17,6 +17,12 @@ Formaat per regel: wat · waarom · bron.
 - Twee citaties geschrapt wegens verkeerde toeschrijving · Ardern 2013 (de vindbare publicatie gaat over houdingscontrole na VKB-reconstructie) en Makris 2011 (review over weefselengineering, bevat de anatomische vergelijking niet) · Stensrud 2012 en Beaufils & Pujol 2017 waren niet eenduidig terug te vinden
 - Twee bronnen vermeld met de beperking dat enkel het abstract gecontroleerd is · de JOSPT-praktijkrichtlijn en de narratieve review over revalidatie na hechting bevatten in hun abstract niet de uitspraken die eraan werden toegeschreven
 
+- Fase B op het meniscusprotocol · 17 citaties gecontroleerd, 3 inhoudelijke fouten en 8 ongelabelde cijfers gevonden, alle verwerkt
+- TWEEDE FOUT VAN MIJZELF GECORRIGEERD, OP TWEE PLAATSEN · ik schreef de 84% herletselreductie van `grindem_2016_rtscriteria` toe aan het halen van krachtcriteria · die 84% (HR 0,16) hoort bij het slagen voor de VOLLEDIGE testbatterij en was NIET statistisch significant (p = 0,075) · significant waren wel: 51% risicoreductie per maand uitstel tot negen maanden, en een symmetrischer quadricepskracht voor terugkeer · eerstehands nagekeken, gecorrigeerd in zowel het meniscus- als het MCL-protocol
+- `thorborg_2017_fifa11` gepreciseerd · de 39% (IRR 0,61) komt uit de pooling van enkel de vier FIFA 11+-studies; de zes trials samen gaven een risicoratio van 0,75 · beide analyses nu apart vermeld
+- `walker_1975_krachtoverdracht` genuanceerd · de verschuiving naar posterolateraal bij 90 graden geldt in de bron voor de ONBELASTE toestand, wat ik had weggelaten terwijl de zin een belastingsbeperking rechtvaardigt
+- Acht ongebronde cijfers buiten de evidenceteksten gelabeld of verwijderd · hemartros binnen 2 uur, VKB-ruptuur bij 50%, verdubbeld meniscusrisico, exponentiele drukstijging voorbij 60-90 graden, weerstandsflexie vanaf week 6, en de kniebelasting per kilogram — die laatste nu onderbouwd met `messier_2005_knielast`
+
 ## 2026-09-05 — tweede auditronde en toepassing route B op MCL, pes anserinus en ITB
 
 - Auditomvang uitgebreid van 24 naar 61 claims · de eerste ronde dekte ongeveer veertien van de vijfendertig citaties in deze drie protocollen; de overige circa eenentwintig zijn nu eveneens tegen de primaire bron gecontroleerd

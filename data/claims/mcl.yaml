@@ -263,3 +263,18 @@ claims:
       ratio's, geen sRPE, geen 10%-regel en geen 30%. Schrappen.
     verwerkt: >-
       cijfer of citatie geschrapt uit protocols.js; klinische lijn behouden als redenering (route B, 2026-09-05)
+
+  - id: mcl_c23
+    tekst: Uitstel tot negen maanden met krachtcriteria verlaagt het herletselrisico met 84%
+    plaats: protocols.mcl fase 5 evidence
+    bronnen: [grindem_2016_rtscriteria]
+    gedekt: nee
+    opmerking: >-
+      FOUT VAN MIJZELF, GEVONDEN IN DE FASE B VAN HET MENISCUSPROTOCOL. Ik had
+      twee bevindingen van dezelfde studie samengevoegd. De 84% (HR 0,16) hoort
+      bij het slagen voor de volledige testbatterij en was NIET significant
+      (p = 0,075). Significant waren: 51% risicoreductie per maand uitstel tot
+      negen maanden, en een symmetrischer quadricepskracht voor terugkeer.
+    verwerkt: >-
+      tekst vervangen door de significante bevindingen, met de niet-significante
+      84% expliciet als zodanig benoemd

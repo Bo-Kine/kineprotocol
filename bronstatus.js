@@ -17,16 +17,16 @@ const BRONSTATUS = {
     "datum": "2026-09-05"
   },
   "mcl": {
-    "gecontroleerd": 22,
+    "gecontroleerd": 23,
     "gedekt": 0,
     "deels": 5,
     "open": 0,
     "datum": "2026-09-05"
   },
   "men": {
-    "gecontroleerd": 18,
+    "gecontroleerd": 22,
     "gedekt": 4,
-    "deels": 1,
+    "deels": 2,
     "open": 0,
     "datum": "2026-09-05"
   },

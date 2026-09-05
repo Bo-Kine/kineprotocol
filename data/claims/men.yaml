@@ -2,7 +2,10 @@ protocol: men
 laatst_gecontroleerd: 2026-09-05
 versie: 1
 fase_a_door: hoofdagent, alle metadata eerstehands opgehaald via PubMed MCP
-fase_b_door: nog uit te voeren
+fase_b_door: >-
+  onafhankelijke verificator met schone context, 2026-09-05; 17 citaties
+  gecontroleerd, 3 inhoudelijke fouten en 8 ongelabelde cijfers gevonden,
+  alle verwerkt
 
 claims:
   - id: men_c01
@@ -283,3 +286,66 @@ claims:
       niet geraadpleegd.
     verwerkt: >-
       citatie geschrapt, uitspraak behouden als klinische redenering
+
+  # --- Bevindingen uit fase B ---
+
+  - id: men_c19
+    tekst: Het contactgebied verschuift bij 90 graden flexie naar posterolateraal
+    plaats: protocols.men fase 2 evidence
+    bronnen: [walker_1975_krachtoverdracht]
+    gedekt: deels
+    opmerking: >-
+      BIJGESTELD NA FASE B. De verschuiving naar posterolateraal geldt in de bron
+      voor de ONBELASTE toestand. Mijn herschrijving liet dat weg terwijl de zin
+      een belastingsbeperking rechtvaardigt, wat de bevinding sterker liet lijken
+      dan ze is. Onder belasting draagt lateraal vooral de meniscus en wordt de
+      last mediaal ongeveer gelijk verdeeld met het blootliggende kraakbeen.
+    verwerkt: >-
+      "in onbelaste toestand" toegevoegd en de belaste bevinding er apart bij
+      vermeld
+
+  - id: men_c20
+    tekst: Het halen van krachtcriteria verlaagt het herletselrisico met 84%
+    plaats: protocols.men fase 4 evidence + protocols.mcl fase 5 evidence
+    bronnen: [grindem_2016_rtscriteria]
+    gedekt: nee
+    opmerking: >-
+      FOUT VAN MIJZELF, GEVONDEN IN FASE B EN EERSTEHANDS BEVESTIGD. De 84% uit de
+      titel van dat artikel hoort bij het slagen voor de VOLLEDIGE testbatterij
+      (scores boven 90 op alle tests): 38,2% herletsel bij zakken tegenover 5,6%
+      bij slagen. Dat verschil was echter NIET statistisch significant (HR 0,16;
+      p = 0,075). Wat wel significant was: 51% risicoreductie per maand uitstel
+      tot negen maanden, en een symmetrischer quadricepskracht voor terugkeer.
+      Ik had de 84% aan de krachtcriteria toegeschreven, op twee plaatsen.
+    verwerkt: >-
+      beide teksten vervangen door de wel significante bevindingen, met de
+      niet-significante 84% expliciet als zodanig benoemd
+
+  - id: men_c21
+    tekst: FIFA 11+ verlaagde in een meta-analyse van zes trials de letselincidentie met 39%
+    plaats: protocols.men fase 5 evidence
+    bronnen: [thorborg_2017_fifa11]
+    gedekt: nee
+    opmerking: >-
+      BIJGESTELD NA FASE B. De 39% (IRR 0,61) komt uit de pooling van enkel de
+      VIER FIFA 11+-studies. De zes trials samen gaven een risicoratio van 0,75
+      (95% BI 0,57-0,98). Ik had beide getallen aan elkaar gekoppeld.
+    verwerkt: >-
+      beide analyses apart vermeld met hun eigen cijfer
+
+  - id: men_c22
+    tekst: >-
+      Diverse ongebronde getallen in beschrijving en oefennotities: hemartros binnen
+      2 uur, VKB-ruptuur bij 50%, verdubbeld meniscusrisico, exponentiele drukstijging
+      voorbij 60-90 graden, weerstandsflexie vanaf week 6, kniebelasting factor 3-4 per kg
+    plaats: BESCHRIJVING.men + oefennotities fase 2 en 5
+    bronnen: [messier_2005_knielast]
+    gedekt: nee
+    opmerking: >-
+      ACHT ONGELABELDE CIJFERS GEVONDEN IN FASE B, buiten de evidenceteksten.
+      Ze stonden in de beschrijving en in oefennotities en ontsnapten daardoor
+      aan mijn eerste pass. Voor de kniebelasting per kilogram bestaat wel een
+      geverifieerde bron; de overige getallen niet.
+    verwerkt: >-
+      getallen verwijderd of gelabeld als klinische redenering of praktijkgrens;
+      de kniebelasting per kilogram onderbouwd met messier_2005_knielast

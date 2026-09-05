@@ -1,0 +1,157 @@
+protocol: pt
+laatst_gecontroleerd: 2026-09-05
+versie: 1
+fase_a_door: hoofdagent, alle metadata eerstehands opgehaald via PubMed MCP
+fase_b_door: nog uit te voeren
+
+claims:
+  - id: pt_c01
+    tekst: De VISA-P is de goudstandaard uitkomstmaat (Robinson et al., 2001 - validatie)
+    plaats: protocols.pt fase 1 evidence
+    bronnen: [robinson_2001_visa_a]
+    gedekt: nee
+    opmerking: >-
+      VERKEERD MEETINSTRUMENT. De aangehaalde validatiestudie betreft de VISA-A
+      voor de ACHILLESPEES, niet de VISA-P voor de patellapees. De auteurs
+      vermelden bovendien uitdrukkelijk dat de vragenlijst NIET diagnostisch
+      bedoeld is en dat onbekend is of de score de prognose voorspelt. De
+      drempels 80 en 90 in de app zijn praktijkafspraken.
+    verwerkt: >-
+      verwisseling expliciet benoemd in de tekst, drempels gelabeld als
+      praktijkafspraak
+
+  - id: pt_c02
+    tekst: De diagnose is klinisch; echografische afwijkingen correleren slecht met symptomen
+    plaats: protocols.pt fase 1 evidence
+    bronnen: [malliaras_2015_patellapees]
+    gedekt: ja
+    opmerking: >-
+      GEDEKT. Het overzichtsartikel stelt dat de diagnose klinisch blijft omdat
+      asymptomatische peesafwijkingen voorkomen bij mensen met anterieure kniepijn
+      uit een andere bron. De aparte citatie Cook 2004 kon niet opgehaald worden.
+    verwerkt: bevinding aan de wel geverifieerde bron toegeschreven
+
+  - id: pt_c03
+    tekst: Isometrie geeft gemiddeld 40% pijnreductie via VERHOOGDE corticale inhibitie (n = 20)
+    plaats: protocols.pt fase 2 evidence + BESCHRIJVING.pt
+    bronnen: [rio_2015_isometrie]
+    gedekt: nee
+    opmerking: >-
+      DRIE FOUTEN, WAARONDER EEN OMGEKEERD MECHANISME. De steekproef bestond uit 6
+      volleyballers, niet 20. De pijn daalde van 7,0 naar 0,17 op de single-leg
+      decline squat, een gemiddelde daling van 6,8 op 10, niet 40%. En de corticale
+      inhibitie NAM AF na isometrie; de app schreef "verhoogde corticale inhibitie",
+      wat het mechanisme omkeert. Dit is de tweede keer in de app dat deze bron
+      omgekeerd wordt weergegeven (zie ook pfps_c11).
+    verwerkt: alle drie gecorrigeerd in zowel de evidencetekst als de beschrijving
+
+  - id: pt_c04
+    tekst: Zware langzame weerstandstraining is even effectief als excentrisch maar beter getolereerd (n = 59)
+    plaats: protocols.pt fase 3 evidence
+    bronnen: [beyer_2015_hsr_achilles]
+    gedekt: nee
+    opmerking: >-
+      VERKEERDE PEES EN VERKEERD AANTAL. De trial betreft 58 patienten met
+      ACHILLESpeestendinopathie, niet de patellapees. Geen enkele klinische of
+      structurele uitkomst verschilde tussen de groepen. De hogere
+      patienttevredenheid was na 12 weken een TREND (100% tegenover 80%;
+      p = 0,052) en na 52 weken verdwenen; wel significant hoger was de
+      therapietrouw (92% tegenover 78%).
+    verwerkt: >-
+      pees, aantal en statistische status gecorrigeerd, toepassing op de
+      patellapees gelabeld als klinische redenering
+
+  - id: pt_c05
+    tekst: Excentrische training was goudstandaard maar zware weerstandstraining is nu superieur
+    plaats: protocols.pt fase 3 evidence
+    bronnen: [kongsgaard_2009_patellapees]
+    gedekt: nee
+    opmerking: >-
+      OVERDREVEN. In de RCT bij 39 mannelijke patienten met PATELLApeestendinopathie
+      bleef de winst na een half jaar behouden bij ZOWEL de excentrische ALS de
+      zware weerstandstraining; alleen na corticosteroidinjectie verslechterde zij.
+      Zware weerstandstraining scoorde het hoogst op tevredenheid, maar
+      excentrische training is niet achterhaald. Het jaartal in de app (2010) is
+      2009.
+    verwerkt: >-
+      claim teruggebracht tot wat de trial toont, met vermelding dat beide
+      oefenvormen hun effect behielden
+
+  - id: pt_c06
+    tekst: Return-to-sport-criteria VISA-P 90 plus krachtsymmetrie zijn consensuscriteria
+    plaats: protocols.pt fase 5 evidence
+    bronnen: [malliaras_2015_patellapees]
+    gedekt: nee
+    opmerking: >-
+      NIET IN DE BRON. Het overzichtsartikel bevat geen concrete
+      return-to-sport-criteria, maar waarschuwt juist uitdrukkelijk voor
+      ONREALISTISCHE hersteltermijnen en voor te veel leunen op passieve
+      behandelingen — een waarschuwing die in de app ontbrak.
+    verwerkt: >-
+      criteria gelabeld als praktijkafspraak, de waarschuwing van de auteurs
+      opgenomen
+
+  - id: pt_c07
+    tekst: Seizoensgebonden piekbelasting is de sterkste risicofactor voor recidief
+    plaats: protocols.pt fase 6 evidence
+    bronnen: [vanderworp_2011_risicofactoren]
+    gedekt: nee
+    opmerking: >-
+      DE AANGEHAALDE BRON SPREEKT DIT TEGEN. De systematische review vond GEEN
+      sterk of matig bewijs dat welke onderzochte risicofactor dan ook samenhangt
+      met patellapeestendinopathie; voor negen factoren was er slechts beperkt
+      bewijs, en seizoensgebonden piekbelasting staat daar niet tussen.
+    verwerkt: >-
+      claim vervangen door de werkelijke conclusie van de review, inclusief de
+      negen factoren met beperkt bewijs
+
+  - id: pt_c08
+    tekst: Onderhoudstraining tweemaal per week voorkomt recidief bij 70% op 5 jaar
+    plaats: protocols.pt fase 6 evidence
+    bronnen: [visnes_2007_excentrisch]
+    gedekt: nee
+    opmerking: >-
+      CIJFER VOLLEDIG VERZONNEN. De kritische review van 7 artikelen met 162
+      patienten bevat geen recidiefpercentage, geen onderhoudstraining en geen
+      opvolging over vijf jaar. Zij besluit juist dat het vermogen om een
+      specifiek protocol aan te bevelen BEPERKT is.
+    verwerkt: cijfer geschrapt, de werkelijke conclusie van de review opgenomen
+
+  - id: pt_c09
+    tekst: >-
+      Ongebronde cijfers: quadriceps-hamstringratio 0,6, belastingstoename 20-30% op
+      harde ondergrond, recidief 20-40%, RSI-drempel 1,5, LSI-drempels 85 en 90%,
+      belastingsparameters 70% 1RM en tempo 3-0-3
+    plaats: protocols.pt fase 3 tot 6 evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Zeven ongebronde numerieke waarden, waarvan meerdere doorstroom- of
+      screeningsdrempels sturen.
+    verwerkt: geschrapt of gelabeld als praktijkafspraak
+
+  - id: pt_c10
+    tekst: Risicofactoren zijn mannelijk geslacht, leeftijd 20-40 jaar en slechte landingstechniek
+    plaats: BESCHRIJVING.pt
+    bronnen: [vanderworp_2011_risicofactoren]
+    gedekt: nee
+    opmerking: >-
+      GEEN VAN DRIE IN DE LIJST VAN DE REVIEW. De negen factoren met beperkt bewijs
+      zijn gewicht, BMI, taille-heupverhouding, beenlengteverschil, voetbooghoogte,
+      quadriceps- en hamstringflexibiliteit, quadricepskracht en verticale
+      sprongprestatie. Ook de trainingsdrempel van 10% per week is niet onderbouwd.
+    verwerkt: lijst vervangen door de negen factoren met vermelding van de bewijskracht
+
+  - id: pt_c11
+    tekst: >-
+      Niet geverifieerde citaties: Cook 2004, Zwerver 2011, Docking en Cook 2019,
+      Heales 2015
+    plaats: protocols.pt fase 1 en 4 evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Vier citaties konden niet eenduidig opgehaald worden, waaronder die onder de
+      volledige fase 4 over energie-opslag en sprongcapaciteit.
+    verwerkt: >-
+      alle vier gemarkeerd als niet geverifieerd, de bijbehorende uitspraken
+      gelabeld als klinische redenering

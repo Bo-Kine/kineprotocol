@@ -1929,3 +1929,147 @@ references:
       niveau 5).
     geverifieerd_op: 2026-09-05
     geverifieerd_door: PubMed MCP (get_article_metadata)
+
+  # --- Patellapees-tendinopathie ---
+
+  - key: cook_2009_continuum
+    auteurs: [Cook JL, Purdam CR]
+    titel: 'Is tendon pathology a continuum? A pathology model to explain the clinical presentation of load-induced tendinopathy'
+    bron: British Journal of Sports Medicine
+    jaar: 2009
+    volume_paginas: 43(6):409-16
+    doi: 10.1136/bjsm.2008.051193
+    pmid: '18812414'
+    url: https://doi.org/10.1136/bjsm.2008.051193
+    type: review
+    opmerking: >-
+      Conceptueel model, uitdrukkelijk gepresenteerd ter beoordeling door clinici
+      en onderzoekers, niet als vastgestelde pathofysiologie. Beschrijft
+      tendinopathie als een continuum in plaats van louter degeneratie of
+      mislukte heling, en plaatst behandelingen langs dat continuum.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (get_article_metadata)
+
+  - key: robinson_2001_visa_a
+    auteurs: [Robinson JM, Cook JL, Purdam C, Visentini PJ, Ross J, Maffulli N, Taunton JE, Khan KM]
+    titel: 'The VISA-A questionnaire: a valid and reliable index of the clinical severity of Achilles tendinopathy'
+    bron: British Journal of Sports Medicine
+    jaar: 2001
+    volume_paginas: 35(5):335-41
+    doi: 10.1136/bjsm.35.5.335
+    pmid: '11579069'
+    url: https://doi.org/10.1136/bjsm.35.5.335
+    type: cohort
+    opmerking: >-
+      DIT IS DE VISA-A VOOR DE ACHILLESPEES, NIET DE VISA-P VOOR DE PATELLAPEES.
+      Validatie bij 45 niet-operatieve en 14 preoperatieve patienten met
+      achillestendinopathie plus 87 controles. Goede betrouwbaarheid (test-hertest
+      r = 0,93). De auteurs vermelden uitdrukkelijk dat de test NIET diagnostisch
+      bedoeld is en dat nog onbekend is of de score de prognose voorspelt.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: beyer_2015_hsr_achilles
+    auteurs: [Beyer R, Kongsgaard M, Hougs Kjaer B, Ohlenschlaeger T, Kjaer M, Magnusson SP]
+    titel: 'Heavy slow resistance versus eccentric training as treatment for Achilles tendinopathy: a randomized controlled trial'
+    bron: American Journal of Sports Medicine
+    jaar: 2015
+    volume_paginas: 43(7):1704-11
+    doi: 10.1177/0363546515584760
+    pmid: '26018970'
+    url: https://doi.org/10.1177/0363546515584760
+    type: RCT
+    opmerking: >-
+      BETREFT DE ACHILLESPEES, NIET DE PATELLAPEES. 58 patienten (niet 59) met
+      chronische midportion achillestendinopathie, 12 weken, opgevolgd tot 52
+      weken. Beide programma's gaven gelijke, blijvende verbetering; GEEN van de
+      klinische of structurele uitkomsten verschilde tussen de groepen.
+      Patienttevredenheid neigde na 12 weken hoger bij zware langzame
+      weerstandstraining (100% tegenover 80%; p = 0,052 — een TREND, niet
+      significant) en verschilde na 52 weken niet meer. De therapietrouw verschilde
+      wel significant: 92% tegenover 78% (p kleiner dan 0,005).
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: kongsgaard_2009_patellapees
+    auteurs: [Kongsgaard M, Kovanen V, Aagaard P, Doessing S, Hansen P, Laursen AH, Kaldau NC, Kjaer M, Magnusson SP]
+    titel: Corticosteroid injections, eccentric decline squat training and heavy slow resistance training in patellar tendinopathy
+    bron: Scandinavian Journal of Medicine and Science in Sports
+    jaar: 2009
+    volume_paginas: 19(6):790-802
+    doi: 10.1111/j.1600-0838.2009.00949.x
+    pmid: '19793213'
+    url: https://doi.org/10.1111/j.1600-0838.2009.00949.x
+    type: RCT
+    opmerking: >-
+      DIT IS WEL DE PATELLAPEES. 39 mannelijke patienten, gerandomiseerd over
+      corticosteroidinjectie, excentrische decline squat of zware langzame
+      weerstandstraining, 12 weken met opvolging na een half jaar. Alle drie
+      verbeterden van 0 tot 12 weken. De winst BLEEF behouden bij ZOWEL de
+      excentrische als de zware weerstandstraining, maar VERSLECHTERDE na de
+      injectie. Bij de opvolging was de tevredenheid het hoogst bij zware
+      weerstandstraining. Conclusie van de auteurs: corticosteroiden geven een goed
+      kortetermijneffect maar een slecht langetermijneffect.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: malliaras_2015_patellapees
+    auteurs: [Malliaras P, Cook J, Purdam C, Rio E]
+    titel: 'Patellar tendinopathy: clinical diagnosis, load management, and advice for challenging case presentations'
+    bron: Journal of Orthopaedic and Sports Physical Therapy
+    jaar: 2015
+    volume_paginas: 45(11):887-98
+    doi: 10.2519/jospt.2015.5987
+    pmid: '26390269'
+    url: https://doi.org/10.2519/jospt.2015.5987
+    type: review
+    opmerking: >-
+      Klinisch overzichtsartikel. Kernkenmerken: pijn gelokaliseerd aan de onderpool
+      van de patella en belastingsgebonden pijn die toeneemt met de eis aan de
+      knie-extensoren. De diagnose blijft KLINISCH, omdat asymptomatische
+      peesafwijkingen voorkomen bij mensen met anterieure kniepijn uit andere bron.
+      De auteurs waarschuwen uitdrukkelijk voor ONREALISTISCHE hersteltermijnen en
+      voor te veel leunen op passieve behandelingen. Het abstract bevat geen
+      concrete return-to-sport-criteria.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: vanderworp_2011_risicofactoren
+    auteurs: [van der Worp H, van Ark M, Roerink S, Pepping GJ, van den Akker-Scheek I, Zwerver J]
+    titel: 'Risk factors for patellar tendinopathy: a systematic review of the literature'
+    bron: British Journal of Sports Medicine
+    jaar: 2011
+    volume_paginas: 45(5):446-52
+    doi: 10.1136/bjsm.2011.084079
+    pmid: '21367808'
+    url: https://doi.org/10.1136/bjsm.2011.084079
+    type: SR
+    opmerking: >-
+      KERNBEVINDING: er was GEEN sterk of matig bewijs dat ENIGE onderzochte
+      risicofactor samenhangt met patellapeestendinopathie. Voor negen factoren was
+      er slechts BEPERKT bewijs: gewicht, BMI, taille-heupverhouding,
+      beenlengteverschil, voetbooghoogte, quadriceps- en hamstringflexibiliteit,
+      quadricepskracht en verticale sprongprestatie. Seizoensgebonden piekbelasting
+      staat niet in die lijst. De auteurs benadrukken de behoefte aan
+      hoogwaardiger onderzoek.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: visnes_2007_excentrisch
+    auteurs: [Visnes H, Bahr R]
+    titel: "The evolution of eccentric training as treatment for patellar tendinopathy (jumper's knee): a critical review of exercise programmes"
+    bron: British Journal of Sports Medicine
+    jaar: 2007
+    volume_paginas: 41(4):217-23
+    doi: 10.1136/bjsm.2006.032417
+    pmid: '17261559'
+    url: https://doi.org/10.1136/bjsm.2006.032417
+    type: review
+    opmerking: >-
+      Kritische review van 7 artikelen met in totaal 162 patienten. De resultaten
+      waren positief maar de studiekwaliteit wisselend, met kleine aantallen of
+      korte opvolging. CONCLUSIE: het vermogen om een specifiek protocol aan te
+      bevelen is BEPERKT. Er staat GEEN cijfer over onderhoudstraining, geen
+      recidiefpercentage en geen opvolging over vijf jaar.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)

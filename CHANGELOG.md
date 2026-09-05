@@ -3,6 +3,17 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-09-05 — bronaudit patellapees-tendinopathie
+
+- 11 claims beoordeeld, 7 bronnen eerstehands opgehaald en geverifieerd via PubMed · dit protocol bevatte twee bronnen over de ACHILLESPEES die als patellapees-bewijs waren gepresenteerd
+- VERKEERD MEETINSTRUMENT · de app noemde de VISA-P de goudstandaard en citeerde daarvoor `robinson_2001_visa_a` — dat is de validatie van de VISA-A voor de ACHILLESPEES · die auteurs vermelden bovendien dat de vragenlijst niet diagnostisch bedoeld is
+- VERKEERDE PEES · `beyer_2015_hsr_achilles` betreft 58 patiënten met ACHILLESpeestendinopathie, niet 59 met patellapeesklachten · geen enkele klinische uitkomst verschilde tussen de groepen; de hogere tevredenheid was een TREND (p = 0,052) die na 52 weken verdween, de hogere therapietrouw was wel significant
+- MECHANISME OMGEKEERD, VOOR DE TWEEDE KEER IN DE APP · "gemiddeld 40% pijnreductie via verhoogde corticale inhibitie (n = 20)" · `rio_2015_isometrie` had 6 deelnemers, een pijndaling van 6,8 op 10, en de corticale inhibitie NAM AF · dezelfde omkering stond ook in het patellofemorale protocol
+- DE AANGEHAALDE BRON SPRAK DE RISICOFACTORCLAIM TEGEN · `vanderworp_2011_risicofactoren` vond GEEN sterk of matig bewijs dat welke onderzochte risicofactor dan ook samenhangt met deze aandoening, terwijl de app seizoensgebonden piekbelasting "de sterkste risicofactor" noemde · die factor staat niet eens in de lijst van negen met beperkt bewijs
+- CIJFER VOLLEDIG VERZONNEN · "onderhoudstraining 2x/week voorkomt recidief bij 70% op 5 jaar" · `visnes_2007_excentrisch` bevat geen recidiefpercentage, geen onderhoudstraining en geen vijfjaarsopvolging, en besluit juist dat een specifiek protocol niet aan te bevelen valt
+- Genuanceerd waar de app overdreef · `kongsgaard_2009_patellapees` toont dat de winst na een half jaar behouden bleef bij ZOWEL excentrische ALS zware langzame weerstandstraining; alleen na corticosteroidinjectie verslechterde zij · excentrische training is dus niet achterhaald
+- Waarschuwing van de auteurs toegevoegd die in de app ontbrak · `malliaras_2015_patellapees` waarschuwt uitdrukkelijk voor onrealistische hersteltermijnen en voor te veel leunen op passieve behandelingen
+
 ## 2026-09-05 — bronaudit patellofemoraal pijnsyndroom
 
 - 10 claims beoordeeld, 6 bronnen eerstehands opgehaald en geverifieerd via PubMed

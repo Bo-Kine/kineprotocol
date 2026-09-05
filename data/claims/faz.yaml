@@ -1,0 +1,274 @@
+protocol: faz
+laatst_gecontroleerd: 2026-09-05
+versie: 1
+fase_a_door: hoofdagent, alle metadata eerstehands opgehaald via PubMed MCP
+fase_b_door: nog uit te voeren
+
+claims:
+  - id: faz_c01
+    tekst: Facetartrose is verantwoordelijk voor 15-45% van chronische lage rugpijn
+    plaats: protocols.faz fase 1 evidence
+    bronnen: [cohen_2007_facetpijn]
+    gedekt: nee
+    opmerking: >-
+      CIJFER TE HOOG EN TIJDSCHRIFT ONJUIST. De bron spreekt van TOT 15% van de
+      patienten met chronische lage rugpijn, niet 15 tot 45%. Het artikel
+      verscheen in Anesthesiology, niet in Anesthesia and Analgesia.
+    verwerkt: bereik gecorrigeerd naar tot 15%, tijdschrift rechtgezet
+
+  - id: faz_c02
+    tekst: Klinisch onderzoek (Kemp-test) en beeldvorming bevestigen de diagnose facetpijn
+    plaats: BESCHRIJVING.faz
+    bronnen: [cohen_2007_facetpijn]
+    gedekt: nee
+    opmerking: >-
+      DE BRON SPREEKT DIT UITDRUKKELIJK TEGEN (CLAUDE.md 1.9) EN DAT ONTBRAK
+      VOLLEDIG IN DE APP. Cohen en Raja stellen dat de bestaande literatuur het
+      gebruik van anamnese of klinisch onderzoek om lumbale facetpijn te
+      diagnosticeren NIET ondersteunt. De meest aanvaarde methode is een
+      intra-articulaire of mediale-takblokkade, en beide hebben een hoog
+      vals-positief percentage. De app presenteerde de Kemp-test als
+      reproducerend en een facetblokkade met meer dan 80% pijnreductie als
+      bevestigend. Dit is diagnostische inhoud en dus klinisch zwaarwegend.
+    verwerkt: >-
+      beperking van anamnese en klinisch onderzoek expliciet toegevoegd,
+      vals-positief percentage van de blokkade vermeld, SPECT-claim en
+      80%-drempel als niet onderbouwd gemarkeerd
+
+  - id: faz_c03
+    tekst: Pijneducatie vermindert catastroferen en verbetert functionele uitkomsten op lange termijn
+    plaats: protocols.faz fase 1 evidence
+    bronnen: [louw_2011_pijneducatie]
+    gedekt: deels
+    opmerking: >-
+      INHOUD GEDEKT, TYPE EN TERMIJN NIET. De review vindt overtuigend bewijs
+      voor effect op pijn, beperking, catastroferen en fysieke prestatie bij
+      chronische musculoskeletale pijn. Maar het is GEEN meta-analyse:
+      heterogeniteit verhinderde pooling, de synthese is narratief. Over
+      langetermijneffect wordt geen uitspraak gedaan.
+    verwerkt: type gecorrigeerd naar systematische review, langetermijnclaim geschrapt
+
+  - id: faz_c04
+    tekst: Rust is contraproductief, vroege activering en wandelen zijn superieur
+    plaats: protocols.faz fase 1 evidence + oefennoot wandelen
+    bronnen: [malmivaara_1995_activiteit]
+    gedekt: deels
+    opmerking: >-
+      GEDEKT VOOR RUST, NIET VOOR DE REST. De trial betreft ACUTE aspecifieke
+      lage rugpijn, niet facetartrose. De interventie was "gewone activiteit
+      voortzetten", niet wandelen. En opvallend: ook de OEFENGROEP herstelde
+      trager dan de groep met gewone activiteit — een nuance die relevant is
+      voor een oefenprotocol en die in de app ontbrak.
+    verwerkt: >-
+      populatie benoemd, interventie correct beschreven, de bevinding over de
+      oefengroep toegevoegd, overdracht gelabeld als klinische redenering
+
+  - id: faz_c05
+    tekst: Manuele therapie geeft kortetermijnverlichting bij facetpijn
+    plaats: protocols.faz fase 1 evidence
+    bronnen: [rubinstein_2012_manipulatie]
+    gedekt: nee
+    opmerking: >-
+      DE CONCLUSIE VAN DE BRON IS OMGEKEERD. De Cochrane-review van 20 trials en
+      2674 deelnemers besluit dat manipulatieve therapie bij ACUTE lage rugpijn
+      NIET effectiever is dan inerte interventies, sham-manipulatie of als
+      toevoeging aan een andere behandeling. Bovendien gaat de review niet over
+      facetpijn. De app presenteerde het tegendeel als bewezen.
+    verwerkt: >-
+      claim vervangen door de conclusie van de bron, expliciet als tegenstrijdige
+      evidentie gepresenteerd
+
+  - id: faz_c06
+    tekst: Lumbale extensiemobilisatie geeft significante pijnreductie bij facetartrose vergeleken met sham
+    plaats: protocols.faz fase 2 evidence
+    bronnen: [hancock_2007_diclofenac_smt]
+    gedekt: nee
+    opmerking: >-
+      VOLLEDIG ONJUISTE TOESCHRIJVING. De aangehaalde trial onderzocht diclofenac
+      en manipulatieve therapie bovenop aanbevolen eerstelijnszorg bij ACUTE lage
+      rugpijn, en vond dat GEEN van beide het herstel versnelde (HR 1,01;
+      p = 0,955). Geen extensiemobilisatie, geen facetartrose, geen pijnreductie
+      versus sham.
+    verwerkt: citatie geschrapt, mobilisatie behouden als klinische redenering
+
+  - id: faz_c07
+    tekst: McKenzie-methode is effectief bij extensiebias, met 60% respondratio
+    plaats: protocols.faz fase 2 evidence
+    bronnen: [donelson_1997_centralisatie]
+    gedekt: nee
+    opmerking: >-
+      DIAGNOSTISCHE STUDIE, GEEN EFFECTSTUDIE. Bij 50% van de patienten
+      centraliseerde de uitstralende pijn, van wie 74% een positief discogram
+      had. Het onderzoek onderscheidt discogene van niet-discogene pijn en zegt
+      niets over behandeleffect, niets over een extensiebias en niets over
+      facetgewrichten. Het percentage 60 komt er niet in voor.
+    verwerkt: >-
+      cijfer en effectclaim vervangen door de werkelijke diagnostische bevinding,
+      met vermelding dat het over discogene pijn gaat
+
+  - id: faz_c08
+    tekst: Progressief wandelen is de meest kosteneffectieve interventie voor chronische lage rugpijn
+    plaats: protocols.faz fase 2 evidence
+    bronnen: [hendrick_2010_wandelen]
+    gedekt: nee
+    opmerking: >-
+      VIER AFWIJKINGEN. Het is geen meta-analyse maar een systematische review
+      waarin slechts VIER studies aan de criteria voldeden. Het aantal 2206 komt
+      in de bron niet voor. Er is geen kosteneffectiviteitsanalyse. En de
+      conclusie is veel voorzichtiger: laag tot matig bewijs, waarbij de
+      methodologisch sterkste studie GEEN effect vond.
+    verwerkt: alle vier gecorrigeerd, inclusief de negatieve bevinding
+
+  - id: faz_c09
+    tekst: Segmentale stabilisatieoefeningen zijn superieur aan algemene oefening bij chronische lage rugpijn
+    plaats: protocols.faz fase 3 evidence
+    bronnen: [hides_2001_stabilisatie]
+    gedekt: nee
+    opmerking: >-
+      VERGELIJKING EN POPULATIE KLOPPEN NIET. De RCT (n = 39) vergeleek
+      specifieke oefentherapie bovenop medische zorg met medische zorg plus
+      normale activiteit — NIET met algemene oefentherapie. De populatie had een
+      ACUTE, EERSTE episode lage rugpijn, niet chronische pijn. De wel gedekte
+      bevinding is een lager recidief: 30% tegenover 84% na een jaar en 35%
+      tegenover 75% na twee tot drie jaar.
+    verwerkt: >-
+      vergelijking en populatie gecorrigeerd, de werkelijke recidiefcijfers
+      opgenomen, overdracht gelabeld als klinische redenering
+
+  - id: faz_c10
+    tekst: Multifidusatrofie normaliseert niet spontaan zonder gerichte oefening
+    plaats: protocols.faz fase 3 evidence
+    bronnen: [hides_1994_multifidus]
+    gedekt: deels
+    opmerking: >-
+      DE ATROFIE IS GEDEKT, HET UITBLIJVEN VAN HERSTEL NIET. De publicatie
+      documenteert een verschil van 31 plus of min 8% in spierdoorsnede aan de
+      symptomatische zijde bij acute unilaterale rugpijn, beperkt tot een
+      wervelniveau. Dat spontaan herstel uitblijft, staat er niet in; dat is een
+      bevinding uit later werk van dezelfde groep, dat in dit dossier niet is
+      opgehaald. Ook gaat het niet specifiek over facet- of discuspathologie.
+    verwerkt: cijfer toegevoegd, de niet-gedekte uitspraak over herstel geschrapt
+
+  - id: faz_c11
+    tekst: Progressieve krachttraining is superieur aan stretching en algemene oefening voor chronische lage rugpijn
+    plaats: protocols.faz fase 4 evidence
+    bronnen: [aasa_2015_motorcontrole]
+    gedekt: nee
+    opmerking: >-
+      DE RICHTING IS OMGEKEERD. In deze RCT verbeterde de LAAGBELASTE
+      motorcontrolegroep meer op de gepersonaliseerde functieschaal (4,2 tegenover
+      2,5 punten; p kleiner dan 0,001) en op bewegingscontrole dan de zwaarbelaste
+      tilgroep. Er was geen verschil in pijnintensiteit of kracht, en er was GEEN
+      rekgroep en geen groep met algemene oefening. Beide interventies verbeterden
+      wel binnen de groep. Eerste auteur is Aasa, niet Berglund.
+    verwerkt: >-
+      richting gecorrigeerd, ontbrekende vergelijkingsgroepen benoemd,
+      krachttraining behouden als verdedigbare klinische keuze
+
+  - id: faz_c12
+    tekst: De Sorensen-test is de meest betrouwbare predictor van recidief van rugklachten (r = 0,78)
+    plaats: protocols.faz fase 4 evidence + criteria_go
+    bronnen: [bieringsorensen_1984_rugextensoren]
+    gedekt: nee
+    opmerking: >-
+      CIJFER EN UITKOMSTMAAT KLOPPEN NIET. In dit cohort van 928 personen kon een
+      goede isometrische uithouding van de rugspieren een EERSTE episode rugpijn
+      voorkomen, en dat alleen BIJ MANNEN. Recidief of persistentie hing vooral
+      samen met het interval sinds de vorige episode. Een correlatiecoefficient
+      van 0,78 komt in de bron niet voor.
+    verwerkt: >-
+      cijfer geschrapt, uitkomstmaat en geslachtsbeperking gecorrigeerd, de
+      drempel van 60 seconden gelabeld als praktijkafspraak
+
+  - id: faz_c13
+    tekst: Aerobe training activeert centrale pijninhibitie via endogene opioidroutes
+    plaats: protocols.faz fase 5 evidence
+    bronnen: [naugle_2012_hypoalgesie]
+    gedekt: nee
+    opmerking: >-
+      MECHANISME NIET ONDERBOUWD EN TEGENSTRIJDIGE EVIDENTIE VERZWEGEN
+      (CLAUDE.md 1.9). De meta-analyse toont pijnreductie bij GEZONDE deelnemers
+      (d = 0,41 tot 1,02), maar bij mensen met CHRONISCHE PIJN zijn richting en
+      grootte sterk wisselend en treedt naast hypoalgesie ook HYPERALGESIE op,
+      afhankelijk van aandoening en intensiteit. De optimale dosis kon niet
+      bepaald worden. Over endogene opioidroutes doet de review geen uitspraak.
+      Voor een chronische-pijnpopulatie is dit klinisch relevant.
+    verwerkt: >-
+      mechanismeclaim geschrapt, effectgroottes en de hyperalgesie bij chronische
+      pijn expliciet opgenomen
+
+  - id: faz_c14
+    tekst: Langetermijn krachttraining reduceert het recidief van chronische lage rugpijn met 47%
+    plaats: protocols.faz fase 5 evidence
+    bronnen: [steffens_2016_preventie]
+    gedekt: nee
+    opmerking: >-
+      VIJF AFWIJKINGEN, WAARONDER EEN VERWISSELING VAN GETALLEN. Het artikel
+      verscheen in JAMA Internal Medicine, niet in Cochrane. Het getal 6133 is het
+      aantal STUDIES dat de zoekopdracht opleverde, niet het aantal deelnemers;
+      de analyse omvat 21 trials en 30.850 deelnemers. Er is geen analyse over
+      "meer dan zes maanden krachttraining". De uitkomstmaat is het VOORKOMEN van
+      een episode lage rugpijn, niet recidief van chronische pijn. En 47% wordt
+      niet gerapporteerd: oefening met educatie gaf RR 0,55 (95% BI 0,41-0,74),
+      oefening alleen RR 0,65 (0,50-0,86).
+    verwerkt: alle vijf gecorrigeerd, inclusief de niet-effectieve interventies
+
+  - id: faz_c15
+    tekst: Zelfmanagementprogramma's zijn minstens even effectief als passieve behandeling op lange termijn
+    plaats: protocols.faz fase 5 evidence
+    bronnen: [foster_2018_lagerugpijn]
+    gedekt: deels
+    opmerking: >-
+      RICHTING GEDEKT, VERGELIJKING NIET. Het overzichtsartikel beveelt educatie
+      die zelfmanagement en hervatting van normale activiteit ondersteunt aan als
+      eerstelijnsbenadering, en bekritiseert het te veel gebruiken van rust,
+      opioiden, infiltraties en chirurgie. Een expliciete vergelijkende
+      effectuitspraak tegenover passieve behandeling staat er niet in.
+    verwerkt: aanbeveling behouden, vergelijkende effectclaim geschrapt
+
+  - id: faz_c16
+    tekst: ACT gecombineerd met fysiotherapie is effectiever dan behandeling alleen
+    plaats: protocols.faz fase 5 evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      GEEN VERGELIJKINGSGROEP EN VERKEERD JAARTAL. De vindbare publicatie van
+      Vowles en McCracken is een ONGECONTROLEERDE effectstudie bij 171 deelnemers
+      van een interdisciplinair programma, uit 2008 en niet 2010. Zonder
+      controlegroep is geen superioriteitsuitspraak mogelijk.
+    verwerkt: >-
+      citatie geschrapt, uitspraak behouden als klinische redenering met
+      vermelding van het ontbreken van een vergelijkingsgroep
+
+  - id: faz_c17
+    tekst: >-
+      Uitspraken toegeschreven aan handboeken: heupflexorverkorting en lordose,
+      coactivatie bij bird-dog en dead bug, gluteusactivatie via bridge,
+      Romanian deadlift bij lage compressiekrachten
+    plaats: protocols.faz fase 2, 3 en 4 evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      NIET VERIFIEERBAAR IN DIT DOSSIER. Deze uitspraken zijn toegeschreven aan
+      handboeken (Neumann 2010, McGill 2007) en aan Vigotsky 2015. Handboeken zijn
+      niet per definitie ongeldig, maar zonder DOI of PMID kan de dekking van de
+      claim hier niet gecontroleerd worden (CLAUDE.md 4).
+    verwerkt: uitspraken behouden en gelabeld als klinische redenering
+
+  - id: faz_c18
+    tekst: >-
+      Ongebronde getallen in beschrijving en oefennotities: SPECT als meest
+      sensitieve test, facetblokkade met meer dan 80% pijnreductie, leeftijd boven
+      50 jaar als risicofactor, bewustzijn als sterkste preventieve factor,
+      dagelijkse uitvoering als sterkste predictor
+    plaats: BESCHRIJVING.faz + oefennotities fase 5
+    bronnen: [steffens_2016_preventie]
+    gedekt: nee
+    opmerking: >-
+      Vijf ongebronde uitspraken buiten de evidenceteksten, waarvan drie met een
+      superlatief ("meest sensitief", "sterkste factor", "sterkste predictor").
+      Voor preventie bestaat wel een geverifieerde bron.
+    verwerkt: >-
+      getallen en superlatieven geschrapt of gelabeld als klinische redenering;
+      de preventiebewering vervangen door de gedekte bevinding uit
+      steffens_2016_preventie

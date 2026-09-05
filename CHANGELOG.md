@@ -3,6 +3,17 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-09-05 — bronaudit facetartrose lumbaal
+
+- 18 claims beoordeeld, 13 bronnen eerstehands opgehaald en geverifieerd via PubMed · dit protocol bleek er aanzienlijk slechter aan toe dan het meniscusprotocol: geen enkele claim was volledig gedekt
+- DRIE EFFECTRICHTINGEN STONDEN OMGEKEERD IN DE APP · `rubinstein_2012_manipulatie` besluit dat manipulatieve therapie NIET effectiever is dan sham, terwijl de app kortetermijnverlichting claimde · `aasa_2015_motorcontrole` toont dat LAAGBELASTE motorcontroletraining beter scoorde dan zwaar tillen, terwijl de app het omgekeerde beweerde · `cohen_2007_facetpijn` stelt dat anamnese en klinisch onderzoek de diagnose facetpijn NIET kunnen stellen, terwijl de app de Kemp-test als reproducerend en de facetblokkade als bevestigend presenteerde
+- Volledig onjuiste toeschrijving geschrapt · `hancock_2007_diclofenac_smt` onderzocht diclofenac en manipulatie bij acute rugpijn en vond geen versneld herstel (HR 1,01; p = 0,955) — niet lumbale extensiemobilisatie bij facetartrose versus sham
+- Verwisseling van getallen · de app vermeldde "Steffens 2016 — Cochrane, n=6133" · 6133 is het aantal in de zoekopdracht gevonden STUDIES, niet deelnemers; het artikel staat in JAMA Internal Medicine en omvat 21 trials met 30.850 deelnemers, met RR 0,55 voor oefening met educatie · de 47% komt er niet in voor
+- Verder gecorrigeerd · facetartrose 15-45% → tot 15% · McKenzie "60% respondratio" → diagnostische studie waarin 50% centraliseerde, over discogene pijn · wandelen "meta-analyse n=2206, meest kosteneffectief" → systematische review met vier studies, laag tot matig bewijs, sterkste studie zonder effect · Sorensen "r=0,78, beste recidiefpredictor" → voorkomt een eerste episode bij mannen, r-waarde komt niet voor · multifidusatrofie 31 ± 8% toegevoegd, uitblijven van spontaan herstel geschrapt
+- Tegenstrijdige evidentie toegevoegd (CLAUDE.md 1.9) · `naugle_2012_hypoalgesie` toont bij CHRONISCHE pijn naast hypoalgesie ook HYPERALGESIE — klinisch relevant voor deze populatie · en in `malmivaara_1995_activiteit` herstelde ook de OEFENgroep trager dan de groep met gewone activiteit
+- Vier uitspraken toegeschreven aan handboeken (Neumann, McGill) gelabeld als klinische redenering · zonder DOI of PMID is de dekking hier niet controleerbaar
+- Vijf ongebronde uitspraken buiten de evidenceteksten aangepakt, waarvan drie met een superlatief · SPECT als meest sensitieve test, blokkade met meer dan 80% pijnreductie, leeftijdsgrens 50 jaar, bewustzijn als sterkste preventieve factor, dagelijkse uitvoering als sterkste predictor
+
 ## 2026-09-05 — bronaudit meniscusprotocol + zichtbare auditstatus in de app
 
 - Omvang van het probleem gemeten · 320 citatie-instanties over 30 protocollen, 305 uniek — er is nauwelijks overlap tussen protocollen, dus geen snelkoppeling via ontdubbeling

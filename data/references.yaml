@@ -723,3 +723,296 @@ references:
       95% BI 0,80-1,23). Het bereik 30 tot 50% uit de app staat er niet in.
     geverifieerd_op: 2026-09-05
     geverifieerd_door: PubMed MCP (search_articles + get_article_metadata)
+
+  # --- Lumbale facetartrose ---
+
+  - key: cohen_2007_facetpijn
+    auteurs: [Cohen SP, Raja SN]
+    titel: 'Pathogenesis, diagnosis, and treatment of lumbar zygapophysial (facet) joint pain'
+    bron: Anesthesiology
+    jaar: 2007
+    volume_paginas: 106(3):591-614
+    doi: 10.1097/00000542-200703000-00024
+    pmid: '17325518'
+    url: https://doi.org/10.1097/00000542-200703000-00024
+    type: review
+    opmerking: >-
+      Narratieve review met systematische analyse. Facetartropathie treft TOT 15%
+      van de patienten met chronische lage rugpijn — niet 15 tot 45%. KERNPUNT dat
+      in de app ontbrak: de bestaande literatuur ondersteunt NIET dat anamnese of
+      klinisch onderzoek de diagnose kan stellen. De meest aanvaarde methode is een
+      intra-articulaire of mediale-takblokkade, beide met een hoog vals-positief
+      percentage. Het bewijs voor infiltratie en radiofrequente denervatie is
+      tegenstrijdig. Verscheen in Anesthesiology, niet in Anesthesia and Analgesia.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (search_articles + get_article_metadata)
+
+  - key: louw_2011_pijneducatie
+    auteurs: [Louw A, Diener I, Butler DS, Puentedura EJ]
+    titel: 'The effect of neuroscience education on pain, disability, anxiety, and stress in chronic musculoskeletal pain'
+    bron: Archives of Physical Medicine and Rehabilitation
+    jaar: 2011
+    volume_paginas: 92(12):2041-56
+    doi: 10.1016/j.apmr.2011.07.198
+    pmid: '22133255'
+    url: https://doi.org/10.1016/j.apmr.2011.07.198
+    type: SR
+    opmerking: >-
+      Systematische review van 8 studies (6 hoogwaardige RCT's, 401 deelnemers).
+      Overtuigend bewijs dat neurowetenschappelijke pijneducatie pijn, beperking,
+      catastroferen en fysieke prestatie gunstig beinvloedt. GEEN META-ANALYSE:
+      heterogeniteit verhinderde pooling, de synthese is narratief. Er wordt geen
+      uitspraak gedaan over langetermijneffect.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: malmivaara_1995_activiteit
+    auteurs: [Malmivaara A, Hakkinen U, Aro T, Heinrichs ML, Koskenniemi L, Kuosma E, Lappi S, Paloheimo R, Servo C, Vaaranen V]
+    titel: 'The treatment of acute low back pain: bed rest, exercises, or ordinary activity?'
+    bron: New England Journal of Medicine
+    jaar: 1995
+    volume_paginas: 332(6):351-5
+    doi: 10.1056/NEJM199502093320602
+    pmid: '7823996'
+    url: https://doi.org/10.1056/NEJM199502093320602
+    type: RCT
+    opmerking: >-
+      186 werknemers met ACUTE aspecifieke lage rugpijn, gerandomiseerd over
+      bedrust (67), rugmobiliserende oefeningen (52) of gewone activiteit binnen
+      de pijngrens (67). De controlegroep met gewone activiteit herstelde het best
+      op alle uitkomstmaten; herstel was het traagst bij bedrust. LET OP: ook de
+      OEFENGROEP deed het slechter dan gewone activiteit. De interventie was
+      "gewone activiteit voortzetten", niet wandelen. Populatie is acute
+      aspecifieke rugpijn, geen facetartrose.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: rubinstein_2012_manipulatie
+    auteurs: [Rubinstein SM, Terwee CB, Assendelft WJJ, de Boer MR, van Tulder MW]
+    titel: Spinal manipulative therapy for acute low-back pain
+    bron: Cochrane Database of Systematic Reviews
+    jaar: 2012
+    volume_paginas: 2012(9):CD008880
+    doi: 10.1002/14651858.CD008880.pub2
+    pmid: '22972127'
+    url: https://doi.org/10.1002/14651858.CD008880.pub2
+    type: SR
+    opmerking: >-
+      Cochrane-review, 20 RCT's, 2674 deelnemers, ACUTE lage rugpijn (minder dan
+      zes weken). CONCLUSIE: manipulatieve therapie is NIET effectiever dan inerte
+      interventies, sham-manipulatie, of als toevoeging aan een andere behandeling,
+      en lijkt ook niet beter dan andere aanbevolen therapieen. Slechts 6 van de 20
+      studies hadden een laag risico op bias. Dit spreekt de claim in de app
+      rechtstreeks tegen.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: hancock_2007_diclofenac_smt
+    auteurs: [Hancock MJ, Maher CG, Latimer J, McLachlan AJ, Cooper CW, Day RO, Spindler MF, McAuley JH]
+    titel: >-
+      Assessment of diclofenac or spinal manipulative therapy, or both, in addition
+      to recommended first-line treatment for acute low back pain: a randomised
+      controlled trial
+    bron: Lancet
+    jaar: 2007
+    volume_paginas: 370(9599):1638-43
+    doi: 10.1016/S0140-6736(07)61686-9
+    pmid: '17993364'
+    url: https://doi.org/10.1016/S0140-6736(07)61686-9
+    type: RCT
+    opmerking: >-
+      240 patienten met ACUTE lage rugpijn, vier armen met placebo-medicatie en
+      placebo-manipulatie. NOCH diclofenac NOCH manipulatieve therapie versnelde
+      het herstel (HR 1,09 respectievelijk 1,01; p = 0,955). Deze studie gaat NIET
+      over lumbale extensiemobilisatie bij facetartrose en toont geen pijnreductie
+      versus sham; de toeschrijving in de app was volledig onjuist.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: donelson_1997_centralisatie
+    auteurs: [Donelson R, Aprill C, Medcalf R, Grant W]
+    titel: 'A prospective study of centralization of lumbar and referred pain: a predictor of symptomatic discs and anular competence'
+    bron: Spine
+    jaar: 1997
+    volume_paginas: 22(10):1115-22
+    doi: 10.1097/00007632-199705150-00011
+    pmid: '9160470'
+    url: https://doi.org/10.1097/00007632-199705150-00011
+    type: cohort
+    opmerking: >-
+      DIAGNOSTISCHE studie, geen effectstudie. Bij een McKenzie-beoordeling
+      centraliseerde de uitstralende pijn bij 50% van de patienten, van wie 74% een
+      positief discogram had. Het onderzoek onderscheidt discogene van niet-discogene
+      pijn en zegt niets over de effectiviteit van de McKenzie-methode, niets over
+      een extensiebias en niets over facetgewrichten. Er is geen responspercentage
+      van 60%.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: hendrick_2010_wandelen
+    auteurs: [Hendrick P, Te Wake AM, Tikkisetty AS, Wulff L, Yap C, Milosavljevic S]
+    titel: 'The effectiveness of walking as an intervention for low back pain: a systematic review'
+    bron: European Spine Journal
+    jaar: 2010
+    volume_paginas: 19(10):1613-20
+    doi: 10.1007/s00586-010-1412-z
+    pmid: '20414688'
+    url: https://doi.org/10.1007/s00586-010-1412-z
+    type: SR
+    opmerking: >-
+      Systematische review waarin SLECHTS VIER studies aan de criteria voldeden.
+      Drie lager gerangschikte studies vonden pijnvermindering, de hoogst
+      gerangschikte studie vond GEEN effect. Conclusie: er is slechts laag tot
+      matig bewijs voor wandelen als effectieve interventie. Geen meta-analyse,
+      geen 2206 deelnemers, en geen enkele kosteneffectiviteitsanalyse.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: hides_2001_stabilisatie
+    auteurs: [Hides JA, Jull GA, Richardson CA]
+    titel: Long-term effects of specific stabilizing exercises for first-episode low back pain
+    bron: Spine
+    jaar: 2001
+    volume_paginas: 26(11):E243-8
+    doi: 10.1097/00007632-200106010-00004
+    pmid: '11389408'
+    url: https://doi.org/10.1097/00007632-200106010-00004
+    type: RCT
+    opmerking: >-
+      39 patienten met ACUTE, EERSTE episode lage rugpijn. Vergeleken werd
+      specifieke oefentherapie bovenop medische zorg tegenover medische zorg en
+      hervatting van normale activiteit — NIET tegenover algemene oefentherapie.
+      Recidief na een jaar 30% tegenover 84% (p kleiner dan 0,001); na twee tot drie
+      jaar 35% tegenover 75% (p kleiner dan 0,01). Kleine steekproef, telefonische
+      vragenlijst als uitkomstmaat.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: hides_1994_multifidus
+    auteurs: [Hides JA, Stokes MJ, Saide M, Jull GA, Cooper DH]
+    titel: Evidence of lumbar multifidus muscle wasting ipsilateral to symptoms in patients with acute/subacute low back pain
+    bron: Spine
+    jaar: 1994
+    volume_paginas: 19(2):165-72
+    doi: 10.1097/00007632-199401001-00009
+    pmid: '8153825'
+    url: https://doi.org/10.1097/00007632-199401001-00009
+    type: cohort
+    opmerking: >-
+      26 patienten met ACUTE unilaterale lage rugpijn en 51 gezonde controles,
+      echografie. Duidelijke asymmetrie van de multifidusdoorsnede aan de
+      symptomatische zijde (verschil 31 plus of min 8%), beperkt tot EEN
+      wervelniveau. Deze publicatie toont de atrofie, maar bevat GEEN uitspraak
+      dat die niet spontaan herstelt zonder gerichte oefening, en gaat niet over
+      facet- of discuspathologie als zodanig.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: aasa_2015_motorcontrole
+    auteurs: [Aasa B, Berglund L, Michaelson P, Aasa U]
+    titel: >-
+      Individualized low-load motor control exercises and education versus a
+      high-load lifting exercise and education to improve activity, pain intensity,
+      and physical performance in patients with low back pain: a randomized
+      controlled trial
+    bron: Journal of Orthopaedic and Sports Physical Therapy
+    jaar: 2015
+    volume_paginas: 45(2):77-85
+    doi: 10.2519/jospt.2015.5021
+    pmid: '25641309'
+    url: https://doi.org/10.2519/jospt.2015.5021
+    type: RCT
+    opmerking: >-
+      70 deelnemers met terugkerende lage rugpijn. De LAAGBELASTE motorcontrolegroep
+      verbeterde meer op de Patient-Specific Functional Scale (4,2 tegenover 2,5
+      punten; p kleiner dan 0,001) en op bewegingscontrole dan de zwaarbelaste
+      tilgroep. Geen verschil in pijnintensiteit, kracht of twee van de drie
+      uithoudingstests. Er was GEEN rekgroep en geen groep met algemene oefening.
+      De richting is dus omgekeerd aan wat de app beweerde. Eerste auteur is Aasa,
+      niet Berglund.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: bieringsorensen_1984_rugextensoren
+    auteurs: [Biering-Sorensen F]
+    titel: Physical measurements as risk indicators for low-back trouble over a one-year period
+    bron: Spine
+    jaar: 1984
+    volume_paginas: 9(2):106-19
+    doi: 10.1097/00007632-198403000-00002
+    pmid: '6233709'
+    url: https://doi.org/10.1097/00007632-198403000-00002
+    type: cohort
+    opmerking: >-
+      928 inwoners van Glostrup, een jaar opgevolgd. Hoofdbevinding: een goede
+      isometrische uithouding van de rugspieren kan een EERSTE episode van rugpijn
+      voorkomen BIJ MANNEN. Recidief of persistentie hing vooral samen met het
+      interval sinds de laatste episode, niet met de spiertest. Er staat GEEN
+      correlatiecoefficient van 0,78 in, en de test wordt niet als beste predictor
+      van recidief gepresenteerd.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (search_articles + get_article_metadata)
+
+  - key: naugle_2012_hypoalgesie
+    auteurs: [Naugle KM, Fillingim RB, Riley JL]
+    titel: A meta-analytic review of the hypoalgesic effects of exercise
+    bron: The Journal of Pain
+    jaar: 2012
+    volume_paginas: 13(12):1139-50
+    doi: 10.1016/j.jpain.2012.09.006
+    pmid: '23141188'
+    url: https://doi.org/10.1016/j.jpain.2012.09.006
+    type: SR
+    opmerking: >-
+      Meta-analyse. Bij GEZONDE deelnemers verlagen aerobe (d = 0,41 tot 0,59),
+      isometrische (d = 1,02 tot 0,72) en dynamische weerstandsoefening (d = 0,83
+      tot 0,75) de experimenteel opgewekte pijn. TEGENSTRIJDIGE EVIDENTIE die in de
+      app ontbrak: bij mensen met CHRONISCHE PIJN zijn richting en grootte van het
+      effect sterk wisselend en treedt zowel hypoalgesie als HYPERALGESIE op,
+      afhankelijk van aandoening en intensiteit. De optimale dosis kon niet bepaald
+      worden. De review onderbouwt geen endogeen opioidmechanisme.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: steffens_2016_preventie
+    auteurs: [Steffens D, Maher CG, Pereira LSM, Stevens ML, Oliveira VC, Chapple M, Teixeira-Salmela LF, Hancock MJ]
+    titel: 'Prevention of low back pain: a systematic review and meta-analysis'
+    bron: JAMA Internal Medicine
+    jaar: 2016
+    volume_paginas: 176(2):199-208
+    doi: 10.1001/jamainternmed.2015.7431
+    pmid: '26752509'
+    url: https://doi.org/10.1001/jamainternmed.2015.7431
+    type: SR
+    opmerking: >-
+      21 gerandomiseerde trials, 30.850 deelnemers. Oefening MET educatie verlaagde
+      het risico op een episode lage rugpijn (RR 0,55; 95% BI 0,41-0,74; matige
+      bewijskracht); oefening alleen RR 0,65 (0,50-0,86; lage tot zeer lage
+      bewijskracht). Educatie alleen, rugbanden en inlegzolen hadden GEEN effect.
+      Verscheen in JAMA Internal Medicine, NIET in Cochrane. Het getal 6133 is het
+      aantal in de zoekopdracht gevonden STUDIES, geen aantal deelnemers, en er is
+      geen analyse over meer dan zes maanden krachttraining.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: foster_2018_lagerugpijn
+    auteurs: [Foster NE, Anema JR, Cherkin D, Chou R, Cohen SP, Gross DP, Ferreira PH, Fritz JM, Koes BW, Peul W, Turner JA, Maher CG]
+    titel: 'Prevention and treatment of low back pain: evidence, challenges, and promising directions'
+    bron: Lancet
+    jaar: 2018
+    volume_paginas: 391(10137):2368-2383
+    doi: 10.1016/S0140-6736(18)30489-6
+    pmid: '29573872'
+    url: https://doi.org/10.1016/S0140-6736(18)30489-6
+    type: review
+    opmerking: >-
+      Overzichtsartikel in de Lancet-reeks over lage rugpijn. Richtlijnen bevelen
+      een biopsychosociaal kader aan met niet-medicamenteuze eerstelijnszorg:
+      educatie die zelfmanagement en hervatting van normale activiteit en beweging
+      ondersteunt, en psychologische programma's bij aanhoudende klachten.
+      Wereldwijd wordt te weinig eerstelijnsbehandeling toegepast en te veel
+      beeldvorming, rust, opioiden, infiltraties en chirurgie. Het artikel bevat
+      GEEN vergelijkende effectuitspraak van zelfmanagement tegenover passieve
+      behandeling.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (search_articles + get_article_metadata)

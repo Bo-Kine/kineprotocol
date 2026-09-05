@@ -66,7 +66,7 @@ const BRONSTATUS = {
     "datum": "2026-09-05"
   },
   "pfps": {
-    "gecontroleerd": 10,
+    "gecontroleerd": 16,
     "gedekt": 0,
     "deels": 1,
     "open": 0,

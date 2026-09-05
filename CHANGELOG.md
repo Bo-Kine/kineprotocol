@@ -12,6 +12,12 @@ Formaat per regel: wat · waarom · bron.
 - Belangrijkste bevinding over voetorthesen ontbrak · `collins_2008_voetorthesen` toont wel meerwaarde boven vlakke inlegzolen (NNT 4), maar GEEN verschil met kinesitherapie, en orthesen bovenop kinesitherapie voegden niets toe · bovendien werden deelnemers niet geselecteerd op pronatie, terwijl de app dat als indicatie presenteerde
 - Superlatief en cijfers geschrapt · stapfrequentie +10% als "meest bewezen interventie" (`neal_2016_looptechniek` spreekt van BEPERKT bewijs en noemt die 10% niet), compressiereductie 20-30%, en het deelnemersaantal 690 dat niet in de meta-analyse staat
 
+- Fase B op patellofemorale pijn · alle 8 citaties in de evidenceteksten en de beschrijving bevestigd als correct · 11 problemen in oefennotities en populatievermeldingen
+- Twee fouten in één korte oefennotitie · "reduceert corticale pijninhibitie (Rio et al., 2015)" · die bron betreft 6 volleyballers met PATELLAPEESTENDINOPATHIE, niet patellofemorale pijn, en de formulering draait de betekenis om: de bron meet corticale INHIBITIE, die na isometrie juist afnam
+- Een oefennotitie stond haaks op de nuance elders in hetzelfde protocol · "single leg squat: goudstandaard, correleert met heupabductorzwakte" tegenover de zojuist toegevoegde bevinding dat er prospectief géén verband is tussen heupkracht en het ontstaan van de klacht
+- Interne inconsistentie in de cadansoefening · de oefening heet "+10%", de parameter zegt "+5-10%" en het voorbeeld 170 naar 185 komt neer op +8,8% · vervangen door een relatieve verhoging vanaf de gemeten uitgangswaarde
+- Populatiebeperkingen toegevoegd · het cross-sectionele krachttekort geldt voor VOLWASSENEN (bij adolescenten niet gevonden) en de conclusies over looptraining betreffen VROUWELIJKE lopers
+
 ## 2026-09-05 — bronaudit facettaire blokkade lumbaal
 
 - 13 claims beoordeeld, 4 nieuwe bronnen eerstehands opgehaald en geverifieerd via PubMed · zeven van de twaalf citaties konden niet eenduidig opgehaald worden, waaronder BEIDE bronnen onder de kernaanname van dit protocol: het pijnarme venster van 6-12 weken na de blokkade

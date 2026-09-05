@@ -2,7 +2,10 @@ protocol: pfps
 laatst_gecontroleerd: 2026-09-05
 versie: 1
 fase_a_door: hoofdagent, alle metadata eerstehands opgehaald via PubMed MCP
-fase_b_door: nog uit te voeren
+fase_b_door: >-
+  onafhankelijke verificator met schone context, 2026-09-05; alle 8 citaties in
+  de evidenceteksten en de beschrijving bevestigd als correct, 11 problemen
+  gevonden in oefennotities en populatievermeldingen, alle verwerkt
 
 claims:
   - id: pfps_c01
@@ -136,3 +139,87 @@ claims:
     verwerkt: >-
       alle vier in de tekst gemarkeerd als niet geverifieerd, refs-veld vervangen
       door zes eerstehands geverifieerde bronnen met volledige vindplaats
+
+  # --- Bevindingen uit fase B ---
+
+  - id: pfps_c11
+    tekst: Isometrie reduceert de corticale pijninhibitie
+    plaats: oefennotitie pfps fase 1
+    bronnen: [rio_2015_isometrie]
+    gedekt: nee
+    opmerking: >-
+      TWEE FOUTEN IN EEN KORTE NOTITIE. Ten eerste betreft de bron 6 volleyballers
+      met PATELLAPEESTENDINOPATHIE, niet met patellofemorale pijn — een
+      ongelabelde extrapolatie naar een andere aandoening. Ten tweede draait de
+      formulering de betekenis om: de bron meet corticale INHIBITIE, die na
+      isometrie afnam (van 27,5% naar 55,0% op de gebruikte ratio); "reduceert de
+      corticale pijninhibitie" zegt iets anders. De citatie ontbrak bovendien in
+      het refs-veld.
+    verwerkt: >-
+      populatie en werkelijke bevinding opgenomen, extrapolatie gelabeld, bron
+      toegevoegd aan het refs-veld
+
+  - id: pfps_c12
+    tekst: Terminale knie-extensie geeft selectieve VMO-activering
+    plaats: oefennotitie pfps fase 2
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      NIET GEVERIFIEERD. De citatie Peng 2014 kon niet opgehaald worden en staat
+      niet in references.yaml. Selectieve activering van de vastus medialis
+      obliquus is bovendien een omstreden concept.
+    verwerkt: citatie geschrapt, doel gelabeld als klinische redenering
+
+  - id: pfps_c13
+    tekst: De single leg squat is de goudstandaard en correleert met heupabductorzwakte
+    plaats: oefennotitie pfps testonderdeel
+    bronnen: [rathleff_2014_heupkracht]
+    gedekt: nee
+    opmerking: >-
+      STRIJDIG MET DE NUANCE IN HETZELFDE PROTOCOL. Een superlatief zonder bron,
+      gecombineerd met een correlatieclaim die haaks staat op de bevinding dat er
+      prospectief geen verband is tussen heupkracht en het ontstaan van de klacht.
+      De test blijft bruikbaar voor bewegingskwaliteit, maar een zichtbare valgus
+      wijst niet zonder meer op een oorzakelijk krachttekort.
+    verwerkt: superlatief geschrapt, de nuance uit rathleff_2014_heupkracht toegevoegd
+
+  - id: pfps_c14
+    tekst: Stapfrequentie verhogen van 170 naar 185 stappen per minuut
+    plaats: oefenparameters pfps fase 4
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      INTERN INCONSISTENT. De oefening heet "+10%", de parameter zegt "+5-10%" en
+      het genoemde voorbeeld komt neer op +8,8%. Bovendien is een vaste
+      doelwaarde van 185 niet zinvol zonder de uitgangscadans van de patient.
+    verwerkt: >-
+      vaste doelwaarde vervangen door een relatieve verhoging ten opzichte van de
+      gemeten uitgangswaarde
+
+  - id: pfps_c15
+    tekst: Populatiebeperkingen ontbraken bij twee bronnen
+    plaats: protocols.pfps fase 3 en 4 evidence
+    bronnen: [rathleff_2014_heupkracht, neal_2016_looptechniek]
+    gedekt: nee
+    opmerking: >-
+      PRECISERINGEN NA FASE B. Het cross-sectionele krachttekort geldt volgens de
+      bron voor VOLWASSENEN; bij adolescenten werd het niet gevonden. En de
+      conclusies over looptraining betreffen VROUWELIJKE lopers. Ook ontbrak bij
+      de vergelijking proximaal tegenover quadriceps de bewijskracht (matig),
+      terwijl die er bij de eerste deelzin wel stond.
+    verwerkt: alle drie de preciseringen doorgevoerd
+
+  - id: pfps_c16
+    tekst: >-
+      Vier superlatieven en mechanismeclaims in oefennotities: hoeksteen
+      heuptraining, hoge functionele transfer, essentieel voor behandelplanning,
+      meer heupextensie geeft minder patellofemorale compressie, en een
+      hersteltermijn van 6 tot 12 weken
+    plaats: oefennotities pfps
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      De vaste voetnoot onder het oefenprogramma dekt de doseringen, maar
+      superlatieven en expliciete mechanisme- en prognose-uitspraken lezen als
+      evidentie en horen apart gelabeld.
+    verwerkt: alle vijf herschreven als praktijkkeuze of klinische redenering

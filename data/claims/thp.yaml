@@ -1,0 +1,258 @@
+protocol: thp
+laatst_gecontroleerd: 2026-09-05
+versie: 1
+fase_a_door: hoofdagent, alle metadata eerstehands opgehaald via PubMed MCP
+fase_b_door: nog uit te voeren
+
+claims:
+  - id: thp_c01
+    tekst: ERAS-programma's verkorten de ligduur na THP naar 1-3 dagen zonder toename van complicaties
+    plaats: protocols.thp fase 1 evidence
+    bronnen: [wainwright_2019_eras]
+    gedekt: deels
+    opmerking: >-
+      COMPONENTEN GEDEKT, CIJFER EN JAARTAL NIET. Het consensusdocument benoemt
+      preoperatieve educatie, opioidsparende multimodale analgesie en vroege
+      mobilisatie als best practice, maar noemt geen ligduur van 1 tot 3 dagen.
+      Het jaartal 2020 in de app verwijst naar een erratum; het consensusartikel
+      dateert van 2019. BIJKOMENDE BEVINDING: de consensus stelt uitdrukkelijk
+      dat er onvoldoende bewijs is dat de chirurgische techniek op zich het
+      bereiken van ontslagcriteria beinvloedt.
+    verwerkt: >-
+      cijfer geschrapt, jaartal gecorrigeerd, de nuance over chirurgische
+      techniek toegevoegd
+
+  - id: thp_c02
+    tekst: Mobilisatie binnen 24 uur reduceert de incidentie van diepveneuze trombose
+    plaats: protocols.thp fase 1 evidence
+    bronnen: [guerra_2015_vroegemobilisatie]
+    gedekt: nee
+    opmerking: >-
+      DIEPVENEUZE TROMBOSE IS GEEN UITKOMSTMAAT IN DE BRON. De review meet
+      ligduur (1,8 dagen korter; 95% BI 1,1-2,6) en meldt daarnaast winst in
+      bewegingsuitslag, spierkracht en levenskwaliteit in afzonderlijke trials,
+      zonder toename van ongunstige uitkomsten. "Bij voorkeur op de operatiedag
+      zelf" staat er evenmin in; in 4 van de 5 trials zat de interventiegroep
+      binnen 24 uur uit bed.
+    verwerkt: >-
+      tromboseclaim geschrapt, de gedekte reductie van 1,8 dagen opgenomen
+
+  - id: thp_c03
+    tekst: Preoperatieve educatie vermindert angst en verbetert vroege postoperatieve functie
+    plaats: protocols.thp fase 1 evidence
+    bronnen: [mcdonald_2014_preoperatieve_educatie]
+    gedekt: nee
+    opmerking: >-
+      DE CONCLUSIE VAN DE BRON IS OMGEKEERD (CLAUDE.md 1.9). De Cochrane-review
+      van 18 trials en 1463 deelnemers besluit dat het ONZEKER is of educatie
+      meerwaarde heeft boven gebruikelijke zorg. Alle effectschattingen waren
+      niet significant en van lage bewijskracht: angst -2,28 punten (95% BI
+      -5,68 tot 1,12), pijn -0,34 (-0,94 tot 0,26), functie -4,84 (-10,23 tot
+      0,66). De auteurs noemen het wel een mogelijk nuttige aanvulling met weinig
+      risico, in het bijzonder bij patienten met depressie, angst of
+      onrealistische verwachtingen.
+    verwerkt: >-
+      claim vervangen door de conclusie van de bron inclusief de nuance over
+      specifieke patientengroepen
+
+  - id: thp_c04
+    tekst: >-
+      De luxatie-incidentie bedraagt 0,5-3%, is het hoogst in de eerste 6-12 weken
+      en is verhoogd bij de posterieure benadering
+    plaats: protocols.thp fase 1 evidence + BESCHRIJVING.thp
+    bronnen: [kwon_2006_luxatie]
+    gedekt: nee
+    opmerking: >-
+      DE BOODSCHAP VAN DE BRON IS EEN ANDERE. Beslissend is de weke-delenreconstructie,
+      niet de benadering: posterieur ZONDER herstel 4,46%, MET herstel 0,49%
+      (RR 8,21; 95% BI 4,05-16,67). MET herstel zijn de cijfers voor anterolateraal
+      (0,70%), direct lateraal (0,43%) en posterieur (1,01%) VERGELIJKBAAR. Het
+      bereik 0,5 tot 3%, het tijdsvenster van 6 tot 12 weken en de rol van
+      patienteneducatie staan niet in de bron.
+    verwerkt: >-
+      werkelijke cijfers opgenomen in zowel de evidencetekst als de beschrijving,
+      met de nadruk op kapselreconstructie in plaats van benaderingswijze
+
+  - id: thp_c05
+    tekst: Een minder restrictief regime verhoogt de luxatie-incidentie niet en verbetert tevredenheid en hersteltempo
+    plaats: protocols.thp fase 2 evidence
+    bronnen: [vanderweegen_2016_restricties]
+    gedekt: ja
+    opmerking: >-
+      GEDEKT. 6 studies, 1122 ingrepen: 1,5% luxaties met restricties tegenover
+      1,0% zonder; patienten zonder restricties hervatten activiteiten
+      significant sneller en waren meer tevreden. TYPE ONJUIST VERMELD: het is
+      een systematische review met meta-analyse, geen RCT. En de bevinding geldt
+      voor zowel de posterieure als de anterolaterale benadering, niet specifiek
+      voor posterieur met kapselreconstructie.
+    verwerkt: cijfers en studietype gecorrigeerd, populatie verbreed
+
+  - id: thp_c06
+    tekst: >-
+      De anterieure benadering geeft sneller vroeg functioneel herstel in de eerste
+      6 weken, zonder verschil op middellange termijn
+    plaats: protocols.thp fase 2 evidence
+    bronnen: [meermans_2017_anterieur]
+    gedekt: ja
+    opmerking: >-
+      GEDEKT. Systematische review van 42 studies: scores waren beter na de
+      directe anterieure benadering gedurende de eerste zes weken, daarna geen
+      verschil meer met de posterieure benadering. AANVULLENDE NUANCE die ontbrak:
+      de meeste studies zijn van matige tot lage kwaliteit, de operatieduur is
+      significant langer, de leercurve steil, en de auteurs vinden weinig bewijs
+      voor betere kinematiek of langetermijnuitkomsten.
+    verwerkt: kwaliteitsbeperking en operatieduur toegevoegd
+
+  - id: thp_c07
+    tekst: Abductorzwakte is de belangrijkste determinant van gangasymmetrie en Trendelenburg-patroon
+    plaats: protocols.thp fase 2 evidence
+    bronnen: [rasch_2010_spierkracht]
+    gedekt: nee
+    opmerking: >-
+      DE BRON NEIGT NAAR HET TEGENDEEL. In dit cohort van 20 patienten HERSTELDEN
+      gang en balans na de operatie: de verkorte eenbenige standfase was al na zes
+      maanden verdwenen, terwijl het heupkrachttekort nog 12% bedroeg. Wel gedekt
+      is het persisterende krachttekort: 18% preoperatief, 12% na zes maanden en
+      6% na twee jaar. Een oorzakelijke rol als belangrijkste determinant van
+      gangasymmetrie volgt hier niet uit.
+    verwerkt: >-
+      determinantclaim geschrapt, de werkelijke krachtcijfers en het herstel van
+      gang en balans opgenomen
+
+  - id: thp_c08
+    tekst: >-
+      Progressieve weerstandstraining geeft grotere winst in heupabductorkracht,
+      ganssnelheid en traplopen
+    plaats: protocols.thp fase 3 evidence
+    bronnen: [husby_2009_krachttraining, coulter_2013_oefentherapie]
+    gedekt: deels
+    opmerking: >-
+      KRACHT GEDEKT, GANG EN TRAPLOPEN NIET UIT DIE BRON. De trial (n = 24) toonde
+      significant meer winst in 1RM leg press en abductiekracht en in
+      krachtontwikkelingssnelheid, maar vond GEEN verschillen in gangpatroon, en
+      traplopen was geen uitkomstmaat. Loopsnelheid en cadans zijn wel gedekt door
+      een andere bron: 6 m/min (95% BI 1-11) en 20 stappen/min (8-32). De app
+      koppelde bevindingen van verschillende studies aan elkaar. De citatie
+      Mikkelsen 2014 is in dit dossier niet geverifieerd.
+    verwerkt: >-
+      bevindingen per bron gescheiden, gangclaim toegewezen aan de juiste bron
+
+  - id: thp_c09
+    tekst: Persisterende abductorzwakte tot 20-25% krachtverlies blijft tot 2 jaar na THP meetbaar
+    plaats: protocols.thp fase 3 en 4 evidence
+    bronnen: [judd_2013_krachtdeficit, rasch_2010_spierkracht]
+    gedekt: nee
+    opmerking: >-
+      CIJFER NIET ONDERBOUWD EN VERKEERDE PUBLICATIE. De aangehaalde publicatie
+      (Clin Biomech 2014) was met gerichte zoekopdrachten niet eenduidig terug te
+      vinden. Het wel gevonden werk van dezelfde eerste auteur meet PREOPERATIEVE
+      tekorten en vond de heupabductoren slechts 17% zwakker, niet significant
+      (p = 0,23). Het cohort dat wel twee jaar opvolgt, geeft een resterend
+      heupkrachttekort van 6%. Het bereik 20 tot 25% is dus nergens gedekt.
+    verwerkt: percentage geschrapt, vervangen door de wel geverifieerde 6% na twee jaar
+
+  - id: thp_c10
+    tekst: Het Trendelenburg-patroon is de meest sensitieve klinische marker van gluteus medius-insufficientie
+    plaats: protocols.thp fase 3 evidence + criteria_go
+    bronnen: [hardcastle_1985_trendelenburg]
+    gedekt: nee
+    opmerking: >-
+      SUPERLATIEF NIET ONDERBOUWD EN DE KERNBOODSCHAP VAN DE BRON ONTBRAK. De
+      publicatie standaardiseert de uitvoering van de test en waarschuwt vooral
+      voor MISINTERPRETATIE: vals-positieven door pijn, gebrekkige medewerking en
+      aanstoten van ribbenboog tegen bekkenkam; vals-negatieven door compensatie
+      met spieren boven en onder het bekken of leunen naar de standzijde. Dat is
+      klinisch relevant, want het protocol gebruikt de test als doorstroomcriterium.
+    verwerkt: >-
+      superlatief geschrapt, de valkuilen voor vals-positieven en vals-negatieven
+      expliciet opgenomen
+
+  - id: thp_c11
+    tekst: Supervisie geeft betere functionele uitkomsten dan zelfstandig oefenen
+    plaats: protocols.thp fase 3 evidence
+    bronnen: [coulter_2013_oefentherapie]
+    gedekt: nee
+    opmerking: >-
+      DE CONCLUSIE VAN DE BRON IS OMGEKEERD (CLAUDE.md 1.9). De systematische
+      review besluit uitdrukkelijk dat de oefeningen even effectief zijn
+      ONBEGELEID THUIS als onder supervisie in een ambulante setting. De app
+      presenteerde supervisie als superieur, met een toevoeging over
+      risicopatienten die evenmin in de bron staat.
+    verwerkt: >-
+      claim vervangen door de conclusie van de bron, met de gedekte effectgroottes
+
+  - id: thp_c12
+    tekst: >-
+      Een laat gestart oefenprogramma verbetert 4-12 maanden na THP nog spierkracht,
+      gangfunctie en zelfgerapporteerde functie
+    plaats: protocols.thp fase 4 evidence
+    bronnen: [trudellejackson_2004_laatfase]
+    gedekt: deels
+    opmerking: >-
+      GEDEKT BEHALVE GANGFUNCTIE. De RCT toont significante verbetering van
+      spierkracht (heupabductoren 41,2%, extensoren 47,8%, flexoren 24,4%,
+      knie-extensoren 23,4%), HOUDINGSSTABILITEIT (36,8%) en zelfgerapporteerde
+      functie. Gangfunctie was geen uitkomstmaat. Kleine steekproef: 34
+      gerandomiseerd, 28 voltooiden.
+    verwerkt: gangfunctie vervangen door houdingsstabiliteit, cijfers toegevoegd
+
+  - id: thp_c13
+    tekst: Botbelastende activiteit ondersteunt de peri-prothetische botdensiteit en osseo-integratie
+    plaats: protocols.thp fase 4 en 5 evidence
+    bronnen: [kohrt_2004_botgezondheid]
+    gedekt: nee
+    opmerking: >-
+      EXTRAPOLATIE BUITEN DE ONDERZOCHTE CONTEXT (CLAUDE.md 1.5). Het position
+      stand gaat over lichamelijke activiteit en botgezondheid in het algemeen,
+      niet over peri-prothetisch bot of osseo-integratie van cementloze
+      componenten. PubMed geeft voor dit document geen abstract.
+    verwerkt: >-
+      algemene bevinding behouden met bronvermelding, de peri-prothetische
+      toepassing expliciet als extrapolatie gelabeld
+
+  - id: thp_c14
+    tekst: >-
+      De meerderheid keert binnen 6 maanden terug naar het pre-operatieve sportniveau,
+      met de hoogste percentages voor fietsen, zwemmen en wandelen
+    plaats: protocols.thp fase 5 evidence
+    bronnen: [hoorntje_2018_sporthervatting]
+    gedekt: deels
+    opmerking: >-
+      RICHTING GEDEKT, TERMIJN EN RANGSCHIKKING NIET. De meta-analyse van 37
+      studies geeft sporthervatting tot gemiddeld 104% van het niveau vlak voor
+      de operatie en 82% van het niveau van voor de klachten, met een tijd tot
+      sporthervatting van 16 TOT 28 WEKEN — de bovengrens ligt dus boven zes
+      maanden. Een rangschikking van sporttakken staat niet in het abstract.
+    verwerkt: werkelijke percentages en termijn opgenomen, rangschikking geschrapt
+
+  - id: thp_c15
+    tekst: Obesitas is een van de belangrijkste risicofactoren voor coxartrose
+    plaats: BESCHRIJVING.thp
+    bronnen: [murphy_2010_levenslangrisico]
+    gedekt: nee
+    opmerking: >-
+      DE AANGEHAALDE BRON SPREEKT DIT TEGEN. Het levenslange risico van 25,3%
+      (95% BI 21,3-29,3) is correct overgenomen, maar in diezelfde studie
+      verschilde het risico NIET naar geslacht, etniciteit, opleidingsniveau of
+      eerder heupletsel, en werd er GEEN verband met BMI gevonden — de auteurs
+      benoemen dat expliciet als opvallend. Obesitas als belangrijke risicofactor
+      voor heupartrose is dus niet door deze bron gedekt.
+    verwerkt: >-
+      levenslang risico exact overgenomen, de afwezigheid van een BMI-verband
+      expliciet toegevoegd, overige risicofactoren gelabeld als klinische redenering
+
+  - id: thp_c16
+    tekst: >-
+      Niet geverifieerde citaties: Bandholm en Kehlet 2012, Mikkelsen 2014,
+      Winther 2016, Heiberg 2012, Klein 2007, Ganz 2008, AOANJRR 2022
+    plaats: protocols.thp fase 2 tot 5 evidence + BESCHRIJVING.thp
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      ZEVEN CITATIES NIET GECONTROLEERD in deze auditronde, deels omdat de
+      lookup geen eenduidig resultaat gaf en deels omdat het om registerdata gaat
+      die niet in PubMed staan. Volgens CLAUDE.md 1.2 mogen die niet als
+      geverifieerd overkomen.
+    verwerkt: >-
+      alle zeven in de tekst gemarkeerd als niet geverifieerd in dit dossier,
+      de bijbehorende uitspraken gelabeld als klinische redenering

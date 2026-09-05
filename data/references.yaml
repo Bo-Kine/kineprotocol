@@ -1016,3 +1016,320 @@ references:
       behandeling.
     geverifieerd_op: 2026-09-05
     geverifieerd_door: PubMed MCP (search_articles + get_article_metadata)
+
+  # --- Totale heupprothese ---
+
+  - key: wainwright_2019_eras
+    auteurs: [Wainwright TW, Gill M, McDonald DA, Middleton RG, Reed M, Sahota O, Yates P, Ljungqvist O]
+    titel: >-
+      Consensus statement for perioperative care in total hip replacement and total
+      knee replacement surgery: Enhanced Recovery After Surgery (ERAS) Society
+      recommendations
+    bron: Acta Orthopaedica
+    jaar: 2019
+    volume_paginas: 91(1):3-19
+    doi: 10.1080/17453674.2019.1683790
+    pmid: '31663402'
+    url: https://doi.org/10.1080/17453674.2019.1683790
+    type: richtlijn
+    opmerking: >-
+      Multidisciplinair consensusdocument over 17 onderwerpen. Best practice omvat
+      preoperatieve educatie, anesthesietechniek, transfusiebeleid, opioidsparende
+      multimodale analgesie en vroege mobilisatie. LET OP: de consensus stelt
+      uitdrukkelijk dat er ONVOLDOENDE bewijs is dat een bepaalde chirurgische
+      techniek (benaderingswijze, minimaal invasief, prothesekeuze, computerassistentie)
+      op zich het bereiken van ontslagcriteria beinvloedt. Een ligduur van 1 tot 3
+      dagen staat niet in het abstract. Het jaartal in de app (2020) verwijst naar
+      een erratum; het consensusartikel dateert van 2019.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (get_article_metadata)
+
+  - key: guerra_2015_vroegemobilisatie
+    auteurs: [Guerra ML, Singh PJ, Taylor NF]
+    titel: >-
+      Early mobilization of patients who have had a hip or knee joint replacement
+      reduces length of stay in hospital: a systematic review
+    bron: Clinical Rehabilitation
+    jaar: 2015
+    volume_paginas: 29(9):844-54
+    doi: 10.1177/0269215514558641
+    pmid: '25452634'
+    url: https://doi.org/10.1177/0269215514558641
+    type: SR
+    opmerking: >-
+      Systematische review met meta-analyse van 5 RCT's, 622 deelnemers. Vroege
+      mobilisatie verkortte de ligduur met 1,8 dagen (95% BI 1,1-2,6). In 4 van de
+      5 trials zat de interventiegroep binnen 24 uur uit bed. Afzonderlijke trials
+      meldden winst in bewegingsuitslag, spierkracht en levenskwaliteit. Geen
+      toename van ongunstige uitkomsten. DIEPVENEUZE TROMBOSE IS GEEN UITKOMSTMAAT
+      in deze review, en "op de operatiedag zelf" staat er evenmin in.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: mcdonald_2014_preoperatieve_educatie
+    auteurs: [McDonald S, Page MJ, Beringer K, Wasiak J, Sprowson A]
+    titel: Preoperative education for hip or knee replacement
+    bron: Cochrane Database of Systematic Reviews
+    jaar: 2014
+    volume_paginas: 2014(5):CD003526
+    doi: 10.1002/14651858.CD003526.pub3
+    pmid: '24820247'
+    url: https://doi.org/10.1002/14651858.CD003526.pub3
+    type: SR
+    opmerking: >-
+      Cochrane-review, 18 trials, 1463 deelnemers. CONCLUSIE: het is ONZEKER of
+      preoperatieve educatie meerwaarde heeft boven gebruikelijke zorg voor angst,
+      pijn, functie of ongewenste voorvallen. Alle effectschattingen waren niet
+      significant en van lage bewijskracht (angst -2,28 punten, 95% BI -5,68 tot
+      1,12; pijn -0,34, 95% BI -0,94 tot 0,26; functie -4,84, 95% BI -10,23 tot
+      0,66). De auteurs noemen het wel een mogelijk nuttige aanvulling met weinig
+      risico, in het bijzonder bij patienten met depressie, angst of onrealistische
+      verwachtingen. Dit spreekt de claim in de app tegen.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (search_articles + get_article_metadata)
+
+  - key: kwon_2006_luxatie
+    auteurs: [Kwon MS, Kuskowski M, Mulhall KJ, Macaulay W, Brown TE, Saleh KJ]
+    titel: Does surgical approach affect total hip arthroplasty dislocation rates?
+    bron: Clinical Orthopaedics and Related Research
+    jaar: 2006
+    volume_paginas: 447:34-8
+    doi: 10.1097/01.blo.0000218746.84494.df
+    pmid: '16741471'
+    url: https://doi.org/10.1097/01.blo.0000218746.84494.df
+    type: SR
+    opmerking: >-
+      Meta-analyse. Posterieure benadering ZONDER weke-delenherstel 4,46% luxaties,
+      MET herstel 0,49%; relatief risico 8,21 (95% BI 4,05-16,67). Een aparte
+      review van 11 studies gaf VERGELIJKBARE luxatiecijfers voor anterolateraal
+      (0,70%), direct lateraal (0,43%) en posterieur met weke-delenherstel (1,01%).
+      De kernboodschap is dus dat kapselreconstructie beslissend is, NIET dat de
+      posterieure benadering op zich een hoger risico geeft. Het bereik 0,5 tot 3%,
+      het tijdsvenster van 6 tot 12 weken en de rol van patienteneducatie staan er
+      niet in.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: vanderweegen_2016_restricties
+    auteurs: [van der Weegen W, Kornuijt A, Das D]
+    titel: >-
+      Do lifestyle restrictions and precautions prevent dislocation after total hip
+      arthroplasty? A systematic review and meta-analysis of the literature
+    bron: Clinical Rehabilitation
+    jaar: 2016
+    volume_paginas: 30(4):329-39
+    doi: 10.1177/0269215515579421
+    pmid: '25834275'
+    url: https://doi.org/10.1177/0269215515579421
+    type: SR
+    opmerking: >-
+      Systematische review met meta-analyse van 6 studies (3 RCT's en 3 cohorten),
+      1122 ingrepen. Restrictiegroep 8 luxaties (1,5%), groep zonder restricties
+      6 luxaties (1,0%). Patienten zonder restricties hervatten hun activiteiten
+      significant sneller en waren meer tevreden over hun hersteltempo. Zowel de
+      posterieure als de anterolaterale benadering waren opgenomen. Het is dus GEEN
+      RCT zoals de app vermeldde, en de bevinding geldt niet specifiek voor de
+      posterieure benadering met kapselreconstructie.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: meermans_2017_anterieur
+    auteurs: [Meermans G, Konan S, Das R, Volpin A, Haddad FS]
+    titel: 'The direct anterior approach in total hip arthroplasty: a systematic review of the literature'
+    bron: Bone and Joint Journal
+    jaar: 2017
+    volume_paginas: 99-B(6):732-740
+    doi: 10.1302/0301-620X.99B6.38053
+    pmid: '28566391'
+    url: https://doi.org/10.1302/0301-620X.99B6.38053
+    type: SR
+    opmerking: >-
+      Systematische review van 42 studies, merendeels van matige tot lage kwaliteit.
+      Scores waren beter na de directe anterieure benadering gedurende de EERSTE ZES
+      WEKEN; daarna was er geen verschil meer met de posterieure benadering. De
+      auteurs vinden weinig bewijs voor betere kinematiek of betere
+      langetermijnuitkomsten, melden een significant langere operatieduur en een
+      steile leercurve, met vergelijkbare complicatiecijfers en ligduur.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: rasch_2010_spierkracht
+    auteurs: [Rasch A, Dalen N, Berg HE]
+    titel: 'Muscle strength, gait, and balance in 20 patients with hip osteoarthritis followed for 2 years after THA'
+    bron: Acta Orthopaedica
+    jaar: 2010
+    volume_paginas: 81(2):183-8
+    doi: 10.3109/17453671003793204
+    pmid: '20367414'
+    url: https://doi.org/10.3109/17453671003793204
+    type: cohort
+    opmerking: >-
+      Slechts 20 patienten, gevolgd tot 2 jaar. Krachttekort van de heupspieren:
+      18% preoperatief, 12% na 6 maanden, 6% na 2 jaar ten opzichte van de gezonde
+      zijde. De knie-extensoren herstelden volledig van een tekort van 27%. GANG EN
+      BALANS HERSTELDEN NA DE OPERATIE — de kortere eenbenige standfase was al na 6
+      maanden verdwenen. De bron ondersteunt dus persisterende heupzwakte, maar
+      NIET dat abductorzwakte de belangrijkste determinant van gangasymmetrie is.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: husby_2009_krachttraining
+    auteurs: [Husby VS, Helgerud J, Bjorgen S, Husby OS, Benum P, Hoff J]
+    titel: Early maximal strength training is an efficient treatment for patients operated with total hip arthroplasty
+    bron: Archives of Physical Medicine and Rehabilitation
+    jaar: 2009
+    volume_paginas: 90(10):1658-67
+    doi: 10.1016/j.apmr.2009.04.018
+    pmid: '19801053'
+    url: https://doi.org/10.1016/j.apmr.2009.04.018
+    type: RCT
+    opmerking: >-
+      Kleine RCT (n = 24), maximale krachttraining vanaf een week postoperatief
+      gedurende 4 weken. Significant grotere winst in 1RM leg press en abductie en
+      in krachtontwikkelingssnelheid dan conventionele revalidatie; arbeidsefficientie
+      toonde enkel een trend (p = 0,065). BELANGRIJK: er werden GEEN verschillen in
+      gangpatroon gevonden tussen de groepen, en traplopen was geen uitkomstmaat.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: coulter_2013_oefentherapie
+    auteurs: [Coulter CL, Scarvell JM, Neeman TM, Smith PN]
+    titel: >-
+      Physiotherapist-directed rehabilitation exercises in the outpatient or home
+      setting improve strength, gait speed and cadence after elective total hip
+      replacement: a systematic review
+    bron: Journal of Physiotherapy
+    jaar: 2013
+    volume_paginas: 59(4):219-26
+    doi: 10.1016/S1836-9553(13)70198-X
+    pmid: '24287215'
+    url: https://doi.org/10.1016/S1836-9553(13)70198-X
+    type: SR
+    opmerking: >-
+      Systematische review met meta-analyse, 5 studies, 234 deelnemers.
+      Oefentherapie verbeterde de heupabductorkracht met 16 Nm (95% BI 10-22), de
+      loopsnelheid met 6 m/min (1-11) en de cadans met 20 stappen/min (8-32).
+      KERNCONCLUSIE DIE DE APP OMKEERDE: de oefeningen bleken even effectief
+      ONBEGELEID THUIS als onder supervisie in een ambulante setting.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: trudellejackson_2004_laatfase
+    auteurs: [Trudelle-Jackson E, Smith SS]
+    titel: 'Effects of a late-phase exercise program after total hip arthroplasty: a randomized controlled trial'
+    bron: Archives of Physical Medicine and Rehabilitation
+    jaar: 2004
+    volume_paginas: 85(7):1056-62
+    doi: 10.1016/j.apmr.2003.11.022
+    pmid: '15241750'
+    url: https://doi.org/10.1016/j.apmr.2003.11.022
+    type: RCT
+    opmerking: >-
+      Enkelblinde RCT, 34 gerandomiseerd en 28 voltooid, 4 tot 12 maanden na de
+      ingreep, 8 weken thuisprogramma. Significante verbetering in de
+      interventiegroep van zelfgerapporteerde functie, spierkracht (heupflexoren
+      24,4%, extensoren 47,8%, abductoren 41,2%, knie-extensoren 23,4%) en
+      HOUDINGSSTABILITEIT (36,8%); geen verandering in de controlegroep. GANGFUNCTIE
+      was geen uitkomstmaat.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: hardcastle_1985_trendelenburg
+    auteurs: [Hardcastle P, Nade S]
+    titel: The significance of the Trendelenburg test
+    bron: Journal of Bone and Joint Surgery (British volume)
+    jaar: 1985
+    volume_paginas: 67(5):741-6
+    doi: 10.1302/0301-620X.67B5.4055873
+    pmid: '4055873'
+    url: https://doi.org/10.1302/0301-620X.67B5.4055873
+    type: cohort
+    opmerking: >-
+      50 gezonde proefpersonen en 103 mensen met heup- of wervelkolomaandoeningen.
+      De publicatie standaardiseert de uitvoering van de test en waarschuwt vooral
+      voor MISINTERPRETATIE: vals-positieven door pijn, gebrekkige medewerking en
+      aanstoten van ribbenboog tegen bekkenkam; vals-negatieven doordat de patient
+      spieren boven en onder het bekken gebruikt of naar de standzijde leunt. Er
+      staat NERGENS dat de test de meest sensitieve klinische marker is.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (search_articles + get_article_metadata)
+
+  - key: judd_2013_krachtdeficit
+    auteurs: [Judd DL, Thomas AC, Dayton MR, Stevens-Lapsley JE]
+    titel: 'Strength and functional deficits in individuals with hip osteoarthritis compared to healthy, older adults'
+    bron: Disability and Rehabilitation
+    jaar: 2014
+    volume_paginas: 36(4):307-12
+    doi: 10.3109/09638288.2013.790491
+    pmid: '23659184'
+    url: https://doi.org/10.3109/09638288.2013.790491
+    type: cohort
+    opmerking: >-
+      26 patienten met eindstadium coxartrose tegenover 18 gezonde volwassenen,
+      PREOPERATIEF gemeten. Knie-extensoren 30% zwakker (p kleiner dan 0,001),
+      knieflexoren 38% (p kleiner dan 0,001), maar de heupabductoren slechts 17%
+      en dat verschil was NIET SIGNIFICANT (p = 0,23). Dit is niet de publicatie
+      die de app bedoelde (Clin Biomech 2014), die niet eenduidig terug te vinden
+      was; een abductortekort van 20 tot 25% tot twee jaar na de ingreep is in dit
+      dossier niet onderbouwd.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (search_articles + get_article_metadata)
+
+  - key: hoorntje_2018_sporthervatting
+    auteurs: [Hoorntje A, Janssen KY, Bolder SBT, Koenraadt KLM, Daams JG, Blankevoort L, Kerkhoffs GMMJ, Kuijer PPFM]
+    titel: 'The effect of total hip arthroplasty on sports and work participation: a systematic review and meta-analysis'
+    bron: Sports Medicine
+    jaar: 2018
+    volume_paginas: 48(7):1695-1726
+    doi: 10.1007/s40279-018-0924-2
+    pmid: '29691754'
+    url: https://doi.org/10.1007/s40279-018-0924-2
+    type: SR
+    opmerking: >-
+      37 studies, waarvan 7 prospectief. Sporthervatting gemiddeld 104% van het
+      niveau vlak voor de operatie en 82% van het niveau van voor de klachten. Tijd
+      tot sporthervatting 16 tot 28 weken, tijd tot werkhervatting 1 tot 17 weken
+      met gemiddeld 69% werkhervatting. Een rangschikking van sporttakken (fietsen,
+      zwemmen, wandelen) staat niet in het abstract, en de bovengrens van 28 weken
+      ligt boven de zes maanden die de app noemde.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: kohrt_2004_botgezondheid
+    auteurs: [Kohrt WM, Bloomfield SA, Little KD, Nelson ME, Yingling VR]
+    titel: 'American College of Sports Medicine position stand: physical activity and bone health'
+    bron: Medicine and Science in Sports and Exercise
+    jaar: 2004
+    volume_paginas: 36(11):1985-96
+    doi: 10.1249/01.mss.0000142662.21767.58
+    pmid: '15514517'
+    url: https://doi.org/10.1249/01.mss.0000142662.21767.58
+    type: richtlijn
+    opmerking: >-
+      Position stand van het American College of Sports Medicine over lichamelijke
+      activiteit en botgezondheid in het algemeen. PubMed geeft geen abstract. De
+      toepassing op PERI-PROTHETISCHE botdensiteit en op osseo-integratie van
+      cementloze componenten is extrapolatie buiten de onderzochte context
+      (CLAUDE.md 1.5).
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: murphy_2010_levenslangrisico
+    auteurs: [Murphy LB, Helmick CG, Schwartz TA, Renner JB, Tudor G, Koch GG, Dragomir AD, Kalsbeek WD, Luta G, Jordan JM]
+    titel: One in four people may develop symptomatic hip osteoarthritis in his or her lifetime
+    bron: Osteoarthritis and Cartilage
+    jaar: 2010
+    volume_paginas: 18(11):1372-9
+    doi: 10.1016/j.joca.2010.08.005
+    pmid: '20713163'
+    url: https://doi.org/10.1016/j.joca.2010.08.005
+    type: cohort
+    opmerking: >-
+      Johnston County Osteoarthritis Project, 3068 deelnemers. Levenslang risico op
+      symptomatische heupartrose 25,3% (95% BI 21,3-29,3) tegen de leeftijd van 85
+      jaar. Opvallend: het risico verschilde NIET naar geslacht, etniciteit,
+      opleidingsniveau of eerder heupletsel, en er werd GEEN verband met BMI
+      gevonden — wat de vermelding van obesitas als belangrijke risicofactor bij
+      deze bron tegenspreekt.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)

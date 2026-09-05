@@ -3,6 +3,17 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-09-05 — bronaudit totale heupprothese
+
+- 16 claims beoordeeld, 15 bronnen eerstehands opgehaald en geverifieerd via PubMed · dit protocol was inhoudelijk beter opgebouwd dan de vorige twee: drie claims hielden volledig stand (`vanderweegen_2016_restricties`, `meermans_2017_anterieur`, en het levenslange artroserisico uit `murphy_2010_levenslangrisico`)
+- TWEE EFFECTRICHTINGEN STONDEN OMGEKEERD · `mcdonald_2014_preoperatieve_educatie` besluit dat het ONZEKER is of preoperatieve educatie meerwaarde heeft boven gebruikelijke zorg — alle effectschattingen niet significant, lage bewijskracht — terwijl de app stelde dat ze angst vermindert en functie verbetert · `coulter_2013_oefentherapie` besluit dat oefeningen even effectief zijn ONBEGELEID THUIS als onder supervisie, terwijl de app supervisie als superieur presenteerde
+- Luxatierisico fundamenteel anders weergegeven · de app schreef het verhoogde risico toe aan de posterieure benadering · `kwon_2006_luxatie` toont dat de WEKE-DELENRECONSTRUCTIE beslissend is: posterieur zonder herstel 4,46% tegenover 0,49% met herstel (RR 8,21), en mét herstel zijn anterolateraal (0,70%), direct lateraal (0,43%) en posterieur (1,01%) vergelijkbaar
+- Superlatief zonder grond, met weggelaten kernboodschap · `hardcastle_1985_trendelenburg` noemt de test nergens de meest sensitieve marker en waarschuwt juist uitvoerig voor vals-positieven (pijn, gebrekkige medewerking) en vals-negatieven (compensatie) · klinisch relevant omdat het protocol de test als doorstroomcriterium gebruikt
+- Bevindingen van verschillende studies waren aan elkaar geknoopt · `husby_2009_krachttraining` vond juist GEEN verschil in gangpatroon en mat traplopen niet; loopsnelheid en cadans komen uit `coulter_2013_oefentherapie` (6 m/min en 20 stappen/min)
+- Verder gecorrigeerd · trombosereductie geschrapt (geen uitkomstmaat in `guerra_2015_vroegemobilisatie`, dat wel 1,8 dagen kortere ligduur toont) · abductortekort "20-25% tot 2 jaar" → 6% na twee jaar volgens `rasch_2010_spierkracht`, dat bovendien herstel van gang en balans binnen zes maanden toont · sporthervatting "binnen 6 maanden" → 16 tot 28 weken · gangfunctie → houdingsstabiliteit bij `trudellejackson_2004_laatfase` · ERAS-jaartal 2020 → 2019 (2020 was een erratum)
+- Tegenstrijdige evidentie toegevoegd (CLAUDE.md 1.9) · `murphy_2010_levenslangrisico` vond GEEN verband tussen BMI en heupartrose, terwijl de app obesitas als belangrijke risicofactor bij die bron vermeldde · en de ERAS-consensus stelt dat er onvoldoende bewijs is dat de chirurgische techniek op zich de ontslagcriteria beinvloedt
+- Zeven citaties konden niet eenduidig geverifieerd worden en zijn als zodanig in de tekst gemarkeerd · Bandholm & Kehlet 2012, Mikkelsen 2014, Winther 2016, Heiberg 2012, Klein 2007, Ganz 2008 en het registerjaarrapport
+
 ## 2026-09-05 — bronaudit facetartrose lumbaal
 
 - 18 claims beoordeeld, 13 bronnen eerstehands opgehaald en geverifieerd via PubMed · dit protocol bleek er aanzienlijk slechter aan toe dan het meniscusprotocol: geen enkele claim was volledig gedekt

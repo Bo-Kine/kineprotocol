@@ -15,6 +15,12 @@ Formaat per regel: wat · waarom · bron.
 - Ook relevant voor de praktijk · in `galinsky_2007_pauzes` gaven rekoefeningen tijdens de pauzes GEEN significant effect, mede door lage therapietrouw (25 tot 39%), en in `andersen_2008_nekschoudertraining` daalde de therapietrouw over een jaar van 54% naar 35%
 - Zes citaties konden niet eenduidig opgehaald worden, waaronder de twee waarop de kernoefeningen berusten (Jull 2009 voor de diepe nekflexoren, Cleland 2007 voor thoracale mobilisatie) · alle zes als zodanig gemarkeerd
 
+- Fase B op bureauhouding · alle 10 citaties in de evidenceteksten EN het volledige refs-veld bevestigd als correct · 17 problemen daarbuiten
+- Fout van mijzelf · ik presenteerde de daling van de therapietrouw (54% naar 35%) als geldend voor de hele trial van `andersen_2008_nekschoudertraining`, terwijl die alleen de specifieke-trainingsgroep betreft · algemene training 31% naar 28%, referentiegroep 16% naar 9% · alle drie nu apart vermeld
+- Diagnostische en doseringsdrempels zonder bron gelabeld · NDI-MCID van 7/50, de CCFT-drukwaarden 22 tot 30 mmHg met "onder 24 mmHg is significante zwakte", ROM-normen en 20-30% MVC · de CCFT-drempels wegen het zwaarst omdat zij een doorstroomcriterium sturen terwijl de onderliggende publicatie in ditzelfde protocol al als niet-geverifieerd staat gemarkeerd
+- Zes superlatieven en effectclaims in oefennotities aangepakt, plus drie mechanistische verklaringen in de beschrijving (Cinderella-hypothese, neurale sensitisatie, drempel van 6 uur schermwerk)
+- Het pauze-interval van 30 tot 45 minuten, dat ik in de evidencetekst had geschrapt, bleef in de fasedoelstelling en de oefenparameters staan · hetzelfde lek als in de vorige protocollen
+
 ## 2026-09-05 — bronaudit plantaire fasciopathie
 
 - 14 claims beoordeeld, 9 bronnen eerstehands opgehaald en geverifieerd via PubMed · dit protocol oogde het meest verzorgd van alle tot nu toe geauditeerde, maar bevatte vier zware fouten

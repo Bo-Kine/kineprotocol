@@ -2,7 +2,10 @@ protocol: bureau
 laatst_gecontroleerd: 2026-09-05
 versie: 1
 fase_a_door: hoofdagent, alle metadata eerstehands opgehaald via PubMed MCP
-fase_b_door: nog uit te voeren
+fase_b_door: >-
+  onafhankelijke verificator met schone context, 2026-09-05; alle 10 citaties in
+  de evidenceteksten en het volledige refs-veld bevestigd als correct, 17
+  problemen daarbuiten gevonden, alle verwerkt
 
 claims:
   - id: bur_c01
@@ -210,3 +213,72 @@ claims:
       superlatieven verwijderd, dosis gelabeld als praktijkafspraak met vermelding
       van de dalende therapietrouw, refs-veld vervangen door negen eerstehands
       geverifieerde bronnen met volledige vindplaats
+
+  # --- Bevindingen uit fase B ---
+
+  - id: bur_c15
+    tekst: De therapietrouw daalde over een jaar van 54% naar 35%
+    plaats: protocols.bureau fase 4 evidence + oefennotitie fase 5
+    bronnen: [andersen_2008_nekschoudertraining]
+    gedekt: nee
+    opmerking: >-
+      FOUT VAN MIJZELF. Ik presenteerde het cijfer als geldend voor de trial als
+      geheel, terwijl het alleen de groep met SPECIFIEKE weerstandstraining
+      betreft. Voor de groep met algemene training was het 31% naar 28% en voor de
+      referentiegroep 16% naar 9%. Het geheel is dus nog ongunstiger dan de zin
+      suggereerde, maar de toeschrijving aan de hele trial klopte niet.
+    verwerkt: alle drie de groepen apart vermeld
+
+  - id: bur_c16
+    tekst: >-
+      Ongebronde diagnostische drempels: NDI MCID van 7 op 50, CCFT-drukwaarden
+      22 tot 30 mmHg met "onder 24 mmHg is significante zwakte", ROM-normen en
+      de dosering 20-30% MVC
+    plaats: oefennotities en testonderdelen bureau fase 0 tot 2
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      DIAGNOSTISCHE EN DOSERINGSDREMPELS ZONDER BRON. De CCFT-drempels wegen het
+      zwaarst omdat zij een doorstroomcriterium sturen terwijl de onderliggende
+      publicatie in dit protocol al als niet-geverifieerd is gemarkeerd.
+    verwerkt: alle gelabeld als praktijkafspraak
+
+  - id: bur_c17
+    tekst: >-
+      Zes ongebronde effectclaims en superlatieven in oefennotities: beste
+      thuisoefening, krachtigste correctie, correlatie met laterale nekklachten,
+      directe vermindering van trapeziusspanning, hoge therapietrouw bij yoga,
+      minimale effectieve dosis, en het corrigeren van de voorwaartse hoofdhouding
+    plaats: oefennotities bureau fase 1 tot 5
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Zelfde patroon als in de vorige vier protocollen: de evidenceteksten zijn na
+      correctie in orde, maar de notities dragen de ongebronde uitspraken.
+    verwerkt: alle gelabeld als klinische redenering of praktijkkeuze
+
+  - id: bur_c18
+    tekst: >-
+      Mechanistische verklaringen in de beschrijving: Cinderella-hypothese,
+      neurale sensitisatie van trigeminale en C2-C3 dermatomen, en de drempel van
+      meer dan 6 uur schermwerk
+    plaats: BESCHRIJVING.bureau
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Verklarende modellen zonder bron, gepresenteerd als vaststaand mechanisme.
+      De urendrempel is bovendien een numerieke waarde zonder onderbouwing.
+    verwerkt: >-
+      als verklarend model respectievelijk klinische redenering gelabeld,
+      urendrempel geschrapt
+
+  - id: bur_c19
+    tekst: Het pauze-interval van 30 tot 45 minuten
+    plaats: doelstelling bureau fase 1 + oefennotitie
+    bronnen: [galinsky_2007_pauzes]
+    gedekt: nee
+    opmerking: >-
+      Ik had dit interval in de evidencetekst geschrapt omdat het niet in de bron
+      staat, maar het bleef in de fasedoelstelling en de oefenparameters staan —
+      hetzelfde lek als bij de vorige protocollen.
+    verwerkt: interval gelabeld als praktijkafspraak op beide plaatsen

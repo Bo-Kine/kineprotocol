@@ -12,6 +12,7 @@ const ESSENTIEEL = [
   './app.js',
   './patients.js',
   './protocols.js',
+  './bronstatus.js',
 ];
 
 // Nice-to-have: iconen, achtergrond, lettertypes. Deze mogen falen zonder

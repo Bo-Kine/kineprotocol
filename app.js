@@ -1431,12 +1431,24 @@ document.addEventListener('keydown', e => {
   if(e.key === 'Escape') { closeYT(); closeRF(); closeFiche(); closePatNew(); closePatLink(); closeBeslisboom(); closeForm(); closeEvalForm(); }
 });
 
+// ── BRONSTATUS ──
+// Toont per protocol of de citaties in de evidencetekst tegen de primaire bron
+// zijn gelegd. Zonder dit onderscheid lijkt elke citatie in de app even hard,
+// terwijl de meeste nog nooit gecontroleerd zijn. Data komt uit bronstatus.js,
+// dat gegenereerd wordt uit data/claims/*.yaml.
+function bronBadge(protoId) {
+  const st = (typeof BRONSTATUS !== 'undefined') ? BRONSTATUS[protoId] : null;
+  if(!st) return `<span class="bron-badge bron-open" title="De citaties in dit protocol zijn nog niet tegen de primaire bron gecontroleerd. Behandel ze als richtinggevend, niet als geverifieerd.">bronnen niet geauditeerd</span>`;
+  const rest = st.open ? ` · ${st.open} open` : '';
+  return `<span class="bron-badge bron-ok" title="Elke citatie is eerstehands opgehaald en tegen de primaire bron gelegd. Niet-gedekte uitspraken zijn in de tekst gelabeld als klinische redenering.">bronaudit ${st.datum} · ${st.gecontroleerd} claims${rest}</span>`;
+}
+
 // ── RENDER PHASE ──
 function renderPhase(i) {
   const ph = currentProto.phases[i];
   let html = '';
   // Evidence standaard geklemd op 2 regels; klik om uit te vouwen
-  html += `<div class="ev-box clamp" onclick="this.classList.toggle('expanded')"><div class="ev-label">Evidence-basis</div><div class="ev-text">${ph.evidence}</div><div class="ev-hint">▸ lees volledige evidence</div></div>`;
+  html += `<div class="ev-box clamp" onclick="this.classList.toggle('expanded')"><div class="ev-label">Evidence-basis${bronBadge(currentProto.id)}</div><div class="ev-text">${ph.evidence}</div><div class="ev-hint">▸ lees volledige evidence</div></div>`;
   html += `<div class="goals-box"><div class="goals-label">Doelstellingen — ${ph.title}</div><ul class="glist">${ph.goals.map(g=>`<li>${g}</li>`).join('')}</ul></div>`;
   if(ph.exercises?.length) {
     html += `<div class="slabel">Oefenprogramma</div><div class="ex-grid">`;

@@ -2,7 +2,10 @@ protocol: faz
 laatst_gecontroleerd: 2026-09-05
 versie: 1
 fase_a_door: hoofdagent, alle metadata eerstehands opgehaald via PubMed MCP
-fase_b_door: nog uit te voeren
+fase_b_door: >-
+  onafhankelijke verificator met schone context, 2026-09-05; 14 citaties
+  gecontroleerd, 1 onjuiste cijfertoeschrijving, 2 bronstrijdige effectclaims
+  en 10 ongelabelde uitspraken gevonden, alle verwerkt
 
 claims:
   - id: faz_c01
@@ -272,3 +275,65 @@ claims:
       getallen en superlatieven geschrapt of gelabeld als klinische redenering;
       de preventiebewering vervangen door de gedekte bevinding uit
       steffens_2016_preventie
+
+  # --- Bevindingen uit fase B ---
+
+  - id: faz_c19
+    tekst: Diclofenac noch manipulatie versnelde het herstel (HR 1,01; p = 0,955)
+    plaats: protocols.faz fase 2 evidence
+    bronnen: [hancock_2007_diclofenac_smt]
+    gedekt: nee
+    opmerking: >-
+      FOUT VAN MIJZELF. Ik gaf een van de twee hazard ratio's voor beide
+      interventies. HR 1,01 (p = 0,955) geldt voor manipulatieve therapie;
+      diclofenac had HR 1,09 (p = 0,516). Beide wijzen dezelfde kant op, maar
+      een getal aan de verkeerde arm toeschrijven blijft onjuist.
+    verwerkt: beide hazard ratio's afzonderlijk vermeld
+
+  - id: faz_c20
+    tekst: >-
+      Oefennotities die aerobe training een directe en aantoonbare pijnmodulerende
+      werking toeschrijven
+    plaats: oefennotities faz fase 1 en 4
+    bronnen: [naugle_2012_hypoalgesie]
+    gedekt: nee
+    opmerking: >-
+      DE NOTITIES SPRAKEN DE EIGEN EVIDENCETEKST TEGEN. Terwijl de evidencetekst
+      na deze audit vermeldt dat bij chronische pijn ook hyperalgesie optreedt,
+      bleven twee oefennotities een "directe" en een "aantoonbaar" pijnmodulerend
+      effect claimen. Bij een chronische-pijnpopulatie is dat klinisch relevant.
+    verwerkt: >-
+      beide notities in lijn gebracht met de bron, met de wisselende richting
+      expliciet benoemd
+
+  - id: faz_c21
+    tekst: >-
+      Tien ongelabelde uitspraken in oefennotities en doorstroomcriteria: centrale
+      sensitisatie, spierspasme, coactivatiecijfers, basis van alle
+      stabiliteitsoefeningen, contra-indicatie Sarvangasana, botdensiteit,
+      Nordic walking, hyperlordose, hamstringverkorting, en vier praktijkdrempels
+    plaats: oefennotities en criteria_go faz
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      TWEEDE KEER DAT DE OEFENNOTITIES HET LEK ZIJN. Net als bij het
+      meniscusprotocol stonden mechanisme-, effect- en veiligheidsuitspraken
+      buiten de evidenceteksten ongelabeld. De contra-indicatie voor
+      Sarvangasana weegt daarbij het zwaarst (CLAUDE.md 3: veiligheidsuitspraken
+      vragen de volledige controle).
+    verwerkt: alle tien gelabeld als klinische redenering of praktijkdrempel
+
+  - id: faz_c22
+    tekst: Diagnostisch bewezen facetpijn bij meer dan 80% pijnreductie na blokkade
+    plaats: BESCHRIJVING.fbl (protocol facettaire blokkade lumbaal)
+    bronnen: [cohen_2007_facetpijn]
+    gedekt: nee
+    opmerking: >-
+      INCONSISTENTIE TUSSEN PROTOCOLLEN, GESIGNALEERD IN FASE B. Dezelfde
+      drempel die in dit protocol als niet-onderbouwd is gemarkeerd, stond in
+      het naburige protocol nog als vaststaand feit. Het protocol fbl is nog
+      niet geauditeerd, maar een rechtstreeks tegenstrijdige uitspraak laten
+      staan is slechter dan ze meteen rechtzetten.
+    verwerkt: >-
+      in fbl dezelfde nuance toegevoegd, met vermelding van het hoge
+      vals-positieve percentage uit cohen_2007_facetpijn

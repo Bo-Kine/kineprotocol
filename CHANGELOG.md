@@ -14,6 +14,12 @@ Formaat per regel: wat · waarom · bron.
 - Vier uitspraken toegeschreven aan handboeken (Neumann, McGill) gelabeld als klinische redenering · zonder DOI of PMID is de dekking hier niet controleerbaar
 - Vijf ongebronde uitspraken buiten de evidenceteksten aangepakt, waarvan drie met een superlatief · SPECT als meest sensitieve test, blokkade met meer dan 80% pijnreductie, leeftijdsgrens 50 jaar, bewustzijn als sterkste preventieve factor, dagelijkse uitvoering als sterkste predictor
 
+- Fase B op facetartrose · 14 citaties gecontroleerd, 1 onjuiste cijfertoeschrijving, 2 bronstrijdige effectclaims en 10 ongelabelde uitspraken gevonden, alle verwerkt
+- Fout van mijzelf · ik gaf een van de twee hazard ratio's van `hancock_2007_diclofenac_smt` voor beide interventiearmen · manipulatie HR 1,01 (p = 0,955), diclofenac HR 1,09 (p = 0,516) · beide nu apart vermeld
+- Twee oefennotities spraken de eigen evidencetekst tegen · zij claimden een "directe" en "aantoonbaar" pijnmodulerend effect van aerobe training, terwijl `naugle_2012_hypoalgesie` bij chronische pijn juist een wisselende richting en soms hyperalgesie toont · in lijn gebracht
+- Tien ongelabelde uitspraken in oefennotities en doorstroomcriteria aangepakt · dit is de tweede keer dat de notities het lek zijn, na hetzelfde patroon in het meniscusprotocol · zwaarstwegend was de contra-indicatie voor Sarvangasana, een veiligheidsuitspraak zonder bron
+- Inconsistentie tussen protocollen rechtgezet · de drempel van 80% pijnreductie na facetblokkade stond in `fbl` nog als vaststaand feit terwijl ze in `faz` als niet-onderbouwd was gemarkeerd · `fbl` is nog niet geauditeerd, maar een rechtstreeks tegenstrijdige uitspraak laten staan is slechter dan ze meteen rechtzetten
+
 ## 2026-09-05 — bronaudit meniscusprotocol + zichtbare auditstatus in de app
 
 - Omvang van het probleem gemeten · 320 citatie-instanties over 30 protocollen, 305 uniek — er is nauwelijks overlap tussen protocollen, dus geen snelkoppeling via ontdubbeling

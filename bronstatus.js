@@ -10,7 +10,7 @@ const BRONSTATUS = {
     "datum": "2026-09-05"
   },
   "faz": {
-    "gecontroleerd": 18,
+    "gecontroleerd": 22,
     "gedekt": 0,
     "deels": 4,
     "open": 0,

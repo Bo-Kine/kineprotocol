@@ -113,3 +113,202 @@ references:
       criteriumgebaseerde revalidatie na ACL-reconstructie.
     geverifieerd_op: 2026-09-05
     geverifieerd_door: PubMed MCP (get_article_metadata, PMID 34123540)
+
+  - key: reider_1994_mcl
+    auteurs: [Reider B, Sathy MR, Talkington J, Blyznak N, Kollias S]
+    titel: >-
+      Treatment of isolated medial collateral ligament injuries in athletes with
+      early functional rehabilitation. A five-year follow-up study
+    bron: The American Journal of Sports Medicine
+    jaar: 1994
+    volume_paginas: 22(4):470-7
+    doi: 10.1177/036354659402200406
+    pmid: '7943511'
+    url: https://doi.org/10.1177/036354659402200406
+    type: cohort
+    opmerking: >-
+      Prospectieve serie van 35 sporters met geisoleerde graad III MCL-ruptuur,
+      geen gerandomiseerde vergelijking. Weerstandsoefeningen werden toegevoegd
+      zodra 90 graden flexie aanwezig was.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 7943511)
+
+  - key: vandyk_2019_nordic
+    auteurs: [van Dyk N, Behan FP, Whiteley R]
+    titel: >-
+      Including the Nordic hamstring exercise in injury prevention programmes
+      halves the rate of hamstring injuries: a systematic review and
+      meta-analysis of 8459 athletes
+    bron: British Journal of Sports Medicine
+    jaar: 2019
+    volume_paginas: 53(21):1362-1370
+    doi: 10.1136/bjsports-2018-100045
+    pmid: '30808663'
+    url: https://doi.org/10.1136/bjsports-2018-100045
+    type: SR
+    opmerking: >-
+      Uitkomstmaat is uitsluitend hamstringletsel (risicoratio 0,49; tot 51%
+      reductie). Knieletselincidentie is NIET onderzocht.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 30808663)
+
+  - key: barber_1990_hoptest
+    auteurs: [Barber SD, Noyes FR, Mangine RE, McCloskey JW, Hartman W]
+    titel: >-
+      Quantitative assessment of functional limitations in normal and anterior
+      cruciate ligament-deficient knees
+    bron: Clinical Orthopaedics and Related Research
+    jaar: 1990
+    volume_paginas: (255):204-14
+    doi: null
+    pmid: '2347154'
+    url: https://pubmed.ncbi.nlm.nih.gov/2347154/
+    type: cohort
+    opmerking: >-
+      Geen DOI in PubMed. Drempel is 85% symmetrie-index bij meer dan 90% van
+      de normale populatie, niet 90%. Populatie is ACL-deficiente knieen, niet
+      MCL-letsel. Eerste auteur is Barber, niet Noyes.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 2347154)
+
+  - key: fairclough_2006_anatomie
+    auteurs: [Fairclough J, Hayashi K, Toumi H, Lyons K, Bydder G, Phillips N, Best TM, Benjamin M]
+    titel: >-
+      The functional anatomy of the iliotibial band during flexion and extension
+      of the knee: implications for understanding iliotibial band syndrome
+    bron: Journal of Anatomy
+    jaar: 2006
+    volume_paginas: 208(3):309-16
+    doi: 10.1111/j.1469-7580.2006.00531.x
+    pmid: '16533314'
+    url: https://doi.org/10.1111/j.1469-7580.2006.00531.x
+    type: cohort
+    opmerking: >-
+      Kadaverstudie (15) plus MRI bij 6 asymptomatische vrijwilligers en 2
+      patienten. Compressie tegen de epicondyl bij 30 graden knieflexie; in
+      geen enkel preparaat werd een bursa gezien.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 16533314)
+
+  - key: fairclough_2006_frictie
+    auteurs: [Fairclough J, Hayashi K, Toumi H, Lyons K, Bydder G, Phillips N, Best TM, Benjamin M]
+    titel: Is iliotibial band syndrome really a friction syndrome?
+    bron: Journal of Science and Medicine in Sport
+    jaar: 2006
+    volume_paginas: 10(2):74-6
+    doi: 10.1016/j.jsams.2006.05.017
+    pmid: '16996312'
+    url: https://doi.org/10.1016/j.jsams.2006.05.017
+    type: commentary
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 16996312)
+
+  - key: fredericson_2000_heupabductoren
+    auteurs: [Fredericson M, Cookingham CL, Chaudhari AM, Dowdell BC, Oestreicher N, Sahrmann SA]
+    titel: Hip abductor weakness in distance runners with iliotibial band syndrome
+    bron: Clinical Journal of Sport Medicine
+    jaar: 2000
+    volume_paginas: 10(3):169-75
+    doi: 10.1097/00042752-200007000-00004
+    pmid: '10959926'
+    url: https://doi.org/10.1097/00042752-200007000-00004
+    type: cohort
+    opmerking: >-
+      Case series, 24 lopers met ITBS versus 30 controles. Koppel in procent
+      lichaamsgewicht maal lengte: vrouwen 7,82 aangedaan versus 10,19 controle;
+      mannen 6,86 versus 9,73. Het percentage verschil wordt in de bron NIET
+      berekend of vermeld. Opzet laat geen uitspraak over risicofactoren toe.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 10959926)
+
+  - key: heiderscheit_2011_stapfrequentie
+    auteurs: [Heiderscheit BC, Chumanov ES, Michalski MP, Wille CM, Ryan MB]
+    titel: Effects of step rate manipulation on joint mechanics during running
+    bron: Medicine and Science in Sports and Exercise
+    jaar: 2011
+    volume_paginas: 43(2):296-302
+    doi: 10.1249/MSS.0b013e3181ebedf4
+    pmid: '20581720'
+    url: https://doi.org/10.1249/MSS.0b013e3181ebedf4
+    type: cohort
+    opmerking: >-
+      45 gezonde recreatieve lopers, geen ITBS-populatie. Piekheupadductiehoek
+      en heupadductiemoment daalden ALLEEN bij 10% verhoging, niet bij 5%.
+      Er wordt geen percentage voor de momentdaling gerapporteerd in het abstract.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 20581720)
+
+  - key: falvey_2009_itb
+    auteurs: [Falvey EC, Clark RA, Franklyn-Miller A, Bryant AL, Briggs C, McCrory PR]
+    titel: >-
+      Iliotibial band syndrome: an examination of the evidence behind a number
+      of treatment options
+    bron: Scandinavian Journal of Medicine and Science in Sports
+    jaar: 2009
+    volume_paginas: 20(4):580-7
+    doi: 10.1111/j.1600-0838.2009.00968.x
+    pmid: '19706004'
+    url: https://doi.org/10.1111/j.1600-0838.2009.00968.x
+    type: cohort
+    opmerking: >-
+      Kadaverstudie met rekstrookjes. Gemiddelde verlenging van de tractus was
+      minder dan 0,5%. Foam rollen is in deze studie NIET onderzocht.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 19706004)
+
+  - key: sanchezalvarado_2024_itbs
+    auteurs: [Sanchez-Alvarado A, Bokil C, Cassel M, Engel T]
+    titel: >-
+      Effects of conservative treatment strategies for iliotibial band syndrome
+      on pain and function in runners: a systematic review
+    bron: Frontiers in Sports and Active Living
+    jaar: 2024
+    volume_paginas: 6:1386456
+    doi: 10.3389/fspor.2024.1386456
+    pmid: '39247485'
+    url: https://doi.org/10.3389/fspor.2024.1386456
+    type: SR
+    opmerking: >-
+      13 studies, 201 deelnemers. Heupabductorversterking komt naar voren als
+      gemeenschappelijke strategie; pijnreductie 27 tot 100%, functieverbetering
+      10 tot 57% over 2 tot 8 weken. Grote heterogeniteit, geen meta-analyse.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 39247485)
+
+  - key: uysal_2014_pab
+    auteurs: [Uysal F, Akbal A, Gokmen F, Adam G, Resorlu M]
+    titel: >-
+      Prevalence of pes anserine bursitis in symptomatic osteoarthritis
+      patients: an ultrasonographic prospective study
+    bron: Clinical Rheumatology
+    jaar: 2014
+    volume_paginas: 34(3):529-33
+    doi: 10.1007/s10067-014-2653-8
+    pmid: '24797774'
+    url: https://doi.org/10.1007/s10067-014-2653-8
+    type: cohort
+    opmerking: >-
+      85 patienten, 170 knieen met symptomatische gonartrose. Echografische
+      prevalentie van pes anserinus-bursitis 20% (34/170), niet 2,5 tot 19%.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 24797774)
+
+  - key: alvareznemegyei_2007_risicofactoren
+    auteurs: [Alvarez-Nemegyei J]
+    titel: >-
+      Risk factors for pes anserinus tendinitis/bursitis syndrome: a case
+      control study
+    bron: Journal of Clinical Rheumatology
+    jaar: 2007
+    volume_paginas: 13(2):63-5
+    doi: 10.1097/01.rhu.0000262082.84624.37
+    pmid: '17414530'
+    url: https://doi.org/10.1097/01.rhu.0000262082.84624.37
+    type: cohort
+    opmerking: >-
+      TEGENSTRIJDIGE EVIDENTIE (CLAUDE.md 1.9). Case-control, 22 patienten
+      versus 38 controles: GEEN verschil in prevalentie van gonartrose,
+      diabetes of obesitas tussen cases en controles. Valgusstand van de knie
+      was wel geassocieerd (OR 5,2; 95% BI 1,1-25,5).
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 17414530)

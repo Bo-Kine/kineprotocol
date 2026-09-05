@@ -1,0 +1,76 @@
+protocol: pa
+laatst_gecontroleerd: 2026-09-05
+versie: 1
+fase_a_door: zoekagent (PubMed) + hoofdagent, metadata eerstehands opgehaald
+fase_b_door: nog uit te voeren
+
+claims:
+  - id: pa_c01
+    tekst: Pes anserinus-tendinopathie is geassocieerd met gonartrose, prevalentie 2,5-19%
+    plaats: protocols.pa fase 1 evidence + BESCHRIJVING.pa
+    bronnen: [uysal_2014_pab, alvareznemegyei_2007_risicofactoren]
+    gedekt: nee
+    opmerking: >-
+      CIJFER KLOPT NIET EN DE EVIDENTIE IS TEGENSTRIJDIG (CLAUDE.md 1.9).
+      De echografische studie vond 20% pes anserinus-bursitis bij 170 knieen
+      met symptomatische gonartrose, niet 2,5 tot 19%. De case-controlstudie
+      vond juist GEEN verschil in prevalentie van gonartrose, diabetes of
+      obesitas tussen patienten en controles; wel was valgusstand van de knie
+      geassocieerd (OR 5,2; 95% BI 1,1-25,5). Beide standpunten horen in de
+      tekst, met vermelding van de bewijskracht.
+
+  - id: pa_c02
+    tekst: Heupabductorkrachttraining reduceert het knieadductiemoment met 14%
+    plaats: protocols.pa fase 2 evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      NIET GEDEKT. De toegeschreven publicatie onderzocht het verband tussen
+      heupabductorkracht en heupadductiehoek bij lopers; er was geen
+      trainingsinterventie, geen knieadductiemoment als uitkomst en geen
+      percentage van 14%. Schrappen.
+
+  - id: pa_c03
+    tekst: Progressieve isotone belasting stimuleert collageensynthese in peesweefsel
+    plaats: protocols.pa fase 2 evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      NIET GEDEKT voor deze formulering. De gevonden fysiologiestudie betreft
+      collageensynthese in de PATELLAPEES van gezonde mannen na eenmalige
+      inspanning, niet progressieve isotone opbouw en niet de pes anserinus.
+      Als de claim blijft, expliciet labelen als klinische redenering.
+
+  - id: pa_c04
+    tekst: Excentrische training is superieur aan concentrische training en reduceert neovascularisatie
+    plaats: protocols.pa fase 3 evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      EXTRAPOLATIE EN INHOUDELIJKE AFWIJKING (CLAUDE.md 1.5). De toegeschreven
+      landmarkstudie betreft de ACHILLESPEES, had geen concentrische
+      vergelijkingsarm en onderzocht neovascularisatie niet als uitkomst.
+      Toepassing op de pes anserinus is niet onderbouwd.
+
+  - id: pa_c05
+    tekst: Hamstring/quadriceps-ratio >= 0,60 als drempel voor kniestabiliteit
+    plaats: protocols.pa fase 3 evidence + criteria_go
+    bronnen: []
+    gedekt: nee
+    opmerking: GEEN BRON GEVONDEN. Zelfde ongedekte drempel als in het MCL-protocol.
+
+  - id: pa_c06
+    tekst: Stoppen na klachtenreductie verhoogt de recidiefkans met 40-60%
+    plaats: protocols.pa fase 4 evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: GEEN BRON GEVONDEN voor dit cijfer. Schrappen.
+
+  - id: pa_c07
+    tekst: Acute-chronische belastingsratio als monitoringsinstrument bij tendinopathie
+    plaats: protocols.pa fase 4 evidence + oefening belastingsmonitoring
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      NIET GEDEKT voor tendinopathie. De gevonden studie betreft schouderpijn
+      bij jeugdzwemmers. Als de claim blijft, labelen als klinische redenering.

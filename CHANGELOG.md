@@ -3,7 +3,15 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
-## 2026-09-05 — ACL-protocol gecorrigeerd naar de bron
+## 2026-09-05 — bronaudit knieprotocollen: MCL, pes anserinus, ITB
+
+- `data/claims/mcl.yaml`, `pa.yaml`, `itb.yaml` aangelegd · audit-trail per claim · 24 claims beoordeeld, elf nieuwe bronnen live opgehaald via PubMed
+- MCL · 0 van 11 claims volledig gedekt · vier cijfers zonder enige vindbare bron (zwellingsreductie 30-40%, H/Q-drempel 0,60, recidiefrisico 12-18%, proprioceptief deficit), twee extrapolaties vanuit ACL-onderzoek naar MCL-letsel (herletselreductie 84% en de ACL-RSI-drempels)
+- Pes anserinus · 0 van 7 claims gedekt · het cijfer 2,5-19% klopt niet en er is tegenstrijdige evidentie: één case-controlstudie vond juist geen associatie met gonartrose · uysal_2014_pab, alvareznemegyei_2007_risicofactoren
+- ITB · 2 van 6 gedekt · de compressietheorie en het effect van heupabductorversterking zijn goed onderbouwd; het cijfer 24% krachtverschil en de 20% momentdaling staan niet in de bronnen · fairclough_2006_anatomie, fairclough_2006_frictie, sanchezalvarado_2024_itbs
+- Validator aangepast · een referentie zonder DOI maar mét PMID is nu geldig · §4 laat falen bij ontbreken van DOI/PMID, dus van beide · barber_1990_hoptest heeft geen DOI in PubMed
+- `protocols.js` nog niet aangepast · de omvang van de niet-gedekte claims vraagt een beslissing van de kinesitherapeut
+
 
 - Fase 3 · OKC-oefening hernoemd naar 45–90° met start vanaf week 4 · onze parameter (90–40°, week 4–6) week af van de bron · fukuda_2013_okc
 - Fase 3 · evidencetekst meldt nu dat het krachtverschil tussen de groepen niet significant was en dat de populatie uitsluitend hamstringgraft betrof · overdrijving weggenomen · fukuda_2013_okc, hughes_2019_bfr_rct

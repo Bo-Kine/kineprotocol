@@ -26,8 +26,12 @@ if (!fs.existsSync(refPad)) {
 }
 const referenties = (leesYaml(refPad) || {}).references || [];
 
+// 'doi' en 'pmid' staan bewust niet in deze lijst: CLAUDE.md §4 laat de
+// validatie falen bij een referentie "zonder DOI/PMID", dus bij het ontbreken
+// van BEIDE. Oudere artikelen hebben soms geen DOI in PubMed; het veld blijft
+// dan aanwezig met waarde null. De controle daarop staat hieronder apart.
 const VERPLICHT = ['key', 'auteurs', 'titel', 'bron', 'jaar', 'volume_paginas',
-                   'doi', 'pmid', 'url', 'type', 'geverifieerd_op', 'geverifieerd_door'];
+                   'url', 'type', 'geverifieerd_op', 'geverifieerd_door'];
 const TYPES = ['richtlijn', 'SR', 'RCT', 'cohort', 'review', 'commentary', 'expert'];
 
 const gezien = new Set();
@@ -36,6 +40,7 @@ referenties.forEach(r => {
   VERPLICHT.forEach(v => {
     if (r[v] === undefined || r[v] === null || r[v] === '') fouten.push(`${k}: verplicht veld '${v}' ontbreekt`);
   });
+  if (!('doi' in r) || !('pmid' in r)) fouten.push(`${k}: veld 'doi' en/of 'pmid' ontbreekt (mag null zijn, maar moet aanwezig zijn)`);
   if (!r.doi && !r.pmid) fouten.push(`${k}: geen DOI en geen PMID`);
   if (r.type && !TYPES.includes(r.type)) fouten.push(`${k}: onbekend type '${r.type}' (toegestaan: ${TYPES.join(', ')})`);
   if (gezien.has(k)) fouten.push(`${k}: dubbele sleutel`);

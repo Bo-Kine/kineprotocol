@@ -1,0 +1,72 @@
+protocol: itb
+laatst_gecontroleerd: 2026-09-05
+versie: 1
+fase_a_door: zoekagent (PubMed) + hoofdagent, metadata eerstehands opgehaald
+fase_b_door: nog uit te voeren
+
+claims:
+  - id: itb_c01
+    tekst: ITBS ontstaat door compressie van een sterk geinnerveerd vetlichaam onder de tractus bij circa 30 graden knieflexie; de compressietheorie verving de frictietheorie
+    plaats: protocols.itb fase 1 evidence + BESCHRIJVING.itb
+    bronnen: [fairclough_2006_anatomie, fairclough_2006_frictie]
+    gedekt: ja
+    opmerking: >-
+      Kadaver- en MRI-onderzoek: compressie tegen de epicondyl bij 30 graden
+      flexie door tibiale endorotatie, richly innervated and vascularized fat,
+      in geen enkel preparaat een bursa. Het tweede artikel is een commentary
+      dat het frictiemodel expliciet verwerpt.
+
+  - id: itb_c02
+    tekst: Lopers met ITBS tonen 24% minder heupabductorkracht dan gezonde controlepersonen; gluteus medius-zwakte is de sterkste biomechanische risicofactor
+    plaats: protocols.itb fase 2 evidence
+    bronnen: [fredericson_2000_heupabductoren]
+    gedekt: nee
+    opmerking: >-
+      TWEE PROBLEMEN. Het getal 24% staat NIET in de bron; die rapporteert
+      koppel in procent lichaamsgewicht maal lengte (vrouwen 7,82 aangedaan
+      versus 10,19 controle; mannen 6,86 versus 9,73). Zelf een percentage
+      afleiden is niet toegestaan (CLAUDE.md 1.6). Bovendien is het een case
+      series, waarmee geen uitspraak over risicofactoren mogelijk is: de
+      zwakte kan even goed gevolg als oorzaak zijn. Ook de app-toeschrijving
+      naar een andere auteur en jaartal klopt niet.
+
+  - id: itb_c03
+    tekst: Stapfrequentieverhoging met 5-10% vermindert het piekheupadductiemoment met 20%
+    plaats: protocols.itb fase 3 evidence
+    bronnen: [heiderscheit_2011_stapfrequentie]
+    gedekt: nee
+    opmerking: >-
+      DRIE AFWIJKINGEN. De daling van piekheupadductiehoek en -moment trad
+      ALLEEN op bij 10% verhoging, niet bij 5%. Het percentage 20% wordt niet
+      gerapporteerd. En de populatie bestond uit 45 GEZONDE recreatieve lopers,
+      niet uit ITBS-patienten (CLAUDE.md 1.5).
+
+  - id: itb_c04
+    tekst: Stopzetten van het krachtprogramma na symptoomresolutie leidt bij 30-40% tot herval
+    plaats: protocols.itb fase 4 evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      GEEN BRON GEVONDEN met hervalcijfers. De toegeschreven publicatie bevat
+      die cijfers niet. Schrappen.
+
+  - id: itb_c05
+    tekst: Heupgerichte krachttraining is effectief bij de behandeling van ITBS
+    plaats: protocols.itb fase 2 en 3 evidence + oefeningen
+    bronnen: [sanchezalvarado_2024_itbs]
+    gedekt: ja
+    opmerking: >-
+      Systematische review, 13 studies, 201 deelnemers: heupabductorversterking
+      komt naar voren als gemeenschappelijke effectieve strategie, met
+      pijnreductie 27 tot 100% en functieverbetering 10 tot 57% over 2 tot 8
+      weken. Grote heterogeniteit, geen meta-analyse mogelijk.
+
+  - id: itb_c06
+    tekst: De klassieke ITB-stretch is conceptueel achterhaald omdat de tractus nauwelijks rekbaar is
+    plaats: BESCHRIJVING.itb + MANUEEL.itb
+    bronnen: [falvey_2009_itb]
+    gedekt: deels
+    opmerking: >-
+      Gedekt voor het rekken: gemeten verlenging van de tractus was minder dan
+      0,5% bij drie gangbare rekmanoeuvres in kadavers. FOAM ROLLEN is in deze
+      bron NIET onderzocht; die toevoeging moet uit de claim of apart onderbouwd.

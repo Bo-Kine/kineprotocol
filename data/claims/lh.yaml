@@ -1,0 +1,207 @@
+protocol: lh
+protocol_titel: Lumbale Discushernia
+laatst_gecontroleerd: 2026-09-06
+gecontroleerd_door: fase A — Claude (protocols.js, kenmerken/oorzaken + evidence fase 0-4)
+opmerking: >-
+  Dit protocol hergebruikte vijf bronnen die eerder in dit dossier al geverifieerd
+  waren, en citeerde er drie van omgekeerd of buiten hun populatie. Twee toegeschreven
+  cijfers (90% spontaan herstel binnen 12 weken; 45% verzuimreductie) bleken niet in
+  de aangehaalde bron te staan.
+
+claims:
+  - id: lh_c1
+    tekst: >-
+      Positieve Lasegue < 60 graden heeft sensitiviteit 91% voor radiculopathie
+      (van der Windt et al., 2010 - Ann Fam Med).
+    plaats: kenmerken
+    bronnen: [vanderwindt_2010_lichamelijk_onderzoek]
+    gedekt: nee
+    opmerking: >-
+      Drie fouten. (1) Het tijdschrift is de Cochrane Database of Systematic Reviews,
+      niet Annals of Family Medicine. (2) Het cijfer in die review is 0,92 (95% BI
+      0,87-0,95), niet 91% — 0,91 is het cijfer van Deville 2000; de twee reviews
+      werden door elkaar gehaald. (3) Geen van beide reviews hanteert een drempel van
+      60 graden. Bovendien werd de gepoolde specificiteit (0,28) en de conclusie van
+      de auteurs ("poor diagnostic performance") weggelaten, terwijl net die het
+      klinisch gebruik bepaalt.
+    verwerkt: herschreven met sensitiviteit, specificiteit, populatiebeperking en
+      de conclusie van de auteurs; de foute drempel en het foute tijdschrift geschrapt
+
+  - id: lh_c2
+    tekst: >-
+      L4-L5 en L5-S1 zijn verantwoordelijk voor 95% van lumbale herniaties.
+    plaats: oorzaken
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Geen bron aangehaald en in dit dossier niet tegen een primaire bron gelegd.
+      Het cijfer is in de vakliteratuur gangbaar, maar CLAUDE.md §1.1 laat geen
+      klinische claim zonder verifieerbare bron toe.
+    verwerkt: expliciet gelabeld als niet-nagekeken percentage
+
+  - id: lh_c3
+    tekst: >-
+      Risicofactoren: leeftijd 35-55 jaar, mannelijk geslacht, zwaar beroep,
+      roken, genetische aanleg.
+    plaats: oorzaken
+    bronnen: []
+    gedekt: nee
+    opmerking: De toegeschreven publicatie is in dit dossier niet opgehaald.
+    verwerkt: gelabeld als niet opgehaalde toeschrijving
+
+  - id: lh_c4
+    tekst: >-
+      90% van de patienten herstelt spontaan binnen 6 tot 12 weken (Weber, 1983).
+    plaats: fase 0 - evidence
+    bronnen: [weber_1983_discushernia]
+    gedekt: nee
+    opmerking: >-
+      Staat niet in Weber 1983. Die trial randomiseerde 126 patienten met een
+      ONZEKERE operatie-indicatie; de geopereerde groep deed het na een jaar
+      SIGNIFICANT BETER, na vier jaar beter maar niet meer significant. Het
+      protocol citeerde de bron dus in de richting die ze niet steunt.
+    verwerkt: cijfer geschrapt, werkelijke bevinding van Weber opgenomen
+
+  - id: lh_c5
+    tekst: >-
+      Beeldvorming is in de eerste lijn geen standaard bij afwezigheid van
+      rode vlaggen.
+    plaats: fase 0 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Klinisch breed gedragen, maar de richtlijnverwijzing is in dit dossier niet
+      opgehaald.
+    verwerkt: gelabeld als klinische redenering
+
+  - id: lh_c6
+    tekst: >-
+      Straight leg raise: sensitiviteit 0,91, specificiteit 0,26; gekruiste test
+      sensitiviteit 0,29, specificiteit 0,88 (Deville et al., 2000).
+    plaats: fase 0 - evidence
+    bronnen: [deville_2000_lasegue]
+    gedekt: ja
+    opmerking: >-
+      Cijfers letterlijk uit de review. Toegevoegd bij oplevering: de conclusie van
+      de auteurs dat de bruikbaarheid beperkt wordt door de lage specificiteit, en
+      dat alle ingesloten studies chirurgische casusreeksen buiten de eerste lijn
+      waren. De oorspronkelijke tekst noemde ook een slumptest — die komt in de
+      review niet voor en is geschrapt.
+    verwerkt: aangevuld met conclusie en populatiebeperking; slumptest geschrapt
+
+  - id: lh_c7
+    tekst: >-
+      Doorgaan met gewone activiteit binnen de pijngrens geeft sneller herstel dan
+      bedrust (Malmivaara et al., 1995).
+    plaats: fase 1 - evidence
+    bronnen: [malmivaara_1995_activiteit]
+    gedekt: deels
+    opmerking: >-
+      De trial ondersteunt de uitspraak, en zelfs sterker dan het protocol schreef:
+      gewone activiteit deed het ook beter dan rugmobiliserende OEFENINGEN. Maar de
+      populatie is ACUTE ASPECIFIEKE lage rugpijn, geen radiculopathie — dat is
+      extrapolatie buiten de onderzochte indicatie (CLAUDE.md §1.5).
+    verwerkt: bevinding aangevuld, overdracht naar radiculopathie expliciet als
+      klinische redenering gelabeld
+
+  - id: lh_c8
+    tekst: >-
+      Centralisatie van de pijn volgens McKenzie voorspelt een gunstig beloop
+      (Donelson et al., 1997).
+    plaats: fase 1 - evidence
+    bronnen: [donelson_1997_centralisatie]
+    gedekt: nee
+    opmerking: >-
+      Donelson 1997 is een DIAGNOSTISCHE studie, geen effectstudie. Bij 50% van de
+      patienten centraliseerde de pijn; van hen had 74% een positief discogram. Dat
+      zegt iets over de discogene oorsprong, niet over de uitkomst van de
+      McKenzie-behandeling.
+    verwerkt: herschreven als diagnostische bevinding, effectclaim geschrapt
+
+  - id: lh_c9
+    tekst: >-
+      Neurodynamische mobilisatie (sliders) vermindert radiculaire pijn
+      (Nee et al., 2012).
+    plaats: fase 1 en fase 2 - evidence
+    bronnen: [nee_2012_neurale_mobilisatie]
+    gedekt: nee
+    opmerking: >-
+      De trial betreft zenuwgerelateerde NEK- EN ARMPIJN, niet lumbale
+      radiculopathie. Het refs-veld van het protocol zei dat zelf al
+      ("cervicobrachial pain") terwijl de evidencetekst het op het been toepaste.
+      De gevonden winst (NNT 2,7; 95% BI 1,7-6,5, zonder aanwijzing voor schade)
+      is reeel, maar in een andere lichaamsregio.
+    verwerkt: populatie expliciet benoemd op beide plaatsen, overdracht naar het
+      been als klinische redenering gelabeld
+
+  - id: lh_c10
+    tekst: >-
+      Specifieke motorcontroletraining geeft minder recidief dan algemene
+      oefentherapie (Hides et al., 2001).
+    plaats: fase 2 - evidence
+    bronnen: [hides_2001_stabilisatie]
+    gedekt: deels
+    opmerking: >-
+      Het recidiefcijfer klopt (30% tegenover 84% na een jaar), maar de
+      VERGELIJKING niet: de controlegroep kreeg medische zorg plus normale
+      activiteit, geen algemene oefentherapie. Populatie: acute EERSTE episode
+      lage rugpijn (n = 39), geen radiculopathie.
+    verwerkt: vergelijking en populatie gecorrigeerd
+
+  - id: lh_c11
+    tekst: >-
+      Progressieve krachttraining is superieur aan alleen rompstabilisatie
+      (Aasa et al., 2015).
+    plaats: fase 3 - evidence
+    bronnen: [aasa_2015_motorcontrole]
+    gedekt: nee
+    opmerking: >-
+      OMGEKEERD. In die RCT (n = 70, terugkerende rugpijn) verbeterde de
+      LAAGBELASTE motorcontrolegroep meer op de gepersonaliseerde functieschaal
+      dan de zwaarbelaste tilgroep (4,2 tegenover 2,5 punten; p < 0,001), zonder
+      verschil in pijnintensiteit of kracht. Dit is de tweede keer dat deze bron
+      in dit dossier omgekeerd geciteerd bleek.
+    verwerkt: richting van het bewijs rechtgezet; krachttraining blijft als
+      verdedigbare klinische keuze benoemd omdat beide groepen binnen zichzelf
+      verbeterden
+
+  - id: lh_c12
+    tekst: Aerobe training werkt direct pijnmodulerend.
+    plaats: fase 3 - evidence
+    bronnen: [naugle_2012_hypoalgesie]
+    gedekt: deels
+    opmerking: >-
+      Bij gezonde deelnemers treedt hypoalgesie op, maar bij chronische pijn wisselt
+      de richting van het effect en treedt soms hyperalgesie op. De onvoorwaardelijke
+      formulering verzweeg dat (CLAUDE.md §1.9).
+    verwerkt: tegenstrijdige richting expliciet vermeld
+
+  - id: lh_c13
+    tekst: >-
+      Vroege werkhervatting met aangepast werk vermindert het verzuim met 45%
+      (Schaafsma et al., 2013).
+    plaats: fase 4 - evidence
+    bronnen: [schaafsma_2013_werkhervatting]
+    gedekt: nee
+    opmerking: >-
+      Er staat nergens 45%. De Cochrane-review (25 trials, 4404 werknemers) vindt
+      bij ACUTE rugpijn weinig of geen verschil, bij SUBACUTE rugpijn tegenstrijdig
+      bewijs met een mogelijke uitzondering voor interventies op de werkplek
+      (SMD -0,42; 95% BI -0,65 tot -0,18), en bij CHRONISCHE rugpijn slechts een
+      geringe verkorting (SMD -0,23; -0,42 tot -0,03). De auteurs besluiten dat de
+      effectiviteit ONZEKER blijft.
+    verwerkt: cijfer geschrapt, werkelijke uitkomsten per fase en de
+      onzekerheidsconclusie opgenomen
+
+  - id: lh_c14
+    tekst: >-
+      Tweemaal per week krachttraining is de sterkste preventieve factor tegen
+      recidief (Steffens et al., 2016).
+    plaats: fase 4 - evidence
+    bronnen: [steffens_2016_preventie]
+    gedekt: nee
+    opmerking: >-
+      Steffens 2016 rapporteert oefening met educatie (RR 0,55; 95% BI 0,41-0,74) en
+      oefening alleen (RR 0,65; 0,50-0,86). Er staat geen frequentie van tweemaal per
+      week en geen rangschikking van preventieve factoren in.
+    verwerkt: frequentieclaim geschrapt, werkelijke risicoratio's opgenomen

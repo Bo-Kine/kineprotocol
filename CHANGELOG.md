@@ -3,6 +3,16 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-09-06 — bronaudit lumbale discushernia
+
+- TWEE TOEGESCHREVEN CIJFERS BESTAAN NIET IN DE BRON · "90% herstelt spontaan binnen 6-12 weken (Weber, 1983)" staat daar niet in — die trial vond dat de GEOPEREERDE groep het na één jaar significant beter deed en na vier jaar beter maar niet meer significant · "vroege werkhervatting vermindert het verzuim met 45% (Schaafsma et al., 2013)" staat er evenmin in — die Cochrane-review besluit dat de effectiviteit ONZEKER blijft
+- Derde omkering van `aasa_2015_motorcontrole` in dit dossier · het protocol claimde dat progressieve krachttraining superieur is aan rompstabilisatie, terwijl de LAAGBELASTE motorcontrolegroep méér verbeterde op de functieschaal (4,2 tegenover 2,5 punten; p < 0,001)
+- Verkeerd tijdschrift én verkeerd cijfer bij de Lasègue-test · "sensitiviteit 91% (van der Windt et al., 2010 — Ann Fam Med)" · het is een COCHRANE-review, de gepoolde sensitiviteit is 0,92 en 0,91 is het cijfer van `deville_2000_lasegue` — de twee reviews werden door elkaar gehaald · beide reviews noemen geen drempel van 60° · toegevoegd: de gepoolde specificiteit van 0,28 en de conclusie van de auteurs dat de diagnostische waarde van de meeste lichamelijke tests zwak is
+- `nee_2012_neurale_mobilisatie` gaat over NEK- EN ARMPIJN, niet over lumbale radiculopathie · het refs-veld van het protocol zei dat zelf al ("cervicobrachial pain") terwijl de evidencetekst het op het been toepaste · op beide plaatsen als klinische redenering gelabeld
+- `donelson_1997_centralisatie` is een DIAGNOSTISCHE studie, geen effectstudie · bij 50% centraliseerde de pijn, van wie 74% een positief discogram had — dat zegt niets over de uitkomst van de McKenzie-behandeling
+- Verder gecorrigeerd · de controlegroep bij `hides_2001_stabilisatie` kreeg medische zorg plus normale activiteit, geen algemene oefentherapie · `steffens_2016_preventie` noemt geen frequentie van tweemaal per week · de slumptest komt in Devillé 2000 niet voor · "95% van de herniaties op L4-L5 en L5-S1" is nergens tegen een primaire bron gelegd
+- Nieuwe referentie · `vanderwindt_2010_lichamelijk_onderzoek` (Cochrane, PMID 20166095), live geverifieerd
+
 ## 2026-09-06 — bronaudit adductor-gerelateerde liespijn + fase B frozen shoulder
 
 - EERSTE PROTOCOL WAARVAN DE KERNCIJFERS KLOPPEN · `ishoi_2016_copenhagen_kracht` (35,7% toename excentrische adductiekracht) en `haroy_2019_adductorprogramma` (41% lager risico) zijn letterlijk gedekt, evenals de EMG-bovengrens van 108% en de HAGOS-validatie · dit protocol is aantoonbaar met de literatuur in de hand geschreven

@@ -1,0 +1,164 @@
+protocol: fs
+laatst_gecontroleerd: 2026-09-06
+versie: 1
+fase_a_door: hoofdagent, alle metadata eerstehands opgehaald via PubMed MCP
+fase_b_door: nog uit te voeren
+
+claims:
+  - id: fs_c01
+    tekst: Capsulaire rek is superieur aan andere behandelmodaliteiten voor ROM-herstel in de bevroren fase
+    plaats: protocols.fs fase 2 evidence
+    bronnen: [diercks_2004_supervised_neglect]
+    gedekt: nee
+    opmerking: >-
+      DE ZWAARSTE OMKERING VAN DE HELE AUDIT. De aangehaalde studie vond precies
+      het OMGEKEERDE. Bij 77 patienten haalde de groep met SUPERVISED NEGLECT —
+      ondersteuning en oefenen BINNEN de pijngrens — na 24 maanden in 89% een
+      normale of bijna normale pijnvrije schouderfunctie, tegenover 63% in de groep
+      met intensieve kinesitherapie inclusief passief rekken en manuele
+      mobilisatie; 64% van de eerste groep bereikte dat al binnen 12 maanden. De
+      auteurs besluiten letterlijk dat supervised neglect BETERE uitkomsten geeft.
+      De volledige fase 2 van dit protocol is dus opgebouwd rond een interventie
+      die in de eigen geciteerde bron slechter presteerde. Dit raakt de
+      behandelkeuze rechtstreeks.
+    verwerkt: >-
+      de bevinding van de bron opgenomen als tegenstrijdige evidentie, met beide
+      percentages, bovenaan de fase geplaatst zodat zij niet te missen is
+
+  - id: fs_c02
+    tekst: Adhesieve capsulitis is zelfgelimiteerd met herstel in 90% binnen 18-24 maanden
+    plaats: protocols.fs fase 1 evidence
+    bronnen: [dias_2005_frozenshoulder, hand_2008_langetermijn]
+    gedekt: nee
+    opmerking: >-
+      TE OPTIMISTISCH, EN DE BRONNEN ZEGGEN HET TEGENDEEL. Het klinische
+      overzichtsartikel stelt dat patienten doorgaans herstellen maar MOGELIJK
+      NOOIT hun volledige bewegingsuitslag terugkrijgen; het bevat geen percentage
+      en geen tijdsvenster. Het langetermijncohort van 269 schouders vond na
+      gemiddeld 4,4 jaar 59% met een normale of bijna normale schouder en 41% met
+      restklachten. Het artikel verscheen in BMJ, niet in JBJS.
+    verwerkt: >-
+      percentage en tijdsvenster geschrapt, de werkelijke prognose opgenomen in
+      zowel fase 1, fase 4 als de beschrijving
+
+  - id: fs_c03
+    tekst: Corticosteroidinjectie met kinesitherapie geeft betere kortetermijnpijnreductie dan kinesitherapie alleen
+    plaats: protocols.fs fase 1 evidence
+    bronnen: [carette_2003_injectie_kinesitherapie]
+    gedekt: deels
+    opmerking: >-
+      RICHTING GEDEKT, KERNBEVINDING VERZWEGEN. De injectiegroepen verbeterden na 6
+      weken significant meer op de SPADI (p = 0,0004) en de combinatie gaf de
+      grootste ROM-winst. MAAR: tussen gesuperviseerde kinesitherapie en placebo
+      was er op GEEN ENKEL meetmoment verschil, de auteurs besluiten dat
+      kinesitherapie ALLEEN van BEPERKTE werkzaamheid is, en na 12 maanden waren
+      alle groepen in gelijke mate verbeterd. Dat laatste is voor een
+      kinesitherapieprotocol wezenlijke informatie. Het artikel verscheen in
+      Arthritis and Rheumatism, niet in NEJM.
+    verwerkt: alle drie de ontbrekende bevindingen opgenomen
+
+  - id: fs_c04
+    tekst: >-
+      Posterieure capsulaire contractuur is aanwezig bij 80-90% van de patienten met
+      adhesieve capsulitis
+    plaats: protocols.fs fase 2 evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      DERDE MISBRUIK VAN DEZELFDE BRON. De toegeschreven cohortstudie betreft 22
+      patienten met INTERN IMPINGEMENT, niet met adhesieve capsulitis, en bevat
+      geen prevalentiecijfer. Zij werd eerder in het supraspinatusprotocol al voor
+      een ander mechanisme aangehaald. Het tijdschrift werd bovendien als JOSPT
+      vermeld terwijl het AJSM is.
+    verwerkt: percentage en citatie geschrapt
+
+  - id: fs_c05
+    tekst: Continuiteit van rek is essentieel, incidentele rekking heeft geen klinisch effect
+    plaats: protocols.fs fase 2 evidence
+    bronnen: [vermeulen_2006_mobilisatiegraad]
+    gedekt: nee
+    opmerking: >-
+      DE STUDIE GAAT OVER IETS ANDERS. Zij vergelijkt mobilisatie in EINDSTANDIGE
+      posities met mobilisatie BINNEN de pijnvrije zone, niet rekfrequentie of
+      rekduur. De eindstandige techniek gaf meer winst op passieve abductie en
+      buitenrotatie, maar de auteurs benadrukken dat de verschillen KLEIN zijn en
+      dat beide groepen over 12 maanden verbeterden. Een dosering van driemaal
+      daags 30 seconden staat er niet in.
+    verwerkt: >-
+      dosering gelabeld als praktijkafspraak, de werkelijke vergelijking en de
+      kleine verschillen opgenomen
+
+  - id: fs_c06
+    tekst: >-
+      Rotatorenmanchetkracht daalt gemiddeld 40% na 12 weken immobiliteit; serratus en
+      onderste trapezius zijn de meest onderschatte spieren
+    plaats: protocols.fs fase 3 evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      NIET GEVERIFIEERD. De citaties uit 1988, 2012 en 2011 konden niet opgehaald
+      worden. Het krachtverlies van 40% en het superlatief over onderschatte
+      spieren zijn daarmee onbevestigd.
+    verwerkt: cijfer geschrapt, uitspraken gelabeld als klinische redenering
+
+  - id: fs_c07
+    tekst: Een preventief schouderprogramma reduceert de recidiefkans met 40-60% bij risicopatienten
+    plaats: protocols.fs fase 4 evidence
+    bronnen: [hand_2008_langetermijn]
+    gedekt: nee
+    opmerking: >-
+      DE BRON MELDT DAT ER GEEN RECIDIEVEN WAREN. In het cohort van 269 schouders
+      kwamen GEEN recidiefgevallen voor. Een claim over recidiefreductie kan dus
+      onmogelijk op deze bron steunen, los van het feit dat het percentage er niet
+      in staat.
+    verwerkt: claim geschrapt, de bevinding dat er geen recidieven waren opgenomen
+
+  - id: fs_c08
+    tekst: Een DASH-daling van 10 punten of meer is klinisch significant
+    plaats: protocols.fs fase 4 evidence
+    bronnen: [beaton_2001_dash]
+    gedekt: nee
+    opmerking: >-
+      DREMPEL NIET IN DE BRON, TIJDSCHRIFT VOOR DE TWEEDE KEER ONJUIST. De
+      validatiestudie bevat geen drempelwaarde van 10 punten. Zij verscheen in
+      Journal of Hand Therapy; de app vermeldde hier Annals of the Rheumatic
+      Diseases en in het supraspinatusprotocol CORR — dezelfde bron dus met twee
+      verschillende onjuiste tijdschriften.
+    verwerkt: drempel gelabeld als praktijkafspraak, tijdschrift gecorrigeerd
+
+  - id: fs_c09
+    tekst: >-
+      Diabetes geeft 10-20% prevalentie versus 2-5% in de algemene bevolking, met
+      40% bilateraal
+    plaats: BESCHRIJVING.fs
+    bronnen: [hand_2008_langetermijn]
+    gedekt: nee
+    opmerking: >-
+      NIET GEVERIFIEERD. De toegeschreven publicatie uit 1999 kon niet opgehaald
+      worden. Wel geverifieerd: in het langetermijncohort meldde 20% bilaterale
+      klachten, niet 40%.
+    verwerkt: >-
+      cijfers geschrapt, het wel geverifieerde aandeel bilaterale klachten
+      opgenomen
+
+  - id: fs_c10
+    tekst: >-
+      Niet geverifieerde citaties: Neviaser en Hannafin 2010, Vastamaki 1988,
+      Tate 2012, Celik en Yesilyaprak 2011, Balci 1999
+    plaats: protocols.fs fase 1, 3 en 4 evidence + BESCHRIJVING.fs
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Vijf citaties konden niet eenduidig opgehaald worden, waaronder de volledige
+      onderbouwing van fase 3.
+    verwerkt: alle vijf gemarkeerd als niet geverifieerd
+
+  - id: fs_c11
+    tekst: Het protocol had geen refs-veld
+    plaats: protocols.fs
+    bronnen: [diercks_2004_supervised_neglect, carette_2003_injectie_kinesitherapie, hand_2008_langetermijn, vermeulen_2006_mobilisatiegraad, dias_2005_frozenshoulder, beaton_2001_dash]
+    gedekt: nee
+    opmerking: >-
+      Derde protocol zonder literatuurlijst, na de facettaire blokkade en de
+      supraspinatus.
+    verwerkt: refs-veld aangelegd met de zes geverifieerde bronnen

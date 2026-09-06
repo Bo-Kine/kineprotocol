@@ -2,7 +2,10 @@ protocol: sup
 laatst_gecontroleerd: 2026-09-06
 versie: 1
 fase_a_door: hoofdagent, alle metadata eerstehands opgehaald via PubMed MCP
-fase_b_door: nog uit te voeren
+fase_b_door: >-
+  onafhankelijke verificator met schone context, 2026-09-06; alle 8 citaties en
+  het volledige refs-veld bevestigd als correct, 11 problemen daarbuiten
+  gevonden, alle verwerkt
 
 claims:
   - id: sup_c01
@@ -153,3 +156,28 @@ claims:
     verwerkt: >-
       refs-veld aangelegd met de zeven geverifieerde bronnen, met vermelding welke
       pees respectievelijk welke populatie zij betreffen
+
+  - id: sup_c12
+    tekst: Bevindingen uit fase B, waaronder een citatie die nergens bestaat
+    plaats: oefennotities sup + BESCHRIJVING.sup + criteria_go
+    bronnen: [kibler_2013_scapulaconsensus, cools_2007_scapulaoefeningen, beaton_2001_dash]
+    gedekt: nee
+    opmerking: >-
+      SPOOKCITATIE GEVONDEN. Een oefennotitie voerde "(Dye et al., 2017)" op als
+      onderbouwing van pijninhibitie; die publicatie staat niet in references.yaml,
+      niet in het refs-veld en niet in dit claimsbestand, en is nergens opgehaald.
+      Verder presenteerden vier notities en de beschrijving opnieuw als bewijs wat
+      de evidencetekst van dezelfde fase juist als niet-gedekt markeert: de
+      vergelijking tussen bewegingsvlakken bij scaption, het mechanisme van
+      posterieure kapselspanning, de scapulaire dyskinese als vastgestelde oorzaak
+      van een verkleinde acromiohumerale afstand, en de serratus met onderste
+      trapezius als "primaire stabilisatoren" terwijl de EMG-studie juist GEEN
+      oefening vond die de gewenste verhouding haalde. Daarnaast een ongebrond
+      recidiefcijfer van 40%, een instrumentverwisseling (criteria noemden de
+      QuickDASH terwijl de validatie de DASH betreft), een open-ketenoefening die
+      als gesloten keten stond beschreven, en een typefout in een patientgerichte
+      notitie.
+    verwerkt: >-
+      spookcitatie verwijderd, alle notities in lijn gebracht met de
+      evidenceteksten, instrument en ketenbeschrijving gecorrigeerd, typefout
+      hersteld

@@ -3,6 +3,17 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-09-06 — bronaudit frozen shoulder + fase B supraspinatus
+
+- ZWAARSTE OMKERING VAN DE HELE AUDIT · de volledige fase 2 van het frozen-shoulderprotocol draait om capsulaire rek, onderbouwd met `diercks_2004_supervised_neglect` — die studie vond precies het OMGEKEERDE · bij 77 patiënten haalde de groep met SUPERVISED NEGLECT (oefenen BINNEN de pijngrens) na 24 maanden in 89% een normale of bijna normale pijnvrije schouder, tegenover 63% met intensieve kinesitherapie inclusief passief rekken · de auteurs besluiten letterlijk dat supervised neglect BETERE uitkomsten geeft · dit raakt de behandelkeuze rechtstreeks en staat nu bovenaan de fase
+- Prognose fors te optimistisch · "90% volledig ROM-herstel binnen 18-24 maanden" · `hand_2008_langetermijn` vond na gemiddeld 4,4 jaar 59% met een normale of bijna normale schouder en 41% met restklachten, en `dias_2005_frozenshoulder` stelt dat patiënten mogelijk NOOIT hun volledige bewegingsuitslag terugkrijgen
+- Recidiefclaim onmogelijk · "preventief programma reduceert recidiefkans met 40-60%" verwees naar een cohort waarin GEEN ENKEL recidief voorkwam
+- Kernbevinding verzwegen bij de injectiestudie · `carette_2003_injectie_kinesitherapie` vond tussen gesuperviseerde kinesitherapie en placebo op GEEN ENKEL meetmoment verschil, besluit dat kinesitherapie alléén van beperkte werkzaamheid is, en meldt dat na 12 maanden alle groepen gelijk verbeterd waren · voor een kinesitherapieprotocol is dat wezenlijke informatie
+- Derde misbruik van dezelfde bron · `tyler_2010_posterieure_strakheid` (22 patiënten met INTERN impingement) moest hier een prevalentiecijfer van 80-90% posterieure capsulaire contractuur bij adhesieve capsulitis schragen
+- Dezelfde validatiestudie met twee verschillende onjuiste tijdschriften · `beaton_2001_dash` staat in het supraspinatusprotocol als CORR en hier als Annals of the Rheumatic Diseases; het is Journal of Hand Therapy
+
+- Fase B op supraspinatus · alle 8 citaties en het volledige refs-veld correct · 11 problemen daarbuiten, waaronder een SPOOKCITATIE: "(Dye et al., 2017)" stond als onderbouwing in een oefennotitie maar bestaat nergens in het dossier · verder vier notities en de beschrijving die opnieuw als bewijs presenteerden wat de evidencetekst van dezelfde fase juist als niet-gedekt markeert
+
 ## 2026-09-06 — bronaudit supraspinatus + fase B achillespees
 
 - DEZELFDE BRON BIJ EEN DERDE PEES · `rio_2015_isometrie` — 6 volleyballers met PATELLApeestendinopathie — wordt in deze app gebruikt bij de patellapees (terecht), de achillespees en nu ook de rotatorenmanchet · elke toepassing buiten de patellapees is nu als extrapolatie gelabeld

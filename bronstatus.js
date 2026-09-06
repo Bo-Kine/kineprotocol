@@ -37,6 +37,13 @@ const BRONSTATUS = {
     "open": 0,
     "datum": "2026-09-05"
   },
+  "fs": {
+    "gecontroleerd": 11,
+    "gedekt": 0,
+    "deels": 1,
+    "open": 0,
+    "datum": "2026-09-06"
+  },
   "itb": {
     "gecontroleerd": 14,
     "gedekt": 1,
@@ -87,7 +94,7 @@ const BRONSTATUS = {
     "datum": "2026-09-05"
   },
   "sup": {
-    "gecontroleerd": 11,
+    "gecontroleerd": 12,
     "gedekt": 0,
     "deels": 0,
     "open": 0,

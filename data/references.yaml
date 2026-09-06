@@ -2288,3 +2288,122 @@ references:
       Journal of Hand Therapy, niet in CORR. PubMed geeft voor dit record geen DOI.
     geverifieerd_op: 2026-09-06
     geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  # --- Frozen shoulder (adhesieve capsulitis) ---
+
+  - key: diercks_2004_supervised_neglect
+    auteurs: [Diercks RL, Stevens M]
+    titel: >-
+      Gentle thawing of the frozen shoulder: a prospective study of supervised
+      neglect versus intensive physical therapy in seventy-seven patients with
+      frozen shoulder syndrome followed up for two years
+    bron: Journal of Shoulder and Elbow Surgery
+    jaar: 2004
+    volume_paginas: 13(5):499-502
+    doi: 10.1016/j.jse.2004.03.002
+    pmid: '15383804'
+    url: https://doi.org/10.1016/j.jse.2004.03.002
+    type: cohort
+    opmerking: >-
+      77 patienten met idiopathische frozen shoulder, twee jaar gevolgd. In de groep
+      met SUPERVISED NEGLECT (ondersteuning en oefenen BINNEN de pijngrens) had 89%
+      na 24 maanden een normale of bijna normale pijnvrije schouderfunctie
+      (Constant-score 80 of hoger), en 64% bereikte dat al binnen 12 maanden. In de
+      groep met INTENSIEVE kinesitherapie inclusief passief rekken en manuele
+      mobilisatie haalde slechts 63% dat na 24 maanden. CONCLUSIE VAN DE AUTEURS:
+      supervised neglect geeft BETERE uitkomsten dan intensieve kinesitherapie met
+      passief rekken. Dit spreekt de opbouw van een rekgericht protocol
+      rechtstreeks tegen.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: carette_2003_injectie_kinesitherapie
+    auteurs: [Carette S, Moffet H, Tardif J, Bessette L, Morin F, Fremont P, Bykerk V, Thorne C, Bell M, Bensen W, Blanchette C]
+    titel: >-
+      Intraarticular corticosteroids, supervised physiotherapy, or a combination of
+      the two in the treatment of adhesive capsulitis of the shoulder: a
+      placebo-controlled trial
+    bron: Arthritis and Rheumatism
+    jaar: 2003
+    volume_paginas: 48(3):829-38
+    doi: 10.1002/art.10954
+    pmid: '12632439'
+    url: https://doi.org/10.1002/art.10954
+    type: RCT
+    opmerking: >-
+      93 deelnemers, vier armen: injectie plus kinesitherapie, injectie alleen,
+      zoutoplossing plus kinesitherapie, en zoutoplossing alleen. Alle deelnemers
+      kregen een eenvoudig thuisoefenprogramma. Na 6 weken verbeterden de twee
+      injectiegroepen significant meer op de SPADI (p = 0,0004); de combinatie gaf
+      de grootste toename van bewegingsuitslag. KERNBEVINDINGEN DIE IN DE APP
+      ONTBRAKEN: tussen kinesitherapie en placebo was er op GEEN ENKEL meetmoment
+      verschil, behalve meer flexie op drie maanden; de auteurs besluiten
+      uitdrukkelijk dat gesuperviseerde kinesitherapie ALLEEN van BEPERKTE
+      werkzaamheid is. Na 12 maanden waren alle groepen in gelijke mate verbeterd.
+      Verscheen in Arthritis and Rheumatism, niet in NEJM.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: vermeulen_2006_mobilisatiegraad
+    auteurs: [Vermeulen HM, Rozing PM, Obermann WR, le Cessie S, Vliet Vlieland TPM]
+    titel: 'Comparison of high-grade and low-grade mobilization techniques in the management of adhesive capsulitis of the shoulder: randomized controlled trial'
+    bron: Physical Therapy
+    jaar: 2006
+    volume_paginas: 86(3):355-68
+    doi: null
+    pmid: '16506872'
+    url: https://pubmed.ncbi.nlm.nih.gov/16506872/
+    type: RCT
+    opmerking: >-
+      100 deelnemers met eenzijdige adhesieve capsulitis van minstens 3 maanden.
+      Vergelijking van mobilisatie in EINDSTANDIGE posities met mobilisatie BINNEN
+      de pijnvrije zone, maximaal 24 sessies over 12 weken. Beide groepen
+      verbeterden over 12 maanden; de eindstandige techniek gaf statistisch
+      significant meer winst op passieve abductie en buitenrotatie en op twee
+      vragenlijsten, MAAR de auteurs benadrukken dat de verschillen tussen beide
+      interventies KLEIN zijn. De studie gaat over de GRAAD van mobilisatie, niet
+      over rekfrequentie of rekduur; uitspraken over drie keer daags 30 seconden
+      staan er niet in. PubMed geeft voor dit record geen DOI.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: hand_2008_langetermijn
+    auteurs: [Hand C, Clipsham K, Rees JL, Carr AJ]
+    titel: Long-term outcome of frozen shoulder
+    bron: Journal of Shoulder and Elbow Surgery
+    jaar: 2008
+    volume_paginas: 17(2):231-6
+    doi: 10.1016/j.jse.2007.05.009
+    pmid: '17993282'
+    url: https://doi.org/10.1016/j.jse.2007.05.009
+    type: cohort
+    opmerking: >-
+      269 schouders bij 223 patienten met primaire frozen shoulder, gemiddeld 4,4
+      jaar na het begin van de klachten gevolgd. UITKOMST DIE VEEL MINDER GUNSTIG
+      IS DAN DE APP SUGGEREERDE: 59% had een normale of bijna normale schouder,
+      41% hield restklachten. Die restklachten waren meestal mild (94%), met pijn
+      als voornaamste klacht; 6% had ernstige klachten met pijn en functieverlies.
+      20% meldde bilaterale klachten. BELANGRIJK: er waren GEEN recidieven — een
+      claim over recidiefreductie kan dus niet op deze bron steunen. Wie bij aanvang
+      de ernstigste klachten had, had de slechtste langetermijnprognose
+      (p kleiner dan 0,001).
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: dias_2005_frozenshoulder
+    auteurs: [Dias R, Cutts S, Massoud S]
+    titel: Frozen shoulder
+    bron: BMJ
+    jaar: 2005
+    volume_paginas: 331(7530):1453-6
+    doi: 10.1136/bmj.331.7530.1453
+    pmid: '16356983'
+    url: https://doi.org/10.1136/bmj.331.7530.1453
+    type: review
+    opmerking: >-
+      Kort klinisch overzichtsartikel. De kernboodschap luidt dat patienten
+      doorgaans herstellen maar dat zij MOGELIJK NOOIT HUN VOLLEDIGE
+      BEWEGINGSUITSLAG TERUGKRIJGEN. Het abstract bevat geen percentage van 90% en
+      geen duurtijd van 18 tot 24 maanden. Verscheen in BMJ, niet in JBJS.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)

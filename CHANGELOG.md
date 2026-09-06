@@ -3,6 +3,17 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-09-06 — bronaudit adductor-gerelateerde liespijn + fase B frozen shoulder
+
+- EERSTE PROTOCOL WAARVAN DE KERNCIJFERS KLOPPEN · `ishoi_2016_copenhagen_kracht` (35,7% toename excentrische adductiekracht) en `haroy_2019_adductorprogramma` (41% lager risico) zijn letterlijk gedekt, evenals de EMG-bovengrens van 108% en de HAGOS-validatie · dit protocol is aantoonbaar met de literatuur in de hand geschreven
+- Wel drie preciseringen · de percentages 79% en 14% van `holmich_1999_actieve_training` staan niet in het abstract; daar staan de AANTALLEN 23 tegenover 4 met een odds ratio van 12,7 (95% BI 3,4-47,2) · de 41% is een RISICOreductie, niet de daling van de prevalentie (die ging van 21,3% naar 13,5%) · en het preventieprogramma bestond uit één enkele oefening, NIET geïntegreerd in het FIFA 11+-kader
+- Vergelijking geschrapt die in de bron niet bestaat · "criteriumgestuurde terugkeer geeft betere uitkomsten dan tijdgestuurde" · `serner_2020_terugkeer` is een prognostisch cohort waarin ALLE 81 sporters hetzelfde programma kregen, zonder vergelijkingsgroep en zonder hervalcijfers · wel opgenomen: mediaan 15 dagen tot pijnvrij, 24 dagen tot gecontroleerde sporttraining
+- Klinisch bruikbare nuance toegevoegd bij de HAGOS · het kleinste detecteerbare verschil is 2,7 tot 5,2 punten op GROEPSniveau maar 17,7 tot 33,8 punten op INDIVIDUEEL niveau — bij één patiënt is een kleine verandering dus niet interpreteerbaar
+- Doha-taxonomie aangevuld · drie hoofdcategorieën, niet vier entiteiten
+
+- Fase B op frozen shoulder · alle 8 citaties en het refs-veld correct · TWEE NIEUWE SPOOKCITATIES gevonden: "(Leung et al., 2008)" met een concreet cijfer van 30-40% pijnreductie, en "(Bunker & Anthony, 1995 — JBJS)" in de beschrijving · na "(Dye et al., 2017)" in het supraspinatusprotocol is dit de tweede en derde citatie die nergens in het dossier bestaat
+- Onnauwkeurigheid van mijzelf · ik schreef dat er bij `carette_2003_injectie_kinesitherapie` op geen enkel meetmoment verschil was tussen kinesitherapie en placebo, terwijl het abstract een uitzondering noemt (meer flexie na drie maanden) · die stond wel in references.yaml maar niet in de protocoltekst
+
 ## 2026-09-06 — bronaudit frozen shoulder + fase B supraspinatus
 
 - ZWAARSTE OMKERING VAN DE HELE AUDIT · de volledige fase 2 van het frozen-shoulderprotocol draait om capsulaire rek, onderbouwd met `diercks_2004_supervised_neglect` — die studie vond precies het OMGEKEERDE · bij 77 patiënten haalde de groep met SUPERVISED NEGLECT (oefenen BINNEN de pijngrens) na 24 maanden in 89% een normale of bijna normale pijnvrije schouder, tegenover 63% met intensieve kinesitherapie inclusief passief rekken · de auteurs besluiten letterlijk dat supervised neglect BETERE uitkomsten geeft · dit raakt de behandelkeuze rechtstreeks en staat nu bovenaan de fase

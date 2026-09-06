@@ -2407,3 +2407,154 @@ references:
       geen duurtijd van 18 tot 24 maanden. Verscheen in BMJ, niet in JBJS.
     geverifieerd_op: 2026-09-06
     geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  # --- Adductor-gerelateerde liespijn ---
+
+  - key: weir_2015_doha
+    auteurs: [Weir A, Brukner P, Delahunt E, Ekstrand J, Griffin D, Khan KM, Lovell G, Meyers WC, Muschaweck U, Orchard J, Paajanen H, Philippon M, Reboul G, Robinson P, Schache AG, Schilders E, Serner A, Silvers H, Thorborg K, Tyler T, Verrall G, de Vos RJ, Vuckovic Z, Holmich P]
+    titel: Doha agreement meeting on terminology and definitions in groin pain in athletes
+    bron: British Journal of Sports Medicine
+    jaar: 2015
+    volume_paginas: 49(12):768-74
+    doi: 10.1136/bjsports-2015-094869
+    pmid: '26031643'
+    url: https://doi.org/10.1136/bjsports-2015-094869
+    type: expert
+    opmerking: >-
+      Consensusverklaring van 24 internationale experts uit 14 landen, voorbereid
+      met systematische reviews en een Delphi-ronde. Het classificatiesysteem kent
+      DRIE hoofdcategorieen: (1) omschreven klinische entiteiten — adductor-,
+      iliopsoas-, inguinaal- en pubis-gerelateerde liespijn; (2) heupgerelateerde
+      liespijn; (3) overige oorzaken. De app noemde alleen de vier entiteiten van
+      de eerste categorie. De indeling berust op anamnese en klinisch onderzoek.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (search_articles + get_article_metadata)
+
+  - key: holmich_1999_actieve_training
+    auteurs: [Holmich P, Uhrskou P, Ulnits L, Kanstrup IL, Nielsen MB, Bjerg AM, Krogsgaard K]
+    titel: 'Effectiveness of active physical training as treatment for long-standing adductor-related groin pain in athletes: randomised trial'
+    bron: Lancet
+    jaar: 1999
+    volume_paginas: 353(9151):439-43
+    doi: 10.1016/S0140-6736(98)03340-6
+    pmid: '9989713'
+    url: https://doi.org/10.1016/S0140-6736(98)03340-6
+    type: RCT
+    opmerking: >-
+      68 sporters met langdurige adductor-gerelateerde liespijn (mediaan 40 weken),
+      8 tot 12 weken behandeling, geblindeerde beoordeling 4 maanden na afloop.
+      Uitkomstmaat: volledige terugkeer naar sport op hetzelfde niveau ZONDER
+      liespijn. Resultaat: 23 patienten in de actieve trainingsgroep tegenover 4 in
+      de groep zonder actieve training (odds ratio 12,7; 95% BI 3,4-47,2).
+      De vaak geciteerde percentages 79% en 14% staan NIET in het abstract; daar
+      staan de aantallen. Analyse volgens intention to treat.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: serner_2014_emg_copenhagen
+    auteurs: [Serner A, Jakobsen MD, Andersen LL, Holmich P, Sundstrup E, Thorborg K]
+    titel: 'EMG evaluation of hip adduction exercises for soccer players: implications for exercise selection in prevention and treatment of groin injuries'
+    bron: British Journal of Sports Medicine
+    jaar: 2014
+    volume_paginas: 48(14):1108-14
+    doi: 10.1136/bjsports-2012-091746
+    pmid: '23511698'
+    url: https://doi.org/10.1136/bjsports-2012-091746
+    type: cohort
+    opmerking: >-
+      EMG-studie bij 40 GEZONDE mannelijke elitevoetballers, acht adductieoefeningen.
+      De piekactiviteit van de adductor longus liep over de oefeningen heen uiteen
+      van 14% tot 108% van de maximale isometrische contractie (p kleiner dan
+      0,0001). De auteurs benoemen de Copenhagen Adduction en de adductie met
+      elastische band als dynamische hoogintensieve oefeningen. De bovengrens van
+      108% is het maximum over ALLE oefeningen; het abstract koppelt dat cijfer niet
+      expliciet aan de Copenhagen Adduction. Populatie: gezonde spelers, geen
+      patienten.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: ishoi_2016_copenhagen_kracht
+    auteurs: [Ishoi L, Sorensen CN, Kaae NM, Jorgensen LB, Holmich P, Serner A]
+    titel: 'Large eccentric strength increase using the Copenhagen Adduction exercise in football: a randomized controlled trial'
+    bron: Scandinavian Journal of Medicine and Science in Sports
+    jaar: 2016
+    volume_paginas: 26(11):1334-1342
+    doi: 10.1111/sms.12585
+    pmid: '26589483'
+    url: https://doi.org/10.1111/sms.12585
+    type: RCT
+    opmerking: >-
+      24 spelers uit twee subelite U19-ploegen, gerandomiseerd over acht weken
+      begeleide progressieve training bovenop de gewone training, of gewone
+      training alleen. De interventiegroep verbeterde de excentrische
+      heupadductiekracht met 35,7% (p kleiner dan 0,001), de abductiekracht met
+      20,3% (p = 0,003) en de verhouding tussen beide met 12,3% (p = 0,019); in de
+      controlegroep veranderde niets. Therapietrouw 91,25%, spierpijn mediaan 0 tot 2.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: haroy_2019_adductorprogramma
+    auteurs: [Haroy J, Clarsen B, Wiger EG, Oyen MG, Serner A, Thorborg K, Holmich P, Andersen TE, Bahr R]
+    titel: 'The Adductor Strengthening Programme prevents groin problems among male football players: a cluster-randomised controlled trial'
+    bron: British Journal of Sports Medicine
+    jaar: 2019
+    volume_paginas: 53(3):150-157
+    doi: 10.1136/bjsports-2017-098937
+    pmid: '29891614'
+    url: https://doi.org/10.1136/bjsports-2017-098937
+    type: RCT
+    opmerking: >-
+      35 semiprofessionele Noorse ploegen, 652 spelers, cluster-gerandomiseerd. Het
+      programma bestond uit EEN ENKELE oefening met drie progressieniveaus, drie
+      keer per week tijdens de voorbereiding (6 tot 8 weken) en EEN keer per week
+      tijdens het seizoen (28 weken) — dus GEEN integratie in het FIFA 11+-kader
+      zoals de app vermeldde. Gemiddelde prevalentie van liesklachten over het
+      seizoen: 13,5% (95% BI 12,3-14,7) in de interventiegroep tegenover 21,3%
+      (95% BI 20,0-22,6) in de controlegroep. Het RISICO op het melden van
+      liesklachten lag 41% lager (OR 0,59; 95% BI 0,40-0,86; p = 0,008) — die 41%
+      is dus een risicoreductie, niet de daling van de prevalentie zelf.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (search_articles + get_article_metadata)
+
+  - key: serner_2020_terugkeer
+    auteurs: [Serner A, Weir A, Tol JL, Thorborg K, Yamashiro E, Guermazi A, Roemer FW, Holmich P]
+    titel: 'Associations between initial clinical examination and imaging findings and return-to-sport in male athletes with acute adductor injuries: a prospective cohort study'
+    bron: American Journal of Sports Medicine
+    jaar: 2020
+    volume_paginas: 48(5):1151-1159
+    doi: 10.1177/0363546520908610
+    pmid: '32182099'
+    url: https://doi.org/10.1177/0363546520908610
+    type: cohort
+    opmerking: >-
+      PROGNOSTISCH cohort (bewijsniveau 2), 81 mannelijke sporters met een acuut
+      adductorletsel, allen behandeld met een gestandaardiseerd criteriumgestuurd
+      oefenprogramma. Mediane duur tot de drie mijlpalen: 15 dagen tot pijnvrij,
+      24 dagen tot afgeronde gecontroleerde sporttraining en 22 dagen tot de eerste
+      volledige teamtraining. De sterkste voorspellers van een LANGERE terugkeer
+      waren palpatiepijn aan de proximale adductor longus-insertie, een voelbaar
+      defect, en op MRI een letsel op de bot-peesovergang. LET OP: de studie
+      VERGELIJKT GEEN criteriumgestuurde met tijdgestuurde terugkeer en rapporteert
+      GEEN hervalcijfers.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: thorborg_2011_hagos
+    auteurs: [Thorborg K, Holmich P, Christensen R, Petersen J, Roos EM]
+    titel: 'The Copenhagen Hip and Groin Outcome Score (HAGOS): development and validation according to the COSMIN checklist'
+    bron: British Journal of Sports Medicine
+    jaar: 2011
+    volume_paginas: 45(6):478-91
+    doi: 10.1136/bjsm.2010.080937
+    pmid: '21478502'
+    url: https://doi.org/10.1136/bjsm.2010.080937
+    type: cohort
+    opmerking: >-
+      Ontwikkeling en validatie volgens de COSMIN-standaard bij 101 fysiek actieve
+      patienten met langdurige heup- of liespijn (gemiddeld 36 jaar). Zes
+      subschalen. Test-hertestbetrouwbaarheid substantieel (ICC 0,82 tot 0,91). Het
+      kleinste detecteerbare verschil bedraagt 17,7 tot 33,8 punten op INDIVIDUEEL
+      niveau en 2,7 tot 5,2 punten op groepsniveau — dat onderscheid is belangrijk
+      bij het interpreteren van een individuele patient.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)

@@ -2,7 +2,10 @@ protocol: fs
 laatst_gecontroleerd: 2026-09-06
 versie: 1
 fase_a_door: hoofdagent, alle metadata eerstehands opgehaald via PubMed MCP
-fase_b_door: nog uit te voeren
+fase_b_door: >-
+  onafhankelijke verificator met schone context, 2026-09-06; alle 8 citaties en
+  het volledige refs-veld bevestigd als correct, 5 problemen daarbuiten
+  gevonden, alle verwerkt
 
 claims:
   - id: fs_c01
@@ -162,3 +165,28 @@ claims:
       Derde protocol zonder literatuurlijst, na de facettaire blokkade en de
       supraspinatus.
     verwerkt: refs-veld aangelegd met de zes geverifieerde bronnen
+
+  - id: fs_c12
+    tekst: Bevindingen uit fase B, waaronder twee citaties die nergens bestaan
+    plaats: oefennotities fs + BESCHRIJVING.fs + doelstelling fase 1
+    bronnen: [carette_2003_injectie_kinesitherapie, hand_2008_langetermijn]
+    gedekt: nee
+    opmerking: >-
+      TWEE SPOOKCITATIES. "(Leung et al., 2008)" bij thermale therapie, met een
+      concreet cijfer van 30 tot 40% pijnreductie, en "(Bunker en Anthony, 1995 —
+      JBJS)" bij het pathomechanisme in de beschrijving: geen van beide komt voor
+      in references.yaml, in het refs-veld of in dit claimsbestand. Dat is de
+      tweede en derde spookcitatie in deze audit, na "(Dye et al., 2017)" in het
+      supraspinatusprotocol. Verder: de fasedoelstelling herhaalde het
+      tijdsvenster van 18 tot 24 maanden dat de evidencetekst van diezelfde fase
+      juist als niet-gedekt markeert, en de beschrijving bevatte een ongelabeld
+      verlies van meer dan 50% exorotatie. ONNAUWKEURIGHEID VAN MIJZELF: ik schreef
+      dat er tussen kinesitherapie en placebo op geen enkel meetmoment verschil
+      was, terwijl het abstract een uitzondering noemt (meer flexie in groep 3 na
+      drie maanden) — die stond wel in references.yaml maar niet in de
+      protocoltekst.
+    verwerkt: >-
+      beide spookcitaties verwijderd met behoud van de klinische lijn als
+      redenering, fasedoelstelling vervangen door de geverifieerde
+      langetermijnprognose, exorotatiecijfer gelabeld, uitzondering bij Carette
+      toegevoegd

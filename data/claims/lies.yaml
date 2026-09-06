@@ -1,0 +1,127 @@
+protocol: lies
+laatst_gecontroleerd: 2026-09-06
+versie: 1
+fase_a_door: hoofdagent, alle metadata eerstehands opgehaald via PubMed MCP
+fase_b_door: nog uit te voeren
+
+claims:
+  - id: lies_c01
+    tekst: De Doha agreement classificeert liespijn in vier klinische entiteiten
+    plaats: protocols.lies fase 1 evidence + BESCHRIJVING.lies
+    bronnen: [weir_2015_doha]
+    gedekt: deels
+    opmerking: >-
+      GROTENDEELS GEDEKT, TAXONOMIE ONVOLLEDIG. Het classificatiesysteem kent DRIE
+      hoofdcategorieen: omschreven klinische entiteiten (waaronder de vier
+      genoemde), heupgerelateerde liespijn, en overige oorzaken. De app noemde
+      alleen de eerste categorie. De definitie van adductorgerelateerde liespijn
+      is correct weergegeven.
+    verwerkt: volledige taxonomie opgenomen
+
+  - id: lies_c02
+    tekst: Actieve oefentherapie geeft 79% versus 14% succesvolle sporthervatting
+    plaats: protocols.lies fase 1 en 2 evidence
+    bronnen: [holmich_1999_actieve_training]
+    gedekt: deels
+    opmerking: >-
+      RICHTING EN EFFECTGROOTTE RUIM GEDEKT, PERCENTAGES NIET LETTERLIJK. Het
+      abstract geeft AANTALLEN: 23 deelnemers in de actieve trainingsgroep
+      tegenover 4 in de groep zonder actieve training, met een odds ratio van 12,7
+      (95% BI 3,4-47,2) bij 68 sporters met een mediane klachtenduur van 40 weken.
+      De percentages 79 en 14 zijn gangbare afleidingen maar staan er niet in
+      (CLAUDE.md 1.6). De uitkomstmaat is streng: volledige terugkeer naar sport
+      op hetzelfde niveau ZONDER liespijn, geblindeerd beoordeeld vier maanden na
+      de behandeling.
+    verwerkt: aantallen en odds ratio opgenomen in plaats van de afgeleide percentages
+
+  - id: lies_c03
+    tekst: De Copenhagen adduction genereert EMG-activiteit tot 108% MVC
+    plaats: protocols.lies fase 2 evidence
+    bronnen: [serner_2014_emg_copenhagen]
+    gedekt: deels
+    opmerking: >-
+      CIJFER KLOPT, TOESCHRIJVING IS SPECIFIEKER DAN DE BRON. De piekactiviteit
+      van de adductor longus liep over de ACHT onderzochte oefeningen uiteen van
+      14% tot 108%; het abstract koppelt de bovengrens niet expliciet aan de
+      Copenhagen adduction, maar benoemt die wel samen met de bandoefening als
+      dynamisch en hoogintensief. Populatie: 40 GEZONDE elitevoetballers, geen
+      patienten.
+    verwerkt: bereik en populatie opgenomen, toeschrijving genuanceerd
+
+  - id: lies_c04
+    tekst: De Copenhagen adduction verhoogt de excentrische adductiekracht met 35,7% na 8 weken
+    plaats: protocols.lies fase 2 evidence
+    bronnen: [ishoi_2016_copenhagen_kracht]
+    gedekt: ja
+    opmerking: >-
+      VOLLEDIG GEDEKT. 24 U19-spelers, acht weken progressieve training bovenop de
+      gewone training: 35,7% toename van de excentrische heupadductiekracht
+      (p kleiner dan 0,001), 20,3% van de abductiekracht en 12,3% van de
+      verhouding tussen beide; in de controlegroep veranderde niets. Therapietrouw
+      91,25%.
+    verwerkt: bijkomende uitkomstmaten en de controlegroep toegevoegd
+
+  - id: lies_c05
+    tekst: >-
+      Criteriumgestuurde opbouw geeft veilige terugkeer met lagere hervalcijfers en
+      betere uitkomsten dan tijdgestuurde terugkeer
+    plaats: protocols.lies fase 3 en 4 evidence
+    bronnen: [serner_2020_terugkeer]
+    gedekt: nee
+    opmerking: >-
+      DE VERGELIJKING BESTAAT NIET IN DE BRON. Dit is een PROGNOSTISCH cohort
+      waarin ALLE 81 sporters hetzelfde criteriumgestuurde programma kregen; er is
+      geen tijdgestuurde vergelijkingsgroep en er worden geen hervalcijfers
+      gerapporteerd. Wel gedekt en klinisch bruikbaar: mediaan 15 dagen tot
+      pijnvrij, 24 dagen tot afgeronde gecontroleerde sporttraining en 22 dagen
+      tot de eerste volledige teamtraining, met palpatiepijn aan de proximale
+      insertie, een voelbaar defect en een letsel op de bot-peesovergang als
+      sterkste voorspellers van langere afwezigheid.
+    verwerkt: >-
+      vergelijkende claim geschrapt, de mediane termijnen en voorspellers
+      opgenomen
+
+  - id: lies_c06
+    tekst: >-
+      Het Copenhagen adduction-programma reduceert de prevalentie van liesklachten met
+      41% wanneer geintegreerd in het FIFA 11+-kader
+    plaats: protocols.lies fase 4 evidence
+    bronnen: [haroy_2019_adductorprogramma]
+    gedekt: deels
+    opmerking: >-
+      CIJFER GEDEKT, MAAR ALS RISICOREDUCTIE EN ZONDER FIFA 11+. De 41% is de
+      verlaging van het RISICO op het melden van liesklachten (OR 0,59; 95% BI
+      0,40-0,86; p = 0,008); de prevalentie zelf daalde van 21,3% naar 13,5%. Het
+      programma bestond uit EEN ENKELE oefening met drie progressieniveaus, drie
+      keer per week in de voorbereiding en EEN keer per week tijdens het seizoen —
+      er is geen sprake van integratie in het FIFA 11+-kader. De onderhoudsdosis
+      van eenmaal per week is wel correct.
+    verwerkt: >-
+      onderscheid tussen risicoreductie en prevalentie gemaakt, FIFA 11+-verwijzing
+      geschrapt, programmaopbouw correct beschreven
+
+  - id: lies_c07
+    tekst: De HAGOS is het aanbevolen patientgerapporteerde meetinstrument
+    plaats: protocols.lies fase 4 evidence + BESCHRIJVING.lies
+    bronnen: [thorborg_2011_hagos]
+    gedekt: ja
+    opmerking: >-
+      GEDEKT. Ontwikkeld en gevalideerd volgens de COSMIN-standaard bij 101 fysiek
+      actieve patienten, zes subschalen, ICC 0,82 tot 0,91. BELANGRIJKE NUANCE die
+      ontbrak: het kleinste detecteerbare verschil bedraagt 2,7 tot 5,2 punten op
+      GROEPSNIVEAU maar 17,7 tot 33,8 punten op INDIVIDUEEL niveau — bij een
+      afzonderlijke patient is een kleine verandering dus niet interpreteerbaar.
+    verwerkt: het onderscheid tussen groeps- en individueel niveau toegevoegd
+
+  - id: lies_c08
+    tekst: >-
+      Niet geverifieerde citaties en cijfers: Delahunt 2011 (squeeze test),
+      Serner 2015 met 91% adductor longus, Whittaker 2015 (risicofactoren)
+    plaats: protocols.lies fase 1 tot 4 evidence + BESCHRIJVING.lies
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Drie citaties konden niet eenduidig opgehaald worden. Het aandeel van 91%
+      staat op twee plaatsen in het protocol en stuurt de klinische redenering
+      over letselmechanismen.
+    verwerkt: alle drie gemarkeerd als niet geverifieerd, het percentage gelabeld

@@ -1,0 +1,213 @@
+protocol: rc
+protocol_titel: Rotatorenmanchet
+laatst_gecontroleerd: 2026-09-06
+gecontroleerd_door: fase A — Claude (protocols.js, evidence fase 1-6 + kenmerken)
+opmerking: >-
+  Drie van de zeven aangehaalde bronnen ondersteunen het tegendeel of een ander
+  onderwerp dan waarvoor ze geciteerd worden: van Rijn 2010 is een risicofactoren-
+  review zonder enige interventie, Van der Meijden 2012 stelt net dat de timing van
+  postoperatieve revalidatie NIET door bewijs gestuurd wordt, en Burkhart 2003 is
+  een narratieve review zonder uitkomstgegevens. Daarnaast worden Rio 2015
+  (patellapees) en Beyer 2015 (achillespees) opnieuw aan de schouder toegeschreven.
+
+claims:
+  - id: rc_c1
+    tekst: >-
+      Hawkins-Kennedy: sensitiviteit 79%, specificiteit 66% (Hegedus et al., 2012).
+    plaats: kenmerken
+    bronnen: [hegedus_2012_schoudertests]
+    gedekt: nee
+    opmerking: >-
+      De sensitiviteit klopt, de specificiteit niet: die is 59%, niet 66%. Ook
+      weggelaten: de auteurs besluiten dat geen enkele afzonderlijke schoudertest
+      kan worden aanbevolen om een diagnose te stellen.
+    verwerkt: cijfer gecorrigeerd, conclusie toegevoegd
+
+  - id: rc_c2
+    tekst: Combinatiepatronen van tests zijn betrouwbaarder dan losse tests.
+    plaats: fase 1 - evidence
+    bronnen: [hegedus_2012_schoudertests]
+    gedekt: deels
+    opmerking: >-
+      De review zegt dat combinaties betere accuraatheid geven, maar voegt er
+      letterlijk "marginally so" aan toe. De app liet die beperking weg, waardoor
+      een marginale winst als klinisch bruikbare regel klonk.
+    verwerkt: beperking toegevoegd, met de gepoolde cijfers per test
+
+  - id: rc_c3
+    tekst: >-
+      Echografie is de eerste beeldvorming en even accuraat als MRI voor
+      volledige rupturen; echografie heeft een accuraatheid van 84%.
+    plaats: fase 1 - evidence en kenmerken
+    bronnen: []
+    gedekt: nee
+    opmerking: Geen bron aangehaald; in dit dossier niet nagekeken.
+    verwerkt: gelabeld als klinische redenering
+
+  - id: rc_c4
+    tekst: >-
+      Conservatief beleid voor partiele scheuren en kleine volledige scheuren
+      onder 1 cm geeft vergelijkbare uitkomsten met chirurgie op 2 jaar
+      (Kukkonen et al., 2015).
+    plaats: fase 1 - evidence
+    bronnen: [kukkonen_2015_rotatorenmanchet]
+    gedekt: deels
+    opmerking: >-
+      Het gelijke klinische resultaat klopt (Constant-score p = 0,38), maar drie
+      dingen niet. (1) De trial hanteert GEEN grens van 1 cm. (2) Ze gaat niet over
+      partiele scheuren maar over niet-traumatische supraspinatusscheuren bij
+      OUDERE patienten. (3) Weggelaten is dat de scheur na twee jaar significant
+      GROTER was zonder herstel (11,0 tegenover 4,2 mm; p < 0,01) en dat de auteurs
+      voor die progressie waarschuwen — een veiligheidsrelevante omissie in een
+      tekst die het conservatieve beleid verdedigt.
+    verwerkt: populatie, ontbrekende grens en de progressiewaarschuwing opgenomen
+
+  - id: rc_c5
+    tekst: >-
+      Isometrische oefeningen verminderen pijn acuut (Rio et al., 2015).
+    plaats: fase 2 - evidence
+    bronnen: [rio_2015_isometrie]
+    gedekt: nee
+    opmerking: >-
+      Rio 2015 onderzocht PATELLAPEEStendinopathie bij springers. Dit is de
+      zoveelste pees waaraan die studie in dit dossier wordt toegeschreven.
+    verwerkt: populatie benoemd, overdracht als klinische redenering gelabeld
+
+  - id: rc_c6
+    tekst: 'Draagdoek 4 tot 6 weken na herstel van een volledige ruptuur;
+      pendeloefeningen volgens Codman.'
+    plaats: fase 2 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: Geen bron; gangbare postoperatieve praktijk.
+    verwerkt: gelabeld als klinische richtlijn
+
+  - id: rc_c7
+    tekst: >-
+      Serratus anterior atrofieert bij 68% van de schouderpatienten
+      (Cools et al., 2007).
+    plaats: fase 3 - evidence
+    bronnen: [cools_2007_scapulaoefeningen]
+    gedekt: nee
+    opmerking: >-
+      Verzonnen cijfer. Cools 2007 is een EMG-studie bij 45 GEZONDE proefpersonen
+      over de selectie van scapulaoefeningen; er is geen patientenpopulatie, geen
+      atrofiemeting en geen percentage van 68%.
+    verwerkt: cijfer geschrapt, de werkelijke opzet van de studie benoemd
+
+  - id: rc_c8
+    tekst: >-
+      Scapulaire stabilisatie is essentieel voor manchetversterking — proximal
+      stability for distal mobility (Kibler et al., 2013).
+    plaats: fase 3 - evidence
+    bronnen: [kibler_2013_scapulaconsensus]
+    gedekt: deels
+    opmerking: >-
+      Het consensusdocument (bewijsniveau 5) stelt uitdrukkelijk dat de rol van
+      scapulaire dyskinese bij het ontstaan of verergeren van schouderdisfunctie
+      NIET DUIDELIJK OMSCHREVEN is en dat ze het best als een mogelijke stoornis
+      wordt gezien, niet als vastgestelde oorzaak. Het woord "essentieel" gaat
+      daar ver voorbij.
+    verwerkt: nuance en bewijsniveau opgenomen
+
+  - id: rc_c9
+    tekst: >-
+      Excentrische training voor manchettendinopathie reduceert pijn
+      (Bernhardsson et al., 2011).
+    plaats: fase 4 - evidence
+    bronnen: [bernhardsson_2011_excentrisch_manchet]
+    gedekt: deels
+    opmerking: >-
+      De richting klopt, de bewijskracht niet. Het is geen RCT maar een
+      single-subject-opzet bij TIEN patienten met subacromiaal impingement; de
+      auteurs besluiten zelf dat een gerandomiseerde trial nodig is voor sterker
+      bewijs.
+    verwerkt: opzet, aantal en het voorbehoud van de auteurs opgenomen
+
+  - id: rc_c10
+    tekst: >-
+      High-load training op 70 tot 80% 1RM is superieur voor structurele
+      peesadaptatie (Beyer et al., 2015).
+    plaats: fase 4 - evidence
+    bronnen: [beyer_2015_hsr_achilles]
+    gedekt: nee
+    opmerking: >-
+      Beyer 2015 onderzocht de ACHILLESPEES, niet de rotatorenmanchet. Ook de
+      intensiteit van 70-80% 1RM staat er niet zo in.
+    verwerkt: pees benoemd, superioriteitsclaim voor de schouder geschrapt
+
+  - id: rc_c11
+    tekst: 'ER/IR-verhouding groter of gelijk aan 0,66 aanbevolen (Cools et al., 2007).'
+    plaats: fase 4 - evidence
+    bronnen: [cools_2007_scapulaoefeningen]
+    gedekt: nee
+    opmerking: >-
+      Die verhouding staat niet in de aangehaalde EMG-studie over scapulaoefeningen.
+    verwerkt: toeschrijving geschrapt, als klinische richtlijn gelabeld
+
+  - id: rc_c12
+    tekst: Interval throwing program is standaard voor bovenhandse sporters (ASMI-protocol).
+    plaats: fase 5 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: Het ASMI-protocol is in dit dossier niet opgehaald.
+    verwerkt: gelabeld als niet opgehaalde verwijzing
+
+  - id: rc_c13
+    tekst: >-
+      Correctie van scapulaire dyskinese reduceert het herletselrisico
+      (Burkhart et al., 2003).
+    plaats: fase 5 - evidence
+    bronnen: [burkhart_2003_sick_scapula]
+    gedekt: nee
+    opmerking: >-
+      Deel III van de serie over de werpschouder is een narratieve review zonder
+      uitkomstgegevens (PubMed levert zelfs geen abstract). Een effectclaim over
+      herletselrisico kan daar niet uit worden afgeleid.
+    verwerkt: aard van de publicatie benoemd, effectclaim als klinische redenering
+      gelabeld
+
+  - id: rc_c14
+    tekst: >-
+      Na herstel van grote rupturen mag bovenhandse sport pas na 9 tot 12 maanden
+      (Van der Meijden et al., 2012).
+    plaats: fase 5 - evidence
+    bronnen: [vandermeijden_2012_postoperatieve_revalidatie]
+    gedekt: nee
+    opmerking: >-
+      De aangehaalde review besluit letterlijk dat er WEINIG wetenschappelijk bewijs
+      bestaat om de timing van postoperatieve manchetrevalidatie te sturen en dat
+      expert opinion daarin bepalend blijft. Ze wordt dus aangehaald voor precies
+      het soort tijdsdrempel waarvan ze zegt dat het niet onderbouwd is.
+    verwerkt: als praktijkafspraak gelabeld, met de conclusie van de auteurs erbij
+
+  - id: rc_c15
+    tekst: Recidief van manchettendinopathie bij 20 tot 40% zonder onderhoudstraining.
+    plaats: fase 6 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: Geen bron; in dit dossier niet nagekeken.
+    verwerkt: gelabeld
+
+  - id: rc_c16
+    tekst: >-
+      Ergonomische interventies reduceren werkgerelateerde manchetpathologie
+      (van Rijn et al., 2010).
+    plaats: fase 6 - evidence
+    bronnen: [vanrijn_2010_werkfactoren_schouder]
+    gedekt: nee
+    opmerking: >-
+      Dubbele mismatch. (1) De review evalueert GEEN interventies — ze onderzoekt
+      het verband tussen werkfactoren en schouderaandoeningen. (2) Geen van de
+      ingesloten studies beschreef een verband met ROTATORENMANCHETSCHEUREN; de
+      review dekt uitsluitend subacromiaal impingement en bicepstendinitis.
+    verwerkt: interventieclaim geschrapt, de werkelijke associaties met odds ratio's
+      opgenomen, met de beperking tot impingement
+
+  - id: rc_c17
+    tekst: Slapen op de aangedane zijde verhoogt de supraspinatus-ischemie.
+    plaats: fase 6 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: Geen bron; in dit dossier niet nagekeken.
+    verwerkt: gelabeld als klinische redenering

@@ -1,7 +1,7 @@
 protocol: lh
 protocol_titel: Lumbale Discushernia
 laatst_gecontroleerd: 2026-09-06
-gecontroleerd_door: fase A — Claude (protocols.js, kenmerken/oorzaken + evidence fase 0-4)
+gecontroleerd_door: fase A + fase B (onafhankelijke verificator, schone context) — 2026-09-06
 opmerking: >-
   Dit protocol hergebruikte vijf bronnen die eerder in dit dossier al geverifieerd
   waren, en citeerde er drie van omgekeerd of buiten hun populatie. Twee toegeschreven
@@ -205,3 +205,86 @@ claims:
       oefening alleen (RR 0,65; 0,50-0,86). Er staat geen frequentie van tweemaal per
       week en geen rangschikking van preventieve factoren in.
     verwerkt: frequentieclaim geschrapt, werkelijke risicoratio's opgenomen
+
+  # Fase B (onafhankelijke verificator, schone context) — lek van gecorrigeerde
+  # claims naar de oefening-, doel- en criteriavelden. Alle 11 bronsleutels
+  # bibliografisch bevestigd; onderstaande punten zijn na fase B verwerkt.
+  - id: lh_c15
+    tekst: 'Slump test: specificiteit 0,83; sensitiever dan de SLR.'
+    plaats: fase 0 - oefening
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      De sensitiviteit was al gelabeld als niet onderbouwd, de specificiteit niet —
+      inconsistent. De slumptest komt in Deville 2000 noch in de Cochrane-review
+      van van der Windt 2010 voor, dus ook de vergelijking met de SLR heeft geen
+      bron.
+    verwerkt: beide cijfers gelabeld, vergelijkende claim geschrapt
+
+  - id: lh_c16
+    tekst: 'SLR-test: specificiteit hoog, drempel < 70 graden.'
+    plaats: fase 0 - oefening
+    bronnen: [deville_2000_lasegue, vanderwindt_2010_lichamelijk_onderzoek]
+    gedekt: nee
+    opmerking: >-
+      DIRECT IN TEGENSPRAAK met het evidence-veld drie regels hoger. Beide reviews
+      geven een LAGE specificiteit (0,26 en 0,28) en noemen geen drempel van 70
+      graden. Dit is precies het lek waarvoor fase B bedoeld is: de evidencetekst
+      werd gecorrigeerd, het oefeningveld niet.
+    verwerkt: gecorrigeerd
+
+  - id: lh_c17
+    tekst: SLR groter of gelijk aan 60 graden als fasedoel en doorstroomcriterium.
+    plaats: fase 2 - goals en criteria_go
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Dezelfde drempel van 60 graden die bij lh_c1 als niet-bestaand in de bronnen
+      werd weggestreept, keert hier terug als doel en criterium.
+    verwerkt: gelabeld als praktijkafspraak zonder brondrempel
+
+  - id: lh_c18
+    tekst: Multifidus atrofieert ipsilateraal bij hernia nuclei pulposi.
+    plaats: fase 2 - oefening
+    bronnen: [hides_1994_multifidus]
+    gedekt: nee
+    opmerking: >-
+      Hides 1994 toont ipsilaterale multifidusatrofie bij ACUTE lage rugpijn, niet
+      bij discushernia. Extrapolatie buiten de onderzochte populatie.
+    verwerkt: populatie gecorrigeerd, overdracht als klinische redenering gelabeld
+
+  - id: lh_c19
+    tekst: 'Graduele opbouw is veilig (Berglund 2015); belasting 60-75% 1RM.'
+    plaats: fase 3 - oefening
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Citatie zonder sleutel; in dit dossier niet opgehaald. Berglund is bovendien
+      tweede auteur van aasa_2015_motorcontrole, wat op dezelfde trial met een
+      verkeerde eerste auteur wijst — en die trial vond juist dat de LAAGbelaste
+      groep meer verbeterde. De dosering van 60-75% 1RM heeft geen bron.
+    verwerkt: als klinische richtlijn gelabeld, de tegenspraak met Aasa benoemd
+
+  - id: lh_c20
+    tekst: Aerobe training heeft een direct pijnmodulerend effect.
+    plaats: fase 3 - oefening
+    bronnen: [naugle_2012_hypoalgesie]
+    gedekt: nee
+    opmerking: >-
+      Spreekt het evidence-veld van dezelfde fase tegen, dat de wisselende richting
+      bij chronische pijn wél vermeldt.
+    verwerkt: oefeningnote gelijkgetrokken met het evidence-veld
+
+  - id: lh_c21
+    tekst: 'Onderhoud 2x per week volstaat; tiltraining volgens de NIOSH-richtlijn;
+      FABQ boven 44 als drempel voor chroniciteitsrisico.'
+    plaats: fase 4 - oefening en redflags
+    bronnen: [steffens_2016_preventie]
+    gedekt: nee
+    opmerking: >-
+      Drie losse problemen. De frequentie van tweemaal per week werd in het
+      evidence-veld geschrapt maar bleef in het oefeningveld staan. De
+      NIOSH-richtlijn is in dit dossier niet opgehaald. De afkapwaarde FABQ boven
+      44 is niet onderbouwd en is bovendien onmogelijk op de werkschaal, die
+      maximaal 42 bedraagt.
+    verwerkt: alle drie gelabeld of gecorrigeerd

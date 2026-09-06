@@ -917,7 +917,7 @@ references:
       controlled trial
     bron: Journal of Orthopaedic and Sports Physical Therapy
     jaar: 2015
-    volume_paginas: 45(2):77-85
+    volume_paginas: 45(2):77-85, B1-4
     doi: 10.2519/jospt.2015.5021
     pmid: '25641309'
     url: https://doi.org/10.2519/jospt.2015.5021
@@ -2583,7 +2583,7 @@ references:
     geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
 
   - key: deville_2000_lasegue
-    auteurs: [Deville WL, van der Windt DA, Dzaferagic A, Bezemer PD, Bouter LM]
+    auteurs: [Devillé WL, van der Windt DA, Dzaferagic A, Bezemer PD, Bouter LM]
     titel: 'The test of Lasegue: systematic review of the accuracy in diagnosing herniated discs'
     bron: Spine
     jaar: 2000
@@ -2648,7 +2648,7 @@ references:
     geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
 
   - key: vanderwindt_2010_lichamelijk_onderzoek
-    auteurs: [van der Windt DA, Simons E, Riphagen II, Ammendolia C, Verhagen AP, Laslett M, Deville W, Deyo RA, Bouter LM, de Vet HC, Aertgeerts B]
+    auteurs: [van der Windt DA, Simons E, Riphagen II, Ammendolia C, Verhagen AP, Laslett M, Devillé W, Deyo RA, Bouter LM, de Vet HC, Aertgeerts B]
     titel: 'Physical examination for lumbar radiculopathy due to disc herniation in patients with low-back pain'
     bron: Cochrane Database of Systematic Reviews
     jaar: 2010
@@ -2674,3 +2674,137 @@ references:
       noemt geen drempel van 60 graden en geen cijfer van 91 procent.
     geverifieerd_op: 2026-09-06
     geverifieerd_door: PubMed MCP (get_article_metadata, PMID 20166095)
+
+  - key: kukkonen_2015_rotatorenmanchet
+    auteurs: [Kukkonen J, Joukainen A, Lehtinen J, Mattila KT, Tuominen EKJ, Kauko T, Aarimaa V]
+    titel: 'Treatment of Nontraumatic Rotator Cuff Tears: A Randomized Controlled Trial with Two Years of Clinical and Imaging Follow-up'
+    bron: The Journal of Bone and Joint Surgery (American volume)
+    jaar: 2015
+    volume_paginas: 97(21):1729-37
+    doi: 10.2106/JBJS.N.01051
+    pmid: '26537160'
+    url: https://doi.org/10.2106/JBJS.N.01051
+    type: RCT
+    opmerking: >-
+      180 schouders met symptomatische NIET-TRAUMATISCHE supraspinatusscheuren bij
+      OUDERE patienten, gerandomiseerd over drie cumulatief opgebouwde groepen:
+      kinesitherapie alleen, acromioplastiek plus kinesitherapie, en manchetherstel
+      plus acromioplastiek plus kinesitherapie. 167 schouders na twee jaar
+      geanalyseerd. GEEN significant verschil in Constant-score (p = 0,38): 18,4
+      punten (95% BI 14,2-22,6), 20,5 (16,4-24,6) en 22,6 (18,4-26,8). Ook geen
+      verschil in pijn (p = 0,45) of tevredenheid (p = 0,28). WAT DE APP WEGLIET:
+      de scheur was na twee jaar significant GROTER in de niet-herstelde groepen
+      (11,0 mm tegenover 4,2 mm; p < 0,01) en de auteurs waarschuwen expliciet dat
+      die progressie verdere opvolging vereist. De trial hanteert GEEN grens van
+      1 cm en gaat NIET over partiele scheuren.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 26537160)
+
+  - key: hegedus_2012_schoudertests
+    auteurs: [Hegedus EJ, Goode AP, Cook CE, Michener L, Myer CA, Myer DM, Wright AA]
+    titel: 'Which physical examination tests provide clinicians with the most value when examining the shoulder? Update of a systematic review with meta-analysis of individual tests'
+    bron: British Journal of Sports Medicine
+    jaar: 2012
+    volume_paginas: 46(14):964-78
+    doi: 10.1136/bjsports-2012-091066
+    pmid: '22773322'
+    url: https://doi.org/10.1136/bjsports-2012-091066
+    type: SR
+    opmerking: >-
+      Systematische review met meta-analyse. Voor subacromiaal impingement gepoold:
+      Neer sensitiviteit 72% en specificiteit 60%; Hawkins-Kennedy 79% en 59%;
+      pijnboog 53% en 76%. DE APP SCHREEF VOOR HAWKINS-KENNEDY EEN SPECIFICITEIT
+      VAN 66% - dat cijfer staat er niet; het is 59%. Conclusie van de auteurs:
+      geen enkele afzonderlijke schoudertest kan worden aanbevolen om een diagnose
+      te stellen, en combinaties van tests geven wel betere accuraatheid maar
+      "marginally so" - slechts marginaal. De app presenteerde combinaties zonder
+      die beperking.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 22773322)
+
+  - key: bernhardsson_2011_excentrisch_manchet
+    auteurs: [Bernhardsson S, Klintberg IH, Wendt GK]
+    titel: 'Evaluation of an exercise concept focusing on eccentric strength training of the rotator cuff for patients with subacromial impingement syndrome'
+    bron: Clinical Rehabilitation
+    jaar: 2011
+    volume_paginas: 25(1):69-78
+    doi: 10.1177/0269215510376005
+    pmid: '20713438'
+    url: https://doi.org/10.1177/0269215510376005
+    type: cohort
+    opmerking: >-
+      GEEN RCT maar een single-subject research design (AB-opzet) bij TIEN
+      patienten met subacromiaal impingementsyndroom, gemiddelde leeftijd 54 jaar.
+      Twaalf weken dagelijkse excentrische oefening. Pijn daalde significant bij 8
+      van de 10, functie verbeterde bij alle 10; gemiddelde Constant-score van 44
+      naar 69 punten (p = 0,008) en WORC van 51 naar 71% (p = 0,021). DE AUTEURS
+      BESLUITEN ZELF dat een gerandomiseerde trial nodig is om sterker bewijs te
+      leveren. Bewijskracht dus zeer laag; de app presenteerde dit als vaststaande
+      effectiviteit voor rotatorenmanchet-tendinopathie.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 20713438)
+
+  - key: burkhart_2003_sick_scapula
+    auteurs: [Burkhart SS, Morgan CD, Kibler WB]
+    titel: 'The disabled throwing shoulder: spectrum of pathology Part III: The SICK scapula, scapular dyskinesis, the kinetic chain, and rehabilitation'
+    bron: 'Arthroscopy: The Journal of Arthroscopic and Related Surgery'
+    jaar: 2003
+    volume_paginas: 19(6):641-61
+    doi: 10.1016/s0749-8063(03)00389-x
+    pmid: '12861203'
+    url: https://doi.org/10.1016/s0749-8063(03)00389-x
+    type: expert
+    opmerking: >-
+      Narratieve review / expert opinion, deel III van een driedelige serie over de
+      werpschouder. PubMed levert geen abstract. Het is een conceptueel artikel over
+      de SICK-scapula, scapulaire dyskinese en de kinetische keten - GEEN studie met
+      uitkomsten, dus er kan geen herletselreductie uit worden afgeleid. De app
+      citeerde het voor precies zo'n effectclaim.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 12861203)
+
+  - key: vanrijn_2010_werkfactoren_schouder
+    auteurs: [van Rijn RM, Huisstede BM, Koes BW, Burdorf A]
+    titel: 'Associations between work-related factors and specific disorders of the shoulder - a systematic review of the literature'
+    bron: Scandinavian Journal of Work, Environment & Health
+    jaar: 2010
+    volume_paginas: 36(3):189-201
+    doi: 10.5271/sjweh.2895
+    pmid: '20094690'
+    url: https://doi.org/10.5271/sjweh.2895
+    type: SR
+    opmerking: >-
+      DIT IS EEN ETIOLOGISCHE REVIEW OVER RISICOFACTOREN, GEEN INTERVENTIEREVIEW.
+      Er wordt geen enkele ergonomische interventie geevalueerd, dus de claim dat
+      ergonomische interventies werkgerelateerde manchetpathologie verminderen kan
+      er niet uit komen. Wat er wel in staat: subacromiaal impingement hangt samen
+      met krachtvereisten boven 10% van de maximale willekeurige contractie, tillen
+      van meer dan 20 kg meer dan tien keer per dag en hoge handkracht meer dan een
+      uur per dag (OR 2,8-4,2); repetitieve schouderbewegingen, hand-armtrillingen
+      en werken met de hand boven schouderhoogte (OR 1,04-4,7); hoge psychosociale
+      werkeisen (OR 1,5-3,19). TWEEDE PROBLEEM: geen van de ingesloten artikelen
+      beschreef het verband tussen werkfactoren en ROTATORENMANCHETSCHEUREN - de
+      review dekt uitsluitend impingement en bicepstendinitis.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 20094690)
+
+  - key: vandermeijden_2012_postoperatieve_revalidatie
+    auteurs: [van der Meijden OA, Westgard P, Chandler Z, Gaskill TR, Kokmeyer D, Millett PJ]
+    titel: 'Rehabilitation after arthroscopic rotator cuff repair: current concepts review and evidence-based guidelines'
+    bron: International Journal of Sports Physical Therapy
+    jaar: 2012
+    volume_paginas: 7(2):197-218
+    doi: null
+    pmid: '22530194'
+    url: https://pubmed.ncbi.nlm.nih.gov/22530194/
+    type: review
+    opmerking: >-
+      Current-concepts review; PubMed vermeldt geen DOI, wel PMC3325631. DE
+      KERNBOODSCHAP VAN HET ARTIKEL SPREEKT DE APP TEGEN: "Little scientific
+      evidence is available to guide the timing of postsurgical rotator cuff
+      rehabilitation" en "expert opinion and clinical experience remains a large
+      facet of rehabilitation protocols". Er kan dus geen tijdsdrempel van 9 tot 12
+      maanden voor bovenhandse sport uit worden afgeleid; het artikel stelt net dat
+      de timing niet door bewijs gestuurd wordt.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 22530194)

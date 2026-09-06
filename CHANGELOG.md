@@ -3,6 +3,19 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-09-06 — bronaudit rotatorenmanchet + fase B lumbale hernia
+
+- DRIE BRONNEN DIE IETS ANDERS ZEGGEN DAN WAARVOOR ZE GECITEERD WORDEN · `vanrijn_2010_werkfactoren_schouder` is een review over RISICOFACTOREN zonder één interventie erin, terwijl het protocol er "ergonomische interventies reduceren manchetpathologie" op baseerde — en geen van de ingesloten studies onderzocht zelfs manchetSCHEUREN · `vandermeijden_2012_postoperatieve_revalidatie` besluit letterlijk dat er weinig bewijs is om de timing van postoperatieve revalidatie te sturen, en werd aangehaald voor een drempel van 9-12 maanden · `burkhart_2003_sick_scapula` is een narratieve review zonder uitkomstgegevens, aangehaald voor een herletselreductie
+- Verzonnen cijfer · "serratusatrofie bij 68% van de schouderpatiënten (Cools et al., 2007)" · dat is een EMG-studie bij 45 GEZONDE proefpersonen over oefenselectie: geen patiënten, geen atrofiemeting, geen 68% · ook de ER/IR-verhouding van 0,66 komt daar niet uit
+- Veiligheidsrelevante omissie bij `kukkonen_2015_rotatorenmanchet` · de klinische gelijkwaardigheid na twee jaar klopt (p = 0,38), maar de scheur was zonder herstel significant GROTER (11,0 tegenover 4,2 mm; p < 0,01) en de auteurs waarschuwen voor die progressie · de trial hanteert bovendien geen grens van 1 cm en gaat niet over partiële scheuren maar over niet-traumatische supraspinatusscheuren bij oudere patiënten
+- Hawkins-Kennedy · specificiteit 59%, niet 66% · en de conclusie van `hegedus_2012_schoudertests` dat combinaties van tests slechts "marginally so" beter zijn, ontbrak
+- Rio 2015 (patellapees) en Beyer 2015 (achillespees) opnieuw aan de schouder toegeschreven · vierde en vijfde keer dat deze twee bronnen in dit dossier bij de verkeerde pees opduiken
+
+- FASE B LUMBALE HERNIA · alle elf bronsleutels bibliografisch bevestigd, maar zeven gecorrigeerde claims bleken gelekt naar de oefening-, doel- en criteriavelden · ZWAARSTE: de SLR-oefening claimde "specificiteit hoog" en een drempel van 70°, drie regels onder een evidencetekst die net de LAGE specificiteit (0,26/0,28) vermeldt · de drempel van 60° keerde terug als fasedoel én doorstroomcriterium · "2×/week volstaat" en het directe pijnmodulerende effect van aerobe training stonden in de oefeningnotes nog zoals ze in het evidence-veld geschrapt waren
+- Onmogelijke afkapwaarde · "hoog chroniciteitsrisico: FABQ > 44" · de werkschaal van de FABQ loopt tot maximaal 42
+- "Berglund 2015" bij de deadlift · niet opgehaald, en Berglund is de tweede auteur van `aasa_2015_motorcontrole` — dezelfde trial die juist vond dat de LAAGbelaste groep meer verbeterde
+- Bibliografisch bijgewerkt · paginabereik van `aasa_2015_motorcontrole` naar "45(2):77-85, B1-4" · Devillé met accent gespeld · `vanderwindt_2010_lichamelijk_onderzoek` en `naugle_2012_hypoalgesie` toegevoegd aan het refs-veld van lh, waar ze ontbraken
+
 ## 2026-09-06 — bronaudit lumbale discushernia
 
 - TWEE TOEGESCHREVEN CIJFERS BESTAAN NIET IN DE BRON · "90% herstelt spontaan binnen 6-12 weken (Weber, 1983)" staat daar niet in — die trial vond dat de GEOPEREERDE groep het na één jaar significant beter deed en na vier jaar beter maar niet meer significant · "vroege werkhervatting vermindert het verzuim met 45% (Schaafsma et al., 2013)" staat er evenmin in — die Cochrane-review besluit dat de effectiviteit ONZEKER blijft

@@ -1,7 +1,7 @@
 protocol: rc
 protocol_titel: Rotatorenmanchet
 laatst_gecontroleerd: 2026-09-06
-gecontroleerd_door: fase A — Claude (protocols.js, evidence fase 1-6 + kenmerken)
+gecontroleerd_door: fase A + fase B (onafhankelijke verificator, schone context) — 2026-09-06
 opmerking: >-
   Drie van de zeven aangehaalde bronnen ondersteunen het tegendeel of een ander
   onderwerp dan waarvoor ze geciteerd worden: van Rijn 2010 is een risicofactoren-
@@ -211,3 +211,103 @@ claims:
     gedekt: nee
     opmerking: Geen bron; in dit dossier niet nagekeken.
     verwerkt: gelabeld als klinische redenering
+
+  # Fase B (onafhankelijke verificator, schone context). Alle tien bronsleutels
+  # bibliografisch bevestigd en alle evidenceteksten gedekt. Onderstaande punten
+  # zijn gelekte claims in de oefening-, parameter-, doel- en criteriavelden.
+  - id: rc_c18
+    tekst: >-
+      Empty can 0,69/0,66; external rotation lag sign 0,70/0,97; lift-off
+      0,62/0,97.
+    plaats: fase 1 - oefeningparameters
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Alleen de sensitiviteiten droegen een voorbehoud, de specificiteiten niet,
+      terwijl geen van de zes cijfers in het abstract van Hegedus 2012 staat.
+      Omgekeerd droegen de cijfers van Neer (0,72/0,60) en Hawkins-Kennedy
+      (0,79/0,59) ten onrechte het label "niet onderbouwd" — die staan er wel
+      letterlijk in.
+    verwerkt: labels omgedraaid waar ze fout stonden, ontbrekende labels toegevoegd
+
+  - id: rc_c19
+    tekst: >-
+      Wall slide geeft de laagste trapezius-serratusverhouding van alle oefeningen.
+    plaats: fase 3 - oefening
+    bronnen: [cools_2007_scapulaoefeningen]
+    gedekt: nee
+    opmerking: >-
+      In strijd met de bron: Cools 2007 onderzocht de wall slide niet, en geen
+      enkele van de twaalf onderzochte oefeningen haalde het vooropgestelde
+      criterium voor die verhouding.
+    verwerkt: claim vervangen door wat de studie wel besluit
+
+  - id: rc_c20
+    tekst: >-
+      Wand push-up geeft hoge, push-up plus de hoogste serratus-anterioractiviteit.
+    plaats: fase 3 en fase 4 - oefeningen
+    bronnen: []
+    gedekt: nee
+    opmerking: EMG-uitspraken zonder bron; niet in Cools 2007.
+    verwerkt: gelabeld als niet onderbouwd
+
+  - id: rc_c21
+    tekst: >-
+      Side-lying ER geeft hoge peeskrachtadaptatie; full can op 60 tot 75% 1RM.
+    plaats: fase 4 - oefeningen
+    bronnen: [beyer_2015_hsr_achilles]
+    gedekt: nee
+    opmerking: >-
+      Dit is de achillespeesclaim uit rc_c10, die in het evidence-veld werd
+      geschrapt maar in de oefeningparameters bleef staan.
+    verwerkt: pees benoemd, dosering gelabeld
+
+  - id: rc_c22
+    tekst: 'ER/IR-verhouding groter of gelijk aan 0,66 als fasedoel en doorstroomcriterium.'
+    plaats: fase 4 - goals en criteria_go
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Het evidence-veld labelt dit als klinische richtlijn, de doel- en
+      criteriavelden presenteerden het als objectieve drempel.
+    verwerkt: gelabeld als praktijkafspraak
+
+  - id: rc_c23
+    tekst: >-
+      ASMI-schema 45-60-90-120 voet; overhead sport uitstellen tot minstens
+      9 maanden.
+    plaats: fase 5 - oefening en criteria_stop
+    bronnen: [vandermeijden_2012_postoperatieve_revalidatie]
+    gedekt: nee
+    opmerking: >-
+      Beide stonden als harde uitvoerings- en stopcriteria, terwijl het evidence-veld
+      het ASMI-protocol als niet-opgehaald markeert en Van der Meijden 2012 juist
+      stelt dat de timing niet door bewijs gestuurd wordt.
+    verwerkt: beide als praktijkafspraak gelabeld
+
+  - id: rc_c24
+    tekst: >-
+      Maximaal tilgewicht 23 kg; slapen op de aangedane zijde geeft 6 tot 8 uur
+      compressie en ischemie per nacht; recidief frequent bij stoppen met trainen.
+    plaats: fase 6 - oefeningen
+    bronnen: [vanrijn_2010_werkfactoren_schouder]
+    gedekt: nee
+    opmerking: >-
+      De tillimiet van 23 kg heeft geen bron; van Rijn 2010 noemt tillen boven
+      20 kg meer dan tienmaal per dag als RISICOFACTOR, wat iets anders is dan een
+      limiet. Het slaapmechanisme met tijdsduur en de recidiefclaim stonden
+      ongelabeld, terwijl het evidence-veld ze als klinische redenering markeert.
+    verwerkt: alle drie gelabeld
+
+  - id: rc_c25
+    tekst: >-
+      Echografie heeft een accuraatheid van 84%; scapulohumerale ritmestoornis
+      (Ludewig & Cook, 2000).
+    plaats: kenmerken en oorzaken
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Het cijfer van 84% stond onbeperkt in de beschrijving hoewel rc_c3 het als
+      niet nagekeken markeert. De citatie Ludewig & Cook 2000 heeft geen sleutel in
+      references.yaml en is in dit dossier niet opgehaald.
+    verwerkt: beide gelabeld

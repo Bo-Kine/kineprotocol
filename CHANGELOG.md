@@ -3,6 +3,16 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-09-06 — fase B rotatorenmanchet
+
+- Alle tien bronsleutels bibliografisch bevestigd en alle zes evidenceteksten gedekt · het lek zit opnieuw volledig in de oefening-, parameter-, doel- en criteriavelden
+- Labels stonden precies omgekeerd · Neer (0,72/0,60) en Hawkins-Kennedy (0,79/0,59) droegen het label "niet onderbouwd" terwijl die cijfers wél letterlijk in `hegedus_2012_schoudertests` staan · empty can, ER lag sign en lift-off droegen alleen op de SENSITIVITEIT een voorbehoud, terwijl geen van hun zes cijfers in die meta-analyse voorkomt
+- In strijd met de eigen bron · "wall slide geeft de laagste trapezius-serratusverhouding van alle oefeningen" · `cools_2007_scapulaoefeningen` onderzocht de wall slide niet, en géén van de twaalf oefeningen haalde het vooropgestelde criterium
+- Geschrapte claims die in de parameters bleven staan · de achillespeesadaptatie van Beyer bij de side-lying ER, de belasting van 60-75% 1RM bij de full can, de ER/IR-verhouding van 0,66 als doel én doorstroomcriterium, het ASMI-schema en de drempel van 9 maanden als stopcriterium
+- Verder gelabeld · tillimiet van 23 kg (van Rijn noemt >20 kg als RISICOFACTOR, geen limiet) · slaapmechanisme met 6-8 uur ischemie · echografie-accuraatheid van 84% · de citatie "Ludewig & Cook, 2000" zonder sleutel
+- refs-veld aangevuld met Bernhardsson, Burkhart en van Rijn, die wel geciteerd werden maar er niet in stonden · bij Beyer staat nu expliciet "achillespees"
+- Bibliografisch bijgewerkt · Kukkonen "Tuominen EK" en "Äärimaa V" · van Rijn "Huisstede BMa" · bij Cools genoteerd dat PubMed het als Controlled Clinical Trial typeert, een waarde die onze typelijst niet kent, en dat RCT de opzet zou overdrijven
+
 ## 2026-09-06 — bronaudit rotatorenmanchet + fase B lumbale hernia
 
 - DRIE BRONNEN DIE IETS ANDERS ZEGGEN DAN WAARVOOR ZE GECITEERD WORDEN · `vanrijn_2010_werkfactoren_schouder` is een review over RISICOFACTOREN zonder één interventie erin, terwijl het protocol er "ergonomische interventies reduceren manchetpathologie" op baseerde — en geen van de ingesloten studies onderzocht zelfs manchetSCHEUREN · `vandermeijden_2012_postoperatieve_revalidatie` besluit letterlijk dat er weinig bewijs is om de timing van postoperatieve revalidatie te sturen, en werd aangehaald voor een drempel van 9-12 maanden · `burkhart_2003_sick_scapula` is een narratieve review zonder uitkomstgegevens, aangehaald voor een herletselreductie

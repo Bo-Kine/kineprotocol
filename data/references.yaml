@@ -1618,7 +1618,9 @@ references:
     url: https://doi.org/10.1177/0363546507303560
     type: cohort
     opmerking: >-
-      EMG-studie bij 45 GEZONDE proefpersonen die 12 gangbare scapulaoefeningen
+      PubMed typeert dit als Controlled Clinical Trial; die waarde bestaat niet in
+      onze typelijst en RCT zou de opzet overdrijven (geen randomisatie beschreven),
+      vandaar cohort. EMG-studie bij 45 GEZONDE proefpersonen die 12 gangbare scapulaoefeningen
       uitvoerden. Doel: oefeningen selecteren met een gunstige verhouding tussen
       bovenste en onderste trapezius. Zijlig exorotatie, zijlig anteflexie, buiklig
       horizontale abductie met exorotatie en buiklig extensie kwamen daar het beste
@@ -2676,7 +2678,7 @@ references:
     geverifieerd_door: PubMed MCP (get_article_metadata, PMID 20166095)
 
   - key: kukkonen_2015_rotatorenmanchet
-    auteurs: [Kukkonen J, Joukainen A, Lehtinen J, Mattila KT, Tuominen EKJ, Kauko T, Aarimaa V]
+    auteurs: [Kukkonen J, Joukainen A, Lehtinen J, Mattila KT, Tuominen EK, Kauko T, Äärimaa V]
     titel: 'Treatment of Nontraumatic Rotator Cuff Tears: A Randomized Controlled Trial with Two Years of Clinical and Imaging Follow-up'
     bron: The Journal of Bone and Joint Surgery (American volume)
     jaar: 2015
@@ -2764,7 +2766,7 @@ references:
     geverifieerd_door: PubMed MCP (get_article_metadata, PMID 12861203)
 
   - key: vanrijn_2010_werkfactoren_schouder
-    auteurs: [van Rijn RM, Huisstede BM, Koes BW, Burdorf A]
+    auteurs: [van Rijn RM, Huisstede BMa, Koes BW, Burdorf A]
     titel: 'Associations between work-related factors and specific disorders of the shoulder - a systematic review of the literature'
     bron: Scandinavian Journal of Work, Environment & Health
     jaar: 2010

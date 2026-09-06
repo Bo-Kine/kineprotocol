@@ -3,6 +3,16 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-09-06 — bronaudit supraspinatus + fase B achillespees
+
+- DEZELFDE BRON BIJ EEN DERDE PEES · `rio_2015_isometrie` — 6 volleyballers met PATELLApeestendinopathie — wordt in deze app gebruikt bij de patellapees (terecht), de achillespees en nu ook de rotatorenmanchet · elke toepassing buiten de patellapees is nu als extrapolatie gelabeld
+- Oorzakelijkheid overschat bij scapulaire dyskinese · `kibler_2013_scapulaconsensus` stelt uitdrukkelijk dat de exacte rol van de dyskinese bij het ontstaan of verergeren van schouderdisfunctie NIET DUIDELIJK OMSCHREVEN is en dat zij het best gezien wordt als een MOGELIJKE stoornis · de app presenteerde haar als vastgestelde te corrigeren oorzaak, met een cijfer van 68% dat er niet in staat
+- Een vergelijking die in de bron niet bestaat · "scaption geeft minder subacromiale contactdruk dan frontale of sagittale elevatie" · in `flatow_1994_subacromiaal_contact` werd UITSLUITEND in het scapulaire vlak geheven · wel bruikbaar en nu opgenomen: het contact is het nauwst tussen 60 en 120 graden en de acromiohumerale afstand daalt van 11,1 naar 5,7 mm — dat onderbouwt de pijnboog in de beschrijving
+- `cools_2007_scapulaoefeningen` opnieuw misbruikt · dezelfde EMG-studie bij 45 GEZONDE proefpersonen die in het bureauprotocol een prevalentiecijfer moest schragen, staat hier als bewijs dat serratuszwakte de sterkste voorspeller is · geen patiënten, geen predictoranalyse
+- Verkeerde publicatie · de claim over scapulair ritme verwees naar de INLEIDING van een consensusbijeenkomst, niet naar onderzoek
+- Fase B op de achillespees · alle 8 citaties correct · maar VIER OEFENNOTITIES PRESENTEERDEN ALS BEWIJS WAT IK IN DEZELFDE FASE NET HAD GESCHRAPT (de Willy-citatie, "bewezen effectief" met de patellapeesbron, de schoenzooldrop, de vaste stapfrequenties) · plus een interne tegenstrijdigheid over de Royal London-test tussen beschrijving en notitie
+- Diagnostische testeigenschappen in oefenparameters gemarkeerd · negen tests in de hele app toonden sensitiviteit en specificiteit als harde waarden zonder bron
+
 ## 2026-09-06 — bronaudit achillespees-tendinopathie + fase B patellapees
 
 - DE APP WISSELT DE TWEE PEZEN IN BEIDE RICHTINGEN OM · het patellapeesprotocol citeerde een achillespeesstudie voor het meetinstrument, en dit achillespeesprotocol citeert `rio_2017_isometrie_patella` — een RCT bij 20 springatleten met PATELLApeestendinopathie — voor isometrie van de kuit · beide zijn nu benoemd en gelabeld als extrapolatie

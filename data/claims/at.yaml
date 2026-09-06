@@ -2,7 +2,10 @@ protocol: at
 laatst_gecontroleerd: 2026-09-06
 versie: 1
 fase_a_door: hoofdagent, alle metadata eerstehands opgehaald via PubMed MCP
-fase_b_door: nog uit te voeren
+fase_b_door: >-
+  onafhankelijke verificator met schone context, 2026-09-06; alle 8 citaties in
+  de evidenceteksten bevestigd als correct, 12 problemen in oefennotities en
+  beschrijving gevonden, alle verwerkt
 
 claims:
   - id: at_c01
@@ -143,3 +146,25 @@ claims:
       Vier citaties konden niet eenduidig opgehaald worden, waaronder die onder de
       volledige looptechniekparagraaf en onder het risicomodel in fase 6.
     verwerkt: alle vier gemarkeerd als niet geverifieerd
+
+  - id: at_c11
+    tekst: Oefennotities spraken de zojuist gecorrigeerde evidenceteksten tegen
+    plaats: oefennotities at fase 1, 3, 4 en 5 + BESCHRIJVING.at
+    bronnen: [rio_2017_isometrie_patella, robinson_2001_visa_a]
+    gedekt: nee
+    opmerking: >-
+      HET SCHERPSTE VOORBEELD TOT NU TOE VAN HET NOTITIE-LEK. Vier notities
+      presenteerden precies datgene als bewijs wat ik in dezelfde fase net had
+      geschrapt: de citatie Willy en Davis bij de cadansoefening, "bewezen
+      effectief" met verwijzing naar de patellapeesstudie, de schoenzooldrop en de
+      vaste stapfrequenties. Daarnaast een superlatief ("goedkoopste interventie
+      met direct effect") bij precies de hielverhoging die in de evidencetekst als
+      niet onderbouwd staat, en een INTERNE TEGENSTRIJDIGHEID over de Royal
+      London-test: de beschrijving zei dat die pijn reproduceert bij het
+      INSERTIONELE subtype, de oefennotitie dat de pijn juist AFNEEMT bij
+      MIDPORTION.
+    verwerkt: >-
+      alle notities in lijn gebracht met de evidenceteksten, de tegenstrijdigheid
+      over de Royal London-test opgelost, testeigenschappen (sensitiviteit en
+      specificiteit) in de oefenparameters van negen tests in de hele app
+      gemarkeerd als niet onderbouwd

@@ -1,0 +1,155 @@
+protocol: sup
+laatst_gecontroleerd: 2026-09-06
+versie: 1
+fase_a_door: hoofdagent, alle metadata eerstehands opgehaald via PubMed MCP
+fase_b_door: nog uit te voeren
+
+claims:
+  - id: sup_c01
+    tekst: Isometrische oefeningen remmen de pijn bij tendinopathie via corticale inhibitie
+    plaats: protocols.sup fase 1 evidence
+    bronnen: [rio_2015_isometrie]
+    gedekt: nee
+    opmerking: >-
+      DERDE PEES. Deze bron betreft 6 volleyballers met PATELLApeestendinopathie en
+      wordt in deze app inmiddels gebruikt bij de patellapees (terecht), bij de
+      achillespees (extrapolatie) en hier bij de rotatorenmanchet. Elke toepassing
+      buiten de patellapees is extrapolatie buiten de onderzochte populatie
+      (CLAUDE.md 1.5).
+    verwerkt: pees benoemd, toepassing gelabeld als klinische redenering
+
+  - id: sup_c02
+    tekst: Scapulaire dyskinese is aanwezig bij 68% van de patienten met subacromiaal impingement en dient vroeg gecorrigeerd
+    plaats: protocols.sup fase 1 evidence
+    bronnen: [kibler_2013_scapulaconsensus]
+    gedekt: nee
+    opmerking: >-
+      CIJFER AFWEZIG EN OORZAKELIJKHEID OVERSCHAT. De consensusverklaring spreekt
+      van een HOOG PERCENTAGE zonder getal, en stelt uitdrukkelijk dat de exacte
+      rol van de dyskinese bij het ontstaan of verergeren van schouderdisfunctie
+      NIET DUIDELIJK OMSCHREVEN is en dat zij het best gezien wordt als een
+      MOGELIJKE stoornis. De app presenteerde haar als vastgestelde te corrigeren
+      oorzaak. Het is bovendien een consensusdocument (bewijsniveau 5) en het
+      verscheen in BJSM, niet in AJSM.
+    verwerkt: >-
+      cijfer geschrapt, de voorzichtige formulering van de consensus overgenomen,
+      bewijsniveau en tijdschrift gecorrigeerd
+
+  - id: sup_c03
+    tekst: Posterieure kapselstrakheid vergroot humerushoofdmigratie en verergert subacromiale compressie
+    plaats: protocols.sup fase 1 evidence
+    bronnen: [tyler_2010_posterieure_strakheid]
+    gedekt: nee
+    opmerking: >-
+      MECHANISME NIET GEMETEN, EN ANDERE AANDOENING. De cohortstudie bij 22
+      patienten betreft INTERN impingement, niet subacromiaal, en meet geen
+      migratie van de humeruskop en geen subacromiale compressie. Wel gedekt en
+      klinisch bruikbaar: bij wie de klachten volledig verdwenen was de
+      verbetering van de posterieure strakheid groter dan bij wie restklachten
+      hield (35 tegenover 18 graden; p kleiner dan 0,05), terwijl de
+      binnenrotatiebeperking geen verschil maakte.
+    verwerkt: mechanismeclaim vervangen door de werkelijke bevinding
+
+  - id: sup_c04
+    tekst: Isotone progressie versnelt tendinaire adaptatie via tenocyte-stimulatie
+    plaats: protocols.sup fase 2 evidence
+    bronnen: [cook_2009_continuum]
+    gedekt: nee
+    opmerking: >-
+      NIET IN DE BRON. Het continuummodel beschrijft geen tenocytstimulatie en is
+      uitdrukkelijk als model ter beoordeling voorgelegd, niet als vastgestelde
+      pathofysiologie.
+    verwerkt: gelabeld als klinische redenering
+
+  - id: sup_c05
+    tekst: Scaption geeft significant minder subacromiale contactdruk dan frontale of sagittale elevatie
+    plaats: protocols.sup fase 2 evidence
+    bronnen: [flatow_1994_subacromiaal_contact]
+    gedekt: nee
+    opmerking: >-
+      DE VERGELIJKING BESTAAT NIET IN DE BRON. In dit kadaveronderzoek op 9
+      schouders werd UITSLUITEND in het scapulaire vlak geheven; er is geen
+      vergelijking met het frontale of sagittale vlak. Wel gedekt: het contact is
+      het nauwst tussen 60 en 120 graden elevatie, de acromiohumerale afstand
+      daalt van 11,1 mm bij 0 graden naar 5,7 mm bij 90 graden, het contact is
+      uitgesprokener bij een type III acromion en minder buitenrotatie verschuift
+      het contact naar distaal. Het artikel verscheen in AJSM, niet in CORR.
+    verwerkt: >-
+      vergelijkende claim geschrapt, de werkelijke bevindingen opgenomen — ook in
+      de beschrijving, waar zij de pijnboog van 60 tot 120 graden onderbouwen
+
+  - id: sup_c06
+    tekst: Serratus anterior-zwakte is de sterkste predictor van scapulaire dyskinese en subacromiale bursitis
+    plaats: protocols.sup fase 2 evidence
+    bronnen: [cools_2007_scapulaoefeningen]
+    gedekt: nee
+    opmerking: >-
+      ZELFDE MISBRUIK ALS IN HET BUREAUPROTOCOL. De publicatie is een EMG-studie
+      bij 45 GEZONDE proefpersonen die 12 scapulaoefeningen vergelijkt op de
+      verhouding tussen bovenste en onderste trapezius. Er is geen patientengroep,
+      geen predictoranalyse en geen uitspraak over de serratus anterior als
+      sterkste voorspeller. Het artikel verscheen in AJSM, niet in JOSPT.
+    verwerkt: claim gelabeld als klinische redenering, populatie van de bron benoemd
+
+  - id: sup_c07
+    tekst: >-
+      Scapulair ritmesymmetrie correleert sterk met herstel van de rotatorenmanchet
+      en recidiefpreventie
+    plaats: protocols.sup fase 3 evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      VERKEERDE PUBLICATIE. De aangehaalde publicatie uit 2009 is de INLEIDING op
+      een consensusbijeenkomst over de scapula, geen onderzoek naar herstel of
+      recidiefpreventie. Eerste auteur is bovendien Kibler, niet McClure.
+    verwerkt: claim geschrapt
+
+  - id: sup_c08
+    tekst: Een QuickDASH van 20 of lager correleert met subjectief volledig herstel
+    plaats: protocols.sup fase 4 evidence
+    bronnen: [beaton_2001_dash]
+    gedekt: nee
+    opmerking: >-
+      DREMPEL NIET IN DE BRON, TIJDSCHRIFT ONJUIST. De validatiestudie bij 200
+      patienten toont goede betrouwbaarheid (ICC 0,96), correlaties boven 0,69 en
+      een responsiviteit vergelijkbaar met of beter dan gewrichtsspecifieke maten,
+      maar bevat geen drempelwaarde van 20 en geen koppeling aan subjectief
+      volledig herstel. Het artikel verscheen in Journal of Hand Therapy, niet in
+      CORR.
+    verwerkt: drempel gelabeld als praktijkafspraak, tijdschrift gecorrigeerd
+
+  - id: sup_c09
+    tekst: >-
+      Ongebronde cijfers: sensitiviteit 79% (Neer), 74% (Hawkins-Kennedy), 69% en
+      specificiteit 66% (lege-blik-test), ER/IR-drempel 0,66, recidieffactor 2,4
+    plaats: protocols.sup fase 3 en 4 evidence + BESCHRIJVING.sup
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Vijf ongebronde numerieke waarden, waarvan vier diagnostische testeigenschappen
+      die als vastgesteld werden gepresenteerd.
+    verwerkt: testwaarden geschrapt, drempels gelabeld als praktijkafspraak
+
+  - id: sup_c10
+    tekst: >-
+      Niet geverifieerde citaties: Edouard 2013, Magnusson 2010, van Rijn 2010,
+      Ainsworth 2009
+    plaats: protocols.sup fase 3 en 4 evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Vier citaties konden niet eenduidig opgehaald worden, waaronder die onder de
+      volledige fase 4 over werkhervatting en uithoudingstraining.
+    verwerkt: alle vier gemarkeerd als niet geverifieerd
+
+  - id: sup_c11
+    tekst: Het protocol had geen refs-veld
+    plaats: protocols.sup
+    bronnen: [kibler_2013_scapulaconsensus, flatow_1994_subacromiaal_contact, tyler_2010_posterieure_strakheid, beaton_2001_dash, rio_2015_isometrie, cools_2007_scapulaoefeningen, cook_2009_continuum]
+    gedekt: nee
+    opmerking: >-
+      Net als het protocol facettaire blokkade had dit protocol geen literatuurlijst
+      terwijl de evidenceteksten wel citaties bevatten.
+    verwerkt: >-
+      refs-veld aangelegd met de zeven geverifieerde bronnen, met vermelding welke
+      pees respectievelijk welke populatie zij betreffen

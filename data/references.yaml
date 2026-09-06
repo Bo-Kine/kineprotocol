@@ -2202,3 +2202,89 @@ references:
       paratenon staan niet in het abstract.
     geverifieerd_op: 2026-09-06
     geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  # --- Supraspinatus-tendinopathie en subacromiale klachten ---
+
+  - key: kibler_2013_scapulaconsensus
+    auteurs: [Kibler WB, Ludewig PM, McClure PW, Michener LA, Bak K, Sciascia AD]
+    titel: "Clinical implications of scapular dyskinesis in shoulder injury: the 2013 consensus statement from the 'Scapular Summit'"
+    bron: British Journal of Sports Medicine
+    jaar: 2013
+    volume_paginas: 47(14):877-85
+    doi: 10.1136/bjsports-2013-092425
+    pmid: '23580420'
+    url: https://doi.org/10.1136/bjsports-2013-092425
+    type: expert
+    opmerking: >-
+      Consensusverklaring (bewijsniveau 5). Scapulaire dyskinese is aanwezig bij een
+      HOOG PERCENTAGE van de meeste schouderletsels — er staat GEEN cijfer van 68%.
+      KERNNUANCE die in de app ontbrak: de exacte rol van de dyskinese bij het
+      ontstaan of verergeren van schouderdisfunctie is NIET DUIDELIJK OMSCHREVEN,
+      en de dyskinese wordt het best gezien als een MOGELIJKE stoornis, niet als
+      een vastgestelde oorzaak. Impingementklachten worden er wel bijzonder door
+      beinvloed. Verscheen in BJSM, niet in AJSM.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: tyler_2010_posterieure_strakheid
+    auteurs: [Tyler TF, Nicholas SJ, Lee SJ, Mullaney M, McHugh MP]
+    titel: Correction of posterior shoulder tightness is associated with symptom resolution in patients with internal impingement
+    bron: American Journal of Sports Medicine
+    jaar: 2010
+    volume_paginas: 38(1):114-9
+    doi: 10.1177/0363546509346050
+    pmid: '19966099'
+    url: https://doi.org/10.1177/0363546509346050
+    type: cohort
+    opmerking: >-
+      Cohortstudie (bewijsniveau 3) bij 22 patienten met INTERN impingement, niet
+      subacromiaal. Na 7 weken kinesitherapie verbeterden de
+      binnenrotatiebeperking, de buitenrotatie en de posterieure strakheid. De
+      patienten bij wie de klachten VOLLEDIG verdwenen (n = 12) hadden een grotere
+      verbetering van de posterieure strakheid dan wie restklachten hield (35 tegen
+      18 graden; p kleiner dan 0,05); voor de binnenrotatiebeperking was er GEEN
+      verschil. De studie meet geen migratie van de humeruskop en geen subacromiale
+      compressie.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: flatow_1994_subacromiaal_contact
+    auteurs: [Flatow EL, Soslowsky LJ, Ticker JB, Pawluk RJ, Hepler M, Ark J, Mow VC, Bigliani LU]
+    titel: 'Excursion of the rotator cuff under the acromion: patterns of subacromial contact'
+    bron: American Journal of Sports Medicine
+    jaar: 1994
+    volume_paginas: 22(6):779-88
+    doi: 10.1177/036354659402200609
+    pmid: '7856802'
+    url: https://doi.org/10.1177/036354659402200609
+    type: cohort
+    opmerking: >-
+      Kadaveronderzoek op 9 schouders, uitsluitend geheven IN HET SCAPULAIRE VLAK —
+      er is dus GEEN vergelijking met elevatie in het frontale of sagittale vlak.
+      Bevindingen: het contact tussen acromion en manchetpezen is het nauwst tussen
+      60 en 120 graden elevatie; de acromiohumerale afstand daalt van gemiddeld
+      11,1 mm bij 0 graden naar 5,7 mm bij 90 graden; het contact is duidelijk
+      uitgesprokener bij een type III acromion; minder buitenrotatie verschuift het
+      contact naar distaal en posterieur. Verscheen in AJSM, niet in CORR.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: beaton_2001_dash
+    auteurs: [Beaton DE, Katz JN, Fossel AH, Wright JG, Tarasuk V, Bombardier C]
+    titel: 'Measuring the whole or the parts? Validity, reliability, and responsiveness of the Disabilities of the Arm, Shoulder and Hand outcome measure in different regions of the upper extremity'
+    bron: Journal of Hand Therapy
+    jaar: 2001
+    volume_paginas: 14(2):128-46
+    doi: null
+    pmid: '11382253'
+    url: https://pubmed.ncbi.nlm.nih.gov/11382253/
+    type: cohort
+    opmerking: >-
+      Validatiestudie van de DASH bij 200 patienten met pols-, hand- of
+      schouderklachten. Goede test-hertestbetrouwbaarheid (ICC 0,96), correlatie
+      met andere maten boven 0,69, en een responsiviteit vergelijkbaar met of beter
+      dan gewrichtsspecifieke maten. Er staat GEEN drempelwaarde van 20 die met
+      subjectief volledig herstel zou samenhangen, en het artikel verscheen in
+      Journal of Hand Therapy, niet in CORR. PubMed geeft voor dit record geen DOI.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)

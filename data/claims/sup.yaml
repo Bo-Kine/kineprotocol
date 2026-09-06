@@ -163,9 +163,13 @@ claims:
     bronnen: [kibler_2013_scapulaconsensus, cools_2007_scapulaoefeningen, beaton_2001_dash]
     gedekt: nee
     opmerking: >-
-      SPOOKCITATIE GEVONDEN. Een oefennotitie voerde "(Dye et al., 2017)" op als
-      onderbouwing van pijninhibitie; die publicatie staat niet in references.yaml,
-      niet in het refs-veld en niet in dit claimsbestand, en is nergens opgehaald.
+      CITATIE NIET OPGEHAALD. Een oefennotitie voerde "(Dye et al., 2017)" op als
+      onderbouwing van pijninhibitie. Die verwijzing staat niet in references.yaml,
+      niet in het refs-veld en niet in dit claimsbestand, en is in deze audit niet
+      opgehaald. CORRECTIE OP MIJN EIGEN EERDERE FORMULERING: ik noemde dit een
+      "spookcitatie", wat suggereert dat de publicatie niet bestaat. Dat heb ik
+      niet vastgesteld — ik heb enkel vastgesteld dat zij in dit dossier ontbreekt
+      en niet geverifieerd is.
       Verder presenteerden vier notities en de beschrijving opnieuw als bewijs wat
       de evidencetekst van dezelfde fase juist als niet-gedekt markeert: de
       vergelijking tussen bewegingsvlakken bij scaption, het mechanisme van

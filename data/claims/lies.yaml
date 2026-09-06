@@ -2,7 +2,10 @@ protocol: lies
 laatst_gecontroleerd: 2026-09-06
 versie: 1
 fase_a_door: hoofdagent, alle metadata eerstehands opgehaald via PubMed MCP
-fase_b_door: nog uit te voeren
+fase_b_door: >-
+  onafhankelijke verificator met schone context, 2026-09-06; alle 10 citaties in
+  de evidenceteksten en het volledige refs-veld bevestigd als correct, 8
+  problemen in beschrijving en oefennotities gevonden, alle verwerkt
 
 claims:
   - id: lies_c01
@@ -125,3 +128,38 @@ claims:
       staat op twee plaatsen in het protocol en stuurt de klinische redenering
       over letselmechanismen.
     verwerkt: alle drie gemarkeerd als niet geverifieerd, het percentage gelabeld
+
+  - id: lies_c09
+    tekst: Citaties in de beschrijving die in dit dossier niet zijn opgehaald
+    plaats: BESCHRIJVING.lies + oefennotities lies
+    bronnen: [serner_2020_terugkeer, serner_2014_emg_copenhagen, holmich_1999_actieve_training]
+    gedekt: nee
+    opmerking: >-
+      VIER NIET-OPGEHAALDE CITATIES IN DE BESCHRIJVING, die niet onder de vaste
+      voetnoot valt: Delahunt 2011 (tweemaal, voor de squeeze test als betrouwbaar
+      diagnostisch hulpmiddel), Serner 2015 (tweemaal, voor MRI-gebruik en voor
+      belastende sporten) en Whittaker 2015 (risicofactoren). Geen ervan staat in
+      references.yaml. Ik stel NIET vast dat deze publicaties niet bestaan — enkel
+      dat zij in deze audit niet zijn opgehaald en dus niet geverifieerd zijn.
+      Daarnaast presenteerden twee oefennotities als bewijs wat de evidencetekst
+      van dezelfde fase juist als niet-toegeschreven markeert: de EMG-bovengrens
+      als "hoogste geregistreerde activiteit van alle oefenvarianten" en een
+      uitspraak over rekken die in het abstract van Hölmich niet voorkomt.
+    verwerkt: >-
+      alle citaties gemarkeerd als niet opgehaald, de EMG-notitie in lijn gebracht
+      met de evidencetekst, de rekuitspraak vervangen door een praktijkkeuze, en
+      de MRI-passage aangevuld met de wel geverifieerde bevinding dat MRI weinig
+      toevoegde aan het klinisch onderzoek voor het inschatten van de terugkeerduur
+
+  - id: lies_c10
+    tekst: Ongebronde belastingsdrempels in oefennotities
+    plaats: oefennotities lies fase 4
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Twee drempels werden als vastgesteld gepresenteerd: plotse weekvolume-pieken
+      als "gedocumenteerde risicofactor" en een acute-chronische belastingsratio
+      boven 1,5 als verhoogd blessurerisico. Beide zijn in dit dossier niet
+      onderbouwd; bij het ITB- en het plantaire-fasciopathieprotocol bleek de
+      onderliggende literatuur die drempels bovendien niet te schragen.
+    verwerkt: beide gelabeld als klinische redenering respectievelijk praktijkafspraak

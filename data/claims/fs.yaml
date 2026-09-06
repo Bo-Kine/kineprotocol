@@ -172,12 +172,16 @@ claims:
     bronnen: [carette_2003_injectie_kinesitherapie, hand_2008_langetermijn]
     gedekt: nee
     opmerking: >-
-      TWEE SPOOKCITATIES. "(Leung et al., 2008)" bij thermale therapie, met een
-      concreet cijfer van 30 tot 40% pijnreductie, en "(Bunker en Anthony, 1995 —
-      JBJS)" bij het pathomechanisme in de beschrijving: geen van beide komt voor
-      in references.yaml, in het refs-veld of in dit claimsbestand. Dat is de
-      tweede en derde spookcitatie in deze audit, na "(Dye et al., 2017)" in het
-      supraspinatusprotocol. Verder: de fasedoelstelling herhaalde het
+      TWEE CITATIES NIET OPGEHAALD. "(Leung et al., 2008)" bij thermale therapie,
+      met een concreet cijfer van 30 tot 40% pijnreductie, en "(Bunker en Anthony,
+      1995 - JBJS)" bij het pathomechanisme in de beschrijving: geen van beide komt
+      voor in references.yaml, in het refs-veld of in dit claimsbestand.
+      CORRECTIE OP MIJN EIGEN EERDERE FORMULERING: ik noemde deze "spookcitaties",
+      wat suggereert dat de publicaties niet bestaan. Dat heb ik niet vastgesteld.
+      Bunker en Anthony 1995 over de pathologie van frozen shoulder is bovendien
+      een bekend artikel dat vermoedelijk wel bestaat. Wat ik wel heb vastgesteld:
+      beide zijn in dit dossier niet opgehaald en dus niet geverifieerd, en het
+      cijfer van 30 tot 40% is daarmee onbevestigd. Verder: de fasedoelstelling herhaalde het
       tijdsvenster van 18 tot 24 maanden dat de evidencetekst van diezelfde fase
       juist als niet-gedekt markeert, en de beschrijving bevatte een ongelabeld
       verlies van meer dan 50% exorotatie. ONNAUWKEURIGHEID VAN MIJZELF: ik schreef

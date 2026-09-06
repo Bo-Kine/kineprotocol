@@ -334,7 +334,7 @@ references:
       Gerandomiseerde cross-overstudie bij 6 volleyballers met patellatendinopathie.
       Pijn op de single-leg decline squat daalde na isometrie van 7,0 naar 0,17
       (gemiddelde daling 6,8/10), tegenover 2,6/10 na isotone contracties; effect
-      hield 45 minuten aan. Corticale inhibitie daalde van 27,5% naar 55,0%.
+      hield 45 minuten aan. De corticale inhibitie NAM AF: de gebruikte ratio steeg van 27,5% naar 55,0%, wat minder inhibitie betekent.
       Zeer kleine steekproef; niet onderzocht bij de pes anserinus.
     geverifieerd_op: 2026-09-05
     geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
@@ -2072,4 +2072,133 @@ references:
       bevelen is BEPERKT. Er staat GEEN cijfer over onderhoudstraining, geen
       recidiefpercentage en geen opvolging over vijf jaar.
     geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  # --- Achillespees-tendinopathie ---
+
+  - key: alfredson_1998_excentrisch
+    auteurs: [Alfredson H, Pietila T, Jonsson P, Lorentzon R]
+    titel: Heavy-load eccentric calf muscle training for the treatment of chronic Achilles tendinosis
+    bron: American Journal of Sports Medicine
+    jaar: 1998
+    volume_paginas: 26(3):360-6
+    doi: 10.1177/03635465980260030301
+    pmid: '9617396'
+    url: https://doi.org/10.1177/03635465980260030301
+    type: cohort
+    opmerking: >-
+      GEEN RCT maar een prospectieve studie bij 15 recreatieve sporters (12 mannen,
+      3 vrouwen; gemiddeld 44,3 jaar) met een niet-gerandomiseerde vergelijkingsgroep
+      van 15. Na 12 weken waren ALLE 15 terug op hun niveau van voor het letsel met
+      volledige loopactiviteit, met significante pijnafname en krachtherstel. In de
+      conventioneel behandelde groep slaagde de behandeling in GEEN ENKEL geval en
+      werden alle patienten uiteindelijk geopereerd. Het percentage 82% uit de app
+      komt er niet in voor; de werkelijke uitkomst is 15 op 15 in een zeer kleine,
+      niet-gerandomiseerde studie. De auteurs spreken zelf van een goed
+      KORTETERMIJNeffect.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: jonsson_2008_insertioneel
+    auteurs: [Jonsson P, Alfredson H, Sunding K, Fahlstrom M, Cook J]
+    titel: 'New regimen for eccentric calf-muscle training in patients with chronic insertional Achilles tendinopathy: results of a pilot study'
+    bron: British Journal of Sports Medicine
+    jaar: 2008
+    volume_paginas: 42(9):746-9
+    doi: 10.1136/bjsm.2007.039545
+    pmid: '18184750'
+    url: https://doi.org/10.1136/bjsm.2007.039545
+    type: cohort
+    opmerking: >-
+      PILOTSTUDIE, 27 patienten met 34 pijnlijke pezen, gemiddelde klachtenduur 26
+      maanden. KERNCIJFER dat de app niet vermeldde: bij INSERTIONELE
+      achillespeestendinopathie had slechts 32% goed klinisch resultaat met het
+      klassieke excentrische regime waarbij tot in volledige dorsaalflexie belast
+      wordt. Met het nieuwe regime ZONDER belasting in dorsaalflexie was 67%
+      tevreden en terug op het vorige activiteitsniveau, met een daling van de
+      pijnscore van 69,9 naar 21 (p kleiner dan 0,001). Korte opvolging (gemiddeld
+      4 maanden) en geen controlegroep.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: rio_2017_isometrie_patella
+    auteurs: [Rio E, van Ark M, Docking S, Moseley GL, Kidgell D, Gaida JE, van den Akker-Scheek I, Zwerver J, Cook J]
+    titel: 'Isometric contractions are more analgesic than isotonic contractions for patellar tendon pain: an in-season randomized clinical trial'
+    bron: Clinical Journal of Sport Medicine
+    jaar: 2017
+    volume_paginas: 27(3):253-259
+    doi: 10.1097/JSM.0000000000000364
+    pmid: '27513733'
+    url: https://doi.org/10.1097/JSM.0000000000000364
+    type: RCT
+    opmerking: >-
+      BETREFT DE PATELLAPEES, NIET DE ACHILLESPEES. 20 springatleten met klinisch
+      vastgestelde patellapeestendinopathie, vier weken. Beide protocollen
+      verminderden de pijn, maar isometrische contracties gaven significant meer
+      onmiddellijke analgesie (p kleiner dan 0,002). De analgetische respons in week
+      een hing samen met verbetering op de VISA-P na vier weken (r = 0,64).
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: silbernagel_2007_pijnmonitoring
+    auteurs: [Silbernagel KG, Thomee R, Eriksson BI, Karlsson J]
+    titel: 'Continued sports activity, using a pain-monitoring model, during rehabilitation in patients with Achilles tendinopathy: a randomized controlled study'
+    bron: American Journal of Sports Medicine
+    jaar: 2007
+    volume_paginas: 35(6):897-906
+    doi: 10.1177/0363546506298279
+    pmid: '17307888'
+    url: https://doi.org/10.1177/0363546506298279
+    type: RCT
+    opmerking: >-
+      38 patienten, gerandomiseerd over doorgaan met lopen en springen volgens een
+      pijnmonitoringmodel tegenover zes weken staken van die activiteiten. GEEN
+      significante verschillen tussen de groepen; BEIDE verbeterden significant
+      (VISA-A-S van 57 naar 85 respectievelijk van 57 naar 91 na twaalf maanden).
+      Conclusie: er zijn GEEN nadelige effecten aantoonbaar van doorgaan met
+      peesbelastende activiteit onder pijnmonitoring. De studie toont dus dat het
+      VEILIG is, niet dat het beter is of noodzakelijk.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: habets_2015_excentrische_protocollen
+    auteurs: [Habets B, van Cingel REH]
+    titel: 'Eccentric exercise training in chronic mid-portion Achilles tendinopathy: a systematic review on different protocols'
+    bron: Scandinavian Journal of Medicine and Science in Sports
+    jaar: 2015
+    volume_paginas: 25(1):3-15
+    doi: 10.1111/sms.12208
+    pmid: '24650048'
+    url: https://doi.org/10.1111/sms.12208
+    type: SR
+    opmerking: >-
+      14 gerandomiseerde en gecontroleerde trials. STERK bewijs voor het
+      Alfredson-protocol: 12 weken, 3 maal 15 herhalingen tweemaal daags, met
+      gestrekte en gebogen knie, traag tempo, belasting verhogen wanneer de
+      oefening pijnvrij is. Ook sterk bewijs voor een geleidelijke start in de
+      eerste week. MAAR: door heterogeniteit van populaties en uitkomstmaten en
+      door ontbrekende gegevens over therapietrouw kon GEEN definitieve conclusie
+      getrokken worden over de meest effectieve trainingsparameters.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: alfredson_2000_tendinose
+    auteurs: [Alfredson H, Lorentzon R]
+    titel: 'Chronic Achilles tendinosis: recommendations for treatment and prevention'
+    bron: Sports Medicine
+    jaar: 2000
+    volume_paginas: 29(2):135-46
+    doi: 10.2165/00007256-200029020-00005
+    pmid: '10701715'
+    url: https://doi.org/10.2165/00007256-200029020-00005
+    type: review
+    opmerking: >-
+      Narratieve review. Histologisch GEEN ontstekingscellen, wel toegenomen
+      interfibrillaire glycosaminoglycanen en veranderingen in structuur en
+      rangschikking van de collageenvezels; microdialyse bevestigde de afwezigheid
+      van ontsteking. Komt het meest voor bij recreatieve MANNELIJKE lopers tussen
+      35 en 45 jaar, maar ook bij mensen met een zittende leefstijl. Ongeveer 25%
+      wordt uiteindelijk geopereerd. Neovascularisatie en nociceptoringroei in het
+      paratenon staan niet in het abstract.
+    geverifieerd_op: 2026-09-06
     geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)

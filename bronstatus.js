@@ -9,6 +9,13 @@ const BRONSTATUS = {
     "open": 3,
     "datum": "2026-09-05"
   },
+  "at": {
+    "gecontroleerd": 10,
+    "gedekt": 2,
+    "deels": 1,
+    "open": 0,
+    "datum": "2026-09-06"
+  },
   "bureau": {
     "gecontroleerd": 19,
     "gedekt": 1,
@@ -73,7 +80,7 @@ const BRONSTATUS = {
     "datum": "2026-09-05"
   },
   "pt": {
-    "gecontroleerd": 11,
+    "gecontroleerd": 12,
     "gedekt": 1,
     "deels": 0,
     "open": 0,

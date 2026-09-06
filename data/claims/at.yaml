@@ -1,0 +1,145 @@
+protocol: at
+laatst_gecontroleerd: 2026-09-06
+versie: 1
+fase_a_door: hoofdagent, alle metadata eerstehands opgehaald via PubMed MCP
+fase_b_door: nog uit te voeren
+
+claims:
+  - id: at_c01
+    tekst: Bij insertionele tendinopathie is klassieke excentrische training contraproductief
+    plaats: protocols.at fase 1 en 3 evidence
+    bronnen: [jonsson_2008_insertioneel]
+    gedekt: ja
+    opmerking: >-
+      GEDEKT, EN HET KERNCIJFER ONTBRAK. Bij insertionele achillespeestendinopathie
+      had slechts 32% een goed klinisch resultaat met het klassieke regime waarbij
+      tot in volledige dorsaalflexie belast wordt, tegenover 67% tevreden met een
+      regime ZONDER belasting in dorsaalflexie. Pilotstudie, 27 patienten, korte
+      opvolging (gemiddeld 4 maanden), geen controlegroep.
+    verwerkt: beide percentages en de studiebeperkingen opgenomen
+
+  - id: at_c02
+    tekst: De VISA-A is de gevalideerde uitkomstmaat
+    plaats: protocols.at fase 1 evidence
+    bronnen: [robinson_2001_visa_a]
+    gedekt: ja
+    opmerking: >-
+      GEDEKT — EN HIER TERECHT GEBRUIKT. Dezelfde bron werd in het
+      patellapeesprotocol foutief voor de VISA-P aangehaald; bij de achillespees
+      klopt de toeschrijving wel. De auteurs vermelden dat de vragenlijst NIET
+      diagnostisch bedoeld is en dat onbekend is of de score de prognose
+      voorspelt; de drempels 80 en 90 zijn praktijkafspraken.
+    verwerkt: beperkingen van het instrument toegevoegd, drempels gelabeld
+
+  - id: at_c03
+    tekst: Isometrische belasting van de KUIT geeft pijnverlichting via corticale inhibitie
+    plaats: protocols.at fase 2 evidence
+    bronnen: [rio_2017_isometrie_patella]
+    gedekt: nee
+    opmerking: >-
+      VERKEERDE PEES — SPIEGELBEELD VAN DE FOUT IN HET PATELLAPEESPROTOCOL. De
+      aangehaalde RCT betreft 20 springatleten met PATELLApeestendinopathie. Zij
+      toont wel significant meer onmiddellijke analgesie bij isometrische dan bij
+      isotone contracties (p kleiner dan 0,002), maar niet bij de achillespees.
+      Het patellapeesprotocol citeerde omgekeerd een achillespeesstudie; de app
+      wisselt de twee pezen dus in beide richtingen om.
+    verwerkt: pees benoemd, toepassing op de kuit gelabeld als klinische redenering
+
+  - id: at_c04
+    tekst: Het Alfredson-protocol was goudstandaard met 82% succes bij hardlopers (1998, RCT)
+    plaats: protocols.at fase 3 evidence
+    bronnen: [alfredson_1998_excentrisch, habets_2015_excentrische_protocollen]
+    gedekt: nee
+    opmerking: >-
+      DRIE AFWIJKINGEN. Het is GEEN RCT maar een prospectieve serie van 15
+      recreatieve sporters met een niet-gerandomiseerde vergelijkingsgroep. Het
+      percentage 82% komt er niet in voor: ALLE 15 keerden terug naar hun
+      niveau van voor het letsel, terwijl in de conventioneel behandelde groep
+      GEEN ENKELE patient slaagde. De auteurs spreken zelf van een goed
+      KORTETERMIJNeffect. Wat het protocol wel schraagt is de systematische review
+      van 14 trials, met STERK bewijs voor dit schema — al kon die review door
+      heterogeniteit geen definitieve conclusie trekken over de beste parameters.
+    verwerkt: >-
+      studietype en uitkomst gecorrigeerd, de systematische review als
+      hoofdonderbouwing opgenomen
+
+  - id: at_c05
+    tekst: Loophervatting is een mechanische stimulus voor peesremodellering, veilig en noodzakelijk
+    plaats: protocols.at fase 4 evidence
+    bronnen: [silbernagel_2007_pijnmonitoring]
+    gedekt: deels
+    opmerking: >-
+      VEILIG IS GEDEKT, NOODZAKELIJK NIET. In de RCT met 38 patienten waren er GEEN
+      significante verschillen tussen doorgaan met lopen en springen onder
+      pijnmonitoring en zes weken staken; BEIDE groepen verbeterden significant.
+      De conclusie is dat er geen nadelige effecten aantoonbaar zijn, niet dat
+      doorgaan beter of noodzakelijk is. Het mechanisme van peesremodellering
+      staat er niet in.
+    verwerkt: claim teruggebracht tot veiligheid, met beide groepsuitkomsten
+
+  - id: at_c06
+    tekst: Return-to-sport-criteria volgens een consensusverklaring uit 2020
+    plaats: protocols.at fase 5 evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      VOLLEDIG VERKEERDE PUBLICATIE. De aangehaalde publicatie uit 2020 is een
+      SCOPING REVIEW over de beschrijving van weerstandsoefeningen in de eerste
+      acht weken na een achillespees-RUPTUUR, geen consensusverklaring over
+      terugkeer naar sport bij tendinopathie. De genoemde criteria zijn
+      praktijkafspraken.
+    verwerkt: citatie geschrapt, criteria gelabeld als praktijkafspraak
+
+  - id: at_c07
+    tekst: Onderhoudstraining houdt 90% symptoomvrij op vijf jaar
+    plaats: protocols.at fase 6 evidence
+    bronnen: [alfredson_2000_tendinose]
+    gedekt: nee
+    opmerking: >-
+      CIJFER NIET ONDERBOUWD EN HET BELOOP IS ONGUNSTIGER. De toegeschreven
+      citatie uit 2011 kon niet opgehaald worden. De wel geverifieerde review van
+      dezelfde auteur meldt juist dat ONGEVEER 25% van de patienten uiteindelijk
+      geopereerd wordt en dat het aan wetenschappelijke onderbouwing ontbreekt
+      voor de meeste voorgestelde niet-chirurgische regimes.
+    verwerkt: >-
+      cijfer geschrapt, het cijfer over chirurgie en het gebrek aan onderbouwing
+      opgenomen als relativering
+
+  - id: at_c08
+    tekst: >-
+      Ongebronde numerieke waarden: sensitiviteit 0,73-0,78 van arc sign en Royal
+      London-test, hielverhoging 5-10 mm, echografische drempel 6 mm, recidief
+      20-30%, belastingsveelvouden 6-8x, 8x en 12x lichaamsgewicht, RTS-tijdslijnen
+      12-24 weken, fluorochinolonrisico maal 3, drempel 10% loopvolume per week
+    plaats: protocols.at fase 1 tot 6 evidence + BESCHRIJVING.at
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Tien ongebronde numerieke waarden, waaronder een diagnostische drempel, een
+      medicatierisico en drie belastingsveelvouden die elkaar bovendien niet
+      dekken (6-8x tegenover 12x voor vergelijkbare activiteiten).
+    verwerkt: alle geschrapt of gelabeld als klinische redenering
+
+  - id: at_c09
+    tekst: Pathologie omvat neovascularisatie en sympathische nociceptorproliferatie in het paratenon
+    plaats: BESCHRIJVING.at
+    bronnen: [alfredson_2000_tendinose]
+    gedekt: nee
+    opmerking: >-
+      NIET IN DE BRON. De review beschrijft de afwezigheid van ontstekingscellen,
+      toegenomen interfibrillaire glycosaminoglycanen en veranderingen in de
+      collageenstructuur, bevestigd met microdialyse. Neovascularisatie en
+      nociceptoringroei in het paratenon staan er niet in.
+    verwerkt: werkelijke histologische bevindingen opgenomen
+
+  - id: at_c10
+    tekst: >-
+      Niet geverifieerde citaties: Alfredson en Cook 2007, Willy en Davis 2014,
+      Alfredson 2011, Dye 1996
+    plaats: protocols.at fase 1, 4 en 6 evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Vier citaties konden niet eenduidig opgehaald worden, waaronder die onder de
+      volledige looptechniekparagraaf en onder het risicomodel in fase 6.
+    verwerkt: alle vier gemarkeerd als niet geverifieerd

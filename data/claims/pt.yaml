@@ -2,7 +2,10 @@ protocol: pt
 laatst_gecontroleerd: 2026-09-05
 versie: 1
 fase_a_door: hoofdagent, alle metadata eerstehands opgehaald via PubMed MCP
-fase_b_door: nog uit te voeren
+fase_b_door: >-
+  onafhankelijke verificator met schone context, 2026-09-06; alle 10 citaties en
+  het volledige refs-veld bevestigd als correct, 14 problemen daarbuiten
+  gevonden, alle verwerkt
 
 claims:
   - id: pt_c01
@@ -155,3 +158,30 @@ claims:
     verwerkt: >-
       alle vier gemarkeerd als niet geverifieerd, de bijbehorende uitspraken
       gelabeld als klinische redenering
+
+  - id: pt_c12
+    tekst: Bevindingen uit fase B in notities, beschrijving en het bronbestand
+    plaats: oefennotities pt, BESCHRIJVING.pt, beslisboom pt, data/references.yaml
+    bronnen: [rio_2015_isometrie, beyer_2015_hsr_achilles]
+    gedekt: nee
+    opmerking: >-
+      VEERTIEN PUNTEN, WAARONDER EEN IN MIJN EIGEN BRONBESTAND. De opmerking bij
+      rio_2015_isometrie luidde "corticale inhibitie daalde van 27,5% naar 55,0%",
+      wat innerlijk tegenstrijdig is: de gebruikte ratio STIJGT, waardoor de
+      inhibitie afneemt. Verder: een verkeerd jaartal (Kongsgaard 2010 in plaats
+      van 2009), twee superlatieven ("goudstandaard" voor de isometrie-oefening en
+      voor de single leg decline squat) die de voorbehouden in de evidencetekst
+      erboven tegenspreken, ongebronde diagnostische en psychometrische waarden
+      (sensitiviteit en specificiteit van de decline squat, MCID van 13 punten,
+      aantal vragen van de VISA-P), belastingsdrempels in een oefennotitie
+      (10% per week, acute-chronische ratio 1,5), een absolute veiligheidsuitspraak
+      ("fietsen is veilig in alle fasen"), een interne tegenstrijdigheid tussen
+      "verminderde peesvascularisatie" in de kenmerken en "neovascularisatie" in
+      de oorzaken, en een verwijzing naar de achillespeesstudie in de beslisboom
+      zonder pees-label.
+    verwerkt: >-
+      formulering in references.yaml gecorrigeerd, jaartal rechtgezet,
+      superlatieven verwijderd, drempels gelabeld als praktijkafspraak, de
+      pathologische toeschrijving aan het continuummodel gelabeld als klinische
+      redenering, en de achillespeesstudie in de beslisboom van een pees-label
+      voorzien

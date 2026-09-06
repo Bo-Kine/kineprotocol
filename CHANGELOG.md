@@ -3,6 +3,18 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-09-06 — bronaudit achillespees-tendinopathie + fase B patellapees
+
+- DE APP WISSELT DE TWEE PEZEN IN BEIDE RICHTINGEN OM · het patellapeesprotocol citeerde een achillespeesstudie voor het meetinstrument, en dit achillespeesprotocol citeert `rio_2017_isometrie_patella` — een RCT bij 20 springatleten met PATELLApeestendinopathie — voor isometrie van de kuit · beide zijn nu benoemd en gelabeld als extrapolatie
+- Volledig verkeerde publicatie · de return-to-sport-criteria werden toegeschreven aan een "consensusstatement 2020" · die publicatie is een scoping review over de BESCHRIJVING van weerstandsoefeningen na een achillespees-RUPTUUR
+- Drie afwijkingen in één zin over het Alfredson-protocol · het is GEEN RCT maar een prospectieve serie van 15 sporters, en het percentage 82% komt er niet in voor: ALLE 15 keerden terug, terwijl in de conventioneel behandelde groep GEEN ENKELE patiënt slaagde · wat het protocol wel schraagt is `habets_2015_excentrische_protocollen`, met sterk bewijs voor het schema
+- Kerncijfer toegevoegd dat ontbrak · bij INSERTIONELE tendinopathie had slechts 32% een goed resultaat met belasting tot in volledige dorsaalflexie, tegenover 67% zonder · dat maakt het onderscheid tussen de subtypes concreet in plaats van stellend
+- Beloop eerlijker weergegeven · "onderhoudstraining houdt 90% symptoomvrij op vijf jaar" is niet onderbouwd · `alfredson_2000_tendinose` meldt juist dat ongeveer 25% uiteindelijk geopereerd wordt en dat het aan onderbouwing ontbreekt voor de meeste niet-chirurgische regimes
+- `silbernagel_2007_pijnmonitoring` genuanceerd · doorgaan met lopen en springen onder pijnmonitoring is VEILIG (geen verschil met zes weken staken, beide groepen verbeterden), maar niet aantoonbaar beter of noodzakelijk
+- Tien ongebronde numerieke waarden geschrapt of gelabeld, waaronder drie belastingsveelvouden die elkaar tegenspraken (6-8x tegenover 12x voor vergelijkbare activiteiten)
+
+- Fase B op de patellapees · alle 10 citaties en het volledige refs-veld bevestigd als correct · 14 problemen daarbuiten, waaronder EEN IN MIJN EIGEN BRONBESTAND: de opmerking bij `rio_2015_isometrie` was innerlijk tegenstrijdig geformuleerd (de ratio stijgt, de inhibitie daalt) · verder twee superlatieven die de voorbehouden in de evidencetekst erboven tegenspraken, en een interne tegenstrijdigheid tussen "verminderde peesvascularisatie" en "neovascularisatie" binnen dezelfde beschrijving
+
 ## 2026-09-05 — bronaudit patellapees-tendinopathie
 
 - 11 claims beoordeeld, 7 bronnen eerstehands opgehaald en geverifieerd via PubMed · dit protocol bevatte twee bronnen over de ACHILLESPEES die als patellapees-bewijs waren gepresenteerd

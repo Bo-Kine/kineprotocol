@@ -30,6 +30,7 @@ for (const bestand of fs.readdirSync(CLAIMS).filter(f => f.endsWith('.yaml')).so
     gecontroleerd: claims.length,
     gedekt: claims.filter(c => c.gedekt === 'ja').length,
     deels: claims.filter(c => c.gedekt === 'deels').length,
+    niet_gedekt: claims.filter(c => c.gedekt === 'nee').length,
     open: claims.filter(c => c.gedekt !== 'ja' && !c.verwerkt).length,
     datum: doc.laatst_gecontroleerd || null,
   };
@@ -38,6 +39,9 @@ for (const bestand of fs.readdirSync(CLAIMS).filter(f => f.endsWith('.yaml')).so
 const uit = `// GEGENEREERD BESTAND — niet met de hand bewerken.
 // Bron: data/claims/*.yaml · genereren met: node scripts/build-bronstatus.js
 // Protocollen die hier niet in staan, hebben nog geen bronaudit gehad.
+// gedekt/deels/niet_gedekt tellen hoe de claim zich tot de AANGEHAALDE bron verhoudt;
+// niet_gedekt betekent dat die bron de uitspraak niet ondersteunde, niet dat de
+// uitspraak onjuist is - ze staat nu als klinische redenering in de tekst.
 const BRONSTATUS = ${JSON.stringify(status, null, 2)};
 `;
 

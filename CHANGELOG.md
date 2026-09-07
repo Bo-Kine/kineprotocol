@@ -3,6 +3,19 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-09-07 — fase B op ORIF, de Quervain en carpaaltunnel + eerlijker bronbadge
+
+- DE HUISSTEDE-OMKERING VOOR DE VIERDE KEER, NU MET EEN VERZONNEN PERCENTAGE · een oefeningnote las "Huisstede 2010: begeleide krachttraining na CTS-release geeft 35% meer gripkracht op 8 weken vs geen therapie" · dezelfde review besluit dat er GEEN bewijs is voor postoperatieve behandelprogramma's, en die 35% staat er nergens in · fase 3 en 4 corrigeerden dit in het evidence-veld, de note bleef staan — en dat is de tekst bij de oefening die wordt voorgeschreven
+- Tweede verzonnen vergelijking uit Walker 2000 · "neutraalspalk 0° significant beter dan extensiespalk 20°" · die trial vergeleek nachtelijk met voltijds dragen; twee spalkhoeken komen er niet in voor
+- Verder gelabeld of geschrapt · "NICE 2022: work hardening vermindert verzuim met 40%", "Shiels 2016: littekenmassage reduceert overgevoeligheid significant", "Bland 2007: verhindert peesverkleving", "Cavaleri 2016 toont meer pijnreductie bij trouwe spalkdracht", "Ilyas 2007: 50% recidief onder 10 weken" (het cijfer dat fase 3 net had geschrapt), "Chern 2014: 34% eigen EPB-subcompartiment", en een "Beyer 2015-principe" voor collageensynthese in de duimpezen — de zevende plaats waar die achillespeesbron bij een andere pees opduikt
+- Ongelabelde harde getallen alsnog gemarkeerd · double crush 15-20%, recidief 3-10%/2-7%, grip < 75% na 16 weken (triggert verwijzing), flick sign 93%, Phalen 68-73%, Finkelstein 89%/90%, sporthervattingsweken voor golf, tennis en gewichtheffen, en de operatie-indicatiewaarden bij ORIF (grip < 30%, ROM < 50%, verkorting > 5 mm, kanteling > 20°)
+
+**BRONBADGE TOONT NU DE UITKOMST, NIET ALLEEN HET FEIT VAN DE AUDIT**
+
+- Het probleem · met alle 30 protocollen geauditeerd stond overal een groene badge "bronaudit · 21 claims" · dat leest als kwaliteitskeurmerk, terwijl bij lumbale hernia 17 van die 21 claims juist NIET gedekt bleken door de aangehaalde bron
+- De badge toont nu "21 claims · 17 niet gedekt door de aangehaalde bron" en wordt oranje zodra het aantal niet-gedekte claims dat van de gedekte overtreft · de tooltip legt uit dat niet-gedekt niet betekent dat de uitspraak onjuist is, maar dat ze nu als klinische redenering of praktijkafspraak in de tekst staat in plaats van als evidentie
+- `scripts/build-bronstatus.js` telt daarvoor een nieuw veld `niet_gedekt` mee
+
 ## 2026-09-07 — bronaudit de Quervain + carpaaltunnelsyndroom — ALLE 30 PROTOCOLLEN GEAUDITEERD
 
 - DRIEMAAL DEZELFDE OMKERING, UIT ÉÉN BRON · `huisstede_2010_cts_chirurgie` besluit letterlijk "No evidence was found for the efficacy of various presurgical or POSTsurgical treatment programs, including splinting" · het carpaaltunnelprotocol haalt die review DRIEMAAL aan als bewijs dát postoperatieve handtherapie werkt: "vroege mobilisatie superieur aan immobilisatie", "handtherapie verbetert grijpkracht en BCTQ sneller dan geen therapie" en "geen evidentie boven 8 weken" · de derde klopt qua richting maar is te zwak: er is geen bewijs voor postoperatieve programma's ín het algemeen · de hele derde fase van dat protocol rust op de tweede claim

@@ -1,7 +1,7 @@
 protocol: orif
 protocol_titel: ORIF Distale Radius
 laatst_gecontroleerd: 2026-09-07
-gecontroleerd_door: fase A — Claude (protocols.js, evidence fase 1-4 + refs)
+gecontroleerd_door: fase A + fase B (onafhankelijke verificator, schone context) — 2026-09-07
 opmerking: >-
   De belangrijkste vondst is niet een fout cijfer maar een gemiste bevinding. Het
   refs-veld beschreef Lozano-Calderon 2008 als een methodologisch stuk over de
@@ -120,3 +120,31 @@ claims:
       Beide zonder bron, terwijl de PRWE-drempel de vrijgave voor werk en sport
       bepaalt.
     verwerkt: beide gelabeld als praktijkafspraak
+
+  # Fase B (onafhankelijke verificator, schone context). Beide bronsleutels
+  # bibliografisch bevestigd en alle vier gecorrigeerde evidenceteksten gedekt.
+  - id: orif_c9
+    tekst: >-
+      Herstel van de grijpkracht is bepalend voor de functionele uitkomst;
+      littekenmassage verlaagt de adhesievorming.
+    plaats: fase 2 - oefeningen
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Twee effectclaims zonder bron, waarvan de tweede blijft staan nadat het
+      evidence-veld van dezelfde fase het woord "significant" bij littekenmassage
+      juist had geschrapt.
+    verwerkt: beide gelabeld
+
+  - id: orif_c10
+    tekst: >-
+      Grijpkracht onder 30% en bewegingsuitslag onder 50% als indicatie voor
+      chirurgische stabilisatie; ulnaire verkorting boven 5 mm; dorsale kanteling
+      boven 20 graden (Handoll & Madhok, 2009 - Cochrane).
+    plaats: kenmerken
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Citatie zonder sleutel in het bronnenbestand, met vier afkapwaarden die de
+      operatie-indicatie zelf bepalen.
+    verwerkt: gelabeld

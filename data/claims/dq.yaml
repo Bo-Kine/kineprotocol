@@ -1,7 +1,7 @@
 protocol: dq
 protocol_titel: De Quervain Tenosynovitis
 laatst_gecontroleerd: 2026-09-07
-gecontroleerd_door: fase A — Claude (protocols.js, evidence fase 1-3 + refs)
+gecontroleerd_door: fase A + fase B (onafhankelijke verificator, schone context) — 2026-09-07
 opmerking: >-
   Van de zes aangehaalde bronnen kon er een worden opgehaald. Die ene bevat
   precies de bevinding die voor de kinesitherapeut telt - dat handtherapie en
@@ -76,3 +76,50 @@ claims:
       laatste fase stuurt - dat is het soort cijfer dat een patient te horen krijgt
       als reden om trager op te bouwen.
     verwerkt: alle drie gelabeld
+
+  # Fase B (onafhankelijke verificator, schone context). De bronsleutel is
+  # bibliografisch bevestigd en de drie gecorrigeerde evidenceteksten zijn gedekt.
+  - id: dq_c6
+    tekst: >-
+      Cavaleri 2016 toont significant meer pijnreductie bij trouwe spalkdracht;
+      Cook & Purdam 2009: excentrisch herstelt de peesmatrix sneller dan passieve
+      rust; Backstrom 2002: abrupt stoppen met de spalk verhoogt het hervalrisico;
+      Ilyas 2007: 50% recidief bij sporthervatting onder 10 weken.
+    plaats: fase 1, 2 en 3 - oefeningen
+    bronnen: [cavaleri_2016_dequervain]
+    gedekt: nee
+    opmerking: >-
+      Vier effectclaims in oefeningnotes, alle met een bron die het evidence-veld
+      van dezelfde fase als niet-opgehaald of als praktijkafspraak labelt. De
+      eerste komt bovendien niet in Cavaleri voor - therapietrouw en spalkduur zijn
+      daar geen uitkomstmaat - en de laatste is exact het cijfer dat het
+      evidence-veld van fase 3 had geschrapt, terwijl het de belastingsopbouw
+      stuurt.
+    verwerkt: alle vier gelabeld of geschrapt
+
+  - id: dq_c7
+    tekst: >-
+      34% van de mensen heeft een eigen subcompartiment voor de EPB (Chern, 2014);
+      pincetgreep is de primaire maatstaf voor terugkeer naar activiteit
+      (Goel & Abzug, 2015); principe uit Beyer 2015 stimuleert collageen
+      type-I-synthese.
+    plaats: fase 1, 2 en 3 - oefeningen
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Drie citaties zonder sleutel in het bronnenbestand. Beyer 2015 betreft
+      bovendien de achillespees, niet de duimpezen - de zevende plaats in dit
+      dossier waar die bron bij een andere pees opduikt.
+    verwerkt: alle drie gelabeld, de peesverwisseling bij Beyer benoemd
+
+  - id: dq_c8
+    tekst: >-
+      Finkelstein-test sensitiviteit 89% en specificiteit 90%; sporthervatting
+      golf week 12, tennis week 14 tot 16, gewichtheffen week 14.
+    plaats: kenmerken en fase 3 - oefening
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Testeigenschappen zonder bron die de diagnostiek sturen, en drie
+      sportspecifieke tijdvensters zonder onderbouwing.
+    verwerkt: alle gelabeld

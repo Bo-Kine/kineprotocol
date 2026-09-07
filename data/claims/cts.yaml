@@ -1,7 +1,7 @@
 protocol: cts
 protocol_titel: Carpaaltunnelsyndroom
 laatst_gecontroleerd: 2026-09-07
-gecontroleerd_door: fase A — Claude (protocols.js, evidence fase 1-4 + refs)
+gecontroleerd_door: fase A + fase B (onafhankelijke verificator, schone context) — 2026-09-07
 opmerking: >-
   De ernstigste vondst: een systematische review die uitdrukkelijk GEEN bewijs vond
   voor pre- of postoperatieve behandelprogramma's, wordt in dit protocol DRIEMAAL
@@ -123,3 +123,64 @@ claims:
     gedekt: nee
     opmerking: In dit dossier niet opgehaald.
     verwerkt: gelabeld
+
+  # Fase B (onafhankelijke verificator, schone context). Beide bronsleutels
+  # bibliografisch bevestigd en alle vier gecorrigeerde evidenceteksten letterlijk
+  # gedekt, inclusief de voorbehouden.
+  - id: cts_c9
+    tekst: >-
+      Begeleide krachttraining na CTS-release geeft 35% meer grijpkracht op
+      8 weken tegenover geen therapie (Huisstede et al., 2010).
+    plaats: fase 3 - oefening
+    bronnen: [huisstede_2010_cts_chirurgie]
+    gedekt: nee
+    opmerking: >-
+      DE VIERDE KEER DEZELFDE OMKERING, NU MET EEN VERZONNEN PERCENTAGE. Dezelfde
+      review die besluit dat er geen bewijs is voor postoperatieve
+      behandelprogramma's, levert hier een concreet effect van 35%. Dat cijfer
+      staat nergens in de bron. Fase 3 en 4 corrigeerden dit in het evidence-veld;
+      de oefeningnote bleef staan - en dat is de tekst die de kinesitherapeut
+      leest bij de oefening die hij voorschrijft.
+    verwerkt: cijfer geschrapt, de werkelijke conclusie van de review opgenomen
+
+  - id: cts_c10
+    tekst: >-
+      Neutrale spalk van 0 graden is significant beter dan een extensiespalk van
+      20 graden (Walker et al., 2000).
+    plaats: fase 1 - oefening
+    bronnen: [walker_2000_polsspalk_cts]
+    gedekt: nee
+    opmerking: >-
+      Die vergelijking bestaat niet in de trial, die nachtelijk met voltijds dragen
+      vergeleek. Het evidence-veld van dezelfde fase stelt dat uitdrukkelijk vast.
+      Tweede verzonnen vergelijking uit dezelfde bron.
+    verwerkt: toeschrijving geschrapt, neutrale positie als praktijkafspraak
+      gelabeld
+
+  - id: cts_c11
+    tekst: >-
+      NICE 2022: work hardening vermindert langdurig ziekteverzuim met 40%;
+      Shiels 2016: littekenmassage reduceert overgevoeligheid significant;
+      Bland 2007: vroege vingermobilisatie verhindert peesverkleving.
+    plaats: fase 2, 3 en 4 - oefeningen
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Drie effectclaims met een bron die het evidence-veld van dezelfde fase als
+      niet-opgehaald markeert, waarvan een met een percentage dat nergens vandaan
+      komt.
+    verwerkt: alle drie gelabeld, het percentage geschrapt
+
+  - id: cts_c12
+    tekst: >-
+      Double crush bij 15 tot 20%; recidief 3 tot 10% open en 2 tot 7%
+      endoscopisch op vijf jaar; grijpkracht onder 75% na 16 weken als
+      stopcriterium; flick sign 93% sensitiviteit; Phalen 68 tot 73%; distale
+      latentie boven 4,5 ms.
+    plaats: fase 1 en 4 - oefeningen, criteria_stop en kenmerken
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Zes ongelabelde harde getallen, waarvan de stopdrempel een verwijzing naar de
+      ergotherapeut triggert en de testeigenschappen de diagnostiek sturen.
+    verwerkt: alle gelabeld

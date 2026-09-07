@@ -1439,8 +1439,19 @@ document.addEventListener('keydown', e => {
 function bronBadge(protoId) {
   const st = (typeof BRONSTATUS !== 'undefined') ? BRONSTATUS[protoId] : null;
   if(!st) return `<span class="bron-badge bron-open" title="De citaties in dit protocol zijn nog niet tegen de primaire bron gecontroleerd. Behandel ze als richtinggevend, niet als geverifieerd.">bronnen niet geauditeerd</span>`;
+  const ng = st.niet_gedekt || 0;
   const rest = st.open ? ` · ${st.open} open` : '';
-  return `<span class="bron-badge bron-ok" title="Elke citatie is eerstehands opgehaald en tegen de primaire bron gelegd. Niet-gedekte uitspraken zijn in de tekst gelabeld als klinische redenering.">bronaudit ${st.datum} · ${st.gecontroleerd} claims${rest}</span>`;
+  // Toon de uitkomst, niet alleen het feit dat er geauditeerd is: een groen vinkje
+  // bij "21 claims gecontroleerd" leest als kwaliteitskeurmerk, terwijl bij de
+  // meeste protocollen juist het merendeel van de citaties de claim niet dekte.
+  const klasse = ng > st.gedekt ? 'bron-open' : 'bron-ok';
+  const kern = ng
+    ? `${st.gecontroleerd} claims · ${ng} niet gedekt door de aangehaalde bron`
+    : `${st.gecontroleerd} claims gecontroleerd`;
+  const uitleg = ng
+    ? `Alle citaties zijn eerstehands opgehaald. Bij ${ng} van de ${st.gecontroleerd} gecontroleerde uitspraken bleek de aangehaalde bron de claim niet te dekken. Die uitspraken zijn niet noodzakelijk onjuist, maar staan nu in de tekst als klinische redenering of praktijkafspraak in plaats van als evidentie. Zie data/claims/${protoId}.yaml voor de volledige verantwoording.`
+    : 'Elke citatie is eerstehands opgehaald en tegen de primaire bron gelegd.';
+  return `<span class="bron-badge ${klasse}" title="${uitleg}">bronaudit ${st.datum} · ${kern}${rest}</span>`;
 }
 
 // ── RENDER PHASE ──

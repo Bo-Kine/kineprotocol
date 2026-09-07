@@ -1,0 +1,146 @@
+protocol: aslt
+protocol_titel: Anterosuperieure Labrumscheur
+laatst_gecontroleerd: 2026-09-07
+gecontroleerd_door: fase A — Claude (protocols.js, evidence fase 1-5 + refs)
+opmerking: >-
+  Dit protocol is beter gerefereerd dan de meeste: het refs-veld bevat volledige
+  volume- en paginanummers en de vier gecontroleerde bronnen bestaan alle en
+  handelen over het juiste onderwerp. De fouten zitten in de weergave: een
+  niet-significante bevinding wordt als vaststaand gepresenteerd, en bij twee
+  bronnen ontbreekt precies het cijfer dat voor deze patientenpopulatie telt.
+
+claims:
+  - id: aslt_c1
+    tekst: >-
+      GIRD van 20 graden of meer gaat gepaard met een 1,9 maal hoger
+      blessurerisico, en een totaal rotatiedeficit van 5 graden of meer met een
+      2,5 maal hoger risico (Wilk et al., 2011).
+    plaats: fase 2 - evidence
+    bronnen: [wilk_2011_gird_werpers]
+    gedekt: nee
+    opmerking: >-
+      Twee problemen. (1) De GIRD-bevinding is in het abstract uitdrukkelijk
+      NIET STATISTISCH SIGNIFICANT (p = 0,17); het abstract zegt "nearly twice as
+      likely to be injured ... but without statistical significance". De app liet
+      die kwalificatie weg. (2) De factor 2,5 voor het totale rotatiedeficit staat
+      er niet in; er staat alleen dat werpers met meer dan 5 graden deficit een
+      hoger blessurecijfer hadden. Het gaat bovendien om een case series met
+      bewijsniveau 4. Dit is hetzelfde foutpatroon als de Grindem-uitspraak
+      eerder in deze audit: een niet-significant verband dat als vaststaand wordt
+      overgenomen.
+    verwerkt: p-waarde en bewijsniveau opgenomen, factor 2,5 geschrapt, GIRD als
+      verdedigbaar behandeldoel maar niet als aangetoonde risicofactor gelabeld
+
+  - id: aslt_c2
+    tekst: >-
+      De ER/IR-verhouding van 0,66 geldt als drempel voor evenwichtige
+      rotatorenmanchetfunctie (Cools et al., 2014).
+    plaats: fase 3 - evidence
+    bronnen: [cools_2014_scapulaire_dyskinesie]
+    gedekt: nee
+    opmerking: >-
+      Die afkapwaarde staat niet in de aangehaalde review, die een klinisch
+      redeneerkader voor scapulaire dyskinesie presenteert. DIT IS DE DERDE PLAATS
+      IN DIT DOSSIER waar de verhouding 0,66 aan een bron wordt toegeschreven die
+      ze niet bevat - eerder al bij Cools 2007 in het rotatorenmanchetprotocol en
+      in het schouderinstabiliteitsprotocol. De drempel zelf is klinisch gangbaar,
+      maar heeft in dit dossier geen bron.
+    verwerkt: toeschrijving geschrapt, drempel als praktijkafspraak gelabeld
+
+  - id: aslt_c3
+    tekst: >-
+      Cools et al. (2014) beschrijven een gefaseerde aanpak met scapulaire
+      controle voor belaste oefeningen.
+    plaats: fase 2 - evidence
+    bronnen: [cools_2014_scapulaire_dyskinesie]
+    gedekt: deels
+    opmerking: >-
+      Correct weergegeven, maar het bewijsniveau ontbrak: het is een review die een
+      redeneerkader presenteert, geen effectstudie, en de auteurs stellen zelf vast
+      dat overkoepelende revalidatierichtlijnen ontbreken.
+    verwerkt: aard van de publicatie benoemd
+
+  - id: aslt_c4
+    tekst: >-
+      Provencher et al. (2013) rapporteerden een faalpercentage van 37% met
+      leeftijd boven 36 jaar als sterkste voorspeller; bij oudere patienten
+      verdient tenodese de voorkeur boven herstel.
+    plaats: fase 3 - evidence
+    bronnen: [provencher_2013_slap_herstel]
+    gedekt: deels
+    opmerking: >-
+      Het faalpercentage (36,8%, 66 van 179) en de leeftijdsgrens kloppen, met een
+      relatief risico van 3,45 (95% BI 2,0-4,9). Maar de aanbeveling van tenodese
+      bij ouderen staat er NIET in - de auteurs besluiten juist dat verder werk
+      nodig is om de optimale indicatiestelling en chirurgische aanpak te bepalen.
+      Twee klinisch relevante gegevens ontbraken: het revisiepercentage van 28% en
+      het feit dat de postoperatieve bewegingsuitslag KLEINER was dan preoperatief
+      (flexie 159 tegenover 164 graden, abductie 151 tegenover 166, exorotatie 51
+      tegenover 56).
+    verwerkt: tenodese-aanbeveling geschrapt, revisiepercentage en de afgenomen
+      bewegingsuitslag opgenomen
+
+  - id: aslt_c5
+    tekst: >-
+      Edwards et al. (2010) zagen bij ongeveer de helft van de patienten voldoende
+      verbetering om chirurgie te vermijden, waarvan 71% terugkeerde naar het
+      vorige sportniveau.
+    plaats: fase 5 - evidence
+    bronnen: [edwards_2010_conservatief_slap]
+    gedekt: deels
+    opmerking: >-
+      De cijfers kloppen, maar de bewijskracht en het meest relevante getal
+      ontbraken. Het is een postenquete met een RESPONSGRAAD VAN 16,4% waarin
+      uiteindelijk slechts NEGENTIEN patienten niet-operatief behandeld waren -
+      bewijsniveau 4. En cruciaal: de 71% geldt voor ALLE sporters, terwijl SLECHTS
+      66% VAN DE BOVENHANDSE SPORTERS terugkeerde op hetzelfde of hoger niveau.
+      Dit protocol gaat juist over bovenhandse sporters, dus dat is het cijfer dat
+      hier hoort. De auteurs besluiten bovendien dat bij bovenhandse atleten
+      chirurgie overwogen moet worden als het resultaat uitblijft.
+    verwerkt: responsgraad, aantal, bewijsniveau en het cijfer voor bovenhandse
+      sporters opgenomen
+
+  - id: aslt_c6
+    tekst: >-
+      De deceleratiefase van het werpen genereert distractiekrachten tot ongeveer
+      1,0 tot 1,5 maal het lichaamsgewicht op het glenohumerale gewricht.
+    plaats: fase 4 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: Geen bron; in dit dossier niet nagekeken.
+    verwerkt: gelabeld
+
+  - id: aslt_c7
+    tekst: >-
+      De KJOC-score is bij bovenhandse sporters gevoeliger voor restklachten dan
+      algemene schoudervragenlijsten (Alberta et al., 2010).
+    plaats: fase 4 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: In dit dossier niet opgehaald.
+    verwerkt: gelabeld
+
+  - id: aslt_c8
+    tekst: >-
+      Pulley-laesies gaan systematisch samen met anterosuperieure labrumpathologie
+      (Habermeyer et al., 2004); anterosuperieur impingement bij
+      flexie-adductie-endorotatie (Gerber & Sebesta, 2000).
+    plaats: fase 1 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Beide publicaties zijn in dit dossier niet opgehaald. Het woord
+      "systematisch" is bovendien een sterke formulering voor een verband dat niet
+      is nagekeken.
+    verwerkt: beide gelabeld
+
+  - id: aslt_c9
+    tekst: >-
+      Posterieure kapselstijfheid verplaatst het rotatiecentrum posterosuperieur en
+      verhoogt de shear op het superieure labrum; GIRD en scapulaire dyskinesie
+      keren binnen weken terug zonder onderhoudstraining.
+    plaats: fase 2 en 5 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: Twee mechanistische claims zonder bron.
+    verwerkt: beide gelabeld als klinische redenering

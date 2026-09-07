@@ -3,6 +3,14 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-09-07 — bronaudit anterosuperieure labrumscheur
+
+- EEN NIET-SIGNIFICANTE BEVINDING ALS VASTSTAAND GEPRESENTEERD · "GIRD ≥ 20° gaat gepaard met 1,9× hoger blessurerisico (Wilk 2011)" · het abstract zegt letterlijk "nearly twice as likely to be injured ... BUT WITHOUT STATISTICAL SIGNIFICANCE (p = 0,17)" · de factor 2,5 voor het totale rotatiedeficit staat er helemaal niet in · het is bovendien een case series met bewijsniveau 4 · zelfde foutpatroon als de Grindem-uitspraak eerder in deze audit
+- Het cijfer dat voor déze patiënten telt, ontbrak tweemaal · `edwards_2010_conservatief_slap`: de app nam "71% terugkeer" over, maar dat geldt voor ÁLLE sporters — voor BOVENHANDSE sporters was het 66%, en dit protocol gaat juist over bovenhandse sporters · bovendien rust dat cijfer op een postenquête met 16,4% responsgraad en slechts negentien conservatief behandelde patiënten
+- `provencher_2013_slap_herstel` · faalpercentage 36,8% en leeftijdsgrens kloppen (RR 3,45; 95% BI 2,0-4,9), maar de aanbeveling "bij ouderen verdient tenodese de voorkeur" staat er niet in — de auteurs besluiten juist dat verder onderzoek nodig is · weggelaten: 28% heringrepen, en de postoperatieve bewegingsuitslag was KLEINER dan preoperatief
+- DE VERHOUDING 0,66 VOOR DE DERDE KEER TOEGESCHREVEN AAN EEN BRON DIE ZE NIET BEVAT · na Cools 2007 in het rotatorenmanchet- en het schouderinstabiliteitsprotocol nu ook Cools 2014 hier · de drempel is klinisch gangbaar maar heeft in dit dossier nergens een bron
+- Positief te vermelden · dit protocol is beter gerefereerd dan de meeste: volledige volume- en paginanummers, en alle vier de gecontroleerde bronnen bestaan én handelen over het juiste onderwerp · de fouten zitten uitsluitend in de weergave
+
 ## 2026-09-07 — bronaudit gluteus tendinopathie + fase B knieprothese
 
 - EEN CASE-CONTROLSTUDIE ZONDER BEHANDELING ALS BEHANDELBEWIJS · "progressieve isotone abductietraining vermindert pijn en verbetert het functioneren (Allison 2016)" · die studie bevat géén enkele interventie: ze vergelijkt de abductiekracht van 50 patiënten met 50 controles · bevinding: mensen met gluteale tendinopathie zijn BEIDERZIJDS zwakker (32% symptomatisch, 23% asymptomatisch), en de auteurs stellen uitdrukkelijk dat onduidelijk is of die zwakte oorzaak dan wel gevolg is

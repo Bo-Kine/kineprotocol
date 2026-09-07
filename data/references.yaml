@@ -3632,3 +3632,100 @@ references:
       IN; de app gebruikte die wel als criterium voor sporthervatting.
     geverifieerd_op: 2026-09-07
     geverifieerd_door: PubMed MCP (get_article_metadata, PMID 26381486)
+
+  - key: wilk_2011_gird_werpers
+    auteurs: [Wilk KE, Macrina LC, Fleisig GS, Porterfield R, Simpson CD, Harker P, Paparesta N, Andrews JR]
+    titel: 'Correlation of glenohumeral internal rotation deficit and total rotational motion to shoulder injuries in professional baseball pitchers'
+    bron: The American Journal of Sports Medicine
+    jaar: 2011
+    volume_paginas: 39(2):329-35
+    doi: 10.1177/0363546510384223
+    pmid: '21131681'
+    url: https://doi.org/10.1177/0363546510384223
+    type: cohort
+    opmerking: >-
+      CASE SERIES, BEWIJSNIVEAU 4. 170 werperseizoenen bij 122 profwerpers over
+      drie seizoenen. HET KERNCIJFER VAN DE APP MIST ZIJN BELANGRIJKSTE
+      KWALIFICATIE: werpers met GIRD (n = 40) hadden bijna tweemaal zoveel kans op
+      blessure, MAAR ZONDER STATISTISCHE SIGNIFICANTIE (p = 0,17). De app schreef
+      "1,9 maal hoger risico" zonder die p-waarde te noemen. Over het totale
+      rotatiebewegingsdeficit staat enkel dat werpers met meer dan 5 graden
+      deficit een hoger blessurecijfer hadden - ER STAAT GEEN FACTOR 2,5 in het
+      abstract. GIRD is in dit artikel gedefinieerd als 20 graden of meer verlies
+      van endorotatie tegenover de niet-dominante schouder.
+    geverifieerd_op: 2026-09-07
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 21131681)
+
+  - key: provencher_2013_slap_herstel
+    auteurs: [Provencher MT, McCormick F, Dewing C, McIntire S, Solomon D]
+    titel: 'A prospective analysis of 179 type 2 superior labrum anterior and posterior repairs: outcomes and factors associated with success and failure'
+    bron: The American Journal of Sports Medicine
+    jaar: 2013
+    volume_paginas: 41(4):880-6
+    doi: 10.1177/0363546513477363
+    pmid: '23460326'
+    url: https://doi.org/10.1177/0363546513477363
+    type: cohort
+    opmerking: >-
+      Case-controlstudie, bewijsniveau 3; 225 prospectief ingesloten patienten,
+      179 met opvolging (80%) na gemiddeld 40,4 maanden. Scores verbeterden
+      significant (ASES 65 naar 88; WOSI 54 naar 82%; SANE 50 naar 85%; p < 0,01).
+      MAAR: 66 van de 179 (36,8%) voldeed aan de faalcriteria en 50 patienten
+      kozen voor een heringreep - een revisiepercentage van 28%. Leeftijd boven 36
+      jaar was de ENIGE factor met een significant hogere faalkans (relatief risico
+      3,45; 95% BI 2,0-4,9). TWEE DINGEN DIE DE APP WEGLIET: de postoperatieve
+      bewegingsuitslag was KLEINER dan preoperatief (flexie 159 tegenover 164
+      graden, abductie 151 tegenover 166, exorotatie 51 tegenover 56), en de
+      auteurs besluiten dat verder werk nodig is om de optimale indicatiestelling
+      en chirurgische aanpak te bepalen - ZE BEVELEN GEEN TENODESE AAN BIJ OUDEREN,
+      zoals de app schreef.
+    geverifieerd_op: 2026-09-07
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 23460326)
+
+  - key: edwards_2010_conservatief_slap
+    auteurs: [Edwards SL, Lee JA, Bell JE, Packer JD, Ahmad CS, Levine WN, Bigliani LU, Blaine TA]
+    titel: 'Nonoperative treatment of superior labrum anterior posterior tears: improvements in pain, function, and quality of life'
+    bron: The American Journal of Sports Medicine
+    jaar: 2010
+    volume_paginas: 38(7):1456-61
+    doi: 10.1177/0363546510370937
+    pmid: '20522835'
+    url: https://doi.org/10.1177/0363546510370937
+    type: cohort
+    opmerking: >-
+      CASE SERIES, BEWIJSNIVEAU 4, MET ZWAKKE BASIS: een postenquete bij 371
+      patienten met een RESPONSGRAAD VAN 16,4% (50 van 305 bereikte adressen);
+      uiteindelijk 39 bruikbare antwoorden waarvan SLECHTS 19 NIET-OPERATIEF
+      behandeld. Van de bevraagde groep werd 51% (20 patienten) als falen van
+      conservatief beleid beschouwd en geopereerd. Bij wie conservatief slaagde,
+      verbeterden functie, levenskwaliteit en pijn significant (VAS 4,5 naar 2,1;
+      p = 0,043). HET CIJFER DAT DE APP GEBRUIKT EN HET CIJFER DAT ONTBREEKT:
+      71% van ALLE sporters keerde terug naar het vorige niveau, maar SLECHTS 66%
+      VAN DE BOVENHANDSE SPORTERS - en dit protocol gaat juist over bovenhandse
+      sporters. De auteurs besluiten dat bij bovenhandse atleten en bij uitblijvend
+      resultaat chirurgie overwogen moet worden.
+    geverifieerd_op: 2026-09-07
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 20522835)
+
+  - key: cools_2014_scapulaire_dyskinesie
+    auteurs: [Cools AMJ, Struyf F, De Mey K, Maenhout A, Castelein B, Cagnie B]
+    titel: 'Rehabilitation of scapular dyskinesis: from the office worker to the elite overhead athlete'
+    bron: British Journal of Sports Medicine
+    jaar: 2014
+    volume_paginas: 48(8):692-7
+    doi: 10.1136/bjsports-2013-092148
+    pmid: '23687006'
+    url: https://doi.org/10.1136/bjsports-2013-092148
+    type: review
+    opmerking: >-
+      Review die een "science-based clinical reasoning algorithm with practical
+      guidelines" presenteert voor de revalidatie van scapulaire dyskinesie. De
+      auteurs stellen zelf vast dat overkoepelende revalidatierichtlijnen voor
+      zowel schouder- als nekpatienten ONTBREKEN. Het is dus een
+      redeneerkader, geen effectstudie. ER STAAT GEEN AFKAPWAARDE VAN 0,66 VOOR DE
+      ER/IR-VERHOUDING IN; de app gebruikte die wel en schreef ze aan deze bron
+      toe. Dit is de derde plaats in dit dossier waar de verhouding 0,66 aan een
+      bron wordt toegeschreven die ze niet bevat (eerder bij Cools 2007 in het
+      rotatorenmanchet- en het schouderinstabiliteitsprotocol).
+    geverifieerd_op: 2026-09-07
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 23687006)

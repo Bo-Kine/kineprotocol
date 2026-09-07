@@ -3,6 +3,17 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-09-07 — bronaudit gluteus tendinopathie + fase B knieprothese
+
+- EEN CASE-CONTROLSTUDIE ZONDER BEHANDELING ALS BEHANDELBEWIJS · "progressieve isotone abductietraining vermindert pijn en verbetert het functioneren (Allison 2016)" · die studie bevat géén enkele interventie: ze vergelijkt de abductiekracht van 50 patiënten met 50 controles · bevinding: mensen met gluteale tendinopathie zijn BEIDERZIJDS zwakker (32% symptomatisch, 23% asymptomatisch), en de auteurs stellen uitdrukkelijk dat onduidelijk is of die zwakte oorzaak dan wel gevolg is
+- Een vergelijking die in de trial niet bestaat · "hoogbelaste krachttraining is superieur aan rekoefeningen (Mellor 2018)" · die trial heeft drie armen — educatie plus oefening, corticosteroïdinjectie en afwachten — en géén rekarm
+- Een drempel uit een commentaar · "LSI ≥ 90% is de RTS-drempel (Grimaldi & Fearon 2015)" · dat is een klinisch commentaar waarin de auteurs zelf schrijven dat hun aanbevelingen op beperkt bewijs en eigen ervaring berusten; er staat geen enkele LSI-drempel in
+- Wat wél klopte, en nu met cijfers · Mellor 2018 is een sterke trial: op acht weken succes bij 51 van 66 met educatie plus oefening tegenover 38 van 65 na injectie en 20 van 68 bij afwachten, met een number needed to treat van 2,0 · MAAR de nuance die de patiënt het meest aangaat ontbrak: op 52 weken was er géén verschil meer in PIJNintensiteit tussen oefening en injectie
+
+- FASE B KNIEPROTHESE · de verificator betrapte mij op dezelfde §1.9-fout in spiegelbeeld: ik nam wel de ongunstige helft van de cryotherapie-review over, maar liet de énige gunstige uitkomst weg (11,4° meer flexie bij ontslag) · toegevoegd
+- Ook mijn "géén langetermijneffecten" was te absoluut · bij pooling van enkel de hoogwaardige studies bleef de winst tot zes maanden zichtbaar, en één loopvaardigheidsstudie gaf wél langetermijnwinst
+- Het lek · cryotherapie stond nog "na elke sessie" voorgeschreven zonder voorbehoud, en "70-80% 1RM" ongewijzigd in het parameterveld dat op het patiëntenblad terechtkomt · MUA-drempels die een chirurgische ingreep triggeren (flexie < 80° na 2 weken, < 90° na week 6-8, timing vóór week 12) stonden zonder enige bron · het hele beschrijvingenblok bleef ongelabeld, met drie citaties zonder sleutel (NICE 2020, Blagojevic 2010, JAMA 2017) en zeven ongedekte getallen waaronder de indicatiecriteria voor de operatie zelf
+
 ## 2026-09-07 — bronaudit totale knieprothese + fase B overpronatie
 
 - DE HOOFDBRON TWEEMAAL VERKEERD GECITEERD, EENMAAL OMGEKEERD · "ambulante kinesitherapie 3×/week is superieur" · `artz_2015_kinesitherapie_tka` vond juist GEEN verschil tussen ambulante en thuisbehandeling voor functie of pijn, en op korte termijn een voordeel VÓÓR thuisbehandeling wat de flexie-mobiliteit betreft · dat raakt de zorgorganisatie rechtstreeks: het protocol stuurde patiënten naar de praktijk op grond van een bevinding die het tegendeel zegt · dezelfde review werd ook aangehaald voor "70-80% 1RM veilig en effectief", terwijl ze weerstandsintensiteit nergens evalueert

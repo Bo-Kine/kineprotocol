@@ -116,3 +116,69 @@ claims:
       vond geen langetermijneffect van oefentherapie - dat pleit voor
       onderhoudstraining, maar het is geen aangetoond effect.
     verwerkt: beide gelabeld, het wel geverifieerde gegeven toegevoegd
+
+  # Fase B (onafhankelijke verificator, schone context). Alle drie bronsleutels
+  # bibliografisch bevestigd; de gecorrigeerde evidenceteksten zijn gedekt, met
+  # drie preciseringen op mijn eigen tekst.
+  - id: tka_c9
+    tekst: >-
+      Cryotherapie na elke sessie, en de belasting van 70 tot 80% 1RM in de
+      oefeningparameters.
+    plaats: fase 2 en 4 - oefeningen en parameters
+    bronnen: [adie_2012_cryotherapie_tka, artz_2015_kinesitherapie_tka]
+    gedekt: nee
+    opmerking: >-
+      Twee lekken. De cryotherapie-oefening schreef routinematig gebruik voor
+      zonder enig voorbehoud, drie regels onder het evidence-veld dat net de
+      conclusie van Adie overneemt dat de voordelen te klein kunnen zijn om gebruik
+      te rechtvaardigen. En de dosering van 70-80% 1RM stond ongewijzigd in het
+      parameterveld, dat op het patientenblad terechtkomt.
+    verwerkt: beide gelabeld
+
+  - id: tka_c10
+    tekst: >-
+      MUA-drempels bij flexie onder 80 graden na 2 weken en onder 90 graden na
+      week 6 tot 8, met optimale timing voor week 12; fietsdrempel 105 graden;
+      TUG-, 6MWT-, KOOS- en LSI-criteria.
+    plaats: fase 2 tot 5 - criteria, redflags en oefeningen
+    bronnen: [harvey_2014_cpm_tka]
+    gedekt: nee
+    opmerking: >-
+      Harde klinische beslisregels zonder bron, waarvan de MUA-drempels een
+      chirurgische ingreep triggeren. Harvey 2014 rapporteert wel het MUA-RISICO
+      maar doet geen enkele uitspraak over een drempel of over timing.
+    verwerkt: alle gelabeld als praktijkafspraak
+
+  - id: tka_c11
+    tekst: >-
+      Onze eigen weergave van Adie en Artz was op drie punten niet exact.
+    plaats: fase 2 en 3 - evidence
+    bronnen: [adie_2012_cryotherapie_tka, artz_2015_kinesitherapie_tka]
+    gedekt: deels
+    opmerking: >-
+      (1) "Elf gerandomiseerde trials met 809 deelnemers" - het zijn elf RCT's PLUS
+      een gecontroleerde trial, en de 809 hoort bij het geheel terwijl de
+      pijnbevinding uit 4 trials met 322 deelnemers komt. (2) IK LIET DE ENIGE
+      GUNSTIGE CRYOTHERAPIE-UITKOMST WEG - 11,4 graden meer flexie bij ontslag -
+      terwijl ik de ongunstige helft wel opnam. Dat is exact de fout die ik in dit
+      protocol corrigeerde, in spiegelbeeld (CLAUDE.md par. 1.9). (3) "Geen
+      langetermijneffecten" was te absoluut: bij pooling van enkel de hoogwaardige
+      studies bleef de winst tot zes maanden zichtbaar, en een loopvaardigheids-
+      programma gaf in een studie wel langetermijnwinst.
+    verwerkt: alle drie gecorrigeerd
+
+  - id: tka_c12
+    tekst: >-
+      Beschrijvingenblok: flexie onder 110 graden, Kellgren-Lawrence III-IV,
+      KOOS-pijn onder 40, varus/valgus 15-20 graden (NICE Guidelines 2020);
+      85% primair, meer dan 50% boven 65 jaar, BMI-risico maal 2,6 per 5 kg/m2,
+      meniscectomie zesmaal hoger risico (Blagojevic 2010, JAMA 2017);
+      IL-1beta en TNF-alfa leiden tot chondrocytapoptose.
+    plaats: kenmerken en oorzaken
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Het hele beschrijvingenblok bleef ongelabeld terwijl de fasen wel werden
+      opgeschoond. Drie citaties zonder sleutel en zeven ongedekte getallen,
+      waaronder de indicatiecriteria voor de operatie zelf.
+    verwerkt: alle citaties gelabeld als niet opgehaald

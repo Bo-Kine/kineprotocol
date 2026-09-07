@@ -1,0 +1,125 @@
+protocol: gmt
+protocol_titel: Gluteus Med./Min. Tendinopathie
+laatst_gecontroleerd: 2026-09-07
+gecontroleerd_door: fase A — Claude (protocols.js, evidence fase 1-4 + refs)
+opmerking: >-
+  Dit protocol steunt op een sterke trial (Mellor 2018) die het grotendeels
+  correct weergeeft, maar drie van de vier andere toepassingen kloppen niet: een
+  case-controlstudie zonder behandeling wordt als behandelbewijs gebruikt, een
+  klinisch commentaar levert een drempel die er niet in staat, en aan Mellor wordt
+  een vergelijking met rekoefeningen toegeschreven die in die trial niet bestaat.
+
+claims:
+  - id: gmt_c1
+    tekst: >-
+      Educatie plus oefening is superieur aan corticosteroidinjecties op 52 weken
+      (Mellor et al., 2018).
+    plaats: fase 1 - evidence
+    bronnen: [mellor_2018_gluteale_tendinopathie]
+    gedekt: deels
+    opmerking: >-
+      Correct voor de GLOBALE BEOORDELING (risicoverschil 20,4% op 52 weken), maar
+      onvolledig op het punt dat de patient het meest bezighoudt: op 52 weken was
+      er GEEN VERSCHIL MEER IN PIJNINTENSITEIT tussen beide (-0,26; 95% BI -1,06 tot
+      0,55). Ook ontbraken de concrete cijfers die de trial sterk maken: op acht
+      weken succes bij 51 van 66 tegenover 38 van 65 en 20 van 68, met een number
+      needed to treat van 2,0 tegenover afwachten.
+    verwerkt: cijfers en de pijnnuance opgenomen
+
+  - id: gmt_c2
+    tekst: >-
+      Progressieve isotone heupabductietraining vermindert pijn en verbetert het
+      functioneren bij GTPS (Allison et al., 2016).
+    plaats: fase 2 - evidence
+    bronnen: [allison_2016_abductorkracht]
+    gedekt: nee
+    opmerking: >-
+      Die studie bevat GEEN ENKELE BEHANDELING. Het is een case-controlstudie die
+      de isometrische abductiekracht van 50 patienten met 50 controles vergelijkt.
+      Bevinding: mensen met gluteale tendinopathie zijn BEIDERZIJDS zwakker - 32%
+      symptomatisch en 23% asymptomatisch tegenover controles, met 11% verschil
+      tussen de eigen heupen. De auteurs stellen uitdrukkelijk dat NIET DUIDELIJK
+      is of die zwakte aan de aandoening voorafgaat dan wel er een gevolg van is.
+      Een dwarsdoorsnede-associatie werd hier tot een behandeleffect gemaakt.
+    verwerkt: behandelclaim geschrapt, de werkelijke bevindingen en het voorbehoud
+      van de auteurs opgenomen
+
+  - id: gmt_c3
+    tekst: >-
+      Hoogbelaste progressieve weerstandstraining is superieur aan stretchoefeningen
+      voor pijnreductie en functioneel herstel bij GTPS (Mellor et al., 2018).
+    plaats: fase 3 - evidence
+    bronnen: [mellor_2018_gluteale_tendinopathie]
+    gedekt: nee
+    opmerking: >-
+      De trial heeft drie armen: educatie plus oefening, een corticosteroidinjectie
+      en afwachten. ER IS GEEN REKARM, dus een vergelijking van hoogbelaste
+      krachttraining met rekoefeningen kan er niet uit komen. Wat de trial wel
+      toont is dat het VOLLEDIGE programma van 14 sessies over acht weken beter
+      werkte dan beide alternatieven - niet dat een bepaald oefentype superieur is
+      aan een ander.
+    verwerkt: vergelijking geschrapt, vervangen door wat de trial wel aantoont
+
+  - id: gmt_c4
+    tekst: >-
+      LSI van 90% abductiekracht is de drempel voor sporthervatting
+      (Grimaldi & Fearon, 2015); LSI van 80% is een minimumcriterium voor
+      progressie.
+    plaats: fase 3 en 4 - evidence
+    bronnen: [grimaldi_2015_gluteale_tendinopathie]
+    gedekt: nee
+    opmerking: >-
+      Grimaldi & Fearon 2015 is een KLINISCH COMMENTAAR waarin de auteurs zelf
+      schrijven dat hun aanbevelingen berusten op beperkt beschikbaar bewijs, de
+      bredere peesliteratuur en hun eigen gecombineerde klinische ervaring, en dat
+      studies van hoge kwaliteit nog ontbreken. Er staat geen enkele LSI-drempel
+      in. Beide drempels sturen wel de fase-overgangen en de sporthervatting.
+    verwerkt: beide gelabeld als praktijkafspraak, het bewijsniveau van de bron
+      benoemd
+
+  - id: gmt_c5
+    tekst: >-
+      Isometrische oefeningen hebben een direct pijnmodulerend effect
+      (Rio et al., 2015).
+    plaats: fase 1 - evidence
+    bronnen: [rio_2015_isometrie]
+    gedekt: nee
+    opmerking: >-
+      Rio 2015 onderzocht patellapeestendinopathie bij springers. Dit is de zesde
+      pees waaraan die studie in dit dossier wordt toegeschreven.
+    verwerkt: pees benoemd, overdracht als klinische redenering gelabeld
+
+  - id: gmt_c6
+    tekst: >-
+      Compressie bij heup-adductieposities is de primaire pijndriver; rekken van de
+      laterale heup vergroot de compressie en moet vermeden worden.
+    plaats: fase 1 en 2 - evidence
+    bronnen: [grimaldi_2015_gluteale_tendinopathie]
+    gedekt: deels
+    opmerking: >-
+      Dit is de redenering van Grimaldi & Fearon, maar die publicatie is een
+      commentaar met bewijsniveau expert, geen studie. Klinisch breed gedragen en
+      verdedigbaar, maar niet aangetoond.
+    verwerkt: als klinische redenering langs die lijn gelabeld
+
+  - id: gmt_c7
+    tekst: >-
+      Functionele gluteale belasting is superieur aan geen behandeling
+      (Ganderton et al., 2018).
+    plaats: fase 3 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: In dit dossier niet opgehaald.
+    verwerkt: gelabeld
+
+  - id: gmt_c8
+    tekst: >-
+      Pijnstijging tot 2 op 10 boven het uitgangsniveau, 24 uur na de sessie, is
+      aanvaardbaar.
+    plaats: fase 2 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Gangbare praktijkregel bij tendinopathie, in dit dossier niet tegen een bron
+      gelegd.
+    verwerkt: gelabeld als klinische richtlijn

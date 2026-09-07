@@ -3558,3 +3558,77 @@ references:
       onnauwkeurig.
     geverifieerd_op: 2026-09-07
     geverifieerd_door: PubMed MCP (get_article_metadata, PMID 24500904)
+
+  - key: mellor_2018_gluteale_tendinopathie
+    auteurs: [Mellor R, Bennell K, Grimaldi A, Nicolson P, Kasza J, Hodges P, Wajswelner H, Vicenzino B]
+    titel: 'Education plus exercise versus corticosteroid injection use versus a wait and see approach on global outcome and pain from gluteal tendinopathy: prospective, single blinded, randomised clinical trial'
+    bron: BMJ
+    jaar: 2018
+    volume_paginas: 361:k1662
+    doi: 10.1136/bmj.k1662
+    pmid: '29720374'
+    url: https://doi.org/10.1136/bmj.k1662
+    type: RCT
+    opmerking: >-
+      Sterke trial: 204 deelnemers van 35 tot 70 jaar met MRI-bevestigde gluteale
+      tendinopathie, drie armen - educatie plus oefening (EDX, 14 sessies over acht
+      weken), een corticosteroidinjectie (CSI) en afwachten (WS); 92,6% voltooide
+      52 weken. OP ACHT WEKEN: succes bij 51 van 66 (EDX), 38 van 65 (CSI) en 20
+      van 68 (WS); EDX beter dan WS met een risicoverschil van 49,1% (95% BI 34,6
+      tot 63,5) en number needed to treat 2,0; EDX ook beter dan CSI (19,9%; 4,7
+      tot 35,0). Pijn op acht weken: 1,5 (EDX), 2,7 (CSI), 3,8 (WS). OP 52 WEKEN:
+      succes bij 51 van 65, 36 van 63 en 31 van 60; EDX beter dan CSI (20,4%) en
+      dan WS (26,8%). BELANGRIJKE NUANCE DIE DE APP WEGLIET: op 52 weken was er
+      GEEN VERSCHIL IN PIJNINTENSITEIT tussen EDX en CSI (-0,26; 95% BI -1,06 tot
+      0,55) - de superioriteit op lange termijn geldt voor de globale beoordeling,
+      niet voor de pijn. DE TRIAL BEVAT GEEN REKARM: een vergelijking van
+      hoogbelaste krachttraining met rekoefeningen kan er niet uit komen.
+    geverifieerd_op: 2026-09-07
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 29720374)
+
+  - key: allison_2016_abductorkracht
+    auteurs: [Allison K, Vicenzino B, Wrigley TV, Grimaldi A, Hodges PW, Bennell KL]
+    titel: 'Hip Abductor Muscle Weakness in Individuals with Gluteal Tendinopathy'
+    bron: Medicine and Science in Sports and Exercise
+    jaar: 2016
+    volume_paginas: 48(3):346-52
+    doi: 10.1249/MSS.0000000000000781
+    pmid: '26418561'
+    url: https://doi.org/10.1249/MSS.0000000000000781
+    type: cohort
+    opmerking: >-
+      GEEN INTERVENTIESTUDIE. Het is een case-controlstudie die de isometrische
+      heupabductiekracht van 50 personen met eenzijdige gluteale tendinopathie
+      vergelijkt met 50 gezonde controles. Bevindingen: mensen met gluteale
+      tendinopathie zijn BEIDERZIJDS zwakker dan controles - 32% aan de
+      symptomatische en 23% aan de asymptomatische zijde - en de symptomatische
+      heup is 11% zwakker dan de eigen andere zijde (alle p < 0,05). DE AUTEURS
+      STELLEN UITDRUKKELIJK dat NIET DUIDELIJK is of de zwakte aan de aandoening
+      VOORAFGAAT dan wel er een GEVOLG van is. De app schreef dat progressieve
+      isotone abductietraining volgens deze bron pijn vermindert en het
+      functioneren verbetert - die studie bevat geen enkele behandeling.
+    geverifieerd_op: 2026-09-07
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 26418561)
+
+  - key: grimaldi_2015_gluteale_tendinopathie
+    auteurs: [Grimaldi A, Fearon A]
+    titel: 'Gluteal Tendinopathy: Integrating Pathomechanics and Clinical Features in Its Management'
+    bron: The Journal of Orthopaedic and Sports Physical Therapy
+    jaar: 2015
+    volume_paginas: 45(11):910-22
+    doi: 10.2519/jospt.2015.5829
+    pmid: '26381486'
+    url: https://doi.org/10.2519/jospt.2015.5829
+    type: expert
+    opmerking: >-
+      KLINISCHE COMMENTAAR, geen studie. De auteurs schrijven zelf dat hun
+      aanbevelingen berusten op de "currently limited available evidence on this
+      condition and the wider tendon literature and on the COMBINED CLINICAL
+      EXPERIENCE OF THE AUTHORS", en dat studies van hoge kwaliteit nog ontbreken.
+      Kernboodschap: gluteale tendinopathie geldt nu als de primaire lokale bron
+      van laterale heuppijn, vroeger trochanter-bursitis genoemd, met een hoge
+      prevalentie bij postmenopauzale vrouwen en een aanzienlijke weerslag op de
+      levenskwaliteit. ER STAAT GEEN DREMPEL VAN 90% VOOR DE LIMB SYMMETRY INDEX
+      IN; de app gebruikte die wel als criterium voor sporthervatting.
+    geverifieerd_op: 2026-09-07
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 26381486)

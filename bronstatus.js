@@ -58,6 +58,13 @@ const BRONSTATUS = {
     "open": 0,
     "datum": "2026-09-06"
   },
+  "gmt": {
+    "gecontroleerd": 8,
+    "gedekt": 0,
+    "deels": 2,
+    "open": 0,
+    "datum": "2026-09-07"
+  },
   "hsi": {
     "gecontroleerd": 15,
     "gedekt": 0,
@@ -171,9 +178,9 @@ const BRONSTATUS = {
     "datum": "2026-09-05"
   },
   "tka": {
-    "gecontroleerd": 8,
+    "gecontroleerd": 12,
     "gedekt": 2,
-    "deels": 1,
+    "deels": 2,
     "open": 0,
     "datum": "2026-09-07"
   }

@@ -1,0 +1,125 @@
+protocol: cts
+protocol_titel: Carpaaltunnelsyndroom
+laatst_gecontroleerd: 2026-09-07
+gecontroleerd_door: fase A — Claude (protocols.js, evidence fase 1-4 + refs)
+opmerking: >-
+  De ernstigste vondst: een systematische review die uitdrukkelijk GEEN bewijs vond
+  voor pre- of postoperatieve behandelprogramma's, wordt in dit protocol DRIEMAAL
+  aangehaald als bewijs dat postoperatieve handtherapie werkt - en telkens ten
+  onrechte als Cochrane-review aangeduid. Daarnaast vergeleek de spalktrial iets
+  anders dan de app schreef, met cijfers die er niet in voorkomen.
+
+claims:
+  - id: cts_c1
+    tekst: >-
+      Neutrale polsspalk is significant beter dan geen behandeling bij mild tot
+      matig CTS (NRS -2,1; BCTQ-SSS -0,5) (Walker et al., 2000).
+    plaats: fase 1 - evidence
+    bronnen: [walker_2000_polsspalk_cts]
+    gedekt: nee
+    opmerking: >-
+      Vier fouten in een zin. (1) De trial vergelijkt NACHTELIJK met VOLTIJDS
+      dragen; er is GEEN controlegroep zonder behandeling, dus die vergelijking
+      bestaat niet. (2) De uitkomstmaten zijn de Levine-vragenlijst en de distale
+      latentie van de nervus medianus, niet NRS of BCTQ-SSS. (3) De cijfers -2,1 en
+      -0,5 komen er niet in voor. (4) Het gaat om 21 ingesloten patienten waarvan
+      er 17 voltooiden - een zeer kleine studie. Wat er wel in staat: voltijds
+      dragen gaf een betere distale latentie dan enkel 's nachts (motorisch 0,35
+      tegenover -0,07 ms; p = 0,04), bij beperkte therapietrouw.
+    verwerkt: vergelijking, uitkomstmaten, omvang en de werkelijke bevinding
+      opgenomen
+
+  - id: cts_c2
+    tekst: >-
+      Vroege mobilisatie is superieur aan immobilisatie na CTS-release
+      (Huisstede et al., 2010 - Cochrane).
+    plaats: fase 2 - evidence
+    bronnen: [huisstede_2010_cts_chirurgie]
+    gedekt: nee
+    opmerking: >-
+      OMGEKEERD. Die review besluit letterlijk: "No evidence was found for the
+      efficacy of various presurgical or postsurgical treatment programs, including
+      splinting." Ze is bovendien geen Cochrane-review maar verscheen in Archives
+      of Physical Medicine and Rehabilitation. Wat ze wel vond: matig bewijs dat
+      chirurgie op middellange en lange termijn beter is dan spalken of
+      ontstekingsremmers plus handtherapie, en geen bewijs dat een bepaalde
+      operatietechniek beter is dan een andere.
+    verwerkt: claim geschrapt, de werkelijke conclusie opgenomen
+
+  - id: cts_c3
+    tekst: >-
+      Handtherapie na CTS-release verbetert grijpkracht en BCTQ sneller dan geen
+      therapie (Huisstede et al., 2010 - Cochrane).
+    plaats: fase 3 - evidence
+    bronnen: [huisstede_2010_cts_chirurgie]
+    gedekt: nee
+    opmerking: >-
+      Dezelfde omkering, tweede keer. De review vond geen bewijs voor
+      postoperatieve behandelprogramma's. Dit is de claim waarop de hele derde fase
+      van het protocol rust.
+    verwerkt: claim geschrapt
+
+  - id: cts_c4
+    tekst: >-
+      Geen evidentie voor routinehandtherapie langer dan 8 weken bij
+      ongecompliceerde CTS-release (Huisstede et al., 2010 - Cochrane).
+    plaats: fase 4 - evidence
+    bronnen: [huisstede_2010_cts_chirurgie]
+    gedekt: deels
+    opmerking: >-
+      Derde aanhaling van dezelfde bron, en hier klopt de richting wel maar is ze
+      te zwak gesteld: er is geen bewijs voor postoperatieve programma's IN HET
+      ALGEMEEN, niet enkel boven acht weken. Dat pleit voor terughoudendheid met
+      routinematige nabehandeling bij een ongecompliceerde release.
+    verwerkt: aangescherpt tot wat de review werkelijk stelt
+
+  - id: cts_c5
+    tekst: >-
+      Endoscopische en open release geven een vergelijkbaar resultaat, met
+      snellere werkhervatting bij endoscopie (11 tegenover 17 dagen, manuele arbeid
+      28 dagen) (Atroshi et al., 2009).
+    plaats: fase 2 en 4 - evidence
+    bronnen: [huisstede_2010_cts_chirurgie]
+    gedekt: nee
+    opmerking: >-
+      Atroshi 2009 is in dit dossier niet opgehaald. De wel opgehaalde review van
+      Huisstede vond geen bewijs dat een bepaalde operatietechniek beter is dan een
+      andere, wat met het eerste deel van de claim strookt.
+    verwerkt: gelabeld
+
+  - id: cts_c6
+    tekst: >-
+      Lokale corticosteroidinjectie is effectiever dan placebo op 4 tot 8 weken
+      (Marshall et al., 2007); zenuwglijdingstechnieken verminderen
+      nachtparesthesieen significant (Fernandez-de-las-Penas et al., 2021);
+      peesglijden reduceert de intracarpale druk met 34% (Wehbe & Schlegel, 2004).
+    plaats: fase 1 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Geen van drie opgehaald. Het cijfer van 34% is bovendien een precieze
+      drukreductie die als vaststaand werd gepresenteerd.
+    verwerkt: alle drie gelabeld
+
+  - id: cts_c7
+    tekst: >-
+      Hervatting van zenuw- en peesglijden in week 2 is cruciaal voor sensorisch
+      herstel; littekenmassage in week 3 tot 4 vermindert sensitisatie;
+      onmiddellijke vingermobilisatie op dag 1 tot 3 verhindert peesverklevingen
+      zonder wondcomplicaties (Bland, 2007).
+    plaats: fase 2 en 3 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Drie niet-opgehaalde toeschrijvingen. Het woord "cruciaal" is bovendien een
+      sterke formulering voor een niet nagekeken verband, en de claim staat naast
+      een review die geen bewijs vond voor postoperatieve programma's.
+    verwerkt: alle gelabeld als klinische richtlijn
+
+  - id: cts_c8
+    tekst: Work hardening is effectief voor manuele beroepen (NICE-richtlijn, 2022).
+    plaats: fase 4 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: In dit dossier niet opgehaald.
+    verwerkt: gelabeld

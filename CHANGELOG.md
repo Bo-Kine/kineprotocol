@@ -3,6 +3,16 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-09-07 — bronaudit de Quervain + carpaaltunnelsyndroom — ALLE 30 PROTOCOLLEN GEAUDITEERD
+
+- DRIEMAAL DEZELFDE OMKERING, UIT ÉÉN BRON · `huisstede_2010_cts_chirurgie` besluit letterlijk "No evidence was found for the efficacy of various presurgical or POSTsurgical treatment programs, including splinting" · het carpaaltunnelprotocol haalt die review DRIEMAAL aan als bewijs dát postoperatieve handtherapie werkt: "vroege mobilisatie superieur aan immobilisatie", "handtherapie verbetert grijpkracht en BCTQ sneller dan geen therapie" en "geen evidentie boven 8 weken" · de derde klopt qua richting maar is te zwak: er is geen bewijs voor postoperatieve programma's ín het algemeen · de hele derde fase van dat protocol rust op de tweede claim
+- Alle drie keer bovendien als "(Cochrane)" aangeduid, terwijl de review in Archives of Physical Medicine and Rehabilitation verscheen
+- De spalktrial vergeleek iets anders dan de app schreef · `walker_2000_polsspalk_cts` zet NACHTELIJK tegenover VOLTIJDS dragen; er is géén controlegroep zonder behandeling, dus "spalk beter dan geen behandeling" bestaat niet · de uitkomstmaten zijn de Levine-vragenlijst en de distale latentie, niet NRS of BCTQ-SSS, en de cijfers -2,1 en -0,5 komen er niet in voor · 21 ingesloten patiënten, 17 voltooiden
+- De Quervain · `cavaleri_2016_dequervain` bevat precies de bevinding die de kinesitherapeut aangaat, en die ontbrak: injectie en handtherapie verbeterden beide pijn en functie, maar het VERSCHIL TUSSEN BEIDE was over zes studies NIET significant · wat wél significant was, is de combinatie boven elk apart (RR 0,53 tegenover orthese alleen; 0,76 tegenover injectie alleen) · het aangehaalde number needed to treat van 3 staat er niet in
+- Dezelfde bron werd in fase 2 gebruikt voor een vergelijking tussen krachttraining en immobilisatie die er niet in voorkomt
+
+**Daarmee zijn alle 30 protocollen door fase A gegaan: 178 live geverifieerde referenties en 452 gedocumenteerde claims.**
+
 ## 2026-09-07 — bronaudit ORIF distale radius + fase B labrumscheur
 
 - DE BELANGRIJKSTE VONDST IS EEN GEMISTE BEVINDING, GEEN FOUT CIJFER · het refs-veld beschreef `lozanocalderon_2008_polsmobilisatie` als "Quality and strength of evidence for etiology in orthopaedic research", een methodologisch stuk · in werkelijkheid is het een RCT bij 60 patiënten over precies de vraag die dit protocol beantwoordt — wanneer starten met polsmobilisatie — en het antwoord ontbrak volledig: GÉÉN verschil tussen starten binnen twee weken en pas na zes weken, niet in flexie-extensieboog na 3 maanden (104 tegenover 107°; p = 0,61) of 6 maanden (124 tegenover 126°; p = 0,65), en evenmin in grijpkracht, DASH of pijn

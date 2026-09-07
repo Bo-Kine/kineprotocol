@@ -115,9 +115,9 @@ const BRONSTATUS = {
     "datum": "2026-09-06"
   },
   "si": {
-    "gecontroleerd": 14,
+    "gecontroleerd": 19,
     "gedekt": 1,
-    "deels": 3,
+    "deels": 4,
     "open": 0,
     "datum": "2026-09-06"
   },

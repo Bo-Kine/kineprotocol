@@ -1,7 +1,7 @@
 protocol: si
 protocol_titel: Schouderinstabiliteit
 laatst_gecontroleerd: 2026-09-06
-gecontroleerd_door: fase A — Claude (protocols.js, evidence fase 1-5 + refs)
+gecontroleerd_door: fase A + fase B (onafhankelijke verificator, schone context) — 2026-09-06
 opmerking: >-
   Vier van de negen bronnen ondersteunen iets anders dan waarvoor ze geciteerd
   worden, en bij twee ervan werden de resultaten van twee trials onderling
@@ -190,3 +190,69 @@ claims:
     gedekt: nee
     opmerking: Geen bron.
     verwerkt: gelabeld als klinische redenering
+
+  # Fase B (onafhankelijke verificator, schone context). Alle negen bronsleutels
+  # bibliografisch bevestigd en alle evidenceteksten gedekt; onderstaande punten
+  # zijn gelekte of ongelabelde drempels in de doel-, criteria- en beschrijvingsvelden.
+  - id: si_c15
+    tekst: >-
+      ER/IR-verhouding 0,66 als fasedoel, doorstroom- en stopcriterium (onder 0,60
+      na 14 weken); JPS-fout onder 5 graden; krachtasymmetrie onder 20 en 10%.
+    plaats: fase 3 en 5 - goals, criteria_go, criteria_stop
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Het evidence-veld erkent dat Ellenbecker 1997 geen afkapwaarde geeft, maar de
+      doel- en criteriavelden presenteren 0,66 als objectieve drempel. De JPS-grens
+      en de asymmetriegrenzen hebben nergens een bron.
+    verwerkt: alle gelabeld als praktijkafspraak
+
+  - id: si_c16
+    tekst: >-
+      WOSI onder 630 (70% van normaal) en onder 420 (80% van normaal) als
+      doorstroomcriterium.
+    plaats: fase 3 tot 5 - criteria
+    bronnen: []
+    gedekt: nee
+    opmerking: Noch de drempels noch de omrekening naar percentages hebben een bron.
+    verwerkt: gelabeld als praktijkdrempel
+
+  - id: si_c17
+    tekst: >-
+      Passieve ER beperkt tot 30 graden na Bankart als doorstroomcriterium;
+      n. axillaris letsel bij 5 tot 14% als rode vlag.
+    plaats: fase 2 criteria_go en fase 1 redflags
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Beide werden in het evidence-veld als klinische richtlijn gelabeld maar
+      stonden in de criteria- en redflagvelden als vaststaand feit. De rode vlag
+      zelf blijft onverkort gelden; alleen het percentage is onbevestigd.
+    verwerkt: beide gelabeld, rode vlag inhoudelijk behouden
+
+  - id: si_c18
+    tekst: >-
+      Specificiteit apprehension-test 94% (Lo et al., 2004); Bankart-laesie bij
+      85 tot 90% van de recidiverende luxaties; herletselrisico 80 tot 90% onder
+      20 jaar en 14% boven 40 jaar (te Slaa et al., 2004).
+    plaats: kenmerken en oorzaken
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Beide citaties hebben geen sleutel in references.yaml en zijn in dit dossier
+      niet opgehaald. Het cijfer van 80 tot 90% strookt bovendien niet met
+      itoi_2007_externe_rotatie, dat voor jonge patienten 66 tot 94% noemt.
+    verwerkt: alle drie gelabeld, met de tegenstrijdigheid benoemd
+
+  - id: si_c19
+    tekst: >-
+      Infraspinatus is de actiefste spier; exorotatiekracht is links en rechts
+      gelijk.
+    plaats: fase 3 en 4 - evidence
+    bronnen: [uhl_2003_gewichtdragende_oefeningen, ellenbecker_1997_isokinetisch_werpers]
+    gedekt: deels
+    opmerking: >-
+      Beide net sterker geformuleerd dan de bron. Uhl schrijft "throughout most of
+      the exercise positions"; Ellenbecker schrijft "no significant difference",
+      wat niet hetzelfde is als gelijk.
+    verwerkt: beide formuleringen afgezwakt tot wat de bron zegt

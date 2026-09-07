@@ -3,6 +3,14 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-09-06 — fase B schouderinstabiliteit
+
+- Alle negen bronsleutels bibliografisch bevestigd en alle vijf evidenceteksten gedekt · het lek zit opnieuw in de doel-, criteria- en beschrijvingsvelden
+- Ongelabelde harde drempels · ER/IR ≥ 0,66 als doel, doorstroom- én stopcriterium (< 0,60 na 14 weken), terwijl het evidence-veld net erkent dat `ellenbecker_1997_isokinetisch_werpers` géén afkapwaarde geeft · JPS-fout < 5° · krachtasymmetrie ≤ 20% en ≤ 10% · WOSI ≤ 630 en ≤ 420 met omrekening naar "70%" en "≥ 80% van normaal" — noch de drempels noch de omrekening hebben een bron
+- Twee citaties zonder sleutel in de beschrijving · "specificiteit apprehension-test 94% (Lo et al., 2004)" en "herletselrisico 80-90% bij < 20 jaar (te Slaa et al., 2004)" · dat laatste cijfer strookt bovendien niet met `itoi_2007_externe_rotatie`, dat voor jonge patiënten 66-94% noemt · ook "Bankart-laesie bij 85-90%" is niet nagekeken
+- Twee formuleringen net sterker dan de bron · Uhl schrijft "throughout most of the exercise positions", niet "de actiefste spier" · Ellenbecker schrijft "no significant difference", wat niet hetzelfde is als "links en rechts gelijk"
+- Rode vlag n. axillaris · het percentage van 5-14% is gelabeld, de rode vlag zelf blijft onverkort gelden
+
 ## 2026-09-06 — bronaudit schouderinstabiliteit
 
 - TWEE TRIALS ONDERLING VERWISSELD · het protocol noemde `itoi_2007_externe_rotatie` een "kleine RCT" met "0% recidief tegenover 30%", en gaf háár aantal van 198 aan `liavaag_2011_externe_rotatie` · Itoi telde 198 patiënten en vond 26% tegenover 42% (p = 0,033; relatieve risicoreductie 38,2%) · Liavaag telde er 188 en vond géén verschil (24,7% tegenover 30,8%; p = 0,36) · de cijfers 0% en 30% bestaan in geen van beide

@@ -24,9 +24,16 @@ const BRONSTATUS = {
     "datum": "2026-09-05"
   },
   "elb": {
-    "gecontroleerd": 9,
+    "gecontroleerd": 17,
     "gedekt": 0,
     "deels": 3,
+    "open": 0,
+    "datum": "2026-09-06"
+  },
+  "enkel": {
+    "gecontroleerd": 11,
+    "gedekt": 0,
+    "deels": 0,
     "open": 0,
     "datum": "2026-09-06"
   },

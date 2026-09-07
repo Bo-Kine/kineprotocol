@@ -1,0 +1,163 @@
+protocol: enkel
+protocol_titel: Enkeldistorsie
+laatst_gecontroleerd: 2026-09-06
+gecontroleerd_door: fase A — Claude (protocols.js, evidence fase 1-6 + refs)
+opmerking: >-
+  Dit protocol oogde het best onderbouwd van alle tot nu toe gecontroleerde: het
+  refs-veld bevat volledige volume- en paginanummers. Juist daardoor is de uitkomst
+  ernstiger. Van de zeven nagekeken cijfers klopten er vijf niet, en bij twee
+  daarvan wijst de bron de andere kant op. Een lezer die de referentielijst ziet,
+  gaat er terecht van uit dat de cijfers eruit komen.
+
+claims:
+  - id: enkel_c1
+    tekst: >-
+      Laterale enkeldistorsie is 85% van alle enkeldistorsies, met
+      ATFL-betrokkenheid in 70 tot 85% (Doherty et al., 2014).
+    plaats: fase 1 - evidence
+    bronnen: [doherty_2014_enkelepidemiologie]
+    gedekt: nee
+    opmerking: >-
+      Geen van beide percentages staat in die meta-analyse. Ze rapporteert
+      incidentie en prevalentie, niet de verdeling over ligamenten. Wat er wel in
+      staat: laterale distorsie is het meest voorkomende type, met hogere incidentie
+      bij vrouwen (13,6 tegenover 6,94 per 1000 blootstellingen) en bij jongeren.
+    verwerkt: beide cijfers geschrapt, de werkelijke bevindingen opgenomen
+
+  - id: enkel_c2
+    tekst: 'Ottawa Ankle Rules: sensitiviteit 96 tot 99% (Bachmann et al., 2003).'
+    plaats: fase 1 - evidence
+    bronnen: [bachmann_2003_ottawa]
+    gedekt: nee
+    opmerking: >-
+      Dat bereik staat er niet in. De auteurs poolden bewust NEGATIEVE LIKELIHOOD
+      RATIO'S: 0,08 (95% BI 0,03-0,18) voor enkel en middenvoet, wat bij een
+      fractuurprevalentie van 15% minder dan 1,4% restkans geeft. Ze spreken van
+      een sensitiviteit van BIJNA 100% met matige specificiteit, en van 30 tot 40%
+      minder onnodige radiografieen.
+    verwerkt: bereik vervangen door de werkelijke cijfers en conclusie
+
+  - id: enkel_c3
+    tekst: >-
+      Anterior drawer sensitiviteit 0,71 en specificiteit 0,33; talar tilt boven
+      10 graden wijst op CFL-betrokkenheid.
+    plaats: fase 1 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: Geen bron; in dit dossier niet nagekeken.
+    verwerkt: gelabeld
+
+  - id: enkel_c4
+    tekst: >-
+      Vroege functionele behandeling is superieur aan immobilisatie
+      (Kerkhoffs et al., Cochrane 2002); graad III conservatief gelijkwaardig aan
+      chirurgie (Kerkhoffs et al., 2007); compressie en semi-rigide brace
+      (Vuurberg et al., 2018).
+    plaats: fase 2 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Alle drie in dit dossier niet opgehaald. Inhoudelijk breed gedragen, maar
+      niet geverifieerd.
+    verwerkt: alle drie gelabeld als niet opgehaald
+
+  - id: enkel_c5
+    tekst: >-
+      Peroneale zwakte is aanwezig bij meer dan 90% van de patienten met
+      chronische instabiliteit (Doherty et al., 2014).
+    plaats: fase 3 - evidence
+    bronnen: [doherty_2014_enkelepidemiologie]
+    gedekt: nee
+    opmerking: >-
+      Staat niet in die bron; het is een epidemiologische incidentiestudie zonder
+      enige spierfunctiemeting.
+    verwerkt: cijfer geschrapt
+
+  - id: enkel_c6
+    tekst: >-
+      Proprioceptietraining op instabiel vlak vermindert het recidief met 47%
+      (Hupperets et al., 2009).
+    plaats: fase 3 - evidence
+    bronnen: [hupperets_2009_proprioceptief_thuisprogramma]
+    gedekt: nee
+    opmerking: >-
+      De reductie is 35%, niet 47%: recidief 22% tegenover 33%, relatief risico
+      0,63 (95% BI 0,45-0,88), number needed to treat 9. BELANGRIJKER IS WAT
+      ONTBRAK: bij sporters die voor hun oorspronkelijke distorsie WEL medisch
+      behandeld waren, was er GEEN significant verschil; het effect kwam volledig
+      van de niet-medisch behandelde groep. In een kinesitherapeutisch protocol is
+      dat net de omgekeerde populatie, dus dit raakt de toepasbaarheid rechtstreeks.
+    verwerkt: cijfer gecorrigeerd, de populatiebeperking expliciet opgenomen
+
+  - id: enkel_c7
+    tekst: >-
+      Chronische enkelinstabiliteit treedt op bij 25 tot 40% na een eerste
+      distorsie en 50 tot 60% na recidief (Gribble et al., 2016).
+    plaats: fase 3, 5 en 6 - evidence
+    bronnen: [gribble_2016_enkelconsensus]
+    gedekt: nee
+    opmerking: >-
+      Geen van beide percentages staat in het abstract van die consensusverklaring;
+      die spreekt van "een groot percentage". Ook de definitie van CAI als minstens
+      12 maanden instabiliteitsgevoel plus recidief staat er niet in. De twee
+      verzonnen cijfers werden op drie plaatsen gebruikt.
+    verwerkt: cijfers geschrapt, vervangen door wat de verklaring wel stelt
+
+  - id: enkel_c8
+    tekst: >-
+      Sportbrace reduceert het recidief met 53%, zonder prestatieverlies
+      (Dizon & Reyes, 2010).
+    plaats: fase 4, 5 en 6 - evidence
+    bronnen: [dizon_2010_enkelbraces]
+    gedekt: nee
+    opmerking: >-
+      Het cijfer van 53% staat er niet in en het werkelijke effect is GROTER: bij
+      reeds eerder geblesseerde sporters 69% minder distorsies met een brace
+      (odds ratio 0,31; 95% BI 0,18-0,51) en 71% met tape (0,29; 0,14-0,57), zonder
+      dat een type steun superieur bleek. De toevoeging "zonder prestatieverlies"
+      is niet onderzocht in die review. Het foute cijfer stond op drie plaatsen.
+    verwerkt: op alle drie de plaatsen vervangen door de werkelijke cijfers
+
+  - id: enkel_c9
+    tekst: >-
+      Peroneale reactietijd versnelt pas na 4 tot 6 weken gerichte training
+      (Doherty et al., 2014); reactietijd boven 70 ms verhoogt het recidief.
+    plaats: fase 4 en 5 - evidence
+    bronnen: [doherty_2014_enkelepidemiologie]
+    gedekt: nee
+    opmerking: >-
+      Beide staan niet in die bron, en de drempel van 70 ms heeft nergens een bron.
+    verwerkt: beide geschrapt of gelabeld
+
+  - id: enkel_c10
+    tekst: >-
+      Een neuromusculair opwarmprogramma reduceert enkeldistorsies met 35 tot 50%
+      (Schiftan et al., 2015) - onder het kopje primaire preventie.
+    plaats: fase 6 - evidence
+    bronnen: [schiftan_2015_proprioceptieve_training]
+    gedekt: nee
+    opmerking: >-
+      Drie problemen. (1) De meta-analyse gaat over PROPRIOCEPTIEVE TRAINING, niet
+      over een neuromusculair opwarmprogramma. (2) Het effect is 35% (relatief
+      risico 0,65; 95% BI 0,55-0,77), en 36% bij deelnemers met een voorgeschiedenis;
+      de bovengrens van 50% staat nergens. (3) De claim staat onder PRIMAIRE
+      preventie, terwijl de auteurs juist besluiten dat het bewijs daarvoor
+      ONDUIDELIJK blijft - het gepoolde risico van 0,57 kwam uit twee op zichzelf
+      niet-significante trials.
+    verwerkt: interventie, cijfer en de conclusie over primaire preventie
+      rechtgezet
+
+  - id: enkel_c11
+    tekst: >-
+      Return-to-running en return-to-sport drempels (heel rise LSI 80%, SEBT 80 en
+      89%, hoptest LSI 90%, side hop meer dan 100 in 30 sec, 25 heel raises);
+      chirurgie geeft 85 tot 90% excellent resultaat.
+    plaats: fase 4, 5 en 6 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Flore et al. (2024), de APTA-richtlijn 2021, Tassignon et al. (2019),
+      Hertel & Corbett (2019) en Vuurberg et al. (2018) zijn alle in dit dossier
+      niet opgehaald. De drempels sturen wel de fase-overgangen en de
+      sporthervatting.
+    verwerkt: alle gelabeld als praktijkafspraak

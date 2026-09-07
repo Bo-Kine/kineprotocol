@@ -1,7 +1,7 @@
 protocol: elb
 protocol_titel: Laterale Epicondylalgie
 laatst_gecontroleerd: 2026-09-06
-gecontroleerd_door: fase A — Claude (protocols.js, evidence fase 1-3 + refs)
+gecontroleerd_door: fase A + fase B (onafhankelijke verificator, schone context) — 2026-09-06
 opmerking: >-
   DRIE VAN DE VIJF BRONNEN STONDEN IN HET VERKEERDE TIJDSCHRIFT: Bisset 2006 in
   BMJ (app schreef Lancet), Coombes 2013 in JAMA (app schreef Lancet) en
@@ -144,3 +144,114 @@ claims:
       langdurige klachten ongeacht de behandeling (Coombes 2015).
     verwerkt: gelabeld als praktijkafspraak, met wat de review wel over het beloop
       zegt
+
+  # Fase B (onafhankelijke verificator, schone context). Alle zeven bronsleutels
+  # bibliografisch bevestigd en alle drie evidenceteksten letterlijk gedekt;
+  # onderstaande punten zijn lekken en ongelabelde drempels elders in het protocol.
+  - id: elb_c10
+    tekst: >-
+      Geelkleuring van de huid ter hoogte van de laterale epicondyl wijst op
+      post-injectie vetatrofie.
+    plaats: fase 2 - redflags
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      FEITELIJK ONJUIST in een rode vlag. Huidverandering na corticosteroidinjectie
+      is DEPIGMENTATIE - bleek of wit, met inzinking - niet geelkleuring. Een
+      kinesitherapeut die op geel wacht, mist het beeld.
+    verwerkt: rode vlag inhoudelijk gecorrigeerd naar bleke, ingezonken of
+      gedepigmenteerde huid
+
+  - id: elb_c11
+    tekst: >-
+      Isometrie geeft directe pijnreductie, elke 6 uur herhaalbaar, 30-45 sec op
+      50-70% maximaal, 4 sets.
+    plaats: fase 1 - oefening en parameters
+    bronnen: [rio_2015_isometrie]
+    gedekt: nee
+    opmerking: >-
+      Interne tegenspraak: het evidence-veld labelt de overdracht van Rio 2015
+      (patellapees) naar de elleboog wel, de oefeningnote niet. Duur, intensiteit,
+      aantal sets en het interval van 6 uur komen uit geen enkele opgehaalde bron.
+    verwerkt: gelijkgetrokken met het evidence-veld, doseringen gelabeld
+
+  - id: elb_c12
+    tekst: >-
+      35% van de patienten met LE heeft scapulaire dyskinese; sensitisatie van de
+      nervus radialis is frequent geassocieerd; flexorkracht is ook deficient.
+    plaats: fase 1 en 2 - oefeningen
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Drie frequentieclaims zonder bron. Coombes 2015 noemt de radialis niet, en
+      het krachtdeficit was in elb_c7 al uit het evidence-veld geschrapt maar bleef
+      in de oefeningnote staan.
+    verwerkt: alle drie gelabeld of geschrapt
+
+  - id: elb_c13
+    tekst: >-
+      PRTEE onder 40 en knijpkracht boven 50, 75 en 90% als doorstroomcriteria;
+      PRTEE boven 40 na 12 weken leidt tot PRP of chirurgie.
+    plaats: fase 1 tot 4 - criteria_go en criteria_stop
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Zeven ongelabelde drempels die fase-overgangen sturen en zelfs een
+      doorverwijzing naar PRP of chirurgie triggeren. In fase 3 werden alleen de
+      drempels 20 en 10 gelabeld. De stopregel botst bovendien met de eigen tekst
+      dat de behandelduur 6 tot 12 maanden bedraagt.
+    verwerkt: alle drempels gelabeld, de stopregel afgezwakt tot heroverweging en
+      overleg met de arts
+
+  - id: elb_c14
+    tekst: >-
+      Cozen-test sensitiviteit 84%; PRTEE boven 30 bevestigt klinische ernst;
+      echografische afwijking bij 30%; niet-sporters vormen 60% van de gevallen;
+      angiofibroblastische hyperplasie (Nirschl & Pettrone, 1979).
+    plaats: kenmerken en oorzaken
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Vier harde getallen zonder bron en een citatie zonder sleutel. De drempel
+      PRTEE boven 30 botste bovendien met het fasedoel van 40 elders in het
+      protocol, en "geen echte inflammatie" werd hier als vaststaand gebracht
+      terwijl het evidence-veld net stelt dat de pathofysiologie onvoldoende
+      begrepen is (Coombes 2015).
+    verwerkt: alle gelabeld, de tegenstrijdige PRTEE-drempel geschrapt
+
+  - id: elb_c15
+    tekst: >-
+      Mobilization with movement geeft onmiddellijke, meetbare winst in pijnvrije
+      grijpkracht; manuele technieken zonder oefenprogramma leiden tot recidief.
+    plaats: manuele-therapiemodule (intro)
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Twee claims zonder bron, waarvan de tweede een causaal verband stelt dat
+      geen enkele bron in dit dossier ondersteunt.
+    verwerkt: beide gelabeld als klinische redenering
+
+  - id: elb_c16
+    tekst: >-
+      Belasting ophogen tot lichaamsgewicht-equivalent met preventief effect;
+      open stance forehand vermindert de elleboogbelasting.
+    plaats: fase 4 - oefeningen
+    bronnen: [beyer_2015_hsr_achilles]
+    gedekt: nee
+    opmerking: >-
+      Beyer 2015 onderzocht de achillespees en rapporteerde geen preventieve
+      uitkomst; een lichaamsgewicht-equivalent is voor de polsextensoren bovendien
+      niet realistisch. De uitspraak over de forehand heeft geen bron.
+    verwerkt: beide gelabeld
+
+  - id: elb_c17
+    tekst: >-
+      Bij stagnerende PRTEE manipulatie van de elleboog overwegen
+      (Vicenzino et al., 2007).
+    plaats: fase 2 - criteria_stop
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      De citatie werd als onderbouwing van een klinische beslisregel gebruikt,
+      terwijl het refs-veld van hetzelfde protocol zegt dat ze niet is opgehaald.
+    verwerkt: citatie uit de beslisregel gehaald en gelabeld

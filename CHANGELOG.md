@@ -3,6 +3,19 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-09-06 — bronaudit enkeldistorsie + fase B epicondylalgie
+
+- HET PROTOCOL DAT ER HET BEST ONDERBOUWD UITZAG, IS HET SLECHTST · het refs-veld bevat volledige volume- en paginanummers, wat vertrouwen wekt · van de zeven nagekeken cijfers klopten er vijf niet
+- `dizon_2010_enkelbraces` · "53% recidiefreductie" stond op DRIE plaatsen · het werkelijke effect is grōter: 69% met brace (OR 0,31; 95% BI 0,18-0,51) en 71% met tape (0,29; 0,14-0,57), en enkel bij REEDS EERDER GEBLESSEERDE sporters · de toevoeging "zonder prestatieverlies" is in die review niet onderzocht
+- `gribble_2016_enkelconsensus` · "CAI bij 25-40% na eerste distorsie, 50-60% na recidief" op drie plaatsen · geen van beide cijfers staat in dat abstract, dat spreekt van "een groot percentage" · ook de CAI-definitie van ≥ 12 maanden staat er niet in
+- `doherty_2014_enkelepidemiologie` · VIER claims toegeschreven die er geen van alle in staan: "85% van alle distorsies", "ATFL 70-85%", "peroneale zwakte bij > 90% bij CAI" en "reactietijd versnelt pas na 4-6 weken" · het is een zuiver epidemiologische incidentiemeta-analyse zonder anatomie of spierfunctie
+- `schiftan_2015_proprioceptieve_training` OMGEKEERD GEBRUIKT · geciteerd onder "primaire preventie" met 35-50%, terwijl de auteurs juist besluiten dat het bewijs voor PRIMAIRE preventie ONDUIDELIJK blijft (gepoold risico 0,57 uit twee op zichzelf niet-significante trials) · het aangetoonde effect van 35% geldt voor de hele groep en 36% bij mensen mét voorgeschiedenis · het gaat bovendien om proprioceptieve training, niet om een opwarmprogramma
+- `hupperets_2009_proprioceptief_thuisprogramma` · de reductie is 35%, niet 47% (22% tegenover 33%; RR 0,63; NNT 9) · en de beperking die het meest telt ontbrak: bij sporters die WÉL medisch behandeld waren was er géén significant verschil — in een kinesitherapeutisch protocol is dat net de omgekeerde populatie
+- `bachmann_2003_ottawa` · "sensitiviteit 96-99%" staat er niet in; de auteurs poolden negatieve likelihood ratio's (0,08; 95% BI 0,03-0,18) en spreken van een sensitiviteit van bijna 100% met matige specificiteit
+
+- FASE B EPICONDYLALGIE · alle zeven bronsleutels en alle drie evidenceteksten letterlijk gedekt · maar een RODE VLAG BEVATTE EEN FEITELIJKE FOUT: "geelkleuring van de huid → post-injectie vetatrofie" · huidverandering na corticosteroïdinjectie is DEPIGMENTATIE — bleek of wit, met inzinking — wie op geel wacht, mist het beeld
+- Verder in de epicondylalgie gecorrigeerd · "35% van de LE-patiënten heeft scapulaire dyskinese" (geen bron) · zeven PRTEE- en knijpkrachtdrempels die fase-overgangen én een doorverwijzing naar PRP of chirurgie stuurden, zonder bron of label · de stopregel "PRTEE > 40 na 12 weken" botste met de eigen tekst over 6-12 maanden behandelduur · "Cozen 84%", "PRTEE > 30", "echo-afwijking 30%", "60% niet-sporters" en de citatie Nirschl & Pettrone 1979 in de beschrijving · de claim dat manuele technieken zónder oefenprogramma tot herval leiden
+
 ## 2026-09-06 — bronaudit laterale epicondylalgie
 
 - DRIE VAN DE VIJF BRONNEN STONDEN IN HET VERKEERDE TIJDSCHRIFT · `bisset_2006_tenniselleboog` verscheen in BMJ, niet in the Lancet · `coombes_2013_injectie_kinesitherapie` in JAMA, niet in the Lancet · `tyler_2010_excentrisch_polsextensoren` in J Shoulder Elbow Surg, niet in JOSPT — die laatste stond zowel in de evidencetekst als in het refs-veld fout

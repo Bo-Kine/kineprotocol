@@ -3,6 +3,16 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-09-06 — bronaudit laterale epicondylalgie
+
+- DRIE VAN DE VIJF BRONNEN STONDEN IN HET VERKEERDE TIJDSCHRIFT · `bisset_2006_tenniselleboog` verscheen in BMJ, niet in the Lancet · `coombes_2013_injectie_kinesitherapie` in JAMA, niet in the Lancet · `tyler_2010_excentrisch_polsextensoren` in J Shoulder Elbow Surg, niet in JOSPT — die laatste stond zowel in de evidencetekst als in het refs-veld fout
+- TEGENSTRIJDIGE EVIDENTIE VERZWEGEN (§1.9) · uit Coombes 2013 werd wél overgenomen dat corticosteroïd op lange termijn slechter uitpakt, maar níet dat KINESITHERAPIE in diezelfde trial na één jaar geen significant verschil gaf (91% tegenover 88%; p = 0,56) en bovenop een injectie niets toevoegde · dat resultaat is ongunstig voor dit protocol en stond nergens in de app
+- Verzonnen percentage · "wait and see is effectief op 1 jaar (78% herstel)" · Bisset 2006 geeft geen percentage voor de afwachtgroep · het wél bestaande cijfer komt uit `smidt_2002_epicondylitis`: 83% na afwachten tegenover 91% na kinesitherapie, een verschil dat NIET significant was — die trial stond in het refs-veld maar werd in geen enkele evidencetekst gebruikt
+- Tyler 2010 nauwkeuriger weergegeven · de percentages 81 en 22 kloppen, maar de trial telde slechts 21 patiënten (11 tegenover 10), duurde 7,2 en 7,0 weken in plaats van zes, en voegde de oefening TOE aan de standaardbehandeling in plaats van ze ermee te vergelijken
+- Beyer 2015 voor de zesde keer bij een andere pees · hier als onderbouwing voor HSR aan de elleboog, terwijl het onderzoek aan de achillespees gebeurde · Rio 2015 idem, patellapees
+- `coombes_2015_lateraal_elleboog` correcter benoemd · het is een narratieve review met expert opinion en een PRELIMINAIR algoritme, die zelf stelt dat de pathofysiologie onvoldoende begrepen is · de titel luidt "One Size Does Not Fit All", niet "one model fits all?" · de opgesomde krachtdeficieten staan er niet in; wél nekpijn, peesscheuren en centrale sensitisatie als prognostische factoren
+- Zonder bron en nu gelabeld · behandelduur 6-12 maanden · PRTEE-drempels 20 en 10 · "Rethnam & Tugh (2010)" voor racketaanpassingen
+
 ## 2026-09-06 — fase B schouderinstabiliteit
 
 - Alle negen bronsleutels bibliografisch bevestigd en alle vijf evidenceteksten gedekt · het lek zit opnieuw in de doel-, criteria- en beschrijvingsvelden

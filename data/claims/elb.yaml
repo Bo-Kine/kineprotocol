@@ -1,0 +1,146 @@
+protocol: elb
+protocol_titel: Laterale Epicondylalgie
+laatst_gecontroleerd: 2026-09-06
+gecontroleerd_door: fase A — Claude (protocols.js, evidence fase 1-3 + refs)
+opmerking: >-
+  DRIE VAN DE VIJF BRONNEN STONDEN IN HET VERKEERDE TIJDSCHRIFT: Bisset 2006 in
+  BMJ (app schreef Lancet), Coombes 2013 in JAMA (app schreef Lancet) en
+  Tyler 2010 in J Shoulder Elbow Surg (app schreef JOSPT, zowel in de tekst als
+  in het refs-veld). Daarnaast werd uit Coombes 2013 net het resultaat weggelaten
+  dat voor dit protocol ongunstig is: kinesitherapie gaf na een jaar geen
+  significant verschil. Smidt 2002 stond wel in het refs-veld maar werd nergens
+  gebruikt, terwijl die trial de meest concrete cijfers over het beloop bevat.
+
+claims:
+  - id: elb_c1
+    tekst: >-
+      Laterale epicondylalgie is degeneratief, zonder primaire inflammatie
+      (Coombes et al., 2015).
+    plaats: fase 1 - evidence
+    bronnen: [coombes_2015_lateraal_elleboog]
+    gedekt: deels
+    opmerking: >-
+      Klinisch breed gedragen, maar de aangehaalde publicatie is een narratieve
+      review die bewijs en EXPERT OPINION samenbrengt en die zelf stelt dat de
+      onderliggende pathofysiologie onvoldoende begrepen is. De titel luidt
+      bovendien "One Size Does Not Fit All", niet "one model fits all?" zoals het
+      refs-veld schreef.
+    verwerkt: bewijsniveau en de eigen voorbehoud van de auteurs opgenomen, titel
+      gecorrigeerd
+
+  - id: elb_c2
+    tekst: >-
+      Wait and see is effectief op 1 jaar (78% herstel) maar vertraagt
+      kortetermijnherstel (Bisset et al., 2006 - Lancet).
+    plaats: fase 1 - evidence
+    bronnen: [bisset_2006_tenniselleboog, smidt_2002_epicondylitis]
+    gedekt: nee
+    opmerking: >-
+      Twee fouten. (1) De trial verscheen in BMJ, niet in the Lancet. (2) Het
+      cijfer van 78% staat er niet in; het abstract geeft geen percentage voor de
+      afwachtgroep, alleen dat op 52 weken geen verschil meer bestond en het
+      merendeel van beide groepen een goede uitkomst meldde. Het wel beschikbare
+      cijfer komt uit Smidt 2002: 83% na afwachten tegenover 91% na
+      kinesitherapie, een verschil dat NIET significant was.
+    verwerkt: tijdschrift gecorrigeerd, verzonnen percentage vervangen door de
+      cijfers uit Smidt 2002
+
+  - id: elb_c3
+    tekst: >-
+      Corticosteroidinjecties geven snelle kortetermijnpijnreductie maar
+      inferieure langetermijnuitkomsten en hogere recidiefkans
+      (Coombes et al., 2013 - Lancet).
+    plaats: fase 1 - evidence
+    bronnen: [coombes_2013_injectie_kinesitherapie]
+    gedekt: deels
+    opmerking: >-
+      De richting klopt en is met cijfers te onderbouwen (83% tegenover 96%
+      herstel na een jaar; 54% tegenover 12% herval), maar de trial verscheen in
+      JAMA, niet in the Lancet. BELANGRIJKER: uit dezelfde trial werd het resultaat
+      weggelaten dat voor dit protocol ongunstig is - kinesitherapie gaf na een
+      jaar GEEN significant verschil (91% tegenover 88%; p = 0,56), en bovenop een
+      corticosteroidinjectie voegde ze niets toe. Dat is precies het soort
+      tegenstrijdige evidentie dat CLAUDE.md par. 1.9 verbiedt te verzwijgen.
+    verwerkt: tijdschrift gecorrigeerd, cijfers toegevoegd, het nulresultaat voor
+      kinesitherapie expliciet opgenomen
+
+  - id: elb_c4
+    tekst: >-
+      Isometrische wrist extension heeft een onmiddellijk pijnmodulerend effect
+      (Rio et al., 2015).
+    plaats: fase 1 - evidence
+    bronnen: [rio_2015_isometrie]
+    gedekt: nee
+    opmerking: >-
+      Rio 2015 onderzocht patellapeestendinopathie. De app noemde de overdracht
+      zelf al "analoog aan tendinopathieprotocollen elders", maar presenteerde het
+      effect vervolgens als vaststaand voor de elleboog.
+    verwerkt: pees benoemd, overdracht als klinische redenering gelabeld
+
+  - id: elb_c5
+    tekst: >-
+      Tyler Twist: RCT toonde 81% pijnreductie tegenover 22% in de controlegroep
+      bij 6 weken (Tyler et al., 2010 - JOSPT).
+    plaats: fase 2 - evidence
+    bronnen: [tyler_2010_excentrisch_polsextensoren]
+    gedekt: deels
+    opmerking: >-
+      De percentages 81 en 22 kloppen letterlijk (VAS, p = 0,002). Maar: de trial
+      verscheen in J Shoulder Elbow Surg, niet in JOSPT; ze telde SLECHTS 21
+      patienten (11 tegenover 10); de behandelduur was 7,2 en 7,0 weken, niet zes;
+      en de oefening werd TOEGEVOEGD aan de standaardbehandeling, niet ermee
+      vergeleken. Bij 21 deelnemers blijft de schatting onnauwkeurig.
+    verwerkt: tijdschrift, aantal, duur en opzet gecorrigeerd
+
+  - id: elb_c6
+    tekst: >-
+      Heavy Slow Resistance met traag tempo is minstens gelijkwaardig aan
+      excentrisch alleen (Beyer et al., 2015).
+    plaats: fase 2 - evidence
+    bronnen: [beyer_2015_hsr_achilles]
+    gedekt: nee
+    opmerking: >-
+      Beyer 2015 onderzocht de ACHILLESPEES. De app schreef zelf "analoog aan
+      achillespeesdata", maar gebruikte het resultaat vervolgens als onderbouwing
+      voor de elleboog. Dit is de zesde keer dat deze bron in dit dossier bij een
+      andere pees opduikt.
+    verwerkt: pees benoemd, gelijkwaardigheidsclaim voor de elleboog geschrapt
+
+  - id: elb_c7
+    tekst: >-
+      Schouder- en polsstabiliteit, grijpkracht en proximale spierkracht zijn
+      frequent deficient bij LE (Coombes et al., 2015).
+    plaats: fase 2 - evidence
+    bronnen: [coombes_2015_lateraal_elleboog]
+    gedekt: nee
+    opmerking: >-
+      Het abstract noemt nekpijn, peesscheuren en centrale sensitisatie als
+      mogelijke prognostische factoren; de opgesomde krachtdeficieten staan er in
+      die vorm niet in.
+    verwerkt: vervangen door wat de review wel noemt, rest als klinische redenering
+
+  - id: elb_c8
+    tekst: >-
+      Racketaanpassingen reduceren de ECRB-belasting significant
+      (Rethnam & Tugh, 2010).
+    plaats: fase 3 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Geen sleutel in references.yaml; in dit dossier niet opgehaald. Het woord
+      "significant" suggereert een gemeten effect dat hier niet nagekeken is.
+    verwerkt: gelabeld, "significant" geschrapt
+
+  - id: elb_c9
+    tekst: >-
+      Totale behandelduur gemiddeld 6 tot 12 maanden; PRTEE onder 20 op 100 is
+      functioneel herstel, onder 10 volledig sporthervatting.
+    plaats: fase 3 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Geen bron voor de duur noch voor de twee drempels. Wat de literatuur wel
+      zegt: de prognose loopt sterk uiteen, van herstel na eenvoudig advies tot
+      langdurige klachten ongeacht de behandeling (Coombes 2015).
+    verwerkt: gelabeld als praktijkafspraak, met wat de review wel over het beloop
+      zegt

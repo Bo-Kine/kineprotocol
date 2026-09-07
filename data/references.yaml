@@ -2988,3 +2988,121 @@ references:
       een preventieclaim op.
     geverifieerd_op: 2026-09-06
     geverifieerd_door: PubMed MCP (get_article_metadata, PMID 9130149)
+
+  - key: bisset_2006_tenniselleboog
+    auteurs: [Bisset L, Beller E, Jull G, Brooks P, Darnell R, Vicenzino B]
+    titel: 'Mobilisation with movement and exercise, corticosteroid injection, or wait and see for tennis elbow: randomised trial'
+    bron: BMJ
+    jaar: 2006
+    volume_paginas: 333(7575):939
+    doi: 10.1136/bmj.38961.584653.AE
+    pmid: '17012266'
+    url: https://doi.org/10.1136/bmj.38961.584653.AE
+    type: RCT
+    opmerking: >-
+      VERSCHENEN IN BMJ, NIET IN THE LANCET - de app schreef Lancet. 198
+      deelnemers van 18 tot 65 jaar met tenniselleboog van minstens zes weken,
+      gerandomiseerd over acht sessies kinesitherapie, corticosteroidinjectie of
+      afwachten, met opvolging tot 52 weken. Corticosteroid was significant beter
+      op zes weken maar met hoge herval: 47 van de 65 successen viel nadien terug,
+      en op lange termijn deed die groep het significant SLECHTER dan
+      kinesitherapie. Kinesitherapie was op korte termijn beter dan afwachten; op
+      52 weken was er GEEN verschil meer en meldde het merendeel van beide groepen
+      een goede uitkomst. HET CIJFER VAN 78% HERSTEL STAAT ER NIET IN; het abstract
+      geeft geen percentage voor de afwachtgroep.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 17012266)
+
+  - key: coombes_2013_injectie_kinesitherapie
+    auteurs: [Coombes BK, Bisset L, Brooks P, Khan A, Vicenzino B]
+    titel: 'Effect of corticosteroid injection, physiotherapy, or both on clinical outcomes in patients with unilateral lateral epicondylalgia: a randomized controlled trial'
+    bron: JAMA
+    jaar: 2013
+    volume_paginas: 309(5):461-9
+    doi: 10.1001/jama.2013.129
+    pmid: '23385272'
+    url: https://doi.org/10.1001/jama.2013.129
+    type: RCT
+    opmerking: >-
+      VERSCHENEN IN JAMA, NIET IN THE LANCET - de app schreef Lancet. Factoriele
+      2x2-trial, injectie-geblindeerd en placebogecontroleerd, 165 patienten.
+      Corticosteroid gaf na EEN JAAR SLECHTERE uitkomsten dan placebo: volledig
+      herstel of duidelijke verbetering bij 83% tegenover 96% (RR 0,86; 99% BI
+      0,75-0,99; p = 0,01) en meer herval (54% tegenover 12%; RR 0,23; 0,10-0,51;
+      p < 0,001). WAT DE APP VERZWEEG (CLAUDE.md par. 1.9): KINESITHERAPIE GAF GEEN
+      SIGNIFICANT VERSCHIL na een jaar - 91% tegenover 88% (RR 1,04; 0,90-1,19;
+      p = 0,56) - en ook niet op 26 weken. Alleen op vier weken was er winst, en
+      enkel in de placebo-injectiearm (39% tegenover 10%; RR 4,00; 1,07-15,00;
+      p = 0,004); bovenop een corticosteroidinjectie voegde kinesitherapie niets toe.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 23385272)
+
+  - key: coombes_2015_lateraal_elleboog
+    auteurs: [Coombes BK, Bisset L, Vicenzino B]
+    titel: 'Management of Lateral Elbow Tendinopathy: One Size Does Not Fit All'
+    bron: The Journal of Orthopaedic and Sports Physical Therapy
+    jaar: 2015
+    volume_paginas: 45(11):938-49
+    doi: 10.2519/jospt.2015.5841
+    pmid: '26381484'
+    url: https://doi.org/10.2519/jospt.2015.5841
+    type: review
+    opmerking: >-
+      Narratieve review die bewijs en EXPERT OPINION samenbrengt; de auteurs
+      presenteren zelf een PRELIMINAIR algoritme en stellen dat verder onderzoek
+      nodig is om te beoordelen of die aanpak tot betere uitkomsten leidt. De titel
+      luidt "One Size Does Not Fit All" - het refs-veld van de app schreef
+      "one model fits all?". Kernboodschap: de prognose loopt sterk uiteen, van
+      onmiddellijk herstel na eenvoudig advies tot langdurige klachten ongeacht de
+      behandeling, en de onderliggende pathofysiologie is onvoldoende begrepen. De
+      review noemt nekpijn, peesscheuren en centrale sensitisatie als mogelijke
+      prognostische factoren.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 26381484)
+
+  - key: tyler_2010_excentrisch_polsextensoren
+    auteurs: [Tyler TF, Thomas GC, Nicholas SJ, McHugh MP]
+    titel: 'Addition of isolated wrist extensor eccentric exercise to standard treatment for chronic lateral epicondylosis: a prospective randomized trial'
+    bron: Journal of Shoulder and Elbow Surgery
+    jaar: 2010
+    volume_paginas: 19(6):917-22
+    doi: 10.1016/j.jse.2010.04.041
+    pmid: '20579907'
+    url: https://doi.org/10.1016/j.jse.2010.04.041
+    type: RCT
+    opmerking: >-
+      VERSCHENEN IN J SHOULDER ELBOW SURG, NIET IN JOSPT - zowel de evidencetekst
+      als het refs-veld van de app schreven JOSPT. SLECHTS 21 PATIENTEN: 11 in de
+      excentrische groep en 10 in de standaardgroep. De excentrische oefening werd
+      TOEGEVOEGD aan de standaardbehandeling, niet ermee vergeleken. Verbeteringen
+      in procent: DASH 76% tegenover 13% (p = 0,01); VAS 81% tegenover 22%
+      (p = 0,002); drukgevoeligheid 71% tegenover 5% (p = 0,003); kracht 79%
+      tegenover 15% (p = 0,011). De door de app genoemde 81% tegenover 22% klopt
+      dus, maar de behandelduur was 7,2 en 7,0 weken, niet zes, en de zeer kleine
+      omvang maakt de schatting onnauwkeurig.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 20579907)
+
+  - key: smidt_2002_epicondylitis
+    auteurs: [Smidt N, van der Windt DAWM, Assendelft WJJ, Devillé WLJM, Korthals-de Bos IBC, Bouter LM]
+    titel: 'Corticosteroid injections, physiotherapy, or a wait-and-see policy for lateral epicondylitis: a randomised controlled trial'
+    bron: Lancet
+    jaar: 2002
+    volume_paginas: 359(9307):657-62
+    doi: 10.1016/S0140-6736(02)07811-X
+    pmid: '11879861'
+    url: https://doi.org/10.1016/S0140-6736(02)07811-X
+    type: RCT
+    opmerking: >-
+      185 patienten uit de Nederlandse eerste lijn, gerandomiseerd over zes weken
+      corticosteroidinjecties, kinesitherapie of afwachten; opvolging tot 52 weken.
+      Op ZES WEKEN was corticosteroid significant beter op alle uitkomstmaten:
+      slaagpercentage 92% tegenover 47% voor kinesitherapie en 32% voor afwachten.
+      Op 52 WEKEN KEERT DAT OM: 69% voor injecties, 91% voor kinesitherapie en 83%
+      voor afwachten, met een hoge herval na injectie. Kinesitherapie deed het beter
+      dan afwachten maar het verschil was NIET SIGNIFICANT; de auteurs stellen dat
+      de relatieve winst van kinesitherapie klein is en de keuze mede van de
+      beschikbare middelen afhangt. Deze bron stond wel in het refs-veld van de app
+      maar werd in geen enkele evidencetekst gebruikt.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 11879861)

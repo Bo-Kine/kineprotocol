@@ -3,6 +3,16 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-09-07 — bronaudit totale knieprothese + fase B overpronatie
+
+- DE HOOFDBRON TWEEMAAL VERKEERD GECITEERD, EENMAAL OMGEKEERD · "ambulante kinesitherapie 3×/week is superieur" · `artz_2015_kinesitherapie_tka` vond juist GEEN verschil tussen ambulante en thuisbehandeling voor functie of pijn, en op korte termijn een voordeel VÓÓR thuisbehandeling wat de flexie-mobiliteit betreft · dat raakt de zorgorganisatie rechtstreeks: het protocol stuurde patiënten naar de praktijk op grond van een bevinding die het tegendeel zegt · dezelfde review werd ook aangehaald voor "70-80% 1RM veilig en effectief", terwijl ze weerstandsintensiteit nergens evalueert
+- Weggelaten uit diezelfde review · de winst geldt op 3-4 maanden (functie SMD -0,37; pijn SMD -0,45) maar er werden GEEN langetermijneffecten gevonden, en de conclusie berust op een klein aantal onvoldoende gepowerde studies
+- Van twee Cochrane-reviews telkens de positieve helft overgenomen · "cryotherapie reduceert pijn" — `adie_2012_cryotherapie_tka` vond bewijs van ZEER LAGE kwaliteit voor pijnreductie ná 48 uur maar niet na 24 of 72 uur, en besluit dat de voordelen "te klein kunnen zijn om het gebruik te rechtvaardigen" · bij "CPM niet aanbevolen" ontbrak omgekeerd de gunstige nuance dat CPM het risico op manipulatie onder narcose mogelijk verlaagt (7,2% naar 1,6%)
+
+- FASE B OVERPRONATIE · DE ZWAARSTE OMKERING VAN DIT PROTOCOL STOND IN EEN OEFENINGNOTE · "supinated single heel rise = meest selectieve TP-activatie" · Kulig 2004 zegt het tegenovergestelde: bij de hielheffing wordt de tibialis posterior (+27%) juist overvleugeld door gastrocnemius (+99%) en peroneus longus (+57%) · de gebruiker leest die note bij de oefening die hij voorschrijft
+- Het geschrapte excentrische PTTD-protocol stond nog volledig in twee oefeningnotes, mét dosering en mét Kulig als bron — claimdossier en code liepen uiteen
+- Zes ongelabelde diagnostische waarden in de parameters (FPI-afkapwaarden, navicular drop 10 mm, ICC's, normbereik 4-9 mm, eversie < 5°, SHRT-grens 20 reps), precies de waarden die het evidence-veld als niet-nagekeken markeert · en FPI > +9 als drempel voor maatorthesen, inconsistent met de eigen hyperpronatiegrens ≥ +10
+
 ## 2026-09-07 — bronaudit overpronatie syndroom
 
 - GEEN VAN DE DRIE OPHAALBARE BRONNEN ONDERSTEUNDE DE CLAIM WAARVOOR ZE WERD AANGEHAALD

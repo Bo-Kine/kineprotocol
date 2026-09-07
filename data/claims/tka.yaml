@@ -1,0 +1,118 @@
+protocol: tka
+protocol_titel: Totale Knieprothese
+laatst_gecontroleerd: 2026-09-07
+gecontroleerd_door: fase A — Claude (protocols.js, evidence fase 1-5 + refs)
+opmerking: >-
+  De hoofdbron van dit protocol wordt tweemaal geciteerd en beide keren voor iets
+  wat er niet in staat - waarvan eenmaal in de omgekeerde richting. Daarnaast wordt
+  van twee Cochrane-reviews telkens de positieve helft overgenomen en de conclusie
+  van de auteurs weggelaten.
+
+claims:
+  - id: tka_c1
+    tekst: >-
+      Prehabilitatie verbetert vroeg postoperatieve uitkomsten
+      (Jakobsen et al., 2014); mobilisatie op dag 0 is veilig
+      (Kehlet & Thienpont, 2013).
+    plaats: fase 1 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: Beide publicaties in dit dossier niet opgehaald.
+    verwerkt: beide gelabeld
+
+  - id: tka_c2
+    tekst: Cryotherapie reduceert pijn (Adie et al., 2012).
+    plaats: fase 2 - evidence
+    bronnen: [adie_2012_cryotherapie_tka]
+    gedekt: deels
+    opmerking: >-
+      De Cochrane-review vond bewijs van ZEER LAGE kwaliteit voor minder pijn NA
+      48 UUR (1,32 punten op tien), maar niet na 24 of 72 uur, en noemt dat effect
+      mogelijk niet klinisch relevant. De conclusie van de auteurs luidt dat de
+      mogelijke voordelen "may be too small to justify its use". De app maakte
+      daarvan een onvoorwaardelijke bewering.
+    verwerkt: kwaliteitsniveau, tijdstip en de conclusie van de auteurs opgenomen
+
+  - id: tka_c3
+    tekst: CPM wordt niet aanbevolen (Cochrane 2014).
+    plaats: fase 2 - evidence
+    bronnen: [harvey_2014_cpm_tka]
+    gedekt: ja
+    opmerking: >-
+      Correct: geen klinisch relevante effecten op flexie (2 graden), pijn, functie
+      of levenskwaliteit in 24 studies met 1445 deelnemers. Wel een nuance die
+      ontbrak (CLAUDE.md par. 1.9): CPM verlaagt mogelijk het risico op manipulatie
+      onder narcose, van 7,2% naar 1,6% (risicoratio 0,3; 95% BI 0,1-0,9), al is
+      dat bewijs van zeer lage kwaliteit.
+    verwerkt: nuance toegevoegd
+
+  - id: tka_c4
+    tekst: >-
+      Ambulante kinesitherapie driemaal per week is superieur
+      (Artz et al., 2015).
+    plaats: fase 3 - evidence
+    bronnen: [artz_2015_kinesitherapie_tka]
+    gedekt: nee
+    opmerking: >-
+      OMGEKEERD. De meta-analyse vond GEEN VERSCHIL tussen ambulante en
+      thuisbehandeling voor functie of pijn, en op korte termijn juist een voordeel
+      VOOR THUISBEHANDELING wat de flexie-mobiliteit betreft. De frequentie van
+      driemaal per week komt er evenmin uit. Dit raakt de organisatie van de zorg
+      rechtstreeks: het protocol stuurde patienten naar de praktijk op grond van
+      een bevinding die het tegendeel zegt.
+    verwerkt: richting rechtgezet, de werkelijke bevindingen opgenomen
+
+  - id: tka_c5
+    tekst: >-
+      Progressieve weerstandstraining op 70 tot 80% 1RM is veilig en effectief
+      (Artz et al., 2015).
+    plaats: fase 4 - evidence
+    bronnen: [artz_2015_kinesitherapie_tka]
+    gedekt: nee
+    opmerking: >-
+      De review evalueert nergens weerstandsintensiteit. De dosering van 70 tot 80%
+      1RM komt er niet uit. Wat de review wel meldt: toevoeging van balans- of
+      fietsonderdelen aan algemene oefentherapie gaf geen verschil in uitkomst.
+    verwerkt: dosering als praktijkafspraak gelabeld
+
+  - id: tka_c6
+    tekst: >-
+      Weggelaten uit Artz 2015: de winst is beperkt tot 3 tot 4 maanden en er
+      werden GEEN langetermijneffecten gevonden.
+    plaats: ONTBRAK in het protocol
+    bronnen: [artz_2015_kinesitherapie_tka]
+    gedekt: ja
+    opmerking: >-
+      Tegenover minimale kinesitherapie verbetert oefentherapie de functie
+      (SMD -0,37; 95% BI -0,62 tot -0,12) en de pijn (SMD -0,45; -0,85 tot -0,06)
+      op 3 tot 4 maanden, maar de auteurs vonden geen langetermijneffecten en
+      benadrukken dat de conclusie op een klein aantal onvoldoende gepowerde studies
+      berust. Dat is precies het soort voorbehoud dat de patient moet horen bij het
+      inschatten van wat revalidatie oplevert.
+    verwerkt: toegevoegd aan fase 3
+
+  - id: tka_c7
+    tekst: >-
+      Ziekenhuisduur gedaald naar 2 tot 3 dagen bij ERAS; aquatherapie veilig vanaf
+      week 3 tot 4.
+    plaats: fase 2 en 3 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Beide zonder bron. De meta-analyse van Artz vond wel dat hydrotherapie als
+      vergelijking geen ander resultaat gaf dan gewone oefentherapie.
+    verwerkt: beide gelabeld als praktijkafspraak
+
+  - id: tka_c8
+    tekst: >-
+      Krachttekort tot 2 jaar zonder training (Mizner et al., 2011); chronische
+      pijn bij 15 tot 20%.
+    plaats: fase 5 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Mizner 2011 is in dit dossier niet opgehaald en het percentage chronische
+      pijn heeft geen bron. Wat wel geverifieerd is en hier van belang: Artz 2015
+      vond geen langetermijneffect van oefentherapie - dat pleit voor
+      onderhoudstraining, maar het is geen aangetoond effect.
+    verwerkt: beide gelabeld, het wel geverifieerde gegeven toegevoegd

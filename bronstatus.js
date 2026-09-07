@@ -108,9 +108,9 @@ const BRONSTATUS = {
     "datum": "2026-09-07"
   },
   "over": {
-    "gecontroleerd": 9,
+    "gecontroleerd": 15,
     "gedekt": 0,
-    "deels": 0,
+    "deels": 1,
     "open": 0,
     "datum": "2026-09-07"
   },
@@ -169,5 +169,12 @@ const BRONSTATUS = {
     "deels": 4,
     "open": 0,
     "datum": "2026-09-05"
+  },
+  "tka": {
+    "gecontroleerd": 8,
+    "gedekt": 2,
+    "deels": 1,
+    "open": 0,
+    "datum": "2026-09-07"
   }
 };

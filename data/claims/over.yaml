@@ -1,7 +1,7 @@
 protocol: over
 protocol_titel: Overpronatie Syndroom
 laatst_gecontroleerd: 2026-09-07
-gecontroleerd_door: fase A — Claude (protocols.js, evidence fase 1-5 + refs)
+gecontroleerd_door: fase A + fase B (onafhankelijke verificator, schone context) — 2026-09-07
 opmerking: >-
   Van de drie bronnen die opgehaald konden worden, ondersteunde er geen enkele de
   claim waarvoor ze werd aangehaald. Daarnaast bevat het bronnenbestand twee
@@ -140,3 +140,89 @@ claims:
       Drie uitspraken zonder bron, waarvan de eerste en de derde de patient
       rechtstreeks sturen in een aankoopbeslissing.
     verwerkt: alle drie gelabeld als klinische redenering
+
+  # Fase B (onafhankelijke verificator, schone context). Alle drie bronsleutels
+  # bibliografisch bevestigd en de vijf gecorrigeerde evidenceteksten gedekt.
+  - id: over_c10
+    tekst: >-
+      Vergelijk met Kulig 2004: de supinated single heel rise geeft de meest
+      selectieve activatie van de tibialis posterior.
+    plaats: fase 3 - oefening
+    bronnen: [kulig_2004_tibialis_posterior]
+    gedekt: nee
+    opmerking: >-
+      DIRECTE OMKERING, EN DE ZWAARSTE VAN DIT PROTOCOL. De bron zegt het
+      tegenovergestelde: bij de hielheffing werd de tibialis posterior (+27%) juist
+      overvleugeld door mediale gastrocnemius (+99%), peroneus longus (+57%) en
+      soleus (+39%); de meest selectieve oefening was gesloten-keten voetadductie
+      (+50%). De note stond in dezelfde fase als het evidence-veld dat dit net had
+      rechtgezet - en de gebruiker leest de note, bij de oefening die hij
+      voorschrijft.
+    verwerkt: note omgedraaid naar wat de bron zegt
+
+  - id: over_c11
+    tekst: >-
+      Excentrisch Kulig-protocol: 3 sets van 15, tweemaal per dag, 12 weken,
+      voor PTTD.
+    plaats: fase 3 - twee oefeningen
+    bronnen: [kulig_2004_tibialis_posterior]
+    gedekt: nee
+    opmerking: >-
+      Het geschrapte excentrische PTTD-protocol stond nog volledig in twee
+      oefeningnotes, mét dosering en mét Kulig als bron. Claimdossier en code
+      liepen uiteen.
+    verwerkt: beide notes gecorrigeerd, dosering als praktijkafspraak gelabeld
+
+  - id: over_c12
+    tekst: >-
+      FPI-6-afkapwaarden, navicular drop van 10 mm, ICC-waarden, normbereik 4 tot
+      9 mm, rearfoot eversie onder 5 graden, SHRT-grens van 20 herhalingen.
+    plaats: fase 0 - parameters en kenmerken
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Zes ongelabelde diagnostische waarden in de parameters, precies de waarden
+      die het evidence-veld als niet-nagekeken markeert. De parameters staan boven
+      de test die de kinesitherapeut uitvoert; de markering in het evidence-veld
+      bereikt hem daar niet.
+    verwerkt: alle gelabeld
+
+  - id: over_c13
+    tekst: >-
+      FPI boven +9 als drempel voor maatorthesen.
+    plaats: fase 5 - criteria_stop
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Geen bron, en bovendien inconsistent met de eigen hyperpronatiegrens van
+      +10 in fase 0 - twee verschillende drempels voor hetzelfde begrip binnen een
+      protocol, waarbij deze een verwijzing naar de podoloog triggert.
+    verwerkt: drempel gelabeld en de inconsistentie benoemd
+
+  - id: over_c14
+    tekst: >-
+      Toe-out reductie van 5 tot 10 graden vermindert de rearfoot eversie
+      significant (Mousavi 2024); gecombineerde SFE verhoogt de abductor
+      hallucis-activatie significant (RCT 2024); TCE bovenop SFE volgens de
+      netwerk-meta-analyse; SFE reduceert navicular drop na 4 weken
+      (Pabon-Carrasco 2020); beperkte dorsaalflexie is een BEWEZEN oorzaak.
+    plaats: fase 2, 3 en 4 - oefeningen
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Vijf effectclaims in oefeningnotes, alle met een bron die dit protocol elders
+      als niet-opgehaald of onnaspeurbaar labelt. De vierde spreekt bovendien de
+      wel geverifieerde drempel van Hara (vijf weken of langer) tegen, en de
+      vijfde gebruikt het woord "bewezen" voor een verband dat nergens is
+      nagekeken.
+    verwerkt: alle vijf gelabeld
+
+  - id: over_c15
+    tekst: 'Barton: 26 personen, waarvan 28% verbeterde.'
+    plaats: fase 5 - evidence
+    bronnen: [barton_2011_rearfoot_orthesen]
+    gedekt: deels
+    opmerking: >-
+      Onze eigen formulering verschoof de noemer binnen een zin: 26 werden
+      ingesloten, 25 voltooiden de studie, en de 28% slaat op zeven van die 25.
+    verwerkt: formulering gecorrigeerd

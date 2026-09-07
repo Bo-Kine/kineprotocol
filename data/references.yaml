@@ -3483,3 +3483,78 @@ references:
       rearfoot eversie in; de app hanteerde die wel als selectiecriterium.
     geverifieerd_op: 2026-09-07
     geverifieerd_door: PubMed MCP (get_article_metadata, PMID 21081642)
+
+  - key: artz_2015_kinesitherapie_tka
+    auteurs: [Artz N, Elvers KT, Minns Lowe C, Sackley C, Jepson P, Beswick AD]
+    titel: 'Effectiveness of physiotherapy exercise following total knee replacement: systematic review and meta-analysis'
+    bron: BMC Musculoskeletal Disorders
+    jaar: 2015
+    volume_paginas: 16:15
+    doi: 10.1186/s12891-015-0469-6
+    pmid: '25886975'
+    url: https://doi.org/10.1186/s12891-015-0469-6
+    type: SR
+    opmerking: >-
+      18 gerandomiseerde studies, 1739 patienten. Tegenover controles met minimale
+      kinesitherapie verbeterde oefentherapie de fysieke functie op 3 tot 4 maanden
+      (SMD -0,37; 95% BI -0,62 tot -0,12) en de pijn (SMD -0,45; -0,85 tot -0,06).
+      DE APP CITEERDE DEZE BRON TWEEMAAL VERKEERD. (1) "Ambulante kinesitherapie
+      driemaal per week is superieur" - de review vond juist GEEN VERSCHIL tussen
+      ambulante en thuisbehandeling voor functie of pijn, en op korte termijn een
+      voordeel VOOR THUISBEHANDELING wat de flexie-mobiliteit betreft. (2)
+      "Progressieve weerstandstraining op 70-80% 1RM is veilig en effectief" - de
+      review evalueert nergens weerstandsintensiteit. WEGGELATEN NUANCE: de
+      auteurs besluiten dat de winst KORTE TERMIJN is, dat er GEEN LANGETERMIJN-
+      EFFECTEN werden gevonden, en dat de conclusie op een klein aantal kleine
+      studies berust die zowel afzonderlijk als gecombineerd onvoldoende power
+      hadden. Ook geen verschil bij hydrotherapie als vergelijking, of bij
+      toevoeging van balans- of fietsonderdelen.
+    geverifieerd_op: 2026-09-07
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 25886975)
+
+  - key: adie_2012_cryotherapie_tka
+    auteurs: [Adie S, Kwan A, Naylor JM, Harris IA, Mittal R]
+    titel: 'Cryotherapy following total knee replacement'
+    bron: Cochrane Database of Systematic Reviews
+    jaar: 2012
+    volume_paginas: (9):CD007911
+    doi: 10.1002/14651858.CD007911.pub2
+    pmid: '22972114'
+    url: https://doi.org/10.1002/14651858.CD007911.pub2
+    type: SR
+    opmerking: >-
+      Elf gerandomiseerde trials en een gecontroleerde trial, 809 deelnemers. Bewijs
+      van ZEER LAGE kwaliteit voor een klein effect op bloedverlies (SMD -0,46;
+      95% BI -0,84 tot -0,08, ofwel 225 ml minder) en op pijn NA 48 UUR (verschil
+      1,32 punten op een tienpuntsschaal; 95% BI -2,37 tot -0,27) - maar NIET na 24
+      of 72 uur, en beide effecten mogelijk niet klinisch relevant. Bewijs van lage
+      kwaliteit voor 11,4 graden meer flexie bij ontslag. Geen verschil in
+      ongewenste voorvallen, transfusiebehoefte, analgeticagebruik, zwelling of
+      ligduur. CONCLUSIE VAN DE AUTEURS - de mogelijke voordelen "MAY BE TOO SMALL
+      TO JUSTIFY ITS USE", af te wegen tegen ongemak en kosten. De app schreef
+      simpelweg "cryotherapie reduceert pijn".
+    geverifieerd_op: 2026-09-07
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 22972114)
+
+  - key: harvey_2014_cpm_tka
+    auteurs: [Harvey LA, Brosseau L, Herbert RD]
+    titel: 'Continuous passive motion following total knee arthroplasty in people with arthritis'
+    bron: Cochrane Database of Systematic Reviews
+    jaar: 2014
+    volume_paginas: 2014(2):CD004260
+    doi: 10.1002/14651858.CD004260.pub3
+    pmid: '24500904'
+    url: https://doi.org/10.1002/14651858.CD004260.pub3
+    type: SR
+    opmerking: >-
+      24 gerandomiseerde studies, 1445 deelnemers. CPM heeft GEEN klinisch
+      relevante effecten op actieve knieflexie (2 graden extra; 95% BI 0 tot 5),
+      pijn (0,4 punten minder op tien; -0,8 tot 0,1), functie (1,6 punten minder op
+      honderd) of levenskwaliteit (1 punt meer op honderd). Conclusie: CPM
+      rechtvaardigt geen routinematig gebruik. NUANCE DIE DE APP WEGLIET: CPM
+      verlaagt mogelijk wel het risico op manipulatie onder narcose (7,2% naar
+      1,6%; risicoratio 0,3; 95% BI 0,1 tot 0,9) en op ongewenste voorvallen, maar
+      dat bewijs is van respectievelijk ZEER LAGE en lage kwaliteit en zeer
+      onnauwkeurig.
+    geverifieerd_op: 2026-09-07
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 24500904)

@@ -1,0 +1,142 @@
+protocol: over
+protocol_titel: Overpronatie Syndroom
+laatst_gecontroleerd: 2026-09-07
+gecontroleerd_door: fase A — Claude (protocols.js, evidence fase 1-5 + refs)
+opmerking: >-
+  Van de drie bronnen die opgehaald konden worden, ondersteunde er geen enkele de
+  claim waarvoor ze werd aangehaald. Daarnaast bevat het bronnenbestand twee
+  referenties zonder auteurs - "netwerk-meta-analyse (2024)" en "Wetenschappers
+  Sci Reports, 2024" - die daardoor principieel niet naspeurbaar zijn en toch
+  vier klinische claims dragen, waaronder de aanduiding van de "meest effectieve
+  interventie" van het hele protocol.
+
+claims:
+  - id: over_c1
+    tekst: >-
+      Excentrische tibialis posterior is superieur aan concentrisch voor PTTD
+      stadium I-II (Kulig et al.).
+    plaats: fase 3 - evidence
+    bronnen: [kulig_2004_tibialis_posterior]
+    gedekt: nee
+    opmerking: >-
+      De studie bevat geen excentrisch protocol, geen PTTD-patienten en geen
+      vergelijking excentrisch tegenover concentrisch. Het is een MRI-studie bij
+      VIJF GEZONDE volwassenen over selectieve activatie. Wat er wel in staat is
+      klinisch bruikbaarder en ontbrak: gesloten-keten voetadductie activeert de
+      tibialis posterior veruit het sterkst (+50% tegenover minder dan 5% in de
+      andere spieren), terwijl bij de HIELHEFFING de mediale gastrocnemius (+99%),
+      peroneus longus (+57%) en soleus (+39%) de tibialis posterior (+27%)
+      overvleugelen. Wie de TP gericht wil trainen, kiest dus niet de hielheffing.
+    verwerkt: claim geschrapt, de werkelijke bevinding en de praktische consequentie
+      opgenomen
+
+  - id: over_c2
+    tekst: >-
+      Proprioceptietraining op instabiel vlak verbetert het dynamisch evenwicht en
+      verlaagt de rearfoot eversie tijdens het gaan (Hara et al., 2023).
+    plaats: fase 4 - evidence
+    bronnen: [hara_2023_short_foot]
+    gedekt: nee
+    opmerking: >-
+      Die systematische review gaat over SHORT FOOT EXERCISES bij platvoet en
+      bevat geen proprioceptie-interventie, geen instabiel vlak en geen
+      eversiemeting. Het refs-veld beschreef de titel wel correct, maar de
+      evidencetekst gebruikte de bron voor een heel andere claim.
+    verwerkt: claim losgekoppeld van de bron en als klinische redenering gelabeld;
+      de werkelijke inhoud van Hara opgenomen in fase 2
+
+  - id: over_c3
+    tekst: >-
+      Prefab orthesen zijn effectief bij PFPS met overpronatie als de patient meer
+      dan 3 graden rearfoot eversie heeft (Barton et al., 2011).
+    plaats: fase 5 - evidence
+    bronnen: [barton_2011_rearfoot_orthesen]
+    gedekt: nee
+    opmerking: >-
+      Er staat geen drempel van 3 graden in. En het cijfer dat er wel in staat,
+      ontbrak: van de 25 deelnemers meldde na twaalf weken SLECHTS 28% duidelijke
+      verbetering. De auteurs noemen hun bevinding zelf voorlopig bewijs. Dat is
+      precies wat een patient moet horen voor hij inlegzolen aanschaft.
+    verwerkt: drempel geschrapt, het slaagpercentage van 28% en het voorbehoud van
+      de auteurs opgenomen
+
+  - id: over_c4
+    tekst: >-
+      Short Foot Exercise reduceert navicular drop (MD -0,23; p = 0,04) en FPI-6
+      (MD -0,67; p < 0,0001) (Huang et al., 2022, 6 RCT's, n = 201).
+    plaats: fase 2 - evidence
+    bronnen: [hara_2023_short_foot]
+    gedekt: nee
+    opmerking: >-
+      Huang 2022 is in dit dossier niet opgehaald. De wel opgehaalde review over
+      hetzelfde onderwerp (Hara 2023, negen studies) is voorzichtiger: vier van de
+      zes studies over de mediale lengteboog rapporteerden verbetering, er bestaat
+      GEEN consensus over aantal en frequentie van de oefeningen, en het mechanisme
+      is ONDUIDELIJK. Verbetering trad op bij interventies van vijf weken of langer.
+    verwerkt: vervangen door de wel geverifieerde review, met haar voorbehouden
+
+  - id: over_c5
+    tekst: >-
+      De meest effectieve interventie is tibialis posterior versterking plus
+      iliopsoas stretch plus intrinsieke voettraining (MD 3,32; 95% BI 1,78-4,89;
+      netwerk-meta-analyse, 11 RCT's, Sci Reports 2024).
+    plaats: fase 1 en 3 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Deze referentie staat in het bronnenbestand ZONDER AUTEURS, als
+      "Network meta-analysis (2024)". Een referentie zonder auteurs is principieel
+      niet naspeurbaar en voldoet niet aan CLAUDE.md par. 4, dat auteurs, DOI en
+      PMID als verplichte velden noemt. Toch draagt ze de aanduiding van de meest
+      effectieve interventie van het hele protocol. Hetzelfde geldt voor
+      "Wetenschappers Sci Reports, 2024" in fase 2 - dat is geen bronvermelding.
+    verwerkt: beide als onnaspeurbaar gemarkeerd, de claims als niet-opgehaald
+      gelabeld
+
+  - id: over_c6
+    tekst: >-
+      Gait retraining is superieur aan orthesen alleen voor de lange termijn
+      (Mousavi et al., 2024).
+    plaats: fase 1 en 4 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: In dit dossier niet opgehaald.
+    verwerkt: gelabeld
+
+  - id: over_c7
+    tekst: >-
+      FPI-6 vanaf +6 is geproneerd en vanaf +10 hyperpronatie; navicular drop vanaf
+      10 mm is significante pronatie (Brody 1982).
+    plaats: fase 1 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Beide afkapwaarden zijn in dit dossier niet nagekeken, terwijl ze de
+      diagnostische indeling van het hele protocol sturen en jaarlijks voor
+      screening gebruikt worden.
+    verwerkt: gelabeld
+
+  - id: over_c8
+    tekst: >-
+      Zwakke heupabductoren en externe rotatoren leiden tot compensatoire
+      knie-valgus en verhoogde rearfoot eversie (Sanchez-Rodriguez et al., 2020);
+      iliopsoas-strakheid verhoogt de voetpronatie indirect.
+    plaats: fase 3 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Niet opgehaald. De iliopsoas-keten via lumbale lordose en zwaartepunt is
+      bovendien een mechanistische redenering zonder enige bronvermelding.
+    verwerkt: beide gelabeld
+
+  - id: over_c9
+    tekst: >-
+      Orthesen creeren afhankelijkheid; minimalistisch schoeisel stimuleert de
+      intrinsieke voetspieren; een abrupte overgang leidt tot stressfracturen.
+    plaats: fase 5 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Drie uitspraken zonder bron, waarvan de eerste en de derde de patient
+      rechtstreeks sturen in een aankoopbeslissing.
+    verwerkt: alle drie gelabeld als klinische redenering

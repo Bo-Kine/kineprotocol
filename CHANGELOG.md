@@ -3,6 +3,14 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-09-07 — bronaudit overpronatie syndroom
+
+- GEEN VAN DE DRIE OPHAALBARE BRONNEN ONDERSTEUNDE DE CLAIM WAARVOOR ZE WERD AANGEHAALD
+- `kulig_2004_tibialis_posterior` · aangehaald voor "excentrisch superieur aan concentrisch bij PTTD stadium I-II" · het is een MRI-studie bij VIJF GEZONDE volwassenen over selectieve activatie, zonder excentrisch protocol, zonder PTTD-patiënten en zonder die vergelijking · wat er wél in staat is klinisch bruikbaarder en ontbrak: gesloten-keten voetadductie activeert de tibialis posterior veruit het sterkst (+50%), terwijl bij de HIELHEFFING de mediale gastrocnemius (+99%), peroneus longus (+57%) en soleus (+39%) de TP (+27%) overvleugelen — wie de TP gericht wil trainen kiest dus níet de hielheffing
+- `hara_2023_short_foot` · aangehaald voor proprioceptietraining op instabiel vlak en verlaagde rearfoot eversie tijdens het gaan · die review gaat over SHORT FOOT EXERCISES en bevat geen van beide · haar werkelijke inhoud is nu in fase 2 opgenomen, mét de voorbehouden van de auteurs: geen consensus over dosering, mechanisme onduidelijk
+- `barton_2011_rearfoot_orthesen` · de drempel van "meer dan 3° rearfoot eversie" staat er niet in · het cijfer dat er wél in staat ontbrak: van de 25 deelnemers meldde na twaalf weken SLECHTS 28% duidelijke verbetering, en de auteurs noemen hun bevinding zelf voorlopig bewijs · dat is precies wat een patiënt moet horen vóór hij inlegzolen aanschaft
+- TWEE REFERENTIES ZONDER AUTEURS · het bronnenbestand bevatte "Network meta-analysis (2024)" en "Wetenschappers Sci Reports, 2024" · een referentie zonder auteurs is principieel niet naspeurbaar en voldoet niet aan §4 · toch droegen ze vier klinische claims, waaronder de aanduiding van de "meest effectieve interventie" van het hele protocol
+
 ## 2026-09-07 — fase B shin splints
 
 - DE ERNSTIGSTE VORM VAN HET LEK TOT NU TOE · het verworpen tractiemodel stond niet alleen nog in het beschrijvingenblok, het had `moen_2009_mtss_review` als bronvermelding áchter zich — precies de review die dat model verwerpt · dat is de tekst die de gebruiker onder "oorzaken" leest, terwijl de correctie in het evidence-veld van fase 1 zat · blok volledig herschreven naar het resorptiemodel

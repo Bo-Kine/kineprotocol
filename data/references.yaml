@@ -3410,3 +3410,76 @@ references:
       cadansinterventie onderzocht.
     geverifieerd_op: 2026-09-07
     geverifieerd_door: PubMed MCP (get_article_metadata, PMID 25156183)
+
+  - key: kulig_2004_tibialis_posterior
+    auteurs: [Kulig K, Burnfield JM, Requejo SM, Sperry M, Terk M]
+    titel: 'Selective activation of tibialis posterior: evaluation by magnetic resonance imaging'
+    bron: Medicine and Science in Sports and Exercise
+    jaar: 2004
+    volume_paginas: 36(5):862-7
+    doi: 10.1249/01.mss.0000126385.12402.2e
+    pmid: '15126722'
+    url: https://doi.org/10.1249/01.mss.0000126385.12402.2e
+    type: cohort
+    opmerking: >-
+      GEEN EXCENTRISCH PROTOCOL EN GEEN PTTD-PATIENTEN. Het is een MRI-studie bij
+      VIJF GEZONDE volwassenen met een normale Arch Index, die drie oefeningen
+      vergelijkt op SELECTIEVE ACTIVATIE van de tibialis posterior: gesloten-keten
+      voetadductie tegen weerstand, eenbenige hielheffing, en open-keten supinatie
+      tegen weerstand. Voetadductie gaf veruit de grootste toename van het
+      TP-signaal (50 +/- 6%), terwijl de andere spieren minder dan 5% toenamen; bij
+      hielheffing werd de TP overvleugeld door mediale gastrocnemius (99%),
+      peroneus longus (57%) en soleus (39%). Voetadductie activeerde de TP
+      significant sterker dan supinatie (p = 0,021). De app schreef "excentrisch
+      superieur aan concentrisch voor PTTD stadium I-II" - die vergelijking komt in
+      de studie niet voor. WAT ER WEL IN STAAT IS KLINISCH BRUIKBAARDER: wie de
+      tibialis posterior gericht wil trainen, kiest gesloten-keten voetadductie en
+      niet de hielheffing.
+    geverifieerd_op: 2026-09-07
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 15126722)
+
+  - key: hara_2023_short_foot
+    auteurs: [Hara S, Kitano M, Kudo S]
+    titel: 'The effects of short foot exercises to treat flat foot deformity: A systematic review'
+    bron: Journal of Back and Musculoskeletal Rehabilitation
+    jaar: 2023
+    volume_paginas: 36(1):21-33
+    doi: 10.3233/BMR-210374
+    pmid: '35871320'
+    url: https://doi.org/10.3233/BMR-210374
+    type: SR
+    opmerking: >-
+      Systematische review van NEGEN gerandomiseerde studies over short foot
+      exercises. Zes studies onderzochten de mediale lengteboog, waarvan er VIER
+      verbetering rapporteerden. De auteurs stellen uitdrukkelijk dat er GEEN
+      consensus bestaat over aantal en frequentie van de oefeningen en dat het
+      MECHANISME van de boogverbetering ONDUIDELIJK is; verbetering werd gezien bij
+      interventies van vijf weken of langer. DE APP HAALDE DEZE BRON AAN VOOR
+      PROPRIOCEPTIETRAINING OP INSTABIEL VLAK EN VOOR VERLAAGDE REARFOOT EVERSIE
+      TIJDENS HET GAAN - geen van beide komt in deze review voor. Het refs-veld
+      beschreef de titel wel correct; de evidencetekst gebruikte de bron voor een
+      andere claim.
+    geverifieerd_op: 2026-09-07
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 35871320)
+
+  - key: barton_2011_rearfoot_orthesen
+    auteurs: [Barton CJ, Menz HB, Levinger P, Webster KE, Crossley KM]
+    titel: 'Greater peak rearfoot eversion predicts foot orthoses efficacy in individuals with patellofemoral pain syndrome'
+    bron: British Journal of Sports Medicine
+    jaar: 2011
+    volume_paginas: 45(9):697-701
+    doi: 10.1136/bjsm.2010.077644
+    pmid: '21081642'
+    url: https://doi.org/10.1136/bjsm.2010.077644
+    type: cohort
+    opmerking: >-
+      26 personen met patellofemoraal pijnsyndroom kregen prefab-inlegzolen; 25
+      voltooiden de studie. NA TWaalf WEKEN MELDDE SLECHTS 28% (ZEVEN PERSONEN)
+      duidelijke verbetering - dat cijfer ontbrak in de app en is net wat de
+      kinesitherapeut aan de patient moet kunnen zeggen. Van de onderzochte
+      bewegingsvariabelen was een grotere piek-rearfoot-eversie de ENIGE
+      significante onafhankelijke voorspeller van die verbetering. DE AUTEURS
+      NOEMEN DIT ZELF "PRELIMINARY EVIDENCE". Er staat GEEN drempel van 3 graden
+      rearfoot eversie in; de app hanteerde die wel als selectiecriterium.
+    geverifieerd_op: 2026-09-07
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 21081642)

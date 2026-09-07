@@ -3258,7 +3258,7 @@ references:
       schreef "herletselrisico". De incidentie daalde van 0,8 (95% BI 0,61-1,15)
       naar 0,25 (0,19-0,35) per 1000 spelersuren; odds ratio 0,282 (95% BI
       0,110-0,721; p = 0,005), dus een risicoreductie van ongeveer 72%, niet 51%.
-      Dat cijfer van 51% hoort bij vandyk_2019_hamstringpreventie en migreerde hier
+      Dat cijfer van 51% hoort bij vandyk_2019_nordic en migreerde hier
       naartoe. WAT DE APP WEGLIET: er was GEEN significant verschil in ERNST van de
       blessures. Therapietrouw bedroeg 91%.
     geverifieerd_op: 2026-09-06
@@ -3298,7 +3298,7 @@ references:
     doi: 10.1056/NEJMc1708134
     pmid: '28953439'
     url: https://doi.org/10.1056/NEJMc1708134
-    type: RCT
+    type: commentary
     opmerking: >-
       VERSCHENEN IN NEJM ALS CORRESPONDENTIE (Letter), NIET IN ORTHOPAEDIC JOURNAL
       OF SPORTS MEDICINE zoals het refs-veld van de app schreef. PubMed levert GEEN

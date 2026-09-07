@@ -3,6 +3,16 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-09-07 — fase B hamstringblessure
+
+- EEN CLAIM DIE HAAR EIGEN BRON TEGENSPREEKT · "leeftijd > 24 jaar = verhoogd hamstringrisico (Ekstrand 2011)" · die studie vond de incidentiestijging met leeftijd uitsluitend voor KUITletsels en sluit hamstrings, quadriceps en liesletsels daar uitdrukkelijk van uit · ook "biceps femoris in 81% van de gevallen" staat er niet in, en het tijdschrift is AJSM, niet BJSM
+- Het lek opnieuw · de oefeningnote bij het Nordic-onderhoudsprogramma hield "51% reductie van herletsel" — verkeerd cijfer én verkeerde uitkomstmaat — terwijl het evidence-veld van hetzelfde protocol dat cijfer net geschrapt had
+- Drie onverenigbare herstelduren binnen één protocol · graad II stond als 3-8, 4-8 én ≥ 6-8 weken; graad III als 8-16, 8-20+ én ≥ 12 weken · daarnaast staan twee graderingssystemen (vezelpercentage en BAMIC) naast elkaar zonder uitleg · voor wie de prognose met de patiënt bespreekt is dat onbruikbaar · alles gelijkgetrokken op 1-2 / 3-8 / 8-16 weken en als praktijkafspraak gelabeld
+- Interne tegenspraak in de pijndrempel · het evidence-veld van fase 2 hanteerde 5/10, alle oefeningen en criteria van diezelfde fase 3/10 · gelijkgetrokken op 3/10
+- De H-test bleef in drie velden aan Askling 2013 toegeschreven, terwijl het evidence-veld net vaststelt dat die publicatie over totale proximale rupturen na chirurgie gaat
+- Eigen omrekening gemarkeerd · "ongeveer 72%" is onze afleiding uit de odds ratio en staat niet letterlijk in van der Horst 2015 · "geen effect op ernst" afgezwakt tot "geen statistisch significant verschil"
+- Administratief · van Dyk 2019 werd geciteerd maar stond niet in het refs-veld — nu toegevoegd · `bayer_2017_vroege_revalidatie` hertypeerd van RCT naar commentary, omdat PubMed het primair als Letter typeert
+
 ## 2026-09-06 — bronaudit hamstringblessure + fase B enkeldistorsie
 
 - TWEE BRONNEN ZIJN ANDERE PUBLICATIES DAN HET REFS-VELD BESCHREEF · `askling_2013_proximale_ruptuur` in KSSTA gaat over TOTALE PROXIMALE RUPTUREN na chirurgie en is een review met bewijsniveau V — de drie H-testen die eraan werden toegeschreven staan er niet in · `bayer_2017_vroege_revalidatie` is CORRESPONDENTIE in de NEJM, niet een artikel in Orthopaedic Journal of Sports Medicine, en PubMed levert er geen abstract bij, dus de claim over vroege isometrische belasting kon niet tegen de bron gelegd worden

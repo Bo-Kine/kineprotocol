@@ -1,7 +1,7 @@
 protocol: hsi
 protocol_titel: Hamstring Blessure
 laatst_gecontroleerd: 2026-09-06
-gecontroleerd_door: fase A — Claude (protocols.js, evidence fase 1-4 + refs)
+gecontroleerd_door: fase A + fase B (onafhankelijke verificator, schone context) — 2026-09-07
 opmerking: >-
   Twee bronnen bleken andere publicaties dan het refs-veld beschreef. De
   KSSTA-publicatie van Askling uit 2013 gaat over TOTALE PROXIMALE RUPTUREN na
@@ -136,3 +136,89 @@ claims:
       onderzocht niet wat er gebeurt na stoppen. De gevolgtrekking is redelijk maar
       niet uit die trial af te leiden.
     verwerkt: als gevolgtrekking gelabeld, met de werkelijke opzet erbij
+
+  # Fase B (onafhankelijke verificator, schone context). Alle vijf bronsleutels
+  # bibliografisch bevestigd; de vier gecorrigeerde evidenceteksten zijn gedekt.
+  - id: hsi_c10
+    tekst: >-
+      Nordic Hamstring onderhoud: 51% reductie van herletsel bij regelmatig
+      gebruik.
+    plaats: fase 4 - oefening
+    bronnen: [vanderhorst_2015_nordic_amateurs, vandyk_2019_nordic]
+    gedekt: nee
+    opmerking: >-
+      HET LEK. Deze note stond nog in de oude, tweevoudig foute vorm - verkeerd
+      cijfer en verkeerde uitkomstmaat - en sprak het evidence-veld van hetzelfde
+      protocol rechtstreeks tegen, waar 51% net was geschrapt. Van Dyk 2019 zegt
+      bovendien "tot 51%" en over hamstringletsel in het algemeen, niet herletsel.
+    verwerkt: note gelijkgetrokken met het evidence-veld
+
+  - id: hsi_c11
+    tekst: >-
+      Biceps femoris is in 81% van de gevallen aangedaan (Ekstrand et al.,
+      2011 - BJSM); leeftijd boven 24 jaar verhoogt het hamstringrisico.
+    plaats: oorzaken
+    bronnen: [ekstrand_2011_spierletsels_voetbal]
+    gedekt: nee
+    opmerking: >-
+      Het percentage van 81% staat niet in die bron, en het tijdschrift is AJSM,
+      niet BJSM. De leeftijdsclaim is bovendien IN STRIJD met de bron: Ekstrand
+      vond de incidentiestijging met leeftijd uitsluitend voor KUITletsels en
+      uitdrukkelijk NIET voor hamstrings, quadriceps of liesletsels.
+    verwerkt: beide gelabeld, de tegenspraak met de bron expliciet benoemd
+
+  - id: hsi_c12
+    tekst: >-
+      Drie onderling verschillende herstelduren per graad en twee concurrerende
+      graderingssystemen binnen hetzelfde protocol.
+    plaats: fase 1, fase 4 en kenmerken
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Graad II stond als 3-8, 4-8 en minstens 6-8 weken; graad III als 8-16, 8-20+
+      en minstens 12 weken. Daarnaast staan de indeling op vezelpercentage en de
+      BAMIC-classificatie naast elkaar zonder dat het verband wordt uitgelegd. Voor
+      een kinesitherapeut die de prognose met de patient bespreekt, is dat
+      onbruikbaar.
+    verwerkt: alle drie de reeksen gelijkgetrokken op 1-2 / 3-8 / 8-16 weken en als
+      praktijkafspraak gelabeld; het naast elkaar bestaan van twee systemen
+      expliciet benoemd
+
+  - id: hsi_c13
+    tekst: >-
+      Pijndrempel voor progressie: 5/10 in het evidence-veld tegenover 3/10 in
+      alle oefeningen en criteria van dezelfde fase.
+    plaats: fase 2 - evidence tegenover oefeningen
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Interne tegenspraak binnen een fase. Geen van beide drempels heeft een bron.
+    verwerkt: gelijkgetrokken op 3/10, als praktijkafspraak gelabeld
+
+  - id: hsi_c14
+    tekst: >-
+      Herletselrisico 2 tot 3 maal; H/Q-verhouding onder 0,60; wekelijkse
+      belastingstijging boven 10%; BAMIC-drempels; SLR als meest gevoelige test;
+      echografie onder 48 uur minder sensitief dan MRI.
+    plaats: oorzaken en kenmerken
+    bronnen: []
+    gedekt: nee
+    opmerking: Zes harde uitspraken zonder bron en zonder markering.
+    verwerkt: alle gelabeld
+
+  - id: hsi_c15
+    tekst: >-
+      Van Dyk 2019 wordt in de tekst geciteerd maar ontbrak in het refs-veld;
+      het type van bayer_2017 stond als RCT terwijl PubMed het primair als Letter
+      typeert; "ongeveer 72%" is een eigen omrekening.
+    plaats: refs-veld, references.yaml en fase 3 - evidence
+    bronnen: [vandyk_2019_nordic, bayer_2017_vroege_revalidatie]
+    gedekt: deels
+    opmerking: >-
+      Administratieve maar relevante punten: een citatie hoort in de bronnenlijst
+      te staan, het bewijstype moet kloppen, en een eigen berekening mag niet als
+      brongegeven overkomen. "Geen effect op ernst" was bovendien sterker
+      geformuleerd dan "geen statistisch significant verschil".
+    verwerkt: van Dyk toegevoegd aan het refs-veld, bayer_2017 hertypeerd naar
+      commentary, de 72% als eigen omrekening gemarkeerd en de ernstformulering
+      afgezwakt

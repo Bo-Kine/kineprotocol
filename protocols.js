@@ -24,14 +24,14 @@ const protocols = {
          {name:'Stationaire fiets',params:[['Duur','10–20 min'],['Weerstand','laag'],['Freq','dagelijks']],note:'Start hoog zadel, verlaag progressief.',cat:'cardio'},
          {name:'Mini-squat (0–45°)',params:[['Reps','12–15'],['Sets','3'],['Tempo','3-1-3']],note:'Bilateraal. Controleer valgus. Progressief dieper.',cat:'kracht'},
          {name:'Beenpers bilateraal',params:[['Reps','10–12'],['Sets','3–4'],['Belasting','60–75% 1RM']],note:'CKC, laag shear op graft.',cat:'kracht'},
-         {name:'Isometrische knie-extensie (60°)',params:[['Reps','5–8'],['Hold','5 sec'],['Sets','3']],note:'Bronvermelding verwijderd: de eerder vermelde publicatie dekt deze uitspraak niet. Bron nog aan te leveren.',cat:'kracht'},
+         {name:'Isometrische knie-extensie (60°)',params:[['Reps','5–8'],['Hold','5 sec'],['Sets','3']],note:'Open keten in de binnenste bocht (60°) belast de nieuwe transplantaat minder dan eindstandige extensie — klinische richtlijn. Er is in dit dossier geen bron gevonden die deze uitvoering onderbouwt.',cat:'kracht'},
          {name:'Step-up anterieur (10 cm)',params:[['Reps','10–15'],['Sets','3']],note:'Functioneel CKC. Controleer knietracking.',cat:'kracht'},
          {name:'Enkel-been balans',params:[['Duur','30–60 sec'],['Sets','3'],['Ogen','open → gesloten']],note:'Progressie: schuimmat → perturbed surface.',cat:'stabiliteit'}],
        criteria_go:['ROM 0–130°','Normaal lopen','Quad LSI ≥ 60%','SLS 30° zonder valgus','Geen effusie na 30 min'],
        criteria_stop:['LSI < 60% na 6 wkn → NMES/BFR','ROM-stagnatie → manuele therapie'],redflags:[]},
       {label:'Fase 3',title:'Functioneel Herstel',weeks:'Week 6–12',
        evidence:'<strong>OKC knie-extensie</strong> in een beperkt bereik van 45–90° vanaf week 4 gaf geen toename van anterieure knielaxiteit ten opzichte van een late start (Fukuda et al., 2013 — RCT, hamstringgraft); het krachtverschil tussen de groepen was niet significant. <strong>BFR-training</strong> bij quadricepshypotrofie gaf vergelijkbare kracht- en hypertrofiewinst als zware weerstandstraining, met minder kniepijn en effusie (Hughes et al., 2019 — RCT, uitsluitend hamstringgraft).',
-       goals:['Quad LSI ≥ 80%','Hamstring LSI ≥ 80%','SLS technisch correct','Lateral step-down zonder compensatie','ACL-RSI ≥ 56/100'],
+       goals:['Quad LSI ≥ 80%','Hamstring LSI ≥ 80%','SLS technisch correct','Lateral step-down zonder compensatie','ACL-RSI meten en bespreken (geen onderbouwde afkapwaarde beschikbaar)'],
        exercises:[
          {name:'Unilateraal been-press',params:[['Reps','8–10'],['Sets','4'],['Belasting','70–85% 1RM']],note:'Prioriteitsoefening voor LSI.',cat:'kracht'},
          {name:'OKC Knie-extensie (45–90°)',params:[['Reps','10–12'],['Sets','3–4'],['Start','vanaf week 4']],note:'Beperkt bereik zoals onderzocht door Fukuda et al. (2013): 45–90° vanaf week 4. Bereik pas uitbreiden op geleide van de doorstroomcriteria.',cat:'kracht'},
@@ -40,7 +40,7 @@ const protocols = {
          {name:'Lateral step-down (20 cm)',params:[['Reps','10–15'],['Sets','3']],note:'Meetinstrument én oefening.',cat:'kracht'},
          {name:'Proprioceptie instabiel vlak',params:[['Duur','45 sec'],['Sets','3–5']],note:'BOSU → ogen gesloten → dubbeltaak.',cat:'stabiliteit'}],
        criteria_go:['Quad LSI ≥ 80%','Hamstring LSI ≥ 80%','Geen effusie','SLS zonder valgus','≥ 12 weken postop'],
-       criteria_stop:['LSI < 70% → BFR','ACL-RSI < 40 → psychologische begeleiding'],redflags:[]},
+       criteria_stop:['LSI < 70% → BFR','ACL-RSI < 40 → psychologische begeleiding overwegen (praktijkafspraak, geen onderbouwde afkapwaarde)'],redflags:[]},
       {label:'Fase 4',title:'Looptraining & Plyometrie',weeks:'Week 12–20',
        evidence:'<strong>Plyometrie in 4 stadia</strong> als onderdeel van criteriumgebaseerde revalidatie (Buckthorpe &amp; Della Villa, 2021 — clinical commentary, expert opinion). Voor terugkeer naar sport hanteerde Grindem et al. (2016) een testbatterij met scores boven 90 op vier tests.',
        goals:['Continu joggen 20–30 min','Plyometrisch stadium 1–3 voltooid','LSI plyometrie ≥ 85–90%','Quad LSI ≥ 90%'],
@@ -53,13 +53,13 @@ const protocols = {
        criteria_stop:['Pijn bij jogging > VAS 3 → fase 3 consolideren'],redflags:[]},
       {label:'Fase 5',title:'Return to Sport',weeks:'Mnd 5–12',
        evidence:'Terugkeer naar niveau I-sport gaf een <strong>4,32× hoger herletselpercentage</strong> dan niet terugkeren; het herletselpercentage daalde met <strong>51% per maand uitstel tot 9 maanden</strong> na de operatie, daarna zonder verdere risicoreductie (Grindem et al., 2016 — cohort, 106 pivoting-sporters). De KNGF-richtlijn beveelt <strong>9–12 maanden</strong> revalidatie aan (van Melick et al., 2016).',
-       goals:['Hop-testbatterij LSI ≥ 90%','Quad + Ham LSI ≥ 90%','ACL-RSI ≥ 65/100','IKDC ≥ 85/100','Minimum 9 maanden postoperatief'],
+       goals:['Hop-testbatterij LSI ≥ 90%','Quad + Ham LSI ≥ 90%','ACL-RSI en IKDC meten en bespreken (geen onderbouwde afkapwaarden beschikbaar)','Minimum 9 maanden postoperatief'],
        exercises:[
          {name:'Single Leg Hop + Triple Hop + 6m Timed',params:[['LSI','≥ 90%']],note:'Volledige hop-testbatterij vóór RTS.',cat:'test'},
          {name:'FIFA 11+ (preventie)',params:[['Duur','20 min'],['Freq','elk trainingsmoment']],note:'50% reductie herletsel (Silvers-Granelli 2015).',cat:'neuro'},
          {name:'Nordic Hamstring (onderhoud)',params:[['Reps','6–8'],['Freq','1–2×/week']],note:'Levenslang onderhoud.',cat:'kracht'}],
-       criteria_go:['Alle vier de tests van Grindem > 90 (quadricepskracht, hoptests, KOS-ADLS, global rating scale)','≥ 9 maanden postoperatief','ACL-RSI ≥ 65 (bron nog aan te leveren)','IKDC ≥ 85 (bron nog aan te leveren)'],
-       criteria_stop:['ACL-RSI < 50 → psycholoog'],
+       criteria_go:['Alle vier de tests van Grindem > 90 (quadricepskracht, hoptests, KOS-ADLS, global rating scale)','≥ 9 maanden postoperatief','ACL-RSI en IKDC gemeten en met de patiënt besproken — de eerder gehanteerde drempels 65 en 85 zijn geschrapt omdat er geen bron voor gevonden is'],
+       criteria_stop:['ACL-RSI < 50 → psycholoog overwegen (praktijkafspraak, geen onderbouwde afkapwaarde)'],
        redflags:['Nieuwe instabiliteitsepisode → stop sport, evalueer ACL','Contralateraal risico 3–6× verhoogd → bilateraal preventief programma']}
     ],
     refs:'van Melick N, van Cingel REH, Brooijmans F, et al. Evidence-based clinical practice update: practice guidelines for anterior cruciate ligament rehabilitation based on a systematic review and multidisciplinary consensus. Br J Sports Med. 2016;50(24):1506-1515. doi:10.1136/bjsports-2015-095898 | Grindem H, Snyder-Mackler L, Moksnes H, Engebretsen L, Risberg MA. Simple decision rules can reduce reinjury risk by 84% after ACL reconstruction: the Delaware-Oslo ACL cohort study. Br J Sports Med. 2016;50(13):804-8. doi:10.1136/bjsports-2016-096031 | Fukuda TY, Fingerhut D, Moreira VC, et al. Open kinetic chain exercises in a restricted range of motion after anterior cruciate ligament reconstruction: a randomized controlled clinical trial. Am J Sports Med. 2013;41(4):788-94. doi:10.1177/0363546513476482 | Hughes L, Rosenblatt B, Haddad F, et al. Comparing the effectiveness of blood flow restriction and traditional heavy load resistance training in the post-surgery rehabilitation of anterior cruciate ligament reconstruction patients: a UK National Health Service randomised controlled trial. Sports Med. 2019;49(11):1787-1805. doi:10.1007/s40279-019-01137-2 | Rice DA, McNair PJ. Quadriceps arthrogenic muscle inhibition: neural mechanisms and treatment perspectives. Semin Arthritis Rheum. 2010;40(3):250-66. doi:10.1016/j.semarthrit.2009.10.001 | Buckthorpe M, Della Villa F. Recommendations for plyometric training after ACL reconstruction - a clinical commentary. Int J Sports Phys Ther. 2021;16(3):879-895. doi:10.26603/001c.23549'},
@@ -176,7 +176,7 @@ const protocols = {
        evidence:'<strong>Beloop:</strong> in de klassieke gerandomiseerde studie bij 126 patiënten met een onzekere operatie-indicatie deed de geopereerde groep het na één jaar significant beter; na vier jaar nog steeds beter maar <strong>niet meer significant</strong>, en daarna veranderde er tot tien jaar nauwelijks iets (Weber, 1983 — Spine). <em>De veelgeciteerde uitspraak dat 90% conservatief herstelt binnen 6 tot 12 weken staat niet in die bron en is geschrapt.</em> Beeldvorming is in de eerste lijn geen standaard — <em>klinische redenering; de richtlijnverwijzing is hier niet geverifieerd.</em> <strong>Straight leg raise:</strong> gepoolde sensitiviteit 0,91 (95% BI 0,82–0,94) maar gepoolde <strong>specificiteit slechts 0,26</strong> (0,16–0,38); de gekruiste test is omgekeerd: sensitiviteit 0,29, specificiteit 0,88. De auteurs benadrukken dat de bruikbaarheid <strong>beperkt wordt door die lage specificiteit</strong> en dat alle onderzochte studies chirurgische casusreeksen buiten de eerste lijn waren (Devillé et al., 2000 — Spine). <em>De slumptest komt in die review niet voor.</em>',
        goals:['Klinische diagnose + niveau bepalen (L4–L5 vs L5–S1)','Rode vlaggen screenen','Neurologisch onderzoek: reflexen, kracht, sensibiliteit','Behandelpad: conservatief vs chirurgisch','Baseline: ODI, NRS, neurologisch'],
        exercises:[
-         {name:'Straight Leg Raise (SLR)',params:[['Positief','< 70°'],['Specificiteit','hoog']],note:'Goudstandaard voor L4–L5 en L5–S1. Bragard verhoogt specificiteit.',cat:'kracht'},
+         {name:'Straight Leg Raise (SLR)',params:[['Sensitiviteit','0,91 (Devillé 2000)'],['Specificiteit','0,26 — LAAG']],note:'Gevoelig maar weinig specifiek: een positieve SLR sluit weinig uit. Devillé et al. (2000) geven een gepoolde specificiteit van 0,26 en de Cochrane-review van van der Windt et al. (2010) 0,28; beide besluiten dat de diagnostische waarde beperkt is. De eerder vermelde drempel van 70° en de aanduiding &quot;specificiteit hoog&quot; komen in geen van beide voor en waren in tegenspraak met de evidencetekst van deze fase.',cat:'test'},
          {name:'Slump test',params:[['Sens','0.84 (niet onderbouwd in dit dossier)'],['Spec','0.83 (niet onderbouwd in dit dossier)']],note:'Reproductie uitstralende pijn = positief. Dat de slumptest sensitiever is dan de SLR, is in dit dossier niet nagekeken; de slumptest komt in Devill&eacute; (2000) noch in de Cochrane-review niet voor.',cat:'test'},
          {name:'Neurologisch onderzoek',params:[['Test','reflexen, kracht, sensibiliteit']],note:'L4: kniepees + TA. L5: EHL + webspace. S1: achillespees + peroneus.',cat:'test'},
          {name:'Femoral nerve stretch (L3–L4)',params:[['Positie','buiklig, knie flecteren']],note:'Pijn voorzijde bovenbeen = positief bij hoge hernia.',cat:'test'}],
@@ -833,7 +833,7 @@ const protocols = {
          {name:'Return to swimming (zwemmers)',params:[['Volgorde','rugslag → borstkraul → vlinderslag']],note:'Bilateraal ademhalen verplicht eerste 4 weken. Scapulaire controle bij elke slagcyclus monitoren.',cat:'cardio'},
          {name:'Preventief RC-onderhoudsprogramma (levenslang)',params:[['Freq','2–3×/week'],['Duur','20 min']],note:'Y/T/W 3×12 + ER band 3×15 + serratus push-up plus 3×10. Eerste jaar verplicht. Daarna als warm-up bij sport.',cat:'kracht'},
          {name:'ISIS-score risicobeoordeling (Balg & Boileau 2007)',params:[['Timing','vóór RTS']],note:'Score > 6 ging in de oorspronkelijke reeks van 131 patiënten gepaard met 70% recidief (p < 0,001); de auteurs beschouwen een artroscopische Bankart dan als gecontra-indiceerd en stellen een Bristow-Latarjet voor. Patiënt daarover informeren.',cat:'test'}],
-       criteria_go:['Krachtsasymmetrie ≤ 10%','ER/IR ratio ≥ 0.66','WOSI ≤ 420','Sport-specifieke bewegingen pijnvrij','Chirurgische goedkeuring','Minimum 6 mnd post-Bankart of 4 mnd conservatief AMBRI'],
+       criteria_go:['Krachtsasymmetrie ≤ 10%','ER/IR ratio ≥ 0.66 (praktijkafspraak, niet onderbouwd)','WOSI ≤ 420','Sport-specifieke bewegingen pijnvrij','Chirurgische goedkeuring','Minimum 6 mnd post-Bankart of 4 mnd conservatief AMBRI'],
        criteria_stop:['WOSI > 630 na 9 maanden → herbeoordeel conservatief vs. chirurgisch'],
        redflags:['Nieuwe luxatie bij sport → stop, heroverweeg chirurgische indicatie (ISIS-score bepalen)','AMBRI zonder voldoende verbetering na 9 maanden conservatief → inferieure kapselshift overwegen']}
     ],
@@ -1347,7 +1347,7 @@ protocols.sup = {id:'sup',title:'Supraspinatus Tendinopathie & Bursitis',subtitl
       ],
       criteria_go:[
         'ER-kracht ≥ 80% van contralaterale zijde (handynamometer)',
-        'ER/IR ratio ≥ 0,66',
+        'ER/IR ratio ≥ 0,66 (praktijkafspraak; die waarde staat in geen enkele bron van dit dossier)',
         'Overhead press 3 × 10 met lichaamsgewicht-gerelateerd gewicht pijnvrij',
         'NRS ≤ 2/10 bij alle dagelijkse activiteiten inclusief overhead',
         'Volledige AROM in alle vlakken zonder compensatie',
@@ -2316,7 +2316,7 @@ const BESLISBOOM = {
       {
         id: 'partieel',
         vraag: 'Partiële scheuring — grootte?',
-        info: 'Kukkonen RCT 2015: conservatief = chirurgisch bij < 50% dikte bij patiënten > 55j.',
+        info: 'Kukkonen (2015): bij niet-traumatische supraspinatusscheuren bij OUDERE patiënten verschilde de Constant-score na twee jaar niet tussen kinesitherapie, acromioplastiek en manchetherstel (p = 0,38). De trial hanteert géén grens van 50% dikte en géén leeftijdsgrens van 55 jaar. Let op: de scheur was zonder herstel wél significant groter (11,0 tegenover 4,2 mm).',
         opties: [
           {label: '< 50% dikte + leeftijd > 55j', advies: 'Conservatief eerst. 3 maanden kinesitherapie. Kukkonen 2015: gelijkwaardige uitkomst.', color: '#22c55e'},
           {label: '> 50% dikte OF leeftijd < 50j + sport', advies: 'Chirurgisch overleg. Debridement vs hechting afhankelijk van locatie en kwaliteit.', color: '#f59e0b'},
@@ -2358,7 +2358,7 @@ const BESLISBOOM = {
       {
         id: 'radiculopathie',
         vraag: 'Duur radiculopathie?',
-        info: 'Spontaan herstel bij 75% binnen 12 weken. Chirurgie versnelt herstel maar uitkomst na 1–2 jaar gelijkwaardig (Weber 1983, Peul 2007).',
+        info: 'Weber (1983) vond dat de geopereerde groep het na één jaar significant beter deed en na vier jaar beter maar niet meer significant; een spontaan herstelpercentage binnen 12 weken staat daar NIET in. Peul (2007) is in dit dossier niet opgehaald.',
         opties: [
           {label: '< 6 weken', advies: 'Conservatief. Neurodynamica + motor control. 75% spontaan herstel. Actief blijven, geen bedrust.', color: '#22c55e'},
           {label: '6–12 weken zonder verbetering', advies: 'MRI indicatie. Overweeg epidurale infiltratie als bridge. Chirurgisch consult bij NRS > 6 of ADL-beperking.', color: '#f59e0b'},
@@ -2406,7 +2406,7 @@ const BESLISBOOM = {
       {
         id: 'fractuur',
         vraag: 'Ottawa Ankle Rules — Fractuur uitsluiten',
-        info: 'Sens 96–99%. Verplichte eerste stap vóór start revalidatie.',
+        info: 'Verplichte eerste stap vóór start revalidatie. Bachmann et al. (2003) poolden een negatieve likelihood ratio van 0,08 en spreken van een sensitiviteit van bijna 100% met matige specificiteit; het eerder vermelde bereik 96–99% staat er niet in.',
         opties: [
           {label: 'Ottawa positief → RX', advies: 'RX verplicht. Fractuur → gips/orthopedie. RX normaal → start revalidatie.',  color: '#ef4444'},
           {label: 'Ottawa negatief', next: 'syndesmose', color: '#22c55e'},
@@ -2490,7 +2490,7 @@ const BESLISBOOM = {
       {
         id: 'tubs_leeftijd',
         vraag: 'Leeftijd patiënt bij eerste luxatie?',
-        info: 'Recidiefkans: < 20 jr = 80–90%. 20–30 jr = 60–70%. > 30 jr = 30–50%. Balg & Boileau ISIS-score bepaalt chirurgisch risico.',
+        info: 'De recidiefkans daalt met de leeftijd — de eerder vermelde percentages per leeftijdsgroep zijn in dit dossier niet nagekeken; Itoi (2007) noemt 66–94% bij jonge patiënten. Balg &amp; Boileau: bij een ISIS-score boven 6 punten bedroeg het recidief 70% (p &lt; 0,001) en beschouwen de auteurs een artroscopische Bankart als gecontra-indiceerd.',
         opties: [
           {label: '< 25 jaar — hoog recidiefrisico', next: 'tubs_sport', color: '#ef4444'},
           {label: '≥ 25 jaar — matig recidiefrisico', next: 'tubs_conservatief', color: '#f59e0b'},
@@ -2561,7 +2561,7 @@ const BESLISBOOM = {
       {
         id: 'kracht',
         vraag: 'Krachtherstel grip na fase 3 (week 10–12)?',
-        info: 'Grip strength < 60% van contralateraal op week 12 wijst op vertraagd herstel. Oorzaken: onvoldoende training, pijnremming, CRPS subklinisch, peesadhesies.',
+        info: 'Grijpkracht onder 60% van contralateraal op week 12 wordt klinisch als teken van vertraagd herstel gezien — drempel niet onderbouwd in dit dossier. Oorzaken: onvoldoende training, pijnremming, CRPS subklinisch, peesadhesies.',
         opties: [
           {label: 'Grip ≥ 60% contralateraal — normaal verloop', next: 'rts', color: '#22c55e'},
           {label: 'Grip < 60% na 12 weken training', advies: 'Ergotherapeut inschakelen voor intensief handrevalidatieprogramma. HSR-principes toepassen (3×8RM). CRPS uitsluiten. Herevalueer na 4 weken.', color: '#f59e0b'},
@@ -2570,7 +2570,7 @@ const BESLISBOOM = {
       {
         id: 'rts',
         vraag: 'Return to Sport / Work criteria gehaald?',
-        info: 'PRWE < 20, grip ≥ 90% contralateraal, AROM F/E ≥ 80°, pro/sup ≥ 90°, pijnvrij bij sportspecifieke bewegingen.',
+        info: 'PRWE < 20, grip ≥ 90% contralateraal, AROM F/E ≥ 80°, pro/sup ≥ 90°, pijnvrij bij sportspecifieke bewegingen — praktijkafspraken; deze afkapwaarden zijn in dit dossier niet onderbouwd.',
         opties: [
           {label: 'Alle criteria gehaald', advies: 'Volledige RTS/RTW. Onderhoudsprogramma 2×/week. Polsbrace bij risico-activiteiten eerste jaar. Afsluiting na 6 maanden follow-up.', color: '#22c55e'},
           {label: 'PRWE < 20 maar grip 75–89%', advies: 'Gedeeltelijke RTS voor niet-contact activiteiten. Grip training intensiveren. Herevalueer na 4 weken. Manuele beroepen: ergotherapeut work hardening.', color: '#f59e0b'},
@@ -2586,7 +2586,7 @@ const BESLISBOOM = {
       {
         id: 'start',
         vraag: 'Is er anatomisch bewijs voor EPB-subcompartiment?',
-        info: 'Chern TC et al. (2014): 34% van patiënten heeft EPB in apart subcompartiment van eerste dorsaal compartiment. Dit verklaart conservatief falen en vereist aparte chirurgische release. Echografisch te beoordelen.',
+        info: 'Chern TC et al. (2014) — in dit dossier niet opgehaald: naar verluidt heeft 34% van de patiënten de EPB in een apart subcompartiment van eerste dorsaal compartiment. Dit verklaart conservatief falen en vereist aparte chirurgische release. Echografisch te beoordelen.',
         opties: [
           {label: 'Geen subcompartiment (66%)', next: 'conservatief', color: '#22d3ee'},
           {label: 'EPB-subcompartiment aanwezig (34%)', next: 'subcompartiment', color: '#f59e0b'},
@@ -2625,7 +2625,7 @@ const BESLISBOOM = {
       {
         id: 'injectie_echo',
         vraag: 'Echogeleide injectie beide subcompartementen — resultaat?',
-        info: 'Accurate plaatsing in beide subcompartementen (APL + EPB apart) verhoogt succeskans bij anatomisch variant tot 65%. Echo-geleiding verplicht bij bekend subcompartiment.',
+        info: 'Accurate plaatsing in beide subcompartementen (APL + EPB apart) verhoogt de succeskans bij een anatomische variant — het eerder vermelde percentage van 65% is in dit dossier niet nagekeken. Echo-geleiding verplicht bij bekend subcompartiment.',
         opties: [
           {label: 'Succes (≥ 50% reductie)', next: 'revalidatie_succes', color: '#22c55e'},
           {label: 'Geen succes', next: 'chirurgie', color: '#ef4444'},
@@ -2634,7 +2634,7 @@ const BESLISBOOM = {
       {
         id: 'revalidatie_succes',
         vraag: 'Revalidatiefase na conservatief succes — protocol adherentie?',
-        info: 'Ilyas AM 2007: 50% recidiefpercentage bij onvoldoende revalidatie na injectie-succes. Fase 2–3 protocol (progressieve belasting, excentrische training) essentieel voor duurzaam resultaat.',
+        info: 'Ilyas 2007 is in dit dossier niet opgehaald; het eerder vermelde recidiefpercentage van 50% is daarmee niet nagekeken. Fase 2–3 protocol (progressieve belasting, excentrische training) essentieel voor duurzaam resultaat.',
         opties: [
           {label: 'Volledige protocol adherentie', advies: 'Volledig protocol fase 2–3 doorlopen. Recidief preventie: ergonomie + onderhoudstraining 2×/week. Ontslagklaar na QuickDASH ≤ 10 en kracht ≥ 90%.', color: '#22c55e'},
           {label: 'Onvoldoende adherentie / recidief', advies: 'Herhaal fase 1 protocol. Tweede injectie overwegen. Bespreek chirurgische optie bij 3e episode. Ergotherapeut inschakelen voor werkplekadaptatie.', color: '#f59e0b'},
@@ -2668,7 +2668,7 @@ const BESLISBOOM = {
       {
         id: 'conservatief',
         vraag: 'Conservatief beleid mild CTS — respons na 8 weken?',
-        info: 'Walker 2000 RCT: neutraalspalk 8 weken + glijdingstechnieken → 60–70% symptoomreductie bij mild CTS. Marshall 2007 — in dit dossier niet opgehaald: injectie toevoegen bij onvoldoende splintrespons. Fernández-de-las-Peñas 2021 — in dit dossier niet opgehaald: neurodynamics significant effectief.',
+        info: 'Walker (2000) vergeleek nachtelijk met voltijds dragen van een neutrale spalk bij 21 patiënten; een symptoomreductie van 60–70% staat er niet in en er was geen controlegroep zonder behandeling. Marshall 2007 — in dit dossier niet opgehaald: injectie toevoegen bij onvoldoende splintrespons. Fernández-de-las-Peñas 2021 — in dit dossier niet opgehaald: neurodynamics significant effectief.',
         opties: [
           {label: 'Goede respons (BCTQ-SSS ≤ 2.5)', advies: 'Conservatief succes. Continueer nachtspalk 4 weken extra. Onderhoud glijdingstechnieken 2×/dag. Ergonomische aanpassing permanent. Herevalueer na 3 maanden.', color: '#22c55e'},
           {label: 'Gedeeltelijke respons (BCTQ-SSS 2.5–3.5)', next: 'injectie', color: '#f59e0b'},

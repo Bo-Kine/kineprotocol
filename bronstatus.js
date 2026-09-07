@@ -6,11 +6,11 @@
 // uitspraak onjuist is - ze staat nu als klinische redenering in de tekst.
 const BRONSTATUS = {
   "acl": {
-    "gecontroleerd": 12,
+    "gecontroleerd": 14,
     "gedekt": 9,
     "deels": 0,
-    "niet_gedekt": 3,
-    "open": 3,
+    "niet_gedekt": 5,
+    "open": 0,
     "datum": "2026-09-05"
   },
   "aslt": {

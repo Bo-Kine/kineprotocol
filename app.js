@@ -1445,9 +1445,11 @@ function bronBadge(protoId) {
   // bij "21 claims gecontroleerd" leest als kwaliteitskeurmerk, terwijl bij de
   // meeste protocollen juist het merendeel van de citaties de claim niet dekte.
   const klasse = ng > st.gedekt ? 'bron-open' : 'bron-ok';
+  // Kort houden: op een telefoon staat de badge naast het label "Evidence-basis".
+  // De volledige uitleg zit in de tooltip.
   const kern = ng
-    ? `${st.gecontroleerd} claims · ${ng} niet gedekt door de aangehaalde bron`
-    : `${st.gecontroleerd} claims gecontroleerd`;
+    ? `${st.gecontroleerd} claims · ${ng} niet gedekt`
+    : `${st.gecontroleerd} claims gedekt`;
   const uitleg = ng
     ? `Alle citaties zijn eerstehands opgehaald. Bij ${ng} van de ${st.gecontroleerd} gecontroleerde uitspraken bleek de aangehaalde bron de claim niet te dekken. Die uitspraken zijn niet noodzakelijk onjuist, maar staan nu in de tekst als klinische redenering of praktijkafspraak in plaats van als evidentie. Zie data/claims/${protoId}.yaml voor de volledige verantwoording.`
     : 'Elke citatie is eerstehands opgehaald en tegen de primaire bron gelegd.';

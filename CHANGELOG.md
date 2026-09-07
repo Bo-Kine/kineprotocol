@@ -3,6 +3,22 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-09-07 — drie ACL-claims geschrapt · SLR-omkering · beslisbomen alsnog nagekeken
+
+**Op beslissing van de kinesitherapeut zijn de drie wachtende ACL-claims geschrapt** in plaats van in wachtstand gehouden, conform §1.2.
+
+- `acl_c10` · de bronvermelding bij de isometrische knie-extensie op 60° was al verwijderd; de oefening blijft staan, nu uitdrukkelijk als klinische richtlijn zonder onderbouwing
+- `acl_c11` · de ACL-RSI-drempels 56 en 65 zijn uit de fasedoelen en doorstroomcriteria verwijderd; de vragenlijst blijft als meting staan zonder afkapwaarde · de STOPcriteria die een verwijzing naar psychologische begeleiding sturen (< 40 en < 50) zijn BEHOUDEN maar gelabeld als praktijkafspraak — een lage score is een reden tot gesprek, en die vangnetfunctie schrappen zou de zorg verslechteren
+- `acl_c12` · de IKDC-drempel van 85 idem verwijderd; het MCID van 11,5 werd nergens als criterium gebruikt en verviel daarmee
+
+**TWEE VONDSTEN DIE PAS BIJ HET KIJKEN NAAR HET SCHERM BOVENKWAMEN**
+
+- De SLR-oefening bij lumbale hernia toonde nog altijd "Positief: < 70°" en "Specificiteit: hoog" — de omkering die fase B had aangewezen. Bij het verwerken corrigeerde ik de slumptest ernaast en niet de SLR zelf. Beide bronnen geven juist een LAGE specificiteit (0,26 en 0,28). De parameters stonden direct onder een evidencetekst die het tegenovergestelde zei. **Les: een afgevinkt claimdossier garandeert niet dat de app het toont — de laatste controle hoort in de app zelf.**
+- **De klinische beslisbomen zaten nooit in de audit.** Dat is de structuur die bij de triage gebruikt wordt, en ze herhaalden claims die in de protocollen al weerlegd waren: "spontaan herstel bij 75% binnen 12 weken (Weber 1983)" — Weber bevat geen herstelpercentage; "Kukkonen: conservatief = chirurgisch bij < 50% dikte boven 55 jaar" — die trial hanteert geen van beide grenzen; "Walker 2000: 60-70% symptoomreductie" — staat er niet in; "Ottawa sensitiviteit 96-99%" — het bereik dat elders al geschrapt was; plus recidiefpercentages per leeftijdsgroep en het Ilyas-cijfer van 50% · zeven teksten gecorrigeerd of gelabeld
+- **Eén vermelding verdient het om genoemd te worden omdat ze wél klopte:** de beslisboom bij schouderinstabiliteit gaf Burkhead & Rockwood correct weer — 80% succes bij AMBRI tegenover 16% bij TUBS — precies zoals geverifieerd. Die is ongemoeid gelaten.
+
+**Badge leesbaar gemaakt** · op een telefoon liep de tekst van het scherm af (`white-space:nowrap`); ze breekt nu af en is ingekort tot "21 claims · 17 niet gedekt", met de volledige uitleg in de tooltip
+
 ## 2026-09-07 — EINDBALANS VAN DE BRONAUDIT
 
 Alle 30 protocollen zijn door fase A (opstellen) en fase B (onafhankelijke verificatie

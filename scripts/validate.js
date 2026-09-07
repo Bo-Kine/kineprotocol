@@ -71,6 +71,18 @@ if (/const V = '\d/.test(read('app.js'))) fail('app.js: hardcoded versienummer g
 if (!/src="version\.js"/.test(read('index.html'))) fail('index.html: <script src="version.js"> ontbreekt');
 if (!/'\.\/version\.js'/.test(read('sw.js'))) fail('sw.js: version.js ontbreekt in PRECACHE');
 
+// De versiestempel in sw.js moet gelijklopen met version.js. Zonder byte-verschil
+// in sw.js zelf slaat de browser de service-workerupdate over en blijft het
+// toestel op de oude cache hangen, ook al staat er een nieuwe versie op de server.
+const stempel = /\/\/ VERSIESTEMPEL: (\d+)/.exec(read('sw.js'));
+if (!stempel) fail('sw.js: regel `// VERSIESTEMPEL: <nummer>` ontbreekt');
+else if (vm_ && stempel[1] !== vm_[1]) {
+  fail(`sw.js: versiestempel ${stempel[1]} loopt niet gelijk met version.js (${vm_[1]}) — bump beide`);
+}
+if (!/updateViaCache:\s*'none'/.test(read('app.js'))) {
+  fail("app.js: serviceWorker.register zonder updateViaCache:'none' — updates komen dan niet door");
+}
+
 // ── resultaat ──
 if (errors.length) {
   console.error(`❌ ${errors.length} probleem(en):`);

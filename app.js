@@ -1622,7 +1622,13 @@ let swRegistratie = null;
 
 if('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js')
+    // updateViaCache:'none' is essentieel. Met de standaardwaarde ('imports')
+    // haalt de browser bij een updatecheck version.js uit zijn HTTP-cache. Omdat
+    // sw.js zelf dan byte-identiek is, besluit hij dat er geen update is en blijft
+    // het toestel op de oude cache hangen — ook al staat er allang een nieuwe
+    // versie op de server. Met 'none' worden sw.js én de geïmporteerde scripts
+    // altijd vers opgehaald bij de controle.
+    navigator.serviceWorker.register('./sw.js', { updateViaCache: 'none' })
       .then(reg => { swRegistratie = reg; reg.update().catch(()=>{}); })
       .catch(()=>{});
   });

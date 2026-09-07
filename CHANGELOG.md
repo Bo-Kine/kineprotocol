@@ -3,6 +3,15 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-09-07 — service-workerupdates kwamen niet door (oorzaak van de v59-melding)
+
+- DE CACHENAAM WAS NIET HET PROBLEEM · `sw.js` leidt die al af uit `APP_VERSION`, dus die was allang `kineprotocol-v84` · het probleem zat in de UPDATECHECK
+- OORZAAK · `navigator.serviceWorker.register('./sw.js')` gebruikte de standaardwaarde `updateViaCache: 'imports'` · daarmee haalt de browser bij een updatecheck het via `importScripts` geladen `version.js` uit zijn HTTP-cache · omdat `sw.js` zélf dan byte-identiek is, besluit de browser dat er geen nieuwe versie is en blijft het toestel op de oude cache hangen — ook al staat de nieuwe versie op de server · dat is precies waarom een toestel op v59 bleef staan terwijl de repo op v84 stond
+- FIX 1 · geregistreerd met `updateViaCache: 'none'`, zodat `sw.js` én de geïmporteerde scripts bij elke controle vers worden opgehaald
+- FIX 2 · een `// VERSIESTEMPEL: <nummer>`-regel in `sw.js` die meebumpt met `version.js` · browsers vergelijken de BYTES van sw.js om een update te detecteren; deze stempel garandeert dat er iets verandert, ook voor toestellen die nog met de oude registratie draaien
+- VANGNET · `scripts/validate.js` faalt nu als de stempel en `version.js` uit elkaar lopen, en als de registratie `updateViaCache:'none'` mist · beide controles getest door ze bewust te laten falen
+- GEVERIFIEERD IN EEN ECHTE BROWSER · verse installatie geeft `updateViaCache: 'none'`, actieve worker en cache `kineprotocol-v84` met 18 bestanden · en de upgradeweg zelf: een toestel dat al op v84 stond, kwam na een server-side bump terug op `kineprotocol-v85` met de oude cache opgeruimd
+
 ## 2026-09-07 — drie ACL-claims geschrapt · SLR-omkering · beslisbomen alsnog nagekeken
 
 **Op beslissing van de kinesitherapeut zijn de drie wachtende ACL-claims geschrapt** in plaats van in wachtstand gehouden, conform §1.2.

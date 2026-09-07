@@ -1,7 +1,13 @@
 // KineProtocol — Service Worker
 // Cacht alle app-bestanden voor offline gebruik (cache-first strategie)
 
-importScripts('./version.js'); // definieert APP_VERSION — enige plek waar de versie staat
+// VERSIESTEMPEL: 84
+// Deze regel moet meebumpen met version.js. Reden: browsers bepalen of er een
+// nieuwe service worker is door de BYTES van sw.js te vergelijken. Verandert
+// alleen het geïmporteerde version.js, dan ziet de browser geen verschil en
+// wordt de update overgeslagen. Deze stempel garandeert een byte-verschil.
+// scripts/validate.js faalt als stempel en version.js uit elkaar lopen.
+importScripts('./version.js'); // definieert APP_VERSION — enige bron voor het nummer
 const CACHE = 'kineprotocol-v' + APP_VERSION;
 
 // Alleen wat de app écht nodig heeft om te draaien.

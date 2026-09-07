@@ -101,7 +101,7 @@ const BRONSTATUS = {
     "datum": "2026-09-05"
   },
   "mtss": {
-    "gecontroleerd": 10,
+    "gecontroleerd": 16,
     "gedekt": 1,
     "deels": 0,
     "open": 0,

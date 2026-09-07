@@ -3,6 +3,15 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-09-07 — fase B shin splints
+
+- DE ERNSTIGSTE VORM VAN HET LEK TOT NU TOE · het verworpen tractiemodel stond niet alleen nog in het beschrijvingenblok, het had `moen_2009_mtss_review` als bronvermelding áchter zich — precies de review die dat model verwerpt · dat is de tekst die de gebruiker onder "oorzaken" leest, terwijl de correctie in het evidence-veld van fase 1 zat · blok volledig herschreven naar het resorptiemodel
+- De MRI-gradatie 1-4 stuurde nog op zeven plaatsen fasedoelen, doorstroomcriteria, stopcriteria en rode vlaggen, terwijl fase 1 diezelfde gradatie als niet-opgehaald én strijdig met Moen bestempelt
+- Een nieuw cijfer in een oefeningnote · "cadans +5-10% vermindert de tibiale belasting met 20-30%" · die 20-30% komt nergens anders in het dossier voor en spreekt het evidence-veld van dezelfde fase tegen
+- Voedingsadvies zonder bron én buiten het eigen domein · vitamine D ≥ 75 nmol/L en calcium 1000-1300 mg/dag stonden als aanbeveling in een oefeningnote · gelabeld en doorverwezen naar arts of diëtist
+- Extrapolatie naar een andere spiergroep én pathologie (§1.5) · het preventieve effect van de Nordic Shin werd afgeleid uit de Nordic Hamstring · en "loopjournaal → 40% minder overbelastingsblessures" schreef zichzelf in dezelfde zin toe aan trainervaring
+- Twee onderling strijdige kilometergrenzen voor schoenvervanging binnen één protocol (600 tegenover 600-800 km), en de 10%-regel als voorschrift in de notes terwijl de evidenceteksten haar als praktijkafspraak labelen
+
 ## 2026-09-07 — bronaudit shin splints (MTSS)
 
 - HET MECHANISME WAAROP HET PROTOCOL GEBOUWD IS, WORDT DOOR DE EIGEN HOOFDBRON VERWORPEN · de app beschreef MTSS als periostale tractie door soleus en FDL · `moen_2009_mtss_review` stelt letterlijk dat histologisch onderzoek dáár géén bewijs voor levert en dat de oorzaak botresorptie is die de botaanmaak van de tibiale cortex overtreft · dat is geen detail: het tractiemodel stuurt de behandeling naar rekken en kuitspieren, het resorptiemodel naar botbelastbaarheid

@@ -1,7 +1,7 @@
 protocol: mtss
 protocol_titel: Shin Splints (MTSS)
 laatst_gecontroleerd: 2026-09-07
-gecontroleerd_door: fase A — Claude (protocols.js, evidence fase 1-4 + refs)
+gecontroleerd_door: fase A + fase B (onafhankelijke verificator, schone context) — 2026-09-07
 opmerking: >-
   Het pathofysiologische mechanisme waarop dit protocol gebouwd is, wordt door de
   eigen hoofdbron uitdrukkelijk verworpen. Daarnaast onderbouwt de bron voor de
@@ -149,3 +149,89 @@ claims:
       evidentie te verzwijgen; dit is er de sterkste vorm van, want de bron stond
       al in de referentielijst.
     verwerkt: toegevoegd aan fase 2, samen met de preventieve waarde van orthesen
+
+  # Fase B (onafhankelijke verificator, schone context). Alle drie bronsleutels
+  # bibliografisch bevestigd en alle vier gecorrigeerde evidenceteksten letterlijk
+  # gedekt. Het beschrijvingenblok bleek volledig ongecorrigeerd.
+  - id: mtss_c11
+    tekst: >-
+      Periostale trekstress door tibialis posterior, FDL en soleus, met Moen als
+      bron erachter.
+    plaats: oorzaken (beschrijvingenblok)
+    bronnen: [moen_2009_mtss_review]
+    gedekt: nee
+    opmerking: >-
+      DE ERNSTIGSTE VORM VAN HET LEK. Het verworpen tractiemodel stond niet alleen
+      nog in de beschrijving, het had Moen 2009 als bronvermelding achter zich -
+      precies de review die dat model verwerpt. Dit is de tekst die de gebruiker
+      onder "oorzaken" te zien krijgt, terwijl de correctie in het evidence-veld
+      van fase 1 zat. Ook een rest ervan in fase 1 ("tibiale aanhechting soleus is
+      mede-oorzaak").
+    verwerkt: beschrijvingenblok volledig herschreven naar het resorptiemodel, met
+      de bevestigde risicofactoren uit Moen
+
+  - id: mtss_c12
+    tekst: >-
+      MRI-gradatie 1 tot 4 stuurt fasedoelen, doorstroomcriteria, stopcriteria en
+      rode vlaggen.
+    plaats: fase 1 tot 4 - goals, criteria, redflags, kenmerken
+    bronnen: [moen_2009_mtss_review]
+    gedekt: nee
+    opmerking: >-
+      Op zeven plaatsen bepaalt een gradatiesysteem de behandelbeslissingen, terwijl
+      het evidence-veld van fase 1 datzelfde systeem als niet-opgehaald en strijdig
+      met Moen bestempelt. Moen stelt dat beeldvorming van beperkte waarde is en
+      dat de diagnose op lichamelijk onderzoek berust.
+    verwerkt: alle zeven plaatsen gelabeld
+
+  - id: mtss_c13
+    tekst: >-
+      Cadans verhogen met 5 tot 10% vermindert de tibiale belasting met 20 tot 30%;
+      streefcadans 170 tot 180 stappen per minuut.
+    plaats: fase 2 - oefening
+    bronnen: [wille_2014_loopkinematica]
+    gedekt: nee
+    opmerking: >-
+      De reductie van 20 tot 30% is een NIEUW cijfer dat nergens in het dossier
+      voorkomt, in een note die het evidence-veld van dezelfde fase tegenspreekt.
+    verwerkt: cijfer geschrapt, streefcadans gelabeld
+
+  - id: mtss_c14
+    tekst: >-
+      Vitamine D minstens 75 nmol/L en calcium 1000 tot 1300 mg per dag aanbevolen;
+      compartimentdruk boven 30 mmHg; stemvorktest sensitiviteit 75%.
+    plaats: fase 1 - oefening, criteria_stop en kenmerken
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Concrete voedingsadviezen en diagnostische afkapwaarden zonder bron. Een
+      kinesitherapeut die vitamine D- en calciumdoseringen adviseert, treedt
+      bovendien buiten het eigen domein.
+    verwerkt: alle gelabeld, voedingsadvies doorverwezen naar arts of dietist
+
+  - id: mtss_c15
+    tekst: >-
+      Nordic Shin heeft een preventief effect bij lopers, naar analogie met de
+      Nordic Hamstring; een loopjournaal geeft 40% minder overbelastingsblessures.
+    plaats: fase 4 - oefeningen
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      De eerste is extrapolatie naar een andere spiergroep en een andere
+      pathologie, wat CLAUDE.md par. 1.5 verbiedt. Het percentage van 40% stond in
+      een note die het cijfer zelf aan trainervaring toeschreef.
+    verwerkt: extrapolatie expliciet benoemd, percentage geschrapt
+
+  - id: mtss_c16
+    tekst: >-
+      De 10%-regel wordt in oefeningnotes als voorschrift gepresenteerd; schoeisel
+      vervangen na 600 km tegenover 600 tot 800 km elders.
+    plaats: fase 3 en 4 - oefeningen
+    bronnen: [nielsen_2012_trainingsfouten]
+    gedekt: nee
+    opmerking: >-
+      "10%-regel strikt" en "blijft gelden" staan in de notes terwijl de
+      evidenceteksten de regel als praktijkafspraak zonder bron labelen. De twee
+      verschillende kilometergrenzen binnen hetzelfde protocol zijn bovendien
+      onderling in tegenspraak.
+    verwerkt: beide gelabeld en gelijkgetrokken op 600 tot 800 km

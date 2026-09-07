@@ -3,6 +3,18 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-09-06 — bronaudit schouderinstabiliteit
+
+- TWEE TRIALS ONDERLING VERWISSELD · het protocol noemde `itoi_2007_externe_rotatie` een "kleine RCT" met "0% recidief tegenover 30%", en gaf háár aantal van 198 aan `liavaag_2011_externe_rotatie` · Itoi telde 198 patiënten en vond 26% tegenover 42% (p = 0,033; relatieve risicoreductie 38,2%) · Liavaag telde er 188 en vond géén verschil (24,7% tegenover 30,8%; p = 0,36) · de cijfers 0% en 30% bestaan in geen van beide
+- KLINISCH ZWAARSTE OMISSIE · `burkhead_1992_oefenprogramma_instabiliteit` werd aangehaald voor "80-90% goed resultaat bij AMBRI" · de bovengrens van 90% staat er niet in, maar veel belangrijker is wat wél in de studie staat en werd weggelaten: hetzelfde oefenprogramma slaagde bij 80% van de ATRAUMATISCHE subluxaties (53/66) en bij slechts 16% van de traumatische (12/74) · dat contrast is net de reden om AMBRI anders te behandelen dan TUBS
+- Preventieclaim uit een normwaardenstudie · "ER/IR-verhouding ≥ 0,66 is preventief voor anterieure instabiliteit" · `ellenbecker_1997_isokinetisch_werpers` is een beschrijvende isokinetische meting bij 125 GEZONDE honkbalwerpers, zonder één patiënt met instabiliteit, zonder preventieve uitkomst en zonder die afkapwaarde
+- Omgekeerde conclusie · "proprioceptieve deficieten persisteren tot 6 maanden (Lephart 1994)" · die studie heeft géén opvolging in de tijd, en besluit net dat reconstructieve chirurgie een deel van de proprioceptie HERSTELT
+- Vergelijking die niet bestaat · "gesloten keten verbetert de coactivatie effectiever dan open keten (Uhl 2003)" · dat is een EMG-meting van zeven statische posities bij 18 gezonde studenten, zónder open-ketenvergelijking, zonder bovenhandse oefening en zonder patiënten
+- Verzonnen cijfer, tweede variant · "scapulaire dyskinese bij 67% na instabiliteit (Kibler 2013)" · in het rotatorenmanchetprotocol stond dezelfde bron met 68% — twee verschillende percentages uit dezelfde niet-bestaande passage
+- Weggelaten cijfer dat het protocol sterker had gemaakt · `brophy_2009_anterieure_instabiliteit` geeft na een EERSTE traumatische luxatie bij jonge patiënten 7% herval na chirurgie tegenover 46% conservatief, en 10% tegenover 58% op langere termijn · het protocol citeerde alleen de hervalcijfers ná operatie, plus een cijfer van 15-20% voor contactsporters dat er niet in staat
+- `balg_2007_isis` aangevuld · boven 6 punten bedroeg het recidief 70% (p < 0,001) en beschouwen de auteurs een artroscopische Bankart als gecontra-indiceerd, met een Bristow-Latarjet als alternatief — een behandelconsequentie, geen loutere risicomelding
+- Acht nieuwe referenties, alle live geverifieerd via PubMed
+
 ## 2026-09-06 — fase B rotatorenmanchet
 
 - Alle tien bronsleutels bibliografisch bevestigd en alle zes evidenceteksten gedekt · het lek zit opnieuw volledig in de oefening-, parameter-, doel- en criteriavelden

@@ -2810,3 +2810,181 @@ references:
       de timing niet door bewijs gestuurd wordt.
     geverifieerd_op: 2026-09-06
     geverifieerd_door: PubMed MCP (get_article_metadata, PMID 22530194)
+
+  - key: itoi_2007_externe_rotatie
+    auteurs: [Itoi E, Hatakeyama Y, Sato T, Kido T, Minagawa H, Yamamoto N, Wakabayashi I, Nozaka K]
+    titel: 'Immobilization in external rotation after shoulder dislocation reduces the risk of recurrence. A randomized controlled trial'
+    bron: The Journal of Bone and Joint Surgery (American volume)
+    jaar: 2007
+    volume_paginas: 89(10):2124-31
+    doi: 10.2106/JBJS.F.00654
+    pmid: '17908886'
+    url: https://doi.org/10.2106/JBJS.F.00654
+    type: RCT
+    opmerking: >-
+      GEEN kleine trial: 198 patienten met een eerste anterieure luxatie,
+      gerandomiseerd naar drie weken immobilisatie in interne (94) of externe
+      rotatie (104), minimaal twee jaar opvolging. Intention-to-treat: recidief
+      26% (22/85) in externe rotatie tegenover 42% (31/74) in interne rotatie
+      (p = 0,033), relatieve risicoreductie 38,2%; bij dertigjarigen en jonger
+      46,1%. DE APP SCHREEF "0% RECIDIEF TEGENOVER 30%" - die twee cijfers staan
+      er niet in. De app noemde deze trial bovendien "klein" en gaf haar aantal
+      van 198 aan de trial van Liavaag, die er 188 telde: de twee studies werden
+      verwisseld.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 17908886)
+
+  - key: liavaag_2011_externe_rotatie
+    auteurs: [Liavaag S, Brox JI, Pripp AH, Enger M, Soldal LA, Svenningsen S]
+    titel: 'Immobilization in external rotation after primary shoulder dislocation did not reduce the risk of recurrence: a randomized controlled trial'
+    bron: The Journal of Bone and Joint Surgery (American volume)
+    jaar: 2011
+    volume_paginas: 93(10):897-904
+    doi: 10.2106/JBJS.J.00416
+    pmid: '21498489'
+    url: https://doi.org/10.2106/JBJS.J.00416
+    type: RCT
+    opmerking: >-
+      188 patienten (niet 198, dat is het aantal van Itoi), gerandomiseerd naar
+      drie weken interne (95) of externe rotatie (93). Recidief binnen 24 maanden:
+      24,7% na interne en 30,8% na externe rotatie (p = 0,36). Conclusie:
+      immobilisatie in externe rotatie verlaagt het recidief NIET. De conclusie
+      werd in de app correct weergegeven, het aantal deelnemers niet.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 21498489)
+
+  - key: lephart_1994_proprioceptie_schouder
+    auteurs: [Lephart SM, Warner JJ, Borsa PA, Fu FH]
+    titel: 'Proprioception of the shoulder joint in healthy, unstable, and surgically repaired shoulders'
+    bron: Journal of Shoulder and Elbow Surgery
+    jaar: 1994
+    volume_paginas: 3(6):371-80
+    doi: 10.1016/S1058-2746(09)80022-0
+    pmid: '22958841'
+    url: https://doi.org/10.1016/S1058-2746(09)80022-0
+    type: cohort
+    opmerking: >-
+      Dwarsdoorsnedestudie bij 90 proefpersonen in drie groepen: 40 gezonde
+      studenten, 30 patienten met anterieure instabiliteit en 20 geopereerde
+      patienten. Bij de instabiele schouders waren kinesthesie en gewrichtspositie-
+      zin significant slechter dan aan de niet-aangedane zijde (p < 0,05); bij de
+      GEOPEREERDE groep was er GEEN significant verschil meer met de contralaterale
+      zijde. TWEE PROBLEMEN MET DE APP-CLAIM. (1) Er is geen enkele opvolging in
+      de tijd, dus de uitspraak dat deficieten "tot 6 maanden persisteren" kan er
+      niet uit komen. (2) De auteurs besluiten net dat reconstructieve chirurgie
+      een deel van de proprioceptie HERSTELT.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 22958841)
+
+  - key: balg_2007_isis
+    auteurs: [Balg F, Boileau P]
+    titel: 'The instability severity index score. A simple pre-operative score to select patients for arthroscopic or open shoulder stabilisation'
+    bron: The Journal of Bone and Joint Surgery (British volume)
+    jaar: 2007
+    volume_paginas: 89(11):1470-7
+    doi: 10.1302/0301-620X.89B11.18962
+    pmid: '17998184'
+    url: https://doi.org/10.1302/0301-620X.89B11.18962
+    type: cohort
+    opmerking: >-
+      Prospectieve case-controlstudie bij 131 opeenvolgende patienten na
+      artroscopische Bankart met suture anchors; na gemiddeld 31,2 maanden had
+      14,5% (19 patienten) opnieuw instabiliteit. Risicofactoren: leeftijd onder
+      20 bij operatie, competitie- of contactsport of bovenhandse sport,
+      hyperlaxiteit, Hill-Sachs op de AP-opname in exorotatie en/of verlies van
+      de sclerotische onderste glenoidcontour. Bij een score BOVEN 6 punten op de
+      tienpuntsschaal bedroeg het recidiefrisico 70% (p < 0,001); de auteurs
+      beschouwen een artroscopische Bankart dan als gecontra-indiceerd en stellen
+      een Bristow-Latarjet voor. De app noemde de drempel wel maar niet het
+      cijfer van 70% en niet de chirurgische consequentie.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 17998184)
+
+  - key: brophy_2009_anterieure_instabiliteit
+    auteurs: [Brophy RH, Marx RG]
+    titel: 'The treatment of traumatic anterior instability of the shoulder: nonoperative and surgical treatment'
+    bron: 'Arthroscopy: The Journal of Arthroscopic and Related Surgery'
+    jaar: 2009
+    volume_paginas: 25(3):298-304
+    doi: 10.1016/j.arthro.2008.12.007
+    pmid: '19245994'
+    url: https://doi.org/10.1016/j.arthro.2008.12.007
+    type: SR
+    opmerking: >-
+      Systematische review. Na een EERSTE traumatische anterieure luxatie bij
+      JONGE patienten gaf chirurgie significant minder herval dan conservatief
+      beleid: 7% tegenover 46% na twee jaar en 10% tegenover 58% op langere
+      termijn. Artroscopische en open stabilisatie met suture anchors gaven
+      vergelijkbare hervalcijfers: 6,4% artroscopisch en 8,2% open. DE APP GAF
+      "6-10% artroscopisch" (ruwweg in dat bereik, maar de review geeft exacte
+      cijfers) en "contactsporten 15-20%" - dat laatste staat er NIET in. De
+      klinisch beslissende vergelijking chirurgie tegenover conservatief werd
+      weggelaten.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 19245994)
+
+  - key: burkhead_1992_oefenprogramma_instabiliteit
+    auteurs: [Burkhead WZ, Rockwood CA]
+    titel: 'Treatment of instability of the shoulder with an exercise program'
+    bron: The Journal of Bone and Joint Surgery (American volume)
+    jaar: 1992
+    volume_paginas: 74(6):890-6
+    doi: null
+    pmid: '1634579'
+    url: https://pubmed.ncbi.nlm.nih.gov/1634579/
+    type: cohort
+    opmerking: >-
+      140 schouders bij 115 patienten met recidiverende subluxatie, behandeld met
+      een specifiek spierversterkend programma. HET CONTRAST IS DE KERN VAN DE
+      STUDIE en ontbrak in de app: bij ATRAUMATISCHE subluxatie had 80% (53 van 66)
+      een goed of uitstekend resultaat, bij TRAUMATISCHE subluxatie slechts 16%
+      (12 van 74). De app schreef "80-90% goed resultaat" - de bovengrens van 90%
+      staat er niet in, en het falen bij traumatische instabiliteit, dat net de
+      reden is om AMBRI anders te behandelen dan TUBS, werd verzwegen. PubMed
+      vermeldt geen DOI.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 1634579)
+
+  - key: uhl_2003_gewichtdragende_oefeningen
+    auteurs: [Uhl TL, Carver TJ, Mattacola CG, Mair SD, Nitz AJ]
+    titel: 'Shoulder musculature activation during upper extremity weight-bearing exercise'
+    bron: The Journal of Orthopaedic and Sports Physical Therapy
+    jaar: 2003
+    volume_paginas: 33(3):109-17
+    doi: 10.2519/jospt.2003.33.3.109
+    pmid: '12683686'
+    url: https://doi.org/10.2519/jospt.2003.33.3.109
+    type: cohort
+    opmerking: >-
+      EMG-studie bij 18 GEZONDE studenten, zeven statische gewichtdragende
+      posities, herhaalde metingen. Sterke correlatie tussen toenemende
+      gewichtdragende houding en spieractiviteit (r = 0,97; p < 0,01); bij bidhouding
+      en vierpuntsstand was de belasting laag (2-10% MVIC); de infraspinatus was in
+      de meeste posities het actiefst. ER IS GEEN VERGELIJKING MET OPEN KETEN, geen
+      bovenhandse oefening, geen patientenpopulatie en geen revalidatie-uitkomst.
+      De claim dat gesloten keten de coactivatie effectiever verbetert dan open
+      keten kan er dus niet uit komen. Verscheen in JOSPT, niet in J Shoulder
+      Elbow Surg.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 12683686)
+
+  - key: ellenbecker_1997_isokinetisch_werpers
+    auteurs: [Ellenbecker TS, Mattalino AJ]
+    titel: 'Concentric isokinetic shoulder internal and external rotation strength in professional baseball pitchers'
+    bron: The Journal of Orthopaedic and Sports Physical Therapy
+    jaar: 1997
+    volume_paginas: 25(5):323-8
+    doi: 10.2519/jospt.1997.25.5.323
+    pmid: '9130149'
+    url: https://doi.org/10.2519/jospt.1997.25.5.323
+    type: cohort
+    opmerking: >-
+      BESCHRIJVENDE normatieve studie bij 125 GEZONDE professionele honkbalwerpers,
+      isokinetisch getest op 210 en 300 graden per seconde. Bevinding: geen verschil
+      tussen dominante en niet-dominante zijde voor EXOrotatie, wel significant
+      meer INTRArotatiekracht aan de werparm (p < 0,001). Er is GEEN patient met
+      instabiliteit in de studie, GEEN preventieve uitkomst en het abstract noemt
+      GEEN afkapwaarde van 0,66 voor de ER/IR-verhouding. De app baseerde daar wel
+      een preventieclaim op.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 9130149)

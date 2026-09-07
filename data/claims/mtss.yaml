@@ -1,0 +1,237 @@
+protocol: mtss
+protocol_titel: Shin Splints (MTSS)
+laatst_gecontroleerd: 2026-09-07
+gecontroleerd_door: fase A + fase B (onafhankelijke verificator, schone context) — 2026-09-07
+opmerking: >-
+  Het pathofysiologische mechanisme waarop dit protocol gebouwd is, wordt door de
+  eigen hoofdbron uitdrukkelijk verworpen. Daarnaast onderbouwt de bron voor de
+  10%-regel die regel niet maar concludeert het tegendeel, en een derde bron werd
+  op twee plaatsen op twee verschillende manieren verkeerd beschreven. Het meest
+  ongemakkelijke gegeven voor een revalidatieprotocol - dat rust in drie
+  gerandomiseerde studies gelijkwaardig was aan elke interventie - ontbrak volledig.
+
+claims:
+  - id: mtss_c1
+    tekst: >-
+      MTSS ontstaat door periostale tractie door soleus en FDL, wat leidt tot
+      botremodeling en corticale stressreactie.
+    plaats: fase 1 - evidence
+    bronnen: [moen_2009_mtss_review]
+    gedekt: nee
+    opmerking: >-
+      DE EIGEN HOOFDBRON VERWERPT DIT. Letterlijk: "Histological studies fail to
+      provide evidence that MTSS is caused by periostitis as a result of traction.
+      It is caused by bony resorption that outpaces bone formation of the tibial
+      cortex." Dit is geen detail: het tractiemodel stuurt de hele
+      behandelredenering richting rekken en kuitspieren, terwijl het resorptiemodel
+      naar botbelastbaarheid wijst.
+    verwerkt: mechanisme herschreven naar wat de review stelt
+
+  - id: mtss_c2
+    tekst: >-
+      MRI is de gouden standaard voor classificatie, met gradaties 1-2
+      (2-6 weken) en 3-4 (6-16 weken) (Bhatt et al., 2020).
+    plaats: fase 1 en 3 - evidence
+    bronnen: [moen_2009_mtss_review]
+    gedekt: nee
+    opmerking: >-
+      Bhatt 2020 is in dit dossier niet opgehaald, en de claim staat haaks op
+      Moen 2009, die stelt dat bijkomende beeldvorming - bot, CT en MRI - goed
+      onderzocht maar van BEPERKTE WAARDE is, mede omdat afwijkingen ook bij
+      klachtenvrije personen voorkomen, en dat de diagnose op lichamelijk onderzoek
+      berust. De tijdcriteria voor loophervatting in fase 3 hangen wel volledig aan
+      die gradatie.
+    verwerkt: gelabeld, de tegenspraak met Moen expliciet benoemd
+
+  - id: mtss_c3
+    tekst: 'Incidentie bij lopers: 13 tot 20%.'
+    plaats: fase 1 - evidence
+    bronnen: [moen_2009_mtss_review]
+    gedekt: nee
+    opmerking: >-
+      Moen 2009 geeft 4 tot 35% bij militairen en sporters. Het bereik 13-20% en
+      de beperking tot lopers staan er niet in.
+    verwerkt: vervangen door het werkelijke bereik en de werkelijke populatie
+
+  - id: mtss_c4
+    tekst: >-
+      Cadansverhoging van 5 tot 10% verlaagt de tibiale belasting significant
+      (Wille et al., 2014).
+    plaats: fase 2 - evidence
+    bronnen: [wille_2014_loopkinematica]
+    gedekt: nee
+    opmerking: >-
+      De studie onderzocht GEEN cadansinterventie en mat GEEN tibiale belasting.
+      Het is een laboratoriumstudie met dwarsdoorsnede-opzet bij 45 lopers over de
+      vraag of kinetiek uit sagittale kinematica te SCHATTEN valt - waarbij juist
+      de gemiddelde verticale belastingssnelheid zich slecht liet schatten
+      (R kwadraat 0,04). Het refs-veld beschreef diezelfde bron bovendien als een
+      ECHOGRAFIE-studie over het identificeren van MTSS: twee verschillende foute
+      beschrijvingen van een en dezelfde publicatie.
+    verwerkt: claim ontkoppeld van de bron, cadansverhoging als klinische
+      redenering gelabeld, refs-veld gecorrigeerd
+
+  - id: mtss_c5
+    tekst: >-
+      Zwakke soleus en gastrocnemius hangen samen met hogere tibiale belasting
+      per stap (Meardon et al., 2014); schoeisel en orthesen reduceren impact
+      (Tenforde et al., 2013).
+    plaats: fase 2 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: Beide in dit dossier niet opgehaald.
+    verwerkt: beide gelabeld
+
+  - id: mtss_c6
+    tekst: >-
+      Loopbelasting ophogen met maximaal 10% per week (Nielsen et al., 2012).
+    plaats: fase 3 en 4 - evidence
+    bronnen: [nielsen_2012_trainingsfouten]
+    gedekt: nee
+    opmerking: >-
+      De review onderbouwt die regel niet maar concludeert het tegendeel: de
+      resultaten over volume, duur, intensiteit en frequentie waren tegenstrijdig,
+      en "it was not possible to identify which training errors were related to
+      running related injuries". De 10%-regel wordt in dit protocol op twee
+      plaatsen als onderbouwd gepresenteerd en stuurt de hele opbouwfase.
+    verwerkt: als praktijkafspraak gelabeld, met de conclusie van de review erbij
+
+  - id: mtss_c7
+    tekst: >-
+      Asfalt geeft 10 tot 15 maal hogere grondreactiekrachten dan zacht terrein.
+    plaats: fase 3 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Geen bron. De orde van grootte is bovendien onwaarschijnlijk: een verschil
+      van een factor 10 tot 15 in grondreactiekracht tussen ondergronden is
+      biomechanisch niet plausibel.
+    verwerkt: cijfer geschrapt, de voorkeur voor zachte ondergrond blijft als
+      klinische richtlijn staan
+
+  - id: mtss_c8
+    tekst: >-
+      Botremodellering duurt 3 tot 6 maanden; symptoomafwezigheid is geen
+      structureel herstel.
+    plaats: fase 3 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: Klinisch breed gedragen, in dit dossier niet nagekeken.
+    verwerkt: gelabeld
+
+  - id: mtss_c9
+    tekst: >-
+      Lopers boven 60 km per week zonder afbouwweken hebben viermaal hogere
+      MTSS-incidentie; schoenen vervangen na 600 tot 800 km; RED-S screenen
+      (De Souza et al., 2014); recidiefrisico hoog (Tenforde et al., 2016).
+    plaats: fase 4 - evidence
+    bronnen: [moen_2009_mtss_review]
+    gedekt: nee
+    opmerking: >-
+      Geen van de vier is onderbouwd of opgehaald. Wat Moen 2009 wel bevestigt en
+      hier ontbrak: vrouwelijk geslacht en overmatige pronatie bij staan zijn
+      intrinsieke risicofactoren uit meerdere prospectieve studies, en een
+      voorgeschiedenis van MTSS is een extrinsieke risicofactor.
+    verwerkt: alle vier gelabeld, de bevestigde risicofactoren toegevoegd
+
+  - id: mtss_c10
+    tekst: >-
+      In drie gerandomiseerde studies was rust gelijkwaardig aan elke onderzochte
+      interventie; neopreen of semi-rigide orthesen kunnen MTSS helpen voorkomen.
+    plaats: ONTBRAK VOLLEDIG in het protocol
+    bronnen: [moen_2009_mtss_review]
+    gedekt: ja
+    opmerking: >-
+      Dit staat in de eigen hoofdbron van het protocol en is het meest relevante
+      gegeven voor de patient: superioriteit van oefentherapie boven rust is bij
+      MTSS niet aangetoond. Het ontbrak volledig, terwijl het protocol vier fasen
+      oefentherapie voorschrijft. CLAUDE.md par. 1.9 verbiedt tegenstrijdige
+      evidentie te verzwijgen; dit is er de sterkste vorm van, want de bron stond
+      al in de referentielijst.
+    verwerkt: toegevoegd aan fase 2, samen met de preventieve waarde van orthesen
+
+  # Fase B (onafhankelijke verificator, schone context). Alle drie bronsleutels
+  # bibliografisch bevestigd en alle vier gecorrigeerde evidenceteksten letterlijk
+  # gedekt. Het beschrijvingenblok bleek volledig ongecorrigeerd.
+  - id: mtss_c11
+    tekst: >-
+      Periostale trekstress door tibialis posterior, FDL en soleus, met Moen als
+      bron erachter.
+    plaats: oorzaken (beschrijvingenblok)
+    bronnen: [moen_2009_mtss_review]
+    gedekt: nee
+    opmerking: >-
+      DE ERNSTIGSTE VORM VAN HET LEK. Het verworpen tractiemodel stond niet alleen
+      nog in de beschrijving, het had Moen 2009 als bronvermelding achter zich -
+      precies de review die dat model verwerpt. Dit is de tekst die de gebruiker
+      onder "oorzaken" te zien krijgt, terwijl de correctie in het evidence-veld
+      van fase 1 zat. Ook een rest ervan in fase 1 ("tibiale aanhechting soleus is
+      mede-oorzaak").
+    verwerkt: beschrijvingenblok volledig herschreven naar het resorptiemodel, met
+      de bevestigde risicofactoren uit Moen
+
+  - id: mtss_c12
+    tekst: >-
+      MRI-gradatie 1 tot 4 stuurt fasedoelen, doorstroomcriteria, stopcriteria en
+      rode vlaggen.
+    plaats: fase 1 tot 4 - goals, criteria, redflags, kenmerken
+    bronnen: [moen_2009_mtss_review]
+    gedekt: nee
+    opmerking: >-
+      Op zeven plaatsen bepaalt een gradatiesysteem de behandelbeslissingen, terwijl
+      het evidence-veld van fase 1 datzelfde systeem als niet-opgehaald en strijdig
+      met Moen bestempelt. Moen stelt dat beeldvorming van beperkte waarde is en
+      dat de diagnose op lichamelijk onderzoek berust.
+    verwerkt: alle zeven plaatsen gelabeld
+
+  - id: mtss_c13
+    tekst: >-
+      Cadans verhogen met 5 tot 10% vermindert de tibiale belasting met 20 tot 30%;
+      streefcadans 170 tot 180 stappen per minuut.
+    plaats: fase 2 - oefening
+    bronnen: [wille_2014_loopkinematica]
+    gedekt: nee
+    opmerking: >-
+      De reductie van 20 tot 30% is een NIEUW cijfer dat nergens in het dossier
+      voorkomt, in een note die het evidence-veld van dezelfde fase tegenspreekt.
+    verwerkt: cijfer geschrapt, streefcadans gelabeld
+
+  - id: mtss_c14
+    tekst: >-
+      Vitamine D minstens 75 nmol/L en calcium 1000 tot 1300 mg per dag aanbevolen;
+      compartimentdruk boven 30 mmHg; stemvorktest sensitiviteit 75%.
+    plaats: fase 1 - oefening, criteria_stop en kenmerken
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Concrete voedingsadviezen en diagnostische afkapwaarden zonder bron. Een
+      kinesitherapeut die vitamine D- en calciumdoseringen adviseert, treedt
+      bovendien buiten het eigen domein.
+    verwerkt: alle gelabeld, voedingsadvies doorverwezen naar arts of dietist
+
+  - id: mtss_c15
+    tekst: >-
+      Nordic Shin heeft een preventief effect bij lopers, naar analogie met de
+      Nordic Hamstring; een loopjournaal geeft 40% minder overbelastingsblessures.
+    plaats: fase 4 - oefeningen
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      De eerste is extrapolatie naar een andere spiergroep en een andere
+      pathologie, wat CLAUDE.md par. 1.5 verbiedt. Het percentage van 40% stond in
+      een note die het cijfer zelf aan trainervaring toeschreef.
+    verwerkt: extrapolatie expliciet benoemd, percentage geschrapt
+
+  - id: mtss_c16
+    tekst: >-
+      De 10%-regel wordt in oefeningnotes als voorschrift gepresenteerd; schoeisel
+      vervangen na 600 km tegenover 600 tot 800 km elders.
+    plaats: fase 3 en 4 - oefeningen
+    bronnen: [nielsen_2012_trainingsfouten]
+    gedekt: nee
+    opmerking: >-
+      "10%-regel strikt" en "blijft gelden" staan in de notes terwijl de
+      evidenceteksten de regel als praktijkafspraak zonder bron labelen. De twee
+      verschillende kilometergrenzen binnen hetzelfde protocol zijn bovendien
+      onderling in tegenspraak.
+    verwerkt: beide gelabeld en gelijkgetrokken op 600 tot 800 km

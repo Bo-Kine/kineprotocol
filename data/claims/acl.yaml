@@ -133,6 +133,11 @@ claims:
       kinesitherapeut levert een bron aan. De onjuiste bronvermelding is uit
       protocols.js verwijderd; de klinische uitspraak blijft staan met de
       notitie dat de bron nog aangeleverd wordt. WACHT OP BRON.
+    verwerkt: >-
+      GESCHRAPT 2026-09-07 op beslissing van de kinesitherapeut. Er is geen bron
+      gevonden, dus conform CLAUDE.md par. 1.2 wordt de claim geschrapt in plaats
+      van in wachtstand gehouden. De oefening zelf blijft in het protocol staan,
+      maar nu uitdrukkelijk als klinische richtlijn zonder onderbouwing.
 
   - id: acl_c11
     tekst: ACL-RSI drempel >= 56 (fase 3) en >= 65 (fase 5) voor doorstroom
@@ -148,6 +153,14 @@ claims:
       De drempels 56 en 65 blijven onderbouwd noch weerlegd. BESLISSING
       2026-09-05: de kinesitherapeut levert een bron aan. In protocols.js staat
       nu bij het criterium "(bron nog aan te leveren)". WACHT OP BRON.
+    verwerkt: >-
+      GESCHRAPT 2026-09-07 op beslissing van de kinesitherapeut. De
+      doorstroomdrempels 56 en 65 zijn uit de fasedoelen en doorstroomcriteria
+      verwijderd; de ACL-RSI blijft als meting staan zonder afkapwaarde. De
+      stopcriteria die een verwijzing naar psychologische begeleiding sturen
+      (< 40 en < 50) zijn BEHOUDEN maar gelabeld als praktijkafspraak - een lage
+      score is een reden tot gesprek, en die vangnetfunctie schrappen zou de zorg
+      verslechteren in plaats van verbeteren.
 
   - id: acl_c12
     tekst: IKDC MCID 11,5 punten en drempel >= 85 voor RTS
@@ -158,3 +171,48 @@ claims:
       GEEN BRON GEVERIFIEERD. BESLISSING 2026-09-05: de kinesitherapeut levert
       een bron aan. In protocols.js staat nu bij het criterium
       "(bron nog aan te leveren)". WACHT OP BRON.
+    verwerkt: >-
+      GESCHRAPT 2026-09-07 op beslissing van de kinesitherapeut. De IKDC-drempel
+      van 85 is uit de fasedoelen en doorstroomcriteria verwijderd; de IKDC blijft
+      als meting staan zonder afkapwaarde. Het MCID van 11,5 punten werd nergens
+      in de app als criterium gebruikt en verviel daarmee.
+
+  - id: acl_c13
+    tekst: >-
+      SLR-oefening toonde "Positief < 70 graden" en "Specificiteit: hoog" in de
+      parameters.
+    plaats: lh fase 0 - oefeningparameters (gevonden bij visuele controle van de app)
+    bronnen: [deville_2000_lasegue, vanderwindt_2010_lichamelijk_onderzoek]
+    gedekt: nee
+    opmerking: >-
+      NIET GEVONDEN DOOR CODE-INSPECTIE MAAR DOOR NAAR HET SCHERM TE KIJKEN. Fase B
+      had deze omkering aangewezen, maar bij het verwerken corrigeerde ik de
+      slumptest ernaast en niet de SLR zelf. Beide bronnen geven juist een LAGE
+      specificiteit (0,26 en 0,28) en noemen geen drempel van 70 graden. De
+      parameters stonden direct onder een evidencetekst die het tegenovergestelde
+      zei. Les: een claimdossier dat afgevinkt is, garandeert niet dat de app het
+      toont - de laatste controle hoort in de app zelf te gebeuren.
+    verwerkt: parameters vervangen door sensitiviteit 0,91 en specificiteit
+      0,26 (LAAG), met de bron erbij; categorie gecorrigeerd van kracht naar test
+
+  - id: acl_c14
+    tekst: >-
+      De klinische beslisbomen vormen een niet-geauditeerde laag die dezelfde
+      weerlegde claims draagt.
+    plaats: beslisbomen (aparte structuur in protocols.js)
+    bronnen: [weber_1983_discushernia, kukkonen_2015_rotatorenmanchet, walker_2000_polsspalk_cts, itoi_2007_externe_rotatie]
+    gedekt: nee
+    opmerking: >-
+      Bij het naveegwerk bleek dat de beslisbomen - de structuur die de
+      kinesitherapeut bij de triage gebruikt - nooit in de audit zaten. Ze
+      herhaalden claims die in de protocollen al weerlegd waren: "spontaan herstel
+      bij 75% binnen 12 weken (Weber 1983)" (Weber bevat geen herstelpercentage),
+      "Kukkonen: conservatief = chirurgisch bij < 50% dikte boven 55 jaar" (die
+      trial hanteert geen van beide grenzen), "Walker 2000: 60-70% symptoomreductie"
+      (staat er niet in), "Ottawa sensitiviteit 96-99%" (het bereik dat elders al
+      geschrapt was), plus de recidiefpercentages per leeftijdsgroep en het
+      Ilyas-cijfer van 50%. EEN UITZONDERING VERDIENT VERMELDING: de beslisboom bij
+      schouderinstabiliteit gaf Burkhead & Rockwood correct weer (80% bij AMBRI,
+      16% bij TUBS) - daar klopte de app.
+    verwerkt: zeven beslisboomteksten gecorrigeerd of gelabeld; de correcte
+      Burkhead-vermelding ongemoeid gelaten

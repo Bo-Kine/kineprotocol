@@ -1,0 +1,125 @@
+protocol: dq
+protocol_titel: De Quervain Tenosynovitis
+laatst_gecontroleerd: 2026-09-07
+gecontroleerd_door: fase A + fase B (onafhankelijke verificator, schone context) — 2026-09-07
+opmerking: >-
+  Van de zes aangehaalde bronnen kon er een worden opgehaald. Die ene bevat
+  precies de bevinding die voor de kinesitherapeut telt - dat handtherapie en
+  injectie onderling niet significant verschillen - en die ontbrak, terwijl er wel
+  een number needed to treat uit werd gehaald dat er niet in staat.
+
+claims:
+  - id: dq_c1
+    tekst: >-
+      Injectie plus spalk is superieur aan spalk alleen, met een number needed to
+      treat van 3 (Cavaleri et al., 2016).
+    plaats: fase 1 - evidence
+    bronnen: [cavaleri_2016_dequervain]
+    gedekt: deels
+    opmerking: >-
+      De richting klopt: de combinatie van orthese en injectie gaf meer succes dan
+      orthese alleen (relatief risico 0,53; 95% BI 0,35-0,80) en dan injectie
+      alleen (0,76; 0,64-0,89). Maar het number needed to treat van 3 staat er niet
+      in. En weggelaten werd de bevinding die de kinesitherapeut het meest aangaat:
+      injectie en handtherapie verbeterden beide pijn en functie, maar het VERSCHIL
+      TUSSEN BEIDE was over zes studies NIET significant.
+    verwerkt: NNT geschrapt, relatieve risico's en het nulresultaat opgenomen
+
+  - id: dq_c2
+    tekst: >-
+      Na pijnreductie is progressieve krachttraining superieur aan verdere
+      immobilisatie (Cavaleri et al., 2016).
+    plaats: fase 2 - evidence
+    bronnen: [cavaleri_2016_dequervain]
+    gedekt: nee
+    opmerking: >-
+      Die meta-analyse vergelijkt handtherapie met corticosteroidinjecties, niet
+      trainingsvormen onderling. De vergelijking komt er niet in voor.
+    verwerkt: claim geschrapt
+
+  - id: dq_c3
+    tekst: >-
+      Corticosteroidinjectie is doeltreffender dan spalkimmobilisatie als
+      monotherapie (Peters-Veluthamaningal et al., 2009 - Cochrane); duim-spica
+      spalk 23 uur per dag reduceert de mechanische belasting op APL en EPB
+      (Goel & Abzug, 2015).
+    plaats: fase 1 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: Beide in dit dossier niet opgehaald.
+    verwerkt: beide gelabeld
+
+  - id: dq_c4
+    tekst: >-
+      Excentrische belasting stimuleert collageen type-I-remodellering; het
+      tendinopathie-continuum vereist progressieve mechanische belasting
+      (Cook & Purdam, 2009).
+    plaats: fase 2 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Niet opgehaald. De uitspraak over collageentype is bovendien een
+      weefselbiologische claim die uit een conceptueel model wordt afgeleid.
+    verwerkt: gelabeld
+
+  - id: dq_c5
+    tekst: >-
+      Volledig krachtherstel duurt gemiddeld 4 tot 6 maanden (Goel & Abzug, 2015);
+      recidiefpercentage 50% bij te vroege volledige belasting (Ilyas, 2007);
+      spalkafbouw na 4 weken (Backstrom, 2002).
+    plaats: fase 2 en 3 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Geen van drie opgehaald. Het recidiefcijfer van 50% werd bovendien enkel als
+      "retrospectieve data" aangeduid, terwijl het de belastingsopbouw van de
+      laatste fase stuurt - dat is het soort cijfer dat een patient te horen krijgt
+      als reden om trager op te bouwen.
+    verwerkt: alle drie gelabeld
+
+  # Fase B (onafhankelijke verificator, schone context). De bronsleutel is
+  # bibliografisch bevestigd en de drie gecorrigeerde evidenceteksten zijn gedekt.
+  - id: dq_c6
+    tekst: >-
+      Cavaleri 2016 toont significant meer pijnreductie bij trouwe spalkdracht;
+      Cook & Purdam 2009: excentrisch herstelt de peesmatrix sneller dan passieve
+      rust; Backstrom 2002: abrupt stoppen met de spalk verhoogt het hervalrisico;
+      Ilyas 2007: 50% recidief bij sporthervatting onder 10 weken.
+    plaats: fase 1, 2 en 3 - oefeningen
+    bronnen: [cavaleri_2016_dequervain]
+    gedekt: nee
+    opmerking: >-
+      Vier effectclaims in oefeningnotes, alle met een bron die het evidence-veld
+      van dezelfde fase als niet-opgehaald of als praktijkafspraak labelt. De
+      eerste komt bovendien niet in Cavaleri voor - therapietrouw en spalkduur zijn
+      daar geen uitkomstmaat - en de laatste is exact het cijfer dat het
+      evidence-veld van fase 3 had geschrapt, terwijl het de belastingsopbouw
+      stuurt.
+    verwerkt: alle vier gelabeld of geschrapt
+
+  - id: dq_c7
+    tekst: >-
+      34% van de mensen heeft een eigen subcompartiment voor de EPB (Chern, 2014);
+      pincetgreep is de primaire maatstaf voor terugkeer naar activiteit
+      (Goel & Abzug, 2015); principe uit Beyer 2015 stimuleert collageen
+      type-I-synthese.
+    plaats: fase 1, 2 en 3 - oefeningen
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Drie citaties zonder sleutel in het bronnenbestand. Beyer 2015 betreft
+      bovendien de achillespees, niet de duimpezen - de zevende plaats in dit
+      dossier waar die bron bij een andere pees opduikt.
+    verwerkt: alle drie gelabeld, de peesverwisseling bij Beyer benoemd
+
+  - id: dq_c8
+    tekst: >-
+      Finkelstein-test sensitiviteit 89% en specificiteit 90%; sporthervatting
+      golf week 12, tennis week 14 tot 16, gewichtheffen week 14.
+    plaats: kenmerken en fase 3 - oefening
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Testeigenschappen zonder bron die de diagnostiek sturen, en drie
+      sportspecifieke tijdvensters zonder onderbouwing.
+    verwerkt: alle gelabeld

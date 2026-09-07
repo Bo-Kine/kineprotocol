@@ -1,0 +1,258 @@
+protocol: si
+protocol_titel: Schouderinstabiliteit
+laatst_gecontroleerd: 2026-09-06
+gecontroleerd_door: fase A + fase B (onafhankelijke verificator, schone context) — 2026-09-06
+opmerking: >-
+  Vier van de negen bronnen ondersteunen iets anders dan waarvoor ze geciteerd
+  worden, en bij twee ervan werden de resultaten van twee trials onderling
+  verwisseld. De klinisch belangrijkste omissie: Burkhead & Rockwood 1992 wordt
+  aangehaald voor het succes van conservatieve therapie bij AMBRI, maar het
+  contrast met traumatische instabiliteit (80% tegenover 16%) - net de reden om
+  beide anders te behandelen - werd weggelaten.
+
+claims:
+  - id: si_c1
+    tekst: >-
+      Immobilisatie in externe rotatie toonde in kleine RCT's 0% recidief
+      tegenover 30% in interne rotatie (Itoi et al., 2007).
+    plaats: fase 1 - evidence
+    bronnen: [itoi_2007_externe_rotatie]
+    gedekt: nee
+    opmerking: >-
+      Drie fouten in een zin. (1) De trial is niet klein: 198 patienten. (2) De
+      cijfers 0% en 30% staan er niet in; het is 26% tegenover 42% (p = 0,033),
+      relatieve risicoreductie 38,2%. (3) Het aantal van 198 werd in dezelfde
+      alinea aan Liavaag toegeschreven, die er 188 telde - de twee trials werden
+      verwisseld.
+    verwerkt: beide trials met hun eigen aantallen en uitkomsten opgenomen
+
+  - id: si_c2
+    tekst: >-
+      Grote RCT (Liavaag et al., 2011, n = 198) toonde geen verschil.
+    plaats: fase 1 - evidence
+    bronnen: [liavaag_2011_externe_rotatie]
+    gedekt: deels
+    opmerking: >-
+      De conclusie klopt (24,7% tegenover 30,8%; p = 0,36), het aantal niet: 188,
+      niet 198.
+    verwerkt: aantal gecorrigeerd, cijfers toegevoegd
+
+  - id: si_c3
+    tekst: >-
+      Huidig advies neutrale sling 3 tot 4 weken; n. axillaris beschadigd bij
+      5 tot 14% van de anterieure luxaties.
+    plaats: fase 1 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Geen van beide RCT's onderzocht een neutrale draagdoek; het percentage voor
+      de n. axillaris heeft geen bron.
+    verwerkt: beide gelabeld als klinische richtlijn
+
+  - id: si_c4
+    tekst: >-
+      Scapulaire dyskinese aanwezig bij 67% van de patienten na
+      schouderinstabiliteit (Kibler et al., 2013).
+    plaats: fase 2 - evidence
+    bronnen: [kibler_2013_scapulaconsensus]
+    gedekt: nee
+    opmerking: >-
+      Het consensusdocument geeft geen enkel percentage. In het rotatorenmanchet-
+      protocol stond dezelfde bron met 68% - twee verschillende verzonnen cijfers
+      uit dezelfde niet-bestaande passage.
+    verwerkt: cijfer geschrapt, nuance en bewijsniveau opgenomen
+
+  - id: si_c5
+    tekst: >-
+      Passieve ER beperkt tot 30 graden tot week 6 na Bankart; GIRD boven 20
+      graden is onafhankelijke risicofactor voor re-instabiliteit.
+    plaats: fase 2 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: Geen bron; in dit dossier niet nagekeken.
+    verwerkt: gelabeld als klinische richtlijn
+
+  - id: si_c6
+    tekst: >-
+      ER/IR-krachtverhouding groter of gelijk aan 0,66 is preventief voor
+      anterieure instabiliteit (Ellenbecker & Mattalino, 1997).
+    plaats: fase 3 - evidence
+    bronnen: [ellenbecker_1997_isokinetisch_werpers]
+    gedekt: nee
+    opmerking: >-
+      De studie is een beschrijvende normatieve meting bij 125 GEZONDE
+      professionele honkbalwerpers. Geen patient met instabiliteit, geen
+      preventieve uitkomst, en het abstract noemt geen afkapwaarde van 0,66. Een
+      preventieclaim kan daar niet uit komen.
+    verwerkt: preventieclaim geschrapt, de werkelijke bevinding opgenomen
+
+  - id: si_c7
+    tekst: >-
+      Proprioceptieve deficieten na luxatie persisteren tot 6 maanden
+      (Lephart et al., 1994).
+    plaats: fase 3 - evidence
+    bronnen: [lephart_1994_proprioceptie_schouder]
+    gedekt: nee
+    opmerking: >-
+      Twee problemen. (1) Het is een dwarsdoorsnedestudie zonder enige opvolging
+      in de tijd, dus een termijn van 6 maanden kan er niet uit komen. (2) De
+      auteurs besluiten net dat reconstructieve chirurgie een deel van de
+      proprioceptie HERSTELT - bij de geopereerde groep was er geen significant
+      verschil meer met de contralaterale zijde.
+    verwerkt: termijn geschrapt, werkelijke bevindingen in beide richtingen
+      opgenomen
+
+  - id: si_c8
+    tekst: >-
+      PNF D2-diagonalen activeren manchet- en deltoideuscoactivatie optimaal en
+      zijn essentieel voor neuromusculaire heropbouw.
+    plaats: fase 3 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: Geen bron; het woord "essentieel" is bovendien een sterke claim.
+    verwerkt: gelabeld als klinische redenering
+
+  - id: si_c9
+    tekst: >-
+      Gesloten-keten bovenhandse oefeningen verbeteren de manchetcoactivatie
+      effectiever dan open keten (Uhl et al., 2003).
+    plaats: fase 4 - evidence
+    bronnen: [uhl_2003_gewichtdragende_oefeningen]
+    gedekt: nee
+    opmerking: >-
+      De studie bevat GEEN vergelijking met open keten, geen bovenhandse oefening,
+      geen patientenpopulatie en geen revalidatie-uitkomst. Het is een EMG-meting
+      van zeven statische gewichtdragende posities bij 18 gezonde studenten.
+      Verscheen bovendien in JOSPT, niet in J Shoulder Elbow Surg.
+    verwerkt: superioriteitsclaim geschrapt, werkelijke bevindingen opgenomen
+
+  - id: si_c10
+    tekst: >-
+      Terugkeer naar werpen na Bankart: minimum 6 maanden (Wilk et al., 2013);
+      rhythmic stabilization in 90/90 is verplicht voor bovenhandse sport.
+    plaats: fase 4 - evidence en oefeningen
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      De citatie Wilk staat in het refs-veld als 2009 en in de evidencetekst als
+      2013; in dit dossier niet opgehaald. Het woord "verplicht" heeft geen bron.
+    verwerkt: jaartaldiscrepantie benoemd, beide als praktijkafspraak gelabeld
+
+  - id: si_c11
+    tekst: >-
+      Recidief na artroscopische Bankart 6 tot 10%, bij contactsporten 15 tot 20%
+      (Brophy & Marx, 2009).
+    plaats: fase 5 - evidence
+    bronnen: [brophy_2009_anterieure_instabiliteit]
+    gedekt: deels
+    opmerking: >-
+      De review geeft 6,4% artroscopisch en 8,2% open - ruwweg binnen het genoemde
+      bereik, maar de exacte cijfers waren beschikbaar. Het cijfer van 15 tot 20%
+      voor contactsporters staat er NIET in. Weggelaten was bovendien de klinisch
+      beslissende vergelijking: chirurgie 7% tegenover conservatief 46% herval na
+      twee jaar, en 10% tegenover 58% op langere termijn na een EERSTE
+      traumatische luxatie bij jonge patienten.
+    verwerkt: contactsportcijfer geschrapt, exacte cijfers en de vergelijking
+      chirurgie-conservatief opgenomen
+
+  - id: si_c12
+    tekst: 'ISIS-score boven 6 betekent hoog recidiefrisico (Balg & Boileau, 2007).'
+    plaats: fase 5 - evidence en oefening
+    bronnen: [balg_2007_isis]
+    gedekt: ja
+    opmerking: >-
+      Correct, maar onvolledig: de studie geeft een concreet recidiefrisico van
+      70% (p < 0,001) in een reeks van 131 patienten, en de auteurs beschouwen een
+      artroscopische Bankart bij die score als gecontra-indiceerd en stellen een
+      Bristow-Latarjet voor. Dat is een behandelconsequentie, geen loutere
+      risicomelding.
+    verwerkt: cijfer en chirurgische consequentie toegevoegd
+
+  - id: si_c13
+    tekst: >-
+      AMBRI conservatief: 80 tot 90% goed resultaat op lange termijn
+      (Burkhead & Rockwood, 1992).
+    plaats: fase 5 - evidence
+    bronnen: [burkhead_1992_oefenprogramma_instabiliteit]
+    gedekt: deels
+    opmerking: >-
+      De ondergrens klopt (80%, oftewel 53 van 66 atraumatische subluxaties), de
+      bovengrens van 90% staat er niet in. Belangrijker is wat werd weggelaten:
+      hetzelfde oefenprogramma gaf bij TRAUMATISCHE subluxatie slechts 16% goed of
+      uitstekend resultaat (12 van 74). Dat contrast is de reden waarom AMBRI
+      anders behandeld wordt dan TUBS, en het stond niet in de app.
+    verwerkt: bovengrens geschrapt, het contrast opgenomen
+
+  - id: si_c14
+    tekst: Preventief onderhoudsprogramma verlaagt het recidief bij sporters.
+    plaats: fase 5 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: Geen bron.
+    verwerkt: gelabeld als klinische redenering
+
+  # Fase B (onafhankelijke verificator, schone context). Alle negen bronsleutels
+  # bibliografisch bevestigd en alle evidenceteksten gedekt; onderstaande punten
+  # zijn gelekte of ongelabelde drempels in de doel-, criteria- en beschrijvingsvelden.
+  - id: si_c15
+    tekst: >-
+      ER/IR-verhouding 0,66 als fasedoel, doorstroom- en stopcriterium (onder 0,60
+      na 14 weken); JPS-fout onder 5 graden; krachtasymmetrie onder 20 en 10%.
+    plaats: fase 3 en 5 - goals, criteria_go, criteria_stop
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Het evidence-veld erkent dat Ellenbecker 1997 geen afkapwaarde geeft, maar de
+      doel- en criteriavelden presenteren 0,66 als objectieve drempel. De JPS-grens
+      en de asymmetriegrenzen hebben nergens een bron.
+    verwerkt: alle gelabeld als praktijkafspraak
+
+  - id: si_c16
+    tekst: >-
+      WOSI onder 630 (70% van normaal) en onder 420 (80% van normaal) als
+      doorstroomcriterium.
+    plaats: fase 3 tot 5 - criteria
+    bronnen: []
+    gedekt: nee
+    opmerking: Noch de drempels noch de omrekening naar percentages hebben een bron.
+    verwerkt: gelabeld als praktijkdrempel
+
+  - id: si_c17
+    tekst: >-
+      Passieve ER beperkt tot 30 graden na Bankart als doorstroomcriterium;
+      n. axillaris letsel bij 5 tot 14% als rode vlag.
+    plaats: fase 2 criteria_go en fase 1 redflags
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Beide werden in het evidence-veld als klinische richtlijn gelabeld maar
+      stonden in de criteria- en redflagvelden als vaststaand feit. De rode vlag
+      zelf blijft onverkort gelden; alleen het percentage is onbevestigd.
+    verwerkt: beide gelabeld, rode vlag inhoudelijk behouden
+
+  - id: si_c18
+    tekst: >-
+      Specificiteit apprehension-test 94% (Lo et al., 2004); Bankart-laesie bij
+      85 tot 90% van de recidiverende luxaties; herletselrisico 80 tot 90% onder
+      20 jaar en 14% boven 40 jaar (te Slaa et al., 2004).
+    plaats: kenmerken en oorzaken
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Beide citaties hebben geen sleutel in references.yaml en zijn in dit dossier
+      niet opgehaald. Het cijfer van 80 tot 90% strookt bovendien niet met
+      itoi_2007_externe_rotatie, dat voor jonge patienten 66 tot 94% noemt.
+    verwerkt: alle drie gelabeld, met de tegenstrijdigheid benoemd
+
+  - id: si_c19
+    tekst: >-
+      Infraspinatus is de actiefste spier; exorotatiekracht is links en rechts
+      gelijk.
+    plaats: fase 3 en 4 - evidence
+    bronnen: [uhl_2003_gewichtdragende_oefeningen, ellenbecker_1997_isokinetisch_werpers]
+    gedekt: deels
+    opmerking: >-
+      Beide net sterker geformuleerd dan de bron. Uhl schrijft "throughout most of
+      the exercise positions"; Ellenbecker schrijft "no significant difference",
+      wat niet hetzelfde is als gelijk.
+    verwerkt: beide formuleringen afgezwakt tot wat de bron zegt

@@ -20,6 +20,8 @@ claims:
       frictietheorie heeft "vervangen" volgt niet uit twee publicaties van
       dezelfde auteursgroep. De formulering in de app moet die voorzichtigheid
       overnemen.
+    verwerkt: >-
+      tekst gecorrigeerd naar de bevinding in de bron, met vermelding van populatie en bewijsniveau (route B, 2026-09-05)
 
   - id: itb_c02
     tekst: Lopers met ITBS tonen 24% minder heupabductorkracht dan gezonde controlepersonen; gluteus medius-zwakte is de sterkste biomechanische risicofactor
@@ -34,6 +36,8 @@ claims:
       series, waarmee geen uitspraak over risicofactoren mogelijk is: de
       zwakte kan even goed gevolg als oorzaak zijn. Ook de app-toeschrijving
       naar een andere auteur en jaartal klopt niet.
+    verwerkt: >-
+      herlabeld als klinische redenering in protocols.js (route B, 2026-09-05)
 
   - id: itb_c03
     tekst: Stapfrequentieverhoging met 5-10% vermindert het piekheupadductiemoment met 20%
@@ -45,6 +49,8 @@ claims:
       ALLEEN op bij 10% verhoging, niet bij 5%. Het percentage 20% wordt niet
       gerapporteerd. En de populatie bestond uit 45 GEZONDE recreatieve lopers,
       niet uit ITBS-patienten (CLAUDE.md 1.5).
+    verwerkt: >-
+      herlabeld als klinische redenering in protocols.js (route B, 2026-09-05)
 
   - id: itb_c04
     tekst: Stopzetten van het krachtprogramma na symptoomresolutie leidt bij 30-40% tot herval
@@ -54,6 +60,8 @@ claims:
     opmerking: >-
       GEEN BRON GEVONDEN met hervalcijfers. De toegeschreven publicatie bevat
       die cijfers niet. Schrappen.
+    verwerkt: >-
+      cijfer of citatie geschrapt uit protocols.js; klinische lijn behouden als redenering (route B, 2026-09-05)
 
   - id: itb_c05
     tekst: Heupgerichte krachttraining is effectief bij de behandeling van ITBS
@@ -67,6 +75,8 @@ claims:
       de bereiken pijnreductie 27 tot 100% en functieverbetering 10 tot 57% over
       2 tot 8 weken gelden voor ALLE onderzochte interventies samen, niet voor
       heupabductorversterking alleen. Grote heterogeniteit, geen meta-analyse.
+    verwerkt: >-
+      herlabeld als klinische redenering in protocols.js (route B, 2026-09-05)
 
   - id: itb_c06
     tekst: De klassieke ITB-stretch is conceptueel achterhaald omdat de tractus nauwelijks rekbaar is
@@ -77,3 +87,119 @@ claims:
       Gedekt voor het rekken: gemeten verlenging van de tractus was minder dan
       0,5% bij drie gangbare rekmanoeuvres in kadavers. FOAM ROLLEN is in deze
       bron NIET onderzocht; die toevoeging moet uit de claim of apart onderbouwd.
+
+  # --- Tweede auditronde: restcitaties die in ronde 1 niet gecontroleerd waren ---
+    verwerkt: >-
+      herlabeld als klinische redenering in protocols.js (route B, 2026-09-05)
+
+  - id: itb_c07
+    tekst: Foam rolling van de TFL reduceert gepercipieerde spanning effectiever dan passieve rekking op korte termijn
+    plaats: protocols.itb fase 1 evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      NIET GEDEKT. De toegeschreven publicatie onderzocht foam rollen na
+      spierpijn-inducerende squats bij 8 gezonde mannen, met drukpijndrempel,
+      sprint, sprong en krachtuithouding als uitkomsten. Geen TFL, geen
+      ITBS-populatie en geen vergelijking met passieve rekking. Citatie schrappen.
+    verwerkt: >-
+      cijfer of citatie geschrapt uit protocols.js; klinische lijn behouden als redenering (route B, 2026-09-05)
+
+  - id: itb_c08
+    tekst: Heupgerichte krachttraining geeft 92% symptoomresolutie na 6 weken tegenover 67% bij enkel rekken
+    plaats: protocols.itb fase 2 evidence
+    bronnen: [fredericson_2000_heupabductoren]
+    gedekt: deels
+    opmerking: >-
+      92% IS TERUG TE VOEREN OP DE BRON, DE VERGELIJKING NIET. Na 6 weken waren
+      22 van de 24 lopers pijnvrij en terug aan het lopen, zonder recidief na
+      6 maanden. Er was echter GEEN rekgroep en geen controlegroep: de 67% is
+      nergens in de bron te vinden. Het betreft bovendien een case series zonder
+      randomisatie, waaruit geen superioriteitsuitspraak volgt. Vergelijking
+      schrappen, ontwerp expliciet benoemen.
+    verwerkt: >-
+      cijfer of citatie geschrapt uit protocols.js; klinische lijn behouden als redenering (route B, 2026-09-05)
+
+  - id: itb_c09
+    tekst: TFL-flexibiliteitsbeperking is een onafhankelijke predictor van ITBS bij hardlopers
+    plaats: protocols.itb fase 2 evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      NIET GEDEKT. De toegeschreven publicatie is een cross-sectionele
+      meetstudie naar de invloed van kniestand en geslacht op de Ober-test bij
+      49 gezonde proefpersonen. Geen ITBS-patienten, geen prospectieve opvolging,
+      dus geen predictoruitspraak mogelijk. Citatie schrappen.
+    verwerkt: >-
+      cijfer of citatie geschrapt uit protocols.js; klinische lijn behouden als redenering (route B, 2026-09-05)
+
+  - id: itb_c10
+    tekst: Gait retraining gericht op heupadductiereductie geeft klinische verbetering bij 79% van chronische ITBS-patienten na 8 sessies
+    plaats: protocols.itb fase 3 evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      TWEE PROBLEMEN. De toegeschreven studie betreft 10 lopers met
+      PATELLOFEMORAAL PIJNSYNDROOM, niet met ITBS (CLAUDE.md 1.5), en rapporteert
+      geen responspercentage van 79%. Wel 8 sessies met real-time feedback en
+      significante verbetering van pijn en functie. Citatie en cijfer schrappen.
+    verwerkt: >-
+      cijfer of citatie geschrapt uit protocols.js; klinische lijn behouden als redenering (route B, 2026-09-05)
+
+  - id: itb_c11
+    tekst: De 10%-trainingsregel is de sterkste evidence-based preventieve maatregel voor overbelastingsletsel bij hardlopers
+    plaats: protocols.itb fase 3 en 4 evidence
+    bronnen: [nielsen_2014_loopvolume]
+    gedekt: nee
+    opmerking: >-
+      DE BRON SPREEKT DE CLAIM TEGEN. Over de drie blootstellingsgroepen samen
+      waren er geen statistisch significante verschillen in letselcijfers. Enkel
+      voor afstandsgebonden letsels (waaronder ITBS) lag het cijfer hoger bij een
+      progressie van meer dan 30% over twee weken tegenover minder dan 10%, en
+      dat verschil was niet significant (HR 1,59; 95% BI 0,96-2,66; p = 0,07). De
+      auteurs adviseren minder dan 30% per week. Claim vervangen door de werkelijke
+      bevinding, inclusief de onzekerheid.
+    verwerkt: >-
+      tekst gecorrigeerd naar de bevinding in de bron, met vermelding van populatie en bewijsniveau (route B, 2026-09-05)
+
+  - id: itb_c12
+    tekst: Elke 5% cadansstijging vermindert kniestressparameters met 14-20%
+    plaats: protocols.itb fase 4 evidence
+    bronnen: [schubert_2014_stapfrequentie]
+    gedekt: nee
+    opmerking: >-
+      RICHTING GEDEKT, CIJFER NIET. De systematische review vindt consistent dat
+      een hogere stapfrequentie de verticale verplaatsing, de grondreactiekracht,
+      de schokdemping en de opgenomen energie in heup, knie en enkel verlaagt,
+      maar geeft geen effect per 5% cadansstijging en geen 14 tot 20%. Het
+      tijdschrift in de app klopte evenmin (Sports Health, niet Gait & Posture).
+      Cijfer schrappen, richting behouden met correcte bronvermelding.
+    verwerkt: >-
+      cijfer of citatie geschrapt uit protocols.js; klinische lijn behouden als redenering (route B, 2026-09-05)
+
+  - id: itb_c13
+    tekst: Een verhoogde pasfrequentie boven 170 spm reduceert het knieadductiemoment en de impingementtijd significant
+    plaats: BESCHRIJVING.itb
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      VERKEERDE TOESCHRIJVING. De citatie Willy et al. 2012 - JOSPT verwijst naar
+      een casusrapport over hardloopmechanica na een chirurgisch herstelde
+      achillespeesruptuur. Geen cadans, geen drempel van 170 spm, geen
+      knieadductiemoment. Citatie en drempelwaarde schrappen.
+    verwerkt: >-
+      cijfer of citatie geschrapt uit protocols.js; klinische lijn behouden als redenering (route B, 2026-09-05)
+
+  - id: itb_c14
+    tekst: Relatieve rust en eliminatie van de provocerende activiteit zijn de primaire acute interventies
+    plaats: protocols.itb fase 1 evidence
+    bronnen: [fredericson_2006_itbfs]
+    gedekt: deels
+    opmerking: >-
+      GEDEKT OP EXPERTNIVEAU. De bron beschrijft activiteitenmodificatie, ijs en
+      ontstekingsremmers in de acute fase en heupabductorversterking in de
+      herstelfase, maar is een narratieve praktijkbeschrijving zonder
+      systematische zoekstrategie of vergelijkende data (CLAUDE.md 2, niveau 5).
+      Bewijsniveau expliciet vermelden bij de claim.
+    verwerkt: >-
+      tekst gecorrigeerd naar de bevinding in de bron, met vermelding van populatie en bewijsniveau (route B, 2026-09-05)

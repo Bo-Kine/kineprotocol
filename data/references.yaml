@@ -319,3 +319,3542 @@ references:
       was wel geassocieerd (OR 5,2; 95% BI 1,1-25,5).
     geverifieerd_op: 2026-09-05
     geverifieerd_door: PubMed MCP (get_article_metadata, PMID 17414530)
+
+  - key: rio_2015_isometrie
+    auteurs: [Rio E, Kidgell D, Purdam C, Gaida J, Moseley GL, Pearce AJ, Cook J]
+    titel: Isometric exercise induces analgesia and reduces inhibition in patellar tendinopathy
+    bron: British Journal of Sports Medicine
+    jaar: 2015
+    volume_paginas: 49(19):1277-83
+    doi: 10.1136/bjsports-2014-094386
+    pmid: '25979840'
+    url: https://doi.org/10.1136/bjsports-2014-094386
+    type: RCT
+    opmerking: >-
+      Gerandomiseerde cross-overstudie bij 6 volleyballers met patellatendinopathie.
+      Pijn op de single-leg decline squat daalde na isometrie van 7,0 naar 0,17
+      (gemiddelde daling 6,8/10), tegenover 2,6/10 na isotone contracties; effect
+      hield 45 minuten aan. De corticale inhibitie NAM AF: de gebruikte ratio steeg van 27,5% naar 55,0%, wat minder inhibitie betekent.
+      Zeer kleine steekproef; niet onderzocht bij de pes anserinus.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: messier_2005_knielast
+    auteurs: [Messier SP, Gutekunst DJ, Davis C, DeVita P]
+    titel: Weight loss reduces knee-joint loads in overweight and obese older adults with knee osteoarthritis
+    bron: Arthritis and Rheumatism
+    jaar: 2005
+    volume_paginas: 52(7):2026-32
+    doi: 10.1002/art.21139
+    pmid: '15986358'
+    url: https://doi.org/10.1002/art.21139
+    type: RCT
+    opmerking: >-
+      142 zittende, overgewichtige oudere volwassenen met gonartrose, ganganalyse
+      na 18 maanden dieet en beweging. 1 kg (9,8 N) gewichtsverlies ging samen met
+      40,6 N minder compressiekracht en 38,7 N minder resultante kracht per stap —
+      ongeveer een viervoudige reductie per eenheid gewichtsverlies. Geen uitspraak
+      over 5% gewichtsverlies of over de pes anserinus.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: fredericson_2006_itbfs
+    auteurs: [Fredericson M, Weir A]
+    titel: Practical management of iliotibial band friction syndrome in runners
+    bron: Clinical Journal of Sport Medicine
+    jaar: 2006
+    volume_paginas: 16(3):261-8
+    doi: 10.1097/00042752-200605000-00013
+    pmid: '16778549'
+    url: https://doi.org/10.1097/00042752-200605000-00013
+    type: review
+    opmerking: >-
+      Narratieve praktijkbeschrijving, geen systematische review. Beschrijft
+      activiteitenmodificatie in de acute fase, heupabductorversterking in de
+      herstelfase en een gefaseerde loophervatting om de andere dag met vermijden
+      van heuveltraining. Bevat geen hervalcijfers.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: schubert_2014_stapfrequentie
+    auteurs: [Schubert AG, Kempf J, Heiderscheit BC]
+    titel: 'Influence of stride frequency and length on running mechanics: a systematic review'
+    bron: Sports Health
+    jaar: 2014
+    volume_paginas: 6(3):210-7
+    doi: 10.1177/1941738113508544
+    pmid: '24790690'
+    url: https://doi.org/10.1177/1941738113508544
+    type: SR
+    opmerking: >-
+      Systematische review van 10 studies. Consistente bevinding: een hogere
+      staplengtefrequentie verlaagt de verticale verplaatsing van het
+      massamiddelpunt, de grondreactiekracht, de schokdemping en de opgenomen
+      energie in heup, knie en enkel. Geen percentages per 5% cadansstijging,
+      geen ITBS-populatie. Verscheen in Sports Health, niet in Gait & Posture.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (search_articles + get_article_metadata)
+
+  - key: nielsen_2014_loopvolume
+    auteurs: [Nielsen RO, Parner ET, Nohr EA, Sorensen H, Lind M, Rasmussen S]
+    titel: 'Excessive progression in weekly running distance and risk of running-related injuries: an association which varies according to type of injury'
+    bron: Journal of Orthopaedic and Sports Physical Therapy
+    jaar: 2014
+    volume_paginas: 44(10):739-47
+    doi: 10.2519/jospt.2014.5164
+    pmid: '25155475'
+    url: https://doi.org/10.2519/jospt.2014.5164
+    type: cohort
+    opmerking: >-
+      Exploratief prospectief cohort, 874 beginnende lopers, 202 letsels. Over de
+      drie blootstellingsgroepen samen waren er GEEN statistisch significante
+      verschillen in letselcijfers. Enkel voor afstandsgebonden letsels (waaronder
+      ITBS) lag het cijfer hoger bij een progressie van meer dan 30% over twee
+      weken tegenover minder dan 10% (HR 1,59; 95% BI 0,96-2,66; p = 0,07 — niet
+      significant). De auteurs adviseren minder dan 30% per week, niet 10%.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  # --- Meniscusletsel ---
+
+  - key: vandegraaf_2018_escape
+    auteurs: [van de Graaf VA, Noorduyn JCA, Willigenburg NW, Butter IK, de Gast A, Mol BW, Saris DBF, Twisk JWR, Poolman RW]
+    titel: >-
+      Effect of early surgery vs physical therapy on knee function among patients
+      with nonobstructive meniscal tears: the ESCAPE randomized clinical trial
+    bron: JAMA
+    jaar: 2018
+    volume_paginas: 320(13):1328-1337
+    doi: 10.1001/jama.2018.13308
+    pmid: '30285177'
+    url: https://doi.org/10.1001/jama.2018.13308
+    type: RCT
+    opmerking: >-
+      Non-inferioriteitstrial, 9 Nederlandse ziekenhuizen, 321 deelnemers van 45
+      tot 70 jaar met NIET-OBSTRUCTIEVE scheuren (geen slotklachten). Uitgesloten:
+      instabiliteit, ernstige artrose, BMI boven 35. Kinesitherapie (16 sessies
+      over 8 weken) was niet-inferieur aan artroscopische partiele meniscectomie
+      op de IKDC over 24 maanden; verschil 3,6 punten (97,5% BI tot 6,5).
+      29% van de oefengroep onderging alsnog een meniscectomie.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: sihvonen_2013_fidelity
+    auteurs: [Sihvonen R, Paavola M, Malmivaara A, Itala A, Joukainen A, Nurmi H, Kalske J, Jarvinen TLN]
+    titel: Arthroscopic partial meniscectomy versus sham surgery for a degenerative meniscal tear
+    bron: New England Journal of Medicine
+    jaar: 2013
+    volume_paginas: 369(26):2515-24
+    doi: 10.1056/NEJMoa1305189
+    pmid: '24369076'
+    url: https://doi.org/10.1056/NEJMoa1305189
+    type: RCT
+    opmerking: >-
+      Multicentrische, dubbelblinde, sham-gecontroleerde trial bij 146 patienten
+      van 35 tot 65 jaar met een degeneratieve mediale meniscusscheur EN ZONDER
+      gonartrose. Na 12 maanden geen significante verschillen op Lysholm, WOMET
+      of pijn na inspanning. Geldt uitdrukkelijk niet voor patienten met artrose.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: kise_2016_oefentherapie
+    auteurs: [Kise NJ, Risberg MA, Stensrud S, Ranstam J, Engebretsen L, Roos EM]
+    titel: >-
+      Exercise therapy versus arthroscopic partial meniscectomy for degenerative
+      meniscal tear in middle aged patients: randomised controlled trial with two
+      year follow-up
+    bron: BMJ
+    jaar: 2016
+    volume_paginas: 354:i3740
+    doi: 10.1136/bmj.i3740
+    pmid: '27440192'
+    url: https://doi.org/10.1136/bmj.i3740
+    type: RCT
+    opmerking: >-
+      140 volwassenen, gemiddeld 49,5 jaar, degeneratieve mediale scheur; 96%
+      zonder duidelijke radiografische artrose. Geen klinisch relevant verschil
+      op KOOS4 na twee jaar (0,9 punten; 95% BI -4,3 tot 6,1). Wel BETERE
+      SPIERKRACHT in de oefengroep na drie maanden (p kleiner of gelijk aan
+      0,004) — de auteurs beperken dat voordeel expliciet tot de korte termijn.
+      Kniefunctie was dus GELIJKWAARDIG, niet beter.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: logerstedt_2018_meniscus_cpg
+    auteurs: [Logerstedt DS, Scalzitti DA, Bennell KL, Hinman RS, Silvers-Granelli H, Ebert J, Hambly K, Carey JL, Snyder-Mackler L, Axe MJ, McDonough CM]
+    titel: 'Knee pain and mobility impairments: meniscal and articular cartilage lesions revision 2018'
+    bron: Journal of Orthopaedic and Sports Physical Therapy
+    jaar: 2018
+    volume_paginas: 48(2):A1-A50
+    doi: 10.2519/jospt.2018.0301
+    pmid: '29385940'
+    url: https://doi.org/10.2519/jospt.2018.0301
+    type: richtlijn
+    opmerking: >-
+      Klinische praktijkrichtlijn van de Orthopaedic Section (APTA), herziening
+      2018. Hoogste niveau in de hierarchie van CLAUDE.md 2. LET OP: het
+      PubMed-abstract bevat enkel de scope, niet de afzonderlijke aanbevelingen;
+      specifieke uitspraken die aan deze richtlijn worden toegeschreven zijn in
+      dit dossier niet tegen de volledige tekst gelegd.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: walker_1975_krachtoverdracht
+    auteurs: [Walker PS, Erkman MJ]
+    titel: The role of the menisci in force transmission across the knee
+    bron: Clinical Orthopaedics and Related Research
+    jaar: 1975
+    volume_paginas: (109):184-92
+    doi: 10.1097/00003086-197506000-00027
+    pmid: '1173360'
+    url: https://doi.org/10.1097/00003086-197506000-00027
+    type: cohort
+    opmerking: >-
+      Kadaveronderzoek op 14 knieen. Contact verplaatst zich van lateraal bij 0
+      graden naar POSTEROLATERAAL bij 90 graden flexie. Onder belasting tot 150 kg
+      draagt de laterale meniscus het grootste deel van de last aan die zijde;
+      mediaal wordt de last ongeveer gelijk verdeeld tussen meniscus en
+      blootliggend kraakbeen. Er staat GEEN percentage van 85 tot 90 procent in.
+      TE VERIFIEREN op het type: CLAUDE.md 4 kent geen categorie voor
+      kadaveronderzoek, 'cohort' is hier te sterk.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (search_articles + get_article_metadata)
+
+  - key: vanderhave_2015_belasten
+    auteurs: [VanderHave KL, Perkins C, Le M]
+    titel: Weightbearing versus nonweightbearing after meniscus repair
+    bron: Sports Health
+    jaar: 2015
+    volume_paginas: 7(5):399-402
+    doi: 10.1177/1941738115576898
+    pmid: '26502413'
+    url: https://doi.org/10.1177/1941738115576898
+    type: SR
+    opmerking: >-
+      Systematische review van studies met bewijsniveau 1 tot 4, geen
+      gerandomiseerd onderzoek op zich. Conservatieve protocollen met beperkte
+      belasting gaven 70 tot 94% goede resultaten, versnelde protocollen met
+      onmiddellijke belasting en vroege mobilisatie 64 tot 96%. De review vindt
+      dus GEEN meerwaarde van belastingsbeperking en bevat geen faalcijfer van
+      10 tot 25%.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: cavanaugh_2012_hechtingrevalidatie
+    auteurs: [Cavanaugh JT, Killian SE]
+    titel: Rehabilitation following meniscal repair
+    bron: Current Reviews in Musculoskeletal Medicine
+    jaar: 2012
+    volume_paginas: 5(1):46-58
+    doi: 10.1007/s12178-011-9110-y
+    pmid: '22442106'
+    url: https://doi.org/10.1007/s12178-011-9110-y
+    type: review
+    opmerking: >-
+      Narratieve review over revalidatie na meniscushechting, zonder
+      systematische zoekstrategie. Het abstract beschrijft enkel de opzet;
+      de specifieke doseringsuitspraken die in de app aan deze bron werden
+      toegeschreven (flexiebeperking tot 90 graden, vier weken) zijn in dit
+      dossier NIET tegen de volledige tekst gelegd.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: ericsson_2006_quadriceps
+    auteurs: [Ericsson YB, Roos EM, Dahlberg L]
+    titel: >-
+      Muscle strength, functional performance, and self-reported outcomes four
+      years after arthroscopic partial meniscectomy in middle-aged patients
+    bron: Arthritis and Rheumatism
+    jaar: 2006
+    volume_paginas: 55(6):946-52
+    doi: 10.1002/art.22346
+    pmid: '17139641'
+    url: https://doi.org/10.1002/art.22346
+    type: cohort
+    opmerking: >-
+      45 patienten, gemiddeld 46,7 jaar, gemiddeld vier jaar na artroscopische
+      partiele meniscectomie. Lagere knie-extensorkracht aan de geopereerde zijde
+      (p kleiner of gelijk aan 0,004), geen verschil voor de flexoren. Een
+      sterkere quadriceps hing samen met minder pijn en betere functie en
+      levenskwaliteit (r = 0,4 tot 0,6). Er staat GEEN krachtdeficit van 20% in.
+      Het artikel verscheen in Arthritis and Rheumatism, niet in Scandinavian
+      Journal of Medicine and Science in Sports zoals de app vermeldde.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (search_articles + get_article_metadata)
+
+  - key: lohmander_2007_artrose
+    auteurs: [Lohmander LS, Englund PM, Dahl LL, Roos EM]
+    titel: 'The long-term consequence of anterior cruciate ligament and meniscus injuries: osteoarthritis'
+    bron: American Journal of Sports Medicine
+    jaar: 2007
+    volume_paginas: 35(10):1756-69
+    doi: 10.1177/0363546507307396
+    pmid: '17761605'
+    url: https://doi.org/10.1177/0363546507307396
+    type: review
+    opmerking: >-
+      Narratieve review. Kerncijfer: 10 tot 20 jaar na de diagnose heeft
+      GEMIDDELD 50% van de mensen met een vastgestelde VKB- OF meniscusscheur
+      artrose met pijn en functiebeperking. Dat geldt dus voor de diagnose, niet
+      specifiek voor (sub)totale meniscectomie. TEGENSTRIJDIGE EVIDENTIE
+      (CLAUDE.md 1.9): de auteurs stellen uitdrukkelijk dat er GEEN bewijs is dat
+      hechting of reconstructie beschermt tegen het ontstaan van artrose.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: hegedus_2007_meniscustests
+    auteurs: [Hegedus EJ, Cook C, Hasselblad V, Goode A, McCrory DC]
+    titel: 'Physical examination tests for assessing a torn meniscus in the knee: a systematic review with meta-analysis'
+    bron: Journal of Orthopaedic and Sports Physical Therapy
+    jaar: 2007
+    volume_paginas: 37(9):541-50
+    doi: 10.2519/jospt.2007.2560
+    pmid: '17939613'
+    url: https://doi.org/10.2519/jospt.2007.2560
+    type: SR
+    opmerking: >-
+      Systematische review met meta-analyse, 18 studies. Gepoolde sensitiviteit en
+      specificiteit: McMurray 70% en 71%, Apley 60% en 70%, gewrichtsspleetpijn
+      63% en 77%. De auteurs besluiten dat GEEN ENKELE afzonderlijke test een
+      meniscusscheur accuraat diagnosticeert en dat de waarde van anamnese plus
+      klinisch onderzoek ONBEKEND is; zij pleiten voor het ontwikkelen van een
+      klinische predictieregel. De cijfers 83% en 94% uit de app staan er niet in.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: englund_2008_toevalsbevindingen
+    auteurs: [Englund M, Guermazi A, Gale D, Hunter DJ, Aliabadi P, Clancy M, Felson DT]
+    titel: Incidental meniscal findings on knee MRI in middle-aged and elderly persons
+    bron: New England Journal of Medicine
+    jaar: 2008
+    volume_paginas: 359(11):1108-15
+    doi: 10.1056/NEJMoa0800777
+    pmid: '18784100'
+    url: https://doi.org/10.1056/NEJMoa0800777
+    type: cohort
+    opmerking: >-
+      Framingham-cohort, 991 deelnemers van 50 tot 90 jaar, MRI van de rechterknie.
+      Prevalentie van een meniscusscheur of -destructie liep van 19% (vrouwen 50
+      tot 59 jaar) tot 56% (mannen 70 tot 90 jaar). Bij mensen ZONDER radiografische
+      artrose: 32% met klachten tegenover 23% zonder klachten. 61% van wie een
+      scheur had, had de voorbije maand geen pijn, stijfheid of hinder. Het cijfer
+      35% uit de app komt in de bron niet voor.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: arnoczky_1982_vascularisatie
+    auteurs: [Arnoczky SP, Warren RF]
+    titel: Microvasculature of the human meniscus
+    bron: American Journal of Sports Medicine
+    jaar: 1982
+    volume_paginas: 10(2):90-5
+    doi: 10.1177/036354658201000205
+    pmid: '7081532'
+    url: https://doi.org/10.1177/036354658201000205
+    type: cohort
+    opmerking: >-
+      Kadaveronderzoek op 20 preparaten. De perimeniscale capillaire plexus,
+      afkomstig uit kapsel en synovium, voorziet de perifere 10 tot 25% van de
+      menisci — niet 10 tot 30% zoals de app vermeldde. Het posterolaterale deel
+      van de laterale meniscus bij de popliteuspees heeft geen doordringende
+      perifere vaten. TE VERIFIEREN op het type: kadaveronderzoek past niet in de
+      typelijst van CLAUDE.md 4.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: eberbach_2018_sporthervatting
+    auteurs: [Eberbach H, Zwingmann J, Hohloch L, Bode G, Maier D, Niemeyer P, Sudkamp NP, Feucht MJ]
+    titel: 'Sport-specific outcomes after isolated meniscal repair: a systematic review'
+    bron: Knee Surgery, Sports Traumatology, Arthroscopy
+    jaar: 2018
+    volume_paginas: 26(3):762-771
+    doi: 10.1007/s00167-017-4463-4
+    pmid: '28243702'
+    url: https://doi.org/10.1007/s00167-017-4463-4
+    type: SR
+    opmerking: >-
+      28 studies, 664 patienten, gemiddelde leeftijd 26 jaar, geisoleerde
+      meniscushechting. Terugkeer naar het niveau van voor het letsel bij 89%.
+      Gemiddelde vertraging tot sporthervatting 4,3 tot 6,5 maanden. GEPOOLDE
+      FAALKANS 21% (9% bij professionals, 22% bij gemengde niveaus). De bron
+      bevat geen vergelijkende tijdslijn voor meniscectomie. TE VERIFIEREN op het
+      jaartal: PubMed geeft 2017 als publicatiedatum terwijl het tijdschriftnummer
+      26(3) uit 2018 stamt.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (search_articles + get_article_metadata)
+
+  - key: paxton_2011_hechting
+    auteurs: [Paxton ES, Stock MV, Brophy RH]
+    titel: 'Meniscal repair versus partial meniscectomy: a systematic review comparing reoperation rates and clinical outcomes'
+    bron: Arthroscopy
+    jaar: 2011
+    volume_paginas: 27(9):1275-88
+    doi: 10.1016/j.arthro.2011.03.088
+    pmid: '21820843'
+    url: https://doi.org/10.1016/j.arthro.2011.03.088
+    type: SR
+    opmerking: >-
+      Systematische review van studies met bewijsniveau 1 tot 4 (zelf niveau 4).
+      Heroperatie na partiele meniscectomie 1,4% op korte en 3,9% op lange termijn,
+      tegenover 16,5% en 20,7% na geisoleerde hechting. In het beperkte aantal
+      studies met langetermijnuitkomsten gaf hechting hogere Lysholm-scores en
+      minder radiologische degeneratie.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: thorborg_2017_fifa11
+    auteurs: [Thorborg K, Krommes KK, Esteve E, Clausen MB, Bartels EM, Rathleff MS]
+    titel: >-
+      Effect of specific exercise-based football injury prevention programmes on
+      the overall injury rate in football: a systematic review and meta-analysis
+      of the FIFA 11 and 11+ programmes
+    bron: British Journal of Sports Medicine
+    jaar: 2017
+    volume_paginas: 51(7):562-571
+    doi: 10.1136/bjsports-2016-097066
+    pmid: '28087568'
+    url: https://doi.org/10.1136/bjsports-2016-097066
+    type: SR
+    opmerking: >-
+      Zes cluster-gerandomiseerde trials bij recreatieve en subelite voetballers.
+      Uitkomstmaat is de TOTALE letselincidentie in het voetbal, niet ernstige
+      knieletsels. FIFA 11+ verlaagde het totale letselrisico met 39% (IRR 0,61;
+      95% BI 0,48-0,77). Voor FIFA 11 werd GEEN effect aangetoond (IRR 0,99;
+      95% BI 0,80-1,23). Het bereik 30 tot 50% uit de app staat er niet in.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (search_articles + get_article_metadata)
+
+  # --- Lumbale facetartrose ---
+
+  - key: cohen_2007_facetpijn
+    auteurs: [Cohen SP, Raja SN]
+    titel: 'Pathogenesis, diagnosis, and treatment of lumbar zygapophysial (facet) joint pain'
+    bron: Anesthesiology
+    jaar: 2007
+    volume_paginas: 106(3):591-614
+    doi: 10.1097/00000542-200703000-00024
+    pmid: '17325518'
+    url: https://doi.org/10.1097/00000542-200703000-00024
+    type: review
+    opmerking: >-
+      Narratieve review met systematische analyse. Facetartropathie treft TOT 15%
+      van de patienten met chronische lage rugpijn — niet 15 tot 45%. KERNPUNT dat
+      in de app ontbrak: de bestaande literatuur ondersteunt NIET dat anamnese of
+      klinisch onderzoek de diagnose kan stellen. De meest aanvaarde methode is een
+      intra-articulaire of mediale-takblokkade, beide met een hoog vals-positief
+      percentage. Het bewijs voor infiltratie en radiofrequente denervatie is
+      tegenstrijdig. Verscheen in Anesthesiology, niet in Anesthesia and Analgesia.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (search_articles + get_article_metadata)
+
+  - key: louw_2011_pijneducatie
+    auteurs: [Louw A, Diener I, Butler DS, Puentedura EJ]
+    titel: 'The effect of neuroscience education on pain, disability, anxiety, and stress in chronic musculoskeletal pain'
+    bron: Archives of Physical Medicine and Rehabilitation
+    jaar: 2011
+    volume_paginas: 92(12):2041-56
+    doi: 10.1016/j.apmr.2011.07.198
+    pmid: '22133255'
+    url: https://doi.org/10.1016/j.apmr.2011.07.198
+    type: SR
+    opmerking: >-
+      Systematische review van 8 studies (6 hoogwaardige RCT's, 401 deelnemers).
+      Overtuigend bewijs dat neurowetenschappelijke pijneducatie pijn, beperking,
+      catastroferen en fysieke prestatie gunstig beinvloedt. GEEN META-ANALYSE:
+      heterogeniteit verhinderde pooling, de synthese is narratief. Er wordt geen
+      uitspraak gedaan over langetermijneffect.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: malmivaara_1995_activiteit
+    auteurs: [Malmivaara A, Hakkinen U, Aro T, Heinrichs ML, Koskenniemi L, Kuosma E, Lappi S, Paloheimo R, Servo C, Vaaranen V]
+    titel: 'The treatment of acute low back pain: bed rest, exercises, or ordinary activity?'
+    bron: New England Journal of Medicine
+    jaar: 1995
+    volume_paginas: 332(6):351-5
+    doi: 10.1056/NEJM199502093320602
+    pmid: '7823996'
+    url: https://doi.org/10.1056/NEJM199502093320602
+    type: RCT
+    opmerking: >-
+      186 werknemers met ACUTE aspecifieke lage rugpijn, gerandomiseerd over
+      bedrust (67), rugmobiliserende oefeningen (52) of gewone activiteit binnen
+      de pijngrens (67). De controlegroep met gewone activiteit herstelde het best
+      op alle uitkomstmaten; herstel was het traagst bij bedrust. LET OP: ook de
+      OEFENGROEP deed het slechter dan gewone activiteit. De interventie was
+      "gewone activiteit voortzetten", niet wandelen. Populatie is acute
+      aspecifieke rugpijn, geen facetartrose.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: rubinstein_2012_manipulatie
+    auteurs: [Rubinstein SM, Terwee CB, Assendelft WJJ, de Boer MR, van Tulder MW]
+    titel: Spinal manipulative therapy for acute low-back pain
+    bron: Cochrane Database of Systematic Reviews
+    jaar: 2012
+    volume_paginas: 2012(9):CD008880
+    doi: 10.1002/14651858.CD008880.pub2
+    pmid: '22972127'
+    url: https://doi.org/10.1002/14651858.CD008880.pub2
+    type: SR
+    opmerking: >-
+      Cochrane-review, 20 RCT's, 2674 deelnemers, ACUTE lage rugpijn (minder dan
+      zes weken). CONCLUSIE: manipulatieve therapie is NIET effectiever dan inerte
+      interventies, sham-manipulatie, of als toevoeging aan een andere behandeling,
+      en lijkt ook niet beter dan andere aanbevolen therapieen. Slechts 6 van de 20
+      studies hadden een laag risico op bias. Dit spreekt de claim in de app
+      rechtstreeks tegen.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: hancock_2007_diclofenac_smt
+    auteurs: [Hancock MJ, Maher CG, Latimer J, McLachlan AJ, Cooper CW, Day RO, Spindler MF, McAuley JH]
+    titel: >-
+      Assessment of diclofenac or spinal manipulative therapy, or both, in addition
+      to recommended first-line treatment for acute low back pain: a randomised
+      controlled trial
+    bron: Lancet
+    jaar: 2007
+    volume_paginas: 370(9599):1638-43
+    doi: 10.1016/S0140-6736(07)61686-9
+    pmid: '17993364'
+    url: https://doi.org/10.1016/S0140-6736(07)61686-9
+    type: RCT
+    opmerking: >-
+      240 patienten met ACUTE lage rugpijn, vier armen met placebo-medicatie en
+      placebo-manipulatie. NOCH diclofenac NOCH manipulatieve therapie versnelde
+      het herstel (HR 1,09 respectievelijk 1,01; p = 0,955). Deze studie gaat NIET
+      over lumbale extensiemobilisatie bij facetartrose en toont geen pijnreductie
+      versus sham; de toeschrijving in de app was volledig onjuist.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: donelson_1997_centralisatie
+    auteurs: [Donelson R, Aprill C, Medcalf R, Grant W]
+    titel: 'A prospective study of centralization of lumbar and referred pain: a predictor of symptomatic discs and anular competence'
+    bron: Spine
+    jaar: 1997
+    volume_paginas: 22(10):1115-22
+    doi: 10.1097/00007632-199705150-00011
+    pmid: '9160470'
+    url: https://doi.org/10.1097/00007632-199705150-00011
+    type: cohort
+    opmerking: >-
+      DIAGNOSTISCHE studie, geen effectstudie. Bij een McKenzie-beoordeling
+      centraliseerde de uitstralende pijn bij 50% van de patienten, van wie 74% een
+      positief discogram had. Het onderzoek onderscheidt discogene van niet-discogene
+      pijn en zegt niets over de effectiviteit van de McKenzie-methode, niets over
+      een extensiebias en niets over facetgewrichten. Er is geen responspercentage
+      van 60%.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: hendrick_2010_wandelen
+    auteurs: [Hendrick P, Te Wake AM, Tikkisetty AS, Wulff L, Yap C, Milosavljevic S]
+    titel: 'The effectiveness of walking as an intervention for low back pain: a systematic review'
+    bron: European Spine Journal
+    jaar: 2010
+    volume_paginas: 19(10):1613-20
+    doi: 10.1007/s00586-010-1412-z
+    pmid: '20414688'
+    url: https://doi.org/10.1007/s00586-010-1412-z
+    type: SR
+    opmerking: >-
+      Systematische review waarin SLECHTS VIER studies aan de criteria voldeden.
+      Drie lager gerangschikte studies vonden pijnvermindering, de hoogst
+      gerangschikte studie vond GEEN effect. Conclusie: er is slechts laag tot
+      matig bewijs voor wandelen als effectieve interventie. Geen meta-analyse,
+      geen 2206 deelnemers, en geen enkele kosteneffectiviteitsanalyse.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: hides_2001_stabilisatie
+    auteurs: [Hides JA, Jull GA, Richardson CA]
+    titel: Long-term effects of specific stabilizing exercises for first-episode low back pain
+    bron: Spine
+    jaar: 2001
+    volume_paginas: 26(11):E243-8
+    doi: 10.1097/00007632-200106010-00004
+    pmid: '11389408'
+    url: https://doi.org/10.1097/00007632-200106010-00004
+    type: RCT
+    opmerking: >-
+      39 patienten met ACUTE, EERSTE episode lage rugpijn. Vergeleken werd
+      specifieke oefentherapie bovenop medische zorg tegenover medische zorg en
+      hervatting van normale activiteit — NIET tegenover algemene oefentherapie.
+      Recidief na een jaar 30% tegenover 84% (p kleiner dan 0,001); na twee tot drie
+      jaar 35% tegenover 75% (p kleiner dan 0,01). Kleine steekproef, telefonische
+      vragenlijst als uitkomstmaat.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: hides_1994_multifidus
+    auteurs: [Hides JA, Stokes MJ, Saide M, Jull GA, Cooper DH]
+    titel: Evidence of lumbar multifidus muscle wasting ipsilateral to symptoms in patients with acute/subacute low back pain
+    bron: Spine
+    jaar: 1994
+    volume_paginas: 19(2):165-72
+    doi: 10.1097/00007632-199401001-00009
+    pmid: '8153825'
+    url: https://doi.org/10.1097/00007632-199401001-00009
+    type: cohort
+    opmerking: >-
+      26 patienten met ACUTE unilaterale lage rugpijn en 51 gezonde controles,
+      echografie. Duidelijke asymmetrie van de multifidusdoorsnede aan de
+      symptomatische zijde (verschil 31 plus of min 8%), beperkt tot EEN
+      wervelniveau. Deze publicatie toont de atrofie, maar bevat GEEN uitspraak
+      dat die niet spontaan herstelt zonder gerichte oefening, en gaat niet over
+      facet- of discuspathologie als zodanig.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: aasa_2015_motorcontrole
+    auteurs: [Aasa B, Berglund L, Michaelson P, Aasa U]
+    titel: >-
+      Individualized low-load motor control exercises and education versus a
+      high-load lifting exercise and education to improve activity, pain intensity,
+      and physical performance in patients with low back pain: a randomized
+      controlled trial
+    bron: Journal of Orthopaedic and Sports Physical Therapy
+    jaar: 2015
+    volume_paginas: 45(2):77-85, B1-4
+    doi: 10.2519/jospt.2015.5021
+    pmid: '25641309'
+    url: https://doi.org/10.2519/jospt.2015.5021
+    type: RCT
+    opmerking: >-
+      70 deelnemers met terugkerende lage rugpijn. De LAAGBELASTE motorcontrolegroep
+      verbeterde meer op de Patient-Specific Functional Scale (4,2 tegenover 2,5
+      punten; p kleiner dan 0,001) en op bewegingscontrole dan de zwaarbelaste
+      tilgroep. Geen verschil in pijnintensiteit, kracht of twee van de drie
+      uithoudingstests. Er was GEEN rekgroep en geen groep met algemene oefening.
+      De richting is dus omgekeerd aan wat de app beweerde. Eerste auteur is Aasa,
+      niet Berglund.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: bieringsorensen_1984_rugextensoren
+    auteurs: [Biering-Sorensen F]
+    titel: Physical measurements as risk indicators for low-back trouble over a one-year period
+    bron: Spine
+    jaar: 1984
+    volume_paginas: 9(2):106-19
+    doi: 10.1097/00007632-198403000-00002
+    pmid: '6233709'
+    url: https://doi.org/10.1097/00007632-198403000-00002
+    type: cohort
+    opmerking: >-
+      928 inwoners van Glostrup, een jaar opgevolgd. Hoofdbevinding: een goede
+      isometrische uithouding van de rugspieren kan een EERSTE episode van rugpijn
+      voorkomen BIJ MANNEN. Recidief of persistentie hing vooral samen met het
+      interval sinds de laatste episode, niet met de spiertest. Er staat GEEN
+      correlatiecoefficient van 0,78 in, en de test wordt niet als beste predictor
+      van recidief gepresenteerd.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (search_articles + get_article_metadata)
+
+  - key: naugle_2012_hypoalgesie
+    auteurs: [Naugle KM, Fillingim RB, Riley JL]
+    titel: A meta-analytic review of the hypoalgesic effects of exercise
+    bron: The Journal of Pain
+    jaar: 2012
+    volume_paginas: 13(12):1139-50
+    doi: 10.1016/j.jpain.2012.09.006
+    pmid: '23141188'
+    url: https://doi.org/10.1016/j.jpain.2012.09.006
+    type: SR
+    opmerking: >-
+      Meta-analyse. Bij GEZONDE deelnemers verlagen aerobe (d = 0,41 tot 0,59),
+      isometrische (d = 1,02 tot 0,72) en dynamische weerstandsoefening (d = 0,83
+      tot 0,75) de experimenteel opgewekte pijn. TEGENSTRIJDIGE EVIDENTIE die in de
+      app ontbrak: bij mensen met CHRONISCHE PIJN zijn richting en grootte van het
+      effect sterk wisselend en treedt zowel hypoalgesie als HYPERALGESIE op,
+      afhankelijk van aandoening en intensiteit. De optimale dosis kon niet bepaald
+      worden. De review onderbouwt geen endogeen opioidmechanisme.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: steffens_2016_preventie
+    auteurs: [Steffens D, Maher CG, Pereira LSM, Stevens ML, Oliveira VC, Chapple M, Teixeira-Salmela LF, Hancock MJ]
+    titel: 'Prevention of low back pain: a systematic review and meta-analysis'
+    bron: JAMA Internal Medicine
+    jaar: 2016
+    volume_paginas: 176(2):199-208
+    doi: 10.1001/jamainternmed.2015.7431
+    pmid: '26752509'
+    url: https://doi.org/10.1001/jamainternmed.2015.7431
+    type: SR
+    opmerking: >-
+      21 gerandomiseerde trials, 30.850 deelnemers. Oefening MET educatie verlaagde
+      het risico op een episode lage rugpijn (RR 0,55; 95% BI 0,41-0,74; matige
+      bewijskracht); oefening alleen RR 0,65 (0,50-0,86; lage tot zeer lage
+      bewijskracht). Educatie alleen, rugbanden en inlegzolen hadden GEEN effect.
+      Verscheen in JAMA Internal Medicine, NIET in Cochrane. Het getal 6133 is het
+      aantal in de zoekopdracht gevonden STUDIES, geen aantal deelnemers, en er is
+      geen analyse over meer dan zes maanden krachttraining.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: foster_2018_lagerugpijn
+    auteurs: [Foster NE, Anema JR, Cherkin D, Chou R, Cohen SP, Gross DP, Ferreira PH, Fritz JM, Koes BW, Peul W, Turner JA, Maher CG]
+    titel: 'Prevention and treatment of low back pain: evidence, challenges, and promising directions'
+    bron: Lancet
+    jaar: 2018
+    volume_paginas: 391(10137):2368-2383
+    doi: 10.1016/S0140-6736(18)30489-6
+    pmid: '29573872'
+    url: https://doi.org/10.1016/S0140-6736(18)30489-6
+    type: review
+    opmerking: >-
+      Overzichtsartikel in de Lancet-reeks over lage rugpijn. Richtlijnen bevelen
+      een biopsychosociaal kader aan met niet-medicamenteuze eerstelijnszorg:
+      educatie die zelfmanagement en hervatting van normale activiteit en beweging
+      ondersteunt, en psychologische programma's bij aanhoudende klachten.
+      Wereldwijd wordt te weinig eerstelijnsbehandeling toegepast en te veel
+      beeldvorming, rust, opioiden, infiltraties en chirurgie. Het artikel bevat
+      GEEN vergelijkende effectuitspraak van zelfmanagement tegenover passieve
+      behandeling.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (search_articles + get_article_metadata)
+
+  # --- Totale heupprothese ---
+
+  - key: wainwright_2019_eras
+    auteurs: [Wainwright TW, Gill M, McDonald DA, Middleton RG, Reed M, Sahota O, Yates P, Ljungqvist O]
+    titel: >-
+      Consensus statement for perioperative care in total hip replacement and total
+      knee replacement surgery: Enhanced Recovery After Surgery (ERAS) Society
+      recommendations
+    bron: Acta Orthopaedica
+    jaar: 2019
+    volume_paginas: 91(1):3-19
+    doi: 10.1080/17453674.2019.1683790
+    pmid: '31663402'
+    url: https://doi.org/10.1080/17453674.2019.1683790
+    type: richtlijn
+    opmerking: >-
+      Multidisciplinair consensusdocument over 17 onderwerpen. Best practice omvat
+      preoperatieve educatie, anesthesietechniek, transfusiebeleid, opioidsparende
+      multimodale analgesie en vroege mobilisatie. LET OP: de consensus stelt
+      uitdrukkelijk dat er ONVOLDOENDE bewijs is dat een bepaalde chirurgische
+      techniek (benaderingswijze, minimaal invasief, prothesekeuze, computerassistentie)
+      op zich het bereiken van ontslagcriteria beinvloedt. Een ligduur van 1 tot 3
+      dagen staat niet in het abstract. Het jaartal in de app (2020) verwijst naar
+      een erratum; het consensusartikel dateert van 2019.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (get_article_metadata)
+
+  - key: guerra_2015_vroegemobilisatie
+    auteurs: [Guerra ML, Singh PJ, Taylor NF]
+    titel: >-
+      Early mobilization of patients who have had a hip or knee joint replacement
+      reduces length of stay in hospital: a systematic review
+    bron: Clinical Rehabilitation
+    jaar: 2015
+    volume_paginas: 29(9):844-54
+    doi: 10.1177/0269215514558641
+    pmid: '25452634'
+    url: https://doi.org/10.1177/0269215514558641
+    type: SR
+    opmerking: >-
+      Systematische review met meta-analyse van 5 RCT's, 622 deelnemers. Vroege
+      mobilisatie verkortte de ligduur met 1,8 dagen (95% BI 1,1-2,6). In 4 van de
+      5 trials zat de interventiegroep binnen 24 uur uit bed. Afzonderlijke trials
+      meldden winst in bewegingsuitslag, spierkracht en levenskwaliteit. Geen
+      toename van ongunstige uitkomsten. DIEPVENEUZE TROMBOSE IS GEEN UITKOMSTMAAT
+      in deze review, en "op de operatiedag zelf" staat er evenmin in.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: mcdonald_2014_preoperatieve_educatie
+    auteurs: [McDonald S, Page MJ, Beringer K, Wasiak J, Sprowson A]
+    titel: Preoperative education for hip or knee replacement
+    bron: Cochrane Database of Systematic Reviews
+    jaar: 2014
+    volume_paginas: 2014(5):CD003526
+    doi: 10.1002/14651858.CD003526.pub3
+    pmid: '24820247'
+    url: https://doi.org/10.1002/14651858.CD003526.pub3
+    type: SR
+    opmerking: >-
+      Cochrane-review, 18 trials, 1463 deelnemers. CONCLUSIE: het is ONZEKER of
+      preoperatieve educatie meerwaarde heeft boven gebruikelijke zorg voor angst,
+      pijn, functie of ongewenste voorvallen. Alle effectschattingen waren niet
+      significant en van lage bewijskracht (angst -2,28 punten, 95% BI -5,68 tot
+      1,12; pijn -0,34, 95% BI -0,94 tot 0,26; functie -4,84, 95% BI -10,23 tot
+      0,66). De auteurs noemen het wel een mogelijk nuttige aanvulling met weinig
+      risico, in het bijzonder bij patienten met depressie, angst of onrealistische
+      verwachtingen. Dit spreekt de claim in de app tegen.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (search_articles + get_article_metadata)
+
+  - key: kwon_2006_luxatie
+    auteurs: [Kwon MS, Kuskowski M, Mulhall KJ, Macaulay W, Brown TE, Saleh KJ]
+    titel: Does surgical approach affect total hip arthroplasty dislocation rates?
+    bron: Clinical Orthopaedics and Related Research
+    jaar: 2006
+    volume_paginas: 447:34-8
+    doi: 10.1097/01.blo.0000218746.84494.df
+    pmid: '16741471'
+    url: https://doi.org/10.1097/01.blo.0000218746.84494.df
+    type: SR
+    opmerking: >-
+      Meta-analyse. Posterieure benadering ZONDER weke-delenherstel 4,46% luxaties,
+      MET herstel 0,49%; relatief risico 8,21 (95% BI 4,05-16,67). Een aparte
+      review van 11 studies gaf VERGELIJKBARE luxatiecijfers voor anterolateraal
+      (0,70%), direct lateraal (0,43%) en posterieur met weke-delenherstel (1,01%).
+      De kernboodschap is dus dat kapselreconstructie beslissend is, NIET dat de
+      posterieure benadering op zich een hoger risico geeft. Het bereik 0,5 tot 3%,
+      het tijdsvenster van 6 tot 12 weken en de rol van patienteneducatie staan er
+      niet in.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: vanderweegen_2016_restricties
+    auteurs: [van der Weegen W, Kornuijt A, Das D]
+    titel: >-
+      Do lifestyle restrictions and precautions prevent dislocation after total hip
+      arthroplasty? A systematic review and meta-analysis of the literature
+    bron: Clinical Rehabilitation
+    jaar: 2016
+    volume_paginas: 30(4):329-39
+    doi: 10.1177/0269215515579421
+    pmid: '25834275'
+    url: https://doi.org/10.1177/0269215515579421
+    type: SR
+    opmerking: >-
+      Systematische review met meta-analyse van 6 studies (3 RCT's en 3 cohorten),
+      1122 ingrepen. Restrictiegroep 8 luxaties (1,5%), groep zonder restricties
+      6 luxaties (1,0%). Patienten zonder restricties hervatten hun activiteiten
+      significant sneller en waren meer tevreden over hun hersteltempo. Zowel de
+      posterieure als de anterolaterale benadering waren opgenomen. Het is dus GEEN
+      RCT zoals de app vermeldde, en de bevinding geldt niet specifiek voor de
+      posterieure benadering met kapselreconstructie.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: meermans_2017_anterieur
+    auteurs: [Meermans G, Konan S, Das R, Volpin A, Haddad FS]
+    titel: 'The direct anterior approach in total hip arthroplasty: a systematic review of the literature'
+    bron: Bone and Joint Journal
+    jaar: 2017
+    volume_paginas: 99-B(6):732-740
+    doi: 10.1302/0301-620X.99B6.38053
+    pmid: '28566391'
+    url: https://doi.org/10.1302/0301-620X.99B6.38053
+    type: SR
+    opmerking: >-
+      Systematische review van 42 studies, merendeels van matige tot lage kwaliteit.
+      Scores waren beter na de directe anterieure benadering gedurende de EERSTE ZES
+      WEKEN; daarna was er geen verschil meer met de posterieure benadering. De
+      auteurs vinden weinig bewijs voor betere kinematiek of betere
+      langetermijnuitkomsten, melden een significant langere operatieduur en een
+      steile leercurve, met vergelijkbare complicatiecijfers en ligduur.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: rasch_2010_spierkracht
+    auteurs: [Rasch A, Dalen N, Berg HE]
+    titel: 'Muscle strength, gait, and balance in 20 patients with hip osteoarthritis followed for 2 years after THA'
+    bron: Acta Orthopaedica
+    jaar: 2010
+    volume_paginas: 81(2):183-8
+    doi: 10.3109/17453671003793204
+    pmid: '20367414'
+    url: https://doi.org/10.3109/17453671003793204
+    type: cohort
+    opmerking: >-
+      Slechts 20 patienten, gevolgd tot 2 jaar. Krachttekort van de heupspieren:
+      18% preoperatief, 12% na 6 maanden, 6% na 2 jaar ten opzichte van de gezonde
+      zijde. De knie-extensoren herstelden volledig van een tekort van 27%. GANG EN
+      BALANS HERSTELDEN NA DE OPERATIE — de kortere eenbenige standfase was al na 6
+      maanden verdwenen. De bron ondersteunt dus persisterende heupzwakte, maar
+      NIET dat abductorzwakte de belangrijkste determinant van gangasymmetrie is.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: husby_2009_krachttraining
+    auteurs: [Husby VS, Helgerud J, Bjorgen S, Husby OS, Benum P, Hoff J]
+    titel: Early maximal strength training is an efficient treatment for patients operated with total hip arthroplasty
+    bron: Archives of Physical Medicine and Rehabilitation
+    jaar: 2009
+    volume_paginas: 90(10):1658-67
+    doi: 10.1016/j.apmr.2009.04.018
+    pmid: '19801053'
+    url: https://doi.org/10.1016/j.apmr.2009.04.018
+    type: RCT
+    opmerking: >-
+      Kleine RCT (n = 24), maximale krachttraining vanaf een week postoperatief
+      gedurende 4 weken. Significant grotere winst in 1RM leg press en abductie en
+      in krachtontwikkelingssnelheid dan conventionele revalidatie; arbeidsefficientie
+      toonde enkel een trend (p = 0,065). BELANGRIJK: er werden GEEN verschillen in
+      gangpatroon gevonden tussen de groepen, en traplopen was geen uitkomstmaat.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: coulter_2013_oefentherapie
+    auteurs: [Coulter CL, Scarvell JM, Neeman TM, Smith PN]
+    titel: >-
+      Physiotherapist-directed rehabilitation exercises in the outpatient or home
+      setting improve strength, gait speed and cadence after elective total hip
+      replacement: a systematic review
+    bron: Journal of Physiotherapy
+    jaar: 2013
+    volume_paginas: 59(4):219-26
+    doi: 10.1016/S1836-9553(13)70198-X
+    pmid: '24287215'
+    url: https://doi.org/10.1016/S1836-9553(13)70198-X
+    type: SR
+    opmerking: >-
+      Systematische review met meta-analyse, 5 studies, 234 deelnemers.
+      Oefentherapie verbeterde de heupabductorkracht met 16 Nm (95% BI 10-22), de
+      loopsnelheid met 6 m/min (1-11) en de cadans met 20 stappen/min (8-32).
+      KERNCONCLUSIE DIE DE APP OMKEERDE: de oefeningen bleken even effectief
+      ONBEGELEID THUIS als onder supervisie in een ambulante setting.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: trudellejackson_2004_laatfase
+    auteurs: [Trudelle-Jackson E, Smith SS]
+    titel: 'Effects of a late-phase exercise program after total hip arthroplasty: a randomized controlled trial'
+    bron: Archives of Physical Medicine and Rehabilitation
+    jaar: 2004
+    volume_paginas: 85(7):1056-62
+    doi: 10.1016/j.apmr.2003.11.022
+    pmid: '15241750'
+    url: https://doi.org/10.1016/j.apmr.2003.11.022
+    type: RCT
+    opmerking: >-
+      Enkelblinde RCT, 34 gerandomiseerd en 28 voltooid, 4 tot 12 maanden na de
+      ingreep, 8 weken thuisprogramma. Significante verbetering in de
+      interventiegroep van zelfgerapporteerde functie, spierkracht (heupflexoren
+      24,4%, extensoren 47,8%, abductoren 41,2%, knie-extensoren 23,4%) en
+      HOUDINGSSTABILITEIT (36,8%); geen verandering in de controlegroep. GANGFUNCTIE
+      was geen uitkomstmaat.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: hardcastle_1985_trendelenburg
+    auteurs: [Hardcastle P, Nade S]
+    titel: The significance of the Trendelenburg test
+    bron: Journal of Bone and Joint Surgery (British volume)
+    jaar: 1985
+    volume_paginas: 67(5):741-6
+    doi: 10.1302/0301-620X.67B5.4055873
+    pmid: '4055873'
+    url: https://doi.org/10.1302/0301-620X.67B5.4055873
+    type: cohort
+    opmerking: >-
+      50 gezonde proefpersonen en 103 mensen met heup- of wervelkolomaandoeningen.
+      De publicatie standaardiseert de uitvoering van de test en waarschuwt vooral
+      voor MISINTERPRETATIE: vals-positieven door pijn, gebrekkige medewerking en
+      aanstoten van ribbenboog tegen bekkenkam; vals-negatieven doordat de patient
+      spieren boven en onder het bekken gebruikt of naar de standzijde leunt. Er
+      staat NERGENS dat de test de meest sensitieve klinische marker is.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (search_articles + get_article_metadata)
+
+  - key: judd_2013_krachtdeficit
+    auteurs: [Judd DL, Thomas AC, Dayton MR, Stevens-Lapsley JE]
+    titel: 'Strength and functional deficits in individuals with hip osteoarthritis compared to healthy, older adults'
+    bron: Disability and Rehabilitation
+    jaar: 2014
+    volume_paginas: 36(4):307-12
+    doi: 10.3109/09638288.2013.790491
+    pmid: '23659184'
+    url: https://doi.org/10.3109/09638288.2013.790491
+    type: cohort
+    opmerking: >-
+      26 patienten met eindstadium coxartrose tegenover 18 gezonde volwassenen,
+      PREOPERATIEF gemeten. Knie-extensoren 30% zwakker (p kleiner dan 0,001),
+      knieflexoren 38% (p kleiner dan 0,001), maar de heupabductoren slechts 17%
+      en dat verschil was NIET SIGNIFICANT (p = 0,23). Dit is niet de publicatie
+      die de app bedoelde (Clin Biomech 2014), die niet eenduidig terug te vinden
+      was; een abductortekort van 20 tot 25% tot twee jaar na de ingreep is in dit
+      dossier niet onderbouwd.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (search_articles + get_article_metadata)
+
+  - key: hoorntje_2018_sporthervatting
+    auteurs: [Hoorntje A, Janssen KY, Bolder SBT, Koenraadt KLM, Daams JG, Blankevoort L, Kerkhoffs GMMJ, Kuijer PPFM]
+    titel: 'The effect of total hip arthroplasty on sports and work participation: a systematic review and meta-analysis'
+    bron: Sports Medicine
+    jaar: 2018
+    volume_paginas: 48(7):1695-1726
+    doi: 10.1007/s40279-018-0924-2
+    pmid: '29691754'
+    url: https://doi.org/10.1007/s40279-018-0924-2
+    type: SR
+    opmerking: >-
+      37 studies, waarvan 7 prospectief. Sporthervatting gemiddeld 104% van het
+      niveau vlak voor de operatie en 82% van het niveau van voor de klachten. Tijd
+      tot sporthervatting 16 tot 28 weken, tijd tot werkhervatting 1 tot 17 weken
+      met gemiddeld 69% werkhervatting. Een rangschikking van sporttakken (fietsen,
+      zwemmen, wandelen) staat niet in het abstract, en de bovengrens van 28 weken
+      ligt boven de zes maanden die de app noemde.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: kohrt_2004_botgezondheid
+    auteurs: [Kohrt WM, Bloomfield SA, Little KD, Nelson ME, Yingling VR]
+    titel: 'American College of Sports Medicine position stand: physical activity and bone health'
+    bron: Medicine and Science in Sports and Exercise
+    jaar: 2004
+    volume_paginas: 36(11):1985-96
+    doi: 10.1249/01.mss.0000142662.21767.58
+    pmid: '15514517'
+    url: https://doi.org/10.1249/01.mss.0000142662.21767.58
+    type: richtlijn
+    opmerking: >-
+      Position stand van het American College of Sports Medicine over lichamelijke
+      activiteit en botgezondheid in het algemeen. PubMed geeft geen abstract. De
+      toepassing op PERI-PROTHETISCHE botdensiteit en op osseo-integratie van
+      cementloze componenten is extrapolatie buiten de onderzochte context
+      (CLAUDE.md 1.5).
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: murphy_2010_levenslangrisico
+    auteurs: [Murphy LB, Helmick CG, Schwartz TA, Renner JB, Tudor G, Koch GG, Dragomir AD, Kalsbeek WD, Luta G, Jordan JM]
+    titel: One in four people may develop symptomatic hip osteoarthritis in his or her lifetime
+    bron: Osteoarthritis and Cartilage
+    jaar: 2010
+    volume_paginas: 18(11):1372-9
+    doi: 10.1016/j.joca.2010.08.005
+    pmid: '20713163'
+    url: https://doi.org/10.1016/j.joca.2010.08.005
+    type: cohort
+    opmerking: >-
+      Johnston County Osteoarthritis Project, 3068 deelnemers. Levenslang risico op
+      symptomatische heupartrose 25,3% (95% BI 21,3-29,3) tegen de leeftijd van 85
+      jaar. Opvallend: het risico verschilde NIET naar geslacht, etniciteit,
+      opleidingsniveau of eerder heupletsel, en er werd GEEN verband met BMI
+      gevonden — wat de vermelding van obesitas als belangrijke risicofactor bij
+      deze bron tegenspreekt.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  # --- Plantaire fasciopathie ---
+
+  - key: rathleff_2015_highload
+    auteurs: [Rathleff MS, Molgaard CM, Fredberg U, Kaalund S, Andersen KB, Jensen TT, Aaskov S, Olesen JL]
+    titel: 'High-load strength training improves outcome in patients with plantar fasciitis: a randomized controlled trial with 12-month follow-up'
+    bron: Scandinavian Journal of Medicine and Science in Sports
+    jaar: 2015
+    volume_paginas: 25(3):e292-300
+    doi: 10.1111/sms.12313
+    pmid: '25145882'
+    url: https://doi.org/10.1111/sms.12313
+    type: RCT
+    opmerking: >-
+      48 patienten met echografisch bevestigde plantaire fasciopathie. BEIDE armen
+      kregen inlegzolen; de vergelijking is dus inlegzolen plus dagelijkse
+      fascia-rek tegenover inlegzolen plus tweedaagse zware krachttraining
+      (unilaterale heel raises met handdoek onder de tenen). Op het primaire
+      eindpunt na 3 maanden lag de Foot Function Index 29 punten lager in de
+      krachtgroep (95% BI 6-52; p = 0,016). NA 1, 6 EN 12 MAANDEN WAS ER GEEN
+      VERSCHIL MEER tussen de groepen (p groter dan 0,34); na 12 maanden 22 punten
+      in de krachtgroep tegenover 16 in de rekgroep. Geen verschillen in enige
+      secundaire uitkomstmaat. De winst is dus SNELLER herstel, geen groter
+      eindresultaat.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (search_articles + get_article_metadata)
+
+  - key: digiovanni_2006_fasciarek
+    auteurs: [DiGiovanni BF, Nawoczenski DA, Malay DP, Graci PA, Williams TT, Wilding GE, Baumhauer JF]
+    titel: >-
+      Plantar fascia-specific stretching exercise improves outcomes in patients with
+      chronic plantar fasciitis: a prospective clinical trial with two-year follow-up
+    bron: Journal of Bone and Joint Surgery (American volume)
+    jaar: 2006
+    volume_paginas: 88(8):1775-81
+    doi: 10.2106/JBJS.E.01281
+    pmid: '16882901'
+    url: https://doi.org/10.2106/JBJS.E.01281
+    type: RCT
+    opmerking: >-
+      Tweejaarsopvolging van 66 van de oorspronkelijke 82 patienten. BELANGRIJK:
+      na de eerste acht weken kregen ALLE patienten het fascia-rekprotocol, dus de
+      groepen zijn na dat punt niet meer gescheiden. Na twee jaar was er GEEN
+      significant verschil meer tussen de groepen voor ergste pijn of pijn bij de
+      eerste stappen; wel meldde 92% tevredenheid, 94% pijnafname en 77% geen
+      beperking in recreatieve activiteiten. Het kortetermijnvoordeel na acht
+      weken is dus reeel, een blijvend groepsverschil na twee jaar niet.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: martin_2014_hielpijn_cpg
+    auteurs: [Martin RL, Davenport TE, Reischl SF, McPoil TG, Matheson JW, Wukich DK, McDonough CM]
+    titel: 'Heel pain-plantar fasciitis: revision 2014'
+    bron: Journal of Orthopaedic and Sports Physical Therapy
+    jaar: 2014
+    volume_paginas: 44(11):A1-33
+    doi: 10.2519/jospt.2014.0303
+    pmid: '25361863'
+    url: https://doi.org/10.2519/jospt.2014.0303
+    type: richtlijn
+    opmerking: >-
+      Klinische praktijkrichtlijn van de Orthopaedic Section (APTA), herziening
+      2014, hoogste niveau in de hierarchie van CLAUDE.md 2. LET OP: het
+      PubMed-abstract bevat enkel de scope, niet de afzonderlijke aanbevelingen;
+      de specifieke combinatie die in de app aan deze richtlijn wordt
+      toegeschreven is hier niet tegen de volledige tekst gelegd.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (get_article_metadata)
+
+  - key: hansen_2018_prognose
+    auteurs: [Hansen L, Krogh TP, Ellingsen T, Bolvig L, Fredberg U]
+    titel: 'Long-term prognosis of plantar fasciitis: a 5- to 15-year follow-up study of 174 patients with ultrasound examination'
+    bron: Orthopaedic Journal of Sports Medicine
+    jaar: 2018
+    volume_paginas: 6(3):2325967118757983
+    doi: 10.1177/2325967118757983
+    pmid: '29536022'
+    url: https://doi.org/10.1177/2325967118757983
+    type: cohort
+    opmerking: >-
+      174 patienten, gemiddeld 9,7 jaar na het begin van de klachten. Het risico om
+      nog klachten te hebben bedroeg 80,5% NA EEN JAAR, 50,0% na vijf jaar, 45,6%
+      na tien jaar en 44,0% na vijftien jaar. Bij de follow-up was 54% klachtenvrij
+      (gemiddelde klachtenduur 725 dagen) en 46% niet. De prognose was significant
+      slechter voor vrouwen en bij bilaterale pijn. Fasciadikte en de aanwezigheid
+      van een hielspoor bij aanvang hadden GEEN invloed op de prognose. De auteurs
+      stellen uitdrukkelijk dat hun observationele opzet GEEN uitspraak toelaat
+      over de doeltreffendheid van behandelstrategieen.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: riddle_2003_risicofactoren
+    auteurs: [Riddle DL, Pulisic M, Pidcoe P, Johnson RE]
+    titel: 'Risk factors for plantar fasciitis: a matched case-control study'
+    bron: Journal of Bone and Joint Surgery (American volume)
+    jaar: 2003
+    volume_paginas: 85(5):872-7
+    doi: 10.2106/00004623-200305000-00015
+    pmid: '12728038'
+    url: https://doi.org/10.2106/00004623-200305000-00015
+    type: cohort
+    opmerking: >-
+      Gematchte case-controlstudie, 50 patienten en 100 controles. Dorsaalflexie
+      van 0 graden of minder gaf een odds ratio van 23,3 (95% BI 4,3-124,4) ten
+      opzichte van meer dan 10 graden. BMI BOVEN 30 kg/m2 gaf OR 5,6 (1,9-16,6)
+      ten opzichte van 25 of minder — de drempel is dus 30, niet 27. Het merendeel
+      van de werkdag staand gaf OR 3,6 (1,3-10,1). De auteurs besluiten dat
+      verminderde enkeldorsaalflexie de belangrijkste risicofactor lijkt.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: degarceau_2003_windlass
+    auteurs: [De Garceau D, Dean D, Requejo SM, Thordarson DB]
+    titel: The association between diagnosis of plantar fasciitis and Windlass test results
+    bron: Foot and Ankle International
+    jaar: 2003
+    volume_paginas: 24(3):251-5
+    doi: 10.1177/107110070302400309
+    pmid: '12793489'
+    url: https://doi.org/10.1177/107110070302400309
+    type: cohort
+    opmerking: >-
+      22 patienten met plantaire fasciopathie, 23 met andere voetpijn en 30
+      controles. Van de 22 patienten had 31,8% een positieve windlass-test in
+      belasting en 13,6% zonder belasting; geen enkele controle of andere
+      voetpijnpatient testte positief. De auteurs besluiten dat de test WEL zeer
+      specifiek is maar dat de LAGE SENSITIVITEIT de klinische bruikbaarheid
+      beperkt — een negatieve test sluit de aandoening dus niet uit.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: mcmillan_2009_beeldvorming
+    auteurs: [McMillan AM, Landorf KB, Barrett JT, Menz HB, Bird AR]
+    titel: 'Diagnostic imaging for chronic plantar heel pain: a systematic review and meta-analysis'
+    bron: Journal of Foot and Ankle Research
+    jaar: 2009
+    volume_paginas: 2:32
+    doi: 10.1186/1757-1146-2-32
+    pmid: '19912628'
+    url: https://doi.org/10.1186/1757-1146-2-32
+    type: SR
+    opmerking: >-
+      Systematische review met meta-analyse, 23 studies. De plantaire fascie was
+      bij patienten 2,16 mm dikker dan bij controles (95% BI 1,60-2,71;
+      p kleiner dan 0,001) en een dikte boven 4,0 mm was diagnostisch (OR 105,11;
+      95% BI 3,09-3577,28 — een zeer breed interval). TEGENSTRIJDIGE EVIDENTIE
+      voor de hielspoorpassage elders in het protocol: deze review vond juist een
+      STERKE associatie tussen een subcalcaneale spoor en hielpijn (OR 8,52;
+      95% BI 4,08-17,77; p kleiner dan 0,001).
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: lemont_2003_fasciose
+    auteurs: [Lemont H, Ammirati KM, Usen N]
+    titel: 'Plantar fasciitis: a degenerative process (fasciosis) without inflammation'
+    bron: Journal of the American Podiatric Medical Association
+    jaar: 2003
+    volume_paginas: 93(3):234-7
+    doi: 10.7547/87507315-93-3-234
+    pmid: '12756315'
+    url: https://doi.org/10.7547/87507315-93-3-234
+    type: cohort
+    opmerking: >-
+      Histologisch onderzoek van 50 gevallen van hielspoorchirurgie bij chronische
+      plantaire fasciitis: myxoide degeneratie, fragmentatie en degeneratie van de
+      fascie en vasculaire ectasie van het beenmerg, ZONDER ontstekingscellen. De
+      auteurs pleiten daarom voor de term fasciose en waarschuwen dat herhaalde
+      corticosteroidinjecties heroverwogen moeten worden wegens risico op ruptuur.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: kirkpatrick_2017_hielspoor
+    auteurs: [Kirkpatrick J, Yassaie O, Mirjalili SA]
+    titel: 'The plantar calcaneal spur: a review of anatomy, histology, etiology and key associations'
+    bron: Journal of Anatomy
+    jaar: 2017
+    volume_paginas: 230(6):743-751
+    doi: 10.1111/joa.12607
+    pmid: '28369929'
+    url: https://doi.org/10.1111/joa.12607
+    type: review
+    opmerking: >-
+      Narratieve review over anatomie, histologie en etiologie van de plantaire
+      calcaneale spoor. De auteurs benoemen discrepanties in de literatuur over de
+      anatomische relaties en identificeren associaties met leeftijd, gewicht,
+      geslacht, artritiden, plantaire fasciopathie en voetstand. Het abstract
+      bevat GEEN prevalentiecijfer van 15 tot 30% bij asymptomatische personen en
+      stelt niet vast dat de spoor in de flexor digitorum brevis ligt in plaats
+      van in de fascie.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  # --- Bureauhouding en nekklachten ---
+
+  - key: french_2006_warmte_koude
+    auteurs: [French SD, Cameron M, Walker BF, Reggars JW, Esterman AJ]
+    titel: Superficial heat or cold for low back pain
+    bron: Cochrane Database of Systematic Reviews
+    jaar: 2006
+    volume_paginas: 2006(1):CD004750
+    doi: 10.1002/14651858.CD004750.pub2
+    pmid: '16437495'
+    url: https://doi.org/10.1002/14651858.CD004750.pub2
+    type: SR
+    opmerking: >-
+      DEZE REVIEW GAAT OVER LAGE RUGPIJN, NIET OVER NEKPIJN. 9 trials, 1117
+      deelnemers. Matig bewijs dat warmtewikkels een kleine kortetermijnreductie
+      geven van pijn en beperking bij acute en subacute lage rugpijn. Over koude
+      is er ONVOLDOENDE bewijs, en er is TEGENSTRIJDIG bewijs over verschillen
+      tussen warmte en koude — de conclusie dat warmte effectiever is dan koude
+      staat er dus niet in.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: jull_2002_cervicogene_hoofdpijn
+    auteurs: [Jull G, Trott P, Potter H, Zito G, Niere K, Shirley D, Emberson J, Marschner I, Richardson C]
+    titel: A randomized controlled trial of exercise and manipulative therapy for cervicogenic headache
+    bron: Spine
+    jaar: 2002
+    volume_paginas: 27(17):1835-43
+    doi: 10.1097/00007632-200209010-00004
+    pmid: '12221344'
+    url: https://doi.org/10.1097/00007632-200209010-00004
+    type: RCT
+    opmerking: >-
+      200 deelnemers, vier armen: manuele therapie, oefentherapie, combinatie en
+      controle. Na 12 maanden hadden zowel manuele therapie als specifieke
+      oefentherapie de hoofdpijnfrequentie en -intensiteit significant verlaagd
+      (p kleiner dan 0,05), met behoud van effect. KERNPUNT DAT DE APP OMKEERDE:
+      de COMBINATIE was NIET significant superieur aan elk van beide afzonderlijk;
+      wel had 10% meer patienten baat bij de combinatie.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: hoe_2012_ergonomie
+    auteurs: [Hoe VCW, Urquhart DM, Kelsall HL, Sim MR]
+    titel: Ergonomic design and training for preventing work-related musculoskeletal disorders of the upper limb and neck in adults
+    bron: Cochrane Database of Systematic Reviews
+    jaar: 2012
+    volume_paginas: 2012(8):CD008570
+    doi: 10.1002/14651858.CD008570.pub2
+    pmid: '22895977'
+    url: https://doi.org/10.1002/14651858.CD008570.pub2
+    type: SR
+    opmerking: >-
+      13 RCT's, 2397 werknemers, gericht op PREVENTIE bij een uitgangsprevalentie
+      onder 25%. Matig bewijs dat armsteun in combinatie met een alternatieve muis
+      de incidentie van nek- en schouderaandoeningen verlaagt (RR 0,52; 95% BI
+      0,27-0,99), maar niet die van de rechterarm. Voor de overige ergonomische
+      interventies is er laag tot zeer laag bewijs van GEEN effect. De review
+      vergelijkt ergonomie NIET met oefentherapie en doet daarover geen uitspraak.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: galinsky_2007_pauzes
+    auteurs: [Galinsky T, Swanson N, Sauter S, Dunkin R, Hurrell J, Schleifer L]
+    titel: 'Supplementary breaks and stretching exercises for data entry operators: a follow-up field study'
+    bron: American Journal of Industrial Medicine
+    jaar: 2007
+    volume_paginas: 50(7):519-27
+    doi: 10.1002/ajim.20472
+    pmid: '17514726'
+    url: https://doi.org/10.1002/ajim.20472
+    type: RCT
+    opmerking: >-
+      51 data-invoerders. Vier extra pauzes van 5 minuten bovenop twee pauzes van
+      15 minuten verminderden ONGEMAK EN VERMOEIDE OGEN significant, zonder verlies
+      van productiviteit. Er staat GEEN percentage van 38% in, de uitkomstmaat is
+      algemeen ongemak en niet specifiek nekpijn, en het pauze-interval van 30 tot
+      45 minuten komt er niet in voor. Rekoefeningen tijdens de pauzes gaven GEEN
+      significant effect, mede door lage therapietrouw (25 tot 39%).
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: cools_2007_scapulaoefeningen
+    auteurs: [Cools AM, Dewitte V, Lanszweert F, Notebaert D, Roets A, Soetens B, Cagnie B, Witvrouw EE]
+    titel: 'Rehabilitation of scapular muscle balance: which exercises to prescribe?'
+    bron: American Journal of Sports Medicine
+    jaar: 2007
+    volume_paginas: 35(10):1744-51
+    doi: 10.1177/0363546507303560
+    pmid: '17606671'
+    url: https://doi.org/10.1177/0363546507303560
+    type: cohort
+    opmerking: >-
+      PubMed typeert dit als Controlled Clinical Trial; die waarde bestaat niet in
+      onze typelijst en RCT zou de opzet overdrijven (geen randomisatie beschreven),
+      vandaar cohort. EMG-studie bij 45 GEZONDE proefpersonen die 12 gangbare scapulaoefeningen
+      uitvoerden. Doel: oefeningen selecteren met een gunstige verhouding tussen
+      bovenste en onderste trapezius. Zijlig exorotatie, zijlig anteflexie, buiklig
+      horizontale abductie met exorotatie en buiklig extensie kwamen daar het beste
+      uit. Er is GEEN populatie van bureauwerkers met nekpijn en GEEN percentage
+      van 78%.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: revel_1994_proprioceptie
+    auteurs: [Revel M, Minguet M, Gregoy P, Vaillant J, Manuel JL]
+    titel: 'Changes in cervicocephalic kinesthesia after a proprioceptive rehabilitation program in patients with neck pain: a randomized controlled study'
+    bron: Archives of Physical Medicine and Rehabilitation
+    jaar: 1994
+    volume_paginas: 75(8):895-9
+    doi: 10.1016/0003-9993(94)90115-5
+    pmid: '8053797'
+    url: https://doi.org/10.1016/0003-9993(94)90115-5
+    type: RCT
+    opmerking: >-
+      60 patienten met nekpijn; de gemiddelde hoekfout bij het terugvinden van de
+      hoofdpositie bedroeg 7,7 graden en 82% lag boven de drempel van 4,5 graden.
+      Na tien weken was de winst groter in de groep met oog-hoofdkoppeling
+      (2,0 tegenover 0 graden; p = 0,005), evenals de winst op pijn,
+      medicatiegebruik, bewegingsuitslag en zelfgerapporteerde verbetering.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: andersen_2008_nekschoudertraining
+    auteurs: [Andersen LL, Jorgensen MB, Blangsted AK, Pedersen MT, Hansen EA, Sjogaard G]
+    titel: A randomized controlled intervention trial to relieve and prevent neck/shoulder pain
+    bron: Medicine and Science in Sports and Exercise
+    jaar: 2008
+    volume_paginas: 40(6):983-90
+    doi: 10.1249/MSS.0b013e3181676640
+    pmid: '18461010'
+    url: https://doi.org/10.1249/MSS.0b013e3181676640
+    type: RCT
+    opmerking: >-
+      EEN JAAR durende trial met drie armen: specifieke weerstandstraining
+      (n = 180), algemene fysieke training (n = 187) en gezondheidsadvies als
+      referentie (n = 182) — dus 549 deelnemers, niet 198, en geen zes weken. Bij
+      deelnemers met nekpijn bij aanvang daalde de pijnintensiteit van 5,0 naar
+      3,4 met specifieke training en van 5,0 naar 3,6 met ALGEMENE training; de
+      referentiegroep veranderde niet. Specifieke training was dus NIET superieur
+      aan algemene fitness — beide werkten. Er staat geen pijnreductie van 75% in.
+      Therapietrouw daalde van 54% naar 35% over het jaar.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: verhagen_2013_werkgerelateerd
+    auteurs: [Verhagen AP, Bierma-Zeinstra SMA, Burdorf A, Stynes SM, de Vet HCW, Koes BW]
+    titel: Conservative interventions for treating work-related complaints of the arm, neck or shoulder in adults
+    bron: Cochrane Database of Systematic Reviews
+    jaar: 2013
+    volume_paginas: 2013(12):CD008742
+    doi: 10.1002/14651858.CD008742.pub2
+    pmid: '24338903'
+    url: https://doi.org/10.1002/14651858.CD008742.pub2
+    type: SR
+    opmerking: >-
+      44 studies, 6580 deelnemers, 25 interventies; 35 studies met hoog risico op
+      bias. ZEER LAAG bewijs dat oefeningen de pijn NIET verbeterden ten opzichte
+      van geen behandeling (SMD -0,52; 95% BI -1,08 tot 0,03) of van een minimale
+      controle-interventie. Specifieke oefeningen gaven op korte termijn zelfs MEER
+      pijn dan algemene oefeningen (SMD 0,45; 95% BI 0,14-0,75). Ergonomische
+      interventies verlaagden de pijn niet op korte maar wel op lange termijn
+      (SMD -0,76; 95% BI -1,35 tot -0,16). Voor gedragsmatige en overige
+      interventies was er geen consistent effect. Een uitspraak dat een
+      multimodale aanpak significant superieur is, staat er NIET in.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: watson_1993_hoofdhouding
+    auteurs: [Watson DH, Trott PH]
+    titel: 'Cervical headache: an investigation of natural head posture and upper cervical flexor muscle performance'
+    bron: Cephalalgia
+    jaar: 1993
+    volume_paginas: 13(4):272-84
+    doi: 10.1046/j.1468-2982.1993.1304272.x
+    pmid: '8374943'
+    url: https://doi.org/10.1046/j.1468-2982.1993.1304272.x
+    type: cohort
+    opmerking: >-
+      60 vrouwen tussen 25 en 40 jaar, met en zonder hoofdpijn. De hoofdpijngroep
+      had significant meer voorwaartse hoofdhouding (p kleiner dan 0,00005),
+      minder isometrische kracht (p kleiner dan 0,001) en minder uithouding
+      (p kleiner dan 0,0005) van de bovenste cervicale flexoren, en een voorwaartse
+      hoofdhouding hing samen met lage uithouding. Het abstract bevat GEEN
+      beschrijving van een C1-C3-pijnreferentiepatroon.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  # --- Facettaire blokkade lumbaal ---
+
+  - key: saner_2015_motorcontrole
+    auteurs: [Saner J, Kool J, Sieben JM, Luomajoki H, Bastiaenen CHG, de Bie RA]
+    titel: >-
+      A tailored exercise program versus general exercise for a subgroup of patients
+      with low back pain and movement control impairment: a randomised controlled
+      trial with one-year follow-up
+    bron: Manual Therapy
+    jaar: 2015
+    volume_paginas: 20(5):672-9
+    doi: 10.1016/j.math.2015.02.005
+    pmid: '25770419'
+    url: https://doi.org/10.1016/j.math.2015.02.005
+    type: RCT
+    opmerking: >-
+      Multicentrische RCT, 106 patienten met aspecifieke lage rugpijn en
+      bewegingscontrolestoornis, een jaar opgevolgd. CONCLUSIE VAN DE AUTEURS:
+      "This study found no additional benefit of specific exercises targeting
+      MCI." Op de primaire uitkomstmaat was er geen verschil na behandeling, na
+      zes maanden of na twaalf maanden. Beide groepen verbeterden wel significant.
+      Dit spreekt de claim in de app rechtstreeks tegen.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: steiger_2012_oefentherapie
+    auteurs: [Steiger F, Wirth B, de Bruin ED, Mannion AF]
+    titel: >-
+      Is a positive clinical outcome after exercise therapy for chronic non-specific
+      low back pain contingent upon a corresponding improvement in the targeted
+      aspect(s) of performance? A systematic review
+    bron: European Spine Journal
+    jaar: 2012
+    volume_paginas: 21(4):575-98
+    doi: 10.1007/s00586-011-2045-6
+    pmid: '22072093'
+    url: https://doi.org/10.1007/s00586-011-2045-6
+    type: SR
+    opmerking: >-
+      Systematische review van 16 studies, 1476 deelnemers. De review onderzoekt
+      NIET of oefentherapie superieur is aan passieve behandeling, maar of
+      klinische verbetering samenhangt met verbetering van de getrainde
+      eigenschap. Bevinding: er is weinig bewijs voor zo'n samenhang, voor
+      mobiliteit, rompkracht noch rugspieruithouding. De auteurs openen bovendien
+      met de vaststelling dat de effectgrootte van oefentherapie bij chronische
+      aspecifieke lage rugpijn SLECHTS BESCHEIDEN is.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: fritz_2001_oswestry
+    auteurs: [Fritz JM, Irrgang JJ]
+    titel: A comparison of a modified Oswestry Low Back Pain Disability Questionnaire and the Quebec Back Pain Disability Scale
+    bron: Physical Therapy
+    jaar: 2001
+    volume_paginas: 81(2):776-88
+    doi: 10.1093/ptj/81.2.776
+    pmid: '11175676'
+    url: https://doi.org/10.1093/ptj/81.2.776
+    type: cohort
+    opmerking: >-
+      67 patienten met acute werkgerelateerde lage rugpijn. De studie vergelijkt
+      twee vragenlijsten en rapporteert een minimaal klinisch relevant verschil
+      van ongeveer 6 punten voor de aangepaste Oswestry en ongeveer 15 punten voor
+      de Quebec-schaal. Er staat GEEN drempelwaarde van 20 die zou samenhangen met
+      volledig herstel of werkhervatting.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: wieland_2017_yoga
+    auteurs: [Wieland LS, Skoetz N, Pilkington K, Vempati R, D'Adamo CR, Berman BM]
+    titel: Yoga treatment for chronic non-specific low back pain
+    bron: Cochrane Database of Systematic Reviews
+    jaar: 2017
+    volume_paginas: 1(1):CD010671
+    doi: 10.1002/14651858.CD010671.pub2
+    pmid: '28076926'
+    url: https://doi.org/10.1002/14651858.CD010671.pub2
+    type: SR
+    opmerking: >-
+      12 trials, 1080 deelnemers. Ten opzichte van niet-oefencontroles gaf yoga
+      kleine tot matige verbetering van de rugfunctie na drie tot zes maanden
+      (SMD -0,44 op zes maanden). De pijnverbetering haalde de vooraf bepaalde
+      drempel van klinische relevantie (15 punten) NIET. Ten opzichte van ANDERE
+      OEFENVORMEN is het onzeker of er verschil is. VEILIGHEIDSBEVINDING die in de
+      app ontbrak: het risico op ongewenste voorvallen, vooral TOENAME VAN
+      RUGPIJN, was hoger dan bij niet-oefencontroles (risicoverschil 5%; 95% BI
+      2-8%); ernstige voorvallen kwamen niet voor.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  # --- Patellofemoraal pijnsyndroom ---
+
+  - key: lack_2015_proximale_revalidatie
+    auteurs: [Lack S, Barton C, Sohan O, Crossley K, Morrissey D]
+    titel: 'Proximal muscle rehabilitation is effective for patellofemoral pain: a systematic review with meta-analysis'
+    bron: British Journal of Sports Medicine
+    jaar: 2015
+    volume_paginas: 49(21):1365-76
+    doi: 10.1136/bjsports-2015-094723
+    pmid: '26175019'
+    url: https://doi.org/10.1136/bjsports-2015-094723
+    type: SR
+    opmerking: >-
+      14 studies, waarvan 7 van hoge kwaliteit. STERK bewijs dat proximale
+      revalidatie GECOMBINEERD met quadricepstraining op korte termijn de pijn
+      verlaagt en de functie verbetert, met matig bewijs op middellange termijn.
+      MATIG bewijs dat proximale training vergeleken MET quadricepstraining de
+      pijn verlaagt op korte en middellange termijn. Beperkt bewijs voor grotere
+      pijnreductie van de combinatie op lange termijn. Het abstract vermeldt geen
+      totaal aantal deelnemers; het getal 690 uit de app is niet gedekt.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: rathleff_2014_heupkracht
+    auteurs: [Rathleff MS, Rathleff CR, Crossley KM, Barton CJ]
+    titel: 'Is hip strength a risk factor for patellofemoral pain? A systematic review and meta-analysis'
+    bron: British Journal of Sports Medicine
+    jaar: 2014
+    volume_paginas: 48(14):1088
+    doi: 10.1136/bjsports-2013-093305
+    pmid: '24687010'
+    url: https://doi.org/10.1136/bjsports-2013-093305
+    type: SR
+    opmerking: >-
+      KERNBEVINDING DIE DE OORZAKELIJKE REDENERING VAN HET PROTOCOL OMKEERT:
+      matig tot sterk bewijs uit PROSPECTIEVE studies toont GEEN verband tussen
+      isometrische heupkracht en het risico op het ontwikkelen van patellofemorale
+      pijn. Cross-sectioneel hebben volwassen mannen en vrouwen MET de klacht wel
+      minder heupkracht dan pijnvrije personen. De auteurs besluiten daaruit dat
+      verminderde heupkracht eerder een GEVOLG dan een oorzaak van de klacht kan
+      zijn. Bij adolescenten werd hetzelfde krachttekort niet gevonden.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: neal_2016_looptechniek
+    auteurs: [Neal BS, Barton CJ, Gallie R, O'Halloran P, Morrissey D]
+    titel: 'Runners with patellofemoral pain have altered biomechanics which targeted interventions can modify: a systematic review and meta-analysis'
+    bron: Gait and Posture
+    jaar: 2016
+    volume_paginas: 45:69-82
+    doi: 10.1016/j.gaitpost.2015.11.018
+    pmid: '26979886'
+    url: https://doi.org/10.1016/j.gaitpost.2015.11.018
+    type: SR
+    opmerking: >-
+      28 studies. BEPERKT bewijs uit interventiestudies dat zowel looptraining als
+      proximale krachttraining gunstige uitkomsten geeft op pijn en functie, maar
+      dat alleen looptraining de piekheupadductie significant verlaagt. Matig
+      bewijs voor een verband tussen de klacht en toegenomen heupadductie,
+      endorotatie en contralaterale bekkendaling. De review noemt GEEN
+      stapfrequentieverhoging van 10% en presenteert niets als de meest bewezen
+      interventie.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: collins_2008_voetorthesen
+    auteurs: [Collins N, Crossley K, Beller E, Darnell R, McPoil T, Vicenzino B]
+    titel: 'Foot orthoses and physiotherapy in the treatment of patellofemoral pain syndrome: randomised clinical trial'
+    bron: BMJ
+    jaar: 2008
+    volume_paginas: 337:a1735
+    doi: 10.1136/bmj.a1735
+    pmid: '18952682'
+    url: https://doi.org/10.1136/bmj.a1735
+    type: RCT
+    opmerking: >-
+      179 deelnemers van 18 tot 40 jaar, vier armen: voetorthesen, vlakke inlegzool,
+      multimodale kinesitherapie, en orthesen plus kinesitherapie. Voetorthesen
+      gaven op korte termijn (zes weken) meer verbetering dan vlakke inlegzolen
+      (NNT 4). MAAR: er was GEEN significant verschil tussen orthesen en
+      kinesitherapie, en orthesen bovenop kinesitherapie voegden NIETS toe. Alle
+      groepen verbeterden klinisch relevant over 52 weken. Deelnemers werden niet
+      geselecteerd op pronatie.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: witvrouw_2000_risicofactoren
+    auteurs: [Witvrouw E, Lysens R, Bellemans J, Cambier D, Vanderstraeten G]
+    titel: 'Intrinsic risk factors for the development of anterior knee pain in an athletic population: a two-year prospective study'
+    bron: American Journal of Sports Medicine
+    jaar: 2000
+    volume_paginas: 28(4):480-9
+    doi: 10.1177/03635465000280040701
+    pmid: '10921638'
+    url: https://doi.org/10.1177/03635465000280040701
+    type: cohort
+    opmerking: >-
+      282 studenten lichamelijke opvoeding, twee jaar prospectief gevolgd; 24
+      ontwikkelden patellofemorale pijn. Slechts VIER factoren hingen significant
+      samen met de incidentie: een verkorte quadriceps, een veranderde
+      REFLEXRESPONSTIJD van de vastus medialis obliquus, verminderde explosieve
+      kracht en een hypermobiele patella. Het gaat dus om reflextiming, NIET om
+      hypotrofie van de VMO. De Q-hoek kwam niet als significante risicofactor
+      naar voren.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: crossley_2016_consensus
+    auteurs: [Crossley KM, Stefanik JJ, Selfe J, Collins NJ, Davis IS, Powers CM, McConnell J, Vicenzino B, Bazett-Jones DM, Esculier JF, Morrissey D, Callaghan MJ]
+    titel: >-
+      2016 Patellofemoral pain consensus statement from the 4th International
+      Patellofemoral Pain Research Retreat, Manchester. Part 1: terminology,
+      definitions, clinical examination, natural history, patellofemoral
+      osteoarthritis and patient-reported outcome measures
+    bron: British Journal of Sports Medicine
+    jaar: 2016
+    volume_paginas: 50(14):839-43
+    doi: 10.1136/bjsports-2016-096384
+    pmid: '27343241'
+    url: https://doi.org/10.1136/bjsports-2016-096384
+    type: expert
+    opmerking: >-
+      Consensusverklaring van een internationaal onderzoeksretraite. PubMed geeft
+      geen abstract, dus de afzonderlijke aanbevelingen zijn in dit dossier niet
+      tegen de volledige tekst gelegd. Bewijsniveau: consensus (CLAUDE.md 2,
+      niveau 5).
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (get_article_metadata)
+
+  # --- Patellapees-tendinopathie ---
+
+  - key: cook_2009_continuum
+    auteurs: [Cook JL, Purdam CR]
+    titel: 'Is tendon pathology a continuum? A pathology model to explain the clinical presentation of load-induced tendinopathy'
+    bron: British Journal of Sports Medicine
+    jaar: 2009
+    volume_paginas: 43(6):409-16
+    doi: 10.1136/bjsm.2008.051193
+    pmid: '18812414'
+    url: https://doi.org/10.1136/bjsm.2008.051193
+    type: review
+    opmerking: >-
+      Conceptueel model, uitdrukkelijk gepresenteerd ter beoordeling door clinici
+      en onderzoekers, niet als vastgestelde pathofysiologie. Beschrijft
+      tendinopathie als een continuum in plaats van louter degeneratie of
+      mislukte heling, en plaatst behandelingen langs dat continuum.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (get_article_metadata)
+
+  - key: robinson_2001_visa_a
+    auteurs: [Robinson JM, Cook JL, Purdam C, Visentini PJ, Ross J, Maffulli N, Taunton JE, Khan KM]
+    titel: 'The VISA-A questionnaire: a valid and reliable index of the clinical severity of Achilles tendinopathy'
+    bron: British Journal of Sports Medicine
+    jaar: 2001
+    volume_paginas: 35(5):335-41
+    doi: 10.1136/bjsm.35.5.335
+    pmid: '11579069'
+    url: https://doi.org/10.1136/bjsm.35.5.335
+    type: cohort
+    opmerking: >-
+      DIT IS DE VISA-A VOOR DE ACHILLESPEES, NIET DE VISA-P VOOR DE PATELLAPEES.
+      Validatie bij 45 niet-operatieve en 14 preoperatieve patienten met
+      achillestendinopathie plus 87 controles. Goede betrouwbaarheid (test-hertest
+      r = 0,93). De auteurs vermelden uitdrukkelijk dat de test NIET diagnostisch
+      bedoeld is en dat nog onbekend is of de score de prognose voorspelt.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: beyer_2015_hsr_achilles
+    auteurs: [Beyer R, Kongsgaard M, Hougs Kjaer B, Ohlenschlaeger T, Kjaer M, Magnusson SP]
+    titel: 'Heavy slow resistance versus eccentric training as treatment for Achilles tendinopathy: a randomized controlled trial'
+    bron: American Journal of Sports Medicine
+    jaar: 2015
+    volume_paginas: 43(7):1704-11
+    doi: 10.1177/0363546515584760
+    pmid: '26018970'
+    url: https://doi.org/10.1177/0363546515584760
+    type: RCT
+    opmerking: >-
+      BETREFT DE ACHILLESPEES, NIET DE PATELLAPEES. 58 patienten (niet 59) met
+      chronische midportion achillestendinopathie, 12 weken, opgevolgd tot 52
+      weken. Beide programma's gaven gelijke, blijvende verbetering; GEEN van de
+      klinische of structurele uitkomsten verschilde tussen de groepen.
+      Patienttevredenheid neigde na 12 weken hoger bij zware langzame
+      weerstandstraining (100% tegenover 80%; p = 0,052 — een TREND, niet
+      significant) en verschilde na 52 weken niet meer. De therapietrouw verschilde
+      wel significant: 92% tegenover 78% (p kleiner dan 0,005).
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: kongsgaard_2009_patellapees
+    auteurs: [Kongsgaard M, Kovanen V, Aagaard P, Doessing S, Hansen P, Laursen AH, Kaldau NC, Kjaer M, Magnusson SP]
+    titel: Corticosteroid injections, eccentric decline squat training and heavy slow resistance training in patellar tendinopathy
+    bron: Scandinavian Journal of Medicine and Science in Sports
+    jaar: 2009
+    volume_paginas: 19(6):790-802
+    doi: 10.1111/j.1600-0838.2009.00949.x
+    pmid: '19793213'
+    url: https://doi.org/10.1111/j.1600-0838.2009.00949.x
+    type: RCT
+    opmerking: >-
+      DIT IS WEL DE PATELLAPEES. 39 mannelijke patienten, gerandomiseerd over
+      corticosteroidinjectie, excentrische decline squat of zware langzame
+      weerstandstraining, 12 weken met opvolging na een half jaar. Alle drie
+      verbeterden van 0 tot 12 weken. De winst BLEEF behouden bij ZOWEL de
+      excentrische als de zware weerstandstraining, maar VERSLECHTERDE na de
+      injectie. Bij de opvolging was de tevredenheid het hoogst bij zware
+      weerstandstraining. Conclusie van de auteurs: corticosteroiden geven een goed
+      kortetermijneffect maar een slecht langetermijneffect.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: malliaras_2015_patellapees
+    auteurs: [Malliaras P, Cook J, Purdam C, Rio E]
+    titel: 'Patellar tendinopathy: clinical diagnosis, load management, and advice for challenging case presentations'
+    bron: Journal of Orthopaedic and Sports Physical Therapy
+    jaar: 2015
+    volume_paginas: 45(11):887-98
+    doi: 10.2519/jospt.2015.5987
+    pmid: '26390269'
+    url: https://doi.org/10.2519/jospt.2015.5987
+    type: review
+    opmerking: >-
+      Klinisch overzichtsartikel. Kernkenmerken: pijn gelokaliseerd aan de onderpool
+      van de patella en belastingsgebonden pijn die toeneemt met de eis aan de
+      knie-extensoren. De diagnose blijft KLINISCH, omdat asymptomatische
+      peesafwijkingen voorkomen bij mensen met anterieure kniepijn uit andere bron.
+      De auteurs waarschuwen uitdrukkelijk voor ONREALISTISCHE hersteltermijnen en
+      voor te veel leunen op passieve behandelingen. Het abstract bevat geen
+      concrete return-to-sport-criteria.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: vanderworp_2011_risicofactoren
+    auteurs: [van der Worp H, van Ark M, Roerink S, Pepping GJ, van den Akker-Scheek I, Zwerver J]
+    titel: 'Risk factors for patellar tendinopathy: a systematic review of the literature'
+    bron: British Journal of Sports Medicine
+    jaar: 2011
+    volume_paginas: 45(5):446-52
+    doi: 10.1136/bjsm.2011.084079
+    pmid: '21367808'
+    url: https://doi.org/10.1136/bjsm.2011.084079
+    type: SR
+    opmerking: >-
+      KERNBEVINDING: er was GEEN sterk of matig bewijs dat ENIGE onderzochte
+      risicofactor samenhangt met patellapeestendinopathie. Voor negen factoren was
+      er slechts BEPERKT bewijs: gewicht, BMI, taille-heupverhouding,
+      beenlengteverschil, voetbooghoogte, quadriceps- en hamstringflexibiliteit,
+      quadricepskracht en verticale sprongprestatie. Seizoensgebonden piekbelasting
+      staat niet in die lijst. De auteurs benadrukken de behoefte aan
+      hoogwaardiger onderzoek.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: visnes_2007_excentrisch
+    auteurs: [Visnes H, Bahr R]
+    titel: "The evolution of eccentric training as treatment for patellar tendinopathy (jumper's knee): a critical review of exercise programmes"
+    bron: British Journal of Sports Medicine
+    jaar: 2007
+    volume_paginas: 41(4):217-23
+    doi: 10.1136/bjsm.2006.032417
+    pmid: '17261559'
+    url: https://doi.org/10.1136/bjsm.2006.032417
+    type: review
+    opmerking: >-
+      Kritische review van 7 artikelen met in totaal 162 patienten. De resultaten
+      waren positief maar de studiekwaliteit wisselend, met kleine aantallen of
+      korte opvolging. CONCLUSIE: het vermogen om een specifiek protocol aan te
+      bevelen is BEPERKT. Er staat GEEN cijfer over onderhoudstraining, geen
+      recidiefpercentage en geen opvolging over vijf jaar.
+    geverifieerd_op: 2026-09-05
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  # --- Achillespees-tendinopathie ---
+
+  - key: alfredson_1998_excentrisch
+    auteurs: [Alfredson H, Pietila T, Jonsson P, Lorentzon R]
+    titel: Heavy-load eccentric calf muscle training for the treatment of chronic Achilles tendinosis
+    bron: American Journal of Sports Medicine
+    jaar: 1998
+    volume_paginas: 26(3):360-6
+    doi: 10.1177/03635465980260030301
+    pmid: '9617396'
+    url: https://doi.org/10.1177/03635465980260030301
+    type: cohort
+    opmerking: >-
+      GEEN RCT maar een prospectieve studie bij 15 recreatieve sporters (12 mannen,
+      3 vrouwen; gemiddeld 44,3 jaar) met een niet-gerandomiseerde vergelijkingsgroep
+      van 15. Na 12 weken waren ALLE 15 terug op hun niveau van voor het letsel met
+      volledige loopactiviteit, met significante pijnafname en krachtherstel. In de
+      conventioneel behandelde groep slaagde de behandeling in GEEN ENKEL geval en
+      werden alle patienten uiteindelijk geopereerd. Het percentage 82% uit de app
+      komt er niet in voor; de werkelijke uitkomst is 15 op 15 in een zeer kleine,
+      niet-gerandomiseerde studie. De auteurs spreken zelf van een goed
+      KORTETERMIJNeffect.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: jonsson_2008_insertioneel
+    auteurs: [Jonsson P, Alfredson H, Sunding K, Fahlstrom M, Cook J]
+    titel: 'New regimen for eccentric calf-muscle training in patients with chronic insertional Achilles tendinopathy: results of a pilot study'
+    bron: British Journal of Sports Medicine
+    jaar: 2008
+    volume_paginas: 42(9):746-9
+    doi: 10.1136/bjsm.2007.039545
+    pmid: '18184750'
+    url: https://doi.org/10.1136/bjsm.2007.039545
+    type: cohort
+    opmerking: >-
+      PILOTSTUDIE, 27 patienten met 34 pijnlijke pezen, gemiddelde klachtenduur 26
+      maanden. KERNCIJFER dat de app niet vermeldde: bij INSERTIONELE
+      achillespeestendinopathie had slechts 32% goed klinisch resultaat met het
+      klassieke excentrische regime waarbij tot in volledige dorsaalflexie belast
+      wordt. Met het nieuwe regime ZONDER belasting in dorsaalflexie was 67%
+      tevreden en terug op het vorige activiteitsniveau, met een daling van de
+      pijnscore van 69,9 naar 21 (p kleiner dan 0,001). Korte opvolging (gemiddeld
+      4 maanden) en geen controlegroep.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: rio_2017_isometrie_patella
+    auteurs: [Rio E, van Ark M, Docking S, Moseley GL, Kidgell D, Gaida JE, van den Akker-Scheek I, Zwerver J, Cook J]
+    titel: 'Isometric contractions are more analgesic than isotonic contractions for patellar tendon pain: an in-season randomized clinical trial'
+    bron: Clinical Journal of Sport Medicine
+    jaar: 2017
+    volume_paginas: 27(3):253-259
+    doi: 10.1097/JSM.0000000000000364
+    pmid: '27513733'
+    url: https://doi.org/10.1097/JSM.0000000000000364
+    type: RCT
+    opmerking: >-
+      BETREFT DE PATELLAPEES, NIET DE ACHILLESPEES. 20 springatleten met klinisch
+      vastgestelde patellapeestendinopathie, vier weken. Beide protocollen
+      verminderden de pijn, maar isometrische contracties gaven significant meer
+      onmiddellijke analgesie (p kleiner dan 0,002). De analgetische respons in week
+      een hing samen met verbetering op de VISA-P na vier weken (r = 0,64).
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: silbernagel_2007_pijnmonitoring
+    auteurs: [Silbernagel KG, Thomee R, Eriksson BI, Karlsson J]
+    titel: 'Continued sports activity, using a pain-monitoring model, during rehabilitation in patients with Achilles tendinopathy: a randomized controlled study'
+    bron: American Journal of Sports Medicine
+    jaar: 2007
+    volume_paginas: 35(6):897-906
+    doi: 10.1177/0363546506298279
+    pmid: '17307888'
+    url: https://doi.org/10.1177/0363546506298279
+    type: RCT
+    opmerking: >-
+      38 patienten, gerandomiseerd over doorgaan met lopen en springen volgens een
+      pijnmonitoringmodel tegenover zes weken staken van die activiteiten. GEEN
+      significante verschillen tussen de groepen; BEIDE verbeterden significant
+      (VISA-A-S van 57 naar 85 respectievelijk van 57 naar 91 na twaalf maanden).
+      Conclusie: er zijn GEEN nadelige effecten aantoonbaar van doorgaan met
+      peesbelastende activiteit onder pijnmonitoring. De studie toont dus dat het
+      VEILIG is, niet dat het beter is of noodzakelijk.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: habets_2015_excentrische_protocollen
+    auteurs: [Habets B, van Cingel REH]
+    titel: 'Eccentric exercise training in chronic mid-portion Achilles tendinopathy: a systematic review on different protocols'
+    bron: Scandinavian Journal of Medicine and Science in Sports
+    jaar: 2015
+    volume_paginas: 25(1):3-15
+    doi: 10.1111/sms.12208
+    pmid: '24650048'
+    url: https://doi.org/10.1111/sms.12208
+    type: SR
+    opmerking: >-
+      14 gerandomiseerde en gecontroleerde trials. STERK bewijs voor het
+      Alfredson-protocol: 12 weken, 3 maal 15 herhalingen tweemaal daags, met
+      gestrekte en gebogen knie, traag tempo, belasting verhogen wanneer de
+      oefening pijnvrij is. Ook sterk bewijs voor een geleidelijke start in de
+      eerste week. MAAR: door heterogeniteit van populaties en uitkomstmaten en
+      door ontbrekende gegevens over therapietrouw kon GEEN definitieve conclusie
+      getrokken worden over de meest effectieve trainingsparameters.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: alfredson_2000_tendinose
+    auteurs: [Alfredson H, Lorentzon R]
+    titel: 'Chronic Achilles tendinosis: recommendations for treatment and prevention'
+    bron: Sports Medicine
+    jaar: 2000
+    volume_paginas: 29(2):135-46
+    doi: 10.2165/00007256-200029020-00005
+    pmid: '10701715'
+    url: https://doi.org/10.2165/00007256-200029020-00005
+    type: review
+    opmerking: >-
+      Narratieve review. Histologisch GEEN ontstekingscellen, wel toegenomen
+      interfibrillaire glycosaminoglycanen en veranderingen in structuur en
+      rangschikking van de collageenvezels; microdialyse bevestigde de afwezigheid
+      van ontsteking. Komt het meest voor bij recreatieve MANNELIJKE lopers tussen
+      35 en 45 jaar, maar ook bij mensen met een zittende leefstijl. Ongeveer 25%
+      wordt uiteindelijk geopereerd. Neovascularisatie en nociceptoringroei in het
+      paratenon staan niet in het abstract.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  # --- Supraspinatus-tendinopathie en subacromiale klachten ---
+
+  - key: kibler_2013_scapulaconsensus
+    auteurs: [Kibler WB, Ludewig PM, McClure PW, Michener LA, Bak K, Sciascia AD]
+    titel: "Clinical implications of scapular dyskinesis in shoulder injury: the 2013 consensus statement from the 'Scapular Summit'"
+    bron: British Journal of Sports Medicine
+    jaar: 2013
+    volume_paginas: 47(14):877-85
+    doi: 10.1136/bjsports-2013-092425
+    pmid: '23580420'
+    url: https://doi.org/10.1136/bjsports-2013-092425
+    type: expert
+    opmerking: >-
+      Consensusverklaring (bewijsniveau 5). Scapulaire dyskinese is aanwezig bij een
+      HOOG PERCENTAGE van de meeste schouderletsels — er staat GEEN cijfer van 68%.
+      KERNNUANCE die in de app ontbrak: de exacte rol van de dyskinese bij het
+      ontstaan of verergeren van schouderdisfunctie is NIET DUIDELIJK OMSCHREVEN,
+      en de dyskinese wordt het best gezien als een MOGELIJKE stoornis, niet als
+      een vastgestelde oorzaak. Impingementklachten worden er wel bijzonder door
+      beinvloed. Verscheen in BJSM, niet in AJSM.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: tyler_2010_posterieure_strakheid
+    auteurs: [Tyler TF, Nicholas SJ, Lee SJ, Mullaney M, McHugh MP]
+    titel: Correction of posterior shoulder tightness is associated with symptom resolution in patients with internal impingement
+    bron: American Journal of Sports Medicine
+    jaar: 2010
+    volume_paginas: 38(1):114-9
+    doi: 10.1177/0363546509346050
+    pmid: '19966099'
+    url: https://doi.org/10.1177/0363546509346050
+    type: cohort
+    opmerking: >-
+      Cohortstudie (bewijsniveau 3) bij 22 patienten met INTERN impingement, niet
+      subacromiaal. Na 7 weken kinesitherapie verbeterden de
+      binnenrotatiebeperking, de buitenrotatie en de posterieure strakheid. De
+      patienten bij wie de klachten VOLLEDIG verdwenen (n = 12) hadden een grotere
+      verbetering van de posterieure strakheid dan wie restklachten hield (35 tegen
+      18 graden; p kleiner dan 0,05); voor de binnenrotatiebeperking was er GEEN
+      verschil. De studie meet geen migratie van de humeruskop en geen subacromiale
+      compressie.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: flatow_1994_subacromiaal_contact
+    auteurs: [Flatow EL, Soslowsky LJ, Ticker JB, Pawluk RJ, Hepler M, Ark J, Mow VC, Bigliani LU]
+    titel: 'Excursion of the rotator cuff under the acromion: patterns of subacromial contact'
+    bron: American Journal of Sports Medicine
+    jaar: 1994
+    volume_paginas: 22(6):779-88
+    doi: 10.1177/036354659402200609
+    pmid: '7856802'
+    url: https://doi.org/10.1177/036354659402200609
+    type: cohort
+    opmerking: >-
+      Kadaveronderzoek op 9 schouders, uitsluitend geheven IN HET SCAPULAIRE VLAK —
+      er is dus GEEN vergelijking met elevatie in het frontale of sagittale vlak.
+      Bevindingen: het contact tussen acromion en manchetpezen is het nauwst tussen
+      60 en 120 graden elevatie; de acromiohumerale afstand daalt van gemiddeld
+      11,1 mm bij 0 graden naar 5,7 mm bij 90 graden; het contact is duidelijk
+      uitgesprokener bij een type III acromion; minder buitenrotatie verschuift het
+      contact naar distaal en posterieur. Verscheen in AJSM, niet in CORR.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: beaton_2001_dash
+    auteurs: [Beaton DE, Katz JN, Fossel AH, Wright JG, Tarasuk V, Bombardier C]
+    titel: 'Measuring the whole or the parts? Validity, reliability, and responsiveness of the Disabilities of the Arm, Shoulder and Hand outcome measure in different regions of the upper extremity'
+    bron: Journal of Hand Therapy
+    jaar: 2001
+    volume_paginas: 14(2):128-46
+    doi: null
+    pmid: '11382253'
+    url: https://pubmed.ncbi.nlm.nih.gov/11382253/
+    type: cohort
+    opmerking: >-
+      Validatiestudie van de DASH bij 200 patienten met pols-, hand- of
+      schouderklachten. Goede test-hertestbetrouwbaarheid (ICC 0,96), correlatie
+      met andere maten boven 0,69, en een responsiviteit vergelijkbaar met of beter
+      dan gewrichtsspecifieke maten. Er staat GEEN drempelwaarde van 20 die met
+      subjectief volledig herstel zou samenhangen, en het artikel verscheen in
+      Journal of Hand Therapy, niet in CORR. PubMed geeft voor dit record geen DOI.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  # --- Frozen shoulder (adhesieve capsulitis) ---
+
+  - key: diercks_2004_supervised_neglect
+    auteurs: [Diercks RL, Stevens M]
+    titel: >-
+      Gentle thawing of the frozen shoulder: a prospective study of supervised
+      neglect versus intensive physical therapy in seventy-seven patients with
+      frozen shoulder syndrome followed up for two years
+    bron: Journal of Shoulder and Elbow Surgery
+    jaar: 2004
+    volume_paginas: 13(5):499-502
+    doi: 10.1016/j.jse.2004.03.002
+    pmid: '15383804'
+    url: https://doi.org/10.1016/j.jse.2004.03.002
+    type: cohort
+    opmerking: >-
+      77 patienten met idiopathische frozen shoulder, twee jaar gevolgd. In de groep
+      met SUPERVISED NEGLECT (ondersteuning en oefenen BINNEN de pijngrens) had 89%
+      na 24 maanden een normale of bijna normale pijnvrije schouderfunctie
+      (Constant-score 80 of hoger), en 64% bereikte dat al binnen 12 maanden. In de
+      groep met INTENSIEVE kinesitherapie inclusief passief rekken en manuele
+      mobilisatie haalde slechts 63% dat na 24 maanden. CONCLUSIE VAN DE AUTEURS:
+      supervised neglect geeft BETERE uitkomsten dan intensieve kinesitherapie met
+      passief rekken. Dit spreekt de opbouw van een rekgericht protocol
+      rechtstreeks tegen.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: carette_2003_injectie_kinesitherapie
+    auteurs: [Carette S, Moffet H, Tardif J, Bessette L, Morin F, Fremont P, Bykerk V, Thorne C, Bell M, Bensen W, Blanchette C]
+    titel: >-
+      Intraarticular corticosteroids, supervised physiotherapy, or a combination of
+      the two in the treatment of adhesive capsulitis of the shoulder: a
+      placebo-controlled trial
+    bron: Arthritis and Rheumatism
+    jaar: 2003
+    volume_paginas: 48(3):829-38
+    doi: 10.1002/art.10954
+    pmid: '12632439'
+    url: https://doi.org/10.1002/art.10954
+    type: RCT
+    opmerking: >-
+      93 deelnemers, vier armen: injectie plus kinesitherapie, injectie alleen,
+      zoutoplossing plus kinesitherapie, en zoutoplossing alleen. Alle deelnemers
+      kregen een eenvoudig thuisoefenprogramma. Na 6 weken verbeterden de twee
+      injectiegroepen significant meer op de SPADI (p = 0,0004); de combinatie gaf
+      de grootste toename van bewegingsuitslag. KERNBEVINDINGEN DIE IN DE APP
+      ONTBRAKEN: tussen kinesitherapie en placebo was er op GEEN ENKEL meetmoment
+      verschil, behalve meer flexie op drie maanden; de auteurs besluiten
+      uitdrukkelijk dat gesuperviseerde kinesitherapie ALLEEN van BEPERKTE
+      werkzaamheid is. Na 12 maanden waren alle groepen in gelijke mate verbeterd.
+      Verscheen in Arthritis and Rheumatism, niet in NEJM.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: vermeulen_2006_mobilisatiegraad
+    auteurs: [Vermeulen HM, Rozing PM, Obermann WR, le Cessie S, Vliet Vlieland TPM]
+    titel: 'Comparison of high-grade and low-grade mobilization techniques in the management of adhesive capsulitis of the shoulder: randomized controlled trial'
+    bron: Physical Therapy
+    jaar: 2006
+    volume_paginas: 86(3):355-68
+    doi: null
+    pmid: '16506872'
+    url: https://pubmed.ncbi.nlm.nih.gov/16506872/
+    type: RCT
+    opmerking: >-
+      100 deelnemers met eenzijdige adhesieve capsulitis van minstens 3 maanden.
+      Vergelijking van mobilisatie in EINDSTANDIGE posities met mobilisatie BINNEN
+      de pijnvrije zone, maximaal 24 sessies over 12 weken. Beide groepen
+      verbeterden over 12 maanden; de eindstandige techniek gaf statistisch
+      significant meer winst op passieve abductie en buitenrotatie en op twee
+      vragenlijsten, MAAR de auteurs benadrukken dat de verschillen tussen beide
+      interventies KLEIN zijn. De studie gaat over de GRAAD van mobilisatie, niet
+      over rekfrequentie of rekduur; uitspraken over drie keer daags 30 seconden
+      staan er niet in. PubMed geeft voor dit record geen DOI.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: hand_2008_langetermijn
+    auteurs: [Hand C, Clipsham K, Rees JL, Carr AJ]
+    titel: Long-term outcome of frozen shoulder
+    bron: Journal of Shoulder and Elbow Surgery
+    jaar: 2008
+    volume_paginas: 17(2):231-6
+    doi: 10.1016/j.jse.2007.05.009
+    pmid: '17993282'
+    url: https://doi.org/10.1016/j.jse.2007.05.009
+    type: cohort
+    opmerking: >-
+      269 schouders bij 223 patienten met primaire frozen shoulder, gemiddeld 4,4
+      jaar na het begin van de klachten gevolgd. UITKOMST DIE VEEL MINDER GUNSTIG
+      IS DAN DE APP SUGGEREERDE: 59% had een normale of bijna normale schouder,
+      41% hield restklachten. Die restklachten waren meestal mild (94%), met pijn
+      als voornaamste klacht; 6% had ernstige klachten met pijn en functieverlies.
+      20% meldde bilaterale klachten. BELANGRIJK: er waren GEEN recidieven — een
+      claim over recidiefreductie kan dus niet op deze bron steunen. Wie bij aanvang
+      de ernstigste klachten had, had de slechtste langetermijnprognose
+      (p kleiner dan 0,001).
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: dias_2005_frozenshoulder
+    auteurs: [Dias R, Cutts S, Massoud S]
+    titel: Frozen shoulder
+    bron: BMJ
+    jaar: 2005
+    volume_paginas: 331(7530):1453-6
+    doi: 10.1136/bmj.331.7530.1453
+    pmid: '16356983'
+    url: https://doi.org/10.1136/bmj.331.7530.1453
+    type: review
+    opmerking: >-
+      Kort klinisch overzichtsartikel. De kernboodschap luidt dat patienten
+      doorgaans herstellen maar dat zij MOGELIJK NOOIT HUN VOLLEDIGE
+      BEWEGINGSUITSLAG TERUGKRIJGEN. Het abstract bevat geen percentage van 90% en
+      geen duurtijd van 18 tot 24 maanden. Verscheen in BMJ, niet in JBJS.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  # --- Adductor-gerelateerde liespijn ---
+
+  - key: weir_2015_doha
+    auteurs: [Weir A, Brukner P, Delahunt E, Ekstrand J, Griffin D, Khan KM, Lovell G, Meyers WC, Muschaweck U, Orchard J, Paajanen H, Philippon M, Reboul G, Robinson P, Schache AG, Schilders E, Serner A, Silvers H, Thorborg K, Tyler T, Verrall G, de Vos RJ, Vuckovic Z, Holmich P]
+    titel: Doha agreement meeting on terminology and definitions in groin pain in athletes
+    bron: British Journal of Sports Medicine
+    jaar: 2015
+    volume_paginas: 49(12):768-74
+    doi: 10.1136/bjsports-2015-094869
+    pmid: '26031643'
+    url: https://doi.org/10.1136/bjsports-2015-094869
+    type: expert
+    opmerking: >-
+      Consensusverklaring van 24 internationale experts uit 14 landen, voorbereid
+      met systematische reviews en een Delphi-ronde. Het classificatiesysteem kent
+      DRIE hoofdcategorieen: (1) omschreven klinische entiteiten — adductor-,
+      iliopsoas-, inguinaal- en pubis-gerelateerde liespijn; (2) heupgerelateerde
+      liespijn; (3) overige oorzaken. De app noemde alleen de vier entiteiten van
+      de eerste categorie. De indeling berust op anamnese en klinisch onderzoek.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (search_articles + get_article_metadata)
+
+  - key: holmich_1999_actieve_training
+    auteurs: [Holmich P, Uhrskou P, Ulnits L, Kanstrup IL, Nielsen MB, Bjerg AM, Krogsgaard K]
+    titel: 'Effectiveness of active physical training as treatment for long-standing adductor-related groin pain in athletes: randomised trial'
+    bron: Lancet
+    jaar: 1999
+    volume_paginas: 353(9151):439-43
+    doi: 10.1016/S0140-6736(98)03340-6
+    pmid: '9989713'
+    url: https://doi.org/10.1016/S0140-6736(98)03340-6
+    type: RCT
+    opmerking: >-
+      68 sporters met langdurige adductor-gerelateerde liespijn (mediaan 40 weken),
+      8 tot 12 weken behandeling, geblindeerde beoordeling 4 maanden na afloop.
+      Uitkomstmaat: volledige terugkeer naar sport op hetzelfde niveau ZONDER
+      liespijn. Resultaat: 23 patienten in de actieve trainingsgroep tegenover 4 in
+      de groep zonder actieve training (odds ratio 12,7; 95% BI 3,4-47,2).
+      De vaak geciteerde percentages 79% en 14% staan NIET in het abstract; daar
+      staan de aantallen. Analyse volgens intention to treat.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: serner_2014_emg_copenhagen
+    auteurs: [Serner A, Jakobsen MD, Andersen LL, Holmich P, Sundstrup E, Thorborg K]
+    titel: 'EMG evaluation of hip adduction exercises for soccer players: implications for exercise selection in prevention and treatment of groin injuries'
+    bron: British Journal of Sports Medicine
+    jaar: 2014
+    volume_paginas: 48(14):1108-14
+    doi: 10.1136/bjsports-2012-091746
+    pmid: '23511698'
+    url: https://doi.org/10.1136/bjsports-2012-091746
+    type: cohort
+    opmerking: >-
+      EMG-studie bij 40 GEZONDE mannelijke elitevoetballers, acht adductieoefeningen.
+      De piekactiviteit van de adductor longus liep over de oefeningen heen uiteen
+      van 14% tot 108% van de maximale isometrische contractie (p kleiner dan
+      0,0001). De auteurs benoemen de Copenhagen Adduction en de adductie met
+      elastische band als dynamische hoogintensieve oefeningen. De bovengrens van
+      108% is het maximum over ALLE oefeningen; het abstract koppelt dat cijfer niet
+      expliciet aan de Copenhagen Adduction. Populatie: gezonde spelers, geen
+      patienten.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: ishoi_2016_copenhagen_kracht
+    auteurs: [Ishoi L, Sorensen CN, Kaae NM, Jorgensen LB, Holmich P, Serner A]
+    titel: 'Large eccentric strength increase using the Copenhagen Adduction exercise in football: a randomized controlled trial'
+    bron: Scandinavian Journal of Medicine and Science in Sports
+    jaar: 2016
+    volume_paginas: 26(11):1334-1342
+    doi: 10.1111/sms.12585
+    pmid: '26589483'
+    url: https://doi.org/10.1111/sms.12585
+    type: RCT
+    opmerking: >-
+      24 spelers uit twee subelite U19-ploegen, gerandomiseerd over acht weken
+      begeleide progressieve training bovenop de gewone training, of gewone
+      training alleen. De interventiegroep verbeterde de excentrische
+      heupadductiekracht met 35,7% (p kleiner dan 0,001), de abductiekracht met
+      20,3% (p = 0,003) en de verhouding tussen beide met 12,3% (p = 0,019); in de
+      controlegroep veranderde niets. Therapietrouw 91,25%, spierpijn mediaan 0 tot 2.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: haroy_2019_adductorprogramma
+    auteurs: [Haroy J, Clarsen B, Wiger EG, Oyen MG, Serner A, Thorborg K, Holmich P, Andersen TE, Bahr R]
+    titel: 'The Adductor Strengthening Programme prevents groin problems among male football players: a cluster-randomised controlled trial'
+    bron: British Journal of Sports Medicine
+    jaar: 2019
+    volume_paginas: 53(3):150-157
+    doi: 10.1136/bjsports-2017-098937
+    pmid: '29891614'
+    url: https://doi.org/10.1136/bjsports-2017-098937
+    type: RCT
+    opmerking: >-
+      35 semiprofessionele Noorse ploegen, 652 spelers, cluster-gerandomiseerd. Het
+      programma bestond uit EEN ENKELE oefening met drie progressieniveaus, drie
+      keer per week tijdens de voorbereiding (6 tot 8 weken) en EEN keer per week
+      tijdens het seizoen (28 weken) — dus GEEN integratie in het FIFA 11+-kader
+      zoals de app vermeldde. Gemiddelde prevalentie van liesklachten over het
+      seizoen: 13,5% (95% BI 12,3-14,7) in de interventiegroep tegenover 21,3%
+      (95% BI 20,0-22,6) in de controlegroep. Het RISICO op het melden van
+      liesklachten lag 41% lager (OR 0,59; 95% BI 0,40-0,86; p = 0,008) — die 41%
+      is dus een risicoreductie, niet de daling van de prevalentie zelf.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (search_articles + get_article_metadata)
+
+  - key: serner_2020_terugkeer
+    auteurs: [Serner A, Weir A, Tol JL, Thorborg K, Yamashiro E, Guermazi A, Roemer FW, Holmich P]
+    titel: 'Associations between initial clinical examination and imaging findings and return-to-sport in male athletes with acute adductor injuries: a prospective cohort study'
+    bron: American Journal of Sports Medicine
+    jaar: 2020
+    volume_paginas: 48(5):1151-1159
+    doi: 10.1177/0363546520908610
+    pmid: '32182099'
+    url: https://doi.org/10.1177/0363546520908610
+    type: cohort
+    opmerking: >-
+      PROGNOSTISCH cohort (bewijsniveau 2), 81 mannelijke sporters met een acuut
+      adductorletsel, allen behandeld met een gestandaardiseerd criteriumgestuurd
+      oefenprogramma. Mediane duur tot de drie mijlpalen: 15 dagen tot pijnvrij,
+      24 dagen tot afgeronde gecontroleerde sporttraining en 22 dagen tot de eerste
+      volledige teamtraining. De sterkste voorspellers van een LANGERE terugkeer
+      waren palpatiepijn aan de proximale adductor longus-insertie, een voelbaar
+      defect, en op MRI een letsel op de bot-peesovergang. LET OP: de studie
+      VERGELIJKT GEEN criteriumgestuurde met tijdgestuurde terugkeer en rapporteert
+      GEEN hervalcijfers.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: thorborg_2011_hagos
+    auteurs: [Thorborg K, Holmich P, Christensen R, Petersen J, Roos EM]
+    titel: 'The Copenhagen Hip and Groin Outcome Score (HAGOS): development and validation according to the COSMIN checklist'
+    bron: British Journal of Sports Medicine
+    jaar: 2011
+    volume_paginas: 45(6):478-91
+    doi: 10.1136/bjsm.2010.080937
+    pmid: '21478502'
+    url: https://doi.org/10.1136/bjsm.2010.080937
+    type: cohort
+    opmerking: >-
+      Ontwikkeling en validatie volgens de COSMIN-standaard bij 101 fysiek actieve
+      patienten met langdurige heup- of liespijn (gemiddeld 36 jaar). Zes
+      subschalen. Test-hertestbetrouwbaarheid substantieel (ICC 0,82 tot 0,91). Het
+      kleinste detecteerbare verschil bedraagt 17,7 tot 33,8 punten op INDIVIDUEEL
+      niveau en 2,7 tot 5,2 punten op groepsniveau — dat onderscheid is belangrijk
+      bij het interpreteren van een individuele patient.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  # --- Lumbale hernia ---
+
+  - key: weber_1983_discushernia
+    auteurs: [Weber H]
+    titel: 'Lumbar disc herniation: a controlled, prospective study with ten years of observation'
+    bron: Spine
+    jaar: 1983
+    volume_paginas: 8(2):131-40
+    doi: null
+    pmid: '6857385'
+    url: https://pubmed.ncbi.nlm.nih.gov/6857385/
+    type: RCT
+    opmerking: >-
+      280 patienten met radiculografisch bevestigde discushernia. De 126 met
+      onzekere operatie-indicatie werden gerandomiseerd tussen chirurgie en
+      conservatief beleid. Resultaat: na EEN JAAR significant beter in de
+      geopereerde groep; na VIER jaar nog steeds beter maar niet meer significant;
+      daarna nauwelijks verandering tot tien jaar. Er staat GEEN uitspraak in dat
+      90% conservatief herstelt binnen 6 tot 12 weken. PubMed geeft voor dit
+      record geen DOI.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: deville_2000_lasegue
+    auteurs: [Devillé WL, van der Windt DA, Dzaferagic A, Bezemer PD, Bouter LM]
+    titel: 'The test of Lasegue: systematic review of the accuracy in diagnosing herniated discs'
+    bron: Spine
+    jaar: 2000
+    volume_paginas: 25(9):1140-7
+    doi: 10.1097/00007632-200005010-00016
+    pmid: '10788860'
+    url: https://doi.org/10.1097/00007632-200005010-00016
+    type: SR
+    opmerking: >-
+      Systematische review met meta-analyse; 11 studies gepoold. Gepoolde
+      sensitiviteit van de straight leg raise 0,91 (95% BI 0,82-0,94) maar gepoolde
+      SPECIFICITEIT slechts 0,26 (0,16-0,38). Voor de gekruiste test: sensitiviteit
+      0,29 en specificiteit 0,88. CONCLUSIE VAN DE AUTEURS: de diagnostische
+      nauwkeurigheid wordt BEPERKT door de lage specificiteit; alle studies waren
+      chirurgische casusreeksen buiten de eerste lijn en laten geen valide
+      beoordeling van de testnauwkeurigheid toe. De slumptest komt in deze review
+      niet voor.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: nee_2012_neurale_mobilisatie
+    auteurs: [Nee RJ, Vicenzino B, Jull GA, Cleland JA, Coppieters MW]
+    titel: 'Neural tissue management provides immediate clinically relevant benefits without harmful effects for patients with nerve-related neck and arm pain: a randomised trial'
+    bron: Journal of Physiotherapy
+    jaar: 2012
+    volume_paginas: 58(1):23-31
+    doi: 10.1016/S1836-9553(12)70069-3
+    pmid: '22341379'
+    url: https://doi.org/10.1016/S1836-9553(12)70069-3
+    type: RCT
+    opmerking: >-
+      BETREFT NEK- EN ARMPIJN, NIET LUMBALE RADICULOPATHIE. 60 deelnemers met
+      niet-traumatische zenuwgerelateerde nekpijn met uitstraling naar een arm,
+      gerandomiseerd over educatie, manuele therapie en zenuwglijoefeningen (4
+      behandelingen over 2 weken) bovenop het advies actief te blijven, of dat
+      advies alleen. Number needed to treat 2,7 (95% BI 1,7-6,5) voor door de
+      patient gerapporteerde verbetering. Geen toename van verergering
+      (13% tegenover 20%) en geen aanwijzing voor schade. Het refs-veld van het
+      protocol beschreef de bron zelf al correct als "cervicobrachial pain".
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: schaafsma_2013_werkhervatting
+    auteurs: [Schaafsma FG, Whelan K, van der Beek AJ, van der Es-Lambeek LC, Ojajarvi A, Verbeek JH]
+    titel: Physical conditioning as part of a return to work strategy to reduce sickness absence for workers with back pain
+    bron: Cochrane Database of Systematic Reviews
+    jaar: 2013
+    volume_paginas: 2013(8):CD001822
+    doi: 10.1002/14651858.CD001822.pub3
+    pmid: '23990391'
+    url: https://doi.org/10.1002/14651858.CD001822.pub3
+    type: SR
+    opmerking: >-
+      25 RCT's, 4404 deelnemers. Bij ACUTE rugpijn: laag bewijs voor weinig of geen
+      verschil in verzuimduur. Bij SUBACUTE rugpijn: tegenstrijdig bewijs, met een
+      mogelijke gunstige uitzondering wanneer de interventie op de werkplek
+      plaatsvindt of een werkplekbezoek omvat (SMD -0,42; 95% BI -0,65 tot -0,18).
+      Bij CHRONISCHE rugpijn: matig bewijs voor een SLECHTS GERINGE verkorting van
+      de verzuimduur (SMD -0,23; 95% BI -0,42 tot -0,03). Eindconclusie: de
+      effectiviteit BLIJFT ONZEKER. Er staat nergens een verzuimreductie van 45%.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (lookup_article_by_citation + get_article_metadata)
+
+  - key: vanderwindt_2010_lichamelijk_onderzoek
+    auteurs: [van der Windt DA, Simons E, Riphagen II, Ammendolia C, Verhagen AP, Laslett M, Devillé W, Deyo RA, Bouter LM, de Vet HC, Aertgeerts B]
+    titel: 'Physical examination for lumbar radiculopathy due to disc herniation in patients with low-back pain'
+    bron: Cochrane Database of Systematic Reviews
+    jaar: 2010
+    volume_paginas: (2):CD007431
+    doi: 10.1002/14651858.CD007431.pub2
+    pmid: '20166095'
+    url: https://doi.org/10.1002/14651858.CD007431.pub2
+    type: SR
+    opmerking: >-
+      Cochrane-review, GEEN artikel in Annals of Family Medicine — de app schreef
+      dat tijdschrift ten onrechte toe. 16 cohortstudies (mediane n = 126) en drie
+      case-controlstudies. Straight leg raise in CHIRURGISCHE populaties, met een
+      prevalentie van discushernia van 58-98%: gepoolde sensitiviteit 0,92
+      (95% BI 0,87-0,95), gepoolde specificiteit 0,28 (0,18-0,40) en tussen de
+      studies varierend van 0,10 tot 1,00. Gekruiste SLR omgekeerd: specificiteit
+      0,90 (0,85-0,94), sensitiviteit 0,28 (0,22-0,35). Studies met beeldvorming als
+      referentietest gaven meer heterogeniteit en SLECHTERE sensitiviteit.
+      CONCLUSIE VAN DE AUTEURS - "current evidence indicates poor diagnostic
+      performance of most physical tests used to identify lumbar disc herniation";
+      de bevindingen komen grotendeels uit chirurgische populaties en gelden
+      mogelijk niet in de eerste lijn. Slechts een van de studies werd in de
+      eerste lijn uitgevoerd; daar waren sensitiviteiten juist LAGER. De review
+      noemt geen drempel van 60 graden en geen cijfer van 91 procent.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 20166095)
+
+  - key: kukkonen_2015_rotatorenmanchet
+    auteurs: [Kukkonen J, Joukainen A, Lehtinen J, Mattila KT, Tuominen EK, Kauko T, Äärimaa V]
+    titel: 'Treatment of Nontraumatic Rotator Cuff Tears: A Randomized Controlled Trial with Two Years of Clinical and Imaging Follow-up'
+    bron: The Journal of Bone and Joint Surgery (American volume)
+    jaar: 2015
+    volume_paginas: 97(21):1729-37
+    doi: 10.2106/JBJS.N.01051
+    pmid: '26537160'
+    url: https://doi.org/10.2106/JBJS.N.01051
+    type: RCT
+    opmerking: >-
+      180 schouders met symptomatische NIET-TRAUMATISCHE supraspinatusscheuren bij
+      OUDERE patienten, gerandomiseerd over drie cumulatief opgebouwde groepen:
+      kinesitherapie alleen, acromioplastiek plus kinesitherapie, en manchetherstel
+      plus acromioplastiek plus kinesitherapie. 167 schouders na twee jaar
+      geanalyseerd. GEEN significant verschil in Constant-score (p = 0,38): 18,4
+      punten (95% BI 14,2-22,6), 20,5 (16,4-24,6) en 22,6 (18,4-26,8). Ook geen
+      verschil in pijn (p = 0,45) of tevredenheid (p = 0,28). WAT DE APP WEGLIET:
+      de scheur was na twee jaar significant GROTER in de niet-herstelde groepen
+      (11,0 mm tegenover 4,2 mm; p < 0,01) en de auteurs waarschuwen expliciet dat
+      die progressie verdere opvolging vereist. De trial hanteert GEEN grens van
+      1 cm en gaat NIET over partiele scheuren.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 26537160)
+
+  - key: hegedus_2012_schoudertests
+    auteurs: [Hegedus EJ, Goode AP, Cook CE, Michener L, Myer CA, Myer DM, Wright AA]
+    titel: 'Which physical examination tests provide clinicians with the most value when examining the shoulder? Update of a systematic review with meta-analysis of individual tests'
+    bron: British Journal of Sports Medicine
+    jaar: 2012
+    volume_paginas: 46(14):964-78
+    doi: 10.1136/bjsports-2012-091066
+    pmid: '22773322'
+    url: https://doi.org/10.1136/bjsports-2012-091066
+    type: SR
+    opmerking: >-
+      Systematische review met meta-analyse. Voor subacromiaal impingement gepoold:
+      Neer sensitiviteit 72% en specificiteit 60%; Hawkins-Kennedy 79% en 59%;
+      pijnboog 53% en 76%. DE APP SCHREEF VOOR HAWKINS-KENNEDY EEN SPECIFICITEIT
+      VAN 66% - dat cijfer staat er niet; het is 59%. Conclusie van de auteurs:
+      geen enkele afzonderlijke schoudertest kan worden aanbevolen om een diagnose
+      te stellen, en combinaties van tests geven wel betere accuraatheid maar
+      "marginally so" - slechts marginaal. De app presenteerde combinaties zonder
+      die beperking.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 22773322)
+
+  - key: bernhardsson_2011_excentrisch_manchet
+    auteurs: [Bernhardsson S, Klintberg IH, Wendt GK]
+    titel: 'Evaluation of an exercise concept focusing on eccentric strength training of the rotator cuff for patients with subacromial impingement syndrome'
+    bron: Clinical Rehabilitation
+    jaar: 2011
+    volume_paginas: 25(1):69-78
+    doi: 10.1177/0269215510376005
+    pmid: '20713438'
+    url: https://doi.org/10.1177/0269215510376005
+    type: cohort
+    opmerking: >-
+      GEEN RCT maar een single-subject research design (AB-opzet) bij TIEN
+      patienten met subacromiaal impingementsyndroom, gemiddelde leeftijd 54 jaar.
+      Twaalf weken dagelijkse excentrische oefening. Pijn daalde significant bij 8
+      van de 10, functie verbeterde bij alle 10; gemiddelde Constant-score van 44
+      naar 69 punten (p = 0,008) en WORC van 51 naar 71% (p = 0,021). DE AUTEURS
+      BESLUITEN ZELF dat een gerandomiseerde trial nodig is om sterker bewijs te
+      leveren. Bewijskracht dus zeer laag; de app presenteerde dit als vaststaande
+      effectiviteit voor rotatorenmanchet-tendinopathie.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 20713438)
+
+  - key: burkhart_2003_sick_scapula
+    auteurs: [Burkhart SS, Morgan CD, Kibler WB]
+    titel: 'The disabled throwing shoulder: spectrum of pathology Part III: The SICK scapula, scapular dyskinesis, the kinetic chain, and rehabilitation'
+    bron: 'Arthroscopy: The Journal of Arthroscopic and Related Surgery'
+    jaar: 2003
+    volume_paginas: 19(6):641-61
+    doi: 10.1016/s0749-8063(03)00389-x
+    pmid: '12861203'
+    url: https://doi.org/10.1016/s0749-8063(03)00389-x
+    type: expert
+    opmerking: >-
+      Narratieve review / expert opinion, deel III van een driedelige serie over de
+      werpschouder. PubMed levert geen abstract. Het is een conceptueel artikel over
+      de SICK-scapula, scapulaire dyskinese en de kinetische keten - GEEN studie met
+      uitkomsten, dus er kan geen herletselreductie uit worden afgeleid. De app
+      citeerde het voor precies zo'n effectclaim.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 12861203)
+
+  - key: vanrijn_2010_werkfactoren_schouder
+    auteurs: [van Rijn RM, Huisstede BMa, Koes BW, Burdorf A]
+    titel: 'Associations between work-related factors and specific disorders of the shoulder - a systematic review of the literature'
+    bron: Scandinavian Journal of Work, Environment & Health
+    jaar: 2010
+    volume_paginas: 36(3):189-201
+    doi: 10.5271/sjweh.2895
+    pmid: '20094690'
+    url: https://doi.org/10.5271/sjweh.2895
+    type: SR
+    opmerking: >-
+      DIT IS EEN ETIOLOGISCHE REVIEW OVER RISICOFACTOREN, GEEN INTERVENTIEREVIEW.
+      Er wordt geen enkele ergonomische interventie geevalueerd, dus de claim dat
+      ergonomische interventies werkgerelateerde manchetpathologie verminderen kan
+      er niet uit komen. Wat er wel in staat: subacromiaal impingement hangt samen
+      met krachtvereisten boven 10% van de maximale willekeurige contractie, tillen
+      van meer dan 20 kg meer dan tien keer per dag en hoge handkracht meer dan een
+      uur per dag (OR 2,8-4,2); repetitieve schouderbewegingen, hand-armtrillingen
+      en werken met de hand boven schouderhoogte (OR 1,04-4,7); hoge psychosociale
+      werkeisen (OR 1,5-3,19). TWEEDE PROBLEEM: geen van de ingesloten artikelen
+      beschreef het verband tussen werkfactoren en ROTATORENMANCHETSCHEUREN - de
+      review dekt uitsluitend impingement en bicepstendinitis.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 20094690)
+
+  - key: vandermeijden_2012_postoperatieve_revalidatie
+    auteurs: [van der Meijden OA, Westgard P, Chandler Z, Gaskill TR, Kokmeyer D, Millett PJ]
+    titel: 'Rehabilitation after arthroscopic rotator cuff repair: current concepts review and evidence-based guidelines'
+    bron: International Journal of Sports Physical Therapy
+    jaar: 2012
+    volume_paginas: 7(2):197-218
+    doi: null
+    pmid: '22530194'
+    url: https://pubmed.ncbi.nlm.nih.gov/22530194/
+    type: review
+    opmerking: >-
+      Current-concepts review; PubMed vermeldt geen DOI, wel PMC3325631. DE
+      KERNBOODSCHAP VAN HET ARTIKEL SPREEKT DE APP TEGEN: "Little scientific
+      evidence is available to guide the timing of postsurgical rotator cuff
+      rehabilitation" en "expert opinion and clinical experience remains a large
+      facet of rehabilitation protocols". Er kan dus geen tijdsdrempel van 9 tot 12
+      maanden voor bovenhandse sport uit worden afgeleid; het artikel stelt net dat
+      de timing niet door bewijs gestuurd wordt.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 22530194)
+
+  - key: itoi_2007_externe_rotatie
+    auteurs: [Itoi E, Hatakeyama Y, Sato T, Kido T, Minagawa H, Yamamoto N, Wakabayashi I, Nozaka K]
+    titel: 'Immobilization in external rotation after shoulder dislocation reduces the risk of recurrence. A randomized controlled trial'
+    bron: The Journal of Bone and Joint Surgery (American volume)
+    jaar: 2007
+    volume_paginas: 89(10):2124-31
+    doi: 10.2106/JBJS.F.00654
+    pmid: '17908886'
+    url: https://doi.org/10.2106/JBJS.F.00654
+    type: RCT
+    opmerking: >-
+      GEEN kleine trial: 198 patienten met een eerste anterieure luxatie,
+      gerandomiseerd naar drie weken immobilisatie in interne (94) of externe
+      rotatie (104), minimaal twee jaar opvolging. Intention-to-treat: recidief
+      26% (22/85) in externe rotatie tegenover 42% (31/74) in interne rotatie
+      (p = 0,033), relatieve risicoreductie 38,2%; bij dertigjarigen en jonger
+      46,1%. DE APP SCHREEF "0% RECIDIEF TEGENOVER 30%" - die twee cijfers staan
+      er niet in. De app noemde deze trial bovendien "klein" en gaf haar aantal
+      van 198 aan de trial van Liavaag, die er 188 telde: de twee studies werden
+      verwisseld.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 17908886)
+
+  - key: liavaag_2011_externe_rotatie
+    auteurs: [Liavaag S, Brox JI, Pripp AH, Enger M, Soldal LA, Svenningsen S]
+    titel: 'Immobilization in external rotation after primary shoulder dislocation did not reduce the risk of recurrence: a randomized controlled trial'
+    bron: The Journal of Bone and Joint Surgery (American volume)
+    jaar: 2011
+    volume_paginas: 93(10):897-904
+    doi: 10.2106/JBJS.J.00416
+    pmid: '21498489'
+    url: https://doi.org/10.2106/JBJS.J.00416
+    type: RCT
+    opmerking: >-
+      188 patienten (niet 198, dat is het aantal van Itoi), gerandomiseerd naar
+      drie weken interne (95) of externe rotatie (93). Recidief binnen 24 maanden:
+      24,7% na interne en 30,8% na externe rotatie (p = 0,36). Conclusie:
+      immobilisatie in externe rotatie verlaagt het recidief NIET. De conclusie
+      werd in de app correct weergegeven, het aantal deelnemers niet.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 21498489)
+
+  - key: lephart_1994_proprioceptie_schouder
+    auteurs: [Lephart SM, Warner JJ, Borsa PA, Fu FH]
+    titel: 'Proprioception of the shoulder joint in healthy, unstable, and surgically repaired shoulders'
+    bron: Journal of Shoulder and Elbow Surgery
+    jaar: 1994
+    volume_paginas: 3(6):371-80
+    doi: 10.1016/S1058-2746(09)80022-0
+    pmid: '22958841'
+    url: https://doi.org/10.1016/S1058-2746(09)80022-0
+    type: cohort
+    opmerking: >-
+      Dwarsdoorsnedestudie bij 90 proefpersonen in drie groepen: 40 gezonde
+      studenten, 30 patienten met anterieure instabiliteit en 20 geopereerde
+      patienten. Bij de instabiele schouders waren kinesthesie en gewrichtspositie-
+      zin significant slechter dan aan de niet-aangedane zijde (p < 0,05); bij de
+      GEOPEREERDE groep was er GEEN significant verschil meer met de contralaterale
+      zijde. TWEE PROBLEMEN MET DE APP-CLAIM. (1) Er is geen enkele opvolging in
+      de tijd, dus de uitspraak dat deficieten "tot 6 maanden persisteren" kan er
+      niet uit komen. (2) De auteurs besluiten net dat reconstructieve chirurgie
+      een deel van de proprioceptie HERSTELT.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 22958841)
+
+  - key: balg_2007_isis
+    auteurs: [Balg F, Boileau P]
+    titel: 'The instability severity index score. A simple pre-operative score to select patients for arthroscopic or open shoulder stabilisation'
+    bron: The Journal of Bone and Joint Surgery (British volume)
+    jaar: 2007
+    volume_paginas: 89(11):1470-7
+    doi: 10.1302/0301-620X.89B11.18962
+    pmid: '17998184'
+    url: https://doi.org/10.1302/0301-620X.89B11.18962
+    type: cohort
+    opmerking: >-
+      Prospectieve case-controlstudie bij 131 opeenvolgende patienten na
+      artroscopische Bankart met suture anchors; na gemiddeld 31,2 maanden had
+      14,5% (19 patienten) opnieuw instabiliteit. Risicofactoren: leeftijd onder
+      20 bij operatie, competitie- of contactsport of bovenhandse sport,
+      hyperlaxiteit, Hill-Sachs op de AP-opname in exorotatie en/of verlies van
+      de sclerotische onderste glenoidcontour. Bij een score BOVEN 6 punten op de
+      tienpuntsschaal bedroeg het recidiefrisico 70% (p < 0,001); de auteurs
+      beschouwen een artroscopische Bankart dan als gecontra-indiceerd en stellen
+      een Bristow-Latarjet voor. De app noemde de drempel wel maar niet het
+      cijfer van 70% en niet de chirurgische consequentie.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 17998184)
+
+  - key: brophy_2009_anterieure_instabiliteit
+    auteurs: [Brophy RH, Marx RG]
+    titel: 'The treatment of traumatic anterior instability of the shoulder: nonoperative and surgical treatment'
+    bron: 'Arthroscopy: The Journal of Arthroscopic and Related Surgery'
+    jaar: 2009
+    volume_paginas: 25(3):298-304
+    doi: 10.1016/j.arthro.2008.12.007
+    pmid: '19245994'
+    url: https://doi.org/10.1016/j.arthro.2008.12.007
+    type: SR
+    opmerking: >-
+      Systematische review. Na een EERSTE traumatische anterieure luxatie bij
+      JONGE patienten gaf chirurgie significant minder herval dan conservatief
+      beleid: 7% tegenover 46% na twee jaar en 10% tegenover 58% op langere
+      termijn. Artroscopische en open stabilisatie met suture anchors gaven
+      vergelijkbare hervalcijfers: 6,4% artroscopisch en 8,2% open. DE APP GAF
+      "6-10% artroscopisch" (ruwweg in dat bereik, maar de review geeft exacte
+      cijfers) en "contactsporten 15-20%" - dat laatste staat er NIET in. De
+      klinisch beslissende vergelijking chirurgie tegenover conservatief werd
+      weggelaten.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 19245994)
+
+  - key: burkhead_1992_oefenprogramma_instabiliteit
+    auteurs: [Burkhead WZ, Rockwood CA]
+    titel: 'Treatment of instability of the shoulder with an exercise program'
+    bron: The Journal of Bone and Joint Surgery (American volume)
+    jaar: 1992
+    volume_paginas: 74(6):890-6
+    doi: null
+    pmid: '1634579'
+    url: https://pubmed.ncbi.nlm.nih.gov/1634579/
+    type: cohort
+    opmerking: >-
+      140 schouders bij 115 patienten met recidiverende subluxatie, behandeld met
+      een specifiek spierversterkend programma. HET CONTRAST IS DE KERN VAN DE
+      STUDIE en ontbrak in de app: bij ATRAUMATISCHE subluxatie had 80% (53 van 66)
+      een goed of uitstekend resultaat, bij TRAUMATISCHE subluxatie slechts 16%
+      (12 van 74). De app schreef "80-90% goed resultaat" - de bovengrens van 90%
+      staat er niet in, en het falen bij traumatische instabiliteit, dat net de
+      reden is om AMBRI anders te behandelen dan TUBS, werd verzwegen. PubMed
+      vermeldt geen DOI.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 1634579)
+
+  - key: uhl_2003_gewichtdragende_oefeningen
+    auteurs: [Uhl TL, Carver TJ, Mattacola CG, Mair SD, Nitz AJ]
+    titel: 'Shoulder musculature activation during upper extremity weight-bearing exercise'
+    bron: The Journal of Orthopaedic and Sports Physical Therapy
+    jaar: 2003
+    volume_paginas: 33(3):109-17
+    doi: 10.2519/jospt.2003.33.3.109
+    pmid: '12683686'
+    url: https://doi.org/10.2519/jospt.2003.33.3.109
+    type: cohort
+    opmerking: >-
+      EMG-studie bij 18 GEZONDE studenten, zeven statische gewichtdragende
+      posities, herhaalde metingen. Sterke correlatie tussen toenemende
+      gewichtdragende houding en spieractiviteit (r = 0,97; p < 0,01); bij bidhouding
+      en vierpuntsstand was de belasting laag (2-10% MVIC); de infraspinatus was in
+      de meeste posities het actiefst. ER IS GEEN VERGELIJKING MET OPEN KETEN, geen
+      bovenhandse oefening, geen patientenpopulatie en geen revalidatie-uitkomst.
+      De claim dat gesloten keten de coactivatie effectiever verbetert dan open
+      keten kan er dus niet uit komen. Verscheen in JOSPT, niet in J Shoulder
+      Elbow Surg.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 12683686)
+
+  - key: ellenbecker_1997_isokinetisch_werpers
+    auteurs: [Ellenbecker TS, Mattalino AJ]
+    titel: 'Concentric isokinetic shoulder internal and external rotation strength in professional baseball pitchers'
+    bron: The Journal of Orthopaedic and Sports Physical Therapy
+    jaar: 1997
+    volume_paginas: 25(5):323-8
+    doi: 10.2519/jospt.1997.25.5.323
+    pmid: '9130149'
+    url: https://doi.org/10.2519/jospt.1997.25.5.323
+    type: cohort
+    opmerking: >-
+      BESCHRIJVENDE normatieve studie bij 125 GEZONDE professionele honkbalwerpers,
+      isokinetisch getest op 210 en 300 graden per seconde. Bevinding: geen verschil
+      tussen dominante en niet-dominante zijde voor EXOrotatie, wel significant
+      meer INTRArotatiekracht aan de werparm (p < 0,001). Er is GEEN patient met
+      instabiliteit in de studie, GEEN preventieve uitkomst en het abstract noemt
+      GEEN afkapwaarde van 0,66 voor de ER/IR-verhouding. De app baseerde daar wel
+      een preventieclaim op.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 9130149)
+
+  - key: bisset_2006_tenniselleboog
+    auteurs: [Bisset L, Beller E, Jull G, Brooks P, Darnell R, Vicenzino B]
+    titel: 'Mobilisation with movement and exercise, corticosteroid injection, or wait and see for tennis elbow: randomised trial'
+    bron: BMJ
+    jaar: 2006
+    volume_paginas: 333(7575):939
+    doi: 10.1136/bmj.38961.584653.AE
+    pmid: '17012266'
+    url: https://doi.org/10.1136/bmj.38961.584653.AE
+    type: RCT
+    opmerking: >-
+      VERSCHENEN IN BMJ, NIET IN THE LANCET - de app schreef Lancet. 198
+      deelnemers van 18 tot 65 jaar met tenniselleboog van minstens zes weken,
+      gerandomiseerd over acht sessies kinesitherapie, corticosteroidinjectie of
+      afwachten, met opvolging tot 52 weken. Corticosteroid was significant beter
+      op zes weken maar met hoge herval: 47 van de 65 successen viel nadien terug,
+      en op lange termijn deed die groep het significant SLECHTER dan
+      kinesitherapie. Kinesitherapie was op korte termijn beter dan afwachten; op
+      52 weken was er GEEN verschil meer en meldde het merendeel van beide groepen
+      een goede uitkomst. HET CIJFER VAN 78% HERSTEL STAAT ER NIET IN; het abstract
+      geeft geen percentage voor de afwachtgroep.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 17012266)
+
+  - key: coombes_2013_injectie_kinesitherapie
+    auteurs: [Coombes BK, Bisset L, Brooks P, Khan A, Vicenzino B]
+    titel: 'Effect of corticosteroid injection, physiotherapy, or both on clinical outcomes in patients with unilateral lateral epicondylalgia: a randomized controlled trial'
+    bron: JAMA
+    jaar: 2013
+    volume_paginas: 309(5):461-9
+    doi: 10.1001/jama.2013.129
+    pmid: '23385272'
+    url: https://doi.org/10.1001/jama.2013.129
+    type: RCT
+    opmerking: >-
+      VERSCHENEN IN JAMA, NIET IN THE LANCET - de app schreef Lancet. Factoriele
+      2x2-trial, injectie-geblindeerd en placebogecontroleerd, 165 patienten.
+      Corticosteroid gaf na EEN JAAR SLECHTERE uitkomsten dan placebo: volledig
+      herstel of duidelijke verbetering bij 83% tegenover 96% (RR 0,86; 99% BI
+      0,75-0,99; p = 0,01) en meer herval (54% tegenover 12%; RR 0,23; 0,10-0,51;
+      p < 0,001). WAT DE APP VERZWEEG (CLAUDE.md par. 1.9): KINESITHERAPIE GAF GEEN
+      SIGNIFICANT VERSCHIL na een jaar - 91% tegenover 88% (RR 1,04; 0,90-1,19;
+      p = 0,56) - en ook niet op 26 weken. Alleen op vier weken was er winst, en
+      enkel in de placebo-injectiearm (39% tegenover 10%; RR 4,00; 1,07-15,00;
+      p = 0,004); bovenop een corticosteroidinjectie voegde kinesitherapie niets toe.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 23385272)
+
+  - key: coombes_2015_lateraal_elleboog
+    auteurs: [Coombes BK, Bisset L, Vicenzino B]
+    titel: 'Management of Lateral Elbow Tendinopathy: One Size Does Not Fit All'
+    bron: The Journal of Orthopaedic and Sports Physical Therapy
+    jaar: 2015
+    volume_paginas: 45(11):938-49
+    doi: 10.2519/jospt.2015.5841
+    pmid: '26381484'
+    url: https://doi.org/10.2519/jospt.2015.5841
+    type: review
+    opmerking: >-
+      Narratieve review die bewijs en EXPERT OPINION samenbrengt; de auteurs
+      presenteren zelf een PRELIMINAIR algoritme en stellen dat verder onderzoek
+      nodig is om te beoordelen of die aanpak tot betere uitkomsten leidt. De titel
+      luidt "One Size Does Not Fit All" - het refs-veld van de app schreef
+      "one model fits all?". Kernboodschap: de prognose loopt sterk uiteen, van
+      onmiddellijk herstel na eenvoudig advies tot langdurige klachten ongeacht de
+      behandeling, en de onderliggende pathofysiologie is onvoldoende begrepen. De
+      review noemt nekpijn, peesscheuren en centrale sensitisatie als mogelijke
+      prognostische factoren.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 26381484)
+
+  - key: tyler_2010_excentrisch_polsextensoren
+    auteurs: [Tyler TF, Thomas GC, Nicholas SJ, McHugh MP]
+    titel: 'Addition of isolated wrist extensor eccentric exercise to standard treatment for chronic lateral epicondylosis: a prospective randomized trial'
+    bron: Journal of Shoulder and Elbow Surgery
+    jaar: 2010
+    volume_paginas: 19(6):917-22
+    doi: 10.1016/j.jse.2010.04.041
+    pmid: '20579907'
+    url: https://doi.org/10.1016/j.jse.2010.04.041
+    type: RCT
+    opmerking: >-
+      VERSCHENEN IN J SHOULDER ELBOW SURG, NIET IN JOSPT - zowel de evidencetekst
+      als het refs-veld van de app schreven JOSPT. SLECHTS 21 PATIENTEN: 11 in de
+      excentrische groep en 10 in de standaardgroep. De excentrische oefening werd
+      TOEGEVOEGD aan de standaardbehandeling, niet ermee vergeleken. Verbeteringen
+      in procent: DASH 76% tegenover 13% (p = 0,01); VAS 81% tegenover 22%
+      (p = 0,002); drukgevoeligheid 71% tegenover 5% (p = 0,003); kracht 79%
+      tegenover 15% (p = 0,011). De door de app genoemde 81% tegenover 22% klopt
+      dus, maar de behandelduur was 7,2 en 7,0 weken, niet zes, en de zeer kleine
+      omvang maakt de schatting onnauwkeurig.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 20579907)
+
+  - key: smidt_2002_epicondylitis
+    auteurs: [Smidt N, van der Windt DAWM, Assendelft WJJ, Devillé WLJM, Korthals-de Bos IBC, Bouter LM]
+    titel: 'Corticosteroid injections, physiotherapy, or a wait-and-see policy for lateral epicondylitis: a randomised controlled trial'
+    bron: Lancet
+    jaar: 2002
+    volume_paginas: 359(9307):657-62
+    doi: 10.1016/S0140-6736(02)07811-X
+    pmid: '11879861'
+    url: https://doi.org/10.1016/S0140-6736(02)07811-X
+    type: RCT
+    opmerking: >-
+      185 patienten uit de Nederlandse eerste lijn, gerandomiseerd over zes weken
+      corticosteroidinjecties, kinesitherapie of afwachten; opvolging tot 52 weken.
+      Op ZES WEKEN was corticosteroid significant beter op alle uitkomstmaten:
+      slaagpercentage 92% tegenover 47% voor kinesitherapie en 32% voor afwachten.
+      Op 52 WEKEN KEERT DAT OM: 69% voor injecties, 91% voor kinesitherapie en 83%
+      voor afwachten, met een hoge herval na injectie. Kinesitherapie deed het beter
+      dan afwachten maar het verschil was NIET SIGNIFICANT; de auteurs stellen dat
+      de relatieve winst van kinesitherapie klein is en de keuze mede van de
+      beschikbare middelen afhangt. Deze bron stond wel in het refs-veld van de app
+      maar werd in geen enkele evidencetekst gebruikt.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 11879861)
+
+  - key: hupperets_2009_proprioceptief_thuisprogramma
+    auteurs: [Hupperets MDW, Verhagen EALM, van Mechelen W]
+    titel: 'Effect of unsupervised home based proprioceptive training on recurrences of ankle sprain: randomised controlled trial'
+    bron: BMJ
+    jaar: 2009
+    volume_paginas: 339:b2684
+    doi: 10.1136/bmj.b2684
+    pmid: '19589822'
+    url: https://doi.org/10.1136/bmj.b2684
+    type: RCT
+    opmerking: >-
+      522 sporters van 12 tot 70 jaar, tot twee maanden na een laterale
+      enkeldistorsie; 256 kregen bovenop de gebruikelijke zorg een thuisprogramma
+      van acht weken. Na een jaar: 56 recidieven (22%) in de interventiegroep
+      tegenover 89 (33%) in de controlegroep; relatief risico 0,63 (95% BI
+      0,45-0,88), number needed to treat 9. DE REDUCTIE IS 35%, NIET 47% zoals de
+      app schreef. CRUCIALE BEPERKING DIE ONTBRAK: bij sporters die voor hun
+      oorspronkelijke distorsie WEL medisch behandeld waren, was er GEEN significant
+      verschil; het effect kwam uitsluitend van de niet-medisch behandelde sporters.
+      In een kinesitherapeutisch protocol is dat net de omgekeerde populatie.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 19589822)
+
+  - key: dizon_2010_enkelbraces
+    auteurs: [Dizon JMR, Reyes JJB]
+    titel: 'A systematic review on the effectiveness of external ankle supports in the prevention of inversion ankle sprains among elite and recreational players'
+    bron: Journal of Science and Medicine in Sport
+    jaar: 2010
+    volume_paginas: 13(3):309-17
+    doi: 10.1016/j.jsams.2009.05.002
+    pmid: '19586798'
+    url: https://doi.org/10.1016/j.jsams.2009.05.002
+    type: SR
+    opmerking: >-
+      Zeven trials van matige kwaliteit. Bij REEDS EERDER GEBLESSEERDE sporters
+      verminderde een enkelbrace de distorsies met 69% (OR 0,31; 95% BI 0,18-0,51)
+      en tape met 71% (OR 0,29; 0,14-0,57); geen enkel type steun was superieur aan
+      een ander. DE APP SCHREEF DRIEMAAL "53% RECIDIEFREDUCTIE" - dat cijfer staat
+      er niet in, en het werkelijke effect is groter. De app schreef er ook
+      "zonder prestatieverlies" bij; de review onderzoekt prestatie niet.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 19586798)
+
+  - key: schiftan_2015_proprioceptieve_training
+    auteurs: [Schiftan GS, Ross LA, Hahne AJ]
+    titel: 'The effectiveness of proprioceptive training in preventing ankle sprains in sporting populations: a systematic review and meta-analysis'
+    bron: Journal of Science and Medicine in Sport
+    jaar: 2015
+    volume_paginas: 18(3):238-44
+    doi: 10.1016/j.jsams.2014.04.005
+    pmid: '24831756'
+    url: https://doi.org/10.1016/j.jsams.2014.04.005
+    type: SR
+    opmerking: >-
+      Zeven RCT's, 3726 deelnemers. Over alle deelnemers heen: relatief risico 0,65
+      (95% BI 0,55-0,77), dus een reductie van 35%. Bij deelnemers MET een
+      voorgeschiedenis van distorsie 0,64 (0,51-0,81). DE APP GEBRUIKTE DEZE BRON
+      ONDER HET KOPJE "PRIMAIRE PREVENTIE" MET "35-50%" - twee problemen. (1) Het
+      gaat om proprioceptieve training, niet om een neuromusculair opwarmprogramma.
+      (2) Voor PRIMAIRE preventie bij mensen zonder voorgeschiedenis bedroeg het
+      relatief risico wel 0,57 (0,34-0,97), maar dat kwam uit twee op zichzelf
+      NIET-significante trials, en de auteurs besluiten letterlijk dat het bewijs
+      voor primaire preventie ONDUIDELIJK blijft. De bovengrens van 50% staat
+      nergens.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 24831756)
+
+  - key: bachmann_2003_ottawa
+    auteurs: [Bachmann LM, Kolb E, Koller MT, Steurer J, ter Riet G]
+    titel: 'Accuracy of Ottawa ankle rules to exclude fractures of the ankle and mid-foot: systematic review'
+    bron: BMJ
+    jaar: 2003
+    volume_paginas: 326(7386):417
+    doi: 10.1136/bmj.326.7386.417
+    pmid: '12595378'
+    url: https://doi.org/10.1136/bmj.326.7386.417
+    type: SR
+    opmerking: >-
+      32 studies ingesloten, 27 studies met 15581 patienten gepoold. De auteurs
+      poolden bewust NEGATIEVE LIKELIHOOD RATIO'S en geen specificiteiten: 0,08
+      (95% BI 0,03-0,18) voor zowel enkel als middenvoet, en 0,07 (0,03-0,18) bij
+      kinderen. Toegepast op een fractuurprevalentie van 15% blijft minder dan 1,4%
+      kans op een werkelijke fractuur. Conclusie: sensitiviteit van BIJNA 100% met
+      een matige specificiteit, en gebruik zou het aantal onnodige radiografieen met
+      30 tot 40% verminderen. DE APP SCHREEF "SENSITIVITEIT 96-99%" - dat bereik
+      staat er niet in.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 12595378)
+
+  - key: gribble_2016_enkelconsensus
+    auteurs: [Gribble PA, Bleakley CM, Caulfield BM, Docherty CL, Fourchet F, Fong DTP, Hertel J, Hiller CE, Kaminski TW, McKeon PO, Refshauge KM, Verhagen EA, Vicenzino BT, Wikstrom EA, Delahunt E]
+    titel: 'Evidence review for the 2016 International Ankle Consortium consensus statement on the prevalence, impact and long-term consequences of lateral ankle sprains'
+    bron: British Journal of Sports Medicine
+    jaar: 2016
+    volume_paginas: 50(24):1496-1505
+    doi: 10.1136/bjsports-2016-096189
+    pmid: '27259753'
+    url: https://doi.org/10.1136/bjsports-2016-096189
+    type: expert
+    opmerking: >-
+      Evidence review bij een consensusverklaring. Het abstract stelt dat de
+      hervalcijfers hoog zijn en dat daardoor EEN GROOT PERCENTAGE van de patienten
+      chronische enkelinstabiliteit ontwikkelt, met lagere activiteitsniveaus,
+      lagere levenskwaliteit en meer posttraumatische enkelartrose. ER STAAN GEEN
+      CIJFERS VAN 25-40% NA EEN EERSTE DISTORSIE EN GEEN 50-60% NA RECIDIEF; de app
+      gebruikte die twee percentages op drie plaatsen. Ook de definitie van CAI als
+      "minstens 12 maanden instabiliteitsgevoel plus recidief" staat niet in dit
+      abstract.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 27259753)
+
+  - key: doherty_2014_enkelepidemiologie
+    auteurs: [Doherty C, Delahunt E, Caulfield B, Hertel J, Ryan J, Bleakley C]
+    titel: 'The incidence and prevalence of ankle sprain injury: a systematic review and meta-analysis of prospective epidemiological studies'
+    bron: Sports Medicine
+    jaar: 2014
+    volume_paginas: 44(1):123-40
+    doi: 10.1007/s40279-013-0102-5
+    pmid: '24105612'
+    url: https://doi.org/10.1007/s40279-013-0102-5
+    type: SR
+    opmerking: >-
+      ZUIVER EPIDEMIOLOGISCHE meta-analyse van 181 prospectieve studies uit 144
+      artikels; ze gaat over INCIDENTIE en PREVALENTIE, niet over anatomie,
+      spierfunctie of revalidatie. Bevindingen: hogere incidentie bij vrouwen dan
+      mannen (13,6 tegenover 6,94 per 1000 blootstellingen), bij kinderen dan
+      adolescenten (2,85 tegenover 1,94) en bij adolescenten dan volwassenen (1,94
+      tegenover 0,72); zaal- en veldsporten hebben het hoogste risico; laterale
+      distorsie is het meest voorkomende type. DE APP SCHREEF DRIE CLAIMS TOE DIE
+      ER NIET IN STAAN: "85% van alle enkeldistorsies", "ATFL-betrokkenheid in
+      70-85%", "peroneale zwakte bij meer dan 90% van de patienten met chronische
+      instabiliteit" en "reactietijd versnelt pas na 4-6 weken gerichte training".
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 24105612)
+
+  - key: vanderhorst_2015_nordic_amateurs
+    auteurs: [van der Horst N, Smits DW, Petersen J, Goedhart EA, Backx FJG]
+    titel: 'The preventive effect of the nordic hamstring exercise on hamstring injuries in amateur soccer players: a randomized controlled trial'
+    bron: The American Journal of Sports Medicine
+    jaar: 2015
+    volume_paginas: 43(6):1316-23
+    doi: 10.1177/0363546515574057
+    pmid: '25794868'
+    url: https://doi.org/10.1177/0363546515574057
+    type: RCT
+    opmerking: >-
+      579 mannelijke AMATEURvoetballers uit 40 ploegen, 25 sessies Nordic hamstring
+      over 13 weken. DIT IS PRIMAIRE PREVENTIE, GEEN HERLETSELPREVENTIE - de app
+      schreef "herletselrisico". De incidentie daalde van 0,8 (95% BI 0,61-1,15)
+      naar 0,25 (0,19-0,35) per 1000 spelersuren; odds ratio 0,282 (95% BI
+      0,110-0,721; p = 0,005), dus een risicoreductie van ongeveer 72%, niet 51%.
+      Dat cijfer van 51% hoort bij vandyk_2019_nordic en migreerde hier
+      naartoe. WAT DE APP WEGLIET: er was GEEN significant verschil in ERNST van de
+      blessures. Therapietrouw bedroeg 91%.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 25794868)
+
+  - key: ekstrand_2011_spierletsels_voetbal
+    auteurs: [Ekstrand J, Hägglund M, Waldén M]
+    titel: 'Epidemiology of muscle injuries in professional football (soccer)'
+    bron: The American Journal of Sports Medicine
+    jaar: 2011
+    volume_paginas: 39(6):1226-32
+    doi: 10.1177/0363546510395879
+    pmid: '21335353'
+    url: https://doi.org/10.1177/0363546510395879
+    type: cohort
+    opmerking: >-
+      Prospectief cohort, 51 ploegen en 2299 spelers, 2001-2009, 2908
+      geregistreerde spierletsels. Spierletsels vormen 31% van alle letsels en 27%
+      van de totale afwezigheid; 92% treft vier spiergroepen: hamstrings (37%),
+      adductoren (23%), quadriceps (19%) en kuit (13%). ZESTIEN PROCENT ZIJN
+      HERLETSELS, en die veroorzaken significant langere afwezigheid. De incidentie
+      stijgt met de leeftijd, maar bij uitsplitsing enkel voor kuitletsels - NIET
+      voor hamstrings, quadriceps of liesletsels. DE APP GEBRUIKTE DEZE BRON VOOR
+      TWEE CLAIMS DIE ER NIET IN STAAN: dat MRI de gouden standaard voor gradatie
+      is, en dat prematuur terugkeren naar sprinten de meest voorkomende oorzaak
+      van recidief is. Het refs-veld noemde bovendien een andere titel
+      ("Hamstring muscle injuries in professional football: the UEFA injury study").
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 21335353)
+
+  - key: bayer_2017_vroege_revalidatie
+    auteurs: [Bayer ML, Magnusson SP, Kjaer M]
+    titel: 'Early versus Delayed Rehabilitation after Acute Muscle Injury'
+    bron: New England Journal of Medicine
+    jaar: 2017
+    volume_paginas: 377(13):1300-1301
+    doi: 10.1056/NEJMc1708134
+    pmid: '28953439'
+    url: https://doi.org/10.1056/NEJMc1708134
+    type: commentary
+    opmerking: >-
+      VERSCHENEN IN NEJM ALS CORRESPONDENTIE (Letter), NIET IN ORTHOPAEDIC JOURNAL
+      OF SPORTS MEDICINE zoals het refs-veld van de app schreef. PubMed levert GEEN
+      ABSTRACT bij dit item; de inhoudelijke claim dat vroege isometrische belasting
+      op dag 1 tot 2 veilig is en het herstel beter bevordert dan absolute rust, kan
+      dus niet uit het opgehaalde record bevestigd worden. Het artikeltype vermeldt
+      wel Randomized Controlled Trial.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 28953439)
+
+  - key: askling_2013_proximale_ruptuur
+    auteurs: [Askling CM, Koulouris G, Saartok T, Werner S, Best TM]
+    titel: 'Total proximal hamstring ruptures: clinical and MRI aspects including guidelines for postoperative rehabilitation'
+    bron: Knee Surgery, Sports Traumatology, Arthroscopy
+    jaar: 2013
+    volume_paginas: 21(3):515-33
+    doi: 10.1007/s00167-012-2311-0
+    pmid: '23229384'
+    url: https://doi.org/10.1007/s00167-012-2311-0
+    type: review
+    opmerking: >-
+      LET OP - DIT IS NIET HET ARTIKEL DAT DE APP BEDOELDE. Het refs-veld beschreef
+      "New RTS criteria after acute hamstring injuries in male soccer players", maar
+      het artikel van Askling in KSSTA 2013 gaat over TOTALE PROXIMALE
+      HAMSTRINGRUPTUREN met chirurgisch herstel, en is een state-of-the-art review
+      met bewijsniveau V. Het beschrijft een postoperatief revalidatieprogramma dat
+      een therapeut bij meer dan 200 geopereerde patienten toepaste, met een enkele
+      herruptuur. Er staan GEEN drie H-testen als terugkeercriterium in. De
+      publicatie die de app bedoelde is in dit dossier niet opgehaald.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 23229384)
+
+  - key: moen_2009_mtss_review
+    auteurs: [Moen MH, Tol JL, Weir A, Steunebrink M, De Winter TC]
+    titel: 'Medial tibial stress syndrome: a critical review'
+    bron: Sports Medicine
+    jaar: 2009
+    volume_paginas: 39(7):523-46
+    doi: 10.2165/00007256-200939070-00002
+    pmid: '19530750'
+    url: https://doi.org/10.2165/00007256-200939070-00002
+    type: review
+    opmerking: >-
+      DEZE REVIEW SPREEKT HET MECHANISME TEGEN WAAROP HET PROTOCOL GEBOUWD IS.
+      Letterlijk: "Histological studies FAIL TO PROVIDE EVIDENCE that MTSS is
+      caused by periostitis as a result of traction. It is caused by BONY
+      RESORPTION THAT OUTPACES BONE FORMATION of the tibial cortex." De app
+      beschreef juist periostale tractie door soleus en FDL als oorzaak.
+      Verdere kernpunten. Incidentie 4 tot 35% bij militairen en sporters - niet
+      13 tot 20% bij lopers. Diagnose berust op lichamelijk onderzoek; bijkomende
+      beeldvorming (bot, CT, MRI) is goed onderzocht maar van BEPERKTE WAARDE,
+      mede omdat afwijkingen ook bij symptoomvrije personen voorkomen. Intrinsieke
+      risicofactoren uit meerdere prospectieve studies: overmatige pronatie bij
+      staan en VROUWELIJK GESLACHT; uit enkele studies ook hogere BMI, grotere
+      heuprotatie en kuitomtrek. Voorgeschiedenis van MTSS is een extrinsieke
+      risicofactor. BEHANDELING - in drie gerandomiseerde studies was RUST
+      GELIJKWAARDIG AAN ELKE INTERVENTIE; dat is voor een revalidatieprotocol een
+      wezenlijk gegeven en ontbrak volledig. Neopreen of semi-rigide orthesen
+      kunnen MTSS helpen voorkomen (twee grote prospectieve studies).
+    geverifieerd_op: 2026-09-07
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 19530750)
+
+  - key: nielsen_2012_trainingsfouten
+    auteurs: [Nielsen RO, Buist I, Sørensen H, Lind M, Rasmussen S]
+    titel: 'Training errors and running related injuries: a systematic review'
+    bron: International Journal of Sports Physical Therapy
+    jaar: 2012
+    volume_paginas: 7(1):58-75
+    doi: null
+    pmid: '22389869'
+    url: https://pubmed.ncbi.nlm.nih.gov/22389869/
+    type: SR
+    opmerking: >-
+      DE REVIEW ONDERSTEUNT DE 10%-REGEL NIET; ze concludeert het tegendeel.
+      31 ingesloten studies, gemiddelde kwaliteitsscore 44,1%. Letterlijk:
+      "Conflicting results were reported on the relationships between volume,
+      duration, intensity, and frequency and RRI" en "IT WAS NOT POSSIBLE TO
+      IDENTIFY WHICH TRAINING ERRORS WERE RELATED TO RUNNING RELATED INJURIES".
+      De auteurs roepen op tot beter meetwerk voordat oorzakelijke uitspraken
+      mogelijk zijn. De app haalde deze bron aan als onderbouwing voor een
+      concrete progressieregel van maximaal 10% per week. PubMed vermeldt geen
+      DOI (PMC3290924).
+    geverifieerd_op: 2026-09-07
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 22389869)
+
+  - key: wille_2014_loopkinematica
+    auteurs: [Wille CM, Lenhart RL, Wang S, Thelen DG, Heiderscheit BC]
+    titel: 'Ability of sagittal kinematic variables to estimate ground reaction forces and joint kinetics in running'
+    bron: The Journal of Orthopaedic and Sports Physical Therapy
+    jaar: 2014
+    volume_paginas: 44(10):825-30
+    doi: 10.2519/jospt.2014.5367
+    pmid: '25156183'
+    url: https://doi.org/10.2519/jospt.2014.5367
+    type: cohort
+    opmerking: >-
+      TWEEMAAL VERKEERD BESCHREVEN IN DE APP, EN OP TWEE VERSCHILLENDE MANIEREN.
+      De evidencetekst haalde deze studie aan voor "cadansverhoging verlaagt de
+      tibiale belasting significant"; het refs-veld beschreef haar als
+      "Ability of ultrasonographic findings to identify individuals with medial
+      tibial stress syndrome". Geen van beide klopt. Het is een gecontroleerde
+      laboratoriumstudie met dwarsdoorsnede-opzet bij 45 deelnemers op een
+      loopband, die nagaat of sagittale kinematische variabelen bruikbaar zijn om
+      kinetiek te SCHATTEN. Modellen voor piek-knie-extensiemoment (R kwadraat
+      0,43), energieabsorptie in de knie (0,58), patellofemorale gewrichtsreactie-
+      kracht (0,55), verticale grondreactiekracht (0,48) en remimpuls (0,50); de
+      gemiddelde verticale belastingssnelheid liet zich juist SLECHT schatten
+      (R kwadraat 0,04). Er wordt geen tibiale belasting gemeten en geen
+      cadansinterventie onderzocht.
+    geverifieerd_op: 2026-09-07
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 25156183)
+
+  - key: kulig_2004_tibialis_posterior
+    auteurs: [Kulig K, Burnfield JM, Requejo SM, Sperry M, Terk M]
+    titel: 'Selective activation of tibialis posterior: evaluation by magnetic resonance imaging'
+    bron: Medicine and Science in Sports and Exercise
+    jaar: 2004
+    volume_paginas: 36(5):862-7
+    doi: 10.1249/01.mss.0000126385.12402.2e
+    pmid: '15126722'
+    url: https://doi.org/10.1249/01.mss.0000126385.12402.2e
+    type: cohort
+    opmerking: >-
+      GEEN EXCENTRISCH PROTOCOL EN GEEN PTTD-PATIENTEN. Het is een MRI-studie bij
+      VIJF GEZONDE volwassenen met een normale Arch Index, die drie oefeningen
+      vergelijkt op SELECTIEVE ACTIVATIE van de tibialis posterior: gesloten-keten
+      voetadductie tegen weerstand, eenbenige hielheffing, en open-keten supinatie
+      tegen weerstand. Voetadductie gaf veruit de grootste toename van het
+      TP-signaal (50 +/- 6%), terwijl de andere spieren minder dan 5% toenamen; bij
+      hielheffing werd de TP overvleugeld door mediale gastrocnemius (99%),
+      peroneus longus (57%) en soleus (39%). Voetadductie activeerde de TP
+      significant sterker dan supinatie (p = 0,021). De app schreef "excentrisch
+      superieur aan concentrisch voor PTTD stadium I-II" - die vergelijking komt in
+      de studie niet voor. WAT ER WEL IN STAAT IS KLINISCH BRUIKBAARDER: wie de
+      tibialis posterior gericht wil trainen, kiest gesloten-keten voetadductie en
+      niet de hielheffing.
+    geverifieerd_op: 2026-09-07
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 15126722)
+
+  - key: hara_2023_short_foot
+    auteurs: [Hara S, Kitano M, Kudo S]
+    titel: 'The effects of short foot exercises to treat flat foot deformity: A systematic review'
+    bron: Journal of Back and Musculoskeletal Rehabilitation
+    jaar: 2023
+    volume_paginas: 36(1):21-33
+    doi: 10.3233/BMR-210374
+    pmid: '35871320'
+    url: https://doi.org/10.3233/BMR-210374
+    type: SR
+    opmerking: >-
+      Systematische review van NEGEN gerandomiseerde studies over short foot
+      exercises. Zes studies onderzochten de mediale lengteboog, waarvan er VIER
+      verbetering rapporteerden. De auteurs stellen uitdrukkelijk dat er GEEN
+      consensus bestaat over aantal en frequentie van de oefeningen en dat het
+      MECHANISME van de boogverbetering ONDUIDELIJK is; verbetering werd gezien bij
+      interventies van vijf weken of langer. DE APP HAALDE DEZE BRON AAN VOOR
+      PROPRIOCEPTIETRAINING OP INSTABIEL VLAK EN VOOR VERLAAGDE REARFOOT EVERSIE
+      TIJDENS HET GAAN - geen van beide komt in deze review voor. Het refs-veld
+      beschreef de titel wel correct; de evidencetekst gebruikte de bron voor een
+      andere claim.
+    geverifieerd_op: 2026-09-07
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 35871320)
+
+  - key: barton_2011_rearfoot_orthesen
+    auteurs: [Barton CJ, Menz HB, Levinger P, Webster KE, Crossley KM]
+    titel: 'Greater peak rearfoot eversion predicts foot orthoses efficacy in individuals with patellofemoral pain syndrome'
+    bron: British Journal of Sports Medicine
+    jaar: 2011
+    volume_paginas: 45(9):697-701
+    doi: 10.1136/bjsm.2010.077644
+    pmid: '21081642'
+    url: https://doi.org/10.1136/bjsm.2010.077644
+    type: cohort
+    opmerking: >-
+      26 personen met patellofemoraal pijnsyndroom kregen prefab-inlegzolen; 25
+      voltooiden de studie. NA TWaalf WEKEN MELDDE SLECHTS 28% (ZEVEN PERSONEN)
+      duidelijke verbetering - dat cijfer ontbrak in de app en is net wat de
+      kinesitherapeut aan de patient moet kunnen zeggen. Van de onderzochte
+      bewegingsvariabelen was een grotere piek-rearfoot-eversie de ENIGE
+      significante onafhankelijke voorspeller van die verbetering. DE AUTEURS
+      NOEMEN DIT ZELF "PRELIMINARY EVIDENCE". Er staat GEEN drempel van 3 graden
+      rearfoot eversie in; de app hanteerde die wel als selectiecriterium.
+    geverifieerd_op: 2026-09-07
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 21081642)
+
+  - key: artz_2015_kinesitherapie_tka
+    auteurs: [Artz N, Elvers KT, Minns Lowe C, Sackley C, Jepson P, Beswick AD]
+    titel: 'Effectiveness of physiotherapy exercise following total knee replacement: systematic review and meta-analysis'
+    bron: BMC Musculoskeletal Disorders
+    jaar: 2015
+    volume_paginas: 16:15
+    doi: 10.1186/s12891-015-0469-6
+    pmid: '25886975'
+    url: https://doi.org/10.1186/s12891-015-0469-6
+    type: SR
+    opmerking: >-
+      18 gerandomiseerde studies, 1739 patienten. Tegenover controles met minimale
+      kinesitherapie verbeterde oefentherapie de fysieke functie op 3 tot 4 maanden
+      (SMD -0,37; 95% BI -0,62 tot -0,12) en de pijn (SMD -0,45; -0,85 tot -0,06).
+      DE APP CITEERDE DEZE BRON TWEEMAAL VERKEERD. (1) "Ambulante kinesitherapie
+      driemaal per week is superieur" - de review vond juist GEEN VERSCHIL tussen
+      ambulante en thuisbehandeling voor functie of pijn, en op korte termijn een
+      voordeel VOOR THUISBEHANDELING wat de flexie-mobiliteit betreft. (2)
+      "Progressieve weerstandstraining op 70-80% 1RM is veilig en effectief" - de
+      review evalueert nergens weerstandsintensiteit. WEGGELATEN NUANCE: de
+      auteurs besluiten dat de winst KORTE TERMIJN is, dat er GEEN LANGETERMIJN-
+      EFFECTEN werden gevonden, en dat de conclusie op een klein aantal kleine
+      studies berust die zowel afzonderlijk als gecombineerd onvoldoende power
+      hadden. Ook geen verschil bij hydrotherapie als vergelijking, of bij
+      toevoeging van balans- of fietsonderdelen.
+    geverifieerd_op: 2026-09-07
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 25886975)
+
+  - key: adie_2012_cryotherapie_tka
+    auteurs: [Adie S, Kwan A, Naylor JM, Harris IA, Mittal R]
+    titel: 'Cryotherapy following total knee replacement'
+    bron: Cochrane Database of Systematic Reviews
+    jaar: 2012
+    volume_paginas: (9):CD007911
+    doi: 10.1002/14651858.CD007911.pub2
+    pmid: '22972114'
+    url: https://doi.org/10.1002/14651858.CD007911.pub2
+    type: SR
+    opmerking: >-
+      Elf gerandomiseerde trials en een gecontroleerde trial, 809 deelnemers. Bewijs
+      van ZEER LAGE kwaliteit voor een klein effect op bloedverlies (SMD -0,46;
+      95% BI -0,84 tot -0,08, ofwel 225 ml minder) en op pijn NA 48 UUR (verschil
+      1,32 punten op een tienpuntsschaal; 95% BI -2,37 tot -0,27) - maar NIET na 24
+      of 72 uur, en beide effecten mogelijk niet klinisch relevant. Bewijs van lage
+      kwaliteit voor 11,4 graden meer flexie bij ontslag. Geen verschil in
+      ongewenste voorvallen, transfusiebehoefte, analgeticagebruik, zwelling of
+      ligduur. CONCLUSIE VAN DE AUTEURS - de mogelijke voordelen "MAY BE TOO SMALL
+      TO JUSTIFY ITS USE", af te wegen tegen ongemak en kosten. De app schreef
+      simpelweg "cryotherapie reduceert pijn".
+    geverifieerd_op: 2026-09-07
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 22972114)
+
+  - key: harvey_2014_cpm_tka
+    auteurs: [Harvey LA, Brosseau L, Herbert RD]
+    titel: 'Continuous passive motion following total knee arthroplasty in people with arthritis'
+    bron: Cochrane Database of Systematic Reviews
+    jaar: 2014
+    volume_paginas: 2014(2):CD004260
+    doi: 10.1002/14651858.CD004260.pub3
+    pmid: '24500904'
+    url: https://doi.org/10.1002/14651858.CD004260.pub3
+    type: SR
+    opmerking: >-
+      24 gerandomiseerde studies, 1445 deelnemers. CPM heeft GEEN klinisch
+      relevante effecten op actieve knieflexie (2 graden extra; 95% BI 0 tot 5),
+      pijn (0,4 punten minder op tien; -0,8 tot 0,1), functie (1,6 punten minder op
+      honderd) of levenskwaliteit (1 punt meer op honderd). Conclusie: CPM
+      rechtvaardigt geen routinematig gebruik. NUANCE DIE DE APP WEGLIET: CPM
+      verlaagt mogelijk wel het risico op manipulatie onder narcose (7,2% naar
+      1,6%; risicoratio 0,3; 95% BI 0,1 tot 0,9) en op ongewenste voorvallen, maar
+      dat bewijs is van respectievelijk ZEER LAGE en lage kwaliteit en zeer
+      onnauwkeurig.
+    geverifieerd_op: 2026-09-07
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 24500904)
+
+  - key: mellor_2018_gluteale_tendinopathie
+    auteurs: [Mellor R, Bennell K, Grimaldi A, Nicolson P, Kasza J, Hodges P, Wajswelner H, Vicenzino B]
+    titel: 'Education plus exercise versus corticosteroid injection use versus a wait and see approach on global outcome and pain from gluteal tendinopathy: prospective, single blinded, randomised clinical trial'
+    bron: BMJ
+    jaar: 2018
+    volume_paginas: 361:k1662
+    doi: 10.1136/bmj.k1662
+    pmid: '29720374'
+    url: https://doi.org/10.1136/bmj.k1662
+    type: RCT
+    opmerking: >-
+      Sterke trial: 204 deelnemers van 35 tot 70 jaar met MRI-bevestigde gluteale
+      tendinopathie, drie armen - educatie plus oefening (EDX, 14 sessies over acht
+      weken), een corticosteroidinjectie (CSI) en afwachten (WS); 92,6% voltooide
+      52 weken. OP ACHT WEKEN: succes bij 51 van 66 (EDX), 38 van 65 (CSI) en 20
+      van 68 (WS); EDX beter dan WS met een risicoverschil van 49,1% (95% BI 34,6
+      tot 63,5) en number needed to treat 2,0; EDX ook beter dan CSI (19,9%; 4,7
+      tot 35,0). Pijn op acht weken: 1,5 (EDX), 2,7 (CSI), 3,8 (WS). OP 52 WEKEN:
+      succes bij 51 van 65, 36 van 63 en 31 van 60; EDX beter dan CSI (20,4%) en
+      dan WS (26,8%). BELANGRIJKE NUANCE DIE DE APP WEGLIET: op 52 weken was er
+      GEEN VERSCHIL IN PIJNINTENSITEIT tussen EDX en CSI (-0,26; 95% BI -1,06 tot
+      0,55) - de superioriteit op lange termijn geldt voor de globale beoordeling,
+      niet voor de pijn. DE TRIAL BEVAT GEEN REKARM: een vergelijking van
+      hoogbelaste krachttraining met rekoefeningen kan er niet uit komen.
+    geverifieerd_op: 2026-09-07
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 29720374)
+
+  - key: allison_2016_abductorkracht
+    auteurs: [Allison K, Vicenzino B, Wrigley TV, Grimaldi A, Hodges PW, Bennell KL]
+    titel: 'Hip Abductor Muscle Weakness in Individuals with Gluteal Tendinopathy'
+    bron: Medicine and Science in Sports and Exercise
+    jaar: 2016
+    volume_paginas: 48(3):346-52
+    doi: 10.1249/MSS.0000000000000781
+    pmid: '26418561'
+    url: https://doi.org/10.1249/MSS.0000000000000781
+    type: cohort
+    opmerking: >-
+      GEEN INTERVENTIESTUDIE. Het is een case-controlstudie die de isometrische
+      heupabductiekracht van 50 personen met eenzijdige gluteale tendinopathie
+      vergelijkt met 50 gezonde controles. Bevindingen: mensen met gluteale
+      tendinopathie zijn BEIDERZIJDS zwakker dan controles - 32% aan de
+      symptomatische en 23% aan de asymptomatische zijde - en de symptomatische
+      heup is 11% zwakker dan de eigen andere zijde (alle p < 0,05). DE AUTEURS
+      STELLEN UITDRUKKELIJK dat NIET DUIDELIJK is of de zwakte aan de aandoening
+      VOORAFGAAT dan wel er een GEVOLG van is. De app schreef dat progressieve
+      isotone abductietraining volgens deze bron pijn vermindert en het
+      functioneren verbetert - die studie bevat geen enkele behandeling.
+    geverifieerd_op: 2026-09-07
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 26418561)
+
+  - key: grimaldi_2015_gluteale_tendinopathie
+    auteurs: [Grimaldi A, Fearon A]
+    titel: 'Gluteal Tendinopathy: Integrating Pathomechanics and Clinical Features in Its Management'
+    bron: The Journal of Orthopaedic and Sports Physical Therapy
+    jaar: 2015
+    volume_paginas: 45(11):910-22
+    doi: 10.2519/jospt.2015.5829
+    pmid: '26381486'
+    url: https://doi.org/10.2519/jospt.2015.5829
+    type: expert
+    opmerking: >-
+      KLINISCHE COMMENTAAR, geen studie. De auteurs schrijven zelf dat hun
+      aanbevelingen berusten op de "currently limited available evidence on this
+      condition and the wider tendon literature and on the COMBINED CLINICAL
+      EXPERIENCE OF THE AUTHORS", en dat studies van hoge kwaliteit nog ontbreken.
+      Kernboodschap: gluteale tendinopathie geldt nu als de primaire lokale bron
+      van laterale heuppijn, vroeger trochanter-bursitis genoemd, met een hoge
+      prevalentie bij postmenopauzale vrouwen en een aanzienlijke weerslag op de
+      levenskwaliteit. ER STAAT GEEN DREMPEL VAN 90% VOOR DE LIMB SYMMETRY INDEX
+      IN; de app gebruikte die wel als criterium voor sporthervatting.
+    geverifieerd_op: 2026-09-07
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 26381486)
+
+  - key: wilk_2011_gird_werpers
+    auteurs: [Wilk KE, Macrina LC, Fleisig GS, Porterfield R, Simpson CD, Harker P, Paparesta N, Andrews JR]
+    titel: 'Correlation of glenohumeral internal rotation deficit and total rotational motion to shoulder injuries in professional baseball pitchers'
+    bron: The American Journal of Sports Medicine
+    jaar: 2011
+    volume_paginas: 39(2):329-35
+    doi: 10.1177/0363546510384223
+    pmid: '21131681'
+    url: https://doi.org/10.1177/0363546510384223
+    type: cohort
+    opmerking: >-
+      CASE SERIES, BEWIJSNIVEAU 4. 170 werperseizoenen bij 122 profwerpers over
+      drie seizoenen. HET KERNCIJFER VAN DE APP MIST ZIJN BELANGRIJKSTE
+      KWALIFICATIE: werpers met GIRD (n = 40) hadden bijna tweemaal zoveel kans op
+      blessure, MAAR ZONDER STATISTISCHE SIGNIFICANTIE (p = 0,17). De app schreef
+      "1,9 maal hoger risico" zonder die p-waarde te noemen. Over het totale
+      rotatiebewegingsdeficit staat enkel dat werpers met meer dan 5 graden
+      deficit een hoger blessurecijfer hadden - ER STAAT GEEN FACTOR 2,5 in het
+      abstract. GIRD is in dit artikel gedefinieerd als 20 graden of meer verlies
+      van endorotatie tegenover de niet-dominante schouder.
+    geverifieerd_op: 2026-09-07
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 21131681)
+
+  - key: provencher_2013_slap_herstel
+    auteurs: [Provencher MT, McCormick F, Dewing C, McIntire S, Solomon D]
+    titel: 'A prospective analysis of 179 type 2 superior labrum anterior and posterior repairs: outcomes and factors associated with success and failure'
+    bron: The American Journal of Sports Medicine
+    jaar: 2013
+    volume_paginas: 41(4):880-6
+    doi: 10.1177/0363546513477363
+    pmid: '23460326'
+    url: https://doi.org/10.1177/0363546513477363
+    type: cohort
+    opmerking: >-
+      Case-controlstudie, bewijsniveau 3; 225 prospectief ingesloten patienten,
+      179 met opvolging (80%) na gemiddeld 40,4 maanden. Scores verbeterden
+      significant (ASES 65 naar 88; WOSI 54 naar 82%; SANE 50 naar 85%; p < 0,01).
+      MAAR: 66 van de 179 (36,8%) voldeed aan de faalcriteria en 50 patienten
+      kozen voor een heringreep - een revisiepercentage van 28%. Leeftijd boven 36
+      jaar was de ENIGE factor met een significant hogere faalkans (relatief risico
+      3,45; 95% BI 2,0-4,9). TWEE DINGEN DIE DE APP WEGLIET: de postoperatieve
+      bewegingsuitslag was KLEINER dan preoperatief (flexie 159 tegenover 164
+      graden, abductie 151 tegenover 166, exorotatie 51 tegenover 56), en de
+      auteurs besluiten dat verder werk nodig is om de optimale indicatiestelling
+      en chirurgische aanpak te bepalen - ZE BEVELEN GEEN TENODESE AAN BIJ OUDEREN,
+      zoals de app schreef.
+    geverifieerd_op: 2026-09-07
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 23460326)
+
+  - key: edwards_2010_conservatief_slap
+    auteurs: [Edwards SL, Lee JA, Bell JE, Packer JD, Ahmad CS, Levine WN, Bigliani LU, Blaine TA]
+    titel: 'Nonoperative treatment of superior labrum anterior posterior tears: improvements in pain, function, and quality of life'
+    bron: The American Journal of Sports Medicine
+    jaar: 2010
+    volume_paginas: 38(7):1456-61
+    doi: 10.1177/0363546510370937
+    pmid: '20522835'
+    url: https://doi.org/10.1177/0363546510370937
+    type: cohort
+    opmerking: >-
+      CASE SERIES, BEWIJSNIVEAU 4, MET ZWAKKE BASIS: een postenquete bij 371
+      patienten met een RESPONSGRAAD VAN 16,4% (50 van 305 bereikte adressen);
+      uiteindelijk 39 bruikbare antwoorden waarvan SLECHTS 19 NIET-OPERATIEF
+      behandeld. Van de bevraagde groep werd 51% (20 patienten) als falen van
+      conservatief beleid beschouwd en geopereerd. Bij wie conservatief slaagde,
+      verbeterden functie, levenskwaliteit en pijn significant (VAS 4,5 naar 2,1;
+      p = 0,043). HET CIJFER DAT DE APP GEBRUIKT EN HET CIJFER DAT ONTBREEKT:
+      71% van ALLE sporters keerde terug naar het vorige niveau, maar SLECHTS 66%
+      VAN DE BOVENHANDSE SPORTERS - en dit protocol gaat juist over bovenhandse
+      sporters. De auteurs besluiten dat bij bovenhandse atleten en bij uitblijvend
+      resultaat chirurgie overwogen moet worden.
+    geverifieerd_op: 2026-09-07
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 20522835)
+
+  - key: cools_2014_scapulaire_dyskinesie
+    auteurs: [Cools AMJ, Struyf F, De Mey K, Maenhout A, Castelein B, Cagnie B]
+    titel: 'Rehabilitation of scapular dyskinesis: from the office worker to the elite overhead athlete'
+    bron: British Journal of Sports Medicine
+    jaar: 2014
+    volume_paginas: 48(8):692-7
+    doi: 10.1136/bjsports-2013-092148
+    pmid: '23687006'
+    url: https://doi.org/10.1136/bjsports-2013-092148
+    type: review
+    opmerking: >-
+      Review die een "science-based clinical reasoning algorithm with practical
+      guidelines" presenteert voor de revalidatie van scapulaire dyskinesie. De
+      auteurs stellen zelf vast dat overkoepelende revalidatierichtlijnen voor
+      zowel schouder- als nekpatienten ONTBREKEN. Het is dus een
+      redeneerkader, geen effectstudie. ER STAAT GEEN AFKAPWAARDE VAN 0,66 VOOR DE
+      ER/IR-VERHOUDING IN; de app gebruikte die wel en schreef ze aan deze bron
+      toe. Dit is de derde plaats in dit dossier waar de verhouding 0,66 aan een
+      bron wordt toegeschreven die ze niet bevat (eerder bij Cools 2007 in het
+      rotatorenmanchet- en het schouderinstabiliteitsprotocol).
+    geverifieerd_op: 2026-09-07
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 23687006)
+
+  - key: lozanocalderon_2008_polsmobilisatie
+    auteurs: [Lozano-Calderón SA, Souer S, Mudgal C, Jupiter JB, Ring D]
+    titel: 'Wrist mobilization following volar plate fixation of fractures of the distal part of the radius'
+    bron: The Journal of Bone and Joint Surgery (American volume)
+    jaar: 2008
+    volume_paginas: 90(6):1297-304
+    doi: 10.2106/JBJS.G.01368
+    pmid: '18519324'
+    url: https://doi.org/10.2106/JBJS.G.01368
+    type: RCT
+    opmerking: >-
+      DIT IS EEN HEEL ANDER ARTIKEL DAN HET REFS-VELD VAN DE APP BESCHREEF. Daar
+      stond "Quality and strength of evidence for etiology in orthopaedic
+      research" - een methodologisch stuk. In werkelijkheid is dit een
+      gerandomiseerde trial: 60 patienten met een geisoleerde distale
+      radiusfractuur na volaire plaatfixatie, gerandomiseerd naar mobilisatie
+      BINNEN TWEE WEKEN of PAS NA ZES WEKEN. UITKOMST: GEEN significant verschil in
+      flexie-extensieboog na drie maanden (104 tegenover 107 graden; p = 0,61) of
+      na zes maanden (124 tegenover 126 graden; p = 0,65), en evenmin in
+      grijpkracht, radiografische parameters, DASH, Mayo-score, Gartland en Werley
+      of pijn. CONCLUSIE VAN DE AUTEURS: starten met polsoefeningen na zes weken
+      leidt NIET tot minder polsbeweging dan starten binnen twee weken. Die
+      bevinding raakt de kernaanbeveling van dit protocol rechtstreeks en ontbrak
+      volledig; de app citeerde de bron in plaats daarvan voor een hersteltermijn
+      van 12 tot 24 maanden, die er niet in staat.
+    geverifieerd_op: 2026-09-07
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 18519324)
+
+  - key: quadlbauer_2017_vroege_revalidatie
+    auteurs: [Quadlbauer S, Pezzei C, Jurkowitsch J, Kolmayr B, Keuchel T, Simon D, Hausner T, Leixnering M]
+    titel: 'Early Rehabilitation of Distal Radius Fractures Stabilized by Volar Locking Plate: A Prospective Randomized Pilot Study'
+    bron: Journal of Wrist Surgery
+    jaar: 2017
+    volume_paginas: 6(2):102-112
+    doi: 10.1055/s-0036-1587317
+    pmid: '28428911'
+    url: https://doi.org/10.1055/s-0036-1587317
+    type: RCT
+    opmerking: >-
+      PILOTSTUDIE MET SLECHTS 30 PATIENTEN (15 tegenover 15), door de auteurs zelf
+      zo genoemd; bewijsniveau Ib. Vergelijkt onmiddellijke mobilisatie na de
+      operatie met vijf weken immobilisatie. De vroeg gemobiliseerde groep deed het
+      significant beter op bewegingsuitslag in het sagittale vlak, op grijpkracht
+      TOT ZES MAANDEN, in het frontale vlak tot negen weken en in onderarmrotatie
+      tot zes weken; DASH en PRWE waren beter tot zes weken en de Green
+      O'Brien-score verschilde tot een jaar. Geen verschil in verlies van reductie,
+      pijn, duur van de kinesitherapie of ziekteverzuim. LET OP DE TEGENSTRIJDIGE
+      EVIDENTIE: deze pilot ondersteunt vroege mobilisatie, terwijl de grotere
+      trial van lozanocalderon_2008_polsmobilisatie (n = 60) GEEN verschil vond
+      tussen starten binnen twee weken en starten na zes weken. Beide standpunten
+      horen volgens CLAUDE.md par. 1.9 vermeld te worden.
+    geverifieerd_op: 2026-09-07
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 28428911)
+
+  - key: cavaleri_2016_dequervain
+    auteurs: [Cavaleri R, Schabrun SM, Te M, Chipchase LS]
+    titel: "Hand therapy versus corticosteroid injections in the treatment of de Quervain's disease: A systematic review and meta-analysis"
+    bron: Journal of Hand Therapy
+    jaar: 2016
+    volume_paginas: 29(1):3-11
+    doi: 10.1016/j.jht.2015.10.004
+    pmid: '26705671'
+    url: https://doi.org/10.1016/j.jht.2015.10.004
+    type: SR
+    opmerking: >-
+      WAT DE APP WEGLIET IS PRECIES WAT DE KINESITHERAPEUT AANGAAT: zowel
+      corticosteroidinjecties als handtherapie verbeterden pijn en functie ten
+      opzichte van de uitgangswaarde, maar de VERSCHILLEN TUSSEN BEIDE WAREN NIET
+      SIGNIFICANT (over zes studies). Wat wel significant was: de COMBINATIE van
+      orthese en injectie gaf meer behandelsucces dan orthese alleen (relatief
+      risico 0,53; 95% BI 0,35-0,80) en dan injectie alleen (0,76; 0,64-0,89).
+      ER STAAT GEEN NUMBER NEEDED TO TREAT VAN 3 IN. De app gebruikte deze bron in
+      fase 2 bovendien voor een vergelijking tussen progressieve krachttraining en
+      verdere immobilisatie - die komt in deze review niet voor.
+    geverifieerd_op: 2026-09-07
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 26705671)
+
+  - key: walker_2000_polsspalk_cts
+    auteurs: [Walker WC, Metzler M, Cifu DX, Swartz Z]
+    titel: 'Neutral wrist splinting in carpal tunnel syndrome: a comparison of night-only versus full-time wear instructions'
+    bron: Archives of Physical Medicine and Rehabilitation
+    jaar: 2000
+    volume_paginas: 81(4):424-9
+    doi: 10.1053/mr.2000.3856
+    pmid: '10768530'
+    url: https://doi.org/10.1053/mr.2000.3856
+    type: RCT
+    opmerking: >-
+      DE VERGELIJKING IS EEN ANDERE DAN DE APP BESCHREEF. Deze trial vergelijkt
+      NACHTELIJK dragen met VOLTIJDS dragen van een neutrale polsspalk; er is GEEN
+      controlegroep zonder behandeling, dus "spalk significant beter dan geen
+      behandeling" kan er niet uit komen. Zeer kleine studie: 21 patienten
+      (30 handen) ingesloten, 17 patienten (24 handen) voltooiden. Uitkomstmaten
+      waren de zelfrapportagevragenlijst van Levine en de distale latentie van de
+      nervus medianus - GEEN NRS en GEEN BCTQ-SSS, en de cijfers -2,1 en -0,5 uit
+      de app komen er niet in voor. Bevindingen: de hele groep verbeterde op
+      sensorische distale latentie, symptoomernst en functie; voltijds dragen gaf
+      BETERE distale latentie dan enkel 's nachts (motorisch 0,35 tegenover -0,07
+      ms; p = 0,04). Therapietrouw was beperkt: 73% van de voltijdsgroep droeg de
+      spalk minder dan de helft van de wakkere uren.
+    geverifieerd_op: 2026-09-07
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 10768530)
+
+  - key: huisstede_2010_cts_chirurgie
+    auteurs: [Huisstede BM, Randsdorp MS, Coert JH, Glerum S, van Middelkoop M, Koes BW]
+    titel: 'Carpal tunnel syndrome. Part II: effectiveness of surgical treatments - a systematic review'
+    bron: Archives of Physical Medicine and Rehabilitation
+    jaar: 2010
+    volume_paginas: 91(7):1005-24
+    doi: 10.1016/j.apmr.2010.03.023
+    pmid: '20599039'
+    url: https://doi.org/10.1016/j.apmr.2010.03.023
+    type: SR
+    opmerking: >-
+      GEEN COCHRANE-REVIEW - de app noemde deze bron driemaal "(Cochrane)"; ze
+      verscheen in Archives of Physical Medicine and Rehabilitation. Twee reviews
+      en 25 gerandomiseerde studies ingesloten. Matig bewijs ten gunste van
+      chirurgie tegenover spalken of ontstekingsremmers plus handtherapie op
+      middellange en lange termijn. DE KERNZIN DIE DE APP DRIEMAAL TEGENSPREEKT:
+      "NO EVIDENCE WAS FOUND FOR THE EFFICACY OF VARIOUS PRESURGICAL OR
+      POSTSURGICAL TREATMENT PROGRAMS, INCLUDING SPLINTING." De app haalde deze
+      bron aan als bewijs dat vroege mobilisatie superieur is aan immobilisatie na
+      release en dat handtherapie de grijpkracht en BCTQ sneller verbetert dan geen
+      therapie - de review vond voor geen van beide bewijs. Ook: geen enkele
+      gerandomiseerde studie onderzocht de optimale timing van chirurgie, en er is
+      geen bewijs dat een bepaalde chirurgische techniek beter is dan een andere.
+    geverifieerd_op: 2026-09-07
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 20599039)

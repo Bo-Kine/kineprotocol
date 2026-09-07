@@ -1431,12 +1431,37 @@ document.addEventListener('keydown', e => {
   if(e.key === 'Escape') { closeYT(); closeRF(); closeFiche(); closePatNew(); closePatLink(); closeBeslisboom(); closeForm(); closeEvalForm(); }
 });
 
+// ── BRONSTATUS ──
+// Toont per protocol of de citaties in de evidencetekst tegen de primaire bron
+// zijn gelegd. Zonder dit onderscheid lijkt elke citatie in de app even hard,
+// terwijl de meeste nog nooit gecontroleerd zijn. Data komt uit bronstatus.js,
+// dat gegenereerd wordt uit data/claims/*.yaml.
+function bronBadge(protoId) {
+  const st = (typeof BRONSTATUS !== 'undefined') ? BRONSTATUS[protoId] : null;
+  if(!st) return `<span class="bron-badge bron-open" title="De citaties in dit protocol zijn nog niet tegen de primaire bron gecontroleerd. Behandel ze als richtinggevend, niet als geverifieerd.">bronnen niet geauditeerd</span>`;
+  const ng = st.niet_gedekt || 0;
+  const rest = st.open ? ` · ${st.open} open` : '';
+  // Toon de uitkomst, niet alleen het feit dat er geauditeerd is: een groen vinkje
+  // bij "21 claims gecontroleerd" leest als kwaliteitskeurmerk, terwijl bij de
+  // meeste protocollen juist het merendeel van de citaties de claim niet dekte.
+  const klasse = ng > st.gedekt ? 'bron-open' : 'bron-ok';
+  // Kort houden: op een telefoon staat de badge naast het label "Evidence-basis".
+  // De volledige uitleg zit in de tooltip.
+  const kern = ng
+    ? `${st.gecontroleerd} claims · ${ng} niet gedekt`
+    : `${st.gecontroleerd} claims gedekt`;
+  const uitleg = ng
+    ? `Alle citaties zijn eerstehands opgehaald. Bij ${ng} van de ${st.gecontroleerd} gecontroleerde uitspraken bleek de aangehaalde bron de claim niet te dekken. Die uitspraken zijn niet noodzakelijk onjuist, maar staan nu in de tekst als klinische redenering of praktijkafspraak in plaats van als evidentie. Zie data/claims/${protoId}.yaml voor de volledige verantwoording.`
+    : 'Elke citatie is eerstehands opgehaald en tegen de primaire bron gelegd.';
+  return `<span class="bron-badge ${klasse}" title="${uitleg}">bronaudit ${st.datum} · ${kern}${rest}</span>`;
+}
+
 // ── RENDER PHASE ──
 function renderPhase(i) {
   const ph = currentProto.phases[i];
   let html = '';
   // Evidence standaard geklemd op 2 regels; klik om uit te vouwen
-  html += `<div class="ev-box clamp" onclick="this.classList.toggle('expanded')"><div class="ev-label">Evidence-basis</div><div class="ev-text">${ph.evidence}</div><div class="ev-hint">▸ lees volledige evidence</div></div>`;
+  html += `<div class="ev-box clamp" onclick="this.classList.toggle('expanded')"><div class="ev-label">Evidence-basis${bronBadge(currentProto.id)}</div><div class="ev-text">${ph.evidence}</div><div class="ev-hint">▸ lees volledige evidence</div></div>`;
   html += `<div class="goals-box"><div class="goals-label">Doelstellingen — ${ph.title}</div><ul class="glist">${ph.goals.map(g=>`<li>${g}</li>`).join('')}</ul></div>`;
   if(ph.exercises?.length) {
     html += `<div class="slabel">Oefenprogramma</div><div class="ex-grid">`;
@@ -1454,11 +1479,13 @@ function renderPhase(i) {
       html += `</div>`;
     });
     html += `</div>`;
+    html += `<div class="crit-noot">De toelichting bij een oefening is <strong>klinische richtlijn</strong> tenzij er een bron bij vermeld staat. Doseringen, hoeken, herhalingen en uitspraken over werkingsmechanismen zijn praktijkkeuzes; alleen wat expliciet naar een bron verwijst, is tegen de primaire literatuur gecontroleerd.</div>`;
   }
   if(ph.criteria_go?.length || ph.criteria_stop?.length) {
     html += `<div class="slabel">Doorstroomcriteria</div><div class="criteria-grid">`;
     if(ph.criteria_go?.length) html += `<div class="cbox go"><div class="ctitle go">Vereist ✓</div><ul class="clist go">${ph.criteria_go.map(c=>`<li>${c}</li>`).join('')}</ul></div>`;
     if(ph.criteria_stop?.length) html += `<div class="cbox stop"><div class="ctitle stop">Vertraag ⚠</div><ul class="clist stop">${ph.criteria_stop.map(c=>`<li>${c}</li>`).join('')}</ul></div>`;
+    html += `<div class="crit-noot">Doorstroomcriteria en fasedoelstellingen zijn <strong>praktijkafspraken</strong> tenzij er in de tekst een bron bij staat. Getallen zoals afstanden, hoeken, tijden, LSI- en vragenlijstdrempels zijn in dit dossier niet met literatuur onderbouwd en dienen als houvast, niet als bewijs.</div>`;
     html += `</div>`;
   }
   if(ph.redflags?.length) html += `<div class="rf-box"><div class="rf-label">Rode vlaggen</div><ul class="rf-list">${ph.redflags.map(r=>`<li>${r}</li>`).join('')}</ul></div>`;
@@ -1595,7 +1622,13 @@ let swRegistratie = null;
 
 if('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js')
+    // updateViaCache:'none' is essentieel. Met de standaardwaarde ('imports')
+    // haalt de browser bij een updatecheck version.js uit zijn HTTP-cache. Omdat
+    // sw.js zelf dan byte-identiek is, besluit hij dat er geen update is en blijft
+    // het toestel op de oude cache hangen — ook al staat er allang een nieuwe
+    // versie op de server. Met 'none' worden sw.js én de geïmporteerde scripts
+    // altijd vers opgehaald bij de controle.
+    navigator.serviceWorker.register('./sw.js', { updateViaCache: 'none' })
       .then(reg => { swRegistratie = reg; reg.update().catch(()=>{}); })
       .catch(()=>{});
   });

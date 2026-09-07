@@ -1,0 +1,122 @@
+protocol: orif
+protocol_titel: ORIF Distale Radius
+laatst_gecontroleerd: 2026-09-07
+gecontroleerd_door: fase A — Claude (protocols.js, evidence fase 1-4 + refs)
+opmerking: >-
+  De belangrijkste vondst is niet een fout cijfer maar een gemiste bevinding. Het
+  refs-veld beschreef Lozano-Calderon 2008 als een methodologisch stuk over de
+  kwaliteit van bewijs; in werkelijkheid is het een gerandomiseerde trial over
+  precies de vraag die dit protocol beantwoordt - wanneer met polsmobilisatie
+  starten - en het antwoord ervan (geen verschil) ontbrak volledig, terwijl de
+  bron al in de lijst stond.
+
+claims:
+  - id: orif_c1
+    tekst: >-
+      Volledig krachtherstel na distale radiusfractuur duurt 12 tot 24 maanden
+      (Lozano-Calderon et al., 2008).
+    plaats: fase 4 - evidence
+    bronnen: [lozanocalderon_2008_polsmobilisatie]
+    gedekt: nee
+    opmerking: >-
+      Die termijn staat niet in de aangehaalde trial, die over het tijdstip van
+      mobiliseren gaat. Het refs-veld beschreef de publicatie bovendien als
+      "Quality and strength of evidence for etiology in orthopaedic research" -
+      een heel ander artikel.
+    verwerkt: toeschrijving geschrapt, termijn als praktijkafspraak gelabeld
+
+  - id: orif_c2
+    tekst: >-
+      ONTBRAK: mobiliseren na zes weken geeft niet minder polsbeweging dan
+      mobiliseren binnen twee weken.
+    plaats: ONTBRAK in het protocol
+    bronnen: [lozanocalderon_2008_polsmobilisatie]
+    gedekt: ja
+    opmerking: >-
+      In een gerandomiseerde trial bij 60 patienten na volaire plaatfixatie was er
+      GEEN significant verschil in flexie-extensieboog na drie maanden (104
+      tegenover 107 graden; p = 0,61) of zes maanden (124 tegenover 126 graden;
+      p = 0,65), en evenmin in grijpkracht, radiografische parameters, DASH,
+      Mayo-score of pijn. Dat raakt de kernaanbeveling van dit protocol
+      rechtstreeks: vroeg starten blijft veilig en verdedigbaar, maar de winst
+      ervan is niet vastgesteld. De bron stond al in de referentielijst.
+    verwerkt: toegevoegd aan fase 2, naast de bevinding van Quadlbauer
+
+  - id: orif_c3
+    tekst: >-
+      Actieve polsmobilisatie kan starten bij week 2 tot 3 na volaire
+      plaatfixatie (Quadlbauer et al., 2017).
+    plaats: fase 2 - evidence
+    bronnen: [quadlbauer_2017_vroege_revalidatie, lozanocalderon_2008_polsmobilisatie]
+    gedekt: deels
+    opmerking: >-
+      Quadlbauer 2017 is een PILOTSTUDIE met slechts 30 patienten die ONMIDDELLIJKE
+      mobilisatie vergeleek met VIJF WEKEN immobilisatie - niet met start op week
+      2 tot 3. De bevinding was gunstig voor vroege mobilisatie. Maar die staat
+      tegenover de grotere trial van Lozano-Calderon (n = 60) die geen verschil
+      vond. Volgens CLAUDE.md par. 1.9 horen beide standpunten vermeld te worden;
+      de app gaf alleen het gunstige.
+    verwerkt: beide trials met hun opzet, omvang en uitkomst opgenomen
+
+  - id: orif_c4
+    tekst: >-
+      Grijpkracht onder 75% van contralateraal correleert sterk met functioneel
+      verlies (MacDermid et al., 2004).
+    plaats: fase 3 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Het refs-veld beschrijft die publicatie als een validatiestudie van de
+      PRWE-vragenlijst - een ander onderwerp dan een grijpkrachtcorrelatie. De
+      bron is in dit dossier niet opgehaald, dus de mismatch kon niet worden
+      opgelost; de drempel stuurt wel de fase-overgang.
+    verwerkt: gelabeld, de mismatch tussen tekst en refs-veld benoemd
+
+  - id: orif_c5
+    tekst: >-
+      Zwaar-langzame weerstand (3 sets van 8 tot 10 RM) is effectiever dan lage
+      weerstand met veel herhalingen voor botgenezing en peeskracht; tweemaal per
+      dag oefenen is superieur aan eenmaal.
+    plaats: fase 3 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Twee vergelijkende effectclaims zonder enige bron, waarvan de eerste een
+      uitspraak over BOTGENEZING doet - een uitkomst die in geen enkele
+      opgehaalde bron van dit protocol voorkomt.
+    verwerkt: beide als effectclaim geschrapt, als praktijkafspraak behouden
+
+  - id: orif_c6
+    tekst: >-
+      Vroeg mobiliseren van vingers en elleboog vermindert stijfheid en oedeem
+      significant (Souer et al., 2011); elevatie boven hartniveau is de meest
+      effectieve oedeemreductie.
+    plaats: fase 1 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Souer 2011 is in dit dossier niet opgehaald. Het woord "significant" en het
+      superlatief "meest effectieve" zijn beide niet nagekeken.
+    verwerkt: beide gelabeld
+
+  - id: orif_c7
+    tekst: >-
+      Littekenmassage vanaf dag 14 vermindert adhesies en gevoeligheid significant.
+    plaats: fase 2 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: Geen bron voor het woord "significant".
+    verwerkt: effectclaim afgezwakt tot klinische richtlijn
+
+  - id: orif_c8
+    tekst: >-
+      Functioneel herstel voor dagelijkse activiteiten en recreatieve sport is
+      haalbaar bij 3 tot 5 maanden; PRWE onder 20 is de doelstelling voor
+      volledige functionele vrijgave.
+    plaats: fase 4 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Beide zonder bron, terwijl de PRWE-drempel de vrijgave voor werk en sport
+      bepaalt.
+    verwerkt: beide gelabeld als praktijkafspraak

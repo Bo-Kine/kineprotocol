@@ -3,6 +3,16 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-09-07 — bronaudit ORIF distale radius + fase B labrumscheur
+
+- DE BELANGRIJKSTE VONDST IS EEN GEMISTE BEVINDING, GEEN FOUT CIJFER · het refs-veld beschreef `lozanocalderon_2008_polsmobilisatie` als "Quality and strength of evidence for etiology in orthopaedic research", een methodologisch stuk · in werkelijkheid is het een RCT bij 60 patiënten over precies de vraag die dit protocol beantwoordt — wanneer starten met polsmobilisatie — en het antwoord ontbrak volledig: GÉÉN verschil tussen starten binnen twee weken en pas na zes weken, niet in flexie-extensieboog na 3 maanden (104 tegenover 107°; p = 0,61) of 6 maanden (124 tegenover 126°; p = 0,65), en evenmin in grijpkracht, DASH of pijn
+- TEGENSTRIJDIGE EVIDENTIE, NU BEIDE VERMELD (§1.9) · `quadlbauer_2017_vroege_revalidatie` is een PILOT met 30 patiënten die onmiddellijke mobilisatie vergeleek met vijf weken immobilisatie en wél voordeel vond · de app gaf alleen die gunstige helft · vroeg starten blijft veilig en verdedigbaar, maar de winst ervan is niet vastgesteld
+- Verder gelabeld · "grijpkracht < 75% correleert sterk met functieverlies (MacDermid 2004)" — het refs-veld beschrijft die publicatie als een validatiestudie van de PRWE-vragenlijst, een ander onderwerp · "HSR effectiever dan lage weerstand voor BOTGENEZING" en "2×/dag superieur aan 1×/dag" — twee vergelijkende effectclaims zonder bron · de PRWE-drempel van 20 die de vrijgave voor werk en sport bepaalt
+
+- FASE B LABRUMSCHEUR · alle vier bronsleutels en alle vijf gecorrigeerde evidenceteksten letterlijk gedekt, inclusief de opgenomen voorbehouden · maar de ER/IR-verhouding 0,66 stond nog op drie plaatsen als hard doel of criterium, en "GIRD keert binnen weken terug zonder onderhoud" sprak het evidence-veld van dezelfde fase rechtstreeks tegen
+- Twee onverenigbare drempels voor het totale rotatiedeficit binnen één protocol: 10° in fase 2 en 5° in fase 4 en 5 · alleen "> 5°" is in Wilk terug te vinden
+- Redactioneel maar zichtbaar voor de gebruiker · een oefeningnote eindigde op de afgebroken zin "Bedoeld om het blessurerisico aanzienl" — restant van een geschrapte effectclaim
+
 ## 2026-09-07 — bronaudit anterosuperieure labrumscheur
 
 - EEN NIET-SIGNIFICANTE BEVINDING ALS VASTSTAAND GEPRESENTEERD · "GIRD ≥ 20° gaat gepaard met 1,9× hoger blessurerisico (Wilk 2011)" · het abstract zegt letterlijk "nearly twice as likely to be injured ... BUT WITHOUT STATISTICAL SIGNIFICANCE (p = 0,17)" · de factor 2,5 voor het totale rotatiedeficit staat er helemaal niet in · het is bovendien een case series met bewijsniveau 4 · zelfde foutpatroon als de Grindem-uitspraak eerder in deze audit

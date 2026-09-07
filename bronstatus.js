@@ -10,7 +10,7 @@ const BRONSTATUS = {
     "datum": "2026-09-05"
   },
   "aslt": {
-    "gecontroleerd": 9,
+    "gecontroleerd": 16,
     "gedekt": 0,
     "deels": 3,
     "open": 0,
@@ -118,6 +118,13 @@ const BRONSTATUS = {
     "gecontroleerd": 16,
     "gedekt": 1,
     "deels": 0,
+    "open": 0,
+    "datum": "2026-09-07"
+  },
+  "orif": {
+    "gecontroleerd": 8,
+    "gedekt": 1,
+    "deels": 1,
     "open": 0,
     "datum": "2026-09-07"
   },

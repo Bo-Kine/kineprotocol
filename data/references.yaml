@@ -3729,3 +3729,57 @@ references:
       rotatorenmanchet- en het schouderinstabiliteitsprotocol).
     geverifieerd_op: 2026-09-07
     geverifieerd_door: PubMed MCP (get_article_metadata, PMID 23687006)
+
+  - key: lozanocalderon_2008_polsmobilisatie
+    auteurs: [Lozano-Calderón SA, Souer S, Mudgal C, Jupiter JB, Ring D]
+    titel: 'Wrist mobilization following volar plate fixation of fractures of the distal part of the radius'
+    bron: The Journal of Bone and Joint Surgery (American volume)
+    jaar: 2008
+    volume_paginas: 90(6):1297-304
+    doi: 10.2106/JBJS.G.01368
+    pmid: '18519324'
+    url: https://doi.org/10.2106/JBJS.G.01368
+    type: RCT
+    opmerking: >-
+      DIT IS EEN HEEL ANDER ARTIKEL DAN HET REFS-VELD VAN DE APP BESCHREEF. Daar
+      stond "Quality and strength of evidence for etiology in orthopaedic
+      research" - een methodologisch stuk. In werkelijkheid is dit een
+      gerandomiseerde trial: 60 patienten met een geisoleerde distale
+      radiusfractuur na volaire plaatfixatie, gerandomiseerd naar mobilisatie
+      BINNEN TWEE WEKEN of PAS NA ZES WEKEN. UITKOMST: GEEN significant verschil in
+      flexie-extensieboog na drie maanden (104 tegenover 107 graden; p = 0,61) of
+      na zes maanden (124 tegenover 126 graden; p = 0,65), en evenmin in
+      grijpkracht, radiografische parameters, DASH, Mayo-score, Gartland en Werley
+      of pijn. CONCLUSIE VAN DE AUTEURS: starten met polsoefeningen na zes weken
+      leidt NIET tot minder polsbeweging dan starten binnen twee weken. Die
+      bevinding raakt de kernaanbeveling van dit protocol rechtstreeks en ontbrak
+      volledig; de app citeerde de bron in plaats daarvan voor een hersteltermijn
+      van 12 tot 24 maanden, die er niet in staat.
+    geverifieerd_op: 2026-09-07
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 18519324)
+
+  - key: quadlbauer_2017_vroege_revalidatie
+    auteurs: [Quadlbauer S, Pezzei C, Jurkowitsch J, Kolmayr B, Keuchel T, Simon D, Hausner T, Leixnering M]
+    titel: 'Early Rehabilitation of Distal Radius Fractures Stabilized by Volar Locking Plate: A Prospective Randomized Pilot Study'
+    bron: Journal of Wrist Surgery
+    jaar: 2017
+    volume_paginas: 6(2):102-112
+    doi: 10.1055/s-0036-1587317
+    pmid: '28428911'
+    url: https://doi.org/10.1055/s-0036-1587317
+    type: RCT
+    opmerking: >-
+      PILOTSTUDIE MET SLECHTS 30 PATIENTEN (15 tegenover 15), door de auteurs zelf
+      zo genoemd; bewijsniveau Ib. Vergelijkt onmiddellijke mobilisatie na de
+      operatie met vijf weken immobilisatie. De vroeg gemobiliseerde groep deed het
+      significant beter op bewegingsuitslag in het sagittale vlak, op grijpkracht
+      TOT ZES MAANDEN, in het frontale vlak tot negen weken en in onderarmrotatie
+      tot zes weken; DASH en PRWE waren beter tot zes weken en de Green
+      O'Brien-score verschilde tot een jaar. Geen verschil in verlies van reductie,
+      pijn, duur van de kinesitherapie of ziekteverzuim. LET OP DE TEGENSTRIJDIGE
+      EVIDENTIE: deze pilot ondersteunt vroege mobilisatie, terwijl de grotere
+      trial van lozanocalderon_2008_polsmobilisatie (n = 60) GEEN verschil vond
+      tussen starten binnen twee weken en starten na zes weken. Beide standpunten
+      horen volgens CLAUDE.md par. 1.9 vermeld te worden.
+    geverifieerd_op: 2026-09-07
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 28428911)

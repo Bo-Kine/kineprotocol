@@ -3,6 +3,13 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-09-07 — protocolkop scrolt mee (v85)
+
+- De kop van een protocol — breadcrumb, titel, fasetijdlijn en de knoppenrij — stond BUITEN de scrollcontainer met `flex-shrink:0` en kon daardoor per definitie niet meebewegen · hij is nu naar binnen verplaatst, zodat hij bij het scrollen gewoon mee omhoog schuift en je meer scherm overhoudt voor de inhoud
+- De fasetabs (`.viewer-tabs`) blijven wél sticky · van fase wisselen moet mogelijk blijven wanneer je onderaan een lange fase staat
+- Bijkomend opgelost · die tabbalk stond op 94% dekking, wat volstond zolang de kop erboven vastzat · nu er inhoud onderdoor schuift, schemerde de tekst er zichtbaar doorheen · balk is dekkend gemaakt, met behoud van de blur
+- Gecontroleerd in de browser · kop verdwijnt volledig uit beeld bij scrollen, tabs klemmen exact op de bovenrand van de scroller zonder gat, geen console-fouten, en home/protocol/fasewissel werken onveranderd
+
 ## 2026-09-07 — service-workerupdates kwamen niet door (oorzaak van de v59-melding)
 
 - DE CACHENAAM WAS NIET HET PROBLEEM · `sw.js` leidt die al af uit `APP_VERSION`, dus die was allang `kineprotocol-v84` · het probleem zat in de UPDATECHECK

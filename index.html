@@ -209,7 +209,7 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
    tabs, en met een verborgen scrollbalk verdwenen Aandoening, Manuele therapie,
    Scores en Referenties onzichtbaar buiten beeld. Daarom afbreken over meerdere
    regels en vastzetten bovenaan tijdens het scrollen. */
-.viewer-tabs{display:flex;flex-wrap:wrap;align-items:center;column-gap:2px;margin-top:12px;position:sticky;top:0;z-index:5;background:rgba(2,11,24,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding-top:2px;}
+.viewer-tabs{display:flex;flex-wrap:wrap;align-items:center;column-gap:2px;margin-top:12px;position:sticky;top:0;z-index:5;background:#020a18;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding-top:2px;}/* Dekkend, niet 94%: sinds de kop meescrolt schuift de inhoud onder deze balk   door en schemerde de tekst er zichtbaar doorheen. */
 .vtab{padding:9px 13px;cursor:pointer;font-size:11.5px;font-weight:500;color:var(--muted);border-bottom:2px solid transparent;white-space:nowrap;transition:color .12s,border-color .12s;font-family:'Geist Mono',monospace;}
 .vtab-sep{flex-basis:100%;height:0;}
 .vtab:hover{color:var(--text);}
@@ -577,19 +577,22 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
     </div>
     <!-- PROTOCOL VIEWER -->
     <div id="screen-proto" class="viewer" style="display:none;">
-      <div class="viewer-header">
-        <div class="viewer-breadcrumb"><span onclick="showHome()">Overzicht</span><span style="color:var(--muted2)">›</span><span id="proto-breadcrumb" style="color:var(--text)"></span></div>
-        <div class="viewer-title-row"><div class="viewer-dot" id="proto-dot"></div><div><div class="viewer-title" id="proto-title"></div><div class="viewer-subtitle" id="proto-subtitle"></div></div></div>
-        <!-- Fase tijdlijn -->
-        <div id="phase-timeline" class="phase-timeline"></div>
-        <div class="proto-actions">
-          <button class="rf-trigger" id="rf-trigger-btn" onclick="openRF()">🚨 Rode vlaggen <span class="rf-count" id="rf-count">0</span></button>
-          <button class="fiche-btn" onclick="openFiche()">📋 Patiëntenfiche</button>
-          <button class="fiche-btn" id="fav-btn" onclick="toggleFav()">☆ Favoriet</button>
-          <button class="pat-link-btn" onclick="openPatLink()">👤 Koppel patiënt</button>
-        </div>
-      </div>
+      <!-- De kop staat BINNEN de scroller zodat hij mee omhoog schuift. Alleen
+           .viewer-tabs blijft sticky: van fase wisselen moet ook kunnen wanneer
+           je onderaan een lange fase staat. -->
       <div class="viewer-scroll" id="viewer-scroll">
+        <div class="viewer-header">
+          <div class="viewer-breadcrumb"><span onclick="showHome()">Overzicht</span><span style="color:var(--muted2)">›</span><span id="proto-breadcrumb" style="color:var(--text)"></span></div>
+          <div class="viewer-title-row"><div class="viewer-dot" id="proto-dot"></div><div><div class="viewer-title" id="proto-title"></div><div class="viewer-subtitle" id="proto-subtitle"></div></div></div>
+          <!-- Fase tijdlijn -->
+          <div id="phase-timeline" class="phase-timeline"></div>
+          <div class="proto-actions">
+            <button class="rf-trigger" id="rf-trigger-btn" onclick="openRF()">🚨 Rode vlaggen <span class="rf-count" id="rf-count">0</span></button>
+            <button class="fiche-btn" onclick="openFiche()">📋 Patiëntenfiche</button>
+            <button class="fiche-btn" id="fav-btn" onclick="toggleFav()">☆ Favoriet</button>
+            <button class="pat-link-btn" onclick="openPatLink()">👤 Koppel patiënt</button>
+          </div>
+        </div>
         <div class="viewer-tabs" id="proto-tabs"></div>
         <div class="viewer-body" id="proto-body"></div>
       </div>

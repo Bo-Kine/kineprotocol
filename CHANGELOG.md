@@ -3,6 +3,15 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-09-07 — bronaudit shin splints (MTSS)
+
+- HET MECHANISME WAAROP HET PROTOCOL GEBOUWD IS, WORDT DOOR DE EIGEN HOOFDBRON VERWORPEN · de app beschreef MTSS als periostale tractie door soleus en FDL · `moen_2009_mtss_review` stelt letterlijk dat histologisch onderzoek dáár géén bewijs voor levert en dat de oorzaak botresorptie is die de botaanmaak van de tibiale cortex overtreft · dat is geen detail: het tractiemodel stuurt de behandeling naar rekken en kuitspieren, het resorptiemodel naar botbelastbaarheid
+- HET MEEST ONGEMAKKELIJKE GEGEVEN ONTBRAK VOLLEDIG · dezelfde review meldt dat RUST in drie gerandomiseerde studies gelijkwaardig was aan élke onderzochte interventie · in een protocol met vier fasen oefentherapie hoort dat erin, en de bron stond al in de referentielijst · wat er volgens diezelfde review wél preventief werkt — neopreen of semi-rigide orthesen — stond er evenmin in
+- `nielsen_2012_trainingsfouten` concludeert het tegendeel van waarvoor het geciteerd wordt · de 10%-regel steunde op een review die besluit dat de resultaten tegenstrijdig waren en dat het NIET mogelijk was vast te stellen welke trainingsfouten met loopblessures samenhangen
+- Eén bron, twee verschillende foute beschrijvingen · `wille_2014_loopkinematica` werd in de evidencetekst aangehaald voor "cadansverhoging verlaagt de tibiale belasting" en in het refs-veld beschreven als een ECHOGRAFIE-studie over het identificeren van MTSS · het is geen van beide: een laboratoriumstudie bij 45 lopers over het SCHATTEN van kinetiek uit sagittale kinematica, waarbij net de verticale belastingssnelheid zich slecht liet schatten (R² = 0,04)
+- Verder gecorrigeerd · incidentie is 4-35% bij militairen en sporters, niet 13-20% bij lopers · "MRI is de gouden standaard" staat haaks op Moen, die beeldvorming van beperkte waarde noemt omdat afwijkingen ook bij klachtenvrije personen voorkomen — terwijl de tijdcriteria voor loophervatting volledig aan die gradatie hangen · "asfalt geeft 10-15× hogere grondreactiekrachten" geschrapt: geen bron en biomechanisch niet plausibel · 60 km-drempel, schoenvervanging na 600-800 km en RED-S-screening gelabeld
+- Toegevoegd wat de bron wél bevestigt · vrouwelijk geslacht en overmatige pronatie bij staan als intrinsieke risicofactoren uit meerdere prospectieve studies, en een voorgeschiedenis van MTSS als extrinsieke risicofactor
+
 ## 2026-09-07 — fase B hamstringblessure
 
 - EEN CLAIM DIE HAAR EIGEN BRON TEGENSPREEKT · "leeftijd > 24 jaar = verhoogd hamstringrisico (Ekstrand 2011)" · die studie vond de incidentiestijging met leeftijd uitsluitend voor KUITletsels en sluit hamstrings, quadriceps en liesletsels daar uitdrukkelijk van uit · ook "biceps femoris in 81% van de gevallen" staat er niet in, en het tijdschrift is AJSM, niet BJSM

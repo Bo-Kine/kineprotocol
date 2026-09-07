@@ -100,6 +100,13 @@ const BRONSTATUS = {
     "open": 0,
     "datum": "2026-09-05"
   },
+  "mtss": {
+    "gecontroleerd": 10,
+    "gedekt": 1,
+    "deels": 0,
+    "open": 0,
+    "datum": "2026-09-07"
+  },
   "pa": {
     "gecontroleerd": 13,
     "gedekt": 1,

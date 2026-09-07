@@ -3330,3 +3330,83 @@ references:
       publicatie die de app bedoelde is in dit dossier niet opgehaald.
     geverifieerd_op: 2026-09-06
     geverifieerd_door: PubMed MCP (get_article_metadata, PMID 23229384)
+
+  - key: moen_2009_mtss_review
+    auteurs: [Moen MH, Tol JL, Weir A, Steunebrink M, De Winter TC]
+    titel: 'Medial tibial stress syndrome: a critical review'
+    bron: Sports Medicine
+    jaar: 2009
+    volume_paginas: 39(7):523-46
+    doi: 10.2165/00007256-200939070-00002
+    pmid: '19530750'
+    url: https://doi.org/10.2165/00007256-200939070-00002
+    type: review
+    opmerking: >-
+      DEZE REVIEW SPREEKT HET MECHANISME TEGEN WAAROP HET PROTOCOL GEBOUWD IS.
+      Letterlijk: "Histological studies FAIL TO PROVIDE EVIDENCE that MTSS is
+      caused by periostitis as a result of traction. It is caused by BONY
+      RESORPTION THAT OUTPACES BONE FORMATION of the tibial cortex." De app
+      beschreef juist periostale tractie door soleus en FDL als oorzaak.
+      Verdere kernpunten. Incidentie 4 tot 35% bij militairen en sporters - niet
+      13 tot 20% bij lopers. Diagnose berust op lichamelijk onderzoek; bijkomende
+      beeldvorming (bot, CT, MRI) is goed onderzocht maar van BEPERKTE WAARDE,
+      mede omdat afwijkingen ook bij symptoomvrije personen voorkomen. Intrinsieke
+      risicofactoren uit meerdere prospectieve studies: overmatige pronatie bij
+      staan en VROUWELIJK GESLACHT; uit enkele studies ook hogere BMI, grotere
+      heuprotatie en kuitomtrek. Voorgeschiedenis van MTSS is een extrinsieke
+      risicofactor. BEHANDELING - in drie gerandomiseerde studies was RUST
+      GELIJKWAARDIG AAN ELKE INTERVENTIE; dat is voor een revalidatieprotocol een
+      wezenlijk gegeven en ontbrak volledig. Neopreen of semi-rigide orthesen
+      kunnen MTSS helpen voorkomen (twee grote prospectieve studies).
+    geverifieerd_op: 2026-09-07
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 19530750)
+
+  - key: nielsen_2012_trainingsfouten
+    auteurs: [Nielsen RO, Buist I, Sørensen H, Lind M, Rasmussen S]
+    titel: 'Training errors and running related injuries: a systematic review'
+    bron: International Journal of Sports Physical Therapy
+    jaar: 2012
+    volume_paginas: 7(1):58-75
+    doi: null
+    pmid: '22389869'
+    url: https://pubmed.ncbi.nlm.nih.gov/22389869/
+    type: SR
+    opmerking: >-
+      DE REVIEW ONDERSTEUNT DE 10%-REGEL NIET; ze concludeert het tegendeel.
+      31 ingesloten studies, gemiddelde kwaliteitsscore 44,1%. Letterlijk:
+      "Conflicting results were reported on the relationships between volume,
+      duration, intensity, and frequency and RRI" en "IT WAS NOT POSSIBLE TO
+      IDENTIFY WHICH TRAINING ERRORS WERE RELATED TO RUNNING RELATED INJURIES".
+      De auteurs roepen op tot beter meetwerk voordat oorzakelijke uitspraken
+      mogelijk zijn. De app haalde deze bron aan als onderbouwing voor een
+      concrete progressieregel van maximaal 10% per week. PubMed vermeldt geen
+      DOI (PMC3290924).
+    geverifieerd_op: 2026-09-07
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 22389869)
+
+  - key: wille_2014_loopkinematica
+    auteurs: [Wille CM, Lenhart RL, Wang S, Thelen DG, Heiderscheit BC]
+    titel: 'Ability of sagittal kinematic variables to estimate ground reaction forces and joint kinetics in running'
+    bron: The Journal of Orthopaedic and Sports Physical Therapy
+    jaar: 2014
+    volume_paginas: 44(10):825-30
+    doi: 10.2519/jospt.2014.5367
+    pmid: '25156183'
+    url: https://doi.org/10.2519/jospt.2014.5367
+    type: cohort
+    opmerking: >-
+      TWEEMAAL VERKEERD BESCHREVEN IN DE APP, EN OP TWEE VERSCHILLENDE MANIEREN.
+      De evidencetekst haalde deze studie aan voor "cadansverhoging verlaagt de
+      tibiale belasting significant"; het refs-veld beschreef haar als
+      "Ability of ultrasonographic findings to identify individuals with medial
+      tibial stress syndrome". Geen van beide klopt. Het is een gecontroleerde
+      laboratoriumstudie met dwarsdoorsnede-opzet bij 45 deelnemers op een
+      loopband, die nagaat of sagittale kinematische variabelen bruikbaar zijn om
+      kinetiek te SCHATTEN. Modellen voor piek-knie-extensiemoment (R kwadraat
+      0,43), energieabsorptie in de knie (0,58), patellofemorale gewrichtsreactie-
+      kracht (0,55), verticale grondreactiekracht (0,48) en remimpuls (0,50); de
+      gemiddelde verticale belastingssnelheid liet zich juist SLECHT schatten
+      (R kwadraat 0,04). Er wordt geen tibiale belasting gemeten en geen
+      cadansinterventie onderzocht.
+    geverifieerd_op: 2026-09-07
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 25156183)

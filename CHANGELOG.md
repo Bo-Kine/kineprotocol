@@ -3,6 +3,53 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-09-07 — EINDBALANS VAN DE BRONAUDIT
+
+Alle 30 protocollen zijn door fase A (opstellen) en fase B (onafhankelijke verificatie
+met schone context) gegaan. 178 referenties zijn live opgehaald en bibliografisch
+gecontroleerd; 461 inhoudelijke claims zijn tegen hun aangehaalde bron gelegd.
+
+**De uitkomst in één regel: van de 461 gecontroleerde claims bleken er 31 volledig
+gedekt door de bron die erbij stond, 57 gedeeltelijk en 373 niet.**
+
+"Niet gedekt" betekent niet dat de uitspraak onjuist is. Het betekent dat de
+aangehaalde bron haar niet ondersteunde. In veruit de meeste gevallen ging het om
+gangbare, verdedigbare kinesitherapeutische praktijk waar een bron bij was gezet die
+er niet over ging. Die uitspraken staan nu in de app als klinische redenering of
+praktijkafspraak, niet langer als evidentie.
+
+**Vijf terugkerende foutpatronen**
+
+1. *Bronverwisseling tussen weefsels.* `rio_2015_isometrie` (patellapees) dekte negen
+   claims niet en werd aan zes verschillende pezen toegeschreven; `beyer_2015_hsr_achilles`
+   (achillespees) zes, tot in de duimpezen toe. De onderliggende oefening blijft
+   verdedigbaar, maar het bewijs komt van een ander weefsel.
+2. *Omgekeerde effectrichting.* Ruim vijftien keer concludeerde de bron het tegendeel
+   van wat de app schreef. De zwaarste: de volledige fase 2 van het frozen-shoulder-
+   protocol was op capsulaire rek gebouwd terwijl de aangehaalde studie supervised
+   neglect beter vond (89% tegenover 63%); het shin-splintsprotocol rustte op een
+   tractiemodel dat zijn eigen hoofdbron uitdrukkelijk verwerpt; en `huisstede_2010_cts_chirurgie`
+   werd viermaal aangehaald als bewijs dát postoperatieve handtherapie werkt, terwijl
+   die review juist géén bewijs daarvoor vond.
+3. *Weggelaten tegenstrijdige evidentie (§1.9).* Telkens werd de gunstige helft van een
+   bron overgenomen en de ongunstige niet: Coombes 2013 (kinesitherapie gaf na een jaar
+   geen significant verschil), Mellor 2018 (op 52 weken geen verschil in pijn), Moen 2009
+   (rust gelijkwaardig aan elke interventie), Artz 2015 (geen langetermijneffect),
+   Hupperets 2009 (geen effect bij medisch behandelde sporters).
+4. *Niet-significante bevindingen als vaststaand.* Grindem (p = 0,075), Wilk (p = 0,17)
+   en Hancock werden zonder hun p-waarde overgenomen.
+5. *Het lek naar de oefeningvelden.* In élk protocol bleven gecorrigeerde claims in hun
+   oude vorm staan in de `note`-, `params`-, `goals`- en `criteria`-velden — precies wat
+   de kinesitherapeut tijdens de behandeling leest. Fase B ving dat consequent op.
+
+**Wat nog openstaat**
+
+- Drie ACL-claims wachten op een bron van de kinesitherapeut: `acl_c10` (isometrische
+  quadriceps op 60°), `acl_c11` (ACL-RSI-drempels 56 en 65) en `acl_c12` (IKDC MCID 11,5
+  en drempel 85). In protocols.js staat bij die criteria "(bron nog aan te leveren)".
+- Ongeveer veertig citaties konden niet worden opgehaald en zijn als zodanig gelabeld.
+  Ze zijn niet weerlegd — enkel niet geverifieerd.
+
 ## 2026-09-07 — fase B op ORIF, de Quervain en carpaaltunnel + eerlijker bronbadge
 
 - DE HUISSTEDE-OMKERING VOOR DE VIERDE KEER, NU MET EEN VERZONNEN PERCENTAGE · een oefeningnote las "Huisstede 2010: begeleide krachttraining na CTS-release geeft 35% meer gripkracht op 8 weken vs geen therapie" · dezelfde review besluit dat er GEEN bewijs is voor postoperatieve behandelprogramma's, en die 35% staat er nergens in · fase 3 en 4 corrigeerden dit in het evidence-veld, de note bleef staan — en dat is de tekst bij de oefening die wordt voorgeschreven

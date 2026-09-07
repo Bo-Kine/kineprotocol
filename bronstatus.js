@@ -31,7 +31,7 @@ const BRONSTATUS = {
     "datum": "2026-09-06"
   },
   "enkel": {
-    "gecontroleerd": 11,
+    "gecontroleerd": 15,
     "gedekt": 0,
     "deels": 0,
     "open": 0,
@@ -55,6 +55,13 @@ const BRONSTATUS = {
     "gecontroleerd": 12,
     "gedekt": 0,
     "deels": 1,
+    "open": 0,
+    "datum": "2026-09-06"
+  },
+  "hsi": {
+    "gecontroleerd": 9,
+    "gedekt": 0,
+    "deels": 0,
     "open": 0,
     "datum": "2026-09-06"
   },

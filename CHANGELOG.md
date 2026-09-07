@@ -3,6 +3,15 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-09-06 — bronaudit hamstringblessure + fase B enkeldistorsie
+
+- TWEE BRONNEN ZIJN ANDERE PUBLICATIES DAN HET REFS-VELD BESCHREEF · `askling_2013_proximale_ruptuur` in KSSTA gaat over TOTALE PROXIMALE RUPTUREN na chirurgie en is een review met bewijsniveau V — de drie H-testen die eraan werden toegeschreven staan er niet in · `bayer_2017_vroege_revalidatie` is CORRESPONDENTIE in de NEJM, niet een artikel in Orthopaedic Journal of Sports Medicine, en PubMed levert er geen abstract bij, dus de claim over vroege isometrische belasting kon niet tegen de bron gelegd worden
+- Het kerncijfer van het protocol hoorde bij een andere studie · "Nordic Hamstring reduceert het HERLETSELrisico met 51% (van der Horst 2015)" · die RCT onderzocht PRIMAIRE preventie bij 579 amateurvoetballers, het effect is grōter (odds ratio 0,282; 95% BI 0,110-0,721 — ongeveer 72%), en de 51% hoort bij `vandyk_2019_nordic` · dat is dezelfde 51% die eerder in deze audit al bij een ander protocol moest worden rechtgezet · weggelaten was bovendien dat de ERNST van de blessures niet significant verschilde
+- `ekstrand_2011_spierletsels_voetbal` kreeg twee claims toegeschreven die er niet in staan · dat MRI de gouden standaard voor gradatie is, en dat prematuur sprinten de meest voorkomende oorzaak van recidief is · wat er wél in staat en klinisch nuttiger is: hamstrings vormen 37% van de spierletsels in het profvoetbal, 16% zijn herletsels, en die geven significant langere afwezigheid
+
+- FASE B ENKELDISTORSIE · alle zes bronsleutels en alle zes gecorrigeerde evidenceteksten letterlijk gedekt, maar de foute cijfers stonden nog ONGEWIJZIGD in de oefening-, parameter- en beschrijvingsvelden · "Sens 96-99%" in een parameterveld drie regels onder een evidencetekst die dat bereik net schrapt · "47%" op twee plaatsen na correctie naar 35% · "53%" en "geen prestatievermindering" na correctie naar 69% · "35-50%" bij het FIFA-programma · "peroneale reactietijd verminderd bij 90%+" na schrapping · het label bereikt de gebruiker dus niet, want die leest de oefeningnote
+- In de beschrijving stonden vier ongedekte getallen · Ottawa 97%, CAI bij 40%, anterior drawer 73% en talar tilt 90% — die laatste twee wijken bovendien af van de 0,71 en 0,33 in fase 1, twee cijferparen voor dezelfde tests binnen één protocol · en in de oorzaken: ATFL-ruptuur bij ~140 N, herletselrisico ×2,4 en reactietijd > 62 ms (Konradsen & Ravn 1990, niet opgehaald), waarbij 62 ms botst met de 70 ms elders in het protocol
+
 ## 2026-09-06 — bronaudit enkeldistorsie + fase B epicondylalgie
 
 - HET PROTOCOL DAT ER HET BEST ONDERBOUWD UITZAG, IS HET SLECHTST · het refs-veld bevat volledige volume- en paginanummers, wat vertrouwen wekt · van de zeven nagekeken cijfers klopten er vijf niet

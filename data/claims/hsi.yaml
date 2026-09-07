@@ -1,0 +1,138 @@
+protocol: hsi
+protocol_titel: Hamstring Blessure
+laatst_gecontroleerd: 2026-09-06
+gecontroleerd_door: fase A — Claude (protocols.js, evidence fase 1-4 + refs)
+opmerking: >-
+  Twee bronnen bleken andere publicaties dan het refs-veld beschreef. De
+  KSSTA-publicatie van Askling uit 2013 gaat over TOTALE PROXIMALE RUPTUREN na
+  chirurgie (bewijsniveau V) en niet over terugkeercriteria; Bayer 2017 is
+  correspondentie in de NEJM, niet een artikel in Orthopaedic Journal of Sports
+  Medicine. Daarnaast werd het kerncijfer van dit protocol - 51% - aan de
+  verkeerde studie en de verkeerde uitkomstmaat toegeschreven.
+
+claims:
+  - id: hsi_c1
+    tekst: >-
+      POLICE vervangt RICE in de evidence-based benadering
+      (Bleakley et al., 2012).
+    plaats: fase 1 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: Een editoriaal in BJSM; in dit dossier niet opgehaald.
+    verwerkt: gelabeld
+
+  - id: hsi_c2
+    tekst: >-
+      Graad I herstelt in 1 tot 2 weken, graad II in 3 tot 8, graad III in 8 tot
+      16 weken; MRI is de gouden standaard voor gradatie (Ekstrand et al., 2011).
+    plaats: fase 1 - evidence
+    bronnen: [ekstrand_2011_spierletsels_voetbal]
+    gedekt: nee
+    opmerking: >-
+      De tijdvensters hebben geen bron. De MRI-claim staat NIET in Ekstrand 2011;
+      dat is een epidemiologisch cohort van 2908 spierletsels dat geen enkele
+      beeldvormingstechniek evalueert. Wat er wel in staat en klinisch nuttiger is:
+      hamstrings vormen 37% van de spierletsels, 16% zijn herletsels, en die
+      veroorzaken significant langere afwezigheid.
+    verwerkt: MRI-claim ontkoppeld van de bron, de werkelijke cijfers opgenomen
+
+  - id: hsi_c3
+    tekst: >-
+      Vroege isometrische belasting op dag 1 tot 2 is veilig en bevordert het
+      herstel beter dan absolute rust (Bayer et al., 2017 - Orthop J Sports Med).
+    plaats: fase 1 - evidence
+    bronnen: [bayer_2017_vroege_revalidatie]
+    gedekt: nee
+    opmerking: >-
+      Het tijdschrift klopt niet: het is correspondentie in de New England Journal
+      of Medicine (377(13):1300-1301), geen artikel in Orthopaedic Journal of
+      Sports Medicine. PubMed levert bij dit item GEEN ABSTRACT, dus de claim kon
+      niet tegen de bron gelegd worden. Het artikeltype vermeldt wel Randomized
+      Controlled Trial.
+    verwerkt: tijdschrift gecorrigeerd, expliciet vermeld dat de claim niet
+      verifieerbaar was uit het opgehaalde record
+
+  - id: hsi_c4
+    tekst: >-
+      Progressieve isotonische belasting is superieur aan passieve rust
+      (Jarvinen et al., 2005); het L-protocol is superieur aan snelle excentrische
+      contracties; te vroege Nordic Hamstring vergroot het reruptuurrisico
+      (Askling et al., 2003).
+    plaats: fase 2 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: Alle drie in dit dossier niet opgehaald.
+    verwerkt: alle drie gelabeld
+
+  - id: hsi_c5
+    tekst: >-
+      Nordic Hamstring Exercise reduceert het hamstring-HERLETSELrisico met 51%
+      (van der Horst et al., 2015).
+    plaats: fase 3 - evidence
+    bronnen: [vanderhorst_2015_nordic_amateurs, vandyk_2019_nordic]
+    gedekt: nee
+    opmerking: >-
+      Drie fouten in een zin. (1) De trial onderzocht PRIMAIRE PREVENTIE bij 579
+      amateurvoetballers, geen herletsel. (2) Het effect is groter dan geschreven:
+      de incidentie daalde van 0,8 naar 0,25 per 1000 spelersuren, odds ratio 0,282
+      (95% BI 0,110-0,721; p = 0,005), ongeveer 72% risicoreductie. (3) Het cijfer
+      van 51% hoort bij vandyk_2019_nordic - dezelfde 51% die eerder in
+      deze audit al bij een ander protocol moest worden rechtgezet, en die hier
+      opnieuw opduikt. Weggelaten werd bovendien dat de ERNST van de blessures NIET
+      significant verschilde.
+    verwerkt: uitkomstmaat, populatie en cijfer gecorrigeerd, het nulresultaat op
+      ernst opgenomen
+
+  - id: hsi_c6
+    tekst: >-
+      Prematuur terugkeren naar sprint is de meest voorkomende oorzaak van recidief
+      (Ekstrand et al., 2011); hamstrings zijn het actiefst bij 85 tot 100% sprint
+      (Dorn et al., 2012).
+    plaats: fase 3 - evidence
+    bronnen: [ekstrand_2011_spierletsels_voetbal]
+    gedekt: nee
+    opmerking: >-
+      De eerste claim staat niet in Ekstrand 2011; die studie rapporteert wel dat
+      16% van de spierletsels herletsels zijn met langere afwezigheid, maar
+      onderzoekt geen oorzaken van herval. Dorn 2012 is in dit dossier niet
+      opgehaald.
+    verwerkt: eerste claim ontkoppeld en vervangen door de werkelijke bevinding,
+      tweede gelabeld
+
+  - id: hsi_c7
+    tekst: >-
+      Terugkeer onder 3 weken geeft 30% recidief (Orchard et al., 2005); drie
+      H-testen volgens Askling et al. (2013); de 10/10-regel.
+    plaats: fase 4 - evidence
+    bronnen: [askling_2013_proximale_ruptuur]
+    gedekt: nee
+    opmerking: >-
+      De aan Askling 2013 toegeschreven H-testen staan niet in die publicatie: die
+      gaat over TOTALE PROXIMALE HAMSTRINGRUPTUREN met chirurgisch herstel en is
+      een review met bewijsniveau V. Het refs-veld beschreef een andere titel
+      ("New RTS criteria after acute hamstring injuries in male soccer players"),
+      die in dit dossier niet is opgehaald. Orchard 2005 en de 10/10-regel evenmin.
+    verwerkt: de verwisseling expliciet benoemd, alle drie gelabeld
+
+  - id: hsi_c8
+    tekst: >-
+      LSI groter of gelijk aan 90% voor hamstringkracht is noodzakelijk voor
+      sprinthervatting.
+    plaats: fase 3 en 4 - evidence
+    bronnen: []
+    gedekt: nee
+    opmerking: Geen bron; het woord "noodzakelijk" is bovendien absoluut gesteld.
+    verwerkt: gelabeld als praktijkafspraak
+
+  - id: hsi_c9
+    tekst: >-
+      Het preventieve effect van de Nordic Hamstring bestaat slechts bij
+      doorlopend gebruik (van der Horst et al., 2015).
+    plaats: fase 4 - evidence
+    bronnen: [vanderhorst_2015_nordic_amateurs]
+    gedekt: nee
+    opmerking: >-
+      De trial onderzocht 25 sessies over 13 weken met 91% therapietrouw; ze
+      onderzocht niet wat er gebeurt na stoppen. De gevolgtrekking is redelijk maar
+      niet uit die trial af te leiden.
+    verwerkt: als gevolgtrekking gelabeld, met de werkelijke opzet erbij

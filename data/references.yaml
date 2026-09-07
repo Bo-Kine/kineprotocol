@@ -3241,3 +3241,92 @@ references:
       instabiliteit" en "reactietijd versnelt pas na 4-6 weken gerichte training".
     geverifieerd_op: 2026-09-06
     geverifieerd_door: PubMed MCP (get_article_metadata, PMID 24105612)
+
+  - key: vanderhorst_2015_nordic_amateurs
+    auteurs: [van der Horst N, Smits DW, Petersen J, Goedhart EA, Backx FJG]
+    titel: 'The preventive effect of the nordic hamstring exercise on hamstring injuries in amateur soccer players: a randomized controlled trial'
+    bron: The American Journal of Sports Medicine
+    jaar: 2015
+    volume_paginas: 43(6):1316-23
+    doi: 10.1177/0363546515574057
+    pmid: '25794868'
+    url: https://doi.org/10.1177/0363546515574057
+    type: RCT
+    opmerking: >-
+      579 mannelijke AMATEURvoetballers uit 40 ploegen, 25 sessies Nordic hamstring
+      over 13 weken. DIT IS PRIMAIRE PREVENTIE, GEEN HERLETSELPREVENTIE - de app
+      schreef "herletselrisico". De incidentie daalde van 0,8 (95% BI 0,61-1,15)
+      naar 0,25 (0,19-0,35) per 1000 spelersuren; odds ratio 0,282 (95% BI
+      0,110-0,721; p = 0,005), dus een risicoreductie van ongeveer 72%, niet 51%.
+      Dat cijfer van 51% hoort bij vandyk_2019_hamstringpreventie en migreerde hier
+      naartoe. WAT DE APP WEGLIET: er was GEEN significant verschil in ERNST van de
+      blessures. Therapietrouw bedroeg 91%.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 25794868)
+
+  - key: ekstrand_2011_spierletsels_voetbal
+    auteurs: [Ekstrand J, Hägglund M, Waldén M]
+    titel: 'Epidemiology of muscle injuries in professional football (soccer)'
+    bron: The American Journal of Sports Medicine
+    jaar: 2011
+    volume_paginas: 39(6):1226-32
+    doi: 10.1177/0363546510395879
+    pmid: '21335353'
+    url: https://doi.org/10.1177/0363546510395879
+    type: cohort
+    opmerking: >-
+      Prospectief cohort, 51 ploegen en 2299 spelers, 2001-2009, 2908
+      geregistreerde spierletsels. Spierletsels vormen 31% van alle letsels en 27%
+      van de totale afwezigheid; 92% treft vier spiergroepen: hamstrings (37%),
+      adductoren (23%), quadriceps (19%) en kuit (13%). ZESTIEN PROCENT ZIJN
+      HERLETSELS, en die veroorzaken significant langere afwezigheid. De incidentie
+      stijgt met de leeftijd, maar bij uitsplitsing enkel voor kuitletsels - NIET
+      voor hamstrings, quadriceps of liesletsels. DE APP GEBRUIKTE DEZE BRON VOOR
+      TWEE CLAIMS DIE ER NIET IN STAAN: dat MRI de gouden standaard voor gradatie
+      is, en dat prematuur terugkeren naar sprinten de meest voorkomende oorzaak
+      van recidief is. Het refs-veld noemde bovendien een andere titel
+      ("Hamstring muscle injuries in professional football: the UEFA injury study").
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 21335353)
+
+  - key: bayer_2017_vroege_revalidatie
+    auteurs: [Bayer ML, Magnusson SP, Kjaer M]
+    titel: 'Early versus Delayed Rehabilitation after Acute Muscle Injury'
+    bron: New England Journal of Medicine
+    jaar: 2017
+    volume_paginas: 377(13):1300-1301
+    doi: 10.1056/NEJMc1708134
+    pmid: '28953439'
+    url: https://doi.org/10.1056/NEJMc1708134
+    type: RCT
+    opmerking: >-
+      VERSCHENEN IN NEJM ALS CORRESPONDENTIE (Letter), NIET IN ORTHOPAEDIC JOURNAL
+      OF SPORTS MEDICINE zoals het refs-veld van de app schreef. PubMed levert GEEN
+      ABSTRACT bij dit item; de inhoudelijke claim dat vroege isometrische belasting
+      op dag 1 tot 2 veilig is en het herstel beter bevordert dan absolute rust, kan
+      dus niet uit het opgehaalde record bevestigd worden. Het artikeltype vermeldt
+      wel Randomized Controlled Trial.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 28953439)
+
+  - key: askling_2013_proximale_ruptuur
+    auteurs: [Askling CM, Koulouris G, Saartok T, Werner S, Best TM]
+    titel: 'Total proximal hamstring ruptures: clinical and MRI aspects including guidelines for postoperative rehabilitation'
+    bron: Knee Surgery, Sports Traumatology, Arthroscopy
+    jaar: 2013
+    volume_paginas: 21(3):515-33
+    doi: 10.1007/s00167-012-2311-0
+    pmid: '23229384'
+    url: https://doi.org/10.1007/s00167-012-2311-0
+    type: review
+    opmerking: >-
+      LET OP - DIT IS NIET HET ARTIKEL DAT DE APP BEDOELDE. Het refs-veld beschreef
+      "New RTS criteria after acute hamstring injuries in male soccer players", maar
+      het artikel van Askling in KSSTA 2013 gaat over TOTALE PROXIMALE
+      HAMSTRINGRUPTUREN met chirurgisch herstel, en is een state-of-the-art review
+      met bewijsniveau V. Het beschrijft een postoperatief revalidatieprogramma dat
+      een therapeut bij meer dan 200 geopereerde patienten toepaste, met een enkele
+      herruptuur. Er staan GEEN drie H-testen als terugkeercriterium in. De
+      publicatie die de app bedoelde is in dit dossier niet opgehaald.
+    geverifieerd_op: 2026-09-06
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 23229384)

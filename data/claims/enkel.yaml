@@ -1,7 +1,7 @@
 protocol: enkel
 protocol_titel: Enkeldistorsie
 laatst_gecontroleerd: 2026-09-06
-gecontroleerd_door: fase A — Claude (protocols.js, evidence fase 1-6 + refs)
+gecontroleerd_door: fase A + fase B (onafhankelijke verificator, schone context) — 2026-09-06
 opmerking: >-
   Dit protocol oogde het best onderbouwd van alle tot nu toe gecontroleerde: het
   refs-veld bevat volledige volume- en paginanummers. Juist daardoor is de uitkomst
@@ -161,3 +161,62 @@ claims:
       niet opgehaald. De drempels sturen wel de fase-overgangen en de
       sporthervatting.
     verwerkt: alle gelabeld als praktijkafspraak
+
+  # Fase B (onafhankelijke verificator, schone context). Alle zes bronsleutels
+  # bibliografisch bevestigd en alle zes gecorrigeerde evidenceteksten letterlijk
+  # gedekt. Onderstaande punten zijn de gelekte versies van diezelfde claims.
+  - id: enkel_c12
+    tekst: >-
+      De gecorrigeerde cijfers bleven in hun foute vorm staan in de oefening-,
+      parameter-, criteria- en beschrijvingsvelden.
+    plaats: fase 1 tot 6 - notes, params, kenmerken, oorzaken
+    bronnen: [bachmann_2003_ottawa, hupperets_2009_proprioceptief_thuisprogramma, dizon_2010_enkelbraces, schiftan_2015_proprioceptieve_training, gribble_2016_enkelconsensus, doherty_2014_enkelepidemiologie]
+    gedekt: nee
+    opmerking: >-
+      Directe interne tegenspraak binnen dezelfde fase. Het parameterveld hield
+      "Sens 96-99%" terwijl de evidence dat bereik net schrapte; "47%
+      recidiefreductie" stond op twee plaatsen na correctie naar 35%; "53%" en
+      "geen prestatievermindering" bleven staan na correctie naar 69%; "35-50%"
+      bleef bij het FIFA-programma staan; en "peroneale reactietijd verminderd bij
+      90%+" bleef staan na schrapping. Het label bereikte de gebruiker dus niet,
+      want die leest de oefeningnote, niet het evidence-veld.
+    verwerkt: alle gelekte versies gelijkgetrokken met de gecorrigeerde tekst
+
+  - id: enkel_c13
+    tekst: >-
+      Ottawa-sensitiviteit 97%; CAI bij 40% na meer dan 12 maanden; anterior
+      drawer 73% en talar tilt 90%.
+    plaats: kenmerken
+    bronnen: [bachmann_2003_ottawa, gribble_2016_enkelconsensus]
+    gedekt: nee
+    opmerking: >-
+      Vier ongedekte getallen in de beschrijving, waarvan er drie elders in
+      hetzelfde protocol al waren geschrapt. De testwaarden 73 en 90% wijken
+      bovendien af van de 0,71 en 0,33 die in fase 1 staan - twee verschillende
+      cijferparen voor dezelfde tests binnen een protocol.
+    verwerkt: alle vier gelabeld of geschrapt, de tegenstrijdigheid benoemd
+
+  - id: enkel_c14
+    tekst: >-
+      ATFL scheurt bij ongeveer 140 N; herletselrisico maal 2,4; peroneale
+      reactietijd boven 62 ms (Konradsen & Ravn, 1990).
+    plaats: oorzaken
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Citatie zonder sleutel, in dit dossier niet opgehaald. De drempel van 62 ms
+      botst bovendien met de 70 ms die in fase 5 stond.
+    verwerkt: alle gelabeld, de tegenstrijdigheid tussen 62 en 70 ms benoemd
+
+  - id: enkel_c15
+    tekst: >-
+      Vuurberg 2018, Hertel & Corbett 2019, Flore 2024 en Tassignon 2019 worden in
+      de oefeningnotes als vaststaand gepresenteerd.
+    plaats: fase 2 tot 6 - oefeningen
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Vier bronnen die het evidence-veld van dezelfde fase als "niet opgehaald"
+      labelt, staan in de oefeningnotes als gevalideerd, superieur of sterkste
+      voorspeller.
+    verwerkt: alle vier gelijkgetrokken met het evidence-veld

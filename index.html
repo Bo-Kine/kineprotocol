@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="KineProtocol">
+<meta name="apple-mobile-web-app-title" content="KINEBO">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#0a0a0b">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="./icon-152x152.png">
-<title>KineProtocol</title>
+<title>KINEBO</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist+Mono:wght@300;400;500;600&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all';this.onload=null">
@@ -22,7 +22,7 @@ html,body{height:100%;overflow:hidden;overscroll-behavior:none;}
 body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-size:14px;display:flex;flex-direction:column;}
 .topbar{height:calc(56px + var(--safe-top));padding-top:var(--safe-top);background:rgba(5,12,22,0.75);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;padding-left:16px;padding-right:16px;gap:12px;flex-shrink:0;z-index:100;}
 .logo{display:flex;align-items:center;gap:10px;cursor:pointer;}
-.logo-icon{width:30px;height:30px;background:linear-gradient(135deg,#22d3ee,#a78bfa);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
+.logo-icon{width:30px;height:30px;border-radius:7px;flex-shrink:0;background:#f0e9d8 url('./logo-mark.png') center/contain no-repeat;box-shadow:0 0 0 1px rgba(255,255,255,.08);}
 .logo-text{font-family:'Instrument Serif',serif;font-size:17px;color:var(--text);letter-spacing:-.02em;}
 .topbar-right{margin-left:auto;display:flex;align-items:center;gap:8px;}
 .search-box{display:flex;align-items:center;gap:8px;background:var(--surface2);border:1px solid transparent;border-radius:8px;padding:7px 12px;width:200px;transition:border-color .15s;}
@@ -513,7 +513,7 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
 <!-- APP WRAPPER -->
 <div id="app-wrapper" style="display:flex;flex-direction:column;height:100%;position:relative;z-index:1;">
 <div class="topbar">
-  <div class="logo" onclick="showHome()"><div class="logo-icon">🦴</div><div class="logo-text">KineProtocol</div></div>
+  <div class="logo" onclick="showHome()"><div class="logo-icon" role="img" aria-label="KINEBO"></div><div class="logo-text">KINEBO</div></div>
   <div class="topbar-right">
     <div class="offline-badge" id="offlineBadge">⚡ Offline</div>
     <div class="search-box"><span style="color:var(--muted2);font-size:13px;">🔍</span><input type="text" id="searchInput" placeholder="Zoeken..." oninput="handleSearch(this.value)" autocomplete="off"></div>
@@ -545,7 +545,7 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
     <div id="screen-home" style="overflow-y:auto;flex:1;-webkit-overflow-scrolling:touch;">
       <!-- Hero -->
       <div class="hero">
-        <div class="install-banner" id="installBanner" style="margin:0 0 16px;border-radius:10px;"><div class="install-banner-text"><strong>Installeer KineProtocol</strong> voor offline gebruik.</div><button class="install-banner-btn" onclick="installApp()">Installeer</button><button class="install-banner-close" onclick="document.getElementById('installBanner').classList.remove('show')">&#x2715;</button></div>
+        <div class="install-banner" id="installBanner" style="margin:0 0 16px;border-radius:10px;"><div class="install-banner-text"><strong>Installeer KINEBO</strong> voor offline gebruik.</div><button class="install-banner-btn" onclick="installApp()">Installeer</button><button class="install-banner-close" onclick="document.getElementById('installBanner').classList.remove('show')">&#x2715;</button></div>
         <div class="hero-label">WELKOM TERUG</div>
         <div class="hero-heading">Goeiendag,<br><em>klinische kennis</em><br>binnen handbereik.</div>
         <div class="hero-sub">Evidence-based revalidatieprotocollen.</div>

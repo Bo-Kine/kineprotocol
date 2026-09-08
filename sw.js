@@ -1,7 +1,7 @@
-// KineProtocol — Service Worker
+// KINEBO — Service Worker
 // Cacht alle app-bestanden voor offline gebruik (cache-first strategie)
 
-// VERSIESTEMPEL: 85
+// VERSIESTEMPEL: 86
 // Deze regel moet meebumpen met version.js. Reden: browsers bepalen of er een
 // nieuwe service worker is door de BYTES van sw.js te vergelijken. Verandert
 // alleen het geïmporteerde version.js, dan ziet de browser geen verschil en
@@ -26,6 +26,7 @@ const ESSENTIEEL = [
 // mag nooit verhinderen dat een nieuwe versie geïnstalleerd wordt.
 const OPTIONEEL = [
   './manifest.json',
+  './logo-mark.png',
   './exercise-images.json',
   './bg.webp',
   './icon-72x72.png',

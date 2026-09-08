@@ -1,4 +1,4 @@
-// KineProtocol — data-consistentiecheck (draait in CI en lokaal: node scripts/validate.js)
+// KINEBO — data-consistentiecheck (draait in CI en lokaal: node scripts/validate.js)
 // Controleert dat elk protocol volledig geregistreerd is en dat de versie uit één bron komt.
 
 const fs = require('fs');

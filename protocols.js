@@ -1,4 +1,4 @@
-// KineProtocol — Data: protocols, uitkomstmaten, beslisbomen, formulieren, evaluatieformulieren
+// KINEBO — Data: protocols, uitkomstmaten, beslisbomen, formulieren, evaluatieformulieren
 
 const protocols = {
 

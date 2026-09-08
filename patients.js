@@ -1,4 +1,4 @@
-// KineProtocol — Patiënten: CRUD, UI, sessienotities
+// KINEBO — Patiënten: CRUD, UI, sessienotities
 
 const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 
@@ -752,7 +752,7 @@ function exportPatient(patId) {
   const ph = p.phases[pt.phaseIndex||0];
   const age = pt.dob ? calcAge(pt.dob) : null;
   const datum = new Date().toLocaleDateString('nl-BE',{day:'2-digit',month:'2-digit',year:'numeric'});
-  let text = `KINEPROTOCOL — PATIËNTENTRAJECT
+  let text = `KINEBO — PATIËNTENTRAJECT
 ${'='.repeat(50)}
 `;
   text += `Patiënt:     ${pt.name}
@@ -780,7 +780,7 @@ ${esc(s.note)}
 `;
     });
   }
-  text += `KineProtocol · ${datum}`;
+  text += `KINEBO · ${datum}`;
   navigator.clipboard.writeText(text).then(() => alert('Gekopieerd naar klembord!')).catch(() => {
     const ta = document.createElement('textarea'); ta.value = text; ta.style.position='fixed'; ta.style.opacity='0';
     document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
@@ -804,7 +804,7 @@ function printPatient(patId) {
       html += `<div class="pf-ex"><div class="pf-ex-name">${formatDate(s.date)} · ${sPh?sPh.label:''}</div></div><div style="font-size:11px;color:#333;padding:2px 0 8px 8px">${esc(s.note)}</div>`;
     });
   }
-  html += `<div class="pf-footer">KineProtocol · ${datum}</div>`;
+  html += `<div class="pf-footer">KINEBO · ${datum}</div>`;
   document.getElementById('print-fiche').innerHTML = html;
   window.print();
 }
@@ -816,7 +816,7 @@ function exportBackup() {
   const scores = {};
   pts.forEach(pt => { scores[pt.id] = getPatientScores(pt.id); });
   const data = {
-    app: 'KineProtocol', backupVersion: 1, appVersion: (typeof APP_VERSION !== 'undefined' ? APP_VERSION : '?'),
+    app: 'KINEBO', backupVersion: 1, appVersion: (typeof APP_VERSION !== 'undefined' ? APP_VERSION : '?'),
     date: new Date().toISOString(),
     patients: pts, scores,
     favs: JSON.parse(localStorage.getItem('kp_favs') || '[]'),
@@ -837,7 +837,12 @@ function importBackupFile(input) {
   reader.onload = () => {
     let data;
     try { data = JSON.parse(reader.result); } catch(e) { alert('Ongeldig backupbestand (geen geldige JSON).'); return; }
-    if(!data || data.app !== 'KineProtocol' || !Array.isArray(data.patients)) { alert('Dit is geen KineProtocol-backup.'); return; }
+    // Back-ups van vóór de naamswijziging dragen nog de oude app-naam. Die moeten
+    // inleesbaar blijven: het gaat om patiëntendossiers, en een export die na een
+    // hernoeming niet meer terug te zetten is, is dataverlies. Deze tweede waarde
+    // NIET meevervangen bij een volgende hernoeming.
+    const geldigeHerkomst = ['KINEBO', 'KineProtocol'];
+    if(!data || !geldigeHerkomst.includes(data.app) || !Array.isArray(data.patients)) { alert('Dit is geen KINEBO-backup.'); return; }
     const huidige = loadPatients().length;
     if(!confirm(`Backup van ${formatDate(data.date?.slice(0,10)) || '?'} met ${data.patients.length} patiënt(en) terugzetten?\n\nDit VERVANGT de huidige ${huidige} patiënt(en) op dit toestel.`)) return;
     savePatients(data.patients);
@@ -975,7 +980,7 @@ function printOefenblad(patId) {
       </div>
     </div>
     <div class="hdr-right">
-      <div class="hdr-logo">KineProtocol</div>
+      <div class="hdr-logo">KINEBO</div>
       <div class="hdr-sub">Evidence-based revalidatie</div>
       <div class="hdr-date">Aangemaakt: ${datum}</div>
     </div>
@@ -998,7 +1003,7 @@ function printOefenblad(patId) {
   ${exsHtml}
 
   <footer>
-    <div class="footer-info">KineProtocol · ${datum} · <strong>${esc(pt.name)}</strong> · <strong>${esc(p.title)}</strong></div>
+    <div class="footer-info">KINEBO · ${datum} · <strong>${esc(pt.name)}</strong> · <strong>${esc(p.title)}</strong></div>
     <div class="footer-warning">⚠ Stop bij toename van klachten en contacteer uw kinesitherapeut.</div>
   </footer>
 </div>
@@ -1007,7 +1012,7 @@ function printOefenblad(patId) {
 </html>`;
 
   const win = window.open('', '_blank');
-  if(!win) { alert('Pop-up geblokkeerd. Sta pop-ups toe voor KineProtocol.'); return; }
+  if(!win) { alert('Pop-up geblokkeerd. Sta pop-ups toe voor KINEBO.'); return; }
   win.document.write(html);
   win.document.close();
 }

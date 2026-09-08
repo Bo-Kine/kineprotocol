@@ -1,4 +1,4 @@
-// KineProtocol — App: navigatie, rendering, formulieren, zoeken, swipe, init
+// KINEBO — App: navigatie, rendering, formulieren, zoeken, swipe, init
 
 // ── VERSIECONTROLE ──
 // Alles in try/catch: in privémodus of bij geblokkeerde opslag gooit localStorage,
@@ -612,7 +612,7 @@ function printFiche() {
     }
   });
   if(notes) html += `<h2>Notities</h2><div class="pf-notes">${notes}</div>`;
-  html += `<div class="pf-footer">KineProtocol · Evidence-based revalidatie · ${datum}</div>`;
+  html += `<div class="pf-footer">KINEBO · Evidence-based revalidatie · ${datum}</div>`;
   triggerPrint(html);
 }
 function copyFiche() {
@@ -639,7 +639,7 @@ function copyFiche() {
     text += '\n';
   });
   if(notes) text += 'Notities:\n' + notes + '\n\n';
-  text += 'KineProtocol · ' + datum;
+  text += 'KINEBO · ' + datum;
   navigator.clipboard.writeText(text).then(function() {
     var btn = document.querySelector('.kmodal-action.secondary');
     if(btn) { btn.textContent = '✓ Gekopieerd!'; setTimeout(function(){ btn.textContent = '📋 Kopieer tekst'; }, 2000); }
@@ -926,7 +926,7 @@ function saveAndPrintForm() {
   else if(b && b.ingekort) html += ' — verkorte versie; de gepubliceerde afkapwaarde (' + esc(String(form.rts)) + ') geldt voor het volledige instrument en is hier niet van toepassing';
   else if(b && b.oordeelbaar) html += ' — ' + (goed ? 'op of boven' : 'onder') + ' de drempel van ' + esc(String(form.rts));
   html += '</div>';
-  html += '<div class="pf-footer">KineProtocol · ' + datum + '</div>';
+  html += '<div class="pf-footer">KINEBO · ' + datum + '</div>';
   closeForm();
   triggerPrint(html);
 }
@@ -1095,7 +1095,7 @@ function printEvalForm() {
       html += '</div>';
     });
   });
-  html += '<div class="pf-footer">KineProtocol · Klinisch Evaluatieformulier · ' + datum + '</div>';
+  html += '<div class="pf-footer">KINEBO · Klinisch Evaluatieformulier · ' + datum + '</div>';
   closeEvalForm();
   triggerPrint(html);
 }
@@ -1145,7 +1145,7 @@ function printBlankEvalForm(formId) {
       html += '</div>';
     });
   });
-  html += '<div class="pf-footer">KineProtocol · Klinisch Evaluatieformulier · ' + datum + '</div>';
+  html += '<div class="pf-footer">KINEBO · Klinisch Evaluatieformulier · ' + datum + '</div>';
   triggerPrint(html);
 }
 

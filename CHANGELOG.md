@@ -3,6 +3,15 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-09-08 — app hernoemd naar KINEBO, nieuw logo (v86)
+
+- Het B-merk uit het aangeleverde logo is uitgesneden (x 600-813, y 154-537 uit het bronbeeld) en omgezet naar alle acht PWA-iconen · het merk vult 62% van de zijde, zodat het bij `purpose: any maskable` binnen de veilige cirkel blijft die Android en iOS uitsnijden
+- De topbar toont nu datzelfde merk op een cremekleurige tegel in plaats van het bot-emoji · op de donkere balk gaf het merk zonder achtergrond te weinig contrast: de B loopt van bijna zwart (39,0,0) tot lichte metaalglans, en de donkere helft zou wegvallen
+- `logo-mark.png` toegevoegd aan de offline-cachelijst, bij de optionele bestanden — een ontbrekend icoon mag de installatie niet blokkeren
+- Naam vervangen in index.html, app.js, patients.js, sw.js, protocols.js, manifest.json, version.js en scripts/validate.js · CHANGELOG.md en data/claims/*.yaml zijn ONGEMOEID gelaten: die documenteren wat er gebeurd is en horen niet met terugwerkende kracht herschreven te worden
+- DATAVERLIES VOORKOMEN · de JSON-back-up van patiëntendossiers gebruikt de app-naam als kenmerk, en de import weigerde alles wat niet 'KineProtocol' heette · een blinde hernoeming had elke reeds gemaakte back-up onleesbaar gemaakt · de export schrijft nu 'KINEBO', de import aanvaardt beide, en die legacy-waarde staat gemarkeerd zodat ze bij een volgende hernoeming niet meevervangen wordt
+- Gecontroleerd in de browser · titel, topbar, apple-mobile-web-app-title en manifest tonen KINEBO, het logo laadt, geen console-fouten, geen 404's, en de oude naam komt nergens meer in beeld
+
 ## 2026-09-07 — protocolkop scrolt mee (v85)
 
 - De kop van een protocol — breadcrumb, titel, fasetijdlijn en de knoppenrij — stond BUITEN de scrollcontainer met `flex-shrink:0` en kon daardoor per definitie niet meebewegen · hij is nu naar binnen verplaatst, zodat hij bij het scrollen gewoon mee omhoog schuift en je meer scherm overhoudt voor de inhoud

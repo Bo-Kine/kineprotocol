@@ -3,6 +3,13 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-09-13 — onderste navigatiebalk sluit weer aan op de schermrand (v87)
+
+- OORZAAK · `html,body{height:100%}` in combinatie met `viewport-fit=cover` · iOS Safari rekent die 100% tegen de GROTE viewport, dus die zonder zichtbare URL-balk · zodra de browserbalk in beeld schuift is de pagina hoger dan het zichtbare gebied en zakt de navigatiebalk onder de rand weg
+- FIX · `height:100dvh` erbij, met de 100%-regel als terugval voor browsers zonder dvh · dvh volgt de zichtbare viewport terwijl de balken van iOS in- en uitschuiven
+- Gecontroleerd · balk sluit exact aan (gat = 0 px) op 430×932, 390×844 en 375×667, en blijft aansluiten wanneer de viewport tijdens de sessie krimpt — de beste benadering van een inschuivende browserbalk die hier mogelijk is
+- VOORBEHOUD · headless Chromium bootst het in- en uitschuiven van de iOS-balken niet echt na · dat dit jouw situatie oplost is beredeneerd vanuit de oorzaak, niet op een iPhone waargenomen
+
 ## 2026-09-08 — app hernoemd naar KINEBO, nieuw logo (v86)
 
 - Het B-merk uit het aangeleverde logo is uitgesneden (x 600-813, y 154-537 uit het bronbeeld) en omgezet naar alle acht PWA-iconen · het merk vult 62% van de zijde, zodat het bij `purpose: any maskable` binnen de veilige cirkel blijft die Android en iOS uitsnijden

@@ -3,6 +3,43 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-09-15 — nieuw protocol: Discectomie L4-L5 (v88)
+
+Eerste protocol dat van meet af aan onder de regels van §1 is opgesteld: alle zes de
+bronnen zijn eerst live via PubMed opgehaald, en pas daarna is de tekst geschreven
+binnen wat die bronnen dekken. Er hoefde achteraf geen enkele claim teruggedraaid te
+worden. Het verschil is zichtbaar in de badge: **10 van de 13 claims gedekt**, tegenover
+gemiddeld 31 van 461 in de dertig geauditeerde protocollen.
+
+- Vijf fasen (week 0-2, 2-6, 6-12, 12-20, maand 5+), 29 oefeningen, eigen
+  beschrijvingsblok en een module manuele therapie
+- DE STRUCTUUR VOLGT DE EVIDENTIE, NIET ANDERSOM · `oosterhuis_2014_revalidatie_discectomie`
+  (Cochrane, 22 RCT's, 2503 deelnemers) vond dat programma's die ONMIDDELLIJK na de
+  operatie starten NIET effectiever zijn dan hun controle · fase 1 is daarom expliciet
+  geen trainingsfase, en dat staat er ook zo
+- Oefenen vanaf 4-6 weken geeft minder pijn (SMD -0,90; 95% BI -1,55 tot -0,24) en betere
+  functie (SMD -0,67; -1,22 tot -0,12) op korte termijn, maar GEEN verschil op lange
+  termijn (SMD -0,22; -0,49 tot 0,04) · die tweede helft is niet weggelaten maar vormt
+  de kern van fase 4
+- Begeleide en thuisprogramma's verschilden NIET significant · dat scheelt de patiënt
+  tijd en geld, dus het staat zowel in de evidencetekst als bij de oefening zelf
+- Geen van de studies rapporteerde meer heroperaties door oefenen — de geruststelling
+  die een patiënt na een rugoperatie het meest nodig heeft
+- Tilbeperkingen · `carragee_1999_activiteitsbeperkingen`: zonder énige beperking
+  hervatte 98% het werk met gemiddeld 1,2 weken verzuim, en vroege werkhervatting hing
+  niet samen met recidief of heroperatie · in de tekst staat erbij dat dit cohorten
+  ZONDER controlegroep zijn: ze tonen dat loslaten veilig lijkt, niet dat het beter is
+- Het enige niveau-specifieke cijfer · `yin_2018_herniarecidief_peld`: herherniatie 2,7%
+  op L4-L5 tegenover 3,1% op L5-S1 en 5,4% hoger lumbaal, 61,7% binnen zes maanden ·
+  mét het voorbehoud dat dit de ENDOSCOPISCHE techniek betreft en grotendeels uit
+  retrospectieve studies komt
+- Wat NIET gedekt is, stond vanaf het begin gelabeld · alle doseringen, fasegrenzen en
+  doorstroomcriteria (geen bron onderbouwt die na discectomie), de neuroanatomie van de
+  L5- en L4-wortel, en de volledige module manuele therapie — daarvoor bestaat in dit
+  dossier géén bron, en die module opent met die vaststelling
+- Expliciet vermeld in beschrijving én claimdossier · de revalidatieliteratuur is NIET
+  niveau-specifiek: L4-L5 bepaalt welke wortel je opvolgt, niet welk oefenprogramma je geeft
+
 ## 2026-09-13 — onderste navigatiebalk sluit weer aan op de schermrand (v87)
 
 - OORZAAK · `html,body{height:100%}` in combinatie met `viewport-fit=cover` · iOS Safari rekent die 100% tegen de GROTE viewport, dus die zonder zichtbare URL-balk · zodra de browserbalk in beeld schuift is de pagina hoger dan het zichtbare gebied en zakt de navigatiebalk onder de rand weg

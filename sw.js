@@ -1,7 +1,7 @@
 // KINEBO — Service Worker
 // Cacht alle app-bestanden voor offline gebruik (cache-first strategie)
 
-// VERSIESTEMPEL: 87
+// VERSIESTEMPEL: 88
 // Deze regel moet meebumpen met version.js. Reden: browsers bepalen of er een
 // nieuwe service worker is door de BYTES van sw.js te vergelijken. Verandert
 // alleen het geïmporteerde version.js, dan ziet de browser geen verschil en

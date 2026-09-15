@@ -3858,3 +3858,158 @@ references:
       geen bewijs dat een bepaalde chirurgische techniek beter is dan een andere.
     geverifieerd_op: 2026-09-07
     geverifieerd_door: PubMed MCP (get_article_metadata, PMID 20599039)
+
+  - key: oosterhuis_2014_revalidatie_discectomie
+    auteurs: [Oosterhuis T, Costa LOP, Maher CG, de Vet HCW, van Tulder MW, Ostelo RWJG]
+    titel: 'Rehabilitation after lumbar disc surgery'
+    bron: Cochrane Database of Systematic Reviews
+    jaar: 2014
+    volume_paginas: 2014(3):CD003007
+    doi: 10.1002/14651858.CD003007.pub3
+    pmid: '24627325'
+    url: https://doi.org/10.1002/14651858.CD003007.pub3
+    type: SR
+    opmerking: >-
+      22 gerandomiseerde studies, 2503 deelnemers, gemiddelde leeftijd 41,4 jaar;
+      alle deelnemers ondergingen standaard discectomie, microdiscectomie of in een
+      studie laminectomie. Tien studies hadden een laag risico op bias. DE AUTEURS
+      BESCHRIJVEN DE OVERALL BEWIJSKWALITEIT ALS LAAG TOT ZEER LAAG - dat voorbehoud
+      hoort bij elke uitspraak hieronder.
+      TIMING: programma's die ONMIDDELLIJK na de operatie startten waren NIET
+      effectiever dan hun controlebehandeling. Programma's die vier tot zes weken na
+      de operatie startten gaven tegenover geen behandeling minder pijn op korte
+      termijn (SMD -0,90; 95% BI -1,55 tot -0,24; 5 RCT's, n = 272) en betere functie
+      (SMD -0,67; -1,22 tot -0,12; 4 RCT's, n = 252), maar OP LANGE TERMIJN GEEN
+      VERSCHIL (SMD -0,22; -0,49 tot 0,04; 3 RCT's, n = 226).
+      INTENSITEIT: hoogintensief beter dan laagintensief voor pijn op korte termijn
+      (gewogen gemiddeld verschil -10,67; -17,04 tot -4,30; 2 RCT's, n = 103) en
+      functie (SMD -0,77; -1,17 tot -0,36).
+      BEGELEID TEGENOVER THUIS: GEEN significant verschil, niet voor pijn
+      (SMD -0,76; -2,04 tot 0,53) en niet voor functie (SMD -0,36; -0,88 tot 0,15;
+      4 RCT's, n = 154).
+      VEILIGHEID: GEEN van de studies rapporteerde dat oefenen het aantal
+      heroperaties verhoogde.
+      Verder: kinesitherapie vanaf vier tot zes weken gaf betere functie dan geen
+      behandeling of enkel educatie, en multidisciplinaire revalidatie gecoordineerd
+      door arts-adviseurs leidde tot snellere werkhervatting dan gebruikelijke zorg.
+    geverifieerd_op: 2026-09-15
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 24627325)
+
+  - key: gilmore_2014_perioperatieve_kinesitherapie
+    auteurs: [Gilmore SJ, McClelland JA, Davidson M]
+    titel: 'Physiotherapeutic interventions before and after surgery for degenerative lumbar conditions: a systematic review'
+    bron: Physiotherapy
+    jaar: 2014
+    volume_paginas: 101(2):111-8
+    doi: 10.1016/j.physio.2014.06.007
+    pmid: '25287631'
+    url: https://doi.org/10.1016/j.physio.2014.06.007
+    type: SR
+    opmerking: >-
+      Slechts VIER studies ingesloten. ZEER LAGE bewijskwaliteit voor de bevinding
+      dat oefening voor en na de operatie, bovenop standaard kinesitherapie, de
+      pijn, de tijd tot postoperatieve functionele mijlpalen en de tijd van het werk
+      kan verkorten. Uit een van de studies: GEEN duidelijk voordeel en GEEN
+      aantoonbare schade van transfers via buiklig tegenover zijlig - de discussie
+      over de juiste transfertechniek heeft dus geen basis. De auteurs besluiten dat
+      het huidige bewijs slechts beperkte sturing geeft voor de praktijk.
+    geverifieerd_op: 2026-09-15
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 25287631)
+
+  - key: carragee_1999_activiteitsbeperkingen
+    auteurs: [Carragee EJ, Han MY, Yang B, Kim DH, Kraemer H, Billys J]
+    titel: 'Activity restrictions after posterior lumbar discectomy. A prospective study of outcomes in 152 cases with no postoperative restrictions'
+    bron: Spine
+    jaar: 1999
+    volume_paginas: 24(22):2346-51
+    doi: 10.1097/00007632-199911150-00010
+    pmid: '10586459'
+    url: https://doi.org/10.1097/00007632-199911150-00010
+    type: cohort
+    opmerking: >-
+      152 opeenvolgende werkende patienten na beperkte open discectomie, postoperatief
+      behandeld ZONDER ENIGE ACTIVITEITSBEPERKING en aangemoedigd zo snel mogelijk
+      alles te hervatten; minimaal twee jaar opvolging, gemiddeld 4,8 jaar.
+      149 van de 152 (98%) hervatte het werk; gemiddeld verzuim 1,2 weken; 148 van
+      149 was binnen acht weken volledig aan het werk; ongeveer een derde (32%)
+      binnen een week, velen de dag nadien. Zeer vroege werkhervatting hing NIET
+      samen met recidiverende ischias, heroperatie voor herherniatie of de
+      uiteindelijke uitkomst. 17 patienten (11,2%) hadden mogelijke herherniatie
+      (recidiverende ischias) en 8 werden heropereerd (5,3%).
+      BELANGRIJKE BEPERKING: dit is een prospectief cohort ZONDER CONTROLEGROEP. De
+      auteurs stellen dat de complicatiecijfers vergelijkbaar lijken met wat elders
+      wordt gerapporteerd bij patienten MET beperkingen, en dat beperkingen bij de
+      meeste patienten mogelijk niet nodig zijn - dat is iets anders dan aantonen
+      dat loslaten beter is.
+    geverifieerd_op: 2026-09-15
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 10586459)
+
+  - key: carragee_1996_activiteitsbeperkingen
+    auteurs: [Carragee EJ, Helms E, O'Sullivan GS]
+    titel: 'Are postoperative activity restrictions necessary after posterior lumbar discectomy? A prospective study of outcomes in 50 consecutive cases'
+    bron: Spine
+    jaar: 1996
+    volume_paginas: 21(16):1893-7
+    doi: 10.1097/00007632-199608150-00013
+    pmid: '8875722'
+    url: https://doi.org/10.1097/00007632-199608150-00013
+    type: cohort
+    opmerking: >-
+      Voorloper van de reeks uit 1999: 50 opeenvolgende patienten na beperkte open
+      discectomie, zonder enige postoperatieve beperking. Gemiddelde tijd tot
+      werkhervatting 1,7 weken; 11 van 44 (25%) hervatte de eerstvolgende werkdag;
+      97% van wie voordien werkte keerde terug naar het eigen werk; 43 van 44 (97%)
+      was binnen acht weken volledig aan het werk. Drie herherniaties op het
+      geopereerde niveau (6%), alle MEER DAN EEN JAAR na de operatie; een patient
+      werd heropereerd. Ook hier GEEN controlegroep.
+    geverifieerd_op: 2026-09-15
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 8875722)
+
+  - key: yin_2018_herniarecidief_peld
+    auteurs: [Yin S, Du H, Yang W, Duan C, Feng C, Tao H]
+    titel: 'Prevalence of Recurrent Herniation Following Percutaneous Endoscopic Lumbar Discectomy: A Meta-Analysis'
+    bron: Pain Physician
+    jaar: 2018
+    volume_paginas: 21(4):337-350
+    doi: null
+    pmid: '30045591'
+    url: https://pubmed.ncbi.nlm.nih.gov/30045591/
+    type: SR
+    opmerking: >-
+      Meta-analyse over PERCUTANE ENDOSCOPISCHE lumbale discectomie (PELD) - NIET
+      over open of microdiscectomie. Totale prevalentie van herherniatie 3,6%
+      (95% BI 3,0-4,3%). PER NIVEAU: 2,7% op L4-L5, 3,1% op L5-S1 en 5,4% op de
+      hogere lumbale niveaus - dit is het enige niveau-specifieke cijfer in dit
+      dossier. 61,7% van de recidieven trad op BINNEN ZES MAANDEN postoperatief.
+      Leeftijd vanaf 50 jaar (4,3% tegenover 2,7%) en BMI vanaf 25 (4,8% tegenover
+      1,5%) gingen samen met meer recidief; centrale en hoger gelegen hernia's
+      eveneens. De chirurgische benadering (transforaminaal tegenover interlaminair),
+      laterale en gemigreerde hernia's en foraminoplastiek beinvloedden de incidentie
+      niet. BEPERKING DIE DE AUTEURS ZELF NOEMEN: de meeste ingesloten artikels zijn
+      retrospectieve studies van relatief lage kwaliteit met aanzienlijke
+      heterogeniteit. PubMed vermeldt geen DOI.
+    geverifieerd_op: 2026-09-15
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 30045591)
+
+  - key: miller_2018_annulusdefect
+    auteurs: [Miller LE, McGirt MJ, Garfin SR, Bono CM]
+    titel: 'Association of Annular Defect Width After Lumbar Discectomy With Risk of Symptom Recurrence and Reoperation: Systematic Review and Meta-analysis of Comparative Studies'
+    bron: Spine
+    jaar: 2018
+    volume_paginas: 43(5):E308-E315
+    doi: 10.1097/BRS.0000000000002501
+    pmid: '29176471'
+    url: https://doi.org/10.1097/BRS.0000000000002501
+    type: SR
+    opmerking: >-
+      Zeven vergelijkende studies, 1653 patienten na lumbale discectomie, waarvan
+      499 (30%) een groot en 1154 (70%) een klein annulusdefect. Mediane opvolging
+      2,9 jaar; methodologische kwaliteit over het geheel goed. Bij een GROOT
+      annulusdefect was het risico op symptoomrecidief hoger (odds ratio 2,5;
+      95% BI 1,3-4,5; p = 0,004) en op heroperatie (2,3; 1,5-3,7; p < 0,001). Geen
+      aanwijzing voor publicatiebias; de verbanden bleven overeind in alle
+      gevoeligheidsanalyses. Klinisch nut voor de kinesitherapeut: het is een
+      niet-beinvloedbare chirurgische factor die soms in het operatieverslag staat
+      en de verwachtingen mag sturen.
+    geverifieerd_op: 2026-09-15
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 29176471)

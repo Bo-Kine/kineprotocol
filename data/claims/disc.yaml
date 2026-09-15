@@ -1,0 +1,205 @@
+protocol: disc
+protocol_titel: Discectomie L4-L5
+laatst_gecontroleerd: 2026-09-15
+gecontroleerd_door: fase A — Claude (nieuw protocol, alle bronnen vooraf live opgehaald)
+opmerking: >-
+  Dit protocol is als eerste NIEUW opgesteld onder de regels van CLAUDE.md par. 1:
+  elke bron is eerst live opgehaald via PubMed, en pas daarna is de tekst
+  geschreven binnen wat die bronnen dekken. Er is dus geen enkele claim die
+  achteraf moest worden teruggedraaid. Het verschil met de dertig geauditeerde
+  protocollen is zichtbaar in de verhouding: hier zijn de meeste claims gedekt, en
+  wat niet gedekt is, stond vanaf het begin als klinische richtlijn in de tekst.
+  TWEE ZAKEN DIE DE KINESITHERAPEUT MOET WETEN. (1) De revalidatieliteratuur is
+  NIET niveau-specifiek: L4-L5 bepaalt welke zenuwwortel je opvolgt, niet welk
+  oefenprogramma je geeft. Het enige niveau-specifieke cijfer in dit dossier is het
+  recidiefpercentage van Yin 2018. (2) De bewijskwaliteit is over de hele lijn laag
+  tot zeer laag; dat staat zo in de Cochrane-review zelf en is in elke fase
+  vermeld.
+
+claims:
+  - id: disc_c1
+    tekst: >-
+      Revalidatieprogramma's die onmiddellijk na de operatie starten zijn niet
+      effectiever dan hun controlebehandeling.
+    plaats: fase 1 - evidence
+    bronnen: [oosterhuis_2014_revalidatie_discectomie]
+    gedekt: ja
+    opmerking: >-
+      Letterlijk in het abstract: "Rehabilitation programmes that started
+      immediately after surgery were not more effective than their control
+      interventions, which included exercise." Dit stuurt de opzet van fase 1: die
+      is bewust geen trainingsfase.
+    verwerkt: als kernbevinding aan het begin van fase 1 gezet
+
+  - id: disc_c2
+    tekst: >-
+      Oefening voor en na de operatie kan de pijn, de tijd tot functionele
+      mijlpalen en het werkverzuim verkorten; er is geen voordeel of schade van
+      buiklig tegenover zijlig bij transfers.
+    plaats: fase 1 - evidence en oefening
+    bronnen: [gilmore_2014_perioperatieve_kinesitherapie]
+    gedekt: ja
+    opmerking: >-
+      Beide letterlijk in het abstract, met de uitdrukkelijke kwalificatie
+      "very-low-quality evidence" en slechts vier ingesloten studies. Die
+      kwalificatie staat in de protocoltekst.
+    verwerkt: opgenomen met bewijsniveau erbij
+
+  - id: disc_c3
+    tekst: >-
+      Zonder postoperatieve beperkingen hervatte 98% het werk, met een gemiddeld
+      verzuim van 1,2 weken; vroege werkhervatting hing niet samen met recidief,
+      heroperatie of uitkomst. Herherniatie 11,2%, heroperatie 5,3%.
+    plaats: fase 2 - evidence
+    bronnen: [carragee_1999_activiteitsbeperkingen, carragee_1996_activiteitsbeperkingen]
+    gedekt: ja
+    opmerking: >-
+      Alle cijfers letterlijk uit het abstract van de reeks met 152 patienten. De
+      beperking is in de protocoltekst expliciet vermeld: het zijn prospectieve
+      cohorten ZONDER controlegroep, die tonen dat loslaten veilig lijkt, niet dat
+      het beter is dan beperken. Ook vermeld: volg de instructies van de chirurg.
+    verwerkt: opgenomen met de ontbrekende controlegroep erbij
+
+  - id: disc_c4
+    tekst: >-
+      Oefenen vanaf vier tot zes weken geeft minder pijn (SMD -0,90) en betere
+      functie (SMD -0,67) op korte termijn, maar geen verschil op lange termijn
+      (SMD -0,22).
+    plaats: fase 3 en 4 - evidence
+    bronnen: [oosterhuis_2014_revalidatie_discectomie]
+    gedekt: ja
+    opmerking: >-
+      Alle drie de effectgroottes met hun betrouwbaarheidsintervallen en
+      studieaantallen letterlijk overgenomen. Het ontbreken van langetermijneffect
+      is NIET weggelaten maar vormt juist de kern van fase 4 - precies het soort
+      ongunstige helft dat in de dertig geauditeerde protocollen stelselmatig
+      verdween.
+    verwerkt: beide richtingen opgenomen
+
+  - id: disc_c5
+    tekst: >-
+      Begeleide en thuisoefenprogramma's verschillen niet significant in pijn of
+      functie.
+    plaats: fase 3 - evidence en oefening
+    bronnen: [oosterhuis_2014_revalidatie_discectomie]
+    gedekt: ja
+    opmerking: >-
+      SMD -0,76 (95% BI -2,04 tot 0,53) voor pijn en -0,36 (-0,88 tot 0,15) voor
+      functie, vier RCT's met 154 deelnemers. Klinisch en financieel relevant voor
+      de patient, en daarom zowel in het evidence-veld als in de oefeningnote
+      opgenomen in plaats van alleen in de evidencetekst.
+    verwerkt: opgenomen op beide plaatsen
+
+  - id: disc_c6
+    tekst: >-
+      Hoogintensieve oefenprogramma's zijn iets effectiever dan laagintensieve voor
+      pijn en functie op korte termijn.
+    plaats: fase 3 - evidence en oefening
+    bronnen: [oosterhuis_2014_revalidatie_discectomie]
+    gedekt: deels
+    opmerking: >-
+      De cijfers kloppen (gewogen gemiddeld verschil -10,67; 95% BI -17,04 tot
+      -4,30 voor pijn; SMD -0,77; -1,17 tot -0,36 voor functie), maar de
+      bewijskwaliteit is ZEER LAAG en het betreft twee studies met 103 deelnemers.
+      In de tekst staat daarom "iets beter" en "op zeer laag bewijs", niet
+      "superieur".
+    verwerkt: met omvang en bewijsniveau opgenomen
+
+  - id: disc_c7
+    tekst: Geen van de studies rapporteerde dat oefenen het aantal heroperaties verhoogde.
+    plaats: fase 3 - evidence
+    bronnen: [oosterhuis_2014_revalidatie_discectomie]
+    gedekt: ja
+    opmerking: >-
+      Letterlijk in het abstract. Dit is de geruststelling die een patient na een
+      rugoperatie het vaakst nodig heeft en die daarom expliciet in de tekst staat.
+    verwerkt: opgenomen
+
+  - id: disc_c8
+    tekst: >-
+      Multidisciplinaire revalidatie gecoordineerd door arts-adviseurs leidt tot
+      snellere werkhervatting dan gebruikelijke zorg.
+    plaats: fase 4 - evidence en oefening
+    bronnen: [oosterhuis_2014_revalidatie_discectomie]
+    gedekt: ja
+    opmerking: >-
+      Letterlijk in het abstract, op laag bewijs. In fase 4 gebruikt om te stellen
+      dat de meerwaarde daar eerder organisatorisch is dan oefentechnisch - een
+      conclusie die volgt uit het ontbreken van langetermijneffect (disc_c4).
+    verwerkt: opgenomen met bewijsniveau
+
+  - id: disc_c9
+    tekst: >-
+      Herherniatie na percutane endoscopische discectomie bedraagt 3,6% totaal en
+      2,7% op niveau L4-L5; 61,7% treedt op binnen zes maanden; leeftijd vanaf 50
+      en BMI vanaf 25 gaan samen met meer recidief.
+    plaats: fase 5 - evidence en oorzaken
+    bronnen: [yin_2018_herniarecidief_peld]
+    gedekt: ja
+    opmerking: >-
+      Alle cijfers letterlijk. TWEE VOORBEHOUDEN STAAN IN DE TEKST. (1) Ze gelden
+      voor de ENDOSCOPISCHE techniek, niet voor open of microdiscectomie. (2) De
+      auteurs noemen zelf dat de meeste ingesloten artikels retrospectieve studies
+      van relatief lage kwaliteit zijn met aanzienlijke heterogeniteit. Het verband
+      met BMI is bovendien expliciet als SAMENHANG benoemd en niet als bewijs dat
+      afvallen het recidief verlaagt.
+    verwerkt: opgenomen met beide voorbehouden
+
+  - id: disc_c10
+    tekst: >-
+      Een groot annulusdefect verhoogt het risico op symptoomrecidief (OR 2,5) en
+      heroperatie (OR 2,3).
+    plaats: fase 5 - evidence en oorzaken
+    bronnen: [miller_2018_annulusdefect]
+    gedekt: ja
+    opmerking: >-
+      Odds ratio's en betrouwbaarheidsintervallen letterlijk. In de tekst
+      gepositioneerd als niet-beinvloedbare chirurgische factor die wel in het
+      operatieverslag kan staan.
+    verwerkt: opgenomen
+
+  - id: disc_c11
+    tekst: >-
+      Bij een paramediane herniatie op L4-L5 is doorgaans de L5-wortel aangedaan,
+      bij een ver-laterale herniatie de L4-wortel.
+    plaats: kenmerken en fase 1 - oefening
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Standaard neuroanatomie, in dit dossier niet tegen een bron gelegd. Bewust
+      opgenomen omdat het bepaalt WELKE wortel de kinesitherapeut opvolgt, en in de
+      tekst gelabeld als anatomische kennis zonder bronclaim.
+    verwerkt: gelabeld
+
+  - id: disc_c12
+    tekst: >-
+      Doseringen, fasegrenzen en doorstroomcriteria van dit protocol
+      (wandelduur, sets, herhalingen, weeknummers, criteria per fase).
+    plaats: alle fasen
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Geen enkele bron in dit dossier onderbouwt concrete doseringen of
+      fasegrenzen na discectomie. De Cochrane-review beschrijft wel dat de
+      ingesloten programma's gemiddeld twaalf weken duurden, met zes tot acht weken
+      of twaalf tot dertien weken als gangbare lengtes - dat is de enige
+      aanknoping. Alle getallen in dit protocol staan daarom als praktijkafspraak
+      of klinische richtlijn in de tekst.
+    verwerkt: overal gelabeld
+
+  - id: disc_c13
+    tekst: >-
+      Manuele therapie na discectomie (richtingsgestuurde technieken, weke delen,
+      neurodynamiek, littekenmobilisatie).
+    plaats: manuele-therapiemodule
+    bronnen: [oosterhuis_2014_revalidatie_discectomie]
+    gedekt: nee
+    opmerking: >-
+      Er is in dit dossier GEEN bron die manuele therapie na discectomie
+      onderzoekt. De module opent daarom met die vaststelling en positioneert de
+      technieken uitdrukkelijk als opstap naar oefenen, niet als zelfstandige
+      behandeling met een eigen effect. Manipulatie van het geopereerde segment
+      staat als contra-indicatie vermeld, eveneens omdat er geen bron is die
+      veiligheid of nut ervan ondersteunt.
+    verwerkt: als klinische richtlijn gelabeld, met de ontbrekende evidentie
+      vooraan in de module

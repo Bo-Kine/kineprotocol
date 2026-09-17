@@ -3,6 +3,30 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-09-17 — module Manuele therapie — Bekken toegevoegd (v89)
+
+- `mt-bekken.js` toegevoegd: interactief onderzoeksformulier (7 secties, 68 velden met
+  links/rechts-registratie), live interpretatiehulp, beslisbomen en naslag · opslaan per
+  patiënt of los, met print- en blanco-uitvoer
+- AANGELEVERD ALS VOLLEDIGE APP-KOPIE, MAAR ZO NIET OVERGENOMEN · de zip bevatte ook
+  app.js, index.html en patients.js · die klakkeloos overzetten zou de bronaudit, de
+  hernoeming naar KINEBO en de scroll- en navigatiefixes hebben gewist · alleen
+  `mt-bekken.js` is overgenomen, plus de vijf integratiehaken los toegepast op de
+  huidige code: schermlijst in app.js, navigatie-item, schermcontainer, knop in het
+  meer-menu en scripttag in index.html, cachevermelding in sw.js
+- Back-up dekt de nieuwe gegevens · `kp_mtbekken_*`-sleutels gaan mee in de JSON-export
+  en worden bij herstel teruggezet; het werkdocument (`_draft`) blijft er bewust buiten
+- DE MODULE IS EERLIJK OVER ZICHZELF, en dat is bewust zo gelaten · ze draagt bovenaan
+  elk tabblad én op de print de vermelding "Cursusinhoud Manuele Therapie (eigen
+  samenvatting) — niet tegen primaire literatuur gecontroleerd" · de twee cijfers in de
+  interpretatie (± 35% en ± 92% zekerheid bij het cluster van Laslett) staan expliciet
+  als "cursus: …" en niet als literatuur · dat is dezelfde lijn als de bronaudit: liever
+  zichtbaar onzeker dan glad en ongecontroleerd
+- Gecontroleerd in de browser · alle vier de tabbladen tonen eigen inhoud, de
+  interpretatie rekent correct (cluster 5/5 positief), de disclaimer is zichtbaar, de
+  back-upsleutels worden opgepikt en het werkdocument uitgesloten, geen console-fouten
+  en geen 404's
+
 ## 2026-09-15 — nieuw protocol: Discectomie L4-L5 (v88)
 
 Eerste protocol dat van meet af aan onder de regels van §1 is opgesteld: alle zes de

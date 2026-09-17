@@ -535,6 +535,7 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
     <div class="sidebar-divider"></div>
     <div class="sidebar-section">Evaluatieformulieren</div>
     <div class="nav-item" id="nav-eval-forms" onclick="showEvalFormsScreen()"><span style="font-size:15px;">🩺</span><span class="nav-title">Klinisch onderzoek</span><span style="font-size:10px;padding:2px 7px;border-radius:10px;background:rgba(248,113,113,.15);color:#f87171;font-family:'Geist Mono',monospace;">5 regio</span></div>
+    <div class="nav-item" id="nav-mt-bekken" onclick="showMtBekkenScreen()"><span style="font-size:15px;">🤲</span><span class="nav-title">MT — Bekken</span><span style="font-size:10px;padding:2px 7px;border-radius:10px;background:rgba(167,139,250,.15);color:#a78bfa;font-family:'Geist Mono',monospace;">cursus</span></div>
     <div class="nav-item" id="nav-library" onclick="showLibrary()"><span style="font-size:15px;">📚</span><span class="nav-title">Oefenbibliotheek</span><span style="font-size:10px;padding:2px 7px;border-radius:10px;background:rgba(250,204,21,.12);color:#facc15;font-family:'Geist Mono',monospace;" id="lib-count-badge">—</span></div>
     <div class="sidebar-divider"></div>
     <div class="sidebar-section">Patiënten</div>
@@ -601,6 +602,10 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
         <div class="viewer-tabs" id="proto-tabs"></div>
         <div class="viewer-body" id="proto-body"></div>
       </div>
+    </div>
+    <!-- MANUELE THERAPIE — BEKKEN (mt-bekken.js) -->
+    <div id="screen-mt-bekken" style="display:none;overflow-y:auto;flex:1;-webkit-overflow-scrolling:touch;">
+      <div id="mt-bekken-root"></div>
     </div>
     <!-- PATIENTS LIST -->
     <div id="screen-patients" style="display:none;overflow-y:auto;flex:1;-webkit-overflow-scrolling:touch;">
@@ -689,6 +694,7 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
     <div class="bs-title">Meer</div>
     <div class="bs-body">
       <button class="bs-action" onclick="closeMoreSheet();showEvalFormsScreen()"><span class="bs-action-icon">🩺</span><span>Klinische Evaluatieformulieren</span></button>
+      <button class="bs-action" onclick="closeMoreSheet();showMtBekkenScreen()"><span class="bs-action-icon">🤲</span><span>Manuele therapie — Bekken</span></button>
       <button class="bs-action" onclick="closeMoreSheet();document.getElementById('searchInput').focus()"><span class="bs-action-icon">🔍</span><span>Zoeken</span></button>
       <button class="bs-action" onclick="closeMoreSheet();forceerUpdate()"><span class="bs-action-icon">↻</span><span>Controleer op update<span id="more-version-label" style="color:var(--muted2);font-family:'Geist Mono',monospace;font-size:10px;margin-left:6px;"></span></span></button>
     </div>
@@ -801,5 +807,6 @@ body{background:var(--bg);color:var(--text);font-family:'Geist',sans-serif;font-
 <script src="bronstatus.js"></script>
 <script src="patients.js"></script>
 <script src="app.js"></script>
+<script src="mt-bekken.js"></script>
 </body>
 </html>

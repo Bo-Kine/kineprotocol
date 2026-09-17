@@ -137,7 +137,7 @@ function renderFeatured(regio) {
 
 // ── NAVIGATION ──
 function hideAllScreens() {
-  ['screen-home','screen-proto','screen-patients','screen-patient-detail','screen-eval-forms','screen-library','screen-search'].forEach(id => {
+  ['screen-home','screen-proto','screen-patients','screen-patient-detail','screen-eval-forms','screen-library','screen-search','screen-mt-bekken'].forEach(id => {
     const el = document.getElementById(id);
     if(el) el.style.display = 'none';
   });

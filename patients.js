@@ -816,6 +816,7 @@ function exportBackup() {
   const scores = {};
   pts.forEach(pt => { scores[pt.id] = getPatientScores(pt.id); });
   const data = {
+    mtbekken: Object.keys(localStorage).filter(k => k.startsWith('kp_mtbekken_') && k !== 'kp_mtbekken_draft').reduce((o, k) => { o[k] = localStorage.getItem(k); return o; }, {}),
     app: 'KINEBO', backupVersion: 1, appVersion: (typeof APP_VERSION !== 'undefined' ? APP_VERSION : '?'),
     date: new Date().toISOString(),
     patients: pts, scores,
@@ -850,6 +851,7 @@ function importBackupFile(input) {
     Object.entries(data.scores || {}).forEach(([patId, sc]) => {
       try { localStorage.setItem('kp_scores_' + patId, JSON.stringify(sc)); } catch(e) {}
     });
+    Object.entries(data.mtbekken || {}).forEach(([k, v]) => { if(k.startsWith('kp_mtbekken_')) try { localStorage.setItem(k, v); } catch(e) {} });
     if(Array.isArray(data.favs)) localStorage.setItem('kp_favs', JSON.stringify(data.favs));
     updatePatientBadge();
     if(typeof buildNav === 'function') buildNav();

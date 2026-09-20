@@ -422,13 +422,13 @@
     "wiki": "https://en.wikipedia.org/wiki/Stretching"
   },
   "SEBT (Star Excursion Balance Test)": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Proprioception_image-01.jpg/500px-Proprioception_image-01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Proprioception_image-01.jpg/500px-Proprioception_image-01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "alt": "Proprioception",
     "credit": "Wikipedia: Proprioception",
     "wiki": "https://en.wikipedia.org/wiki/Proprioception"
   },
   "Scapula retractie & depressie": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Pectoral_girdle_front_diagram.svg/500px-Pectoral_girdle_front_diagram.svg.png",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Pectoral_girdle_front_diagram.svg/500px-Pectoral_girdle_front_diagram.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "alt": "Scapula",
     "credit": "Wikipedia: Scapula",
     "wiki": "https://en.wikipedia.org/wiki/Scapula"
@@ -882,5 +882,41 @@
     "alt": "Resistance band",
     "credit": "Wikipedia: Resistance band",
     "wiki": "https://en.wikipedia.org/wiki/Resistance%20band"
+  },
+  "Ademhaling & rompontspanning in ruglig": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Diaphragmatic_breathing.gif/500px-Diaphragmatic_breathing.gif?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "alt": "Diaphragmatic breathing",
+    "credit": "Wikipedia: Diaphragmatic breathing",
+    "wiki": "https://en.wikipedia.org/wiki/Diaphragmatic%20breathing"
+  },
+  "Aerobe training (fiets, wandelen, zwemmen)": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Women_walking_in_Hyderabad_street.jpg/500px-Women_walking_in_Hyderabad_street.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "alt": "Walking",
+    "credit": "Wikipedia: Walking",
+    "wiki": "https://en.wikipedia.org/wiki/Walking"
+  },
+  "Jog-walk protocol": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Women_walking_in_Hyderabad_street.jpg/500px-Women_walking_in_Hyderabad_street.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "alt": "Walking",
+    "credit": "Wikipedia: Walking",
+    "wiki": "https://en.wikipedia.org/wiki/Walking"
+  },
+  "Jog-walk protocol (vlak)": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Women_walking_in_Hyderabad_street.jpg/500px-Women_walking_in_Hyderabad_street.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "alt": "Walking",
+    "credit": "Wikipedia: Walking",
+    "wiki": "https://en.wikipedia.org/wiki/Walking"
+  },
+  "Jog-walk protocol (vlak, kort)": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Women_walking_in_Hyderabad_street.jpg/500px-Women_walking_in_Hyderabad_street.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "alt": "Walking",
+    "credit": "Wikipedia: Walking",
+    "wiki": "https://en.wikipedia.org/wiki/Walking"
+  },
+  "Joggen in rechte lijn (progressief)": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Girls_jog_along_Morro_Strand_State_Beach.jpg/500px-Girls_jog_along_Morro_Strand_State_Beach.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "alt": "Jogging",
+    "credit": "Wikipedia: Jogging",
+    "wiki": "https://en.wikipedia.org/wiki/Jogging"
   }
 }

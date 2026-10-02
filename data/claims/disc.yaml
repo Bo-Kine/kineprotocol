@@ -1,7 +1,7 @@
 protocol: disc
 protocol_titel: Discectomie L4-L5
 laatst_gecontroleerd: 2026-09-15
-gecontroleerd_door: fase A — Claude (nieuw protocol, alle bronnen vooraf live opgehaald)
+gecontroleerd_door: fase A — Claude (alle bronnen vooraf live opgehaald); fase B — onafhankelijke verificator-agent met schone context (2026-10-02)
 opmerking: >-
   Dit protocol is als eerste NIEUW opgesteld onder de regels van CLAUDE.md par. 1:
   elke bron is eerst live opgehaald via PubMed, en pas daarna is de tekst
@@ -203,3 +203,27 @@ claims:
       veiligheid of nut ervan ondersteunt.
     verwerkt: als klinische richtlijn gelabeld, met de ontbrekende evidentie
       vooraan in de module
+
+  - id: disc_c14
+    tekst: >-
+      Fase B-correcties: (1) "geen trainingsfase is een bevinding" was te sterk -
+      de controlebehandelingen in Oosterhuis bevatten zelf oefenvormen; (2) Gilmore:
+      geen verschil tussen transfer via buiklig of zijlig in één studie, zeer laag
+      bewijs, en de review betreft degeneratieve lumbale chirurgie in het algemeen;
+      (3) Carragee: complicatiecijfers leken vergelijkbaar met de literatuur, zonder
+      controlegroep - niet "geen meer complicaties"; (4) "geen verschil op lange
+      termijn" geldt voor functie (SMD -0,22; -0,49 tot 0,04); (5) hoog- versus
+      laagintensief: laag (functie) tot zeer laag (pijn) bewijs; (6) Yin: studies van
+      relatief lage kwaliteit, 61,7% binnen zes maanden, BMI-samenhang bij
+      endoscopische discectomie; (7) Miller: groot annulusdefect GING SAMEN MET een
+      hoger risico (associatie, geen oorzakelijkheid).
+    plaats: fase 1 tot 5; aandoeningsbeschrijving; manuele-therapiemodule; refs
+    bronnen: [oosterhuis_2014_revalidatie_discectomie, gilmore_2014_perioperatieve_kinesitherapie, carragee_1999_activiteitsbeperkingen, carragee_1996_activiteitsbeperkingen, yin_2018_herniarecidief_peld, miller_2018_annulusdefect]
+    gedekt: ja
+    opmerking: >-
+      Overschattingen in de eigen fase A-tekst, gevonden door de onafhankelijke
+      verificatie. Wandelduur- en vragenlijstcriteria gelabeld als praktijkafspraak;
+      tijdsbesparing van een thuisprogramma als praktische overweging; restklachten
+      en operatie-indicatie gelabeld als klinische ervaring/richtlijn zonder bron.
+      Auteursinitialen Oosterhuis gelijkgezet met het PubMed-record.
+    verwerkt: aangepast in protocols.js (v92)

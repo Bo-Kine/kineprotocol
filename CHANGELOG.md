@@ -3,6 +3,12 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-10-02 — fase B-correcties Cervicalgie en Discectomie L4-L5 (v92)
+
+- Cervicalgie: educatie gekoppeld aan activerende maatregelen i.p.v. de hele behandeling; "het meest consistent" geschrapt; halskraag → korsetten/orthesen, "afgeraden" → "niet aanbevolen"; levenskwaliteit bij juiste vergelijking geplaatst; beloop na 6,5 weken gecorrigeerd (pijn steeg weer van 35 naar 42); dosering "moet nog onderzocht worden"; subacute toepassing van krachttraining als extrapolatie gelabeld · onafhankelijke verificatie vond overschattingen in eigen fase A-tekst · elallawy_2025_s3_nekpijn, corp_2020_europese_richtlijnen, lim_2025_richtlijnen_wervelkolompijn, wilhelm_2023_mt_oefening_nek, hush_2011_prognose_nekpijn, gross_2015_oefentherapie_nek
+- Discectomie: "bevinding, geen keuze" geschrapt; transferclaim beperkt tot één studie op zeer laag bewijs; Carragee zonder controlegroep; lange termijn "voor functie"; Yin "relatief lage kwaliteit" en endoscopisch; Miller als associatie; wandel- en vragenlijstcriteria als praktijkafspraak gelabeld · idem · oosterhuis_2014_revalidatie_discectomie, gilmore_2014_perioperatieve_kinesitherapie, carragee_1999_activiteitsbeperkingen, yin_2018_herniarecidief_peld, miller_2018_annulusdefect
+- Auteursinitialen Oosterhuis gelijkgezet met PubMed · bibliografische correctie · PubMed-record
+
 ## 2026-10-02 — nieuw protocol: Cervicalgie (v91)
 
 - Gevraagd met Firecrawl; dat was niet gekoppeld aan de sessie · op verzoek van de

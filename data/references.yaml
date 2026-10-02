@@ -4013,3 +4013,199 @@ references:
       en de verwachtingen mag sturen.
     geverifieerd_op: 2026-09-15
     geverifieerd_door: PubMed MCP (get_article_metadata, PMID 29176471)
+
+  - key: elallawy_2025_s3_nekpijn
+    auteurs: [El-Allawy A, Hecht N, Luedtke K, Schleicher P, Weidner N, Kötter T]
+    titel: 'Clinical Practice Guideline: Nonspecific Neck Pain'
+    bron: Deutsches Arzteblatt International
+    jaar: 2025
+    volume_paginas: 122(20):552-557
+    doi: 10.3238/arztebl.m2025.0119
+    pmid: '40665902'
+    url: https://doi.org/10.3238/arztebl.m2025.0119
+    type: richtlijn
+    opmerking: >-
+      Samenvatting van de Duitse S3-richtlijn (DEGAM, opgewaardeerd van S1 naar
+      S3), interdisciplinair en interprofessioneel opgesteld volgens de AWMF-regels;
+      systematische zoektocht in Medline tot november 2024; in de praktijk getest.
+      ALLEEN HET ABSTRACT IS GELEZEN - de volledige tekst (PMC12620902) kwam leeg
+      terug via de PubMed-tool en de websites waren door de netwerkproxy geblokkeerd.
+      Wat het abstract dekt: acute nekpijn 0-3 weken, chronisch langer dan 12 weken;
+      motorische uitval, nachtpijn en een voorafgaand trauma als aanwijzingen voor
+      een structurele oorzaak; bij acute pijn zonder zulke aanwijzingen in de regel
+      GEEN beeldvorming; activerende maatregelen met nadruk op zelfmanagement met
+      grote effectgroottes (tot d > 1,0); succes mogelijk afhankelijk van
+      patienteneducatie (d = 0,73); bij chronische pijn ook oefentherapie;
+      pijnstillers kortdurend met kleine effectgrootte; activatie als centraal
+      element. Bijna de helft van de volwassenen in Duitsland heeft minstens eens
+      per jaar nekpijn. Concrete aanbevelingsgraden en doseringen staan in de
+      volledige tekst en zijn NIET overgenomen.
+    geverifieerd_op: 2026-10-02
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 40665902)
+
+  - key: corp_2020_europese_richtlijnen
+    auteurs: [Corp N, Mansell G, Stynes S, Wynne-Jones G, Morsø L, Hill JC, van der Windt DA]
+    titel: 'Evidence-based treatment recommendations for neck and low back pain across Europe: A systematic review of guidelines'
+    bron: European Journal of Pain
+    jaar: 2020
+    volume_paginas: 25(2):275-295
+    doi: 10.1002/ejp.1679
+    pmid: '33064878'
+    url: https://doi.org/10.1002/ejp.1679
+    type: SR
+    opmerking: >-
+      Jaartal volgens de publicatiedatum in het PubMed-record (12 november 2020);
+      het nummer 25(2) verscheen later. 17 Europese richtlijnen uit acht landen
+      (11 lage rug, 5 nek, 1 beide), waarvan zeven van hoge kwaliteit (AGREE II).
+      Voor NEKPIJN consistente ZWAKKE of MATIGE aanbevelingen voor: geruststelling,
+      advies en educatie, manuele therapie, verwijzing naar oefentherapie, orale
+      pijnstillers en lokale medicatie, plus psychologische therapie of
+      multidisciplinaire behandeling voor specifieke subgroepen. De aanbevelingen
+      voor nekpijn zijn over het geheel ZWAKKER dan die voor lage rugpijn.
+    geverifieerd_op: 2026-10-02
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 33064878)
+
+  - key: lim_2025_richtlijnen_wervelkolompijn
+    auteurs: [Lim TH, Mak HY, Man Ngai SM, Man YT, Tang CH, Wong AYL, Bussières A, Al Zoubi FM]
+    titel: 'Nonpharmacological Spine Pain Management in Clinical Practice Guidelines: A Systematic Review Using AGREE II and AGREE-REX Tools'
+    bron: The Journal of Orthopaedic and Sports Physical Therapy
+    jaar: 2025
+    volume_paginas: 55(1):12-25
+    doi: 10.2519/jospt.2024.12729
+    pmid: '39680669'
+    url: https://doi.org/10.2519/jospt.2024.12729
+    type: SR
+    opmerking: >-
+      Systematische review van 30 richtlijnen voor niet-medicamenteuze,
+      niet-chirurgische behandeling van WERVELKOLOMPIJN - nek- en rugpijn samen,
+      niet afzonderlijk voor de nek. 404 aanbevelingen. Richtlijnen van hoge
+      kwaliteit bevalen consequent oefentherapie en multimodale zorg aan
+      (oefeningen, mobilisatie/manipulatie, educatie, alternatieve geneeskunde,
+      cognitief-gedragsmatige behandeling). Hulpmiddelen (korsetten, orthesen) en
+      elektro- of thermotherapie (ultrageluid, TENS) werden doorgaans NIET
+      aanbevolen. Ongeveer de helft van de richtlijnen had een goede
+      methodologische kwaliteit.
+    geverifieerd_op: 2026-10-02
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 39680669)
+
+  - key: gross_2015_oefentherapie_nek
+    auteurs: [Gross A, Kay TM, Paquin JP, Blanchette S, Lalonde P, Christie T, Dupont G, Graham N, Burnie SJ, Gelley G, Goldsmith CH, Forget M, Hoving JL, Brønfort G, Santaguida PL]
+    titel: 'Exercises for mechanical neck disorders'
+    bron: Cochrane Database of Systematic Reviews
+    jaar: 2015
+    volume_paginas: 1(1):CD004250
+    doi: 10.1002/14651858.CD004250.pub5
+    pmid: '25629215'
+    url: https://doi.org/10.1002/14651858.CD004250.pub5
+    type: SR
+    opmerking: >-
+      Het PubMed-record bevat nog een auteursvermelding zonder naam; die is niet
+      aangevuld. 27 trials (2485 geanalyseerd van 3005 gerandomiseerd). ACUTE
+      nekpijn: GEEN evidentie gevonden. CHRONISCH, matig bewijs:
+      cervico-scapulothoracale en bovenste-ledemaatkrachttraining verbetert pijn
+      matig tot sterk direct na behandeling (SMD -0,71; 95% BI -1,33 tot -0,10) en
+      op korte termijn; uithoudingstraining licht gunstig; gecombineerd versterken
+      en rekken pijn (SMD -0,33; -0,55 tot -0,10) tot op lange termijn en functie
+      (SMD -0,45; -0,72 tot -0,18); versterking/stabilisatie op middellange termijn;
+      Qigong minimaal effect op functie. LAAG bewijs dat ademhalingsoefeningen,
+      algemene conditietraining, rekken alleen en feedbackoefeningen pijn of functie
+      NIET veranderen. Zeer laag bewijs voor oog-nekcoordinatie/proprioceptie.
+      Cervicogene hoofdpijn: matig bewijs voor statisch-dynamische versterking en
+      uithouding met drukbiofeedback; laag bewijs voor SNAG. Acute radiculopathie:
+      laag bewijs voor een klein effect. Geen bewijs van hoge kwaliteit; van rekken
+      alleen geen gunstig effect te verwachten; optimale dosering onbekend.
+    geverifieerd_op: 2026-10-02
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 25629215)
+
+  - key: wilhelm_2023_mt_oefening_nek
+    auteurs: [Wilhelm M, Cleland J, Carroll A, Marinch M, Imhoff M, Severini N, Donaldson M]
+    titel: 'The combined effects of manual therapy and exercise on pain and related disability for individuals with nonspecific neck pain: A systematic review with meta-analysis'
+    bron: The Journal of Manual & Manipulative Therapy
+    jaar: 2023
+    volume_paginas: 31(6):393-407
+    doi: 10.1080/10669817.2023.2202895
+    pmid: '37092822'
+    url: https://doi.org/10.1080/10669817.2023.2202895
+    type: SR
+    opmerking: >-
+      22 studies. Manuele therapie plus oefenen tegenover manuele therapie alleen:
+      GEEN significant verschil in pijn (SMD -0,25; 95% BI -0,52 tot 0,02) of
+      beperkingen (-0,37; -0,92 tot 0,18), matige bewijskracht. Tegenover oefenen
+      alleen: beter voor pijn (-0,95; -1,38 tot -0,51; 16 studies) en beperkingen
+      (-0,59; -0,90 tot -0,28; 13 studies), LAGE bewijskracht. Tegenover controle:
+      beter voor pijn (-2,15; -3,58 tot -0,73; matig) en beperkingen (-2,39; -3,80
+      tot -0,98; laag). Levenskwaliteit: geen verschil met oefenen alleen
+      (-0,02; -0,21 tot 0,18; hoge bewijskracht). STAAT GEDEELTELIJK HAAKS OP
+      reynolds_2024_umbrella_mt_nek, dat de combinatie ook beter noemt dan manuele
+      therapie alleen.
+    geverifieerd_op: 2026-10-02
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 37092822)
+
+  - key: reynolds_2024_umbrella_mt_nek
+    auteurs: [Reynolds B, McDevitt A, Kelly J, Mintken P, Clewley D]
+    titel: 'Manual physical therapy for neck disorders: an umbrella review'
+    bron: The Journal of Manual & Manipulative Therapy
+    jaar: 2024
+    volume_paginas: 33(1):18-35
+    doi: 10.1080/10669817.2024.2425788
+    pmid: '39607420'
+    url: https://doi.org/10.1080/10669817.2024.2425788
+    type: SR
+    opmerking: >-
+      Jaartal volgens de publicatiedatum in het PubMed-record (28 november 2024).
+      Umbrella review van 35 systematische reviews (15 aspecifieke nekpijn,
+      7 radiculopathie, 9 cervicogene hoofdpijn, 4 gemengd); AMSTAR 2: hoge
+      betrouwbaarheid voor 10, matig voor 12, laag tot kritisch laag voor 13.
+      Aspecifiek: HOGE betrouwbaarheid dat manuele therapie plus oefenen beter is
+      dan elk apart. Radiculopathie: neurale mobilisatie, tractie (distraction),
+      weke-delenbehandeling en mobilisatie/manipulatie cervicaal en thoracaal met
+      MATIGE betrouwbaarheid. Cervicogene hoofdpijn: HOGE betrouwbaarheid voor
+      cervicale mobilisatie/manipulatie, weke-delenmobilisatie en manuele therapie
+      met oefenen. Effecten op KORTE termijn; wisselende kwaliteit van de primaire
+      studies. Het abstract noemt ook dat 50-85% van acute nekpijn niet volledig
+      herstelt - dat is een cijfer uit de inleiding, niet uit de review zelf, en
+      is daarom niet overgenomen.
+    geverifieerd_op: 2026-10-02
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 39607420)
+
+  - key: hush_2011_prognose_nekpijn
+    auteurs: [Hush JM, Lin CC, Michaleff ZA, Verhagen A, Refshauge KM]
+    titel: 'Prognosis of acute idiopathic neck pain is poor: a systematic review and meta-analysis'
+    bron: Archives of Physical Medicine and Rehabilitation
+    jaar: 2011
+    volume_paginas: 92(5):824-9
+    doi: 10.1016/j.apmr.2010.12.025
+    pmid: '21458776'
+    url: https://doi.org/10.1016/j.apmr.2010.12.025
+    type: SR
+    opmerking: >-
+      Zeven studies (inceptiecohorten en trials met een arm zonder of met minimale
+      behandeling). Gewogen gemiddelde pijn (0-100): 64 (95% BI 61-67) bij begin,
+      35 (32-38) na 6,5 weken, 42 (39-45) na 12 maanden. Beperkingen: 30 (28-32)
+      bij begin, 17 (15-19) na 6,5 weken, zonder verdere verbetering na 12
+      maanden. De auteurs besluiten dat de prognose slechter is dan doorgaans
+      aangenomen. Prognostische factoren werden NIET vastgesteld. Het gaat om
+      beloop zonder of met minimale behandeling, niet om behandeleffect.
+    geverifieerd_op: 2026-10-02
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 21458776)
+
+  - key: blanpied_2017_jospt_nekpijn
+    auteurs: [Blanpied PR, Gross AR, Elliott JM, Devaney LL, Clewley D, Walton DM, Sparks C, Robertson EK]
+    titel: 'Neck Pain: Revision 2017'
+    bron: The Journal of Orthopaedic and Sports Physical Therapy
+    jaar: 2017
+    volume_paginas: 47(7):A1-A83
+    doi: 10.2519/jospt.2017.0302
+    pmid: '28666405'
+    url: https://doi.org/10.2519/jospt.2017.0302
+    type: richtlijn
+    opmerking: >-
+      BESTAAN BEVESTIGD, INHOUD NIET GELEZEN. Het PubMed-abstract beschrijft alleen
+      het doel van de richtlijn en bevat geen aanbevelingen; niet in PubMed
+      Central; jospt.org was door de netwerkproxy geblokkeerd. Daarom is in het
+      protocol GEEN ENKELE aanbeveling aan deze richtlijn toegeschreven. Wie de
+      volledige tekst heeft, kan de indeling (onder meer naar mobiliteitsbeperking,
+      coordinatiestoornis, hoofdpijn en uitstralende pijn) en de gegradeerde
+      aanbevelingen alsnog tegen dit protocol leggen.
+    geverifieerd_op: 2026-10-02
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 28666405)

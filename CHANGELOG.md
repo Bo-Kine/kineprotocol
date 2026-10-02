@@ -3,6 +3,33 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-10-02 — nieuw protocol: Cervicalgie (v91)
+
+- Gevraagd met Firecrawl; dat was niet gekoppeld aan de sessie · op verzoek van de
+  kinesitherapeut verder met PubMed, de bron die CLAUDE.md voorschrijft
+- Vijf fasen langs de tijdsindeling van de nieuwste richtlijn (acuut 0-3 weken,
+  subacuut, chronisch na 12 weken), 29 oefeningen, beschrijvingsblok en module
+  manuele therapie · 7 bronnen live geverifieerd, 11 van de 14 claims gedekt
+- RUGGENGRAAT · de Duitse S3-richtlijn `elallawy_2025_s3_nekpijn` (literatuur tot
+  november 2024): activatie met zelfmanagement als centraal element (effectgroottes tot
+  d > 1,0), educatie (d = 0,73), geen beeldvorming bij acute pijn zonder aanwijzing voor
+  een structurele oorzaak, oefentherapie bij chronische pijn
+- EERLIJK OVER WAT ER NIET IS · voor ACUTE nekpijn vond de Cochrane-review
+  `gross_2015_oefentherapie_nek` geen evidentie voor afzonderlijke oefeningen; gerichte
+  oefentherapie zit daarom in de latere fasen · rekken alleen, algemene conditietraining
+  en ademhalingsoefeningen helpen waarschijnlijk niet (laag bewijs) · krachttraining van
+  nek, schoudergordel en armen is de best onderbouwde oefenvorm (SMD -0,71)
+- TEGENSTRIJDIGHEID BEHOUDEN (§1.9) · `reynolds_2024_umbrella_mt_nek` noemt manuele
+  therapie plus oefenen met hoge betrouwbaarheid beter dan elk apart;
+  `wilhelm_2023_mt_oefening_nek` vond geen verschil met manuele therapie alleen · beide
+  staan in de tekst, met wat ze wél gemeen hebben: beter dan oefenen alleen
+- Verwachtingen · `hush_2011_prognose_nekpijn`: pijn daalt de eerste 6,5 weken sterk
+  maar ligt na 12 maanden nog op 42 op 100 · de prognose is slechter dan vaak gedacht
+- BEPERKING · van alle bronnen is alleen het ABSTRACT gelezen: de volledige teksten waren
+  in deze omgeving niet bereikbaar · de JOSPT-richtlijn (Blanpied 2017) is daardoor
+  niet gebruikt voor claims, alleen vermeld · cervicale manipulatie staat gemarkeerd als
+  ⚠️ TE VERIFIËREN, omdat geen bron over haar veiligheid is opgehaald
+
 ## 2026-10-02 — klaar voor lokaal werken in Claude Desktop (v90)
 
 - `.claude/launch.json` toegevoegd · het Browser-paneel van de Code-tab start de app nu

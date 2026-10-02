@@ -1,0 +1,198 @@
+protocol: cerv
+protocol_titel: Cervicalgie
+laatst_gecontroleerd: 2026-10-02
+gecontroleerd_door: fase A — Claude (nieuw protocol, bronnen vooraf live opgehaald)
+opmerking: >-
+  Opgesteld zoals discectomie: eerst de bronnen, dan de tekst. De gebruiker vroeg
+  om Firecrawl; dat was niet gekoppeld, en op zijn verzoek is met PubMed gewerkt.
+  BELANGRIJKE BEPERKING: van alle bronnen is ALLEEN HET ABSTRACT gelezen. De
+  volledige teksten (onder meer van de Duitse S3-richtlijn en de JOSPT-richtlijn)
+  waren in deze omgeving niet bereikbaar. Claims staan dus alleen in het protocol
+  voor zover het abstract ze dekt; concrete aanbevelingsgraden en doseringen uit
+  de volledige richtlijnen zijn niet overgenomen. De JOSPT-richtlijn (Blanpied
+  2017) is daardoor helemaal niet gebruikt voor claims.
+
+claims:
+  - id: cerv_c1
+    tekst: >-
+      Bij acute nekpijn (0-3 weken) zonder aanwijzing voor een structurele oorzaak
+      (motorische uitval, nachtpijn, voorafgaand trauma) hoort in de regel geen
+      beeldvorming.
+    plaats: fase 1 - evidence, oefening en redflags; kenmerken
+    bronnen: [elallawy_2025_s3_nekpijn]
+    gedekt: ja
+    opmerking: Letterlijk in het abstract van de S3-richtlijn.
+    verwerkt: opgenomen
+
+  - id: cerv_c2
+    tekst: >-
+      Geruststelling, advies en educatie zijn consistente, maar zwakke tot matige
+      aanbevelingen; succes kan afhangen van educatie (d = 0,73).
+    plaats: fase 1 - evidence en oefening
+    bronnen: [corp_2020_europese_richtlijnen, elallawy_2025_s3_nekpijn]
+    gedekt: ja
+    opmerking: >-
+      Corp: consistente zwakke of matige aanbevelingen, zwakker dan bij lage
+      rugpijn. El-Allawy: "may depend on patient education (moderate effect size,
+      d = 0.73)". De sterkte van de aanbeveling is in de tekst vermeld.
+    verwerkt: opgenomen met sterkte
+
+  - id: cerv_c3
+    tekst: >-
+      Activerende maatregelen met nadruk op zelfmanagement tonen grote
+      effectgroottes (tot d > 1,0); activatie is het centrale element.
+    plaats: fase 2 - evidence en oefening
+    bronnen: [elallawy_2025_s3_nekpijn]
+    gedekt: ja
+    opmerking: Letterlijk in het abstract.
+    verwerkt: opgenomen
+
+  - id: cerv_c4
+    tekst: Voor acute nekpijn is er geen evidentie voor afzonderlijke oefeningen.
+    plaats: fase 2 - evidence en oefening
+    bronnen: [gross_2015_oefentherapie_nek]
+    gedekt: ja
+    opmerking: >-
+      "For acute neck pain only, no evidence was found." Bewust opgenomen: het
+      bepaalt dat gerichte oefentherapie in de latere fasen hoort, en het staat
+      naast de activatie-aanbeveling zonder die tegen te spreken (activeren is
+      niet hetzelfde als gerichte oefentherapie).
+    verwerkt: opgenomen
+
+  - id: cerv_c5
+    tekst: >-
+      Hulpmiddelen en elektro- of thermotherapie (ultrageluid, TENS) worden in
+      richtlijnen doorgaans niet aanbevolen.
+    plaats: fase 2 en 5 - evidence
+    bronnen: [lim_2025_richtlijnen_wervelkolompijn]
+    gedekt: deels
+    opmerking: >-
+      Klopt voor wervelkolompijn in het algemeen, maar de review behandelt nek- en
+      rugpijn SAMEN. Dat staat in de tekst vermeld. De halskraag als voorbeeld van
+      een hulpmiddel is een eigen invulling; het abstract noemt korsetten en
+      orthesen.
+    verwerkt: opgenomen met de beperking tot wervelkolompijn erbij
+
+  - id: cerv_c6
+    tekst: >-
+      Manuele therapie plus oefentherapie is beter dan elk van beide apart
+      (hoge betrouwbaarheid) - maar volgens een meta-analyse niet beter dan
+      manuele therapie alleen.
+    plaats: fase 3 - evidence en oefening; manuele module
+    bronnen: [reynolds_2024_umbrella_mt_nek, wilhelm_2023_mt_oefening_nek]
+    gedekt: ja
+    opmerking: >-
+      TEGENSTRIJDIGE EVIDENTIE, conform par. 1.9 beide vermeld. Reynolds: "high
+      confidence ... manual therapy combined with exercise was superior to either
+      treatment in isolation". Wilhelm: geen significant verschil met manuele
+      therapie alleen (SMD -0,25; 95% BI -0,52 tot 0,02), wel beter dan oefenen
+      alleen op lage bewijskracht. Waar beide het over eens zijn - beter dan
+      oefenen alleen - staat zo in de tekst.
+    verwerkt: beide standpunten opgenomen
+
+  - id: cerv_c7
+    tekst: >-
+      Bij radiculaire klachten worden neurale mobilisatie, tractie,
+      weke-delenbehandeling en mobilisatie/manipulatie ondersteund met matige
+      betrouwbaarheid.
+    plaats: fase 3 - evidence en oefening; manuele module
+    bronnen: [reynolds_2024_umbrella_mt_nek]
+    gedekt: ja
+    opmerking: Letterlijk in het abstract ("distraction" vertaald als tractie).
+    verwerkt: opgenomen
+
+  - id: cerv_c8
+    tekst: >-
+      Bij chronische nekpijn is cervico-scapulothoracale krachttraining de best
+      onderbouwde oefenvorm (SMD -0,71); rekken alleen helpt niet; algemene
+      conditietraining en ademhalingsoefeningen waarschijnlijk ook niet.
+    plaats: fase 4 - evidence en oefeningen; fase 5 - oefening
+    bronnen: [gross_2015_oefentherapie_nek, elallawy_2025_s3_nekpijn]
+    gedekt: ja
+    opmerking: >-
+      Alle effectgroottes letterlijk uit het Cochrane-abstract, met
+      bewijsniveau (matig voor kracht, laag voor wat niet helpt). Dat de S3-
+      richtlijn bij chronische pijn ook oefentherapie aanbeveelt, staat in haar
+      abstract.
+    verwerkt: opgenomen met bewijsniveaus
+
+  - id: cerv_c9
+    tekst: >-
+      Bij cervicogene hoofdpijn: statisch-dynamische versterking met
+      drukbiofeedback (matig bewijs), SNAG (laag), en manuele therapie (hoge
+      betrouwbaarheid).
+    plaats: fase 4 - oefeningen; manuele module
+    bronnen: [gross_2015_oefentherapie_nek, reynolds_2024_umbrella_mt_nek]
+    gedekt: ja
+    opmerking: Uit beide abstracts, met hun respectieve bewijsniveaus.
+    verwerkt: opgenomen
+
+  - id: cerv_c10
+    tekst: >-
+      Psychologische of multidisciplinaire behandeling voor specifieke
+      subgroepen.
+    plaats: fase 4 - evidence en oefening
+    bronnen: [corp_2020_europese_richtlijnen]
+    gedekt: ja
+    opmerking: >-
+      Letterlijk in het abstract. Wie tot die subgroep hoort, zegt het abstract
+      niet; dat is in de tekst als klinisch oordeel gelabeld.
+    verwerkt: opgenomen
+
+  - id: cerv_c11
+    tekst: >-
+      Beloop: pijn 64 → 35 na 6,5 weken → 42 na 12 maanden; beperkingen 30 → 17
+      zonder verdere verbetering; prognose slechter dan gedacht.
+    plaats: fase 3 en 5 - evidence; oorzaken
+    bronnen: [hush_2011_prognose_nekpijn]
+    gedekt: ja
+    opmerking: >-
+      Alle cijfers letterlijk. In de tekst staat erbij dat het om beloop zonder of
+      met minimale behandeling gaat, niet om behandeleffect.
+    verwerkt: opgenomen met die afbakening
+
+  - id: cerv_c12
+    tekst: >-
+      Concrete doseringen, fasegrenzen binnen subacuut en chronisch,
+      doorstroom- en stopcriteria, en de keuze van individuele oefeningen
+      (zoals craniocervicale flexie).
+    plaats: alle fasen
+    bronnen: [gross_2015_oefentherapie_nek]
+    gedekt: nee
+    opmerking: >-
+      De Cochrane-review noemt de optimale dosering uitdrukkelijk onbekend. Alle
+      doseringen en criteria staan als praktijkafspraak of klinische richtlijn in
+      de tekst. De fasegrenzen acuut 0-3 weken en chronisch na 12 weken komen wel
+      uit de S3-richtlijn.
+    verwerkt: overal gelabeld
+
+  - id: cerv_c13
+    tekst: >-
+      Rode vlaggen naast de drie uit de S3-richtlijn (myelopathie, koorts,
+      gewichtsverlies, kanker in de voorgeschiedenis), en veiligheid van
+      cervicale manipulatie.
+    plaats: fase 1 - redflags; manuele module
+    bronnen: []
+    gedekt: nee
+    opmerking: >-
+      Klinisch gangbaar maar in dit dossier zonder bron. De veiligheid van
+      cervicale manipulatie is een veiligheidsuitspraak waarvoor geen bron is
+      opgehaald; daarom staat ze met de markering TE VERIFIEREN in de module en de
+      contra-indicaties, met het advies bij twijfel voor thoracale technieken te
+      kiezen.
+    verwerkt: gelabeld, cervicale manipulatie gemarkeerd als TE VERIFIEREN
+
+  - id: cerv_c14
+    tekst: >-
+      De JOSPT-richtlijn Neck Pain: Revision 2017 als bron voor indeling en
+      aanbevelingen.
+    plaats: fase 1 - evidence; refs-veld
+    bronnen: [blanpied_2017_jospt_nekpijn]
+    gedekt: nee
+    opmerking: >-
+      Bestaan bevestigd, inhoud niet gelezen: het abstract bevat geen
+      aanbevelingen en de volledige tekst was niet bereikbaar. In het protocol
+      staat expliciet dat haar indeling en aanbevelingen NIET zijn overgenomen.
+      Voorstel: de kinesitherapeut legt de volledige richtlijn op een toestel
+      zonder proxy naast dit protocol.
+    verwerkt: niet gebruikt voor claims, wel vermeld

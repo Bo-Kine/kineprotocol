@@ -825,7 +825,7 @@ function exportBackup() {
   const blob = new Blob([JSON.stringify(data, null, 1)], {type: 'application/json'});
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
-  a.download = 'kineprotocol-backup-' + new Date().toISOString().slice(0,10) + '.json';
+  a.download = 'kinebo-backup-' + new Date().toISOString().slice(0,10) + '.json';
   document.body.appendChild(a); a.click(); document.body.removeChild(a);
   setTimeout(() => URL.revokeObjectURL(a.href), 5000);
 }

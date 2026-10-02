@@ -1,0 +1,15 @@
+{
+  // Start KINEBO in het Browser-paneel van Claude Desktop (Code-tab).
+  // Statische site zonder buildstap: Python's ingebouwde webserver volstaat.
+  // python3 komt op macOS mee met de Command Line Tools, die je toch nodig hebt
+  // voor git. localhost geldt als beveiligde context, dus de service worker werkt.
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "kinebo",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8080"],
+      "port": 8080
+    }
+  ]
+}

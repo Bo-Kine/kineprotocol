@@ -1,0 +1,16 @@
+# Deze repository is PUBLIEK: alles wat hier gecommit wordt, staat op GitHub en
+# deels op bo-kine.github.io.
+
+# Patiëntengegevens. De back-upexport bevat gezondheidsgegevens en een
+# afgedrukt oefenblad of evaluatieformulier wordt vaak als PDF bewaard.
+# Zulke bestanden mogen nooit in een publieke repo terechtkomen.
+kinebo-backup-*.json
+kineprotocol-backup-*.json
+*.pdf
+
+# Auteursrechtelijk beschermd bronmateriaal, zoals boekscans. Bewaar die bij
+# voorkeur BUITEN de projectmap; deze regel is enkel een vangnet.
+scans/
+
+# macOS
+.DS_Store

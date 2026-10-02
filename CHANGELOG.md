@@ -3,6 +3,26 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-10-02 — klaar voor lokaal werken in Claude Desktop (v90)
+
+- `.claude/launch.json` toegevoegd · het Browser-paneel van de Code-tab start de app nu
+  met één klik op poort 8080, via de ingebouwde webserver van Python (zit op macOS in de
+  Command Line Tools die je ook voor git nodig hebt) · formaat overgenomen uit de
+  officiële documentatie, niet uit het geheugen · commando getest: index.html, sw.js,
+  version.js en mt-bekken.js laden met status 200
+- `.gitignore` toegevoegd · deze repository is PUBLIEK, en dat maakt drie soorten
+  bestanden gevaarlijk om per ongeluk te committen: patiëntenback-ups (bevatten
+  gezondheidsgegevens), PDF's (afgedrukte oefenbladen en evaluatieformulieren met
+  patiëntgegevens) en boekscans (auteursrechtelijk beschermd) · plus `.DS_Store` van
+  macOS · getest dat die patronen werken en dat geen enkel kernbestand van de app wordt
+  genegeerd
+- Restant van de hernoeming opgeruimd · de back-upexport heette nog
+  `kineprotocol-backup-….json`; mijn eerdere hernoeming zocht alleen op de varianten met
+  hoofdletters · nu `kinebo-backup-….json` · terugzetten blijft werken, want de import
+  controleert de inhoud en niet de bestandsnaam · de interne cachesleutel
+  `kineprotocol-v…` is bewust NIET hernoemd: die is nergens zichtbaar en wijzigen levert
+  alleen risico op
+
 ## 2026-09-17 — module Manuele therapie — Bekken toegevoegd (v89)
 
 - `mt-bekken.js` toegevoegd: interactief onderzoeksformulier (7 secties, 68 velden met

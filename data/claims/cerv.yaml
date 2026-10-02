@@ -1,10 +1,10 @@
 protocol: cerv
 protocol_titel: Cervicalgie
 laatst_gecontroleerd: 2026-10-02
-gecontroleerd_door: fase A — Claude (nieuw protocol, bronnen vooraf live opgehaald)
+gecontroleerd_door: fase A — Claude (bronnen vooraf live opgehaald); fase B — onafhankelijke verificator-agent met schone context (2026-10-02)
 opmerking: >-
   Opgesteld zoals discectomie: eerst de bronnen, dan de tekst. De gebruiker vroeg
-  om Firecrawl; dat was niet gekoppeld, en op zijn verzoek is met PubMed gewerkt.
+  om Firecrawl; dat was niet gekoppeld, en op verzoek is met PubMed gewerkt.
   BELANGRIJKE BEPERKING: van alle bronnen is ALLEEN HET ABSTRACT gelezen. De
   volledige teksten (onder meer van de Duitse S3-richtlijn en de JOSPT-richtlijn)
   waren in deze omgeving niet bereikbaar. Claims staan dus alleen in het protocol
@@ -196,3 +196,28 @@ claims:
       Voorstel: de kinesitherapeut legt de volledige richtlijn op een toestel
       zonder proxy naast dit protocol.
     verwerkt: niet gebruikt voor claims, wel vermeld
+
+  - id: cerv_c15
+    tekst: >-
+      Fase B-correcties: (1) educatie koppelt de S3-richtlijn aan het succes van
+      activerende maatregelen (d = 0,73), niet aan de behandeling in het algemeen;
+      (2) Europese richtlijnen bevelen geruststelling, advies en educatie consistent
+      aan, maar niet "het meest" - ook manuele therapie, oefentherapie en
+      pijnstillers keren terug; (3) Lim et al. noemen korsetten en orthesen, geen
+      halskraag, en "niet aanbevolen" is niet hetzelfde als "afgeraden"; (4) bij
+      Wilhelm geldt "geen verschil voor levenskwaliteit" voor de vergelijking met
+      oefenen alleen (SMD -0,02; -0,21 tot 0,18; hoge bewijskracht); (5) bij Hush
+      steeg de pijn na 6,5 weken weer van 35 naar 42 - "daarna nauwelijks nog" was
+      fout; (6) Cochrane: optimale dosering "moet nog onderzocht worden", rekken
+      alleen "verandert pijn en functie waarschijnlijk niet"; (7) kracht- en
+      stabilisatietraining is onderbouwd bij chronische nekpijn, toepassing in de
+      subacute fase is extrapolatie.
+    plaats: fase 1, 2, 3, 4 en 5; aandoeningsbeschrijving
+    bronnen: [elallawy_2025_s3_nekpijn, corp_2020_europese_richtlijnen, lim_2025_richtlijnen_wervelkolompijn, wilhelm_2023_mt_oefening_nek, hush_2011_prognose_nekpijn, gross_2015_oefentherapie_nek]
+    gedekt: ja
+    opmerking: >-
+      Overschattingen in de eigen fase A-tekst, gevonden door de onafhankelijke
+      verificatie. Alle zinnen aangepast naar de formulering van het abstract;
+      uitspraken zonder bron (beloop whiplash, actieve opbouw na 6,5 weken)
+      gelabeld als klinische redenering.
+    verwerkt: aangepast in protocols.js (v92)

@@ -68,7 +68,7 @@
     "wiki": "https://en.wikipedia.org/wiki/Leg%20press"
   },
   "Bulgaarse split squat": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Squats.svg/500px-Squats.svg.png",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Squats.svg/500px-Squats.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "alt": "Squat (exercise)",
     "credit": "Wikipedia: Squat (exercise)",
     "wiki": "https://en.wikipedia.org/wiki/Squat%20%28exercise%29"
@@ -500,13 +500,13 @@
     "wiki": "https://en.wikipedia.org/wiki/Stretching"
   },
   "Clamshell met weerstandsband": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Trenirovachni_lastici_set.JPG/500px-Trenirovachni_lastici_set.JPG",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Trenirovachni_lastici_set.JPG/500px-Trenirovachni_lastici_set.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "alt": "Resistance band",
     "credit": "Wikipedia: Resistance band",
     "wiki": "https://en.wikipedia.org/wiki/Resistance%20band"
   },
   "Continu hardlopen (progressief)": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Deadlift-phase_1.JPG/500px-Deadlift-phase_1.JPG",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Deadlift-phase_1.JPG/500px-Deadlift-phase_1.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "alt": "Deadlift",
     "credit": "Wikipedia: Deadlift",
     "wiki": "https://en.wikipedia.org/wiki/Deadlift"
@@ -542,7 +542,7 @@
     "wiki": "https://en.wikipedia.org/wiki/Nordic%20walking"
   },
   "Pallof press (weerstandsband)": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Trenirovachni_lastici_set.JPG/500px-Trenirovachni_lastici_set.JPG",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Trenirovachni_lastici_set.JPG/500px-Trenirovachni_lastici_set.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "alt": "Resistance band",
     "credit": "Wikipedia: Resistance band",
     "wiki": "https://en.wikipedia.org/wiki/Resistance%20band"
@@ -918,5 +918,107 @@
     "alt": "Jogging",
     "credit": "Wikipedia: Jogging",
     "wiki": "https://en.wikipedia.org/wiki/Jogging"
+  },
+  "Cervicale lateraalflexie stretch (passief)": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Siberian_Tiger_by_Malene_Th.jpg/500px-Siberian_Tiger_by_Malene_Th.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "alt": "Stretching",
+    "credit": "Wikipedia: Stretching",
+    "wiki": "https://en.wikipedia.org/wiki/Stretching"
+  },
+  "Cervicale retractie (chin tuck)": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Cervical_vertebrae_lateral2.png/500px-Cervical_vertebrae_lateral2.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "alt": "Cervical vertebrae",
+    "credit": "Wikipedia: Cervical vertebrae",
+    "wiki": "https://en.wikipedia.org/wiki/Cervical%20vertebrae"
+  },
+  "Chin tuck (cervicale retractie)": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Cervical_vertebrae_lateral2.png/500px-Cervical_vertebrae_lateral2.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "alt": "Cervical vertebrae",
+    "credit": "Wikipedia: Cervical vertebrae",
+    "wiki": "https://en.wikipedia.org/wiki/Cervical%20vertebrae"
+  },
+  "Pallof press en side plank met rotatie": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/A_U.S._Coast_Guard_recruit%2C_assigned_to_Company_Oscar_188%2C_performs_a_plank_during_incentive_training_at_Coast_Guard_Training_Center_Cape_May_in_Cape_May%2C_N.J.%2C_July_31%2C_2013_130731-G-WA946-943.jpg/500px-thumbnail.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "alt": "Plank (exercise)",
+    "credit": "Wikipedia: Plank (exercise)",
+    "wiki": "https://en.wikipedia.org/wiki/Plank%20%28exercise%29"
+  },
+  "Passieve hamstringrek (ruglig)": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Siberian_Tiger_by_Malene_Th.jpg/500px-Siberian_Tiger_by_Malene_Th.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "alt": "Stretching",
+    "credit": "Wikipedia: Stretching",
+    "wiki": "https://en.wikipedia.org/wiki/Stretching"
+  },
+  "Patellamobilisaties & extensiestretch": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Siberian_Tiger_by_Malene_Th.jpg/500px-Siberian_Tiger_by_Malene_Th.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "alt": "Stretching",
+    "credit": "Wikipedia: Stretching",
+    "wiki": "https://en.wikipedia.org/wiki/Stretching"
+  },
+  "Pendel oefening (Codman)": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Blausen_0797_ShoulderJoint.png/500px-Blausen_0797_ShoulderJoint.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "alt": "Shoulder joint",
+    "credit": "Wikipedia: Shoulder joint",
+    "wiki": "https://en.wikipedia.org/wiki/Shoulder%20joint"
+  },
+  "Wandelen op oneffen terrein (progressief)": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Women_walking_in_Hyderabad_street.jpg/500px-Women_walking_in_Hyderabad_street.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "alt": "Walking",
+    "credit": "Wikipedia: Walking",
+    "wiki": "https://en.wikipedia.org/wiki/Walking"
+  },
+  "Wandelen progressief": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Women_walking_in_Hyderabad_street.jpg/500px-Women_walking_in_Hyderabad_street.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "alt": "Walking",
+    "credit": "Wikipedia: Walking",
+    "wiki": "https://en.wikipedia.org/wiki/Walking"
+  },
+  "Wandelen — korte blokjes": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Women_walking_in_Hyderabad_street.jpg/500px-Women_walking_in_Hyderabad_street.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "alt": "Walking",
+    "credit": "Wikipedia: Walking",
+    "wiki": "https://en.wikipedia.org/wiki/Walking"
+  },
+  "Wandelen — opbouw naar 30–45 min": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Women_walking_in_Hyderabad_street.jpg/500px-Women_walking_in_Hyderabad_street.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "alt": "Walking",
+    "credit": "Wikipedia: Walking",
+    "wiki": "https://en.wikipedia.org/wiki/Walking"
+  },
+  "Wandelprogramma progressief": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Women_walking_in_Hyderabad_street.jpg/500px-Women_walking_in_Hyderabad_street.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "alt": "Walking",
+    "credit": "Wikipedia: Walking",
+    "wiki": "https://en.wikipedia.org/wiki/Walking"
+  },
+  "Wandelvolume progressief opbouwen": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Women_walking_in_Hyderabad_street.jpg/500px-Women_walking_in_Hyderabad_street.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "alt": "Walking",
+    "credit": "Wikipedia: Walking",
+    "wiki": "https://en.wikipedia.org/wiki/Walking"
+  },
+  "Wandwandeling voorwaarts (finger ladder)": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Women_walking_in_Hyderabad_street.jpg/500px-Women_walking_in_Hyderabad_street.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "alt": "Walking",
+    "credit": "Wikipedia: Walking",
+    "wiki": "https://en.wikipedia.org/wiki/Walking"
+  },
+  "Weerstandsband dorsaalflexie": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Trenirovachni_lastici_set.JPG/500px-Trenirovachni_lastici_set.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "alt": "Resistance band",
+    "credit": "Wikipedia: Resistance band",
+    "wiki": "https://en.wikipedia.org/wiki/Resistance%20band"
+  },
+  "Weerstandsband eversie (peroneale activatie)": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Trenirovachni_lastici_set.JPG/500px-Trenirovachni_lastici_set.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "alt": "Resistance band",
+    "credit": "Wikipedia: Resistance band",
+    "wiki": "https://en.wikipedia.org/wiki/Resistance%20band"
+  },
+  "Weerstandsband-rotaties bij 0° + 45° abductie": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Trenirovachni_lastici_set.JPG/500px-Trenirovachni_lastici_set.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "alt": "Resistance band",
+    "credit": "Wikipedia: Resistance band",
+    "wiki": "https://en.wikipedia.org/wiki/Resistance%20band"
   }
 }

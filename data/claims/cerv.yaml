@@ -32,8 +32,8 @@ claims:
     bronnen: [corp_2020_europese_richtlijnen, elallawy_2025_s3_nekpijn]
     gedekt: ja
     opmerking: >-
-      Corp: consistente zwakke of matige aanbevelingen, zwakker dan bij lage
-      rugpijn. El-Allawy: "may depend on patient education (moderate effect size,
+      Corp (volledige tekst, Tabel 3 en 5): bij nekpijn geruststelling en advies
+      en educatie "Weak FOR"; bij lage rugpijn advies en educatie "Strong FOR". El-Allawy: "may depend on patient education (moderate effect size,
       d = 0.73)". De sterkte van de aanbeveling is in de tekst vermeld.
     verwerkt: opgenomen met sterkte
 
@@ -135,8 +135,10 @@ claims:
     bronnen: [corp_2020_europese_richtlijnen]
     gedekt: ja
     opmerking: >-
-      Letterlijk in het abstract. Wie tot die subgroep hoort, zegt het abstract
-      niet; dat is in de tekst als klinisch oordeel gelabeld.
+      Volledige tekst Tabel 3: psychologische therapie "Weak FOR SPECIFIC
+      SUBGROUPS" (stemmingsproblemen, psychosociale risico's, complexe of
+      aanhoudende pijn); multidisciplinair: complexere of aanhoudende pijn. Hoe je
+      dat vaststelt, is als klinisch oordeel gelabeld.
     verwerkt: opgenomen
 
   - id: cerv_c11
@@ -221,3 +223,27 @@ claims:
       uitspraken zonder bron (beloop whiplash, actieve opbouw na 6,5 weken)
       gelabeld als klinische redenering.
     verwerkt: aangepast in protocols.js (v92)
+
+  - id: cerv_c16
+    tekst: >-
+      Controle tegen de VOLLEDIGE tekst van Corp et al. (2020), opgehaald via NCBI
+      E-utilities (PMC7839780). Nekpijn (Tabel 3/5): manuele therapie in
+      combinatie met een andere behandeling "Moderate FOR", manuele therapie alleen
+      "Inconsistent"; oefentherapie "Moderate FOR"; tractie, elektrotherapie,
+      thermotherapie en cervicale orthesen "Inconclusive". Lage rugpijn: tractie,
+      elektrotherapie en orthesen "Strong AGAINST", thermotherapie "Inconsistent".
+    plaats: fase 1, 2, 4, 5; manuele-therapiemodule
+    bronnen: [corp_2020_europese_richtlijnen, lim_2025_richtlijnen_wervelkolompijn]
+    gedekt: ja
+    opmerking: >-
+      Het abstract liet "zwakke tot matige aanbeveling" voor manuele therapie in
+      het algemeen lezen; de volledige tekst beperkt de matige aanbeveling tot de
+      combinatie. Lim (nek- en rugpijn samen: hulpmiddelen en modaliteiten niet
+      aanbevolen) staat nu naast Corp (nekpijn alleen: inconclusief) als
+      tegenstrijdige evidentie. Fase B (aparte agent, schone context) vond drie
+      fouten in de eerste correctie - thermotherapie bij lage rugpijn, subgroepen
+      per behandeling, advies over manuele therapie niet gelabeld - alle drie
+      verwerkt. De overige vier PMC-artikels (El-Allawy, Gross, Wilhelm,
+      Reynolds) laten geen XML-download toe en de PMC-website toont een
+      reCAPTCHA; JOSPT blokkeert met Cloudflare. Die blijven op abstractniveau.
+    verwerkt: aangepast in protocols.js (v93)

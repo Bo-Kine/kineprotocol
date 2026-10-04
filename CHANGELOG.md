@@ -3,6 +3,10 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-10-04 — Cervicalgie getoetst aan volledige tekst Corp 2020 (v93)
+
+- Manuele therapie: matige aanbeveling geldt bij nekpijn alleen in combinatie met een andere behandeling, los "inconsistent"; tractie, elektro-, thermotherapie en orthesen bij nekpijn "inconclusief" (naast Lim als tegenstrijdige evidentie); sterkte geruststelling/educatie (zwak) en subgroepen voor psychologische en multidisciplinaire zorg gepreciseerd · volledige tekst nu bereikbaar na uitbreiding van de netwerktoegang; fase B vond drie fouten in de eerste correctie, verwerkt · corp_2020_europese_richtlijnen
+
 ## 2026-10-02 — fase B-correcties Cervicalgie en Discectomie L4-L5 (v92)
 
 - Cervicalgie: educatie gekoppeld aan activerende maatregelen i.p.v. de hele behandeling; "het meest consistent" geschrapt; halskraag → korsetten/orthesen, "afgeraden" → "niet aanbevolen"; levenskwaliteit bij juiste vergelijking geplaatst; beloop na 6,5 weken gecorrigeerd (pijn steeg weer van 35 naar 42); dosering "moet nog onderzocht worden"; subacute toepassing van krachttraining als extrapolatie gelabeld · onafhankelijke verificatie vond overschattingen in eigen fase A-tekst · elallawy_2025_s3_nekpijn, corp_2020_europese_richtlijnen, lim_2025_richtlijnen_wervelkolompijn, wilhelm_2023_mt_oefening_nek, hush_2011_prognose_nekpijn, gross_2015_oefentherapie_nek

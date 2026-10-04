@@ -38,8 +38,8 @@ const BRONSTATUS = {
     "datum": "2026-09-05"
   },
   "cerv": {
-    "gecontroleerd": 15,
-    "gedekt": 11,
+    "gecontroleerd": 16,
+    "gedekt": 12,
     "deels": 1,
     "niet_gedekt": 3,
     "open": 0,

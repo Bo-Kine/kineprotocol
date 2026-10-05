@@ -5,6 +5,14 @@
 // niet_gedekt betekent dat die bron de uitspraak niet ondersteunde, niet dat de
 // uitspraak onjuist is - ze staat nu als klinische redenering in de tekst.
 const BRONSTATUS = {
+  "achr": {
+    "gecontroleerd": 18,
+    "gedekt": 16,
+    "deels": 1,
+    "niet_gedekt": 1,
+    "open": 0,
+    "datum": "2026-10-05"
+  },
   "acl": {
     "gecontroleerd": 14,
     "gedekt": 9,

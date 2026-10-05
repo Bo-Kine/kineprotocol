@@ -1,0 +1,227 @@
+protocol: achr
+protocol_titel: Achillespeesruptuur — operatief gehecht
+laatst_gecontroleerd: 2026-10-05
+gecontroleerd_door: fase A — Claude (bronnen vooraf live opgehaald via PubMed); fase B — onafhankelijke verificator-agent met schone context (2026-10-05)
+opmerking: >-
+  Opgesteld met eerst de bronnen en dan de tekst. BELANGRIJKE BEPERKING: van alle
+  bronnen is ALLEEN HET ABSTRACT gelezen. De NCBI-diensten voor volledige teksten
+  werden door de netwerkfilter van de omgeving geweigerd (403), en de richtlijn
+  van Feng et al. (2026) staat niet in PMC. Fasegrenzen na week 2, alle
+  doseringen en alle progressie- en terugkeercriteria zijn praktijkafspraak en
+  staan zo in de tekst; geen enkele bron in dit dossier levert drempelwaarden.
+
+claims:
+  - id: achr_c1
+    tekst: >-
+      Een richtlijn uit 2026 (stuurgroep van 40 orthopedisch chirurgen) noemt het
+      vastleggen van evidence-based postoperatieve revalidatieprotocollen nog een
+      open vraag.
+    plaats: fase 1 - evidence
+    bronnen: [feng_2026_richtlijn_achillesruptuur]
+    gedekt: ja
+    opmerking: >-
+      Abstract: "establishing evidence-based postoperative rehabilitation
+      protocols" als uitdaging; "steering committee of 40 orthopedic surgeons".
+    verwerkt: opgenomen
+
+  - id: achr_c2
+    tekst: >-
+      Na open hechting herstelden groepen met 0 of 2 weken immobilisatie sneller
+      dan met 4 of 6 weken, met meer pijn in week 2 en 4; 2 weken mogelijk
+      optimaal.
+    plaats: fase 1 - evidence
+    bronnen: [cao_2024_immobilisatieduur]
+    gedekt: ja
+    opmerking: Prospectieve cohort, 1088 patiënten; formulering "may be the optimal strategy" overgenomen als "mogelijk".
+    verwerkt: opgenomen
+
+  - id: achr_c3
+    tekst: >-
+      Herruptuur 3,92% bij onmiddellijk actief enkelbewegen vs 2,45% niet
+      onmiddellijk; advies enkelmobilisatie na 1-2 weken immobilisatie.
+    plaats: fase 1 - evidence; fase 2 - oefening
+    bronnen: [wang_2024_onmiddellijke_mobilisatie]
+    gedekt: deels
+    opmerking: >-
+      Cijfers en advies letterlijk in het abstract, maar het abstract geeft geen
+      statistische vergelijking tussen beide groepen. Dat staat er in de tekst
+      expliciet bij. Tegenstrijdig met protocollen die onmiddellijk belasten en
+      bewegen (Aufwerber 2019); beide staan in de tekst.
+    verwerkt: opgenomen met beperking
+
+  - id: achr_c4
+    tekst: >-
+      DVT bij 29-31% na 2 weken en 29-37% na 6 weken; belasting <= 50% is een
+      onafhankelijke risicofactor (OR 4,3); advies >= 50% belasten één week na de
+      operatie.
+    plaats: fase 1 - evidence, doelen en oefeningen
+    bronnen: [aufwerber_2019_dvt_vroege_mobilisatie]
+    gedekt: ja
+    opmerking: >-
+      Letterlijk in het abstract (RCT, 150 patiënten). Fase B: de DVT's werden
+      gevonden door systematische duplexscreening, en de OR 4,3 komt uit een
+      secundaire analyse - de randomisatie gaf geen minder DVT. Beide nu in de tekst.
+    verwerkt: opgenomen
+
+  - id: achr_c5
+    tekst: >-
+      Een DVT tijdens de immobilisatie gaat samen met een slechtere uitkomst na 1
+      en na 3 jaar.
+    plaats: fase 1 - evidence; kenmerken
+    bronnen: [arverud_2016_voorspellers_uitkomst, aufwerber_2024_dvt_lange_termijn]
+    gedekt: ja
+    opmerking: Associaties (prospectieve cohorten), zo geformuleerd.
+    verwerkt: opgenomen
+
+  - id: achr_c6
+    tekst: >-
+      Vroeg enkelbewegen en belasten na hechting is even veilig als niet-belaste
+      gips, met betere subjectieve uitkomsten en snellere sportterugkeer; verschil
+      in kracht verdwenen na 6 maanden.
+    plaats: fase 2 - evidence
+    bronnen: [mccormack_2015_functioneel_postoperatief, zhao_2017_overlappende_metaanalyses]
+    gedekt: ja
+    opmerking: McCormack-abstract; Zhao beveelt vroege functionele revalidatie aan.
+    verwerkt: opgenomen
+
+  - id: achr_c7
+    tekst: >-
+      Belasten + enkelbewegen beter op 11/15 uitkomsten met minder kleine
+      complicaties; enkelbewegen alleen weinig voordeel.
+    plaats: fase 2 - evidence en oefeningen; manuele-therapiemodule
+    bronnen: [huang_2014_revalidatie_na_hechting]
+    gedekt: ja
+    opmerking: Letterlijk in het abstract.
+    verwerkt: opgenomen
+
+  - id: achr_c8
+    tekst: >-
+      Na minimaal invasieve hechting: vroeg belasten geeft betere scores na 3
+      maanden en snellere werkhervatting (4,5 vs 7,5 weken).
+    plaats: fase 2 - evidence
+    bronnen: [deng_2022_vroeg_belasten_mis]
+    gedekt: ja
+    opmerking: RCT, 68 patiënten.
+    verwerkt: opgenomen
+
+  - id: achr_c9
+    tekst: >-
+      Tegenstrijdige evidentie: geen symmetrischer gangpatroon met vroeg
+      mobiliseren; iets lagere symmetrie van hielheffingswerk na 1 jaar bij
+      functionele revalidatie.
+    plaats: fase 2 - evidence
+    bronnen: [aufwerber_2021_gangpatroon, liu_2021_functioneel_vs_immobilisatie]
+    gedekt: ja
+    opmerking: >-
+      Liu betreft operatief én niet-operatief behandelde patiënten; zo vermeld.
+    verwerkt: opgenomen als tegenstrijdige evidentie
+
+  - id: achr_c10
+    tekst: >-
+      Weerstandsoefeningen in de eerste 8 weken zijn slecht beschreven; doseringen
+      daarom praktijkafspraak.
+    plaats: fase 2 - evidence en oefeningen
+    bronnen: [christensen_2020_weerstandsoefeningen]
+    gedekt: ja
+    opmerking: Scoping review; zegt niets over effectiviteit, alleen over rapportage.
+    verwerkt: opgenomen
+
+  - id: achr_c11
+    tekst: >-
+      Restdeficits jaren later (pees 8,6% langer, 22,4% minder uithouding, 14,6%
+      lagere hielheffing; hoger belastingstempo en excentrisch kniewerk bij
+      landen).
+    plaats: fase 3 en 5 - evidence; kenmerken
+    bronnen: [powell_2017_asymmetrie_sprong]
+    gedekt: ja
+    opmerking: Dwarsdoorsnede, 34 personen, gemengd behandeld; zo vermeld.
+    verwerkt: opgenomen
+
+  - id: achr_c12
+    tekst: >-
+      Peesverlenging: redelijk bewijs voor invloed op biomechanica, geen bewijs
+      voor nadelig effect op PROMs of kracht in een algemene populatie.
+    plaats: fase 3 - evidence; manuele-therapiemodule
+    bronnen: [diniz_2020_peesverlenging]
+    gedekt: ja
+    opmerking: >-
+      Terughoudendheid met passieve rek is NIET door de bron gedekt en staat als
+      klinische redenering in de tekst.
+    verwerkt: opgenomen; afgeleide gelabeld
+
+  - id: achr_c13
+    tekst: >-
+      Digitaal thuisprogramma na open hechting niet inferieur aan begeleide
+      kinesitherapie na 12 weken, en goedkoper.
+    plaats: fase 3 - evidence en oefening
+    bronnen: [wang_2026_digitaal_thuisprogramma]
+    gedekt: ja
+    opmerking: Eén RCT, 200 patiënten, Chinese setting, gemiddeld 36,5 jaar; vermeld.
+    verwerkt: opgenomen
+
+  - id: achr_c14
+    tekst: >-
+      Intensiever programma mogelijk voordelig op korte termijn, lange termijn
+      onduidelijk; vroege functionele revalidatie verkort werkhervatting zonder
+      verschil in sporthervatting.
+    plaats: fase 4 - evidence
+    bronnen: [gould_2021_postoperatieve_revalidatie, lu_2019_functionele_revalidatie]
+    gedekt: ja
+    opmerking: Lu betreft operatief én niet-operatief; zo vermeld in de tekst.
+    verwerkt: opgenomen
+
+  - id: achr_c15
+    tekst: >-
+      Terugkeer naar sport hoog, geen verschil operatief vs conservatief; vroegere
+      revalidatie na open hechting 4,19 weken sneller terug.
+    plaats: fase 5 - evidence
+    bronnen: [bak_2024_terugkeer_sport]
+    gedekt: ja
+    opmerking: Het abstract geeft geen percentage; er staat er ook geen in de tekst.
+    verwerkt: opgenomen
+
+  - id: achr_c16
+    tekst: >-
+      Herruptuur 2,3% operatief vs 3,9% niet-operatief; complicaties 4,9% vs 1,6%,
+      infectie 2,8%; bij versnelde functionele revalidatie geen significant
+      verschil; keuze op patiëntspecifieke factoren en gedeelde besluitvorming.
+    plaats: kenmerken, oorzaken, fase 1 en 5
+    bronnen: [ochen_2019_operatief_vs_nietoperatief, wang_2024_onmiddellijke_mobilisatie]
+    gedekt: ja
+    opmerking: Letterlijk in het abstract van Ochen; 3,15% uit Wang 2024.
+    verwerkt: opgenomen
+
+  - id: achr_c17
+    tekst: >-
+      Alle fasegrenzen na week 2, doseringen, progressie- en terugkeercriteria,
+      rode vlaggen (herruptuur, longembolie) en de manuele-therapiemodule.
+    plaats: hele protocol
+    bronnen: [aufwerber_2019_dvt_vroege_mobilisatie]
+    gedekt: nee
+    opmerking: >-
+      Geen bron in dit dossier. Alles gelabeld als praktijkafspraak, klinische
+      redenering of klinische richtlijn. Enige aanknoping: de standaardbehandeling
+      in Aufwerber 2019 (2 weken gips + 4 weken orthese) voor de grens van week 6.
+    verwerkt: overal gelabeld
+
+  - id: achr_c18
+    tekst: >-
+      Fase B-correcties (10 punten, geen referentiefouten, geen foute getallen):
+      DVT-percentages uit screening, niet uit klachten (KRITIEK); belasten-DVT is
+      een verband, geen oorzaak; Cao ook week 8 en geen verschil in complicaties;
+      fase 2 "even veilig" beperkt tot ernstige complicaties en naast het
+      herruptuursignaal van Wang 2024 gezet; Lu voorzichtiger, populatie niet in
+      abstract, tegenstrijdige bronnen over werk- en sporthervatting naast elkaar;
+      CI-inconsistenties bij Liu en Lu met TE VERIFIËREN gemarkeerd; Powell:
+      vermogen i.p.v. werk en gemengde populatie; "zeldzaam" → "weinig" met
+      5,95% als hoogste groepsincidentie; tijdsvakken fase 4-5 gelabeld; label
+      van de manuele-therapiemodule gecorrigeerd.
+    plaats: hele protocol
+    bronnen: [aufwerber_2019_dvt_vroege_mobilisatie, cao_2024_immobilisatieduur, mccormack_2015_functioneel_postoperatief, wang_2024_onmiddellijke_mobilisatie, lu_2019_functionele_revalidatie, liu_2021_functioneel_vs_immobilisatie, bak_2024_terugkeer_sport, powell_2017_asymmetrie_sprong, ochen_2019_operatief_vs_nietoperatief]
+    gedekt: ja
+    opmerking: >-
+      Jaartallen: overal de publicatiedatum uit het PubMed-record (zoals bij
+      Corp 2020); Powell daarom 2017. Eerste auteur Arverud in de tekst als
+      Domeij-Arverud. Twee interne inconsistenties in abstracts (Liu, Lu) blijven
+      ter beoordeling open tot de volledige tekst gelezen is.
+    verwerkt: aangepast in protocols.js (v94)

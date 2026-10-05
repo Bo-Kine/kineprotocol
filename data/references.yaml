@@ -4210,3 +4210,303 @@ references:
       aanbevelingen alsnog tegen dit protocol leggen.
     geverifieerd_op: 2026-10-02
     geverifieerd_door: PubMed MCP (get_article_metadata, PMID 28666405)
+
+  - key: feng_2026_richtlijn_achillesruptuur
+    auteurs: [Feng SM, Maffulli N, Oliva F, Paul C, Fehske K, Plaass C, Karius T, Saxena A, Ling SK, Hua YH, Zhang M, Leung KH, Bai L, Gao SH, Li Q, Hao YF, Xu ZH, Bao NR, Zhao HM, Jiang B, Liu HJ, Zhao JJ, Cheng Y, Ren K, Jiang C, Li H, Xu H, Li XF, Liu G, Song HH, Zhao C, Han YX, Xue C, Zhang ZH, Jiao W, Wu JH, Yu Y, Song RL, Feng Y, Ouyang L, Pan JB, Liu F, Guo SY, Chen DS, Gu XP, Ma C]
+    titel: 'Evidence-based clinical practice guidelines on the surgical management of acute Achilles tendon rupture'
+    bron: British Medical Bulletin
+    jaar: 2026
+    volume_paginas: 157(1)
+    doi: 10.1093/bmb/ldaf026
+    pmid: '41528729'
+    url: https://doi.org/10.1093/bmb/ldaf026
+    type: richtlijn
+    opmerking: >-
+      Richtlijn over de CHIRURGISCHE behandeling; stuurgroep van 40 orthopedisch chirurgen, negen kernvragen. Het abstract noemt postoperatieve revalidatieprotocollen nog een controverse en bevat geen concrete revalidatieaanbevelingen; alleen dat is gebruikt. Geen PMC-versie.
+    geverifieerd_op: 2026-10-05
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 41528729)
+
+  - key: mccormack_2015_functioneel_postoperatief
+    auteurs: [McCormack R, Bovard J]
+    titel: 'Early functional rehabilitation or cast immobilisation for the postoperative management of acute Achilles tendon rupture? A systematic review and meta-analysis of randomised controlled trials'
+    bron: British Journal of Sports Medicine
+    jaar: 2015
+    volume_paginas: 49(20):1329-35
+    doi: 10.1136/bjsports-2015-094935
+    pmid: '26281836'
+    url: https://doi.org/10.1136/bjsports-2015-094935
+    type: SR
+    opmerking: >-
+      10 RCT's, 570 patiënten, na hechting: vroeg enkelbewegen en belasten (brace) vs niet-belaste gips. Geen verschil ernstige complicaties; subjectief beter (OR 3,13); sneller terug naar sport in 5 van 6 studies; dynamometrie beter na 6-12 weken, verwaarloosbaar na 6 maanden.
+    geverifieerd_op: 2026-10-05
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 26281836)
+
+  - key: huang_2014_revalidatie_na_hechting
+    auteurs: [Huang J, Wang C, Ma X, Wang X, Zhang C, Chen L]
+    titel: 'Rehabilitation regimen after surgical treatment of acute Achilles tendon ruptures: a systematic review with meta-analysis'
+    bron: The American Journal of Sports Medicine
+    jaar: 2014
+    volume_paginas: 43(4):1008-16
+    doi: 10.1177/0363546514531014
+    pmid: '24793572'
+    url: https://doi.org/10.1177/0363546514531014
+    type: SR
+    opmerking: >-
+      Jaartal volgens de publicatiedatum in het PubMed-record (epub); het nummer verscheen in 2015. 9 studies (6 RCT, 3 quasi-RCT), 402 patiënten. Belasten + enkelbewegen beter op 11/15 functionele uitkomsten, minder kleine complicaties (OR 0,51); enkelbewegen alleen 2/14. Tijdschrift-PubMed-jaar 2014 (epub), nummer 43(4) 2015.
+    geverifieerd_op: 2026-10-05
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 24793572)
+
+  - key: zhao_2017_overlappende_metaanalyses
+    auteurs: [Zhao JG, Meng XH, Liu L, Zeng XT, Kan SL]
+    titel: 'Early functional rehabilitation versus traditional immobilization for surgical Achilles tendon repair after acute rupture: a systematic review of overlapping meta-analyses'
+    bron: Scientific Reports
+    jaar: 2017
+    volume_paginas: 7:39871
+    doi: 10.1038/srep39871
+    pmid: '28054658'
+    url: https://doi.org/10.1038/srep39871
+    type: SR
+    opmerking: >-
+      Systematic review van 6 overlappende meta-analyses (AMSTAR + Jadad-algoritme); beveelt vroege functionele revalidatie na hechting aan.
+    geverifieerd_op: 2026-10-05
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 28054658)
+
+  - key: liu_2021_functioneel_vs_immobilisatie
+    auteurs: [Liu X, Dai TJ, Li BL, Li C, Zheng ZY, Liu Y]
+    titel: 'Early functional rehabilitation compared with traditional immobilization for acute Achilles tendon ruptures : a meta-analysis'
+    bron: The Bone & Joint Journal
+    jaar: 2021
+    volume_paginas: 103-B(6):1021-1030
+    doi: 10.1302/0301-620X.103B6.BJJ-2020-1890.R1
+    pmid: '34058871'
+    url: https://doi.org/10.1302/0301-620X.103B6.BJJ-2020-1890.R1
+    type: SR
+    opmerking: >-
+      19 RCT's, 1758 patiënten, operatief EN niet-operatief. Geen verschil herruptuur (RR 0,84), werk- of sporthervatting; ATRS beter tot 12 weken; lagere LSI hielheffingswerk na 1 jaar bij functionele revalidatie.
+    geverifieerd_op: 2026-10-05
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 34058871)
+
+  - key: wang_2024_onmiddellijke_mobilisatie
+    auteurs: [Wang R, Huang L, Jiang S, You G, Zhou X, Wang G, Zhang L]
+    titel: 'Immediate mobilization after repair of Achilles tendon rupture may increase the incidence of re-rupture: a systematic review and meta-analysis of randomized controlled trials'
+    bron: International Journal of Surgery
+    jaar: 2024
+    volume_paginas: 110(6):3888-3899
+    doi: 10.1097/JS9.0000000000001305
+    pmid: '38477123'
+    url: https://doi.org/10.1097/JS9.0000000000001305
+    type: SR
+    opmerking: >-
+      43 RCT's, 2553 operatief behandelde patiënten. Herruptuur totaal 3,15%; onmiddellijke AROM 3,92% vs niet-onmiddellijk 2,45% (incidenties per groep); adviseert enkelmobilisatie na 1-2 weken immobilisatie en versnelde revalidatie.
+    geverifieerd_op: 2026-10-05
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 38477123)
+
+  - key: cao_2024_immobilisatieduur
+    auteurs: [Cao Y, Gao S, Cui Z, Fu Y, Bai L, Si G, Fan J, Lv Y, Zhou F]
+    titel: 'Comparison of different immobilisation durations following open surgery for acute achilles tendon rupture: a prospective cohort study'
+    bron: Journal of Orthopaedic Surgery and Research
+    jaar: 2024
+    volume_paginas: 19(1):497
+    doi: 10.1186/s13018-024-04970-y
+    pmid: '39169350'
+    url: https://doi.org/10.1186/s13018-024-04970-y
+    type: cohort
+    opmerking: >-
+      Prospectieve cohort (PubMed labelt ook RCT; titel zegt cohort), 1088 patiënten na open hechting, 0/2/4/6 weken immobilisatie. 0 en 2 weken sneller herstel; meer pijn in week 2-4; 3,5% complicaties zonder groepsverschil.
+    geverifieerd_op: 2026-10-05
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 39169350)
+
+  - key: deng_2022_vroeg_belasten_mis
+    auteurs: [Deng Z, Li Z, Shen C, Sun X, Wang T, Nie M, Tang K]
+    titel: 'Outcomes of early versus late functional weight-bearing after the acute Achilles tendon rupture repair with minimally invasive surgery: a randomized controlled trial'
+    bron: Archives of Orthopaedic and Trauma Surgery
+    jaar: 2022
+    volume_paginas: 143(4):2047-2053
+    doi: 10.1007/s00402-022-04535-w
+    pmid: '35767039'
+    url: https://doi.org/10.1007/s00402-022-04535-w
+    type: RCT
+    opmerking: >-
+      Jaartal volgens de publicatiedatum in het PubMed-record (epub); het nummer verscheen in 2023. 68 patiënten na minimaal invasieve hechting; vroeg belasten: betere AOFAS/ATRS na 3 maanden, werkhervatting 4,5 vs 7,5 weken; geen verschil complicaties.
+    geverifieerd_op: 2026-10-05
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 35767039)
+
+  - key: aufwerber_2019_dvt_vroege_mobilisatie
+    auteurs: [Aufwerber S, Heijne A, Edman G, Grävare Silbernagel K, Ackermann PW]
+    titel: 'Early mobilization does not reduce the risk of deep venous thrombosis after Achilles tendon rupture: a randomized controlled trial'
+    bron: Knee Surgery, Sports Traumatology, Arthroscopy
+    jaar: 2019
+    volume_paginas: 28(1):312-319
+    doi: 10.1007/s00167-019-05767-x
+    pmid: '31679069'
+    url: https://doi.org/10.1007/s00167-019-05767-x
+    type: RCT
+    opmerking: >-
+      Jaartal volgens de publicatiedatum in het PubMed-record (epub); het nummer verscheen in 2020. 150 patiënten; DVT 29% vs 31% na 2 weken, 37% vs 29% na 6 weken (n.s.); belasting <= 50% onafhankelijke risicofactor (OR 4,3); advies >= 50% belasten 1 week na operatie. Standaardbehandeling: 2 weken gips onbelast + 4 weken orthese.
+    geverifieerd_op: 2026-10-05
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 31679069)
+
+  - key: aufwerber_2021_gangpatroon
+    auteurs: [Aufwerber S, Naili JE, Grävare Silbernagel K, Ackermann PW]
+    titel: 'No effects of early functional mobilization on gait patterns after acute Achilles tendon rupture repair'
+    bron: Journal of Orthopaedic Research
+    jaar: 2021
+    volume_paginas: 40(8):1932-1942
+    doi: 10.1002/jor.25199
+    pmid: '34674300'
+    url: https://doi.org/10.1002/jor.25199
+    type: RCT
+    opmerking: >-
+      Jaartal volgens de publicatiedatum in het PubMed-record (epub); het nummer verscheen in 2022. 47 patiënten; vroeg functioneel mobiliseren gaf geen symmetrischer gangpatroon; na 6 maanden hoger enkelvermogen in standaardgroep.
+    geverifieerd_op: 2026-10-05
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 34674300)
+
+  - key: aufwerber_2024_dvt_lange_termijn
+    auteurs: [Aufwerber S, Svedman S, Silbernagel KG, Ackermann PW]
+    titel: 'Long-term patient outcome is affected by deep venous thrombosis after Achilles tendon rupture repair'
+    bron: Knee Surgery, Sports Traumatology, Arthroscopy
+    jaar: 2024
+    volume_paginas: 32(8):2184-2193
+    doi: 10.1002/ksa.12240
+    pmid: '38796725'
+    url: https://doi.org/10.1002/ksa.12240
+    type: cohort
+    opmerking: >-
+      181 patiënten uit twee RCT's; 42% DVT; DVT gaf na 3 jaar lagere LSI hielheffingswerk (68% vs 78%); ouder, kuitatrofie en DVT onafhankelijke risicofactoren; verbetering tussen jaar 1 en 3 bij DVT.
+    geverifieerd_op: 2026-10-05
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 38796725)
+
+  - key: arverud_2016_voorspellers_uitkomst
+    auteurs: [Arverud ED, Anundsson P, Hardell E, Barreng G, Edman G, Latifi A, Labruto F, Ackermann PW]
+    titel: 'Ageing, deep vein thrombosis and male gender predict poor outcome after acute Achilles tendon rupture'
+    bron: The Bone & Joint Journal
+    jaar: 2016
+    volume_paginas: 98-B(12):1635-1641
+    doi: 10.1302/0301-620X.98B12.BJJ-2016-0008.R1
+    pmid: '27909125'
+    url: https://doi.org/10.1302/0301-620X.98B12.BJJ-2016-0008.R1
+    type: cohort
+    opmerking: >-
+      Prospectief, 111 patiënten (PubMed labelt RCT). Eerste auteur in PubMed: achternaam Arverud, voornaam E Domeij-; in de tekst als Domeij-Arverud geciteerd. Leeftijd < 40 (OR 0,20), vrouwelijk geslacht (OR 4,18) en geen DVT (OR 0,31) voorspellen een goede uitkomst na 1 jaar.
+    geverifieerd_op: 2026-10-05
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 27909125)
+
+  - key: ochen_2019_operatief_vs_nietoperatief
+    auteurs: [Ochen Y, Beks RB, van Heijl M, Hietbrink F, Leenen LPH, van der Velde D, Heng M, van der Meijden O, Groenwold RHH, Houwert RM]
+    titel: 'Operative treatment versus nonoperative treatment of Achilles tendon ruptures: systematic review and meta-analysis'
+    bron: BMJ
+    jaar: 2019
+    volume_paginas: 364:k5120
+    doi: 10.1136/bmj.k5120
+    pmid: '30617123'
+    url: https://doi.org/10.1136/bmj.k5120
+    type: SR
+    opmerking: >-
+      29 studies (10 RCT, 19 observationeel). Herruptuur 2,3% operatief vs 3,9% niet-operatief (RR 0,43); complicaties 4,9% vs 1,6%, vooral infectie 2,8%; bij versnelde functionele revalidatie met vroeg bewegen geen significant verschil (RR 0,60; 0,26-1,37).
+    geverifieerd_op: 2026-10-05
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 30617123)
+
+  - key: lu_2019_functionele_revalidatie
+    auteurs: [Lu J, Liang X, Ma Q]
+    titel: 'Early Functional Rehabilitation for Acute Achilles Tendon Ruptures: An Update Meta-Analysis of Randomized Controlled Trials'
+    bron: The Journal of Foot and Ankle Surgery
+    jaar: 2019
+    volume_paginas: 58(5):938-945
+    doi: 10.1053/j.jfas.2018.12.014
+    pmid: '31474405'
+    url: https://doi.org/10.1053/j.jfas.2018.12.014
+    type: SR
+    opmerking: >-
+      14 RCT's; vroege functionele revalidatie verkortte werkhervatting (WMD -1,56 weken), geen verschil in complicaties, tijd tot sport, aandeel terugkeer of tevredenheid. Operatief en niet-operatief samen.
+    geverifieerd_op: 2026-10-05
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 31474405)
+
+  - key: gould_2021_postoperatieve_revalidatie
+    auteurs: [Gould HP, Bano JM, Akman JL, Fillar AL]
+    titel: 'Postoperative Rehabilitation Following Achilles Tendon Repair: A Systematic Review'
+    bron: Sports Medicine and Arthroscopy Review
+    jaar: 2021
+    volume_paginas: 29(2):130-145
+    doi: 10.1097/JSA.0000000000000309
+    pmid: '33972490'
+    url: https://doi.org/10.1097/JSA.0000000000000309
+    type: SR
+    opmerking: >-
+      Level 1-3 studies, 1187 patiënten; vroeg belasten met minder rigide immobilisatie versnelt kortetermijnherstel; lange termijn van versnelde protocollen onduidelijk.
+    geverifieerd_op: 2026-10-05
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 33972490)
+
+  - key: bak_2024_terugkeer_sport
+    auteurs: [Bak BM, Seow D, Teo YZE, Hasan MY, Pearce CJ]
+    titel: 'Return to Play and Functional Outcomes Following Treatment of Acute Achilles Tendon Ruptures: A Systematic Review and Meta-Analysis'
+    bron: The Journal of Foot and Ankle Surgery
+    jaar: 2024
+    volume_paginas: 63(3):420-429
+    doi: 10.1053/j.jfas.2023.12.008
+    pmid: '38296023'
+    url: https://doi.org/10.1053/j.jfas.2023.12.008
+    type: SR
+    opmerking: >-
+      Terugkeer naar sport hoog; geen verschil operatief vs conservatief; open hechting + vroegere revalidatie: 4,19 weken sneller terug, geen verschil in percentage.
+    geverifieerd_op: 2026-10-05
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 38296023)
+
+  - key: wang_2026_digitaal_thuisprogramma
+    auteurs: [Wang H, Wu T, He J, Huang L, Ma Y, Xu M, Lu S, Zou J]
+    titel: 'Home-Based Digital Exercise Program for Patients After Open Repair of Acute Achilles Tendon Rupture: Noninferiority Randomized Controlled Trial'
+    bron: JMIR mHealth and uHealth
+    jaar: 2026
+    volume_paginas: 14:e78100
+    doi: 10.2196/78100
+    pmid: '41855494'
+    url: https://doi.org/10.2196/78100
+    type: RCT
+    opmerking: >-
+      200 patiënten na open hechting (Shanghai, gemiddeld 36,5 jaar); 12 weken digitaal thuisprogramma niet inferieur aan wekelijkse kinesitherapie voor enkel-ROM na 12 weken; secundaire uitkomsten zonder relevante verschillen; goedkoper.
+    geverifieerd_op: 2026-10-05
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 41855494)
+
+  - key: christensen_2020_weerstandsoefeningen
+    auteurs: [Christensen M, Zellers JA, Kjær IL, Silbernagel KG, Rathleff MS]
+    titel: 'Resistance Exercises in Early Functional Rehabilitation for Achilles Tendon Ruptures Are Poorly Described: A Scoping Review'
+    bron: The Journal of Orthopaedic and Sports Physical Therapy
+    jaar: 2020
+    volume_paginas: 50(12):681-690
+    doi: 10.2519/jospt.2020.9463
+    pmid: '33094667'
+    url: https://doi.org/10.2519/jospt.2020.9463
+    type: review
+    opmerking: >-
+      Scoping review, 38 studies: 51 weerstandsoefeningen in de eerste 8 weken (20 isometrisch, 6 hielheffingen, 13 externe weerstand, 12 niet gespecificeerd); mediaan 8 van 19 CERT-items gerapporteerd.
+    geverifieerd_op: 2026-10-05
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 33094667)
+
+  - key: powell_2017_asymmetrie_sprong
+    auteurs: [Powell HC, Silbernagel KG, Brorsson A, Tranberg R, Willy RW]
+    titel: 'Individuals Post Achilles Tendon Rupture Exhibit Asymmetrical Knee and Ankle Kinetics and Loading Rates During a Drop Countermovement Jump'
+    bron: The Journal of Orthopaedic and Sports Physical Therapy
+    jaar: 2017
+    volume_paginas: 48(1):34-43
+    doi: 10.2519/jospt.2018.7684
+    pmid: '29073841'
+    url: https://doi.org/10.2519/jospt.2018.7684
+    type: cohort
+    opmerking: >-
+      Dwarsdoorsnedestudie (geen cohort; dichtstbijzijnde toegestane type), 34 personen 6,1 jaar na ruptuur, operatief en niet-operatief. Pees 8,6% langer; hielheffing 22,4% minder uithouding, 14,6% lagere hoogte; hoger belastingstempo en excentrisch kniewerk bij landen. Jaartal volgens de publicatiedatum in het PubMed-record (26 oktober 2017), zoals elders in dit bestand; het nummer 48(1) verscheen in 2018.
+    geverifieerd_op: 2026-10-05
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 29073841)
+
+  - key: diniz_2020_peesverlenging
+    auteurs: [Diniz P, Pacheco J, Guerra-Pinto F, Pereira H, Ferreira FC, Kerkhoffs G]
+    titel: 'Achilles tendon elongation after acute rupture: is it a problem? A systematic review'
+    bron: Knee Surgery, Sports Traumatology, Arthroscopy
+    jaar: 2020
+    volume_paginas: 28(12):4011-4030
+    doi: 10.1007/s00167-020-06010-8
+    pmid: '32363475'
+    url: https://doi.org/10.1007/s00167-020-06010-8
+    type: SR
+    opmerking: >-
+      28 studies; verlenging 0,15-3,1 cm; redelijk bewijs voor invloed op biomechanische parameters; in een algemene populatie geen bewijs voor nadelig effect op PROMs of functionele kracht.
+    geverifieerd_op: 2026-10-05
+    geverifieerd_door: PubMed MCP (get_article_metadata, PMID 32363475)

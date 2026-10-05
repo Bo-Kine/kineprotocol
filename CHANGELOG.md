@@ -3,6 +3,13 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-10-05 — nieuw protocol: Achillespeesruptuur, operatief gehecht (v94)
+
+- Nieuw protocol `achr` (5 fasen, 26 oefeningen, beschrijving en module manuele therapie), regio Enkel & Voet · gevraagd door de kinesitherapeut; bronnen eerst opgehaald via PubMed, alleen abstracts (volledige teksten niet bereikbaar) · 20 nieuwe referenties, o.a. mccormack_2015_functioneel_postoperatief, huang_2014_revalidatie_na_hechting, wang_2024_onmiddellijke_mobilisatie, cao_2024_immobilisatieduur, aufwerber_2019_dvt_vroege_mobilisatie, ochen_2019_operatief_vs_nietoperatief
+- Tegenstrijdige evidentie expliciet: onmiddellijk enkelbewegen vs uitgesteld (herruptuur), en werk- en sporthervatting · CLAUDE.md §1.9
+- Alle fasegrenzen na week 2, doseringen en progressie-/terugkeercriteria als praktijkafspraak gelabeld · geen enkele bron levert drempelwaarden
+- Fase B (aparte agent): geen referentiefouten; 10 formuleringsproblemen verwerkt, waaronder DVT-percentages uit screening (kritiek) · data/claims/achr.yaml
+
 ## 2026-10-04 — Cervicalgie getoetst aan volledige tekst Corp 2020 (v93)
 
 - Manuele therapie: matige aanbeveling geldt bij nekpijn alleen in combinatie met een andere behandeling, los "inconsistent"; tractie, elektro-, thermotherapie en orthesen bij nekpijn "inconclusief" (naast Lim als tegenstrijdige evidentie); sterkte geruststelling/educatie (zwak) en subgroepen voor psychologische en multidisciplinaire zorg gepreciseerd · volledige tekst nu bereikbaar na uitbreiding van de netwerktoegang; fase B vond drie fouten in de eerste correctie, verwerkt · corp_2020_europese_richtlijnen

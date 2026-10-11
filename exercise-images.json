@@ -24,8 +24,10 @@
     "alt": "Squat (heupbreedte)"
   },
   "Wall squat isometrisch": {
-    "url": "./exercise-images/Wall squat.webp",
-    "alt": "Wall squat isometrisch"
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Squats.svg/500px-Squats.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "alt": "Squat (exercise)",
+    "credit": "Wikipedia: Squat (exercise)",
+    "wiki": "https://en.wikipedia.org/wiki/Squat%20%28exercise%29"
   },
   "Zijwaartse uitval (lateral lunge)": {
     "url": "./exercise-images/Lunge.webp",
@@ -536,7 +538,7 @@
     "wiki": "https://en.wikipedia.org/wiki/Deadlift"
   },
   "Nordic walking": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Nordic-Walking-naturale.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Nordic-Walking-naturale.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
     "alt": "Nordic walking",
     "credit": "Wikipedia: Nordic walking",
     "wiki": "https://en.wikipedia.org/wiki/Nordic%20walking"
@@ -848,19 +850,19 @@
     "wiki": "https://en.wikipedia.org/wiki/Resistance%20band"
   },
   "Theraband high row (arm op schouderhoogte)": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Trenirovachni_lastici_set.JPG/500px-Trenirovachni_lastici_set.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Trenirovachni_lastici_set.JPG/500px-Trenirovachni_lastici_set.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "alt": "Resistance band",
     "credit": "Wikipedia: Resistance band",
     "wiki": "https://en.wikipedia.org/wiki/Resistance%20band"
   },
   "Traplopen met kruk en leuning": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Women_walking_in_Hyderabad_street.jpg/500px-Women_walking_in_Hyderabad_street.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Women_walking_in_Hyderabad_street.jpg/500px-Women_walking_in_Hyderabad_street.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "alt": "Walking",
     "credit": "Wikipedia: Walking",
     "wiki": "https://en.wikipedia.org/wiki/Walking"
   },
   "Unilaterale beenpers (70–90°)": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Muscle_Strengthening_at_the_Gym_-_Seated_Leg_Press.webm/250px--Muscle_Strengthening_at_the_Gym_-_Seated_Leg_Press.webm.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Muscle_Strengthening_at_the_Gym_-_Seated_Leg_Press.webm/250px--Muscle_Strengthening_at_the_Gym_-_Seated_Leg_Press.webm.jpg",
     "alt": "Leg press",
     "credit": "Wikipedia: Leg press",
     "wiki": "https://en.wikipedia.org/wiki/Leg%20press"
@@ -1020,5 +1022,23 @@
     "alt": "Resistance band",
     "credit": "Wikipedia: Resistance band",
     "wiki": "https://en.wikipedia.org/wiki/Resistance%20band"
+  },
+  "Wall angel (muur-engel)": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Blausen_0797_ShoulderJoint.png/500px-Blausen_0797_ShoulderJoint.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "alt": "Shoulder joint",
+    "credit": "Wikipedia: Shoulder joint",
+    "wiki": "https://en.wikipedia.org/wiki/Shoulder%20joint"
+  },
+  "Wandelen (progressieve afstand)": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Women_walking_in_Hyderabad_street.jpg/500px-Women_walking_in_Hyderabad_street.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "alt": "Walking",
+    "credit": "Wikipedia: Walking",
+    "wiki": "https://en.wikipedia.org/wiki/Walking"
+  },
+  "Wandelen en dagelijkse activiteiten behouden": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Women_walking_in_Hyderabad_street.jpg/500px-Women_walking_in_Hyderabad_street.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "alt": "Walking",
+    "credit": "Wikipedia: Walking",
+    "wiki": "https://en.wikipedia.org/wiki/Walking"
   }
 }

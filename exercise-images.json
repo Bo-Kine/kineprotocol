@@ -1018,10 +1018,10 @@
     "wiki": "https://en.wikipedia.org/wiki/Resistance%20band"
   },
   "Weerstandsband-rotaties bij 0° + 45° abductie": {
-    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Trenirovachni_lastici_set.JPG/500px-Trenirovachni_lastici_set.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-    "alt": "Resistance band",
-    "credit": "Wikipedia: Resistance band",
-    "wiki": "https://en.wikipedia.org/wiki/Resistance%20band"
+    "url": "./exercise-images/fedb/External_Rotation_with_Band_1.jpg",
+    "alt": "Weerstandsband-rotaties bij 0° + 45° abductie",
+    "credit": "free-exercise-db (Unlicense)",
+    "bron": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/External_Rotation_with_Band"
   },
   "Wall angel (muur-engel)": {
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Blausen_0797_ShoulderJoint.png/500px-Blausen_0797_ShoulderJoint.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
@@ -1040,5 +1040,113 @@
     "alt": "Walking",
     "credit": "Wikipedia: Walking",
     "wiki": "https://en.wikipedia.org/wiki/Walking"
+  },
+  "Dead bug (basis)": {
+    "url": "./exercise-images/fedb/Dead_Bug_1.jpg",
+    "alt": "Dead bug (basis)",
+    "credit": "free-exercise-db (Unlicense)",
+    "bron": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Dead_Bug"
+  },
+  "Gluteale brug (bilateraal)": {
+    "url": "./exercise-images/fedb/Butt_Lift_Bridge_1.jpg",
+    "alt": "Gluteale brug (bilateraal)",
+    "credit": "free-exercise-db (Unlicense)",
+    "bron": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Butt_Lift_Bridge"
+  },
+  "Gluteale brug (éénbeens)": {
+    "url": "./exercise-images/fedb/Single_Leg_Glute_Bridge_1.jpg",
+    "alt": "Gluteale brug (éénbeens)",
+    "credit": "free-exercise-db (Unlicense)",
+    "bron": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Single_Leg_Glute_Bridge"
+  },
+  "Plank (progressief)": {
+    "url": "./exercise-images/fedb/Plank_1.jpg",
+    "alt": "Plank (progressief)",
+    "credit": "free-exercise-db (Unlicense)",
+    "bron": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Plank"
+  },
+  "Pallof press (anti-rotatie)": {
+    "url": "./exercise-images/fedb/Pallof_Press_1.jpg",
+    "alt": "Pallof press (anti-rotatie)",
+    "credit": "free-exercise-db (Unlicense)",
+    "bron": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Pallof_Press"
+  },
+  "Face pull (kabelstation of band)": {
+    "url": "./exercise-images/fedb/Face_Pull_1.jpg",
+    "alt": "Face pull (kabelstation of band)",
+    "credit": "free-exercise-db (Unlicense)",
+    "bron": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Face_Pull"
+  },
+  "Push-up progressie": {
+    "url": "./exercise-images/fedb/Pushups_1.jpg",
+    "alt": "Push-up progressie",
+    "credit": "free-exercise-db (Unlicense)",
+    "bron": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Pushups"
+  },
+  "Leg press bilateraal (HSR)": {
+    "url": "./exercise-images/fedb/Leg_Press_1.jpg",
+    "alt": "Leg press bilateraal (HSR)",
+    "credit": "free-exercise-db (Unlicense)",
+    "bron": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Leg_Press"
+  },
+  "Isometrische knie-extensie (leg extension machine)": {
+    "url": "./exercise-images/fedb/Leg_Extensions_1.jpg",
+    "alt": "Isometrische knie-extensie (leg extension machine)",
+    "credit": "free-exercise-db (Unlicense)",
+    "bron": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Leg_Extensions"
+  },
+  "Prone leg curl (concentrisch)": {
+    "url": "./exercise-images/fedb/Lying_Leg_Curls_1.jpg",
+    "alt": "Prone leg curl (concentrisch)",
+    "credit": "free-exercise-db (Unlicense)",
+    "bron": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Lying_Leg_Curls"
+  },
+  "Nordic Hamstring Exercise": {
+    "url": "./exercise-images/fedb/Natural_Glute_Ham_Raise_1.jpg",
+    "alt": "Nordic Hamstring Exercise",
+    "credit": "free-exercise-db (Unlicense)",
+    "bron": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Natural_Glute_Ham_Raise"
+  },
+  "Nordic Hamstring (onderhoud)": {
+    "url": "./exercise-images/fedb/Natural_Glute_Ham_Raise_1.jpg",
+    "alt": "Nordic Hamstring (onderhoud)",
+    "credit": "free-exercise-db (Unlicense)",
+    "bron": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Natural_Glute_Ham_Raise"
+  },
+  "Dumbbell overhead press (licht → matig)": {
+    "url": "./exercise-images/fedb/Dumbbell_Shoulder_Press_1.jpg",
+    "alt": "Dumbbell overhead press (licht → matig)",
+    "credit": "free-exercise-db (Unlicense)",
+    "bron": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Dumbbell_Shoulder_Press"
+  },
+  "Overhead press (licht)": {
+    "url": "./exercise-images/fedb/Dumbbell_Shoulder_Press_1.jpg",
+    "alt": "Overhead press (licht)",
+    "credit": "free-exercise-db (Unlicense)",
+    "bron": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Dumbbell_Shoulder_Press"
+  },
+  "Wrist curl (concentrisch pols flexie)": {
+    "url": "./exercise-images/fedb/Seated_Dumbbell_Palms-Up_Wrist_Curl_1.jpg",
+    "alt": "Wrist curl (concentrisch pols flexie)",
+    "credit": "free-exercise-db (Unlicense)",
+    "bron": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Seated_Dumbbell_Palms-Up_Wrist_Curl"
+  },
+  "HSR heel raise (seated — soleus)": {
+    "url": "./exercise-images/fedb/Seated_Calf_Raise_1.jpg",
+    "alt": "HSR heel raise (seated — soleus)",
+    "credit": "free-exercise-db (Unlicense)",
+    "bron": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Seated_Calf_Raise"
+  },
+  "Kuitversterking bilateraal (heel raise)": {
+    "url": "./exercise-images/fedb/Calf_Raises_-_With_Bands_1.jpg",
+    "alt": "Kuitversterking bilateraal (heel raise)",
+    "credit": "free-exercise-db (Unlicense)",
+    "bron": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Calf_Raises_-_With_Bands"
+  },
+  "Bilaterale hielheffing, opbouwend naar meer gewicht op de aangedane kant": {
+    "url": "./exercise-images/fedb/Calf_Raises_-_With_Bands_1.jpg",
+    "alt": "Bilaterale hielheffing, opbouwend naar meer gewicht op de aangedane kant",
+    "credit": "free-exercise-db (Unlicense)",
+    "bron": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Calf_Raises_-_With_Bands"
   }
 }

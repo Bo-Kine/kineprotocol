@@ -310,6 +310,10 @@ def main():
         exercises = [e for e in exercises if e['name'] not in images]
         print(f'Na --update: {len(exercises)} nieuwe te verwerken')
 
+    # Handmatig nagekeken koppelingen (data/afbeeldingen-fedb.yaml) nooit overschrijven
+    exercises = [e for e in exercises
+                 if images.get(e['name'], {}).get('credit') != 'free-exercise-db (Unlicense)']
+
     if args.limit:
         exercises = exercises[:args.limit]
 

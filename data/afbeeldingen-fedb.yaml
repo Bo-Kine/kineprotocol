@@ -1,0 +1,111 @@
+# Koppeling oefening → foto uit free-exercise-db
+# Bron: https://github.com/yuhonas/free-exercise-db (Unlicense, publiek domein).
+# De herkomst van de foto's zelf wordt in die repository niet vermeld.
+#
+# Alleen de FOTO wordt overgenomen, nooit de Engelse instructies: die zijn niet
+# klinisch gecontroleerd.
+#
+# Velden per koppeling:
+#   oefening:  exacte naam zoals in protocols.js
+#   fedb_id:   map-naam in free-exercise-db (exercises/<fedb_id>/)
+#   foto:      0 = beginpositie, 1 = eindpositie
+#   opmerking: waarom deze foto past, of waarop te letten
+#
+# Na een wijziging: python3 scripts/fetch-fedb-images.py
+# Een koppeling verwijderen = de regel schrappen en het script opnieuw draaien.
+
+koppelingen:
+  - oefening: Dead bug (basis)
+    fedb_id: Dead_Bug
+    foto: 1
+    opmerking: Ruglig, tegenovergestelde arm en been gestrekt.
+
+  - oefening: Gluteale brug (bilateraal)
+    fedb_id: Butt_Lift_Bridge
+    foto: 1
+    opmerking: Bekken opgeheven, beide voeten op de grond.
+
+  - oefening: Gluteale brug (éénbeens)
+    fedb_id: Single_Leg_Glute_Bridge
+    foto: 1
+    opmerking: Eén been gestrekt omhoog.
+
+  - oefening: Plank (progressief)
+    fedb_id: Plank
+    foto: 1
+    opmerking: Foto 0 toont een knielende beginhouding; foto 1 de plank op de onderarmen.
+
+  - oefening: Pallof press (anti-rotatie)
+    fedb_id: Pallof_Press
+    foto: 1
+    opmerking: Kabelstation; de oefening kan ook met een band.
+
+  - oefening: Face pull (kabelstation of band)
+    fedb_id: Face_Pull
+    foto: 1
+    opmerking: Kabelstation met touw.
+
+  - oefening: Weerstandsband-rotaties bij 0° + 45° abductie
+    fedb_id: External_Rotation_with_Band
+    foto: 1
+    opmerking: Foto toont alleen 0° abductie (elleboog tegen de romp).
+
+  - oefening: Push-up progressie
+    fedb_id: Pushups
+    foto: 1
+    opmerking: Volledige push-up; de progressie zelf staat in het protocol.
+
+  - oefening: Leg press bilateraal (HSR)
+    fedb_id: Leg_Press
+    foto: 1
+    opmerking: Schuine leg press.
+
+  - oefening: Isometrische knie-extensie (leg extension machine)
+    fedb_id: Leg_Extensions
+    foto: 1
+    opmerking: Foto toont de gestrekte eindpositie; de kniehoek voor isometrie staat in het protocol.
+
+  - oefening: Prone leg curl (concentrisch)
+    fedb_id: Lying_Leg_Curls
+    foto: 1
+    opmerking: Buikligtoestel.
+
+  - oefening: Nordic Hamstring Exercise
+    fedb_id: Natural_Glute_Ham_Raise
+    foto: 1
+    opmerking: In de database heet dit "Natural Glute Ham Raise"; de foto toont het gecontroleerd voorover zakken vanuit kniestand, zoals de Nordic.
+
+  - oefening: Nordic Hamstring (onderhoud)
+    fedb_id: Natural_Glute_Ham_Raise
+    foto: 1
+    opmerking: Zelfde foto als de Nordic Hamstring Exercise.
+
+  - oefening: Dumbbell overhead press (licht → matig)
+    fedb_id: Dumbbell_Shoulder_Press
+    foto: 1
+    opmerking: Zittend met rugleuning.
+
+  - oefening: Overhead press (licht)
+    fedb_id: Dumbbell_Shoulder_Press
+    foto: 1
+    opmerking: Zittend met rugleuning.
+
+  - oefening: Wrist curl (concentrisch pols flexie)
+    fedb_id: Seated_Dumbbell_Palms-Up_Wrist_Curl
+    foto: 1
+    opmerking: Handpalmen naar boven, onderarmen op de dijen.
+
+  - oefening: HSR heel raise (seated — soleus)
+    fedb_id: Seated_Calf_Raise
+    foto: 1
+    opmerking: Kuittoestel zittend; het protocol noemt dit toestel als progressie.
+
+  - oefening: Kuitversterking bilateraal (heel raise)
+    fedb_id: Calf_Raises_-_With_Bands
+    foto: 1
+    opmerking: Vlakke ondergrond; de foto toont een extra weerstandsband.
+
+  - oefening: Bilaterale hielheffing, opbouwend naar meer gewicht op de aangedane kant
+    fedb_id: Calf_Raises_-_With_Bands
+    foto: 1
+    opmerking: Vlakke ondergrond, geen verhoging (belangrijk na achillespeeshechting); de foto toont een extra weerstandsband.

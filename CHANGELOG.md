@@ -3,6 +3,13 @@
 Inhoudelijke wijzigingen aan protocollen, oefeningen en bronnen.
 Formaat per regel: wat · waarom · bron.
 
+## 2026-10-24 — proef: foto's uit free-exercise-db (v95)
+
+- 19 oefeningen krijgen een foto uit free-exercise-db (Unlicense) · proef op verzoek van de kinesitherapeut, voor uitbreiding · koppeling in data/afbeeldingen-fedb.yaml, script scripts/fetch-fedb-images.py, foto's lokaal in exercise-images/fedb/ (offline beschikbaar)
+- Alleen foto's overgenomen, geen Engelse instructies · niet klinisch gecontroleerd
+- Bewust NIET gekoppeld: step-up 20 cm, wall push-up, full can, staande heupabductie (foto toont rompkanteling) en kuitheffingen waarbij de foto een verhoging toont bij insertionele tendinopathie of na achillespeeshechting · foto zou een andere of onveilige variant tonen
+- fetch-exercise-images.py overschrijft deze nagekeken koppelingen niet meer · de wekelijkse workflow draait zonder --update
+
 ## 2026-10-05 — nieuw protocol: Achillespeesruptuur, operatief gehecht (v94)
 
 - Nieuw protocol `achr` (5 fasen, 26 oefeningen, beschrijving en module manuele therapie), regio Enkel & Voet · gevraagd door de kinesitherapeut; bronnen eerst opgehaald via PubMed, alleen abstracts (volledige teksten niet bereikbaar) · 20 nieuwe referenties, o.a. mccormack_2015_functioneel_postoperatief, huang_2014_revalidatie_na_hechting, wang_2024_onmiddellijke_mobilisatie, cao_2024_immobilisatieduur, aufwerber_2019_dvt_vroege_mobilisatie, ochen_2019_operatief_vs_nietoperatief

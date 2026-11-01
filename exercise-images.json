@@ -76,19 +76,19 @@
     "wiki": "https://en.wikipedia.org/wiki/Squat%20%28exercise%29"
   },
   "Enkel-been balans": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Proprioception_image-01.jpg/500px-Proprioception_image-01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Proprioception_image-01.jpg/500px-Proprioception_image-01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "alt": "Proprioception",
     "credit": "Wikipedia: Proprioception",
     "wiki": "https://en.wikipedia.org/wiki/Proprioception"
   },
   "Enkel-been balans (stabiel vlak)": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Proprioception_image-01.jpg/500px-Proprioception_image-01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Proprioception_image-01.jpg/500px-Proprioception_image-01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "alt": "Proprioception",
     "credit": "Wikipedia: Proprioception",
     "wiki": "https://en.wikipedia.org/wiki/Proprioception"
   },
   "Enkel-been balans op schuimmat / BOSU": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Proprioception_image-01.jpg/500px-Proprioception_image-01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Proprioception_image-01.jpg/500px-Proprioception_image-01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "alt": "Proprioception",
     "credit": "Wikipedia: Proprioception",
     "wiki": "https://en.wikipedia.org/wiki/Proprioception"
@@ -628,7 +628,7 @@
     "wiki": "https://en.wikipedia.org/wiki/Proprioception"
   },
   "Endorotatie met theraband": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Trenirovachni_lastici_set.JPG/500px-Trenirovachni_lastici_set.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Trenirovachni_lastici_set.JPG/500px-Trenirovachni_lastici_set.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "alt": "Resistance band",
     "credit": "Wikipedia: Resistance band",
     "wiki": "https://en.wikipedia.org/wiki/Resistance%20band"
@@ -1190,5 +1190,59 @@
     "alt": "Deadlift",
     "credit": "Wikipedia: Deadlift",
     "wiki": "https://en.wikipedia.org/wiki/Deadlift"
+  },
+  "Eenbenige plyometrie (hops, sprongen, richtingsveranderingen)": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/USMC-05301.jpg/500px-USMC-05301.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "alt": "Plyometrics",
+    "credit": "Wikipedia: Plyometrics",
+    "wiki": "https://en.wikipedia.org/wiki/Plyometrics"
+  },
+  "Pijnvrij wandelen (kort)": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Women_walking_in_Hyderabad_street.jpg/500px-Women_walking_in_Hyderabad_street.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "alt": "Walking",
+    "credit": "Wikipedia: Walking",
+    "wiki": "https://en.wikipedia.org/wiki/Walking"
+  },
+  "Plank (voorwaarts)": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/A_U.S._Coast_Guard_recruit%2C_assigned_to_Company_Oscar_188%2C_performs_a_plank_during_incentive_training_at_Coast_Guard_Training_Center_Cape_May_in_Cape_May%2C_N.J.%2C_July_31%2C_2013_130731-G-WA946-943.jpg/500px-thumbnail.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "alt": "Plank (exercise)",
+    "credit": "Wikipedia: Plank (exercise)",
+    "wiki": "https://en.wikipedia.org/wiki/Plank%20%28exercise%29"
+  },
+  "Plank met heupabductie": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/A_U.S._Coast_Guard_recruit%2C_assigned_to_Company_Oscar_188%2C_performs_a_plank_during_incentive_training_at_Coast_Guard_Training_Center_Cape_May_in_Cape_May%2C_N.J.%2C_July_31%2C_2013_130731-G-WA946-943.jpg/500px-thumbnail.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "alt": "Plank (exercise)",
+    "credit": "Wikipedia: Plank (exercise)",
+    "wiki": "https://en.wikipedia.org/wiki/Plank%20%28exercise%29"
+  },
+  "Plankoefening (stabilisatie)": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/A_U.S._Coast_Guard_recruit%2C_assigned_to_Company_Oscar_188%2C_performs_a_plank_during_incentive_training_at_Coast_Guard_Training_Center_Cape_May_in_Cape_May%2C_N.J.%2C_July_31%2C_2013_130731-G-WA946-943.jpg/500px-thumbnail.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "alt": "Plank (exercise)",
+    "credit": "Wikipedia: Plank (exercise)",
+    "wiki": "https://en.wikipedia.org/wiki/Plank%20%28exercise%29"
+  },
+  "Plantaire fascia-specifieke stretch (zittend)": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Siberian_Tiger_by_Malene_Th.jpg/500px-Siberian_Tiger_by_Malene_Th.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "alt": "Stretching",
+    "credit": "Wikipedia: Stretching",
+    "wiki": "https://en.wikipedia.org/wiki/Stretching"
+  },
+  "Wandelen met progressie": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Women_walking_in_Hyderabad_street.jpg/500px-Women_walking_in_Hyderabad_street.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "alt": "Walking",
+    "credit": "Wikipedia: Walking",
+    "wiki": "https://en.wikipedia.org/wiki/Walking"
+  },
+  "Wandelen met tempoprogressie": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Women_walking_in_Hyderabad_street.jpg/500px-Women_walking_in_Hyderabad_street.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "alt": "Walking",
+    "credit": "Wikipedia: Walking",
+    "wiki": "https://en.wikipedia.org/wiki/Walking"
+  },
+  "Wandelen normaal gangpatroon": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Women_walking_in_Hyderabad_street.jpg/500px-Women_walking_in_Hyderabad_street.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "alt": "Walking",
+    "credit": "Wikipedia: Walking",
+    "wiki": "https://en.wikipedia.org/wiki/Walking"
   }
 }
